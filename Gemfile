@@ -64,3 +64,5 @@ platforms :jruby do
     gem 'therubyrhino'
   end
 end
+
+gem 'rename'

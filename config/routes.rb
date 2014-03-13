@@ -1,4 +1,4 @@
-JrubyOnRailsSampleApp::Application.routes.draw do
+AgencyIQ::Application.routes.draw do
   resources :comments
 
   # The priority is based upon order of creation: first created -> highest priority.

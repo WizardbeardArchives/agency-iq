@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-JrubyOnRailsSampleApp::Application.load_tasks
+AgencyIQ::Application.load_tasks
