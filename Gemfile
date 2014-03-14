@@ -75,3 +75,7 @@ platforms :jruby do
 end
 
 gem 'rename'
+
+# Make spreadsheets in our Views
+gem 'acts_as_xlsx'
+gem 'axlsx_rails'

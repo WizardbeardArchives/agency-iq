@@ -30,9 +30,20 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
+    acts_as_xlsx (1.0.6)
+      activerecord (>= 2.3.9)
+      axlsx (>= 1.0.13)
+      i18n (>= 0.4.1)
     arel (4.0.2)
     atomic (1.1.15)
     atomic (1.1.15-java)
+    axlsx (2.0.1)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.0.0)
+    axlsx_rails (0.1.5)
+      axlsx
+      rails (>= 3.1)
     bouncy-castle-java (1.5.0147)
     builder (3.1.4)
     coffee-rails (4.0.1)
@@ -48,6 +59,7 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.2.0)
     hike (1.2.3)
+    htmlentities (4.3.1)
     i18n (0.6.9)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
@@ -66,8 +78,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.5.2)
     minitest (4.7.5)
     multi_json (1.9.0)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    nokogiri (1.6.1-java)
+      mini_portile (~> 0.5.0)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -141,6 +158,8 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord-jdbch2-adapter
+  acts_as_xlsx
+  axlsx_rails
   coffee-rails (~> 4.0.0)
   foundation-rails
   jbuilder (~> 1.2)
