@@ -19,6 +19,14 @@ gem 'warbler'
 # Use jdbcsqlite3 as the database for Active Record
 # gem 'activerecord-jdbcsqlite3-adapter'
 
+# Zurb Foundation
+gem 'foundation-rails'
+
+# rails_layout for DEV
+group :development do
+  gem 'rails_layout'
+end
+
 # Use H2
 gem 'activerecord-jdbch2-adapter', :platform => :jruby
 
