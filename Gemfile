@@ -21,6 +21,7 @@ gem 'warbler'
 
 # Zurb Foundation
 gem 'foundation-rails'
+gem 'simple_form'
 
 # rails_layout for DEV
 group :development do
