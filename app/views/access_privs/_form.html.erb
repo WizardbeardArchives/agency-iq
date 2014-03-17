@@ -1,0 +1,18 @@
+<%= simple_form_for(@access_priv) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :ACS_CLIENT_NUM %>
+    <%= f.input :ACS_INITIALS %>
+    <%= f.input :ACS_KEY %>
+    <%= f.input :ACS_SEE %>
+    <%= f.input :ACS_EDIT %>
+    <%= f.input :ACS_DEL %>
+    <%= f.input :ACS_PRINT %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

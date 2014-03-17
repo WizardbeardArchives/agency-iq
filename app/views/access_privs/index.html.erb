@@ -1,0 +1,41 @@
+<h1>Listing access_privs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Acs client num</th>
+      <th>Acs initials</th>
+      <th>Acs key</th>
+      <th>Acs see</th>
+      <th>Acs edit</th>
+      <th>Acs del</th>
+      <th>Acs print</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @access_privs.each do |access_priv| %>
+      <tr>
+        <td><%= access_priv.primaryKey %></td>
+        <td><%= access_priv.ACS_CLIENT_NUM %></td>
+        <td><%= access_priv.ACS_INITIALS %></td>
+        <td><%= access_priv.ACS_KEY %></td>
+        <td><%= access_priv.ACS_SEE %></td>
+        <td><%= access_priv.ACS_EDIT %></td>
+        <td><%= access_priv.ACS_DEL %></td>
+        <td><%= access_priv.ACS_PRINT %></td>
+        <td><%= link_to 'Show', access_priv %></td>
+        <td><%= link_to 'Edit', edit_access_priv_path(access_priv) %></td>
+        <td><%= link_to 'Destroy', access_priv, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Access priv', new_access_priv_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @access_priv.primaryKey %>
+</p>
+
+<p>
+  <strong>Acs client num:</strong>
+  <%= @access_priv.ACS_CLIENT_NUM %>
+</p>
+
+<p>
+  <strong>Acs initials:</strong>
+  <%= @access_priv.ACS_INITIALS %>
+</p>
+
+<p>
+  <strong>Acs key:</strong>
+  <%= @access_priv.ACS_KEY %>
+</p>
+
+<p>
+  <strong>Acs see:</strong>
+  <%= @access_priv.ACS_SEE %>
+</p>
+
+<p>
+  <strong>Acs edit:</strong>
+  <%= @access_priv.ACS_EDIT %>
+</p>
+
+<p>
+  <strong>Acs del:</strong>
+  <%= @access_priv.ACS_DEL %>
+</p>
+
+<p>
+  <strong>Acs print:</strong>
+  <%= @access_priv.ACS_PRINT %>
+</p>
+
+<%= link_to 'Edit', edit_access_priv_path(@access_priv) %> |
+<%= link_to 'Back', access_privs_path %>
