@@ -1,0 +1,74 @@
+#!/usr/bin/env ruby
+$:.unshift File.expand_path('../lib', File.dirname(__FILE__))
+require 'schema_to_scaffold'
+
+## Argument conditions
+
+opts = SchemaToScaffold.parse_arguments(ARGV)
+ARGV.clear
+
+if opts[:help]
+  puts SchemaToScaffold.help_msg
+  exit 0
+end
+
+## looking for /schema\S*.rb$/ in user directory
+paths = SchemaToScaffold::Path.new(opts[:path])
+path = paths.choose unless opts[:path].to_s.match(/\.rb$/)
+
+## Opening file
+path||=opts[:path]
+begin
+  data = File.open(path, 'r') {|f| f.read }
+rescue
+  puts "\nUnable to open file '#{path}'"
+  exit 1
+end
+
+## Generate scripts from schema
+
+schema = SchemaToScaffold::Schema.new(data)
+
+begin
+  raise if schema.table_names.empty?
+  puts "\nLoaded tables:"
+  schema.table_names.each_with_index {|name,i|  puts "#{i}. #{name}" }
+
+  puts "\n*. All Tables"
+  
+  print "\nSelect a table: "
+  
+rescue
+  puts "Could not find tables in '#{path}'"
+  exit 1
+end 
+
+#result = gets.strip
+
+#if result == "*"
+#  tables = (0..schema.table_names.count-1).map{|i|i}
+#else
+#  tables = [result.to_i]
+#end
+
+# We want all tables by default for our use case:
+tables = (0..schema.table_names.count-1).map{|i| i}
+
+script_scaffold = []
+script_factory_girl = []
+tables.each do |table_id|
+  script_scaffold << SchemaToScaffold.generate_script(schema, table_id,"scaffold")
+  script_factory_girl << SchemaToScaffold.generate_script(schema, table_id,"factory_girl:model")
+end
+
+puts "\nScript for rails scaffold"
+puts script_scaffold.join("\n")
+
+puts "\nScript for factory girl"
+puts script_factory_girl.join("\n")
+
+
+if opts[:xclip]
+  puts("\n(copied to your clipboard)")
+  exec("echo '#{script}' | xclip -selection c")
+end

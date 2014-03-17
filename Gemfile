@@ -79,3 +79,10 @@ gem 'rename'
 # Make spreadsheets in our Views
 gem 'acts_as_xlsx'
 gem 'axlsx_rails'
+
+# These help us with the reverse engineering of our schema and to help
+# scaffold out views and controllers:
+gem 'rmre'
+gem 'schema_to_scaffold'
+
+gem 'factory_girl'
