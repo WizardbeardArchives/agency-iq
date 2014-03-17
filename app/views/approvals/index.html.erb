@@ -1,0 +1,77 @@
+<h1>Listing approvals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Appr added by</th>
+      <th>Appr date added</th>
+      <th>Appr date expires</th>
+      <th>Appr instructions</th>
+      <th>Appr okd by</th>
+      <th>Appr id</th>
+      <th>Appr status</th>
+      <th>Appr status note</th>
+      <th>Appr okd date</th>
+      <th>Appr rush</th>
+      <th>Appr job num</th>
+      <th>Appr client num</th>
+      <th>Appr reply to</th>
+      <th>Appr needed when</th>
+      <th>Appr needed by</th>
+      <th>Appr sent date</th>
+      <th>Appr draft</th>
+      <th>Appr kind</th>
+      <th>Appr changes</th>
+      <th>Appr step desc</th>
+      <th>Appr ref num</th>
+      <th>Appr needed by name</th>
+      <th>Appr file path</th>
+      <th>Appr edited by</th>
+      <th>Appr edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @approvals.each do |approval| %>
+      <tr>
+        <td><%= approval.primaryKey %></td>
+        <td><%= approval.APPR_ADDED_BY %></td>
+        <td><%= approval.APPR_DATE_ADDED %></td>
+        <td><%= approval.APPR_DATE_EXPIRES %></td>
+        <td><%= approval.APPR_INSTRUCTIONS %></td>
+        <td><%= approval.APPR_OKD_BY %></td>
+        <td><%= approval.APPR_ID %></td>
+        <td><%= approval.APPR_STATUS %></td>
+        <td><%= approval.APPR_STATUS_NOTE %></td>
+        <td><%= approval.APPR_OKD_DATE %></td>
+        <td><%= approval.APPR_RUSH %></td>
+        <td><%= approval.APPR_JOB_NUM %></td>
+        <td><%= approval.APPR_CLIENT_NUM %></td>
+        <td><%= approval.APPR_REPLY_TO %></td>
+        <td><%= approval.APPR_NEEDED_WHEN %></td>
+        <td><%= approval.APPR_NEEDED_BY %></td>
+        <td><%= approval.APPR_SENT_DATE %></td>
+        <td><%= approval.APPR_DRAFT %></td>
+        <td><%= approval.APPR_KIND %></td>
+        <td><%= approval.APPR_CHANGES %></td>
+        <td><%= approval.APPR_STEP_DESC %></td>
+        <td><%= approval.APPR_REF_NUM %></td>
+        <td><%= approval.APPR_NEEDED_BY_NAME %></td>
+        <td><%= approval.APPR_FILE_PATH %></td>
+        <td><%= approval.APPR_EDITED_BY %></td>
+        <td><%= approval.APPR_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', approval %></td>
+        <td><%= link_to 'Edit', edit_approval_path(approval) %></td>
+        <td><%= link_to 'Destroy', approval, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Approval', new_approval_path %>

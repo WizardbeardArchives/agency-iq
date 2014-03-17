@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @bookmark.primaryKey %>
+</p>
+
+<p>
+  <strong>Book work:</strong>
+  <%= @bookmark.BOOK_WORK %>
+</p>
+
+<p>
+  <strong>Book window:</strong>
+  <%= @bookmark.BOOK_WINDOW %>
+</p>
+
+<p>
+  <strong>Book find value:</strong>
+  <%= @bookmark.BOOK_FIND_VALUE %>
+</p>
+
+<p>
+  <strong>Book desc:</strong>
+  <%= @bookmark.BOOK_DESC %>
+</p>
+
+<p>
+  <strong>Book find field:</strong>
+  <%= @bookmark.BOOK_FIND_FIELD %>
+</p>
+
+<p>
+  <strong>Book sort:</strong>
+  <%= @bookmark.BOOK_SORT %>
+</p>
+
+<p>
+  <strong>Book desc user:</strong>
+  <%= @bookmark.BOOK_DESC_USER %>
+</p>
+
+<p>
+  <strong>Book do method:</strong>
+  <%= @bookmark.BOOK_DO_METHOD %>
+</p>
+
+<p>
+  <strong>Book do calc:</strong>
+  <%= @bookmark.BOOK_DO_CALC %>
+</p>
+
+<%= link_to 'Edit', edit_bookmark_path(@bookmark) %> |
+<%= link_to 'Back', bookmarks_path %>

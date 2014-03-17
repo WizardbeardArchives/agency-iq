@@ -1,0 +1,1 @@
+json.extract! @data_count, :id, :primaryKey, :DATA_DATE, :DATA_AP, :DATA_AR, :DATA_JOBS, :DATA_CHECKS, :DATA_CLIENTS, :DATA_GL, :DATA_PAYMENTS, :DATA_PO, :DATA_VENDORS, :DATA_TOTAL, :created_at, :updated_at

@@ -1,0 +1,38 @@
+<%= simple_form_for(@est_rev) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :RV_JOB_NUM %>
+    <%= f.input :RV_TASK %>
+    <%= f.input :RV_EST1 %>
+    <%= f.input :RV_EST2 %>
+    <%= f.input :RV_EST3 %>
+    <%= f.input :RV_NAME %>
+    <%= f.input :RV_GROUP %>
+    <%= f.input :RV_SORT %>
+    <%= f.input :RV_FINAL %>
+    <%= f.input :RV_REVISION %>
+    <%= f.input :RV_EST_HEAD1 %>
+    <%= f.input :RV_EST_HEAD2 %>
+    <%= f.input :RV_EST_HEAD3 %>
+    <%= f.input :RV_EST_HRS1 %>
+    <%= f.input :RV_EST_HRS2 %>
+    <%= f.input :RV_EST_HRS3 %>
+    <%= f.input :RV_BUDGET %>
+    <%= f.input :RV_REVISED_BY %>
+    <%= f.input :RV_REVISION_DATE %>
+    <%= f.input :RV_REVISION_NOTES %>
+    <%= f.input :RV_REASON %>
+    <%= f.input :RV_REV_OKD_BY %>
+    <%= f.input :RV_REV_OKD_DATE %>
+    <%= f.input :RV_ADDED_BY %>
+    <%= f.input :RV_ADDED_WHEN %>
+    <%= f.input :RV_EDITED_BY %>
+    <%= f.input :RV_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<%= simple_form_for(@mlink_pref) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :MLINK_ENABLE_LOG %>
+    <%= f.input :MLINK_PATH %>
+    <%= f.input :MLINK_AUTO_IMPORT %>
+    <%= f.input :MLINK_IMPORT_EVERY %>
+    <%= f.input :MLINK_IMPORT_TIME %>
+    <%= f.input :MLINK_IMPORT_MINUTES %>
+    <%= f.input :MLINK_CLIENTS_PREF %>
+    <%= f.input :MLINK_AFTER_PREF %>
+    <%= f.input :MLINK_MOVE_PATH %>
+    <%= f.input :MLINK_SYSTEM %>
+    <%= f.input :MLINK_STATUS %>
+    <%= f.input :MLINK_LAST_IMPORT %>
+    <%= f.input :MLINK_COUNT_TODAY %>
+    <%= f.input :MLINK_COUNT_TOTAL %>
+    <%= f.input :MLINK_AMT %>
+    <%= f.input :MLINK_IMPORT_INTERVAL %>
+    <%= f.input :MLINK_DATE %>
+    <%= f.input :MLINK_VENDORS_PREF %>
+    <%= f.input :MLINK_BELL %>
+    <%= f.input :MLINK_NOTIFY %>
+    <%= f.input :MLINK_EMAIL_NAME %>
+    <%= f.input :MLINK_EMAIL_ADDRESS %>
+    <%= f.input :MLINK_TV_BILL_NET %>
+    <%= f.input :MLINK_PRINT_BILL_NET %>
+    <%= f.input :MLINK_BROAD_COMM %>
+    <%= f.input :MLINK_PRINT_COMM %>
+    <%= f.input :MLINK_EDITED_BY %>
+    <%= f.input :MLINK_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

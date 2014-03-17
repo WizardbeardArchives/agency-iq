@@ -1,0 +1,49 @@
+<h1>Listing data_counts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Data date</th>
+      <th>Data ap</th>
+      <th>Data ar</th>
+      <th>Data jobs</th>
+      <th>Data checks</th>
+      <th>Data clients</th>
+      <th>Data gl</th>
+      <th>Data payments</th>
+      <th>Data po</th>
+      <th>Data vendors</th>
+      <th>Data total</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @data_counts.each do |data_count| %>
+      <tr>
+        <td><%= data_count.primaryKey %></td>
+        <td><%= data_count.DATA_DATE %></td>
+        <td><%= data_count.DATA_AP %></td>
+        <td><%= data_count.DATA_AR %></td>
+        <td><%= data_count.DATA_JOBS %></td>
+        <td><%= data_count.DATA_CHECKS %></td>
+        <td><%= data_count.DATA_CLIENTS %></td>
+        <td><%= data_count.DATA_GL %></td>
+        <td><%= data_count.DATA_PAYMENTS %></td>
+        <td><%= data_count.DATA_PO %></td>
+        <td><%= data_count.DATA_VENDORS %></td>
+        <td><%= data_count.DATA_TOTAL %></td>
+        <td><%= link_to 'Show', data_count %></td>
+        <td><%= link_to 'Edit', edit_data_count_path(data_count) %></td>
+        <td><%= link_to 'Destroy', data_count, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Data count', new_data_count_path %>

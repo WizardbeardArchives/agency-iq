@@ -1,0 +1,57 @@
+<h1>Listing history_vendors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Hv vendor num</th>
+      <th>Hv num</th>
+      <th>Hv added by</th>
+      <th>Hv date</th>
+      <th>Hv subject</th>
+      <th>Hv ok</th>
+      <th>Hv for</th>
+      <th>Hv desc</th>
+      <th>Hv mail to</th>
+      <th>Hv cc</th>
+      <th>Hv bcc</th>
+      <th>Hv notified</th>
+      <th>Hv inv num</th>
+      <th>Hv edited by</th>
+      <th>Hv edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history_vendors.each do |history_vendor| %>
+      <tr>
+        <td><%= history_vendor.primaryKey %></td>
+        <td><%= history_vendor.HV_VENDOR_NUM %></td>
+        <td><%= history_vendor.HV_NUM %></td>
+        <td><%= history_vendor.HV_ADDED_BY %></td>
+        <td><%= history_vendor.HV_DATE %></td>
+        <td><%= history_vendor.HV_SUBJECT %></td>
+        <td><%= history_vendor.HV_OK %></td>
+        <td><%= history_vendor.HV_FOR %></td>
+        <td><%= history_vendor.HV_DESC %></td>
+        <td><%= history_vendor.HV_MAIL_TO %></td>
+        <td><%= history_vendor.HV_CC %></td>
+        <td><%= history_vendor.HV_BCC %></td>
+        <td><%= history_vendor.HV_NOTIFIED %></td>
+        <td><%= history_vendor.HV_INV_NUM %></td>
+        <td><%= history_vendor.HV_EDITED_BY %></td>
+        <td><%= history_vendor.HV_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', history_vendor %></td>
+        <td><%= link_to 'Edit', edit_history_vendor_path(history_vendor) %></td>
+        <td><%= link_to 'Destroy', history_vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New History vendor', new_history_vendor_path %>

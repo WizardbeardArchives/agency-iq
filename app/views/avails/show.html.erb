@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @avail.primaryKey %>
+</p>
+
+<p>
+  <strong>Av initials:</strong>
+  <%= @avail.AV_INITIALS %>
+</p>
+
+<p>
+  <strong>Av date:</strong>
+  <%= @avail.AV_DATE %>
+</p>
+
+<p>
+  <strong>Av key:</strong>
+  <%= @avail.AV_KEY %>
+</p>
+
+<p>
+  <strong>Av kind:</strong>
+  <%= @avail.AV_KIND %>
+</p>
+
+<p>
+  <strong>Av note:</strong>
+  <%= @avail.AV_NOTE %>
+</p>
+
+<p>
+  <strong>Av desc:</strong>
+  <%= @avail.AV_DESC %>
+</p>
+
+<p>
+  <strong>Av added by:</strong>
+  <%= @avail.AV_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Av added when:</strong>
+  <%= @avail.AV_ADDED_WHEN %>
+</p>
+
+<p>
+  <strong>Av edited by:</strong>
+  <%= @avail.AV_EDITED_BY %>
+</p>
+
+<p>
+  <strong>Av edit when:</strong>
+  <%= @avail.AV_EDIT_WHEN %>
+</p>
+
+<%= link_to 'Edit', edit_avail_path(@avail) %> |
+<%= link_to 'Back', avails_path %>

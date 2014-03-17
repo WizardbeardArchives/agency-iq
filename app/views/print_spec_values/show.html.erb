@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @print_spec_value.primaryKey %>
+</p>
+
+<p>
+  <strong>Psv cat:</strong>
+  <%= @print_spec_value.PSV_CAT %>
+</p>
+
+<p>
+  <strong>Psv value:</strong>
+  <%= @print_spec_value.PSV_VALUE %>
+</p>
+
+<p>
+  <strong>Psv added by:</strong>
+  <%= @print_spec_value.PSV_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Psv added when:</strong>
+  <%= @print_spec_value.PSV_ADDED_WHEN %>
+</p>
+
+<p>
+  <strong>Psv edited by:</strong>
+  <%= @print_spec_value.PSV_EDITED_BY %>
+</p>
+
+<p>
+  <strong>Psv edited when:</strong>
+  <%= @print_spec_value.PSV_EDITED_WHEN %>
+</p>
+
+<%= link_to 'Edit', edit_print_spec_value_path(@print_spec_value) %> |
+<%= link_to 'Back', print_spec_values_path %>

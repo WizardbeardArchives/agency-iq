@@ -1,0 +1,19 @@
+<%= simple_form_for(@rfq_vendor) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :RFQV_NUM %>
+    <%= f.input :RFQV_VENDOR_NUM %>
+    <%= f.input :RFQV_CONTACT %>
+    <%= f.input :RFQV_PHONE %>
+    <%= f.input :RFQV_FAX %>
+    <%= f.input :RFQV_WINNER %>
+    <%= f.input :RFQV_VORG %>
+    <%= f.input :RFQV_TYPE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

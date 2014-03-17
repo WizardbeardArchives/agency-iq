@@ -1,0 +1,24 @@
+<%= simple_form_for(@user_info_ctr) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :UI_WORK %>
+    <%= f.input :UI_PROC1 %>
+    <%= f.input :UI_PROC2 %>
+    <%= f.input :UI_PROC3 %>
+    <%= f.input :UI_PROC4 %>
+    <%= f.input :UI_PROC5 %>
+    <%= f.input :UI_PROC6 %>
+    <%= f.input :UI_LABEL1 %>
+    <%= f.input :UI_LABEL2 %>
+    <%= f.input :UI_LABEL3 %>
+    <%= f.input :UI_LABEL4 %>
+    <%= f.input :UI_LABEL5 %>
+    <%= f.input :UI_LABEL6 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

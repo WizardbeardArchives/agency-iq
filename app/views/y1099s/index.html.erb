@@ -1,0 +1,71 @@
+<h1>Listing y1099s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Y name1</th>
+      <th>Y address1</th>
+      <th>Y city state1</th>
+      <th>Y zip1</th>
+      <th>Y tax1</th>
+      <th>Y amt1</th>
+      <th>Y name2</th>
+      <th>Y address2</th>
+      <th>Y city state2</th>
+      <th>Y zip2</th>
+      <th>Y tax2</th>
+      <th>Y amt2</th>
+      <th>Y name3</th>
+      <th>Y address3</th>
+      <th>Y city state3</th>
+      <th>Y zip3</th>
+      <th>Y amt3</th>
+      <th>Y tax3</th>
+      <th>Y dba</th>
+      <th>Y dba2</th>
+      <th>Y rent</th>
+      <th>Y rent2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @y1099s.each do |y1099| %>
+      <tr>
+        <td><%= y1099.primaryKey %></td>
+        <td><%= y1099.Y_NAME1 %></td>
+        <td><%= y1099.Y_ADDRESS1 %></td>
+        <td><%= y1099.Y_CITY_STATE1 %></td>
+        <td><%= y1099.Y_ZIP1 %></td>
+        <td><%= y1099.Y_TAX1 %></td>
+        <td><%= y1099.Y_AMT1 %></td>
+        <td><%= y1099.Y_NAME2 %></td>
+        <td><%= y1099.Y_ADDRESS2 %></td>
+        <td><%= y1099.Y_CITY_STATE2 %></td>
+        <td><%= y1099.Y_ZIP2 %></td>
+        <td><%= y1099.Y_TAX2 %></td>
+        <td><%= y1099.Y_AMT2 %></td>
+        <td><%= y1099.Y_NAME3 %></td>
+        <td><%= y1099.Y_ADDRESS3 %></td>
+        <td><%= y1099.Y_CITY_STATE3 %></td>
+        <td><%= y1099.Y_ZIP3 %></td>
+        <td><%= y1099.Y_AMT3 %></td>
+        <td><%= y1099.Y_TAX3 %></td>
+        <td><%= y1099.Y_DBA %></td>
+        <td><%= y1099.Y_DBA2 %></td>
+        <td><%= y1099.Y_RENT %></td>
+        <td><%= y1099.Y_RENT2 %></td>
+        <td><%= link_to 'Show', y1099 %></td>
+        <td><%= link_to 'Edit', edit_y1099_path(y1099) %></td>
+        <td><%= link_to 'Destroy', y1099, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Y1099', new_y1099_path %>

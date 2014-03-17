@@ -1,0 +1,28 @@
+<%= simple_form_for(@history_client) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :HC_CLIENT_NUM %>
+    <%= f.input :HC_NUM %>
+    <%= f.input :HC_ADDED_BY %>
+    <%= f.input :HC_DATE %>
+    <%= f.input :HC_SUBJECT %>
+    <%= f.input :HC_OK %>
+    <%= f.input :HC_FOR %>
+    <%= f.input :HC_DESC %>
+    <%= f.input :HC_MAIL_TO %>
+    <%= f.input :HC_CC %>
+    <%= f.input :HC_BCC %>
+    <%= f.input :HC_NOTIFIED %>
+    <%= f.input :HC_INV_NUM %>
+    <%= f.input :HC_KIND %>
+    <%= f.input :HC_AUTO_DIARY %>
+    <%= f.input :HC_EDITED_BY %>
+    <%= f.input :HC_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

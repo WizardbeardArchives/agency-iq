@@ -1,0 +1,26 @@
+<%= simple_form_for(@assets_pref) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :ASP_CODE %>
+    <%= f.input :ASP_AUTO_FOLDER %>
+    <%= f.input :ASP_ART_SERVER %>
+    <%= f.input :ASP_IP %>
+    <%= f.input :ASP_FIELD1 %>
+    <%= f.input :ASP_FIELD2 %>
+    <%= f.input :ASP_FIELD3 %>
+    <%= f.input :ASP_FIELD4 %>
+    <%= f.input :ASP_FIELD5 %>
+    <%= f.input :ASP_TRACK_USAGE %>
+    <%= f.input :ASP_ART_SERVER_W %>
+    <%= f.input :ASP_EDITED_BY %>
+    <%= f.input :ASP_EDITED_WHEN %>
+    <%= f.input :ASP_INCL_JNAME %>
+    <%= f.input :ASP_ORG_BY_CLIENT %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

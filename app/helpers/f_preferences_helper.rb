@@ -1,0 +1,2 @@
+module FPreferencesHelper
+end

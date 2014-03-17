@@ -1,0 +1,71 @@
+<h1>Listing meetings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Meet date</th>
+      <th>Meet time</th>
+      <th>Meet added by</th>
+      <th>Meet duration</th>
+      <th>Meet topic</th>
+      <th>Meet objective</th>
+      <th>Meet discussion</th>
+      <th>Meet location</th>
+      <th>Meet directions</th>
+      <th>Meet attendees</th>
+      <th>Meet job num</th>
+      <th>Meet action items</th>
+      <th>Meet fwd sum</th>
+      <th>Meet cc</th>
+      <th>Meet coord</th>
+      <th>Meet client num</th>
+      <th>Meet email to</th>
+      <th>Meet notify</th>
+      <th>Meet status</th>
+      <th>Meet next date</th>
+      <th>Meet edited by</th>
+      <th>Meet edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @meetings.each do |meeting| %>
+      <tr>
+        <td><%= meeting.primaryKey %></td>
+        <td><%= meeting.MEET_DATE %></td>
+        <td><%= meeting.MEET_TIME %></td>
+        <td><%= meeting.MEET_ADDED_BY %></td>
+        <td><%= meeting.MEET_DURATION %></td>
+        <td><%= meeting.MEET_TOPIC %></td>
+        <td><%= meeting.MEET_OBJECTIVE %></td>
+        <td><%= meeting.MEET_DISCUSSION %></td>
+        <td><%= meeting.MEET_LOCATION %></td>
+        <td><%= meeting.MEET_DIRECTIONS %></td>
+        <td><%= meeting.MEET_ATTENDEES %></td>
+        <td><%= meeting.MEET_JOB_NUM %></td>
+        <td><%= meeting.MEET_ACTION_ITEMS %></td>
+        <td><%= meeting.MEET_FWD_SUM %></td>
+        <td><%= meeting.MEET_CC %></td>
+        <td><%= meeting.MEET_COORD %></td>
+        <td><%= meeting.MEET_CLIENT_NUM %></td>
+        <td><%= meeting.MEET_EMAIL_TO %></td>
+        <td><%= meeting.MEET_NOTIFY %></td>
+        <td><%= meeting.MEET_STATUS %></td>
+        <td><%= meeting.MEET_NEXT_DATE %></td>
+        <td><%= meeting.MEET_EDITED_BY %></td>
+        <td><%= meeting.MEET_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', meeting %></td>
+        <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
+        <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Meeting', new_meeting_path %>

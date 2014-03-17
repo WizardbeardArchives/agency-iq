@@ -1,0 +1,55 @@
+<h1>Listing histories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>H job num</th>
+      <th>H num</th>
+      <th>H who</th>
+      <th>H date</th>
+      <th>H desc</th>
+      <th>H resolved</th>
+      <th>H for</th>
+      <th>H user note</th>
+      <th>H mail to</th>
+      <th>H manual</th>
+      <th>H added by</th>
+      <th>H added when</th>
+      <th>H edited by</th>
+      <th>H edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @histories.each do |history| %>
+      <tr>
+        <td><%= history.primaryKey %></td>
+        <td><%= history.H_JOB_NUM %></td>
+        <td><%= history.H_NUM %></td>
+        <td><%= history.H_WHO %></td>
+        <td><%= history.H_DATE %></td>
+        <td><%= history.H_DESC %></td>
+        <td><%= history.H_RESOLVED %></td>
+        <td><%= history.H_FOR %></td>
+        <td><%= history.H_USER_NOTE %></td>
+        <td><%= history.H_MAIL_TO %></td>
+        <td><%= history.H_MANUAL %></td>
+        <td><%= history.H_ADDED_BY %></td>
+        <td><%= history.H_ADDED_WHEN %></td>
+        <td><%= history.H_EDITED_BY %></td>
+        <td><%= history.H_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', history %></td>
+        <td><%= link_to 'Edit', edit_history_path(history) %></td>
+        <td><%= link_to 'Destroy', history, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New History', new_history_path %>

@@ -1,0 +1,29 @@
+<%= simple_form_for(@calendar) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :CAL_KIND %>
+    <%= f.input :CAL_DATE %>
+    <%= f.input :CAL_TO_FROM %>
+    <%= f.input :CAL_AMT %>
+    <%= f.input :CAL_ADDED_BY %>
+    <%= f.input :CAL_DESC %>
+    <%= f.input :CAL_MAIL_TO %>
+    <%= f.input :CAL_NOTIFIED %>
+    <%= f.input :CAL_TIME %>
+    <%= f.input :CAL_PRIORITY %>
+    <%= f.input :CAL_STATUS %>
+    <%= f.input :CAL_ID %>
+    <%= f.input :CAL_CLIENT_NUM %>
+    <%= f.input :CAL_SUBJECT %>
+    <%= f.input :CAL_NOTIFY_DAYS %>
+    <%= f.input :CAL_LOCATION %>
+    <%= f.input :CAL_JOB_NUM %>
+    <%= f.input :CAL_TASK %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,71 @@
+<h1>Listing payments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Pay client num</th>
+      <th>Pay check num</th>
+      <th>Pay amt</th>
+      <th>Pay check date</th>
+      <th>Pay type</th>
+      <th>Pay date</th>
+      <th>Pay desc</th>
+      <th>Pay dgl</th>
+      <th>Pay boolean</th>
+      <th>Pay posted</th>
+      <th>Pay added by</th>
+      <th>Pay added when</th>
+      <th>Pay ok</th>
+      <th>Pay period</th>
+      <th>Pay bank</th>
+      <th>Pay kind</th>
+      <th>Pay batch</th>
+      <th>Pay bank id</th>
+      <th>Pay edited by</th>
+      <th>Pay edited when</th>
+      <th>Pay posted by</th>
+      <th>Pay posted when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payments.each do |payment| %>
+      <tr>
+        <td><%= payment.primaryKey %></td>
+        <td><%= payment.PAY_CLIENT_NUM %></td>
+        <td><%= payment.PAY_CHECK_NUM %></td>
+        <td><%= payment.PAY_AMT %></td>
+        <td><%= payment.PAY_CHECK_DATE %></td>
+        <td><%= payment.PAY_TYPE %></td>
+        <td><%= payment.PAY_DATE %></td>
+        <td><%= payment.PAY_DESC %></td>
+        <td><%= payment.PAY_DGL %></td>
+        <td><%= payment.PAY_BOOLEAN %></td>
+        <td><%= payment.PAY_POSTED %></td>
+        <td><%= payment.PAY_ADDED_BY %></td>
+        <td><%= payment.PAY_ADDED_WHEN %></td>
+        <td><%= payment.PAY_OK %></td>
+        <td><%= payment.PAY_PERIOD %></td>
+        <td><%= payment.PAY_BANK %></td>
+        <td><%= payment.PAY_KIND %></td>
+        <td><%= payment.PAY_BATCH %></td>
+        <td><%= payment.PAY_BANK_ID %></td>
+        <td><%= payment.PAY_EDITED_BY %></td>
+        <td><%= payment.PAY_EDITED_WHEN %></td>
+        <td><%= payment.PAY_POSTED_BY %></td>
+        <td><%= payment.PAY_POSTED_WHEN %></td>
+        <td><%= link_to 'Show', payment %></td>
+        <td><%= link_to 'Edit', edit_payment_path(payment) %></td>
+        <td><%= link_to 'Destroy', payment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment', new_payment_path %>

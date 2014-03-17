@@ -1,0 +1,39 @@
+<h1>Listing palm_tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Palm task code</th>
+      <th>Palm task name</th>
+      <th>Palm task user</th>
+      <th>Palm task id</th>
+      <th>Palm task cat</th>
+      <th>Palm task attribs</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @palm_tasks.each do |palm_task| %>
+      <tr>
+        <td><%= palm_task.primaryKey %></td>
+        <td><%= palm_task.PALM_TASK_CODE %></td>
+        <td><%= palm_task.PALM_TASK_NAME %></td>
+        <td><%= palm_task.PALM_TASK_USER %></td>
+        <td><%= palm_task.PALM_TASK_ID %></td>
+        <td><%= palm_task.PALM_TASK_CAT %></td>
+        <td><%= palm_task.PALM_TASK_ATTRIBS %></td>
+        <td><%= link_to 'Show', palm_task %></td>
+        <td><%= link_to 'Edit', edit_palm_task_path(palm_task) %></td>
+        <td><%= link_to 'Destroy', palm_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Palm task', new_palm_task_path %>

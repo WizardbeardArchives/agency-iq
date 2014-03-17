@@ -1,0 +1,235 @@
+<h1>Listing job_tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>X job num</th>
+      <th>X task</th>
+      <th>X desc</th>
+      <th>X estimate</th>
+      <th>X budget</th>
+      <th>X hours est</th>
+      <th>X hours act</th>
+      <th>X labor</th>
+      <th>X cost</th>
+      <th>X expenses</th>
+      <th>X po net</th>
+      <th>X po gross</th>
+      <th>X unbilled</th>
+      <th>X bill rate</th>
+      <th>X markup</th>
+      <th>X status</th>
+      <th>X note</th>
+      <th>X taxable1</th>
+      <th>X taxable2</th>
+      <th>X finished</th>
+      <th>X due date</th>
+      <th>X start date</th>
+      <th>X kind</th>
+      <th>X resource</th>
+      <th>X lead time</th>
+      <th>X key</th>
+      <th>X sort</th>
+      <th>X group</th>
+      <th>X cgl</th>
+      <th>X dgl</th>
+      <th>X last work</th>
+      <th>X show desc</th>
+      <th>X pc</th>
+      <th>X name</th>
+      <th>X tax1 rate</th>
+      <th>X tax2 rate</th>
+      <th>X est1</th>
+      <th>X est2</th>
+      <th>X est3</th>
+      <th>X billed</th>
+      <th>X roll up</th>
+      <th>X change amt</th>
+      <th>X char30</th>
+      <th>X char20</th>
+      <th>X media comm</th>
+      <th>X change hrs</th>
+      <th>X change budget</th>
+      <th>X amt4</th>
+      <th>X key resource</th>
+      <th>X group prod</th>
+      <th>X char10 2</th>
+      <th>X char10 3</th>
+      <th>X sort prod</th>
+      <th>X rate kind</th>
+      <th>X sub est hrs</th>
+      <th>X sub act hrs</th>
+      <th>X num2d 5</th>
+      <th>X num2d 6</th>
+      <th>X num2d 7</th>
+      <th>X hrs unbilled</th>
+      <th>X unbillable</th>
+      <th>X gross costs</th>
+      <th>X gross labor</th>
+      <th>X gross exp</th>
+      <th>X mu amt</th>
+      <th>X specs</th>
+      <th>X date finished</th>
+      <th>X due when</th>
+      <th>X hours billed</th>
+      <th>X est hrs1</th>
+      <th>X est hrs2</th>
+      <th>X est hrs3</th>
+      <th>X commissionable</th>
+      <th>X added by</th>
+      <th>X added when</th>
+      <th>X edited by</th>
+      <th>X edited when</th>
+      <th>X tags</th>
+      <th>X completed</th>
+      <th>X relation</th>
+      <th>X relation type</th>
+      <th>X color</th>
+      <th>X client sched</th>
+      <th>X phase</th>
+      <th>X hours wk1 1</th>
+      <th>X hours wk1 2</th>
+      <th>X hours wk1 3</th>
+      <th>X hours wk1 4</th>
+      <th>X hours wk1 5</th>
+      <th>X hours wk2 1</th>
+      <th>X hours wk2 2</th>
+      <th>X hours wk2 3</th>
+      <th>X hours wk2 4</th>
+      <th>X hours wk2 5</th>
+      <th>X taxable3</th>
+      <th>X tax3 rate</th>
+      <th>X next bill amt</th>
+      <th>X next bill hrs</th>
+      <th>X next bill date</th>
+      <th>X no time</th>
+      <th>X milestone</th>
+      <th>X req approval</th>
+      <th>X req approved date</th>
+      <th>X priority</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_tasks.each do |job_task| %>
+      <tr>
+        <td><%= job_task.primaryKey %></td>
+        <td><%= job_task.X_JOB_NUM %></td>
+        <td><%= job_task.X_TASK %></td>
+        <td><%= job_task.X_DESC %></td>
+        <td><%= job_task.X_ESTIMATE %></td>
+        <td><%= job_task.X_BUDGET %></td>
+        <td><%= job_task.X_HOURS_EST %></td>
+        <td><%= job_task.X_HOURS_ACT %></td>
+        <td><%= job_task.X_LABOR %></td>
+        <td><%= job_task.X_COST %></td>
+        <td><%= job_task.X_EXPENSES %></td>
+        <td><%= job_task.X_PO_NET %></td>
+        <td><%= job_task.X_PO_GROSS %></td>
+        <td><%= job_task.X_UNBILLED %></td>
+        <td><%= job_task.X_BILL_RATE %></td>
+        <td><%= job_task.X_MARKUP %></td>
+        <td><%= job_task.X_STATUS %></td>
+        <td><%= job_task.X_NOTE %></td>
+        <td><%= job_task.X_TAXABLE1 %></td>
+        <td><%= job_task.X_TAXABLE2 %></td>
+        <td><%= job_task.X_FINISHED %></td>
+        <td><%= job_task.X_DUE_DATE %></td>
+        <td><%= job_task.X_START_DATE %></td>
+        <td><%= job_task.X_KIND %></td>
+        <td><%= job_task.X_RESOURCE %></td>
+        <td><%= job_task.X_LEAD_TIME %></td>
+        <td><%= job_task.X_KEY %></td>
+        <td><%= job_task.X_SORT %></td>
+        <td><%= job_task.X_GROUP %></td>
+        <td><%= job_task.X_CGL %></td>
+        <td><%= job_task.X_DGL %></td>
+        <td><%= job_task.X_LAST_WORK %></td>
+        <td><%= job_task.X_SHOW_DESC %></td>
+        <td><%= job_task.X_PC %></td>
+        <td><%= job_task.X_NAME %></td>
+        <td><%= job_task.X_TAX1_RATE %></td>
+        <td><%= job_task.X_TAX2_RATE %></td>
+        <td><%= job_task.X_EST1 %></td>
+        <td><%= job_task.X_EST2 %></td>
+        <td><%= job_task.X_EST3 %></td>
+        <td><%= job_task.X_BILLED %></td>
+        <td><%= job_task.X_ROLL_UP %></td>
+        <td><%= job_task.X_CHANGE_AMT %></td>
+        <td><%= job_task.X_CHAR30 %></td>
+        <td><%= job_task.X_CHAR20 %></td>
+        <td><%= job_task.X_MEDIA_COMM %></td>
+        <td><%= job_task.X_CHANGE_HRS %></td>
+        <td><%= job_task.X_CHANGE_BUDGET %></td>
+        <td><%= job_task.X_AMT4 %></td>
+        <td><%= job_task.X_KEY_RESOURCE %></td>
+        <td><%= job_task.X_GROUP_PROD %></td>
+        <td><%= job_task.X_CHAR10_2 %></td>
+        <td><%= job_task.X_CHAR10_3 %></td>
+        <td><%= job_task.X_SORT_PROD %></td>
+        <td><%= job_task.X_RATE_KIND %></td>
+        <td><%= job_task.X_SUB_EST_HRS %></td>
+        <td><%= job_task.X_SUB_ACT_HRS %></td>
+        <td><%= job_task.X_NUM2D_5 %></td>
+        <td><%= job_task.X_NUM2D_6 %></td>
+        <td><%= job_task.X_NUM2D_7 %></td>
+        <td><%= job_task.X_HRS_UNBILLED %></td>
+        <td><%= job_task.X_UNBILLABLE %></td>
+        <td><%= job_task.X_GROSS_COSTS %></td>
+        <td><%= job_task.X_GROSS_LABOR %></td>
+        <td><%= job_task.X_GROSS_EXP %></td>
+        <td><%= job_task.X_MU_AMT %></td>
+        <td><%= job_task.X_SPECS %></td>
+        <td><%= job_task.X_DATE_FINISHED %></td>
+        <td><%= job_task.X_DUE_WHEN %></td>
+        <td><%= job_task.X_HOURS_BILLED %></td>
+        <td><%= job_task.X_EST_HRS1 %></td>
+        <td><%= job_task.X_EST_HRS2 %></td>
+        <td><%= job_task.X_EST_HRS3 %></td>
+        <td><%= job_task.X_COMMISSIONABLE %></td>
+        <td><%= job_task.X_ADDED_BY %></td>
+        <td><%= job_task.X_ADDED_WHEN %></td>
+        <td><%= job_task.X_EDITED_BY %></td>
+        <td><%= job_task.X_EDITED_WHEN %></td>
+        <td><%= job_task.X_TAGS %></td>
+        <td><%= job_task.X_COMPLETED %></td>
+        <td><%= job_task.X_RELATION %></td>
+        <td><%= job_task.X_RELATION_TYPE %></td>
+        <td><%= job_task.X_COLOR %></td>
+        <td><%= job_task.X_CLIENT_SCHED %></td>
+        <td><%= job_task.X_PHASE %></td>
+        <td><%= job_task.X_HOURS_WK1_1 %></td>
+        <td><%= job_task.X_HOURS_WK1_2 %></td>
+        <td><%= job_task.X_HOURS_WK1_3 %></td>
+        <td><%= job_task.X_HOURS_WK1_4 %></td>
+        <td><%= job_task.X_HOURS_WK1_5 %></td>
+        <td><%= job_task.X_HOURS_WK2_1 %></td>
+        <td><%= job_task.X_HOURS_WK2_2 %></td>
+        <td><%= job_task.X_HOURS_WK2_3 %></td>
+        <td><%= job_task.X_HOURS_WK2_4 %></td>
+        <td><%= job_task.X_HOURS_WK2_5 %></td>
+        <td><%= job_task.X_TAXABLE3 %></td>
+        <td><%= job_task.X_TAX3_RATE %></td>
+        <td><%= job_task.X_NEXT_BILL_AMT %></td>
+        <td><%= job_task.X_NEXT_BILL_HRS %></td>
+        <td><%= job_task.X_NEXT_BILL_DATE %></td>
+        <td><%= job_task.X_NO_TIME %></td>
+        <td><%= job_task.X_MILESTONE %></td>
+        <td><%= job_task.X_REQ_APPROVAL %></td>
+        <td><%= job_task.X_REQ_APPROVED_DATE %></td>
+        <td><%= job_task.X_PRIORITY %></td>
+        <td><%= link_to 'Show', job_task %></td>
+        <td><%= link_to 'Edit', edit_job_task_path(job_task) %></td>
+        <td><%= link_to 'Destroy', job_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job task', new_job_task_path %>

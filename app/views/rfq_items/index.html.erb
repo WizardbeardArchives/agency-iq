@@ -1,0 +1,61 @@
+<h1>Listing rfq_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rfqx line number</th>
+      <th>Rfqx num</th>
+      <th>Rfqx vendor2</th>
+      <th>Rfqx job num</th>
+      <th>Rfqx task</th>
+      <th>Rfqx name</th>
+      <th>Rfqx desc2</th>
+      <th>Rfqx qty</th>
+      <th>Rfqx unit cost</th>
+      <th>Rfqx cost</th>
+      <th>Rfqx gross</th>
+      <th>Rfqx markup</th>
+      <th>Rfqx po num</th>
+      <th>Rfqx taxable1</th>
+      <th>Rfqx taxable2</th>
+      <th>Rfqx include</th>
+      <th>Rfqx type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rfq_items.each do |rfq_item| %>
+      <tr>
+        <td><%= rfq_item.primaryKey %></td>
+        <td><%= rfq_item.RFQX_LINE_NUMBER %></td>
+        <td><%= rfq_item.RFQX_NUM %></td>
+        <td><%= rfq_item.RFQX_VENDOR2 %></td>
+        <td><%= rfq_item.RFQX_JOB_NUM %></td>
+        <td><%= rfq_item.RFQX_TASK %></td>
+        <td><%= rfq_item.RFQX_NAME %></td>
+        <td><%= rfq_item.RFQX_DESC2 %></td>
+        <td><%= rfq_item.RFQX_QTY %></td>
+        <td><%= rfq_item.RFQX_UNIT_COST %></td>
+        <td><%= rfq_item.RFQX_COST %></td>
+        <td><%= rfq_item.RFQX_GROSS %></td>
+        <td><%= rfq_item.RFQX_MARKUP %></td>
+        <td><%= rfq_item.RFQX_PO_NUM %></td>
+        <td><%= rfq_item.RFQX_TAXABLE1 %></td>
+        <td><%= rfq_item.RFQX_TAXABLE2 %></td>
+        <td><%= rfq_item.RFQX_INCLUDE %></td>
+        <td><%= rfq_item.RFQX_TYPE %></td>
+        <td><%= link_to 'Show', rfq_item %></td>
+        <td><%= link_to 'Edit', edit_rfq_item_path(rfq_item) %></td>
+        <td><%= link_to 'Destroy', rfq_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rfq item', new_rfq_item_path %>

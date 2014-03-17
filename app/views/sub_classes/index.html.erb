@@ -1,0 +1,39 @@
+<h1>Listing sub_classes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Sub num</th>
+      <th>Sub desc</th>
+      <th>Sub added by</th>
+      <th>Sub added when</th>
+      <th>Sub edited by</th>
+      <th>Sub edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_classes.each do |sub_class| %>
+      <tr>
+        <td><%= sub_class.primaryKey %></td>
+        <td><%= sub_class.SUB_NUM %></td>
+        <td><%= sub_class.SUB_DESC %></td>
+        <td><%= sub_class.SUB_ADDED_BY %></td>
+        <td><%= sub_class.SUB_ADDED_WHEN %></td>
+        <td><%= sub_class.SUB_EDITED_BY %></td>
+        <td><%= sub_class.SUB_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', sub_class %></td>
+        <td><%= link_to 'Edit', edit_sub_class_path(sub_class) %></td>
+        <td><%= link_to 'Destroy', sub_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub class', new_sub_class_path %>

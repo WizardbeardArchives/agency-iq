@@ -1,0 +1,22 @@
+<%= simple_form_for(@data_count) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :DATA_DATE %>
+    <%= f.input :DATA_AP %>
+    <%= f.input :DATA_AR %>
+    <%= f.input :DATA_JOBS %>
+    <%= f.input :DATA_CHECKS %>
+    <%= f.input :DATA_CLIENTS %>
+    <%= f.input :DATA_GL %>
+    <%= f.input :DATA_PAYMENTS %>
+    <%= f.input :DATA_PO %>
+    <%= f.input :DATA_VENDORS %>
+    <%= f.input :DATA_TOTAL %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

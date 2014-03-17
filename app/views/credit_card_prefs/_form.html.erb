@@ -1,0 +1,19 @@
+<%= simple_form_for(@credit_card_pref) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :CC_KIND %>
+    <%= f.input :CC_VENDOR_NUM %>
+    <%= f.input :CC_CGL %>
+    <%= f.input :CC_PAYEE %>
+    <%= f.input :CC_JOB_NUM %>
+    <%= f.input :CC_TASK %>
+    <%= f.input :CC_DGL %>
+    <%= f.input :CC_ACCT_NUM %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

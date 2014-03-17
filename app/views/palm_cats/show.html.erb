@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @palm_cat.primaryKey %>
+</p>
+
+<p>
+  <strong>Palm cat name:</strong>
+  <%= @palm_cat.PALM_CAT_NAME %>
+</p>
+
+<p>
+  <strong>Palm cat id:</strong>
+  <%= @palm_cat.PALM_CAT_ID %>
+</p>
+
+<p>
+  <strong>Palm cat user:</strong>
+  <%= @palm_cat.PALM_CAT_USER %>
+</p>
+
+<%= link_to 'Edit', edit_palm_cat_path(@palm_cat) %> |
+<%= link_to 'Back', palm_cats_path %>

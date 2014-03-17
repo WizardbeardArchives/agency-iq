@@ -1,0 +1,26 @@
+<%= simple_form_for(@change_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :CHX_JOB_NUM %>
+    <%= f.input :CHX_TASK %>
+    <%= f.input :CHX_NAME %>
+    <%= f.input :CHX_HOURS %>
+    <%= f.input :CHX_BUDGET %>
+    <%= f.input :CHX_ESTIMATE %>
+    <%= f.input :CHX_NOTES %>
+    <%= f.input :CHX_NUM %>
+    <%= f.input :CHX_TAXABLE1 %>
+    <%= f.input :CHX_TAXABLE2 %>
+    <%= f.input :CHX_ROLLUP %>
+    <%= f.input :CHX_ADDED_BY %>
+    <%= f.input :CHX_ADDED_WHEN %>
+    <%= f.input :CHX_EDITED_BY %>
+    <%= f.input :CHX_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

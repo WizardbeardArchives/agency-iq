@@ -1,0 +1,79 @@
+<h1>Listing stations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Pub code</th>
+      <th>Pub name</th>
+      <th>Pub rep</th>
+      <th>Pub phone</th>
+      <th>Pub address1</th>
+      <th>Pub address2</th>
+      <th>Pub address3</th>
+      <th>Pub address4</th>
+      <th>Pub note</th>
+      <th>Pub fax</th>
+      <th>Pub vendor num</th>
+      <th>Pub comm pc</th>
+      <th>Pub type</th>
+      <th>Pub rep address1</th>
+      <th>Pub rep address2</th>
+      <th>Pub rep address3</th>
+      <th>Pub rep address4</th>
+      <th>Pub rep address5</th>
+      <th>Pub issue date</th>
+      <th>Pub close date</th>
+      <th>Pub circ</th>
+      <th>Pub market</th>
+      <th>Pub added by</th>
+      <th>Pub added when</th>
+      <th>Pub edited by</th>
+      <th>Pub edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @stations.each do |station| %>
+      <tr>
+        <td><%= station.primaryKey %></td>
+        <td><%= station.PUB_CODE %></td>
+        <td><%= station.PUB_NAME %></td>
+        <td><%= station.PUB_REP %></td>
+        <td><%= station.PUB_PHONE %></td>
+        <td><%= station.PUB_ADDRESS1 %></td>
+        <td><%= station.PUB_ADDRESS2 %></td>
+        <td><%= station.PUB_ADDRESS3 %></td>
+        <td><%= station.PUB_ADDRESS4 %></td>
+        <td><%= station.PUB_NOTE %></td>
+        <td><%= station.PUB_FAX %></td>
+        <td><%= station.PUB_VENDOR_NUM %></td>
+        <td><%= station.PUB_COMM_PC %></td>
+        <td><%= station.PUB_TYPE %></td>
+        <td><%= station.PUB_REP_ADDRESS1 %></td>
+        <td><%= station.PUB_REP_ADDRESS2 %></td>
+        <td><%= station.PUB_REP_ADDRESS3 %></td>
+        <td><%= station.PUB_REP_ADDRESS4 %></td>
+        <td><%= station.PUB_REP_ADDRESS5 %></td>
+        <td><%= station.PUB_ISSUE_DATE %></td>
+        <td><%= station.PUB_CLOSE_DATE %></td>
+        <td><%= station.PUB_CIRC %></td>
+        <td><%= station.PUB_MARKET %></td>
+        <td><%= station.PUB_ADDED_BY %></td>
+        <td><%= station.PUB_ADDED_WHEN %></td>
+        <td><%= station.PUB_EDITED_BY %></td>
+        <td><%= station.PUB_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', station %></td>
+        <td><%= link_to 'Edit', edit_station_path(station) %></td>
+        <td><%= link_to 'Destroy', station, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Station', new_station_path %>

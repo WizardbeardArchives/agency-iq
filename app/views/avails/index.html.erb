@@ -1,0 +1,47 @@
+<h1>Listing avails</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Av initials</th>
+      <th>Av date</th>
+      <th>Av key</th>
+      <th>Av kind</th>
+      <th>Av note</th>
+      <th>Av desc</th>
+      <th>Av added by</th>
+      <th>Av added when</th>
+      <th>Av edited by</th>
+      <th>Av edit when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avails.each do |avail| %>
+      <tr>
+        <td><%= avail.primaryKey %></td>
+        <td><%= avail.AV_INITIALS %></td>
+        <td><%= avail.AV_DATE %></td>
+        <td><%= avail.AV_KEY %></td>
+        <td><%= avail.AV_KIND %></td>
+        <td><%= avail.AV_NOTE %></td>
+        <td><%= avail.AV_DESC %></td>
+        <td><%= avail.AV_ADDED_BY %></td>
+        <td><%= avail.AV_ADDED_WHEN %></td>
+        <td><%= avail.AV_EDITED_BY %></td>
+        <td><%= avail.AV_EDIT_WHEN %></td>
+        <td><%= link_to 'Show', avail %></td>
+        <td><%= link_to 'Edit', edit_avail_path(avail) %></td>
+        <td><%= link_to 'Destroy', avail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Avail', new_avail_path %>

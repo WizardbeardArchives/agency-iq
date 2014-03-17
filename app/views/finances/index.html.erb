@@ -1,0 +1,105 @@
+<h1>Listing finances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Fi ac num</th>
+      <th>Fi category</th>
+      <th>Fi class</th>
+      <th>Fi mtd</th>
+      <th>Fi mtd percent</th>
+      <th>Fi ytd</th>
+      <th>Fi ytd percent</th>
+      <th>Fi month</th>
+      <th>Fi year</th>
+      <th>Fi 1</th>
+      <th>Fi 2</th>
+      <th>Fi 3</th>
+      <th>Fi 4</th>
+      <th>Fi 5</th>
+      <th>Fi 6</th>
+      <th>Fi 7</th>
+      <th>Fi 8</th>
+      <th>Fi name</th>
+      <th>Fi note</th>
+      <th>Fi sub class</th>
+      <th>Fi roll up</th>
+      <th>Fi pct1</th>
+      <th>Fi pct2</th>
+      <th>Fi pct3</th>
+      <th>Fi pct4</th>
+      <th>Fi l month</th>
+      <th>Fi l mtd</th>
+      <th>Fi l year</th>
+      <th>Fi l ytd</th>
+      <th>Fi l mtd percent</th>
+      <th>Fi l ytd percent</th>
+      <th>Fi l pct1</th>
+      <th>Fi l pct2</th>
+      <th>Fi l pct3</th>
+      <th>Fi l pct4</th>
+      <th>Fi client num</th>
+      <th>Fi group</th>
+      <th>Fi pct5</th>
+      <th>Fi l pct5</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @finances.each do |finance| %>
+      <tr>
+        <td><%= finance.primaryKey %></td>
+        <td><%= finance.FI_AC_NUM %></td>
+        <td><%= finance.FI_CATEGORY %></td>
+        <td><%= finance.FI_CLASS %></td>
+        <td><%= finance.FI_MTD %></td>
+        <td><%= finance.FI_MTD_PERCENT %></td>
+        <td><%= finance.FI_YTD %></td>
+        <td><%= finance.FI_YTD_PERCENT %></td>
+        <td><%= finance.FI_MONTH %></td>
+        <td><%= finance.FI_YEAR %></td>
+        <td><%= finance.FI_1 %></td>
+        <td><%= finance.FI_2 %></td>
+        <td><%= finance.FI_3 %></td>
+        <td><%= finance.FI_4 %></td>
+        <td><%= finance.FI_5 %></td>
+        <td><%= finance.FI_6 %></td>
+        <td><%= finance.FI_7 %></td>
+        <td><%= finance.FI_8 %></td>
+        <td><%= finance.FI_NAME %></td>
+        <td><%= finance.FI_NOTE %></td>
+        <td><%= finance.FI_SUB_CLASS %></td>
+        <td><%= finance.FI_ROLL_UP %></td>
+        <td><%= finance.FI_PCT1 %></td>
+        <td><%= finance.FI_PCT2 %></td>
+        <td><%= finance.FI_PCT3 %></td>
+        <td><%= finance.FI_PCT4 %></td>
+        <td><%= finance.FI_L_MONTH %></td>
+        <td><%= finance.FI_L_MTD %></td>
+        <td><%= finance.FI_L_YEAR %></td>
+        <td><%= finance.FI_L_YTD %></td>
+        <td><%= finance.FI_L_MTD_PERCENT %></td>
+        <td><%= finance.FI_L_YTD_PERCENT %></td>
+        <td><%= finance.FI_L_PCT1 %></td>
+        <td><%= finance.FI_L_PCT2 %></td>
+        <td><%= finance.FI_L_PCT3 %></td>
+        <td><%= finance.FI_L_PCT4 %></td>
+        <td><%= finance.FI_CLIENT_NUM %></td>
+        <td><%= finance.FI_GROUP %></td>
+        <td><%= finance.FI_PCT5 %></td>
+        <td><%= finance.FI_L_PCT5 %></td>
+        <td><%= link_to 'Show', finance %></td>
+        <td><%= link_to 'Edit', edit_finance_path(finance) %></td>
+        <td><%= link_to 'Destroy', finance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Finance', new_finance_path %>

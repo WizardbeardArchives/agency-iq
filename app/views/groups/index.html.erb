@@ -1,0 +1,41 @@
+<h1>Listing groups</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Group num</th>
+      <th>Group desc</th>
+      <th>Group cat</th>
+      <th>Group added by</th>
+      <th>Group added when</th>
+      <th>Group edited by</th>
+      <th>Group edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @groups.each do |group| %>
+      <tr>
+        <td><%= group.primaryKey %></td>
+        <td><%= group.GROUP_NUM %></td>
+        <td><%= group.GROUP_DESC %></td>
+        <td><%= group.GROUP_CAT %></td>
+        <td><%= group.GROUP_ADDED_BY %></td>
+        <td><%= group.GROUP_ADDED_WHEN %></td>
+        <td><%= group.GROUP_EDITED_BY %></td>
+        <td><%= group.GROUP_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', group %></td>
+        <td><%= link_to 'Edit', edit_group_path(group) %></td>
+        <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Group', new_group_path %>

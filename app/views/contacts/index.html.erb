@@ -1,0 +1,95 @@
+<h1>Listing contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Con c num</th>
+      <th>Con v num</th>
+      <th>Con kind</th>
+      <th>Con first name</th>
+      <th>Con last name</th>
+      <th>Con mid initial</th>
+      <th>Con sal</th>
+      <th>Con title</th>
+      <th>Con decision maker</th>
+      <th>Con phone work</th>
+      <th>Con phone home</th>
+      <th>Con phone mobile</th>
+      <th>Con fax work</th>
+      <th>Con pager</th>
+      <th>Con note</th>
+      <th>Con email work</th>
+      <th>Con email home</th>
+      <th>Con date added</th>
+      <th>Con added by</th>
+      <th>Con last call</th>
+      <th>Con last by</th>
+      <th>Con fax home</th>
+      <th>Con sales email</th>
+      <th>Con org</th>
+      <th>Con full name</th>
+      <th>Con address1</th>
+      <th>Con address2</th>
+      <th>Con address3</th>
+      <th>Con address4</th>
+      <th>Con address5</th>
+      <th>Con address6</th>
+      <th>Con approve jobs</th>
+      <th>Con edited by</th>
+      <th>Con edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.primaryKey %></td>
+        <td><%= contact.CON_C_NUM %></td>
+        <td><%= contact.CON_V_NUM %></td>
+        <td><%= contact.CON_KIND %></td>
+        <td><%= contact.CON_FIRST_NAME %></td>
+        <td><%= contact.CON_LAST_NAME %></td>
+        <td><%= contact.CON_MID_INITIAL %></td>
+        <td><%= contact.CON_SAL %></td>
+        <td><%= contact.CON_TITLE %></td>
+        <td><%= contact.CON_DECISION_MAKER %></td>
+        <td><%= contact.CON_PHONE_WORK %></td>
+        <td><%= contact.CON_PHONE_HOME %></td>
+        <td><%= contact.CON_PHONE_MOBILE %></td>
+        <td><%= contact.CON_FAX_WORK %></td>
+        <td><%= contact.CON_PAGER %></td>
+        <td><%= contact.CON_NOTE %></td>
+        <td><%= contact.CON_EMAIL_WORK %></td>
+        <td><%= contact.CON_EMAIL_HOME %></td>
+        <td><%= contact.CON_DATE_ADDED %></td>
+        <td><%= contact.CON_ADDED_BY %></td>
+        <td><%= contact.CON_LAST_CALL %></td>
+        <td><%= contact.CON_LAST_BY %></td>
+        <td><%= contact.CON_FAX_HOME %></td>
+        <td><%= contact.CON_SALES_EMAIL %></td>
+        <td><%= contact.CON_ORG %></td>
+        <td><%= contact.CON_FULL_NAME %></td>
+        <td><%= contact.CON_ADDRESS1 %></td>
+        <td><%= contact.CON_ADDRESS2 %></td>
+        <td><%= contact.CON_ADDRESS3 %></td>
+        <td><%= contact.CON_ADDRESS4 %></td>
+        <td><%= contact.CON_ADDRESS5 %></td>
+        <td><%= contact.CON_ADDRESS6 %></td>
+        <td><%= contact.CON_APPROVE_JOBS %></td>
+        <td><%= contact.CON_EDITED_BY %></td>
+        <td><%= contact.CON_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path %>

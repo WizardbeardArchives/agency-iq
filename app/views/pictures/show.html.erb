@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @picture.primaryKey %>
+</p>
+
+<p>
+  <strong>Picture num:</strong>
+  <%= @picture.PICTURE_NUM %>
+</p>
+
+<p>
+  <strong>Picture photo:</strong>
+  <%= @picture.PICTURE_PHOTO %>
+</p>
+
+<p>
+  <strong>Picture text:</strong>
+  <%= @picture.PICTURE_TEXT %>
+</p>
+
+<p>
+  <strong>Picture added by:</strong>
+  <%= @picture.PICTURE_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Picture added when:</strong>
+  <%= @picture.PICTURE_ADDED_WHEN %>
+</p>
+
+<p>
+  <strong>Picture edited by:</strong>
+  <%= @picture.PICTURE_EDITED_BY %>
+</p>
+
+<p>
+  <strong>Picture edited when:</strong>
+  <%= @picture.PICTURE_EDITED_WHEN %>
+</p>
+
+<%= link_to 'Edit', edit_picture_path(@picture) %> |
+<%= link_to 'Back', pictures_path %>

@@ -1,0 +1,87 @@
+<h1>Listing billing_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>B job num</th>
+      <th>B cost ctr1</th>
+      <th>B cost ctr2</th>
+      <th>B cost ctr3</th>
+      <th>B cost ctr4</th>
+      <th>B cost ctr5</th>
+      <th>B cost ctr6</th>
+      <th>B cost ctr7</th>
+      <th>B cost ctr8</th>
+      <th>B cost ctr9</th>
+      <th>B acct1</th>
+      <th>B acct2</th>
+      <th>B acct3</th>
+      <th>B acct4</th>
+      <th>B acct5</th>
+      <th>B acct6</th>
+      <th>B acct7</th>
+      <th>B acct8</th>
+      <th>B acct9</th>
+      <th>B percent1</th>
+      <th>B percent2</th>
+      <th>B percent3</th>
+      <th>B percent4</th>
+      <th>B percent5</th>
+      <th>B percent6</th>
+      <th>B percent7</th>
+      <th>B percent8</th>
+      <th>B percent9</th>
+      <th>B edited by</th>
+      <th>B edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @billing_infos.each do |billing_info| %>
+      <tr>
+        <td><%= billing_info.primaryKey %></td>
+        <td><%= billing_info.B_JOB_NUM %></td>
+        <td><%= billing_info.B_COST_CTR1 %></td>
+        <td><%= billing_info.B_COST_CTR2 %></td>
+        <td><%= billing_info.B_COST_CTR3 %></td>
+        <td><%= billing_info.B_COST_CTR4 %></td>
+        <td><%= billing_info.B_COST_CTR5 %></td>
+        <td><%= billing_info.B_COST_CTR6 %></td>
+        <td><%= billing_info.B_COST_CTR7 %></td>
+        <td><%= billing_info.B_COST_CTR8 %></td>
+        <td><%= billing_info.B_COST_CTR9 %></td>
+        <td><%= billing_info.B_ACCT1 %></td>
+        <td><%= billing_info.B_ACCT2 %></td>
+        <td><%= billing_info.B_ACCT3 %></td>
+        <td><%= billing_info.B_ACCT4 %></td>
+        <td><%= billing_info.B_ACCT5 %></td>
+        <td><%= billing_info.B_ACCT6 %></td>
+        <td><%= billing_info.B_ACCT7 %></td>
+        <td><%= billing_info.B_ACCT8 %></td>
+        <td><%= billing_info.B_ACCT9 %></td>
+        <td><%= billing_info.B_PERCENT1 %></td>
+        <td><%= billing_info.B_PERCENT2 %></td>
+        <td><%= billing_info.B_PERCENT3 %></td>
+        <td><%= billing_info.B_PERCENT4 %></td>
+        <td><%= billing_info.B_PERCENT5 %></td>
+        <td><%= billing_info.B_PERCENT6 %></td>
+        <td><%= billing_info.B_PERCENT7 %></td>
+        <td><%= billing_info.B_PERCENT8 %></td>
+        <td><%= billing_info.B_PERCENT9 %></td>
+        <td><%= billing_info.B_EDITED_BY %></td>
+        <td><%= billing_info.B_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', billing_info %></td>
+        <td><%= link_to 'Edit', edit_billing_info_path(billing_info) %></td>
+        <td><%= link_to 'Destroy', billing_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Billing info', new_billing_info_path %>

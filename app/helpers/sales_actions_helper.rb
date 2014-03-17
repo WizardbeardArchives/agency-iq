@@ -1,0 +1,2 @@
+module SalesActionsHelper
+end

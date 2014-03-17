@@ -1,0 +1,33 @@
+<%= simple_form_for(@meeting) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :MEET_DATE %>
+    <%= f.input :MEET_TIME %>
+    <%= f.input :MEET_ADDED_BY %>
+    <%= f.input :MEET_DURATION %>
+    <%= f.input :MEET_TOPIC %>
+    <%= f.input :MEET_OBJECTIVE %>
+    <%= f.input :MEET_DISCUSSION %>
+    <%= f.input :MEET_LOCATION %>
+    <%= f.input :MEET_DIRECTIONS %>
+    <%= f.input :MEET_ATTENDEES %>
+    <%= f.input :MEET_JOB_NUM %>
+    <%= f.input :MEET_ACTION_ITEMS %>
+    <%= f.input :MEET_FWD_SUM %>
+    <%= f.input :MEET_CC %>
+    <%= f.input :MEET_COORD %>
+    <%= f.input :MEET_CLIENT_NUM %>
+    <%= f.input :MEET_EMAIL_TO %>
+    <%= f.input :MEET_NOTIFY %>
+    <%= f.input :MEET_STATUS %>
+    <%= f.input :MEET_NEXT_DATE %>
+    <%= f.input :MEET_EDITED_BY %>
+    <%= f.input :MEET_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

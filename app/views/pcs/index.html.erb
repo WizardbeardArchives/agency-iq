@@ -1,0 +1,57 @@
+<h1>Listing pcs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Pc num</th>
+      <th>Pc name</th>
+      <th>Pc desc</th>
+      <th>Pc corp id</th>
+      <th>Pc added by</th>
+      <th>Pc added when</th>
+      <th>Pc edited by</th>
+      <th>Pc edited when</th>
+      <th>Pc bus unit</th>
+      <th>Pc outdated</th>
+      <th>Pc ar show</th>
+      <th>Pc bill org</th>
+      <th>Pc bill address1</th>
+      <th>Pc bill address2</th>
+      <th>Pc bill address3</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pcs.each do |pc| %>
+      <tr>
+        <td><%= pc.primaryKey %></td>
+        <td><%= pc.PC_NUM %></td>
+        <td><%= pc.PC_NAME %></td>
+        <td><%= pc.PC_DESC %></td>
+        <td><%= pc.PC_CORP_ID %></td>
+        <td><%= pc.PC_ADDED_BY %></td>
+        <td><%= pc.PC_ADDED_WHEN %></td>
+        <td><%= pc.PC_EDITED_BY %></td>
+        <td><%= pc.PC_EDITED_WHEN %></td>
+        <td><%= pc.PC_BUS_UNIT %></td>
+        <td><%= pc.PC_OUTDATED %></td>
+        <td><%= pc.PC_AR_SHOW %></td>
+        <td><%= pc.PC_BILL_ORG %></td>
+        <td><%= pc.PC_BILL_ADDRESS1 %></td>
+        <td><%= pc.PC_BILL_ADDRESS2 %></td>
+        <td><%= pc.PC_BILL_ADDRESS3 %></td>
+        <td><%= link_to 'Show', pc %></td>
+        <td><%= link_to 'Edit', edit_pc_path(pc) %></td>
+        <td><%= link_to 'Destroy', pc, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pc', new_pc_path %>

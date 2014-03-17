@@ -1,0 +1,23 @@
+<%= simple_form_for(@int_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :INT_ITEM %>
+    <%= f.input :INT_SIZE %>
+    <%= f.input :INT_KEY %>
+    <%= f.input :INT_DESC %>
+    <%= f.input :INT_TASK %>
+    <%= f.input :INT_COST_EA %>
+    <%= f.input :INT_UNIT %>
+    <%= f.input :INT_GROSS_EA %>
+    <%= f.input :INT_ADDED_BY %>
+    <%= f.input :INT_ADDED_WHEN %>
+    <%= f.input :INT_EDITED_BY %>
+    <%= f.input :INT_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

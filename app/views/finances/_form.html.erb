@@ -1,0 +1,50 @@
+<%= simple_form_for(@finance) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :FI_AC_NUM %>
+    <%= f.input :FI_CATEGORY %>
+    <%= f.input :FI_CLASS %>
+    <%= f.input :FI_MTD %>
+    <%= f.input :FI_MTD_PERCENT %>
+    <%= f.input :FI_YTD %>
+    <%= f.input :FI_YTD_PERCENT %>
+    <%= f.input :FI_MONTH %>
+    <%= f.input :FI_YEAR %>
+    <%= f.input :FI_1 %>
+    <%= f.input :FI_2 %>
+    <%= f.input :FI_3 %>
+    <%= f.input :FI_4 %>
+    <%= f.input :FI_5 %>
+    <%= f.input :FI_6 %>
+    <%= f.input :FI_7 %>
+    <%= f.input :FI_8 %>
+    <%= f.input :FI_NAME %>
+    <%= f.input :FI_NOTE %>
+    <%= f.input :FI_SUB_CLASS %>
+    <%= f.input :FI_ROLL_UP %>
+    <%= f.input :FI_PCT1 %>
+    <%= f.input :FI_PCT2 %>
+    <%= f.input :FI_PCT3 %>
+    <%= f.input :FI_PCT4 %>
+    <%= f.input :FI_L_MONTH %>
+    <%= f.input :FI_L_MTD %>
+    <%= f.input :FI_L_YEAR %>
+    <%= f.input :FI_L_YTD %>
+    <%= f.input :FI_L_MTD_PERCENT %>
+    <%= f.input :FI_L_YTD_PERCENT %>
+    <%= f.input :FI_L_PCT1 %>
+    <%= f.input :FI_L_PCT2 %>
+    <%= f.input :FI_L_PCT3 %>
+    <%= f.input :FI_L_PCT4 %>
+    <%= f.input :FI_CLIENT_NUM %>
+    <%= f.input :FI_GROUP %>
+    <%= f.input :FI_PCT5 %>
+    <%= f.input :FI_L_PCT5 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

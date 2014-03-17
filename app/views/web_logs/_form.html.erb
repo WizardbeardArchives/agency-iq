@@ -1,0 +1,21 @@
+<%= simple_form_for(@web_log) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :WLOG_DATETIME %>
+    <%= f.input :WLOG_USER %>
+    <%= f.input :WLOG_STATUS %>
+    <%= f.input :WLOG_EVENT %>
+    <%= f.input :WLOG_PAGE %>
+    <%= f.input :WLOG_IP %>
+    <%= f.input :WLOG_DATE %>
+    <%= f.input :WLOG_TIME %>
+    <%= f.input :WLOG_DAY %>
+    <%= f.input :WLOG_HOUR %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

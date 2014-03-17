@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @outbox.primaryKey %>
+</p>
+
+<p>
+  <strong>Out from email:</strong>
+  <%= @outbox.OUT_FROM_EMAIL %>
+</p>
+
+<p>
+  <strong>Out to email:</strong>
+  <%= @outbox.OUT_TO_EMAIL %>
+</p>
+
+<p>
+  <strong>Out subject:</strong>
+  <%= @outbox.OUT_SUBJECT %>
+</p>
+
+<p>
+  <strong>Out body:</strong>
+  <%= @outbox.OUT_BODY %>
+</p>
+
+<p>
+  <strong>Out cc:</strong>
+  <%= @outbox.OUT_CC %>
+</p>
+
+<p>
+  <strong>Out bcc:</strong>
+  <%= @outbox.OUT_BCC %>
+</p>
+
+<p>
+  <strong>Out real name:</strong>
+  <%= @outbox.OUT_REAL_NAME %>
+</p>
+
+<p>
+  <strong>Out attachment:</strong>
+  <%= @outbox.OUT_ATTACHMENT %>
+</p>
+
+<p>
+  <strong>Out date added:</strong>
+  <%= @outbox.OUT_DATE_ADDED %>
+</p>
+
+<p>
+  <strong>Out added by:</strong>
+  <%= @outbox.OUT_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Out send date:</strong>
+  <%= @outbox.OUT_SEND_DATE %>
+</p>
+
+<p>
+  <strong>Out ok:</strong>
+  <%= @outbox.OUT_OK %>
+</p>
+
+<%= link_to 'Edit', edit_outbox_path(@outbox) %> |
+<%= link_to 'Back', outboxes_path %>

@@ -1,0 +1,89 @@
+<h1>Listing ar_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ax job num</th>
+      <th>Ax task</th>
+      <th>Ax ar num</th>
+      <th>Ax amt</th>
+      <th>Ax sort</th>
+      <th>Ax group</th>
+      <th>Ax taxable1</th>
+      <th>Ax taxable2</th>
+      <th>Ax desc</th>
+      <th>Ax date</th>
+      <th>Ax cgl</th>
+      <th>Ax posted</th>
+      <th>Ax period</th>
+      <th>Ax name</th>
+      <th>Ax hours billed</th>
+      <th>Ax hide</th>
+      <th>Ax roll up</th>
+      <th>Ax show desc</th>
+      <th>Ax qty</th>
+      <th>Ax pox key</th>
+      <th>Ax pub</th>
+      <th>Ax issue date</th>
+      <th>Ax cost</th>
+      <th>Ax exported</th>
+      <th>Ax pc</th>
+      <th>Ax client num</th>
+      <th>Ax commissionable</th>
+      <th>Ax added by</th>
+      <th>Ax added when</th>
+      <th>Ax edited by</th>
+      <th>Ax edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ar_items.each do |ar_item| %>
+      <tr>
+        <td><%= ar_item.primaryKey %></td>
+        <td><%= ar_item.AX_JOB_NUM %></td>
+        <td><%= ar_item.AX_TASK %></td>
+        <td><%= ar_item.AX_AR_NUM %></td>
+        <td><%= ar_item.AX_AMT %></td>
+        <td><%= ar_item.AX_SORT %></td>
+        <td><%= ar_item.AX_GROUP %></td>
+        <td><%= ar_item.AX_TAXABLE1 %></td>
+        <td><%= ar_item.AX_TAXABLE2 %></td>
+        <td><%= ar_item.AX_DESC %></td>
+        <td><%= ar_item.AX_DATE %></td>
+        <td><%= ar_item.AX_CGL %></td>
+        <td><%= ar_item.AX_POSTED %></td>
+        <td><%= ar_item.AX_PERIOD %></td>
+        <td><%= ar_item.AX_NAME %></td>
+        <td><%= ar_item.AX_HOURS_BILLED %></td>
+        <td><%= ar_item.AX_HIDE %></td>
+        <td><%= ar_item.AX_ROLL_UP %></td>
+        <td><%= ar_item.AX_SHOW_DESC %></td>
+        <td><%= ar_item.AX_QTY %></td>
+        <td><%= ar_item.AX_POX_KEY %></td>
+        <td><%= ar_item.AX_PUB %></td>
+        <td><%= ar_item.AX_ISSUE_DATE %></td>
+        <td><%= ar_item.AX_COST %></td>
+        <td><%= ar_item.AX_EXPORTED %></td>
+        <td><%= ar_item.AX_PC %></td>
+        <td><%= ar_item.AX_CLIENT_NUM %></td>
+        <td><%= ar_item.AX_COMMISSIONABLE %></td>
+        <td><%= ar_item.AX_ADDED_BY %></td>
+        <td><%= ar_item.AX_ADDED_WHEN %></td>
+        <td><%= ar_item.AX_EDITED_BY %></td>
+        <td><%= ar_item.AX_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', ar_item %></td>
+        <td><%= link_to 'Edit', edit_ar_item_path(ar_item) %></td>
+        <td><%= link_to 'Destroy', ar_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ar item', new_ar_item_path %>

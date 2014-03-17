@@ -1,0 +1,43 @@
+<%= simple_form_for(@assets_file) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :ASF_JOB_NUM %>
+    <%= f.input :ASF_FILE_NAME %>
+    <%= f.input :ASF_FILE_KIND %>
+    <%= f.input :ASF_ADDED_BY %>
+    <%= f.input :ASF_DATE_ADDED %>
+    <%= f.input :ASF_DATE_ACQUIRED %>
+    <%= f.input :ASF_DESC %>
+    <%= f.input :ASF_KEYWORD1 %>
+    <%= f.input :ASF_KEYWORD2 %>
+    <%= f.input :ASF_KEYWORD3 %>
+    <%= f.input :ASF_SOURCE %>
+    <%= f.input :ASF_FIELD1_LABEL %>
+    <%= f.input :ASF_FIELD2_LABEL %>
+    <%= f.input :ASF_FIELD3_LABEL %>
+    <%= f.input :ASF_FIELD4_LABEL %>
+    <%= f.input :ASF_FIELD5_LABEL %>
+    <%= f.input :ASF_FIELD1 %>
+    <%= f.input :ASF_FIELD2 %>
+    <%= f.input :ASF_FIELD3 %>
+    <%= f.input :ASF_FIELD4 %>
+    <%= f.input :ASF_FIELD5 %>
+    <%= f.input :ASF_OWNERSHIP %>
+    <%= f.input :ASF_AUTHOR_NAME %>
+    <%= f.input :ASF_AUTHOR_PHONE %>
+    <%= f.input :ASF_COPYRIGHT %>
+    <%= f.input :ASF_USAGE_RESTRICTION %>
+    <%= f.input :ASF_LAST_MOD_DATE %>
+    <%= f.input :ASF_LAST_MOD_BY %>
+    <%= f.input :ASF_LAST_MOD_DESC %>
+    <%= f.input :ASF_PROTECTED %>
+    <%= f.input :ASF_EDITED_BY %>
+    <%= f.input :ASF_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

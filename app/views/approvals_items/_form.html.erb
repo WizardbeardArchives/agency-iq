@@ -1,0 +1,16 @@
+<%= simple_form_for(@approvals_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :APPRX_ID %>
+    <%= f.input :APPRX_FILE_NAME %>
+    <%= f.input :APPRX_FILE_CPX %>
+    <%= f.input :APPRX_STATUS %>
+    <%= f.input :APPRX_STATUS_NOTE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

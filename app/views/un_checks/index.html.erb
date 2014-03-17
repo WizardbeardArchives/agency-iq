@@ -1,0 +1,47 @@
+<h1>Listing un_checks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Uncks debit</th>
+      <th>Uncks credit</th>
+      <th>Uncks desc</th>
+      <th>Uncks ref</th>
+      <th>Uncks temp rec</th>
+      <th>Uncks pay batch</th>
+      <th>Uncks source</th>
+      <th>Uncks reconcile</th>
+      <th>Uncks date</th>
+      <th>Uncks ac num</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @un_checks.each do |un_check| %>
+      <tr>
+        <td><%= un_check.primaryKey %></td>
+        <td><%= un_check.UNCKS_DEBIT %></td>
+        <td><%= un_check.UNCKS_CREDIT %></td>
+        <td><%= un_check.UNCKS_DESC %></td>
+        <td><%= un_check.UNCKS_REF %></td>
+        <td><%= un_check.UNCKS_TEMP_REC %></td>
+        <td><%= un_check.UNCKS_PAY_BATCH %></td>
+        <td><%= un_check.UNCKS_SOURCE %></td>
+        <td><%= un_check.UNCKS_RECONCILE %></td>
+        <td><%= un_check.UNCKS_DATE %></td>
+        <td><%= un_check.UNCKS_AC_NUM %></td>
+        <td><%= link_to 'Show', un_check %></td>
+        <td><%= link_to 'Edit', edit_un_check_path(un_check) %></td>
+        <td><%= link_to 'Destroy', un_check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Un check', new_un_check_path %>

@@ -1,0 +1,60 @@
+<%= simple_form_for(@ap) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :AP_NUM %>
+    <%= f.input :AP_VENDOR_NUM %>
+    <%= f.input :AP_DATE %>
+    <%= f.input :AP_KEY %>
+    <%= f.input :AP_DESC %>
+    <%= f.input :AP_CGL %>
+    <%= f.input :AP_NET_AMT %>
+    <%= f.input :AP_COMM_NET %>
+    <%= f.input :AP_MARKUP_PC %>
+    <%= f.input :AP_TAX_AMT %>
+    <%= f.input :AP_GROSS_AMT %>
+    <%= f.input :AP_POSTED %>
+    <%= f.input :AP_TOTAL_AMT %>
+    <%= f.input :AP_DISC_DATE %>
+    <%= f.input :AP_JUMPSTART %>
+    <%= f.input :AP_ADDED_BY %>
+    <%= f.input :AP_ADDED_WHEN %>
+    <%= f.input :AP_VOUCHER %>
+    <%= f.input :AP_TERMS1 %>
+    <%= f.input :AP_TERMS2 %>
+    <%= f.input :AP_TERMS3 %>
+    <%= f.input :AP_PAY_DATE %>
+    <%= f.input :AP_PERIOD %>
+    <%= f.input :AP_CURRENT %>
+    <%= f.input :AP_30 %>
+    <%= f.input :AP_60 %>
+    <%= f.input :AP_90 %>
+    <%= f.input :AP_AUTO_PAY %>
+    <%= f.input :AP_GST_GL %>
+    <%= f.input :AP_GST1 %>
+    <%= f.input :AP_GST2 %>
+    <%= f.input :AP_AMT_PAID %>
+    <%= f.input :AP_CLIENT_PAID %>
+    <%= f.input :AP_CLOSE_PO %>
+    <%= f.input :AP_UNPAID %>
+    <%= f.input :AP_KIND %>
+    <%= f.input :AP_DISC_TAKEN %>
+    <%= f.input :AP_EXPORTED %>
+    <%= f.input :AP_APPROVED %>
+    <%= f.input :AP_APPROVED_BY %>
+    <%= f.input :AP_APPROVED_DATE %>
+    <%= f.input :AP_EDITED_BY %>
+    <%= f.input :AP_EDITED_WHEN %>
+    <%= f.input :AP_POSTED_BY %>
+    <%= f.input :AP_POSTED_WHEN %>
+    <%= f.input :AP_PAID_CC %>
+    <%= f.input :AP_DATE_PAID %>
+    <%= f.input :AP_PAID_CC_INV_NUM %>
+    <%= f.input :AP_PAID_ONLINE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

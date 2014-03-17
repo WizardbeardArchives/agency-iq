@@ -1,0 +1,137 @@
+<h1>Listing costs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Cost num</th>
+      <th>Cost job num</th>
+      <th>Cost task</th>
+      <th>Cost note</th>
+      <th>Cost net amt</th>
+      <th>Cost gross amt</th>
+      <th>Cost hours</th>
+      <th>Cost kind</th>
+      <th>Cost date</th>
+      <th>Cost bill rate</th>
+      <th>Cost cost rate</th>
+      <th>Cost po num</th>
+      <th>Cost billable</th>
+      <th>Cost vendor</th>
+      <th>Cost period</th>
+      <th>Cost client num</th>
+      <th>Cost dgl</th>
+      <th>Cost posted</th>
+      <th>Cost key</th>
+      <th>Cost finished</th>
+      <th>Cost markup</th>
+      <th>Cost bill amt</th>
+      <th>Cost ar date</th>
+      <th>Cost ar num</th>
+      <th>Cost billed amt</th>
+      <th>Cost status</th>
+      <th>Cost ar paid</th>
+      <th>Cost ck num</th>
+      <th>Cost ref</th>
+      <th>Cost hours billed</th>
+      <th>Cost ot</th>
+      <th>Cost pox line</th>
+      <th>Cost gl</th>
+      <th>Cost j prod status</th>
+      <th>Cost j bill status</th>
+      <th>Cost pc</th>
+      <th>Cost qty</th>
+      <th>Cost days</th>
+      <th>Cost cost ea</th>
+      <th>Cost size</th>
+      <th>Cost added by</th>
+      <th>Cost gross ea</th>
+      <th>Cost adv ck</th>
+      <th>Cost exported</th>
+      <th>Cost wip exported</th>
+      <th>Cost wip rev exported</th>
+      <th>Cost sales tax</th>
+      <th>Cost approved by</th>
+      <th>Cost approved date</th>
+      <th>Cost reimburse ap num</th>
+      <th>Cost exp added by</th>
+      <th>Cost edited by</th>
+      <th>Cost edited when</th>
+      <th>Cost posted by</th>
+      <th>Cost posted when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @costs.each do |cost| %>
+      <tr>
+        <td><%= cost.primaryKey %></td>
+        <td><%= cost.COST_NUM %></td>
+        <td><%= cost.COST_JOB_NUM %></td>
+        <td><%= cost.COST_TASK %></td>
+        <td><%= cost.COST_NOTE %></td>
+        <td><%= cost.COST_NET_AMT %></td>
+        <td><%= cost.COST_GROSS_AMT %></td>
+        <td><%= cost.COST_HOURS %></td>
+        <td><%= cost.COST_KIND %></td>
+        <td><%= cost.COST_DATE %></td>
+        <td><%= cost.COST_BILL_RATE %></td>
+        <td><%= cost.COST_COST_RATE %></td>
+        <td><%= cost.COST_PO_NUM %></td>
+        <td><%= cost.COST_BILLABLE %></td>
+        <td><%= cost.COST_VENDOR %></td>
+        <td><%= cost.COST_PERIOD %></td>
+        <td><%= cost.COST_CLIENT_NUM %></td>
+        <td><%= cost.COST_DGL %></td>
+        <td><%= cost.COST_POSTED %></td>
+        <td><%= cost.COST_KEY %></td>
+        <td><%= cost.COST_FINISHED %></td>
+        <td><%= cost.COST_MARKUP %></td>
+        <td><%= cost.COST_BILL_AMT %></td>
+        <td><%= cost.COST_AR_DATE %></td>
+        <td><%= cost.COST_AR_NUM %></td>
+        <td><%= cost.COST_BILLED_AMT %></td>
+        <td><%= cost.COST_STATUS %></td>
+        <td><%= cost.COST_AR_PAID %></td>
+        <td><%= cost.COST_CK_NUM %></td>
+        <td><%= cost.COST_REF %></td>
+        <td><%= cost.COST_HOURS_BILLED %></td>
+        <td><%= cost.COST_OT %></td>
+        <td><%= cost.COST_POX_LINE %></td>
+        <td><%= cost.COST_GL %></td>
+        <td><%= cost.COST_J_PROD_STATUS %></td>
+        <td><%= cost.COST_J_BILL_STATUS %></td>
+        <td><%= cost.COST_PC %></td>
+        <td><%= cost.COST_QTY %></td>
+        <td><%= cost.COST_DAYS %></td>
+        <td><%= cost.COST_COST_EA %></td>
+        <td><%= cost.COST_SIZE %></td>
+        <td><%= cost.COST_ADDED_BY %></td>
+        <td><%= cost.COST_GROSS_EA %></td>
+        <td><%= cost.COST_ADV_CK %></td>
+        <td><%= cost.COST_EXPORTED %></td>
+        <td><%= cost.COST_WIP_EXPORTED %></td>
+        <td><%= cost.COST_WIP_REV_EXPORTED %></td>
+        <td><%= cost.COST_SALES_TAX %></td>
+        <td><%= cost.COST_APPROVED_BY %></td>
+        <td><%= cost.COST_APPROVED_DATE %></td>
+        <td><%= cost.COST_REIMBURSE_AP_NUM %></td>
+        <td><%= cost.COST_EXP_ADDED_BY %></td>
+        <td><%= cost.COST_EDITED_BY %></td>
+        <td><%= cost.COST_EDITED_WHEN %></td>
+        <td><%= cost.COST_POSTED_BY %></td>
+        <td><%= cost.COST_POSTED_WHEN %></td>
+        <td><%= link_to 'Show', cost %></td>
+        <td><%= link_to 'Edit', edit_cost_path(cost) %></td>
+        <td><%= link_to 'Destroy', cost, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cost', new_cost_path %>

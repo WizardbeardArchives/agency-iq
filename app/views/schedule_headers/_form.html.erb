@@ -1,0 +1,27 @@
+<%= simple_form_for(@schedule_header) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :SH_DATE1 %>
+    <%= f.input :SH_DATE2 %>
+    <%= f.input :SH_CLIENT_NUM %>
+    <%= f.input :SH_JOB_NUM %>
+    <%= f.input :SH_1 %>
+    <%= f.input :SH_2 %>
+    <%= f.input :SH_3 %>
+    <%= f.input :SH_4 %>
+    <%= f.input :SH_5 %>
+    <%= f.input :SH_6 %>
+    <%= f.input :SH_7 %>
+    <%= f.input :SH_8 %>
+    <%= f.input :SH_9 %>
+    <%= f.input :SH_10 %>
+    <%= f.input :SH_11 %>
+    <%= f.input :SH_12 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

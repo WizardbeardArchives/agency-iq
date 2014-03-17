@@ -1,0 +1,51 @@
+<h1>Listing int_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Int item</th>
+      <th>Int size</th>
+      <th>Int key</th>
+      <th>Int desc</th>
+      <th>Int task</th>
+      <th>Int cost ea</th>
+      <th>Int unit</th>
+      <th>Int gross ea</th>
+      <th>Int added by</th>
+      <th>Int added when</th>
+      <th>Int edited by</th>
+      <th>Int edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @int_items.each do |int_item| %>
+      <tr>
+        <td><%= int_item.primaryKey %></td>
+        <td><%= int_item.INT_ITEM %></td>
+        <td><%= int_item.INT_SIZE %></td>
+        <td><%= int_item.INT_KEY %></td>
+        <td><%= int_item.INT_DESC %></td>
+        <td><%= int_item.INT_TASK %></td>
+        <td><%= int_item.INT_COST_EA %></td>
+        <td><%= int_item.INT_UNIT %></td>
+        <td><%= int_item.INT_GROSS_EA %></td>
+        <td><%= int_item.INT_ADDED_BY %></td>
+        <td><%= int_item.INT_ADDED_WHEN %></td>
+        <td><%= int_item.INT_EDITED_BY %></td>
+        <td><%= int_item.INT_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', int_item %></td>
+        <td><%= link_to 'Edit', edit_int_item_path(int_item) %></td>
+        <td><%= link_to 'Destroy', int_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Int item', new_int_item_path %>

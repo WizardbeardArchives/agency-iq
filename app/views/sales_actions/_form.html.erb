@@ -1,0 +1,30 @@
+<%= simple_form_for(@sales_action) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :SACT_KIND %>
+    <%= f.input :SACT_DATE %>
+    <%= f.input :SACT_TIME %>
+    <%= f.input :SACT_LENGTH %>
+    <%= f.input :SACT_CAMPAIGN %>
+    <%= f.input :SACT_CON__SEQ %>
+    <%= f.input :SACT_PRIORITY %>
+    <%= f.input :SACT_SLTR__SEQ %>
+    <%= f.input :SACT_FROM_STAFF %>
+    <%= f.input :SACT_PRINTED %>
+    <%= f.input :SACT_PRINTED_BY %>
+    <%= f.input :SACT_CLIENT_NUM %>
+    <%= f.input :SACT_ADDED_BY %>
+    <%= f.input :SACT_SUBJECT %>
+    <%= f.input :SACT_BODY %>
+    <%= f.input :SACT_PS %>
+    <%= f.input :SACT_ADDED_WHEN %>
+    <%= f.input :SACT_EDITED_BY %>
+    <%= f.input :SACT_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

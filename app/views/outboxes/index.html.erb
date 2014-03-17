@@ -1,0 +1,51 @@
+<h1>Listing outboxes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Out from email</th>
+      <th>Out to email</th>
+      <th>Out subject</th>
+      <th>Out body</th>
+      <th>Out cc</th>
+      <th>Out bcc</th>
+      <th>Out real name</th>
+      <th>Out attachment</th>
+      <th>Out date added</th>
+      <th>Out added by</th>
+      <th>Out send date</th>
+      <th>Out ok</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @outboxes.each do |outbox| %>
+      <tr>
+        <td><%= outbox.primaryKey %></td>
+        <td><%= outbox.OUT_FROM_EMAIL %></td>
+        <td><%= outbox.OUT_TO_EMAIL %></td>
+        <td><%= outbox.OUT_SUBJECT %></td>
+        <td><%= outbox.OUT_BODY %></td>
+        <td><%= outbox.OUT_CC %></td>
+        <td><%= outbox.OUT_BCC %></td>
+        <td><%= outbox.OUT_REAL_NAME %></td>
+        <td><%= outbox.OUT_ATTACHMENT %></td>
+        <td><%= outbox.OUT_DATE_ADDED %></td>
+        <td><%= outbox.OUT_ADDED_BY %></td>
+        <td><%= outbox.OUT_SEND_DATE %></td>
+        <td><%= outbox.OUT_OK %></td>
+        <td><%= link_to 'Show', outbox %></td>
+        <td><%= link_to 'Edit', edit_outbox_path(outbox) %></td>
+        <td><%= link_to 'Destroy', outbox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Outbox', new_outbox_path %>

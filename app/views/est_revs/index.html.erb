@@ -1,0 +1,81 @@
+<h1>Listing est_revs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rv job num</th>
+      <th>Rv task</th>
+      <th>Rv est1</th>
+      <th>Rv est2</th>
+      <th>Rv est3</th>
+      <th>Rv name</th>
+      <th>Rv group</th>
+      <th>Rv sort</th>
+      <th>Rv final</th>
+      <th>Rv revision</th>
+      <th>Rv est head1</th>
+      <th>Rv est head2</th>
+      <th>Rv est head3</th>
+      <th>Rv est hrs1</th>
+      <th>Rv est hrs2</th>
+      <th>Rv est hrs3</th>
+      <th>Rv budget</th>
+      <th>Rv revised by</th>
+      <th>Rv revision date</th>
+      <th>Rv revision notes</th>
+      <th>Rv reason</th>
+      <th>Rv rev okd by</th>
+      <th>Rv rev okd date</th>
+      <th>Rv added by</th>
+      <th>Rv added when</th>
+      <th>Rv edited by</th>
+      <th>Rv edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @est_revs.each do |est_rev| %>
+      <tr>
+        <td><%= est_rev.primaryKey %></td>
+        <td><%= est_rev.RV_JOB_NUM %></td>
+        <td><%= est_rev.RV_TASK %></td>
+        <td><%= est_rev.RV_EST1 %></td>
+        <td><%= est_rev.RV_EST2 %></td>
+        <td><%= est_rev.RV_EST3 %></td>
+        <td><%= est_rev.RV_NAME %></td>
+        <td><%= est_rev.RV_GROUP %></td>
+        <td><%= est_rev.RV_SORT %></td>
+        <td><%= est_rev.RV_FINAL %></td>
+        <td><%= est_rev.RV_REVISION %></td>
+        <td><%= est_rev.RV_EST_HEAD1 %></td>
+        <td><%= est_rev.RV_EST_HEAD2 %></td>
+        <td><%= est_rev.RV_EST_HEAD3 %></td>
+        <td><%= est_rev.RV_EST_HRS1 %></td>
+        <td><%= est_rev.RV_EST_HRS2 %></td>
+        <td><%= est_rev.RV_EST_HRS3 %></td>
+        <td><%= est_rev.RV_BUDGET %></td>
+        <td><%= est_rev.RV_REVISED_BY %></td>
+        <td><%= est_rev.RV_REVISION_DATE %></td>
+        <td><%= est_rev.RV_REVISION_NOTES %></td>
+        <td><%= est_rev.RV_REASON %></td>
+        <td><%= est_rev.RV_REV_OKD_BY %></td>
+        <td><%= est_rev.RV_REV_OKD_DATE %></td>
+        <td><%= est_rev.RV_ADDED_BY %></td>
+        <td><%= est_rev.RV_ADDED_WHEN %></td>
+        <td><%= est_rev.RV_EDITED_BY %></td>
+        <td><%= est_rev.RV_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', est_rev %></td>
+        <td><%= link_to 'Edit', edit_est_rev_path(est_rev) %></td>
+        <td><%= link_to 'Destroy', est_rev, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Est rev', new_est_rev_path %>

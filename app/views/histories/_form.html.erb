@@ -1,0 +1,25 @@
+<%= simple_form_for(@history) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :H_JOB_NUM %>
+    <%= f.input :H_NUM %>
+    <%= f.input :H_WHO %>
+    <%= f.input :H_DATE %>
+    <%= f.input :H_DESC %>
+    <%= f.input :H_RESOLVED %>
+    <%= f.input :H_FOR %>
+    <%= f.input :H_USER_NOTE %>
+    <%= f.input :H_MAIL_TO %>
+    <%= f.input :H_MANUAL %>
+    <%= f.input :H_ADDED_BY %>
+    <%= f.input :H_ADDED_WHEN %>
+    <%= f.input :H_EDITED_BY %>
+    <%= f.input :H_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

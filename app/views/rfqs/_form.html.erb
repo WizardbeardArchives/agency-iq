@@ -1,0 +1,50 @@
+<%= simple_form_for(@rfq) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :RFQ_NUM %>
+    <%= f.input :RFQ_JOB_NUM %>
+    <%= f.input :RFQ_TASK %>
+    <%= f.input :RFQ_VENDOR_NUM %>
+    <%= f.input :RFQ_DATE %>
+    <%= f.input :RFQ_PROD_CONTACT %>
+    <%= f.input :RFQ_NAME %>
+    <%= f.input :RFQ_DESC %>
+    <%= f.input :RFQ_QTY %>
+    <%= f.input :RFQ_CLIENT_NUM %>
+    <%= f.input :RFQ_CLIENT_CONTACT %>
+    <%= f.input :RFQ_CLIENT_ADDR1 %>
+    <%= f.input :RFQ_CLIENT_ADDR2 %>
+    <%= f.input :RFQ_CLIENT_ADDR3 %>
+    <%= f.input :RFQ_CLIENT_ADDR4 %>
+    <%= f.input :RFQ_CLIENT_ADDR5 %>
+    <%= f.input :RFQ_CLIENT_ADDR6 %>
+    <%= f.input :RFQ_PREP %>
+    <%= f.input :RFQ_KITTING %>
+    <%= f.input :RFQ_SHIPPING %>
+    <%= f.input :RFQ_CLIENT_NOTES %>
+    <%= f.input :RFQ_TERMS %>
+    <%= f.input :RFQ_APPROVED %>
+    <%= f.input :RFQ_CLIENT_OK %>
+    <%= f.input :RFQ_CLIENT_OK_DATE %>
+    <%= f.input :RFQ_CLIENT_OK_BY %>
+    <%= f.input :RFQ_TOTAL_COST %>
+    <%= f.input :RFQ_TOTAL_GROSS %>
+    <%= f.input :RFQ_SPECIAL_INSTR %>
+    <%= f.input :RFQ_DEL_INSTR %>
+    <%= f.input :RFQ_AUTH %>
+    <%= f.input :RFQ_STATUS %>
+    <%= f.input :RFQ_ADDED_BY %>
+    <%= f.input :RFQ_QUOTE_NEEDED %>
+    <%= f.input :RFQ_DEL_DATE %>
+    <%= f.input :RFQ_PROD_CONTACT_EMAIL %>
+    <%= f.input :RFQ_TAXABLE1 %>
+    <%= f.input :RFQ_TAXABLE2 %>
+    <%= f.input :RFQ_PROD_CONTACT_PH %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

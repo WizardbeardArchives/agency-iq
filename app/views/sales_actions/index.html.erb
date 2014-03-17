@@ -1,0 +1,65 @@
+<h1>Listing sales_actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Sact kind</th>
+      <th>Sact date</th>
+      <th>Sact time</th>
+      <th>Sact length</th>
+      <th>Sact campaign</th>
+      <th>Sact con  seq</th>
+      <th>Sact priority</th>
+      <th>Sact sltr  seq</th>
+      <th>Sact from staff</th>
+      <th>Sact printed</th>
+      <th>Sact printed by</th>
+      <th>Sact client num</th>
+      <th>Sact added by</th>
+      <th>Sact subject</th>
+      <th>Sact body</th>
+      <th>Sact ps</th>
+      <th>Sact added when</th>
+      <th>Sact edited by</th>
+      <th>Sact edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_actions.each do |sales_action| %>
+      <tr>
+        <td><%= sales_action.primaryKey %></td>
+        <td><%= sales_action.SACT_KIND %></td>
+        <td><%= sales_action.SACT_DATE %></td>
+        <td><%= sales_action.SACT_TIME %></td>
+        <td><%= sales_action.SACT_LENGTH %></td>
+        <td><%= sales_action.SACT_CAMPAIGN %></td>
+        <td><%= sales_action.SACT_CON__SEQ %></td>
+        <td><%= sales_action.SACT_PRIORITY %></td>
+        <td><%= sales_action.SACT_SLTR__SEQ %></td>
+        <td><%= sales_action.SACT_FROM_STAFF %></td>
+        <td><%= sales_action.SACT_PRINTED %></td>
+        <td><%= sales_action.SACT_PRINTED_BY %></td>
+        <td><%= sales_action.SACT_CLIENT_NUM %></td>
+        <td><%= sales_action.SACT_ADDED_BY %></td>
+        <td><%= sales_action.SACT_SUBJECT %></td>
+        <td><%= sales_action.SACT_BODY %></td>
+        <td><%= sales_action.SACT_PS %></td>
+        <td><%= sales_action.SACT_ADDED_WHEN %></td>
+        <td><%= sales_action.SACT_EDITED_BY %></td>
+        <td><%= sales_action.SACT_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', sales_action %></td>
+        <td><%= link_to 'Edit', edit_sales_action_path(sales_action) %></td>
+        <td><%= link_to 'Destroy', sales_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales action', new_sales_action_path %>

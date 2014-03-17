@@ -1,0 +1,20 @@
+<%= simple_form_for(@rfq_sku) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :RFQSKU_PART_NUM %>
+    <%= f.input :RFQSKU_NAME %>
+    <%= f.input :RFQSKU_DESC %>
+    <%= f.input :RFQSKU_TYPE %>
+    <%= f.input :RFQSKU_MARKUP %>
+    <%= f.input :RFQSKU_UNIT_COST %>
+    <%= f.input :RFQSKU_VENDOR_NUM %>
+    <%= f.input :RFQSKU_TASK %>
+    <%= f.input :RFQSKU_JOB_TYPE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

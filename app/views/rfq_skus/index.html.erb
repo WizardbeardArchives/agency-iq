@@ -1,0 +1,45 @@
+<h1>Listing rfq_skus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rfqsku part num</th>
+      <th>Rfqsku name</th>
+      <th>Rfqsku desc</th>
+      <th>Rfqsku type</th>
+      <th>Rfqsku markup</th>
+      <th>Rfqsku unit cost</th>
+      <th>Rfqsku vendor num</th>
+      <th>Rfqsku task</th>
+      <th>Rfqsku job type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rfq_skus.each do |rfq_sku| %>
+      <tr>
+        <td><%= rfq_sku.primaryKey %></td>
+        <td><%= rfq_sku.RFQSKU_PART_NUM %></td>
+        <td><%= rfq_sku.RFQSKU_NAME %></td>
+        <td><%= rfq_sku.RFQSKU_DESC %></td>
+        <td><%= rfq_sku.RFQSKU_TYPE %></td>
+        <td><%= rfq_sku.RFQSKU_MARKUP %></td>
+        <td><%= rfq_sku.RFQSKU_UNIT_COST %></td>
+        <td><%= rfq_sku.RFQSKU_VENDOR_NUM %></td>
+        <td><%= rfq_sku.RFQSKU_TASK %></td>
+        <td><%= rfq_sku.RFQSKU_JOB_TYPE %></td>
+        <td><%= link_to 'Show', rfq_sku %></td>
+        <td><%= link_to 'Edit', edit_rfq_sku_path(rfq_sku) %></td>
+        <td><%= link_to 'Destroy', rfq_sku, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rfq sku', new_rfq_sku_path %>

@@ -1,0 +1,30 @@
+<%= simple_form_for(@address) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :ADR_CLIENT_NUM %>
+    <%= f.input :ADR_NAME %>
+    <%= f.input :ADR_ADDRESS1 %>
+    <%= f.input :ADR_ADDRESS2 %>
+    <%= f.input :ADR_ADDRESS3 %>
+    <%= f.input :ADR_ADDRESS4 %>
+    <%= f.input :ADR_ADDRESS5 %>
+    <%= f.input :ADR_ADDRESS6 %>
+    <%= f.input :ADR_KIND %>
+    <%= f.input :ADR_ORG %>
+    <%= f.input :ADR_TAX_AREA %>
+    <%= f.input :ADR_TAX_RATE1 %>
+    <%= f.input :ADR_TAX_RATE2 %>
+    <%= f.input :ADR_TAX_GL1 %>
+    <%= f.input :ADR_TAX_GL2 %>
+    <%= f.input :ADR_ADDED_BY %>
+    <%= f.input :ADR_ADDED_WHEN %>
+    <%= f.input :ADR_EDITED_BY %>
+    <%= f.input :ADR_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

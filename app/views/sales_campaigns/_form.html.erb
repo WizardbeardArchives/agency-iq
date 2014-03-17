@@ -1,0 +1,29 @@
+<%= simple_form_for(@sales_campaign) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :SCAM_ID %>
+    <%= f.input :SCAM_DESC %>
+    <%= f.input :SCAM_ADDED_BY %>
+    <%= f.input :SCAM_START %>
+    <%= f.input :SCAM_END %>
+    <%= f.input :SCAM_ACTION %>
+    <%= f.input :SCAM_ACTION1 %>
+    <%= f.input :SCAM_ACTION1_DAYS %>
+    <%= f.input :SCAM_ACTION2 %>
+    <%= f.input :SCAM_ACTION2_DAYS %>
+    <%= f.input :SCAM_ACTION3 %>
+    <%= f.input :SCAM_ACTION3_DAYS %>
+    <%= f.input :SCAM_CLIENT_NUM %>
+    <%= f.input :SCAM_OK %>
+    <%= f.input :SCAM_OK_BY %>
+    <%= f.input :SCAM_ADDED_WHEN %>
+    <%= f.input :SCAM_EDITED_BY %>
+    <%= f.input :SCAM_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

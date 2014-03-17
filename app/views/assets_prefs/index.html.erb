@@ -1,0 +1,57 @@
+<h1>Listing assets_prefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Asp code</th>
+      <th>Asp auto folder</th>
+      <th>Asp art server</th>
+      <th>Asp ip</th>
+      <th>Asp field1</th>
+      <th>Asp field2</th>
+      <th>Asp field3</th>
+      <th>Asp field4</th>
+      <th>Asp field5</th>
+      <th>Asp track usage</th>
+      <th>Asp art server w</th>
+      <th>Asp edited by</th>
+      <th>Asp edited when</th>
+      <th>Asp incl jname</th>
+      <th>Asp org by client</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assets_prefs.each do |assets_pref| %>
+      <tr>
+        <td><%= assets_pref.primaryKey %></td>
+        <td><%= assets_pref.ASP_CODE %></td>
+        <td><%= assets_pref.ASP_AUTO_FOLDER %></td>
+        <td><%= assets_pref.ASP_ART_SERVER %></td>
+        <td><%= assets_pref.ASP_IP %></td>
+        <td><%= assets_pref.ASP_FIELD1 %></td>
+        <td><%= assets_pref.ASP_FIELD2 %></td>
+        <td><%= assets_pref.ASP_FIELD3 %></td>
+        <td><%= assets_pref.ASP_FIELD4 %></td>
+        <td><%= assets_pref.ASP_FIELD5 %></td>
+        <td><%= assets_pref.ASP_TRACK_USAGE %></td>
+        <td><%= assets_pref.ASP_ART_SERVER_W %></td>
+        <td><%= assets_pref.ASP_EDITED_BY %></td>
+        <td><%= assets_pref.ASP_EDITED_WHEN %></td>
+        <td><%= assets_pref.ASP_INCL_JNAME %></td>
+        <td><%= assets_pref.ASP_ORG_BY_CLIENT %></td>
+        <td><%= link_to 'Show', assets_pref %></td>
+        <td><%= link_to 'Edit', edit_assets_pref_path(assets_pref) %></td>
+        <td><%= link_to 'Destroy', assets_pref, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assets pref', new_assets_pref_path %>

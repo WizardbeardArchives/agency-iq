@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @mlink_log.primaryKey %>
+</p>
+
+<p>
+  <strong>Mlog date:</strong>
+  <%= @mlink_log.MLOG_DATE %>
+</p>
+
+<p>
+  <strong>Mlog buyid:</strong>
+  <%= @mlink_log.MLOG_BUYID %>
+</p>
+
+<p>
+  <strong>Mlog status:</strong>
+  <%= @mlink_log.MLOG_STATUS %>
+</p>
+
+<p>
+  <strong>Mlog added by:</strong>
+  <%= @mlink_log.MLOG_ADDED_BY %>
+</p>
+
+<%= link_to 'Edit', edit_mlink_log_path(@mlink_log) %> |
+<%= link_to 'Back', mlink_logs_path %>

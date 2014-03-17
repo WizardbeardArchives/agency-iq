@@ -1,0 +1,21 @@
+<%= simple_form_for(@avail) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :AV_INITIALS %>
+    <%= f.input :AV_DATE %>
+    <%= f.input :AV_KEY %>
+    <%= f.input :AV_KIND %>
+    <%= f.input :AV_NOTE %>
+    <%= f.input :AV_DESC %>
+    <%= f.input :AV_ADDED_BY %>
+    <%= f.input :AV_ADDED_WHEN %>
+    <%= f.input :AV_EDITED_BY %>
+    <%= f.input :AV_EDIT_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

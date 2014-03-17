@@ -1,0 +1,43 @@
+<%= simple_form_for(@check) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :CK_NUM %>
+    <%= f.input :CK_VENDOR_NUM %>
+    <%= f.input :CK_PAYEE %>
+    <%= f.input :CK_ADDRESS1 %>
+    <%= f.input :CK_ADDRESS2 %>
+    <%= f.input :CK_ADDRESS3 %>
+    <%= f.input :CK_DATE %>
+    <%= f.input :CK_POSTED %>
+    <%= f.input :CK_MEMO %>
+    <%= f.input :CK_NET_AMT %>
+    <%= f.input :CK_CGL %>
+    <%= f.input :CK_PAY %>
+    <%= f.input :CK_ADDED_BY %>
+    <%= f.input :CK_ADDED_WHEN %>
+    <%= f.input :CK_CLEARED %>
+    <%= f.input :CK_DONT_PRINT %>
+    <%= f.input :CK_AMOUNT %>
+    <%= f.input :CK_TYPE %>
+    <%= f.input :CK_GROSS %>
+    <%= f.input :CK_DISC_AMT %>
+    <%= f.input :CK_DISC_GL %>
+    <%= f.input :CK_OK %>
+    <%= f.input :CK_PERIOD %>
+    <%= f.input :CK_1099 %>
+    <%= f.input :CK_TAX_ID %>
+    <%= f.input :CK_EMP_ADV_EXP %>
+    <%= f.input :CK_EMPL_ADV_CK %>
+    <%= f.input :CK_EDITED_BY %>
+    <%= f.input :CK_EDITED_WHEN %>
+    <%= f.input :CK_POSTED_BY %>
+    <%= f.input :CK_POSTED_WHEN %>
+    <%= f.input :CK_ONLINE_PMT_CONFIRM_NUM %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

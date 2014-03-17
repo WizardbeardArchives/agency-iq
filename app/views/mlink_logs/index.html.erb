@@ -1,0 +1,35 @@
+<h1>Listing mlink_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Mlog date</th>
+      <th>Mlog buyid</th>
+      <th>Mlog status</th>
+      <th>Mlog added by</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mlink_logs.each do |mlink_log| %>
+      <tr>
+        <td><%= mlink_log.primaryKey %></td>
+        <td><%= mlink_log.MLOG_DATE %></td>
+        <td><%= mlink_log.MLOG_BUYID %></td>
+        <td><%= mlink_log.MLOG_STATUS %></td>
+        <td><%= mlink_log.MLOG_ADDED_BY %></td>
+        <td><%= link_to 'Show', mlink_log %></td>
+        <td><%= link_to 'Edit', edit_mlink_log_path(mlink_log) %></td>
+        <td><%= link_to 'Destroy', mlink_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mlink log', new_mlink_log_path %>

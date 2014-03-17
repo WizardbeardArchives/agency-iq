@@ -1,0 +1,33 @@
+<%= simple_form_for(@payment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PAY_CLIENT_NUM %>
+    <%= f.input :PAY_CHECK_NUM %>
+    <%= f.input :PAY_AMT %>
+    <%= f.input :PAY_CHECK_DATE %>
+    <%= f.input :PAY_TYPE %>
+    <%= f.input :PAY_DATE %>
+    <%= f.input :PAY_DESC %>
+    <%= f.input :PAY_DGL %>
+    <%= f.input :PAY_BOOLEAN %>
+    <%= f.input :PAY_POSTED %>
+    <%= f.input :PAY_ADDED_BY %>
+    <%= f.input :PAY_ADDED_WHEN %>
+    <%= f.input :PAY_OK %>
+    <%= f.input :PAY_PERIOD %>
+    <%= f.input :PAY_BANK %>
+    <%= f.input :PAY_KIND %>
+    <%= f.input :PAY_BATCH %>
+    <%= f.input :PAY_BANK_ID %>
+    <%= f.input :PAY_EDITED_BY %>
+    <%= f.input :PAY_EDITED_WHEN %>
+    <%= f.input :PAY_POSTED_BY %>
+    <%= f.input :PAY_POSTED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,37 @@
+<%= simple_form_for(@je) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :JE_DATE %>
+    <%= f.input :JE_REF %>
+    <%= f.input :JE_POSTED %>
+    <%= f.input :JE_DESC %>
+    <%= f.input :JE_DEBIT %>
+    <%= f.input :JE_CREDIT %>
+    <%= f.input :JE_AC_NUM %>
+    <%= f.input :JE_PERIOD %>
+    <%= f.input :JE_JOB_NUM %>
+    <%= f.input :JE_CLIENT_NUM %>
+    <%= f.input :JE_RECONCILE %>
+    <%= f.input :JE_SOURCE %>
+    <%= f.input :JE_ADDED_BY %>
+    <%= f.input :JE_ADDED_WHEN %>
+    <%= f.input :JE_VENDOR_NUM %>
+    <%= f.input :JE_AUTO_REV %>
+    <%= f.input :JE_AUTO_ACC %>
+    <%= f.input :JE_TEMP_REC %>
+    <%= f.input :JE_KIND %>
+    <%= f.input :JE_PAY_BATCH %>
+    <%= f.input :JE_GL_REC %>
+    <%= f.input :JE_EXPORTED %>
+    <%= f.input :JE_EDITED_BY %>
+    <%= f.input :JE_EDITED_WHEN %>
+    <%= f.input :JE_POSTED_BY %>
+    <%= f.input :JE_POSTED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @thought.primaryKey %>
+</p>
+
+<p>
+  <strong>Msg date:</strong>
+  <%= @thought.MSG_DATE %>
+</p>
+
+<p>
+  <strong>Msg text:</strong>
+  <%= @thought.MSG_TEXT %>
+</p>
+
+<p>
+  <strong>Msg 1:</strong>
+  <%= @thought.MSG_1 %>
+</p>
+
+<p>
+  <strong>Msg daily info ctr:</strong>
+  <%= @thought.MSG_DAILY_INFO_CTR %>
+</p>
+
+<%= link_to 'Edit', edit_thought_path(@thought) %> |
+<%= link_to 'Back', thoughts_path %>

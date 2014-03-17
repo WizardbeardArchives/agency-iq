@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @web_log.primaryKey %>
+</p>
+
+<p>
+  <strong>Wlog datetime:</strong>
+  <%= @web_log.WLOG_DATETIME %>
+</p>
+
+<p>
+  <strong>Wlog user:</strong>
+  <%= @web_log.WLOG_USER %>
+</p>
+
+<p>
+  <strong>Wlog status:</strong>
+  <%= @web_log.WLOG_STATUS %>
+</p>
+
+<p>
+  <strong>Wlog event:</strong>
+  <%= @web_log.WLOG_EVENT %>
+</p>
+
+<p>
+  <strong>Wlog page:</strong>
+  <%= @web_log.WLOG_PAGE %>
+</p>
+
+<p>
+  <strong>Wlog ip:</strong>
+  <%= @web_log.WLOG_IP %>
+</p>
+
+<p>
+  <strong>Wlog date:</strong>
+  <%= @web_log.WLOG_DATE %>
+</p>
+
+<p>
+  <strong>Wlog time:</strong>
+  <%= @web_log.WLOG_TIME %>
+</p>
+
+<p>
+  <strong>Wlog day:</strong>
+  <%= @web_log.WLOG_DAY %>
+</p>
+
+<p>
+  <strong>Wlog hour:</strong>
+  <%= @web_log.WLOG_HOUR %>
+</p>
+
+<%= link_to 'Edit', edit_web_log_path(@web_log) %> |
+<%= link_to 'Back', web_logs_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @palm_task.primaryKey %>
+</p>
+
+<p>
+  <strong>Palm task code:</strong>
+  <%= @palm_task.PALM_TASK_CODE %>
+</p>
+
+<p>
+  <strong>Palm task name:</strong>
+  <%= @palm_task.PALM_TASK_NAME %>
+</p>
+
+<p>
+  <strong>Palm task user:</strong>
+  <%= @palm_task.PALM_TASK_USER %>
+</p>
+
+<p>
+  <strong>Palm task id:</strong>
+  <%= @palm_task.PALM_TASK_ID %>
+</p>
+
+<p>
+  <strong>Palm task cat:</strong>
+  <%= @palm_task.PALM_TASK_CAT %>
+</p>
+
+<p>
+  <strong>Palm task attribs:</strong>
+  <%= @palm_task.PALM_TASK_ATTRIBS %>
+</p>
+
+<%= link_to 'Edit', edit_palm_task_path(@palm_task) %> |
+<%= link_to 'Back', palm_tasks_path %>

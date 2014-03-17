@@ -1,0 +1,121 @@
+<h1>Listing po_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Pox line number</th>
+      <th>Pox job num</th>
+      <th>Pox task</th>
+      <th>Pox desc</th>
+      <th>Pox program</th>
+      <th>Pox qty</th>
+      <th>Pox cost each</th>
+      <th>Pox cost</th>
+      <th>Pox markup</th>
+      <th>Pox gross</th>
+      <th>Pox cost paid</th>
+      <th>Pox gross paid</th>
+      <th>Pox po num</th>
+      <th>Pox billable</th>
+      <th>Pox unit</th>
+      <th>Pox name</th>
+      <th>Pox key</th>
+      <th>Pox buydetid</th>
+      <th>Pox due date</th>
+      <th>Pox due date2</th>
+      <th>Pox issue date</th>
+      <th>Pox revision</th>
+      <th>Pox ap ok</th>
+      <th>Pox ad size</th>
+      <th>Pox ad name</th>
+      <th>Pox ar num</th>
+      <th>Pox pub</th>
+      <th>Pox client num</th>
+      <th>Pox bill net</th>
+      <th>Pox type</th>
+      <th>Pox rating</th>
+      <th>Pox cpp</th>
+      <th>Pox cpm</th>
+      <th>Pox makegood</th>
+      <th>Pox ar amt</th>
+      <th>Pox cost num</th>
+      <th>Pox bill date</th>
+      <th>Pox sales tax</th>
+      <th>Pox issue date2</th>
+      <th>Pox trade</th>
+      <th>Pox run date</th>
+      <th>Pox added by</th>
+      <th>Pox added when</th>
+      <th>Pox edited by</th>
+      <th>Pox edited when</th>
+      <th>Pox taxable1</th>
+      <th>Pox taxable2</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @po_items.each do |po_item| %>
+      <tr>
+        <td><%= po_item.primaryKey %></td>
+        <td><%= po_item.POX_LINE_NUMBER %></td>
+        <td><%= po_item.POX_JOB_NUM %></td>
+        <td><%= po_item.POX_TASK %></td>
+        <td><%= po_item.POX_DESC %></td>
+        <td><%= po_item.POX_PROGRAM %></td>
+        <td><%= po_item.POX_QTY %></td>
+        <td><%= po_item.POX_COST_EACH %></td>
+        <td><%= po_item.POX_COST %></td>
+        <td><%= po_item.POX_MARKUP %></td>
+        <td><%= po_item.POX_GROSS %></td>
+        <td><%= po_item.POX_COST_PAID %></td>
+        <td><%= po_item.POX_GROSS_PAID %></td>
+        <td><%= po_item.POX_PO_NUM %></td>
+        <td><%= po_item.POX_BILLABLE %></td>
+        <td><%= po_item.POX_UNIT %></td>
+        <td><%= po_item.POX_NAME %></td>
+        <td><%= po_item.POX_KEY %></td>
+        <td><%= po_item.POX_BUYDETID %></td>
+        <td><%= po_item.POX_DUE_DATE %></td>
+        <td><%= po_item.POX_DUE_DATE2 %></td>
+        <td><%= po_item.POX_ISSUE_DATE %></td>
+        <td><%= po_item.POX_REVISION %></td>
+        <td><%= po_item.POX_AP_OK %></td>
+        <td><%= po_item.POX_AD_SIZE %></td>
+        <td><%= po_item.POX_AD_NAME %></td>
+        <td><%= po_item.POX_AR_NUM %></td>
+        <td><%= po_item.POX_PUB %></td>
+        <td><%= po_item.POX_CLIENT_NUM %></td>
+        <td><%= po_item.POX_BILL_NET %></td>
+        <td><%= po_item.POX_TYPE %></td>
+        <td><%= po_item.POX_RATING %></td>
+        <td><%= po_item.POX_CPP %></td>
+        <td><%= po_item.POX_CPM %></td>
+        <td><%= po_item.POX_MAKEGOOD %></td>
+        <td><%= po_item.POX_AR_AMT %></td>
+        <td><%= po_item.POX_COST_NUM %></td>
+        <td><%= po_item.POX_BILL_DATE %></td>
+        <td><%= po_item.POX_SALES_TAX %></td>
+        <td><%= po_item.POX_ISSUE_DATE2 %></td>
+        <td><%= po_item.POX_TRADE %></td>
+        <td><%= po_item.POX_RUN_DATE %></td>
+        <td><%= po_item.POX_ADDED_BY %></td>
+        <td><%= po_item.POX_ADDED_WHEN %></td>
+        <td><%= po_item.POX_EDITED_BY %></td>
+        <td><%= po_item.POX_EDITED_WHEN %></td>
+        <td><%= po_item.POX_TAXABLE1 %></td>
+        <td><%= po_item.POX_TAXABLE2 %></td>
+        <td><%= link_to 'Show', po_item %></td>
+        <td><%= link_to 'Edit', edit_po_item_path(po_item) %></td>
+        <td><%= link_to 'Destroy', po_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Po item', new_po_item_path %>

@@ -1,0 +1,41 @@
+<h1>Listing pictures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Picture num</th>
+      <th>Picture photo</th>
+      <th>Picture text</th>
+      <th>Picture added by</th>
+      <th>Picture added when</th>
+      <th>Picture edited by</th>
+      <th>Picture edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pictures.each do |picture| %>
+      <tr>
+        <td><%= picture.primaryKey %></td>
+        <td><%= picture.PICTURE_NUM %></td>
+        <td><%= picture.PICTURE_PHOTO %></td>
+        <td><%= picture.PICTURE_TEXT %></td>
+        <td><%= picture.PICTURE_ADDED_BY %></td>
+        <td><%= picture.PICTURE_ADDED_WHEN %></td>
+        <td><%= picture.PICTURE_EDITED_BY %></td>
+        <td><%= picture.PICTURE_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', picture %></td>
+        <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+        <td><%= link_to 'Destroy', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Picture', new_picture_path %>

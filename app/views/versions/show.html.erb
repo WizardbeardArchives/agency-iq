@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @version.primaryKey %>
+</p>
+
+<p>
+  <strong>Ver program:</strong>
+  <%= @version.VER_PROGRAM %>
+</p>
+
+<p>
+  <strong>Ver name:</strong>
+  <%= @version.VER_NAME %>
+</p>
+
+<p>
+  <strong>Ver a:</strong>
+  <%= @version.VER_A %>
+</p>
+
+<p>
+  <strong>Ver b:</strong>
+  <%= @version.VER_B %>
+</p>
+
+<p>
+  <strong>Ver c:</strong>
+  <%= @version.VER_C %>
+</p>
+
+<p>
+  <strong>Ver beta num:</strong>
+  <%= @version.VER_BETA_NUM %>
+</p>
+
+<p>
+  <strong>Ver demo:</strong>
+  <%= @version.VER_DEMO %>
+</p>
+
+<%= link_to 'Edit', edit_version_path(@version) %> |
+<%= link_to 'Back', versions_path %>

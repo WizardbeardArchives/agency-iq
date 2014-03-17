@@ -1,0 +1,2 @@
+module RfqVendorsHelper
+end

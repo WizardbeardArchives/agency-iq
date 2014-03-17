@@ -1,0 +1,52 @@
+<%= simple_form_for(@media_brief) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :BR_CAMPAIGN %>
+    <%= f.input :BR_NAME %>
+    <%= f.input :BR_DESC %>
+    <%= f.input :BR_BUDGET_AMT %>
+    <%= f.input :BR_COST_AMT %>
+    <%= f.input :BR_CAMP_START %>
+    <%= f.input :BR_CAMP_END %>
+    <%= f.input :BR_SPOTS %>
+    <%= f.input :BR_RATINGS %>
+    <%= f.input :BR_COST %>
+    <%= f.input :BR_CPP %>
+    <%= f.input :BR_CPS %>
+    <%= f.input :BR_RF %>
+    <%= f.input :BR_CLIENT_NUM %>
+    <%= f.input :BR_DUE_DATE %>
+    <%= f.input :BR_OBJECTIVE %>
+    <%= f.input :BR_TARGET_AGE %>
+    <%= f.input :BR_TARGET_GENDER %>
+    <%= f.input :BR_TARGET_OCCUPATION %>
+    <%= f.input :BR_TARGET_LIFESTYLE %>
+    <%= f.input :BR_MEDIA_REC %>
+    <%= f.input :BR_MEDIA_SCHED %>
+    <%= f.input :BR_EXHIBITS %>
+    <%= f.input :BR_BUD_BCAST %>
+    <%= f.input :BR_BUD_CABLE %>
+    <%= f.input :BR_BUD_RADIO %>
+    <%= f.input :BR_BUD_NEWS %>
+    <%= f.input :BR_BUD_MAG %>
+    <%= f.input :BR_BUD_OUT %>
+    <%= f.input :BR_BUD_INTER %>
+    <%= f.input :BR_BUD_OTHER %>
+    <%= f.input :BR_ADDED_BY %>
+    <%= f.input :BR_AE %>
+    <%= f.input :BR_REP %>
+    <%= f.input :BR_STATUS %>
+    <%= f.input :BR_STATUS_NUM %>
+    <%= f.input :BR_EDITED_BY %>
+    <%= f.input :BR_EDITED_WHEN %>
+    <%= f.input :BR_APPROVED %>
+    <%= f.input :BR_APPROVED_BY %>
+    <%= f.input :BR_APPROVED_DATE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

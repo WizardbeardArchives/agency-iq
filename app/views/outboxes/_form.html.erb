@@ -1,0 +1,23 @@
+<%= simple_form_for(@outbox) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :OUT_FROM_EMAIL %>
+    <%= f.input :OUT_TO_EMAIL %>
+    <%= f.input :OUT_SUBJECT %>
+    <%= f.input :OUT_BODY %>
+    <%= f.input :OUT_CC %>
+    <%= f.input :OUT_BCC %>
+    <%= f.input :OUT_REAL_NAME %>
+    <%= f.input :OUT_ATTACHMENT %>
+    <%= f.input :OUT_DATE_ADDED %>
+    <%= f.input :OUT_ADDED_BY %>
+    <%= f.input :OUT_SEND_DATE %>
+    <%= f.input :OUT_OK %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

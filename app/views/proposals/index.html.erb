@@ -1,0 +1,99 @@
+<h1>Listing proposals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Props client num</th>
+      <th>Props date added</th>
+      <th>Props requestor</th>
+      <th>Props type</th>
+      <th>Props budget</th>
+      <th>Props start date</th>
+      <th>Props due date</th>
+      <th>Props ok by</th>
+      <th>Props cb1</th>
+      <th>Props cb2</th>
+      <th>Props cb3</th>
+      <th>Props cb4</th>
+      <th>Props cb5</th>
+      <th>Props cb6</th>
+      <th>Props cb7</th>
+      <th>Props cb8</th>
+      <th>Props cb9</th>
+      <th>Props cb10</th>
+      <th>Props cb11</th>
+      <th>Props cb12</th>
+      <th>Props cb13</th>
+      <th>Props cb14</th>
+      <th>Props cb15</th>
+      <th>Props name</th>
+      <th>Props ok date</th>
+      <th>Props desc</th>
+      <th>Props charge num</th>
+      <th>Props status desc</th>
+      <th>Props status</th>
+      <th>Props added by</th>
+      <th>Props approved</th>
+      <th>Props approved by</th>
+      <th>Props approved date</th>
+      <th>Props edited by</th>
+      <th>Props edited when</th>
+      <th>Props reviewer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr>
+        <td><%= proposal.primaryKey %></td>
+        <td><%= proposal.PROPS_CLIENT_NUM %></td>
+        <td><%= proposal.PROPS_DATE_ADDED %></td>
+        <td><%= proposal.PROPS_REQUESTOR %></td>
+        <td><%= proposal.PROPS_TYPE %></td>
+        <td><%= proposal.PROPS_BUDGET %></td>
+        <td><%= proposal.PROPS_START_DATE %></td>
+        <td><%= proposal.PROPS_DUE_DATE %></td>
+        <td><%= proposal.PROPS_OK_BY %></td>
+        <td><%= proposal.PROPS_CB1 %></td>
+        <td><%= proposal.PROPS_CB2 %></td>
+        <td><%= proposal.PROPS_CB3 %></td>
+        <td><%= proposal.PROPS_CB4 %></td>
+        <td><%= proposal.PROPS_CB5 %></td>
+        <td><%= proposal.PROPS_CB6 %></td>
+        <td><%= proposal.PROPS_CB7 %></td>
+        <td><%= proposal.PROPS_CB8 %></td>
+        <td><%= proposal.PROPS_CB9 %></td>
+        <td><%= proposal.PROPS_CB10 %></td>
+        <td><%= proposal.PROPS_CB11 %></td>
+        <td><%= proposal.PROPS_CB12 %></td>
+        <td><%= proposal.PROPS_CB13 %></td>
+        <td><%= proposal.PROPS_CB14 %></td>
+        <td><%= proposal.PROPS_CB15 %></td>
+        <td><%= proposal.PROPS_NAME %></td>
+        <td><%= proposal.PROPS_OK_DATE %></td>
+        <td><%= proposal.PROPS_DESC %></td>
+        <td><%= proposal.PROPS_CHARGE_NUM %></td>
+        <td><%= proposal.PROPS_STATUS_DESC %></td>
+        <td><%= proposal.PROPS_STATUS %></td>
+        <td><%= proposal.PROPS_ADDED_BY %></td>
+        <td><%= proposal.PROPS_APPROVED %></td>
+        <td><%= proposal.PROPS_APPROVED_BY %></td>
+        <td><%= proposal.PROPS_APPROVED_DATE %></td>
+        <td><%= proposal.PROPS_EDITED_BY %></td>
+        <td><%= proposal.PROPS_EDITED_WHEN %></td>
+        <td><%= proposal.PROPS_REVIEWER %></td>
+        <td><%= link_to 'Show', proposal %></td>
+        <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+        <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Proposal', new_proposal_path %>

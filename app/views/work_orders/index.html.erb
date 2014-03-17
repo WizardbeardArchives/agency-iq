@@ -1,0 +1,109 @@
+<h1>Listing work_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Wo job num</th>
+      <th>Wo client num</th>
+      <th>Wo 1 label</th>
+      <th>Wo 2 label</th>
+      <th>Wo 3 label</th>
+      <th>Wo 4 label</th>
+      <th>Wo 5 label</th>
+      <th>Wo 6 label</th>
+      <th>Wo 7 label</th>
+      <th>Wo 8 label</th>
+      <th>Wo 9 label</th>
+      <th>Wo 10 label</th>
+      <th>Wo 11 label</th>
+      <th>Wo 12 label</th>
+      <th>Wo 13 label</th>
+      <th>Wo 14 label</th>
+      <th>Wo 15 label</th>
+      <th>Wo 1</th>
+      <th>Wo 2</th>
+      <th>Wo 3</th>
+      <th>Wo 4</th>
+      <th>Wo 5</th>
+      <th>Wo 6</th>
+      <th>Wo 7</th>
+      <th>Wo 8</th>
+      <th>Wo 9</th>
+      <th>Wo 10</th>
+      <th>Wo 11</th>
+      <th>Wo 12</th>
+      <th>Wo 13</th>
+      <th>Wo 14</th>
+      <th>Wo 15</th>
+      <th>Wo added by</th>
+      <th>Wo rev by</th>
+      <th>Wo ok</th>
+      <th>Wo ok by</th>
+      <th>Wo ok date</th>
+      <th>Wo approved</th>
+      <th>Wo approved date</th>
+      <th>Wo approved by</th>
+      <th>Wo adr name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @work_orders.each do |work_order| %>
+      <tr>
+        <td><%= work_order.primaryKey %></td>
+        <td><%= work_order.WO_JOB_NUM %></td>
+        <td><%= work_order.WO_CLIENT_NUM %></td>
+        <td><%= work_order.WO_1_LABEL %></td>
+        <td><%= work_order.WO_2_LABEL %></td>
+        <td><%= work_order.WO_3_LABEL %></td>
+        <td><%= work_order.WO_4_LABEL %></td>
+        <td><%= work_order.WO_5_LABEL %></td>
+        <td><%= work_order.WO_6_LABEL %></td>
+        <td><%= work_order.WO_7_LABEL %></td>
+        <td><%= work_order.WO_8_LABEL %></td>
+        <td><%= work_order.WO_9_LABEL %></td>
+        <td><%= work_order.WO_10_LABEL %></td>
+        <td><%= work_order.WO_11_LABEL %></td>
+        <td><%= work_order.WO_12_LABEL %></td>
+        <td><%= work_order.WO_13_LABEL %></td>
+        <td><%= work_order.WO_14_LABEL %></td>
+        <td><%= work_order.WO_15_LABEL %></td>
+        <td><%= work_order.WO_1 %></td>
+        <td><%= work_order.WO_2 %></td>
+        <td><%= work_order.WO_3 %></td>
+        <td><%= work_order.WO_4 %></td>
+        <td><%= work_order.WO_5 %></td>
+        <td><%= work_order.WO_6 %></td>
+        <td><%= work_order.WO_7 %></td>
+        <td><%= work_order.WO_8 %></td>
+        <td><%= work_order.WO_9 %></td>
+        <td><%= work_order.WO_10 %></td>
+        <td><%= work_order.WO_11 %></td>
+        <td><%= work_order.WO_12 %></td>
+        <td><%= work_order.WO_13 %></td>
+        <td><%= work_order.WO_14 %></td>
+        <td><%= work_order.WO_15 %></td>
+        <td><%= work_order.WO_ADDED_BY %></td>
+        <td><%= work_order.WO_REV_BY %></td>
+        <td><%= work_order.WO_OK %></td>
+        <td><%= work_order.WO_OK_BY %></td>
+        <td><%= work_order.WO_OK_DATE %></td>
+        <td><%= work_order.WO_APPROVED %></td>
+        <td><%= work_order.WO_APPROVED_DATE %></td>
+        <td><%= work_order.WO_APPROVED_BY %></td>
+        <td><%= work_order.WO_ADR_NAME %></td>
+        <td><%= link_to 'Show', work_order %></td>
+        <td><%= link_to 'Edit', edit_work_order_path(work_order) %></td>
+        <td><%= link_to 'Destroy', work_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Work order', new_work_order_path %>

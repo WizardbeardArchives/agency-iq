@@ -1,0 +1,45 @@
+<%= simple_form_for(@contact) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :CON_C_NUM %>
+    <%= f.input :CON_V_NUM %>
+    <%= f.input :CON_KIND %>
+    <%= f.input :CON_FIRST_NAME %>
+    <%= f.input :CON_LAST_NAME %>
+    <%= f.input :CON_MID_INITIAL %>
+    <%= f.input :CON_SAL %>
+    <%= f.input :CON_TITLE %>
+    <%= f.input :CON_DECISION_MAKER %>
+    <%= f.input :CON_PHONE_WORK %>
+    <%= f.input :CON_PHONE_HOME %>
+    <%= f.input :CON_PHONE_MOBILE %>
+    <%= f.input :CON_FAX_WORK %>
+    <%= f.input :CON_PAGER %>
+    <%= f.input :CON_NOTE %>
+    <%= f.input :CON_EMAIL_WORK %>
+    <%= f.input :CON_EMAIL_HOME %>
+    <%= f.input :CON_DATE_ADDED %>
+    <%= f.input :CON_ADDED_BY %>
+    <%= f.input :CON_LAST_CALL %>
+    <%= f.input :CON_LAST_BY %>
+    <%= f.input :CON_FAX_HOME %>
+    <%= f.input :CON_SALES_EMAIL %>
+    <%= f.input :CON_ORG %>
+    <%= f.input :CON_FULL_NAME %>
+    <%= f.input :CON_ADDRESS1 %>
+    <%= f.input :CON_ADDRESS2 %>
+    <%= f.input :CON_ADDRESS3 %>
+    <%= f.input :CON_ADDRESS4 %>
+    <%= f.input :CON_ADDRESS5 %>
+    <%= f.input :CON_ADDRESS6 %>
+    <%= f.input :CON_APPROVE_JOBS %>
+    <%= f.input :CON_EDITED_BY %>
+    <%= f.input :CON_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

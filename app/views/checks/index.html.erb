@@ -1,0 +1,91 @@
+<h1>Listing checks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ck num</th>
+      <th>Ck vendor num</th>
+      <th>Ck payee</th>
+      <th>Ck address1</th>
+      <th>Ck address2</th>
+      <th>Ck address3</th>
+      <th>Ck date</th>
+      <th>Ck posted</th>
+      <th>Ck memo</th>
+      <th>Ck net amt</th>
+      <th>Ck cgl</th>
+      <th>Ck pay</th>
+      <th>Ck added by</th>
+      <th>Ck added when</th>
+      <th>Ck cleared</th>
+      <th>Ck dont print</th>
+      <th>Ck amount</th>
+      <th>Ck type</th>
+      <th>Ck gross</th>
+      <th>Ck disc amt</th>
+      <th>Ck disc gl</th>
+      <th>Ck ok</th>
+      <th>Ck period</th>
+      <th>Ck 1099</th>
+      <th>Ck tax id</th>
+      <th>Ck emp adv exp</th>
+      <th>Ck empl adv ck</th>
+      <th>Ck edited by</th>
+      <th>Ck edited when</th>
+      <th>Ck posted by</th>
+      <th>Ck posted when</th>
+      <th>Ck online pmt confirm num</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @checks.each do |check| %>
+      <tr>
+        <td><%= check.primaryKey %></td>
+        <td><%= check.CK_NUM %></td>
+        <td><%= check.CK_VENDOR_NUM %></td>
+        <td><%= check.CK_PAYEE %></td>
+        <td><%= check.CK_ADDRESS1 %></td>
+        <td><%= check.CK_ADDRESS2 %></td>
+        <td><%= check.CK_ADDRESS3 %></td>
+        <td><%= check.CK_DATE %></td>
+        <td><%= check.CK_POSTED %></td>
+        <td><%= check.CK_MEMO %></td>
+        <td><%= check.CK_NET_AMT %></td>
+        <td><%= check.CK_CGL %></td>
+        <td><%= check.CK_PAY %></td>
+        <td><%= check.CK_ADDED_BY %></td>
+        <td><%= check.CK_ADDED_WHEN %></td>
+        <td><%= check.CK_CLEARED %></td>
+        <td><%= check.CK_DONT_PRINT %></td>
+        <td><%= check.CK_AMOUNT %></td>
+        <td><%= check.CK_TYPE %></td>
+        <td><%= check.CK_GROSS %></td>
+        <td><%= check.CK_DISC_AMT %></td>
+        <td><%= check.CK_DISC_GL %></td>
+        <td><%= check.CK_OK %></td>
+        <td><%= check.CK_PERIOD %></td>
+        <td><%= check.CK_1099 %></td>
+        <td><%= check.CK_TAX_ID %></td>
+        <td><%= check.CK_EMP_ADV_EXP %></td>
+        <td><%= check.CK_EMPL_ADV_CK %></td>
+        <td><%= check.CK_EDITED_BY %></td>
+        <td><%= check.CK_EDITED_WHEN %></td>
+        <td><%= check.CK_POSTED_BY %></td>
+        <td><%= check.CK_POSTED_WHEN %></td>
+        <td><%= check.CK_ONLINE_PMT_CONFIRM_NUM %></td>
+        <td><%= link_to 'Show', check %></td>
+        <td><%= link_to 'Edit', edit_check_path(check) %></td>
+        <td><%= link_to 'Destroy', check, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Check', new_check_path %>

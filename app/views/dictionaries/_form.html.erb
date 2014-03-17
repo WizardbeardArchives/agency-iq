@@ -1,0 +1,13 @@
+<%= simple_form_for(@dictionary) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :DICT_NAME %>
+    <%= f.input :DICT_LANG_ID %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

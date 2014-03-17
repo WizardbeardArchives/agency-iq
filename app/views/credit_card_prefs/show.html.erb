@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @credit_card_pref.primaryKey %>
+</p>
+
+<p>
+  <strong>Cc kind:</strong>
+  <%= @credit_card_pref.CC_KIND %>
+</p>
+
+<p>
+  <strong>Cc vendor num:</strong>
+  <%= @credit_card_pref.CC_VENDOR_NUM %>
+</p>
+
+<p>
+  <strong>Cc cgl:</strong>
+  <%= @credit_card_pref.CC_CGL %>
+</p>
+
+<p>
+  <strong>Cc payee:</strong>
+  <%= @credit_card_pref.CC_PAYEE %>
+</p>
+
+<p>
+  <strong>Cc job num:</strong>
+  <%= @credit_card_pref.CC_JOB_NUM %>
+</p>
+
+<p>
+  <strong>Cc task:</strong>
+  <%= @credit_card_pref.CC_TASK %>
+</p>
+
+<p>
+  <strong>Cc dgl:</strong>
+  <%= @credit_card_pref.CC_DGL %>
+</p>
+
+<p>
+  <strong>Cc acct num:</strong>
+  <%= @credit_card_pref.CC_ACCT_NUM %>
+</p>
+
+<%= link_to 'Edit', edit_credit_card_pref_path(@credit_card_pref) %> |
+<%= link_to 'Back', credit_card_prefs_path %>

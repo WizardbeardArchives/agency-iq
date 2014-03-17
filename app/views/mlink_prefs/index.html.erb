@@ -1,0 +1,83 @@
+<h1>Listing mlink_prefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Mlink enable log</th>
+      <th>Mlink path</th>
+      <th>Mlink auto import</th>
+      <th>Mlink import every</th>
+      <th>Mlink import time</th>
+      <th>Mlink import minutes</th>
+      <th>Mlink clients pref</th>
+      <th>Mlink after pref</th>
+      <th>Mlink move path</th>
+      <th>Mlink system</th>
+      <th>Mlink status</th>
+      <th>Mlink last import</th>
+      <th>Mlink count today</th>
+      <th>Mlink count total</th>
+      <th>Mlink amt</th>
+      <th>Mlink import interval</th>
+      <th>Mlink date</th>
+      <th>Mlink vendors pref</th>
+      <th>Mlink bell</th>
+      <th>Mlink notify</th>
+      <th>Mlink email name</th>
+      <th>Mlink email address</th>
+      <th>Mlink tv bill net</th>
+      <th>Mlink print bill net</th>
+      <th>Mlink broad comm</th>
+      <th>Mlink print comm</th>
+      <th>Mlink edited by</th>
+      <th>Mlink edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mlink_prefs.each do |mlink_pref| %>
+      <tr>
+        <td><%= mlink_pref.primaryKey %></td>
+        <td><%= mlink_pref.MLINK_ENABLE_LOG %></td>
+        <td><%= mlink_pref.MLINK_PATH %></td>
+        <td><%= mlink_pref.MLINK_AUTO_IMPORT %></td>
+        <td><%= mlink_pref.MLINK_IMPORT_EVERY %></td>
+        <td><%= mlink_pref.MLINK_IMPORT_TIME %></td>
+        <td><%= mlink_pref.MLINK_IMPORT_MINUTES %></td>
+        <td><%= mlink_pref.MLINK_CLIENTS_PREF %></td>
+        <td><%= mlink_pref.MLINK_AFTER_PREF %></td>
+        <td><%= mlink_pref.MLINK_MOVE_PATH %></td>
+        <td><%= mlink_pref.MLINK_SYSTEM %></td>
+        <td><%= mlink_pref.MLINK_STATUS %></td>
+        <td><%= mlink_pref.MLINK_LAST_IMPORT %></td>
+        <td><%= mlink_pref.MLINK_COUNT_TODAY %></td>
+        <td><%= mlink_pref.MLINK_COUNT_TOTAL %></td>
+        <td><%= mlink_pref.MLINK_AMT %></td>
+        <td><%= mlink_pref.MLINK_IMPORT_INTERVAL %></td>
+        <td><%= mlink_pref.MLINK_DATE %></td>
+        <td><%= mlink_pref.MLINK_VENDORS_PREF %></td>
+        <td><%= mlink_pref.MLINK_BELL %></td>
+        <td><%= mlink_pref.MLINK_NOTIFY %></td>
+        <td><%= mlink_pref.MLINK_EMAIL_NAME %></td>
+        <td><%= mlink_pref.MLINK_EMAIL_ADDRESS %></td>
+        <td><%= mlink_pref.MLINK_TV_BILL_NET %></td>
+        <td><%= mlink_pref.MLINK_PRINT_BILL_NET %></td>
+        <td><%= mlink_pref.MLINK_BROAD_COMM %></td>
+        <td><%= mlink_pref.MLINK_PRINT_COMM %></td>
+        <td><%= mlink_pref.MLINK_EDITED_BY %></td>
+        <td><%= mlink_pref.MLINK_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', mlink_pref %></td>
+        <td><%= link_to 'Edit', edit_mlink_pref_path(mlink_pref) %></td>
+        <td><%= link_to 'Destroy', mlink_pref, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mlink pref', new_mlink_pref_path %>

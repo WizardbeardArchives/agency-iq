@@ -1,0 +1,61 @@
+<%= simple_form_for(@task_table) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :T_TASK %>
+    <%= f.input :T_NAME %>
+    <%= f.input :T_TAX1 %>
+    <%= f.input :T_TAX2 %>
+    <%= f.input :T_MARKUP %>
+    <%= f.input :T_BILL_RATE %>
+    <%= f.input :T_DGL %>
+    <%= f.input :T_CGL %>
+    <%= f.input :T_GROUP %>
+    <%= f.input :T_SORT %>
+    <%= f.input :T_LEAD_TIME %>
+    <%= f.input :T_KIND %>
+    <%= f.input :T_HOURS %>
+    <%= f.input :T_COST %>
+    <%= f.input :T_PC %>
+    <%= f.input :T_DESC %>
+    <%= f.input :T_CHAR2 %>
+    <%= f.input :T_CHAR3 %>
+    <%= f.input :T_CHAR4 %>
+    <%= f.input :T_CHAR5 %>
+    <%= f.input :T_CHAR6 %>
+    <%= f.input :T_CHAR7 %>
+    <%= f.input :T_UNBILLABLE %>
+    <%= f.input :T_SORT_PROD %>
+    <%= f.input :T_PREF3 %>
+    <%= f.input :T_PREF4 %>
+    <%= f.input :T_AMT1 %>
+    <%= f.input :T_AMT2 %>
+    <%= f.input :T_ICON %>
+    <%= f.input :T_ROLL_UP %>
+    <%= f.input :T_ACTIVE %>
+    <%= f.input :T_COMMISSIONABLE %>
+    <%= f.input :T_COMM_RATE_AE %>
+    <%= f.input :T_COMM_RATE_BIZ %>
+    <%= f.input :T_REQ_APPROVAL %>
+    <%= f.input :T_REQ_APPROVAL_BY %>
+    <%= f.input :T_ADDED_BY %>
+    <%= f.input :T_ADDED_WHEN %>
+    <%= f.input :T_EDITED_BY %>
+    <%= f.input :T_EDITED_WHEN %>
+    <%= f.input :T_PAYROLL %>
+    <%= f.input :T_UTIL_CAT %>
+    <%= f.input :T_TAGS %>
+    <%= f.input :T_CLIENT_SCHED %>
+    <%= f.input :T_MILESTONE %>
+    <%= f.input :T_TAX3 %>
+    <%= f.input :T_SMALL_ICON %>
+    <%= f.input :T_ALWAYS_DISCUSS %>
+    <%= f.input :T_NO_TIME %>
+    <%= f.input :T_STATUS_FINISHED %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @dept.primaryKey %>
+</p>
+
+<p>
+  <strong>Dept office:</strong>
+  <%= @dept.DEPT_OFFICE %>
+</p>
+
+<p>
+  <strong>Dept name:</strong>
+  <%= @dept.DEPT_NAME %>
+</p>
+
+<p>
+  <strong>Dept desc:</strong>
+  <%= @dept.DEPT_DESC %>
+</p>
+
+<p>
+  <strong>Dept mgr:</strong>
+  <%= @dept.DEPT_MGR %>
+</p>
+
+<p>
+  <strong>Dept num:</strong>
+  <%= @dept.DEPT_NUM %>
+</p>
+
+<p>
+  <strong>Dept added by:</strong>
+  <%= @dept.DEPT_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Dept added when:</strong>
+  <%= @dept.DEPT_ADDED_WHEN %>
+</p>
+
+<p>
+  <strong>Dept edited by:</strong>
+  <%= @dept.DEPT_EDITED_BY %>
+</p>
+
+<p>
+  <strong>Dept edited when:</strong>
+  <%= @dept.DEPT_EDITED_WHEN %>
+</p>
+
+<%= link_to 'Edit', edit_dept_path(@dept) %> |
+<%= link_to 'Back', depts_path %>

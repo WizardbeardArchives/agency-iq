@@ -1,0 +1,55 @@
+<h1>Listing schedule_charts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Sc j num</th>
+      <th>Sc 1</th>
+      <th>Sc 2</th>
+      <th>Sc 3</th>
+      <th>Sc 4</th>
+      <th>Sc 5</th>
+      <th>Sc 6</th>
+      <th>Sc 7</th>
+      <th>Sc 8</th>
+      <th>Sc 9</th>
+      <th>Sc 10</th>
+      <th>Sc 11</th>
+      <th>Sc 12</th>
+      <th>Sc client num</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedule_charts.each do |schedule_chart| %>
+      <tr>
+        <td><%= schedule_chart.primaryKey %></td>
+        <td><%= schedule_chart.SC_J_NUM %></td>
+        <td><%= schedule_chart.SC_1 %></td>
+        <td><%= schedule_chart.SC_2 %></td>
+        <td><%= schedule_chart.SC_3 %></td>
+        <td><%= schedule_chart.SC_4 %></td>
+        <td><%= schedule_chart.SC_5 %></td>
+        <td><%= schedule_chart.SC_6 %></td>
+        <td><%= schedule_chart.SC_7 %></td>
+        <td><%= schedule_chart.SC_8 %></td>
+        <td><%= schedule_chart.SC_9 %></td>
+        <td><%= schedule_chart.SC_10 %></td>
+        <td><%= schedule_chart.SC_11 %></td>
+        <td><%= schedule_chart.SC_12 %></td>
+        <td><%= schedule_chart.SC_CLIENT_NUM %></td>
+        <td><%= link_to 'Show', schedule_chart %></td>
+        <td><%= link_to 'Edit', edit_schedule_chart_path(schedule_chart) %></td>
+        <td><%= link_to 'Destroy', schedule_chart, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Schedule chart', new_schedule_chart_path %>

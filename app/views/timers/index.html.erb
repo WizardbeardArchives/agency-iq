@@ -1,0 +1,43 @@
+<h1>Listing timers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Timer initials</th>
+      <th>Timer start</th>
+      <th>Timer paused</th>
+      <th>Timer resumed</th>
+      <th>Timer elapsed secs</th>
+      <th>Timer job num</th>
+      <th>Timer task</th>
+      <th>Timer note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @timers.each do |timer| %>
+      <tr>
+        <td><%= timer.primaryKey %></td>
+        <td><%= timer.TIMER_INITIALS %></td>
+        <td><%= timer.TIMER_START %></td>
+        <td><%= timer.TIMER_PAUSED %></td>
+        <td><%= timer.TIMER_RESUMED %></td>
+        <td><%= timer.TIMER_ELAPSED_SECS %></td>
+        <td><%= timer.TIMER_JOB_NUM %></td>
+        <td><%= timer.TIMER_TASK %></td>
+        <td><%= timer.TIMER_NOTE %></td>
+        <td><%= link_to 'Show', timer %></td>
+        <td><%= link_to 'Edit', edit_timer_path(timer) %></td>
+        <td><%= link_to 'Destroy', timer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Timer', new_timer_path %>

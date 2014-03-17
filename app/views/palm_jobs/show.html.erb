@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @palm_job.primaryKey %>
+</p>
+
+<p>
+  <strong>Palm job id:</strong>
+  <%= @palm_job.PALM_JOB_ID %>
+</p>
+
+<p>
+  <strong>Palm job attribs:</strong>
+  <%= @palm_job.PALM_JOB_ATTRIBS %>
+</p>
+
+<p>
+  <strong>Palm job category:</strong>
+  <%= @palm_job.PALM_JOB_CATEGORY %>
+</p>
+
+<p>
+  <strong>Palm job num:</strong>
+  <%= @palm_job.PALM_JOB_NUM %>
+</p>
+
+<p>
+  <strong>Palm job name:</strong>
+  <%= @palm_job.PALM_JOB_NAME %>
+</p>
+
+<p>
+  <strong>Palm job user:</strong>
+  <%= @palm_job.PALM_JOB_USER %>
+</p>
+
+<p>
+  <strong>Palm job plus:</strong>
+  <%= @palm_job.PALM_JOB_PLUS %>
+</p>
+
+<%= link_to 'Edit', edit_palm_job_path(@palm_job) %> |
+<%= link_to 'Back', palm_jobs_path %>

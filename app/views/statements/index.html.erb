@@ -1,0 +1,47 @@
+<h1>Listing statements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>St date</th>
+      <th>St ar num</th>
+      <th>St ck num</th>
+      <th>St client num</th>
+      <th>St type</th>
+      <th>St job num</th>
+      <th>St charge amt</th>
+      <th>St pmt amt</th>
+      <th>St po num</th>
+      <th>St division</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @statements.each do |statement| %>
+      <tr>
+        <td><%= statement.primaryKey %></td>
+        <td><%= statement.ST_DATE %></td>
+        <td><%= statement.ST_AR_NUM %></td>
+        <td><%= statement.ST_CK_NUM %></td>
+        <td><%= statement.ST_CLIENT_NUM %></td>
+        <td><%= statement.ST_TYPE %></td>
+        <td><%= statement.ST_JOB_NUM %></td>
+        <td><%= statement.ST_CHARGE_AMT %></td>
+        <td><%= statement.ST_PMT_AMT %></td>
+        <td><%= statement.ST_PO_NUM %></td>
+        <td><%= statement.ST_DIVISION %></td>
+        <td><%= link_to 'Show', statement %></td>
+        <td><%= link_to 'Edit', edit_statement_path(statement) %></td>
+        <td><%= link_to 'Destroy', statement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Statement', new_statement_path %>

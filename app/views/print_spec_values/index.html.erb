@@ -1,0 +1,39 @@
+<h1>Listing print_spec_values</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Psv cat</th>
+      <th>Psv value</th>
+      <th>Psv added by</th>
+      <th>Psv added when</th>
+      <th>Psv edited by</th>
+      <th>Psv edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @print_spec_values.each do |print_spec_value| %>
+      <tr>
+        <td><%= print_spec_value.primaryKey %></td>
+        <td><%= print_spec_value.PSV_CAT %></td>
+        <td><%= print_spec_value.PSV_VALUE %></td>
+        <td><%= print_spec_value.PSV_ADDED_BY %></td>
+        <td><%= print_spec_value.PSV_ADDED_WHEN %></td>
+        <td><%= print_spec_value.PSV_EDITED_BY %></td>
+        <td><%= print_spec_value.PSV_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', print_spec_value %></td>
+        <td><%= link_to 'Edit', edit_print_spec_value_path(print_spec_value) %></td>
+        <td><%= link_to 'Destroy', print_spec_value, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Print spec value', new_print_spec_value_path %>

@@ -1,0 +1,63 @@
+<h1>Listing sales_campaigns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Scam id</th>
+      <th>Scam desc</th>
+      <th>Scam added by</th>
+      <th>Scam start</th>
+      <th>Scam end</th>
+      <th>Scam action</th>
+      <th>Scam action1</th>
+      <th>Scam action1 days</th>
+      <th>Scam action2</th>
+      <th>Scam action2 days</th>
+      <th>Scam action3</th>
+      <th>Scam action3 days</th>
+      <th>Scam client num</th>
+      <th>Scam ok</th>
+      <th>Scam ok by</th>
+      <th>Scam added when</th>
+      <th>Scam edited by</th>
+      <th>Scam edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_campaigns.each do |sales_campaign| %>
+      <tr>
+        <td><%= sales_campaign.primaryKey %></td>
+        <td><%= sales_campaign.SCAM_ID %></td>
+        <td><%= sales_campaign.SCAM_DESC %></td>
+        <td><%= sales_campaign.SCAM_ADDED_BY %></td>
+        <td><%= sales_campaign.SCAM_START %></td>
+        <td><%= sales_campaign.SCAM_END %></td>
+        <td><%= sales_campaign.SCAM_ACTION %></td>
+        <td><%= sales_campaign.SCAM_ACTION1 %></td>
+        <td><%= sales_campaign.SCAM_ACTION1_DAYS %></td>
+        <td><%= sales_campaign.SCAM_ACTION2 %></td>
+        <td><%= sales_campaign.SCAM_ACTION2_DAYS %></td>
+        <td><%= sales_campaign.SCAM_ACTION3 %></td>
+        <td><%= sales_campaign.SCAM_ACTION3_DAYS %></td>
+        <td><%= sales_campaign.SCAM_CLIENT_NUM %></td>
+        <td><%= sales_campaign.SCAM_OK %></td>
+        <td><%= sales_campaign.SCAM_OK_BY %></td>
+        <td><%= sales_campaign.SCAM_ADDED_WHEN %></td>
+        <td><%= sales_campaign.SCAM_EDITED_BY %></td>
+        <td><%= sales_campaign.SCAM_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', sales_campaign %></td>
+        <td><%= link_to 'Edit', edit_sales_campaign_path(sales_campaign) %></td>
+        <td><%= link_to 'Destroy', sales_campaign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales campaign', new_sales_campaign_path %>

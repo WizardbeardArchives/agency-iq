@@ -1,0 +1,13 @@
+<%= simple_form_for(@ap_pdf) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :AP_PDF_KEY %>
+    <%= f.input :AP_PDF_BINARY %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

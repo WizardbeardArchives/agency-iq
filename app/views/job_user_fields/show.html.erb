@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @job_user_field.primaryKey %>
+</p>
+
+<p>
+  <strong>Ju field:</strong>
+  <%= @job_user_field.JU_FIELD %>
+</p>
+
+<p>
+  <strong>Ju value:</strong>
+  <%= @job_user_field.JU_VALUE %>
+</p>
+
+<%= link_to 'Edit', edit_job_user_field_path(@job_user_field) %> |
+<%= link_to 'Back', job_user_fields_path %>

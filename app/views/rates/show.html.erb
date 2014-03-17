@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @rate.primaryKey %>
+</p>
+
+<p>
+  <strong>Rate staff:</strong>
+  <%= @rate.RATE_STAFF %>
+</p>
+
+<p>
+  <strong>Rate client num:</strong>
+  <%= @rate.RATE_CLIENT_NUM %>
+</p>
+
+<p>
+  <strong>Rate task:</strong>
+  <%= @rate.RATE_TASK %>
+</p>
+
+<p>
+  <strong>Rate key:</strong>
+  <%= @rate.RATE_KEY %>
+</p>
+
+<p>
+  <strong>Rate note:</strong>
+  <%= @rate.RATE_NOTE %>
+</p>
+
+<p>
+  <strong>Special rate:</strong>
+  <%= @rate.SPECIAL_RATE %>
+</p>
+
+<p>
+  <strong>Rate added by:</strong>
+  <%= @rate.RATE_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Rate added when:</strong>
+  <%= @rate.RATE_ADDED_WHEN %>
+</p>
+
+<p>
+  <strong>Rate edited by:</strong>
+  <%= @rate.RATE_EDITED_BY %>
+</p>
+
+<p>
+  <strong>Rate edited when:</strong>
+  <%= @rate.RATE_EDITED_WHEN %>
+</p>
+
+<%= link_to 'Edit', edit_rate_path(@rate) %> |
+<%= link_to 'Back', rates_path %>

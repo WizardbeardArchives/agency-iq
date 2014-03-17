@@ -1,0 +1,131 @@
+<h1>Listing acct_periods</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Period id</th>
+      <th>Period 1</th>
+      <th>Period 2</th>
+      <th>Period 3</th>
+      <th>Period 4</th>
+      <th>Period 5</th>
+      <th>Period 6</th>
+      <th>Period 7</th>
+      <th>Period 8</th>
+      <th>Period 9</th>
+      <th>Period 10</th>
+      <th>Period 11</th>
+      <th>Period 12</th>
+      <th>Period 13</th>
+      <th>Period 14</th>
+      <th>Period 15</th>
+      <th>Period 16</th>
+      <th>Period 17</th>
+      <th>Period 18</th>
+      <th>Period 19</th>
+      <th>Period 20</th>
+      <th>Period 21</th>
+      <th>Period 22</th>
+      <th>Period 23</th>
+      <th>Period 24</th>
+      <th>Period lock1</th>
+      <th>Period lock2</th>
+      <th>Period lock3</th>
+      <th>Period lock4</th>
+      <th>Period lock5</th>
+      <th>Period lock6</th>
+      <th>Period lock7</th>
+      <th>Period lock8</th>
+      <th>Period lock9</th>
+      <th>Period lock10</th>
+      <th>Period lock11</th>
+      <th>Period lock12</th>
+      <th>Period lock13</th>
+      <th>Period lock14</th>
+      <th>Period lock15</th>
+      <th>Period lock16</th>
+      <th>Period lock17</th>
+      <th>Period lock18</th>
+      <th>Period lock19</th>
+      <th>Period lock20</th>
+      <th>Period lock21</th>
+      <th>Period lock22</th>
+      <th>Period lock23</th>
+      <th>Period lock24</th>
+      <th>Period first day</th>
+      <th>Period curr per</th>
+      <th>Period fy1 name</th>
+      <th>Period fy2 name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @acct_periods.each do |acct_period| %>
+      <tr>
+        <td><%= acct_period.PERIOD_ID %></td>
+        <td><%= acct_period.PERIOD_1 %></td>
+        <td><%= acct_period.PERIOD_2 %></td>
+        <td><%= acct_period.PERIOD_3 %></td>
+        <td><%= acct_period.PERIOD_4 %></td>
+        <td><%= acct_period.PERIOD_5 %></td>
+        <td><%= acct_period.PERIOD_6 %></td>
+        <td><%= acct_period.PERIOD_7 %></td>
+        <td><%= acct_period.PERIOD_8 %></td>
+        <td><%= acct_period.PERIOD_9 %></td>
+        <td><%= acct_period.PERIOD_10 %></td>
+        <td><%= acct_period.PERIOD_11 %></td>
+        <td><%= acct_period.PERIOD_12 %></td>
+        <td><%= acct_period.PERIOD_13 %></td>
+        <td><%= acct_period.PERIOD_14 %></td>
+        <td><%= acct_period.PERIOD_15 %></td>
+        <td><%= acct_period.PERIOD_16 %></td>
+        <td><%= acct_period.PERIOD_17 %></td>
+        <td><%= acct_period.PERIOD_18 %></td>
+        <td><%= acct_period.PERIOD_19 %></td>
+        <td><%= acct_period.PERIOD_20 %></td>
+        <td><%= acct_period.PERIOD_21 %></td>
+        <td><%= acct_period.PERIOD_22 %></td>
+        <td><%= acct_period.PERIOD_23 %></td>
+        <td><%= acct_period.PERIOD_24 %></td>
+        <td><%= acct_period.PERIOD_LOCK1 %></td>
+        <td><%= acct_period.PERIOD_LOCK2 %></td>
+        <td><%= acct_period.PERIOD_LOCK3 %></td>
+        <td><%= acct_period.PERIOD_LOCK4 %></td>
+        <td><%= acct_period.PERIOD_LOCK5 %></td>
+        <td><%= acct_period.PERIOD_LOCK6 %></td>
+        <td><%= acct_period.PERIOD_LOCK7 %></td>
+        <td><%= acct_period.PERIOD_LOCK8 %></td>
+        <td><%= acct_period.PERIOD_LOCK9 %></td>
+        <td><%= acct_period.PERIOD_LOCK10 %></td>
+        <td><%= acct_period.PERIOD_LOCK11 %></td>
+        <td><%= acct_period.PERIOD_LOCK12 %></td>
+        <td><%= acct_period.PERIOD_LOCK13 %></td>
+        <td><%= acct_period.PERIOD_LOCK14 %></td>
+        <td><%= acct_period.PERIOD_LOCK15 %></td>
+        <td><%= acct_period.PERIOD_LOCK16 %></td>
+        <td><%= acct_period.PERIOD_LOCK17 %></td>
+        <td><%= acct_period.PERIOD_LOCK18 %></td>
+        <td><%= acct_period.PERIOD_LOCK19 %></td>
+        <td><%= acct_period.PERIOD_LOCK20 %></td>
+        <td><%= acct_period.PERIOD_LOCK21 %></td>
+        <td><%= acct_period.PERIOD_LOCK22 %></td>
+        <td><%= acct_period.PERIOD_LOCK23 %></td>
+        <td><%= acct_period.PERIOD_LOCK24 %></td>
+        <td><%= acct_period.PERIOD_FIRST_DAY %></td>
+        <td><%= acct_period.PERIOD_CURR_PER %></td>
+        <td><%= acct_period.PERIOD_FY1_NAME %></td>
+        <td><%= acct_period.PERIOD_FY2_NAME %></td>
+        <td><%= link_to 'Show', acct_period %></td>
+        <td><%= link_to 'Edit', edit_acct_period_path(acct_period) %></td>
+        <td><%= link_to 'Destroy', acct_period, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Acct period', new_acct_period_path %>

@@ -1,0 +1,2 @@
+module RfqItemsHelper
+end

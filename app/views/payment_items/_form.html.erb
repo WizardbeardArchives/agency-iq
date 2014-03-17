@@ -1,0 +1,24 @@
+<%= simple_form_for(@payment_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PX_AR_NUM %>
+    <%= f.input :PX_AMT %>
+    <%= f.input :PX_CGL %>
+    <%= f.input :PX_POSTED %>
+    <%= f.input :PX_PERIOD %>
+    <%= f.input :PX_CHECK_NUM %>
+    <%= f.input :PX_CLIENT_NUM %>
+    <%= f.input :PX_DISC_AMT %>
+    <%= f.input :PX_DISC_GL %>
+    <%= f.input :PX_ADDED_BY %>
+    <%= f.input :PX_ADDED_WHEN %>
+    <%= f.input :PX_EDITED_BY %>
+    <%= f.input :PX_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

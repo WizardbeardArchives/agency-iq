@@ -1,0 +1,53 @@
+<h1>Listing payment_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Px ar num</th>
+      <th>Px amt</th>
+      <th>Px cgl</th>
+      <th>Px posted</th>
+      <th>Px period</th>
+      <th>Px check num</th>
+      <th>Px client num</th>
+      <th>Px disc amt</th>
+      <th>Px disc gl</th>
+      <th>Px added by</th>
+      <th>Px added when</th>
+      <th>Px edited by</th>
+      <th>Px edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_items.each do |payment_item| %>
+      <tr>
+        <td><%= payment_item.primaryKey %></td>
+        <td><%= payment_item.PX_AR_NUM %></td>
+        <td><%= payment_item.PX_AMT %></td>
+        <td><%= payment_item.PX_CGL %></td>
+        <td><%= payment_item.PX_POSTED %></td>
+        <td><%= payment_item.PX_PERIOD %></td>
+        <td><%= payment_item.PX_CHECK_NUM %></td>
+        <td><%= payment_item.PX_CLIENT_NUM %></td>
+        <td><%= payment_item.PX_DISC_AMT %></td>
+        <td><%= payment_item.PX_DISC_GL %></td>
+        <td><%= payment_item.PX_ADDED_BY %></td>
+        <td><%= payment_item.PX_ADDED_WHEN %></td>
+        <td><%= payment_item.PX_EDITED_BY %></td>
+        <td><%= payment_item.PX_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', payment_item %></td>
+        <td><%= link_to 'Edit', edit_payment_item_path(payment_item) %></td>
+        <td><%= link_to 'Destroy', payment_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment item', new_payment_item_path %>

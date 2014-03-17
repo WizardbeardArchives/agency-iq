@@ -1,0 +1,99 @@
+<h1>Listing homebases</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Home job num</th>
+      <th>Home task</th>
+      <th>Home status</th>
+      <th>Home s initials</th>
+      <th>Home added by</th>
+      <th>Home date added</th>
+      <th>Home due date</th>
+      <th>Home subject</th>
+      <th>Home kind</th>
+      <th>Home reply</th>
+      <th>Home private1</th>
+      <th>Home private2</th>
+      <th>Home priority</th>
+      <th>Home sort</th>
+      <th>Home choice1</th>
+      <th>Home choice2</th>
+      <th>Home choice3</th>
+      <th>Home choice4</th>
+      <th>Home choice5</th>
+      <th>Home choice6</th>
+      <th>Home last reply</th>
+      <th>Home message</th>
+      <th>Home locked</th>
+      <th>Home added kind</th>
+      <th>Home comment</th>
+      <th>Home rating</th>
+      <th>Home prod status</th>
+      <th>Home orig  seq</th>
+      <th>Home file name</th>
+      <th>Home x phase</th>
+      <th>Home avail creative</th>
+      <th>Home avail prod</th>
+      <th>Home avail staff</th>
+      <th>Home avail clients</th>
+      <th>Home avail vendors</th>
+      <th>Home email it</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homebases.each do |homebasis| %>
+      <tr>
+        <td><%= homebasis.primaryKey %></td>
+        <td><%= homebasis.HOME_JOB_NUM %></td>
+        <td><%= homebasis.HOME_TASK %></td>
+        <td><%= homebasis.HOME_STATUS %></td>
+        <td><%= homebasis.HOME_S_INITIALS %></td>
+        <td><%= homebasis.HOME_ADDED_BY %></td>
+        <td><%= homebasis.HOME_DATE_ADDED %></td>
+        <td><%= homebasis.HOME_DUE_DATE %></td>
+        <td><%= homebasis.HOME_SUBJECT %></td>
+        <td><%= homebasis.HOME_KIND %></td>
+        <td><%= homebasis.HOME_REPLY %></td>
+        <td><%= homebasis.HOME_PRIVATE1 %></td>
+        <td><%= homebasis.HOME_PRIVATE2 %></td>
+        <td><%= homebasis.HOME_PRIORITY %></td>
+        <td><%= homebasis.HOME_SORT %></td>
+        <td><%= homebasis.HOME_CHOICE1 %></td>
+        <td><%= homebasis.HOME_CHOICE2 %></td>
+        <td><%= homebasis.HOME_CHOICE3 %></td>
+        <td><%= homebasis.HOME_CHOICE4 %></td>
+        <td><%= homebasis.HOME_CHOICE5 %></td>
+        <td><%= homebasis.HOME_CHOICE6 %></td>
+        <td><%= homebasis.HOME_LAST_REPLY %></td>
+        <td><%= homebasis.HOME_MESSAGE %></td>
+        <td><%= homebasis.HOME_LOCKED %></td>
+        <td><%= homebasis.HOME_ADDED_KIND %></td>
+        <td><%= homebasis.HOME_COMMENT %></td>
+        <td><%= homebasis.HOME_RATING %></td>
+        <td><%= homebasis.HOME_PROD_STATUS %></td>
+        <td><%= homebasis.HOME_ORIG__SEQ %></td>
+        <td><%= homebasis.HOME_FILE_NAME %></td>
+        <td><%= homebasis.HOME_X_PHASE %></td>
+        <td><%= homebasis.HOME_AVAIL_CREATIVE %></td>
+        <td><%= homebasis.HOME_AVAIL_PROD %></td>
+        <td><%= homebasis.HOME_AVAIL_STAFF %></td>
+        <td><%= homebasis.HOME_AVAIL_CLIENTS %></td>
+        <td><%= homebasis.HOME_AVAIL_VENDORS %></td>
+        <td><%= homebasis.HOME_EMAIL_IT %></td>
+        <td><%= link_to 'Show', homebasis %></td>
+        <td><%= link_to 'Edit', edit_homebasis_path(homebasis) %></td>
+        <td><%= link_to 'Destroy', homebasis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Homebase', new_homebasis_path %>

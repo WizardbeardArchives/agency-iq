@@ -1,0 +1,105 @@
+<h1>Listing rfqs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rfq num</th>
+      <th>Rfq job num</th>
+      <th>Rfq task</th>
+      <th>Rfq vendor num</th>
+      <th>Rfq date</th>
+      <th>Rfq prod contact</th>
+      <th>Rfq name</th>
+      <th>Rfq desc</th>
+      <th>Rfq qty</th>
+      <th>Rfq client num</th>
+      <th>Rfq client contact</th>
+      <th>Rfq client addr1</th>
+      <th>Rfq client addr2</th>
+      <th>Rfq client addr3</th>
+      <th>Rfq client addr4</th>
+      <th>Rfq client addr5</th>
+      <th>Rfq client addr6</th>
+      <th>Rfq prep</th>
+      <th>Rfq kitting</th>
+      <th>Rfq shipping</th>
+      <th>Rfq client notes</th>
+      <th>Rfq terms</th>
+      <th>Rfq approved</th>
+      <th>Rfq client ok</th>
+      <th>Rfq client ok date</th>
+      <th>Rfq client ok by</th>
+      <th>Rfq total cost</th>
+      <th>Rfq total gross</th>
+      <th>Rfq special instr</th>
+      <th>Rfq del instr</th>
+      <th>Rfq auth</th>
+      <th>Rfq status</th>
+      <th>Rfq added by</th>
+      <th>Rfq quote needed</th>
+      <th>Rfq del date</th>
+      <th>Rfq prod contact email</th>
+      <th>Rfq taxable1</th>
+      <th>Rfq taxable2</th>
+      <th>Rfq prod contact ph</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rfqs.each do |rfq| %>
+      <tr>
+        <td><%= rfq.primaryKey %></td>
+        <td><%= rfq.RFQ_NUM %></td>
+        <td><%= rfq.RFQ_JOB_NUM %></td>
+        <td><%= rfq.RFQ_TASK %></td>
+        <td><%= rfq.RFQ_VENDOR_NUM %></td>
+        <td><%= rfq.RFQ_DATE %></td>
+        <td><%= rfq.RFQ_PROD_CONTACT %></td>
+        <td><%= rfq.RFQ_NAME %></td>
+        <td><%= rfq.RFQ_DESC %></td>
+        <td><%= rfq.RFQ_QTY %></td>
+        <td><%= rfq.RFQ_CLIENT_NUM %></td>
+        <td><%= rfq.RFQ_CLIENT_CONTACT %></td>
+        <td><%= rfq.RFQ_CLIENT_ADDR1 %></td>
+        <td><%= rfq.RFQ_CLIENT_ADDR2 %></td>
+        <td><%= rfq.RFQ_CLIENT_ADDR3 %></td>
+        <td><%= rfq.RFQ_CLIENT_ADDR4 %></td>
+        <td><%= rfq.RFQ_CLIENT_ADDR5 %></td>
+        <td><%= rfq.RFQ_CLIENT_ADDR6 %></td>
+        <td><%= rfq.RFQ_PREP %></td>
+        <td><%= rfq.RFQ_KITTING %></td>
+        <td><%= rfq.RFQ_SHIPPING %></td>
+        <td><%= rfq.RFQ_CLIENT_NOTES %></td>
+        <td><%= rfq.RFQ_TERMS %></td>
+        <td><%= rfq.RFQ_APPROVED %></td>
+        <td><%= rfq.RFQ_CLIENT_OK %></td>
+        <td><%= rfq.RFQ_CLIENT_OK_DATE %></td>
+        <td><%= rfq.RFQ_CLIENT_OK_BY %></td>
+        <td><%= rfq.RFQ_TOTAL_COST %></td>
+        <td><%= rfq.RFQ_TOTAL_GROSS %></td>
+        <td><%= rfq.RFQ_SPECIAL_INSTR %></td>
+        <td><%= rfq.RFQ_DEL_INSTR %></td>
+        <td><%= rfq.RFQ_AUTH %></td>
+        <td><%= rfq.RFQ_STATUS %></td>
+        <td><%= rfq.RFQ_ADDED_BY %></td>
+        <td><%= rfq.RFQ_QUOTE_NEEDED %></td>
+        <td><%= rfq.RFQ_DEL_DATE %></td>
+        <td><%= rfq.RFQ_PROD_CONTACT_EMAIL %></td>
+        <td><%= rfq.RFQ_TAXABLE1 %></td>
+        <td><%= rfq.RFQ_TAXABLE2 %></td>
+        <td><%= rfq.RFQ_PROD_CONTACT_PH %></td>
+        <td><%= link_to 'Show', rfq %></td>
+        <td><%= link_to 'Edit', edit_rfq_path(rfq) %></td>
+        <td><%= link_to 'Destroy', rfq, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rfq', new_rfq_path %>

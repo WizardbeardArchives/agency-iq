@@ -1,0 +1,2 @@
+module IntItemsHelper
+end

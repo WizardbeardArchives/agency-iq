@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @assets_type.primaryKey %>
+</p>
+
+<p>
+  <strong>Ast file ext:</strong>
+  <%= @assets_type.AST_FILE_EXT %>
+</p>
+
+<p>
+  <strong>Ast app name:</strong>
+  <%= @assets_type.AST_APP_NAME %>
+</p>
+
+<p>
+  <strong>Ast desc:</strong>
+  <%= @assets_type.AST_DESC %>
+</p>
+
+<p>
+  <strong>Ast creator:</strong>
+  <%= @assets_type.AST_CREATOR %>
+</p>
+
+<p>
+  <strong>Ast icon:</strong>
+  <%= @assets_type.AST_ICON %>
+</p>
+
+<p>
+  <strong>Ast user:</strong>
+  <%= @assets_type.AST_USER %>
+</p>
+
+<p>
+  <strong>Ast kind:</strong>
+  <%= @assets_type.AST_KIND %>
+</p>
+
+<%= link_to 'Edit', edit_assets_type_path(@assets_type) %> |
+<%= link_to 'Back', assets_types_path %>

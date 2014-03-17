@@ -1,0 +1,33 @@
+<%= simple_form_for(@home_comment) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :COMMENT_HOME__SEQ %>
+    <%= f.input :COMMENT_JOB_NUM %>
+    <%= f.input :COMMENT_TASK %>
+    <%= f.input :COMMENT_ADDED_BY %>
+    <%= f.input :COMMENT_DATE_ADDED %>
+    <%= f.input :COMMENT_KIND %>
+    <%= f.input :COMMENT_REPLY %>
+    <%= f.input :COMMENT_PRIVATE1 %>
+    <%= f.input :COMMENT_PRIVATE2 %>
+    <%= f.input :COMMENT_PRIORITY %>
+    <%= f.input :COMMENT_SORT %>
+    <%= f.input :COMMENT_CHOICE %>
+    <%= f.input :COMMENT_MESSAGE %>
+    <%= f.input :COMMENT_LOCKED %>
+    <%= f.input :COMMENT_ADDED_KIND %>
+    <%= f.input :COMMENT_RATING %>
+    <%= f.input :COMMENT_PROD_STATUS %>
+    <%= f.input :COMMENT_FILE_NAME %>
+    <%= f.input :COMMENT_X_PHASE %>
+    <%= f.input :COMMENT_PING %>
+    <%= f.input :COMMENT_FINAL %>
+    <%= f.input :COMMENT_STAR %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

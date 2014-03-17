@@ -1,0 +1,119 @@
+<h1>Listing recur_ars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rar client num</th>
+      <th>Rar date</th>
+      <th>Rar amt1</th>
+      <th>Rar desc</th>
+      <th>Rar dgl</th>
+      <th>Rar added by</th>
+      <th>Rar inv num</th>
+      <th>Rar period</th>
+      <th>Rar job num</th>
+      <th>Rar inv date</th>
+      <th>Rar ax task1</th>
+      <th>Rar ax name1</th>
+      <th>Rar ax hours1</th>
+      <th>Rar ax amt1</th>
+      <th>Rar ax task2</th>
+      <th>Rar ax name2</th>
+      <th>Rar ax hours2</th>
+      <th>Rar ax amt2</th>
+      <th>Rar ax task3</th>
+      <th>Rar ax name3</th>
+      <th>Rar ax hours3</th>
+      <th>Rar ax amt3</th>
+      <th>Rar ax task4</th>
+      <th>Rar ax name4</th>
+      <th>Rar ax hours4</th>
+      <th>Rar ax amt4</th>
+      <th>Rar ax task5</th>
+      <th>Rar ax name5</th>
+      <th>Rar ax hours5</th>
+      <th>Rar ax amt5</th>
+      <th>Rar ax task6</th>
+      <th>Rar ax name6</th>
+      <th>Rar ax hours6</th>
+      <th>Rar ax amt6</th>
+      <th>Rar ax cgl1</th>
+      <th>Rar ax cgl2</th>
+      <th>Rar ax cgl3</th>
+      <th>Rar ax cgl4</th>
+      <th>Rar ax cgl5</th>
+      <th>Rar ax cgl6</th>
+      <th>Rar option1</th>
+      <th>Rar option2</th>
+      <th>Rar option3</th>
+      <th>Rar added when</th>
+      <th>Rar edited by</th>
+      <th>Rar edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recur_ars.each do |recur_ar| %>
+      <tr>
+        <td><%= recur_ar.primaryKey %></td>
+        <td><%= recur_ar.RAR_CLIENT_NUM %></td>
+        <td><%= recur_ar.RAR_DATE %></td>
+        <td><%= recur_ar.RAR_AMT1 %></td>
+        <td><%= recur_ar.RAR_DESC %></td>
+        <td><%= recur_ar.RAR_DGL %></td>
+        <td><%= recur_ar.RAR_ADDED_BY %></td>
+        <td><%= recur_ar.RAR_INV_NUM %></td>
+        <td><%= recur_ar.RAR_PERIOD %></td>
+        <td><%= recur_ar.RAR_JOB_NUM %></td>
+        <td><%= recur_ar.RAR_INV_DATE %></td>
+        <td><%= recur_ar.RAR_AX_TASK1 %></td>
+        <td><%= recur_ar.RAR_AX_NAME1 %></td>
+        <td><%= recur_ar.RAR_AX_HOURS1 %></td>
+        <td><%= recur_ar.RAR_AX_AMT1 %></td>
+        <td><%= recur_ar.RAR_AX_TASK2 %></td>
+        <td><%= recur_ar.RAR_AX_NAME2 %></td>
+        <td><%= recur_ar.RAR_AX_HOURS2 %></td>
+        <td><%= recur_ar.RAR_AX_AMT2 %></td>
+        <td><%= recur_ar.RAR_AX_TASK3 %></td>
+        <td><%= recur_ar.RAR_AX_NAME3 %></td>
+        <td><%= recur_ar.RAR_AX_HOURS3 %></td>
+        <td><%= recur_ar.RAR_AX_AMT3 %></td>
+        <td><%= recur_ar.RAR_AX_TASK4 %></td>
+        <td><%= recur_ar.RAR_AX_NAME4 %></td>
+        <td><%= recur_ar.RAR_AX_HOURS4 %></td>
+        <td><%= recur_ar.RAR_AX_AMT4 %></td>
+        <td><%= recur_ar.RAR_AX_TASK5 %></td>
+        <td><%= recur_ar.RAR_AX_NAME5 %></td>
+        <td><%= recur_ar.RAR_AX_HOURS5 %></td>
+        <td><%= recur_ar.RAR_AX_AMT5 %></td>
+        <td><%= recur_ar.RAR_AX_TASK6 %></td>
+        <td><%= recur_ar.RAR_AX_NAME6 %></td>
+        <td><%= recur_ar.RAR_AX_HOURS6 %></td>
+        <td><%= recur_ar.RAR_AX_AMT6 %></td>
+        <td><%= recur_ar.RAR_AX_CGL1 %></td>
+        <td><%= recur_ar.RAR_AX_CGL2 %></td>
+        <td><%= recur_ar.RAR_AX_CGL3 %></td>
+        <td><%= recur_ar.RAR_AX_CGL4 %></td>
+        <td><%= recur_ar.RAR_AX_CGL5 %></td>
+        <td><%= recur_ar.RAR_AX_CGL6 %></td>
+        <td><%= recur_ar.RAR_OPTION1 %></td>
+        <td><%= recur_ar.RAR_OPTION2 %></td>
+        <td><%= recur_ar.RAR_OPTION3 %></td>
+        <td><%= recur_ar.RAR_ADDED_WHEN %></td>
+        <td><%= recur_ar.RAR_EDITED_BY %></td>
+        <td><%= recur_ar.RAR_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', recur_ar %></td>
+        <td><%= link_to 'Edit', edit_recur_ar_path(recur_ar) %></td>
+        <td><%= link_to 'Destroy', recur_ar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recur ar', new_recur_ar_path %>

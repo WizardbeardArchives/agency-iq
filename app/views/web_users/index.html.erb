@@ -1,0 +1,171 @@
+<h1>Listing web_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Wu work</th>
+      <th>Wu name</th>
+      <th>Wu org</th>
+      <th>Wu expires</th>
+      <th>Wu phone</th>
+      <th>Wu email</th>
+      <th>Wu phone cell</th>
+      <th>Wu pager</th>
+      <th>Wu staff</th>
+      <th>Wu p</th>
+      <th>Wu p expires</th>
+      <th>Wu dept</th>
+      <th>Wu web admin</th>
+      <th>Wu last access</th>
+      <th>Wu kind</th>
+      <th>Wu a time</th>
+      <th>Wu access exp</th>
+      <th>Wu admin</th>
+      <th>Wu a job tickets</th>
+      <th>Wu a est</th>
+      <th>Wu a sched</th>
+      <th>Wu a traffic</th>
+      <th>Wu a job status</th>
+      <th>Wu a po</th>
+      <th>Wu a po ok</th>
+      <th>Wu a task plan</th>
+      <th>Wu a chg ord</th>
+      <th>Wu a client diary</th>
+      <th>Wu a est revs</th>
+      <th>Wu a costs</th>
+      <th>Wu a client status</th>
+      <th>Wu a unbilled</th>
+      <th>Wu a bill prvw</th>
+      <th>Wu a wip</th>
+      <th>Wu a billings</th>
+      <th>Wu a snapshot</th>
+      <th>Wu a cash flash</th>
+      <th>Wu a stmt</th>
+      <th>Wu a ap</th>
+      <th>Wu a v num</th>
+      <th>Wu a c num</th>
+      <th>Wu a work to do</th>
+      <th>Wu a job diary</th>
+      <th>Wu a ar</th>
+      <th>Wu ip</th>
+      <th>Wu suspend</th>
+      <th>Wu last job</th>
+      <th>Wu last date</th>
+      <th>Wu a weekly traf</th>
+      <th>Wu a job po</th>
+      <th>Wu a job prog</th>
+      <th>Wu welcome msg</th>
+      <th>Wu last po</th>
+      <th>Wu a clients</th>
+      <th>Wu a vendors</th>
+      <th>Wu a exp</th>
+      <th>Wu a add jobs</th>
+      <th>Wu a job specs</th>
+      <th>Wu added by</th>
+      <th>Wu added when</th>
+      <th>Wu home page</th>
+      <th>Wu bad logins</th>
+      <th>Wu cookie</th>
+      <th>Wu a proposals</th>
+      <th>Wu a int charges</th>
+      <th>Wu a time sheets</th>
+      <th>Wu a prebill</th>
+      <th>Wu a snaps prod</th>
+      <th>Wu a snaps wip</th>
+      <th>Wu id</th>
+      <th>Wu edited by</th>
+      <th>Wu edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_users.each do |web_user| %>
+      <tr>
+        <td><%= web_user.primaryKey %></td>
+        <td><%= web_user.WU_WORK %></td>
+        <td><%= web_user.WU_NAME %></td>
+        <td><%= web_user.WU_ORG %></td>
+        <td><%= web_user.WU_EXPIRES %></td>
+        <td><%= web_user.WU_PHONE %></td>
+        <td><%= web_user.WU_EMAIL %></td>
+        <td><%= web_user.WU_PHONE_CELL %></td>
+        <td><%= web_user.WU_PAGER %></td>
+        <td><%= web_user.WU_STAFF %></td>
+        <td><%= web_user.WU_P %></td>
+        <td><%= web_user.WU_P_EXPIRES %></td>
+        <td><%= web_user.WU_DEPT %></td>
+        <td><%= web_user.WU_WEB_ADMIN %></td>
+        <td><%= web_user.WU_LAST_ACCESS %></td>
+        <td><%= web_user.WU_KIND %></td>
+        <td><%= web_user.WU_A_TIME %></td>
+        <td><%= web_user.WU_ACCESS_EXP %></td>
+        <td><%= web_user.WU_ADMIN %></td>
+        <td><%= web_user.WU_A_JOB_TICKETS %></td>
+        <td><%= web_user.WU_A_EST %></td>
+        <td><%= web_user.WU_A_SCHED %></td>
+        <td><%= web_user.WU_A_TRAFFIC %></td>
+        <td><%= web_user.WU_A_JOB_STATUS %></td>
+        <td><%= web_user.WU_A_PO %></td>
+        <td><%= web_user.WU_A_PO_OK %></td>
+        <td><%= web_user.WU_A_TASK_PLAN %></td>
+        <td><%= web_user.WU_A_CHG_ORD %></td>
+        <td><%= web_user.WU_A_CLIENT_DIARY %></td>
+        <td><%= web_user.WU_A_EST_REVS %></td>
+        <td><%= web_user.WU_A_COSTS %></td>
+        <td><%= web_user.WU_A_CLIENT_STATUS %></td>
+        <td><%= web_user.WU_A_UNBILLED %></td>
+        <td><%= web_user.WU_A_BILL_PRVW %></td>
+        <td><%= web_user.WU_A_WIP %></td>
+        <td><%= web_user.WU_A_BILLINGS %></td>
+        <td><%= web_user.WU_A_SNAPSHOT %></td>
+        <td><%= web_user.WU_A_CASH_FLASH %></td>
+        <td><%= web_user.WU_A_STMT %></td>
+        <td><%= web_user.WU_A_AP %></td>
+        <td><%= web_user.WU_A_V_NUM %></td>
+        <td><%= web_user.WU_A_C_NUM %></td>
+        <td><%= web_user.WU_A_WORK_TO_DO %></td>
+        <td><%= web_user.WU_A_JOB_DIARY %></td>
+        <td><%= web_user.WU_A_AR %></td>
+        <td><%= web_user.WU_IP %></td>
+        <td><%= web_user.WU_SUSPEND %></td>
+        <td><%= web_user.WU_LAST_JOB %></td>
+        <td><%= web_user.WU_LAST_DATE %></td>
+        <td><%= web_user.WU_A_WEEKLY_TRAF %></td>
+        <td><%= web_user.WU_A_JOB_PO %></td>
+        <td><%= web_user.WU_A_JOB_PROG %></td>
+        <td><%= web_user.WU_WELCOME_MSG %></td>
+        <td><%= web_user.WU_LAST_PO %></td>
+        <td><%= web_user.WU_A_CLIENTS %></td>
+        <td><%= web_user.WU_A_VENDORS %></td>
+        <td><%= web_user.WU_A_EXP %></td>
+        <td><%= web_user.WU_A_ADD_JOBS %></td>
+        <td><%= web_user.WU_A_JOB_SPECS %></td>
+        <td><%= web_user.WU_ADDED_BY %></td>
+        <td><%= web_user.WU_ADDED_WHEN %></td>
+        <td><%= web_user.WU_HOME_PAGE %></td>
+        <td><%= web_user.WU_BAD_LOGINS %></td>
+        <td><%= web_user.WU_COOKIE %></td>
+        <td><%= web_user.WU_A_PROPOSALS %></td>
+        <td><%= web_user.WU_A_INT_CHARGES %></td>
+        <td><%= web_user.WU_A_TIME_SHEETS %></td>
+        <td><%= web_user.WU_A_PREBILL %></td>
+        <td><%= web_user.WU_A_SNAPS_PROD %></td>
+        <td><%= web_user.WU_A_SNAPS_WIP %></td>
+        <td><%= web_user.WU_ID %></td>
+        <td><%= web_user.WU_EDITED_BY %></td>
+        <td><%= web_user.WU_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', web_user %></td>
+        <td><%= link_to 'Edit', edit_web_user_path(web_user) %></td>
+        <td><%= link_to 'Destroy', web_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Web user', new_web_user_path %>

@@ -1,0 +1,79 @@
+<h1>Listing media_est_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Mi me num</th>
+      <th>Mi pub</th>
+      <th>Mi issue date</th>
+      <th>Mi close date</th>
+      <th>Mi ad name</th>
+      <th>Mi ad size</th>
+      <th>Mi gross</th>
+      <th>Mi cost</th>
+      <th>Mi comm</th>
+      <th>Mi vendor num</th>
+      <th>Mi po num</th>
+      <th>Mi po amt</th>
+      <th>Mi po date</th>
+      <th>Mi job num</th>
+      <th>Mi task</th>
+      <th>Mi status</th>
+      <th>Mi notes</th>
+      <th>Mi show notes</th>
+      <th>Mi materials due</th>
+      <th>Mi period</th>
+      <th>Mi bill net</th>
+      <th>Mi run date</th>
+      <th>Mi added by</th>
+      <th>Mi added when</th>
+      <th>Mi edited by</th>
+      <th>Mi edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @media_est_items.each do |media_est_item| %>
+      <tr>
+        <td><%= media_est_item.primaryKey %></td>
+        <td><%= media_est_item.MI_ME_NUM %></td>
+        <td><%= media_est_item.MI_PUB %></td>
+        <td><%= media_est_item.MI_ISSUE_DATE %></td>
+        <td><%= media_est_item.MI_CLOSE_DATE %></td>
+        <td><%= media_est_item.MI_AD_NAME %></td>
+        <td><%= media_est_item.MI_AD_SIZE %></td>
+        <td><%= media_est_item.MI_GROSS %></td>
+        <td><%= media_est_item.MI_COST %></td>
+        <td><%= media_est_item.MI_COMM %></td>
+        <td><%= media_est_item.MI_VENDOR_NUM %></td>
+        <td><%= media_est_item.MI_PO_NUM %></td>
+        <td><%= media_est_item.MI_PO_AMT %></td>
+        <td><%= media_est_item.MI_PO_DATE %></td>
+        <td><%= media_est_item.MI_JOB_NUM %></td>
+        <td><%= media_est_item.MI_TASK %></td>
+        <td><%= media_est_item.MI_STATUS %></td>
+        <td><%= media_est_item.MI_NOTES %></td>
+        <td><%= media_est_item.MI_SHOW_NOTES %></td>
+        <td><%= media_est_item.MI_MATERIALS_DUE %></td>
+        <td><%= media_est_item.MI_PERIOD %></td>
+        <td><%= media_est_item.MI_BILL_NET %></td>
+        <td><%= media_est_item.MI_RUN_DATE %></td>
+        <td><%= media_est_item.MI_ADDED_BY %></td>
+        <td><%= media_est_item.MI_ADDED_WHEN %></td>
+        <td><%= media_est_item.MI_EDITED_BY %></td>
+        <td><%= media_est_item.MI_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', media_est_item %></td>
+        <td><%= link_to 'Edit', edit_media_est_item_path(media_est_item) %></td>
+        <td><%= link_to 'Destroy', media_est_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Media est item', new_media_est_item_path %>

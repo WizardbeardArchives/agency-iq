@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @timer.primaryKey %>
+</p>
+
+<p>
+  <strong>Timer initials:</strong>
+  <%= @timer.TIMER_INITIALS %>
+</p>
+
+<p>
+  <strong>Timer start:</strong>
+  <%= @timer.TIMER_START %>
+</p>
+
+<p>
+  <strong>Timer paused:</strong>
+  <%= @timer.TIMER_PAUSED %>
+</p>
+
+<p>
+  <strong>Timer resumed:</strong>
+  <%= @timer.TIMER_RESUMED %>
+</p>
+
+<p>
+  <strong>Timer elapsed secs:</strong>
+  <%= @timer.TIMER_ELAPSED_SECS %>
+</p>
+
+<p>
+  <strong>Timer job num:</strong>
+  <%= @timer.TIMER_JOB_NUM %>
+</p>
+
+<p>
+  <strong>Timer task:</strong>
+  <%= @timer.TIMER_TASK %>
+</p>
+
+<p>
+  <strong>Timer note:</strong>
+  <%= @timer.TIMER_NOTE %>
+</p>
+
+<%= link_to 'Edit', edit_timer_path(@timer) %> |
+<%= link_to 'Back', timers_path %>

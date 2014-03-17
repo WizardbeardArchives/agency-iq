@@ -1,0 +1,41 @@
+<h1>Listing assets_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ast file ext</th>
+      <th>Ast app name</th>
+      <th>Ast desc</th>
+      <th>Ast creator</th>
+      <th>Ast icon</th>
+      <th>Ast user</th>
+      <th>Ast kind</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assets_types.each do |assets_type| %>
+      <tr>
+        <td><%= assets_type.primaryKey %></td>
+        <td><%= assets_type.AST_FILE_EXT %></td>
+        <td><%= assets_type.AST_APP_NAME %></td>
+        <td><%= assets_type.AST_DESC %></td>
+        <td><%= assets_type.AST_CREATOR %></td>
+        <td><%= assets_type.AST_ICON %></td>
+        <td><%= assets_type.AST_USER %></td>
+        <td><%= assets_type.AST_KIND %></td>
+        <td><%= link_to 'Show', assets_type %></td>
+        <td><%= link_to 'Edit', edit_assets_type_path(assets_type) %></td>
+        <td><%= link_to 'Destroy', assets_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Assets type', new_assets_type_path %>

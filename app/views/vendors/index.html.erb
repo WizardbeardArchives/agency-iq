@@ -1,0 +1,241 @@
+<h1>Listing vendors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>V num</th>
+      <th>V org</th>
+      <th>V note1</th>
+      <th>V street</th>
+      <th>V city</th>
+      <th>V note2</th>
+      <th>V zip</th>
+      <th>V contact</th>
+      <th>V phone</th>
+      <th>V ytd</th>
+      <th>V markup</th>
+      <th>V note3</th>
+      <th>V task</th>
+      <th>V type</th>
+      <th>V open</th>
+      <th>V allocate</th>
+      <th>V tax id</th>
+      <th>V acct num</th>
+      <th>V currn</th>
+      <th>V 30day</th>
+      <th>V 60day</th>
+      <th>V 90day</th>
+      <th>V baln</th>
+      <th>V last ap</th>
+      <th>V added by</th>
+      <th>V added when</th>
+      <th>V time</th>
+      <th>V 1</th>
+      <th>V 2</th>
+      <th>V 3</th>
+      <th>V 4</th>
+      <th>V 5</th>
+      <th>V 6</th>
+      <th>V 7</th>
+      <th>V 8</th>
+      <th>V 9</th>
+      <th>V 10</th>
+      <th>V 11</th>
+      <th>V 12</th>
+      <th>V l1</th>
+      <th>V l2</th>
+      <th>V l3</th>
+      <th>V l4</th>
+      <th>V l5</th>
+      <th>V l6</th>
+      <th>V l7</th>
+      <th>V l8</th>
+      <th>V l9</th>
+      <th>V l10</th>
+      <th>V l11</th>
+      <th>V l12</th>
+      <th>V terms1</th>
+      <th>V terms2</th>
+      <th>V terms3</th>
+      <th>V cgl</th>
+      <th>V dgl</th>
+      <th>V ck memo</th>
+      <th>V notes</th>
+      <th>V fax</th>
+      <th>V disc dgl</th>
+      <th>V name1</th>
+      <th>V phone1</th>
+      <th>V fax1</th>
+      <th>V pager1</th>
+      <th>V car phone1</th>
+      <th>V name2</th>
+      <th>V phone2</th>
+      <th>V fax2</th>
+      <th>V car phone2</th>
+      <th>V pager2</th>
+      <th>V name3</th>
+      <th>V phone3</th>
+      <th>V fax3</th>
+      <th>V pager3</th>
+      <th>V car phone3</th>
+      <th>V home phone1</th>
+      <th>V home phone2</th>
+      <th>V home phone3</th>
+      <th>V active</th>
+      <th>V 1099</th>
+      <th>V media vnum</th>
+      <th>V address2 1</th>
+      <th>V address2 2</th>
+      <th>V address2 3</th>
+      <th>V address2 4</th>
+      <th>V address3 1</th>
+      <th>V address3 2</th>
+      <th>V address3 3</th>
+      <th>V address3 4</th>
+      <th>V comm</th>
+      <th>V hold</th>
+      <th>V hold why</th>
+      <th>V media kind</th>
+      <th>V web url</th>
+      <th>V email</th>
+      <th>V corp id</th>
+      <th>V market</th>
+      <th>V changed by</th>
+      <th>V changed when</th>
+      <th>V no rfq</th>
+      <th>V dba</th>
+      <th>V 1099 rent</th>
+      <th>V edited by</th>
+      <th>V edited when</th>
+      <th>V paid online</th>
+      <th>V ncf prefix1</th>
+      <th>V rfq type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vendors.each do |vendor| %>
+      <tr>
+        <td><%= vendor.primaryKey %></td>
+        <td><%= vendor.V_NUM %></td>
+        <td><%= vendor.V_ORG %></td>
+        <td><%= vendor.V_NOTE1 %></td>
+        <td><%= vendor.V_STREET %></td>
+        <td><%= vendor.V_CITY %></td>
+        <td><%= vendor.V_NOTE2 %></td>
+        <td><%= vendor.V_ZIP %></td>
+        <td><%= vendor.V_CONTACT %></td>
+        <td><%= vendor.V_PHONE %></td>
+        <td><%= vendor.V_YTD %></td>
+        <td><%= vendor.V_MARKUP %></td>
+        <td><%= vendor.V_NOTE3 %></td>
+        <td><%= vendor.V_TASK %></td>
+        <td><%= vendor.V_TYPE %></td>
+        <td><%= vendor.V_OPEN %></td>
+        <td><%= vendor.V_ALLOCATE %></td>
+        <td><%= vendor.V_TAX_ID %></td>
+        <td><%= vendor.V_ACCT_NUM %></td>
+        <td><%= vendor.V_CURRN %></td>
+        <td><%= vendor.V_30DAY %></td>
+        <td><%= vendor.V_60DAY %></td>
+        <td><%= vendor.V_90DAY %></td>
+        <td><%= vendor.V_BALN %></td>
+        <td><%= vendor.V_LAST_AP %></td>
+        <td><%= vendor.V_ADDED_BY %></td>
+        <td><%= vendor.V_ADDED_WHEN %></td>
+        <td><%= vendor.V_TIME %></td>
+        <td><%= vendor.V_1 %></td>
+        <td><%= vendor.V_2 %></td>
+        <td><%= vendor.V_3 %></td>
+        <td><%= vendor.V_4 %></td>
+        <td><%= vendor.V_5 %></td>
+        <td><%= vendor.V_6 %></td>
+        <td><%= vendor.V_7 %></td>
+        <td><%= vendor.V_8 %></td>
+        <td><%= vendor.V_9 %></td>
+        <td><%= vendor.V_10 %></td>
+        <td><%= vendor.V_11 %></td>
+        <td><%= vendor.V_12 %></td>
+        <td><%= vendor.V_L1 %></td>
+        <td><%= vendor.V_L2 %></td>
+        <td><%= vendor.V_L3 %></td>
+        <td><%= vendor.V_L4 %></td>
+        <td><%= vendor.V_L5 %></td>
+        <td><%= vendor.V_L6 %></td>
+        <td><%= vendor.V_L7 %></td>
+        <td><%= vendor.V_L8 %></td>
+        <td><%= vendor.V_L9 %></td>
+        <td><%= vendor.V_L10 %></td>
+        <td><%= vendor.V_L11 %></td>
+        <td><%= vendor.V_L12 %></td>
+        <td><%= vendor.V_TERMS1 %></td>
+        <td><%= vendor.V_TERMS2 %></td>
+        <td><%= vendor.V_TERMS3 %></td>
+        <td><%= vendor.V_CGL %></td>
+        <td><%= vendor.V_DGL %></td>
+        <td><%= vendor.V_CK_MEMO %></td>
+        <td><%= vendor.V_NOTES %></td>
+        <td><%= vendor.V_FAX %></td>
+        <td><%= vendor.V_DISC_DGL %></td>
+        <td><%= vendor.V_NAME1 %></td>
+        <td><%= vendor.V_PHONE1 %></td>
+        <td><%= vendor.V_FAX1 %></td>
+        <td><%= vendor.V_PAGER1 %></td>
+        <td><%= vendor.V_CAR_PHONE1 %></td>
+        <td><%= vendor.V_NAME2 %></td>
+        <td><%= vendor.V_PHONE2 %></td>
+        <td><%= vendor.V_FAX2 %></td>
+        <td><%= vendor.V_CAR_PHONE2 %></td>
+        <td><%= vendor.V_PAGER2 %></td>
+        <td><%= vendor.V_NAME3 %></td>
+        <td><%= vendor.V_PHONE3 %></td>
+        <td><%= vendor.V_FAX3 %></td>
+        <td><%= vendor.V_PAGER3 %></td>
+        <td><%= vendor.V_CAR_PHONE3 %></td>
+        <td><%= vendor.V_HOME_PHONE1 %></td>
+        <td><%= vendor.V_HOME_PHONE2 %></td>
+        <td><%= vendor.V_HOME_PHONE3 %></td>
+        <td><%= vendor.V_ACTIVE %></td>
+        <td><%= vendor.V_1099 %></td>
+        <td><%= vendor.V_MEDIA_VNUM %></td>
+        <td><%= vendor.V_ADDRESS2_1 %></td>
+        <td><%= vendor.V_ADDRESS2_2 %></td>
+        <td><%= vendor.V_ADDRESS2_3 %></td>
+        <td><%= vendor.V_ADDRESS2_4 %></td>
+        <td><%= vendor.V_ADDRESS3_1 %></td>
+        <td><%= vendor.V_ADDRESS3_2 %></td>
+        <td><%= vendor.V_ADDRESS3_3 %></td>
+        <td><%= vendor.V_ADDRESS3_4 %></td>
+        <td><%= vendor.V_COMM %></td>
+        <td><%= vendor.V_HOLD %></td>
+        <td><%= vendor.V_HOLD_WHY %></td>
+        <td><%= vendor.V_MEDIA_KIND %></td>
+        <td><%= vendor.V_WEB_URL %></td>
+        <td><%= vendor.V_EMAIL %></td>
+        <td><%= vendor.V_CORP_ID %></td>
+        <td><%= vendor.V_MARKET %></td>
+        <td><%= vendor.V_CHANGED_BY %></td>
+        <td><%= vendor.V_CHANGED_WHEN %></td>
+        <td><%= vendor.V_NO_RFQ %></td>
+        <td><%= vendor.V_DBA %></td>
+        <td><%= vendor.V_1099_RENT %></td>
+        <td><%= vendor.V_EDITED_BY %></td>
+        <td><%= vendor.V_EDITED_WHEN %></td>
+        <td><%= vendor.V_PAID_ONLINE %></td>
+        <td><%= vendor.V_NCF_PREFIX1 %></td>
+        <td><%= vendor.V_RFQ_TYPE %></td>
+        <td><%= link_to 'Show', vendor %></td>
+        <td><%= link_to 'Edit', edit_vendor_path(vendor) %></td>
+        <td><%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vendor', new_vendor_path %>

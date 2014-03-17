@@ -1,0 +1,47 @@
+<%= simple_form_for(@proposal) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PROPS_CLIENT_NUM %>
+    <%= f.input :PROPS_DATE_ADDED %>
+    <%= f.input :PROPS_REQUESTOR %>
+    <%= f.input :PROPS_TYPE %>
+    <%= f.input :PROPS_BUDGET %>
+    <%= f.input :PROPS_START_DATE %>
+    <%= f.input :PROPS_DUE_DATE %>
+    <%= f.input :PROPS_OK_BY %>
+    <%= f.input :PROPS_CB1 %>
+    <%= f.input :PROPS_CB2 %>
+    <%= f.input :PROPS_CB3 %>
+    <%= f.input :PROPS_CB4 %>
+    <%= f.input :PROPS_CB5 %>
+    <%= f.input :PROPS_CB6 %>
+    <%= f.input :PROPS_CB7 %>
+    <%= f.input :PROPS_CB8 %>
+    <%= f.input :PROPS_CB9 %>
+    <%= f.input :PROPS_CB10 %>
+    <%= f.input :PROPS_CB11 %>
+    <%= f.input :PROPS_CB12 %>
+    <%= f.input :PROPS_CB13 %>
+    <%= f.input :PROPS_CB14 %>
+    <%= f.input :PROPS_CB15 %>
+    <%= f.input :PROPS_NAME %>
+    <%= f.input :PROPS_OK_DATE %>
+    <%= f.input :PROPS_DESC %>
+    <%= f.input :PROPS_CHARGE_NUM %>
+    <%= f.input :PROPS_STATUS_DESC %>
+    <%= f.input :PROPS_STATUS %>
+    <%= f.input :PROPS_ADDED_BY %>
+    <%= f.input :PROPS_APPROVED %>
+    <%= f.input :PROPS_APPROVED_BY %>
+    <%= f.input :PROPS_APPROVED_DATE %>
+    <%= f.input :PROPS_EDITED_BY %>
+    <%= f.input :PROPS_EDITED_WHEN %>
+    <%= f.input :PROPS_REVIEWER %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

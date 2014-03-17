@@ -1,0 +1,43 @@
+<h1>Listing credit_card_prefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Cc kind</th>
+      <th>Cc vendor num</th>
+      <th>Cc cgl</th>
+      <th>Cc payee</th>
+      <th>Cc job num</th>
+      <th>Cc task</th>
+      <th>Cc dgl</th>
+      <th>Cc acct num</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @credit_card_prefs.each do |credit_card_pref| %>
+      <tr>
+        <td><%= credit_card_pref.primaryKey %></td>
+        <td><%= credit_card_pref.CC_KIND %></td>
+        <td><%= credit_card_pref.CC_VENDOR_NUM %></td>
+        <td><%= credit_card_pref.CC_CGL %></td>
+        <td><%= credit_card_pref.CC_PAYEE %></td>
+        <td><%= credit_card_pref.CC_JOB_NUM %></td>
+        <td><%= credit_card_pref.CC_TASK %></td>
+        <td><%= credit_card_pref.CC_DGL %></td>
+        <td><%= credit_card_pref.CC_ACCT_NUM %></td>
+        <td><%= link_to 'Show', credit_card_pref %></td>
+        <td><%= link_to 'Edit', edit_credit_card_pref_path(credit_card_pref) %></td>
+        <td><%= link_to 'Destroy', credit_card_pref, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Credit card pref', new_credit_card_pref_path %>

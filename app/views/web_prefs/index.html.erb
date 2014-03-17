@@ -1,0 +1,177 @@
+<h1>Listing web_prefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Wp bell on hits</th>
+      <th>Wp current event</th>
+      <th>Wp disable log</th>
+      <th>Wp alert pw</th>
+      <th>Wp webmaster</th>
+      <th>Wp webmstr email</th>
+      <th>Wp alert logon</th>
+      <th>Wp smtp server</th>
+      <th>Wp auto start</th>
+      <th>Wp alert id</th>
+      <th>Wp date</th>
+      <th>Wp user</th>
+      <th>Greeting</th>
+      <th>Dgl name</th>
+      <th>Cgl name</th>
+      <th>Kind</th>
+      <th>Task kind</th>
+      <th>Type</th>
+      <th>Job name</th>
+      <th>Task name</th>
+      <th>Wp alert error</th>
+      <th>Est revision</th>
+      <th>Final estimate</th>
+      <th>Status desc1</th>
+      <th>Status desc2</th>
+      <th>Wp remote admin</th>
+      <th>Wp remote admin ip</th>
+      <th>Lookup6</th>
+      <th>Lookup5</th>
+      <th>Lookup4</th>
+      <th>Lookup3</th>
+      <th>Lookup2</th>
+      <th>Lookup jobs</th>
+      <th>Wp datetime</th>
+      <th>Hit duration</th>
+      <th>Query duration</th>
+      <th>Transaction type</th>
+      <th>Bytes received</th>
+      <th>Bytes sent</th>
+      <th>Header list</th>
+      <th>Wp disconnect</th>
+      <th>Wp show date</th>
+      <th>Ver</th>
+      <th>Alt socket</th>
+      <th>Message data</th>
+      <th>Posted</th>
+      <th>Wp port number</th>
+      <th>Wp backup</th>
+      <th>Wp close time</th>
+      <th>Wp open time</th>
+      <th>Wp font open</th>
+      <th>Wp font close</th>
+      <th>Wp auto archive log</th>
+      <th>Wp log ip errors</th>
+      <th>Wp last archive</th>
+      <th>Wp disable bad login</th>
+      <th>Wp js server</th>
+      <th>Cal day</th>
+      <th>Cal month</th>
+      <th>Cal year</th>
+      <th>Cal mode</th>
+      <th>Wp logo url</th>
+      <th>Wp logo link</th>
+      <th>Wp auto start my</th>
+      <th>Wp edited by</th>
+      <th>Wp edited when</th>
+      <th>Wp boxr email</th>
+      <th>Wp boxr username</th>
+      <th>Wp boxr pw</th>
+      <th>Wp boxr server</th>
+      <th>Wp ssl</th>
+      <th>Wp smtp auth id</th>
+      <th>Wp smtp auth pw</th>
+      <th>Wp smtp port</th>
+      <th>Wp smtp ssl type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_prefs.each do |web_pref| %>
+      <tr>
+        <td><%= web_pref.primaryKey %></td>
+        <td><%= web_pref.WP_BELL_ON_HITS %></td>
+        <td><%= web_pref.WP_CURRENT_EVENT %></td>
+        <td><%= web_pref.WP_DISABLE_LOG %></td>
+        <td><%= web_pref.WP_ALERT_PW %></td>
+        <td><%= web_pref.WP_WEBMASTER %></td>
+        <td><%= web_pref.WP_WEBMSTR_EMAIL %></td>
+        <td><%= web_pref.WP_ALERT_LOGON %></td>
+        <td><%= web_pref.WP_SMTP_SERVER %></td>
+        <td><%= web_pref.WP_AUTO_START %></td>
+        <td><%= web_pref.WP_ALERT_ID %></td>
+        <td><%= web_pref.WP_DATE %></td>
+        <td><%= web_pref.WP_USER %></td>
+        <td><%= web_pref.GREETING %></td>
+        <td><%= web_pref.DGL_NAME %></td>
+        <td><%= web_pref.CGL_NAME %></td>
+        <td><%= web_pref.KIND %></td>
+        <td><%= web_pref.TASK_KIND %></td>
+        <td><%= web_pref.TYPE %></td>
+        <td><%= web_pref.JOB_NAME %></td>
+        <td><%= web_pref.TASK_NAME %></td>
+        <td><%= web_pref.WP_ALERT_ERROR %></td>
+        <td><%= web_pref.EST_REVISION %></td>
+        <td><%= web_pref.FINAL_ESTIMATE %></td>
+        <td><%= web_pref.STATUS_DESC1 %></td>
+        <td><%= web_pref.STATUS_DESC2 %></td>
+        <td><%= web_pref.WP_REMOTE_ADMIN %></td>
+        <td><%= web_pref.WP_REMOTE_ADMIN_IP %></td>
+        <td><%= web_pref.LOOKUP6 %></td>
+        <td><%= web_pref.LOOKUP5 %></td>
+        <td><%= web_pref.LOOKUP4 %></td>
+        <td><%= web_pref.LOOKUP3 %></td>
+        <td><%= web_pref.LOOKUP2 %></td>
+        <td><%= web_pref.LOOKUP_JOBS %></td>
+        <td><%= web_pref.WP_DATETIME %></td>
+        <td><%= web_pref.HIT_DURATION %></td>
+        <td><%= web_pref.QUERY_DURATION %></td>
+        <td><%= web_pref.TRANSACTION_TYPE %></td>
+        <td><%= web_pref.BYTES_RECEIVED %></td>
+        <td><%= web_pref.BYTES_SENT %></td>
+        <td><%= web_pref.HEADER_LIST %></td>
+        <td><%= web_pref.WP_DISCONNECT %></td>
+        <td><%= web_pref.WP_SHOW_DATE %></td>
+        <td><%= web_pref.VER %></td>
+        <td><%= web_pref.ALT_SOCKET %></td>
+        <td><%= web_pref.MESSAGE_DATA %></td>
+        <td><%= web_pref.POSTED %></td>
+        <td><%= web_pref.WP_PORT_NUMBER %></td>
+        <td><%= web_pref.WP_BACKUP %></td>
+        <td><%= web_pref.WP_CLOSE_TIME %></td>
+        <td><%= web_pref.WP_OPEN_TIME %></td>
+        <td><%= web_pref.WP_FONT_OPEN %></td>
+        <td><%= web_pref.WP_FONT_CLOSE %></td>
+        <td><%= web_pref.WP_AUTO_ARCHIVE_LOG %></td>
+        <td><%= web_pref.WP_LOG_IP_ERRORS %></td>
+        <td><%= web_pref.WP_LAST_ARCHIVE %></td>
+        <td><%= web_pref.WP_DISABLE_BAD_LOGIN %></td>
+        <td><%= web_pref.WP_JS_SERVER %></td>
+        <td><%= web_pref.CAL_DAY %></td>
+        <td><%= web_pref.CAL_MONTH %></td>
+        <td><%= web_pref.CAL_YEAR %></td>
+        <td><%= web_pref.CAL_MODE %></td>
+        <td><%= web_pref.WP_LOGO_URL %></td>
+        <td><%= web_pref.WP_LOGO_LINK %></td>
+        <td><%= web_pref.WP_AUTO_START_MY %></td>
+        <td><%= web_pref.WP_EDITED_BY %></td>
+        <td><%= web_pref.WP_EDITED_WHEN %></td>
+        <td><%= web_pref.WP_BOXR_EMAIL %></td>
+        <td><%= web_pref.WP_BOXR_USERNAME %></td>
+        <td><%= web_pref.WP_BOXR_PW %></td>
+        <td><%= web_pref.WP_BOXR_SERVER %></td>
+        <td><%= web_pref.WP_SSL %></td>
+        <td><%= web_pref.WP_SMTP_AUTH_ID %></td>
+        <td><%= web_pref.WP_SMTP_AUTH_PW %></td>
+        <td><%= web_pref.WP_SMTP_PORT %></td>
+        <td><%= web_pref.WP_SMTP_SSL_TYPE %></td>
+        <td><%= link_to 'Show', web_pref %></td>
+        <td><%= link_to 'Edit', edit_web_pref_path(web_pref) %></td>
+        <td><%= link_to 'Destroy', web_pref, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Web pref', new_web_pref_path %>

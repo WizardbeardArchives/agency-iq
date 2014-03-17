@@ -1,0 +1,219 @@
+<h1>Listing media_plans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>M campaign</th>
+      <th>M name</th>
+      <th>M desc</th>
+      <th>M budget</th>
+      <th>M cost</th>
+      <th>M start date</th>
+      <th>M end start</th>
+      <th>M spots total</th>
+      <th>M rating total</th>
+      <th>M cost total</th>
+      <th>M cpp total</th>
+      <th>M cps total</th>
+      <th>M rf total</th>
+      <th>M client num</th>
+      <th>M date added</th>
+      <th>M added by</th>
+      <th>M revision</th>
+      <th>M rev note</th>
+      <th>M status note</th>
+      <th>M po cost</th>
+      <th>M po gross</th>
+      <th>M billed</th>
+      <th>M period1</th>
+      <th>M period2</th>
+      <th>M period3</th>
+      <th>M period4</th>
+      <th>M period5</th>
+      <th>M type</th>
+      <th>M memo</th>
+      <th>M num</th>
+      <th>M field label1</th>
+      <th>M field label2</th>
+      <th>M field label3</th>
+      <th>M field label4</th>
+      <th>M field label5</th>
+      <th>M field label6</th>
+      <th>M field1</th>
+      <th>M field2</th>
+      <th>M field3</th>
+      <th>M field4</th>
+      <th>M field5</th>
+      <th>M field6</th>
+      <th>M ae team</th>
+      <th>M client cont</th>
+      <th>M client phone</th>
+      <th>M f1</th>
+      <th>M sa1</th>
+      <th>M su1</th>
+      <th>M m1</th>
+      <th>M tu1</th>
+      <th>M w1</th>
+      <th>M th1</th>
+      <th>M f2</th>
+      <th>M sa2</th>
+      <th>M su2</th>
+      <th>M m2</th>
+      <th>M tu2</th>
+      <th>M w2</th>
+      <th>M th2</th>
+      <th>M f3</th>
+      <th>M per label1</th>
+      <th>M per label2</th>
+      <th>M per label3</th>
+      <th>M per label4</th>
+      <th>M per label5</th>
+      <th>M per label6</th>
+      <th>M per label7</th>
+      <th>M per label8</th>
+      <th>M per label9</th>
+      <th>M per label10</th>
+      <th>M per label11</th>
+      <th>M per label12</th>
+      <th>M period6</th>
+      <th>M period7</th>
+      <th>M period8</th>
+      <th>M period9</th>
+      <th>M period10</th>
+      <th>M period11</th>
+      <th>M period12</th>
+      <th>M job num</th>
+      <th>M task</th>
+      <th>M approval1</th>
+      <th>M approval2</th>
+      <th>M approval3</th>
+      <th>M flight</th>
+      <th>M kind</th>
+      <th>M commission</th>
+      <th>M status</th>
+      <th>M brand</th>
+      <th>M closed</th>
+      <th>M inactive</th>
+      <th>M approved</th>
+      <th>M approved by</th>
+      <th>M approved date</th>
+      <th>M edited by</th>
+      <th>M edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @media_plans.each do |media_plan| %>
+      <tr>
+        <td><%= media_plan.primaryKey %></td>
+        <td><%= media_plan.M_CAMPAIGN %></td>
+        <td><%= media_plan.M_NAME %></td>
+        <td><%= media_plan.M_DESC %></td>
+        <td><%= media_plan.M_BUDGET %></td>
+        <td><%= media_plan.M_COST %></td>
+        <td><%= media_plan.M_START_DATE %></td>
+        <td><%= media_plan.M_END_START %></td>
+        <td><%= media_plan.M_SPOTS_TOTAL %></td>
+        <td><%= media_plan.M_RATING_TOTAL %></td>
+        <td><%= media_plan.M_COST_TOTAL %></td>
+        <td><%= media_plan.M_CPP_TOTAL %></td>
+        <td><%= media_plan.M_CPS_TOTAL %></td>
+        <td><%= media_plan.M_RF_TOTAL %></td>
+        <td><%= media_plan.M_CLIENT_NUM %></td>
+        <td><%= media_plan.M_DATE_ADDED %></td>
+        <td><%= media_plan.M_ADDED_BY %></td>
+        <td><%= media_plan.M_REVISION %></td>
+        <td><%= media_plan.M_REV_NOTE %></td>
+        <td><%= media_plan.M_STATUS_NOTE %></td>
+        <td><%= media_plan.M_PO_COST %></td>
+        <td><%= media_plan.M_PO_GROSS %></td>
+        <td><%= media_plan.M_BILLED %></td>
+        <td><%= media_plan.M_PERIOD1 %></td>
+        <td><%= media_plan.M_PERIOD2 %></td>
+        <td><%= media_plan.M_PERIOD3 %></td>
+        <td><%= media_plan.M_PERIOD4 %></td>
+        <td><%= media_plan.M_PERIOD5 %></td>
+        <td><%= media_plan.M_TYPE %></td>
+        <td><%= media_plan.M_MEMO %></td>
+        <td><%= media_plan.M_NUM %></td>
+        <td><%= media_plan.M_FIELD_LABEL1 %></td>
+        <td><%= media_plan.M_FIELD_LABEL2 %></td>
+        <td><%= media_plan.M_FIELD_LABEL3 %></td>
+        <td><%= media_plan.M_FIELD_LABEL4 %></td>
+        <td><%= media_plan.M_FIELD_LABEL5 %></td>
+        <td><%= media_plan.M_FIELD_LABEL6 %></td>
+        <td><%= media_plan.M_FIELD1 %></td>
+        <td><%= media_plan.M_FIELD2 %></td>
+        <td><%= media_plan.M_FIELD3 %></td>
+        <td><%= media_plan.M_FIELD4 %></td>
+        <td><%= media_plan.M_FIELD5 %></td>
+        <td><%= media_plan.M_FIELD6 %></td>
+        <td><%= media_plan.M_AE_TEAM %></td>
+        <td><%= media_plan.M_CLIENT_CONT %></td>
+        <td><%= media_plan.M_CLIENT_PHONE %></td>
+        <td><%= media_plan.M_F1 %></td>
+        <td><%= media_plan.M_SA1 %></td>
+        <td><%= media_plan.M_SU1 %></td>
+        <td><%= media_plan.M_M1 %></td>
+        <td><%= media_plan.M_TU1 %></td>
+        <td><%= media_plan.M_W1 %></td>
+        <td><%= media_plan.M_TH1 %></td>
+        <td><%= media_plan.M_F2 %></td>
+        <td><%= media_plan.M_SA2 %></td>
+        <td><%= media_plan.M_SU2 %></td>
+        <td><%= media_plan.M_M2 %></td>
+        <td><%= media_plan.M_TU2 %></td>
+        <td><%= media_plan.M_W2 %></td>
+        <td><%= media_plan.M_TH2 %></td>
+        <td><%= media_plan.M_F3 %></td>
+        <td><%= media_plan.M_PER_LABEL1 %></td>
+        <td><%= media_plan.M_PER_LABEL2 %></td>
+        <td><%= media_plan.M_PER_LABEL3 %></td>
+        <td><%= media_plan.M_PER_LABEL4 %></td>
+        <td><%= media_plan.M_PER_LABEL5 %></td>
+        <td><%= media_plan.M_PER_LABEL6 %></td>
+        <td><%= media_plan.M_PER_LABEL7 %></td>
+        <td><%= media_plan.M_PER_LABEL8 %></td>
+        <td><%= media_plan.M_PER_LABEL9 %></td>
+        <td><%= media_plan.M_PER_LABEL10 %></td>
+        <td><%= media_plan.M_PER_LABEL11 %></td>
+        <td><%= media_plan.M_PER_LABEL12 %></td>
+        <td><%= media_plan.M_PERIOD6 %></td>
+        <td><%= media_plan.M_PERIOD7 %></td>
+        <td><%= media_plan.M_PERIOD8 %></td>
+        <td><%= media_plan.M_PERIOD9 %></td>
+        <td><%= media_plan.M_PERIOD10 %></td>
+        <td><%= media_plan.M_PERIOD11 %></td>
+        <td><%= media_plan.M_PERIOD12 %></td>
+        <td><%= media_plan.M_JOB_NUM %></td>
+        <td><%= media_plan.M_TASK %></td>
+        <td><%= media_plan.M_APPROVAL1 %></td>
+        <td><%= media_plan.M_APPROVAL2 %></td>
+        <td><%= media_plan.M_APPROVAL3 %></td>
+        <td><%= media_plan.M_FLIGHT %></td>
+        <td><%= media_plan.M_KIND %></td>
+        <td><%= media_plan.M_COMMISSION %></td>
+        <td><%= media_plan.M_STATUS %></td>
+        <td><%= media_plan.M_BRAND %></td>
+        <td><%= media_plan.M_CLOSED %></td>
+        <td><%= media_plan.M_INACTIVE %></td>
+        <td><%= media_plan.M_APPROVED %></td>
+        <td><%= media_plan.M_APPROVED_BY %></td>
+        <td><%= media_plan.M_APPROVED_DATE %></td>
+        <td><%= media_plan.M_EDITED_BY %></td>
+        <td><%= media_plan.M_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', media_plan %></td>
+        <td><%= link_to 'Edit', edit_media_plan_path(media_plan) %></td>
+        <td><%= link_to 'Destroy', media_plan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Media plan', new_media_plan_path %>

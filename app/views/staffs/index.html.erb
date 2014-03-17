@@ -1,0 +1,313 @@
+<h1>Listing staffs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>S initials</th>
+      <th>S name</th>
+      <th>S address1</th>
+      <th>S address2</th>
+      <th>S address3</th>
+      <th>S task</th>
+      <th>S bill rate</th>
+      <th>S cost rate</th>
+      <th>S ssn</th>
+      <th>S pc num</th>
+      <th>S mtd</th>
+      <th>S ytd</th>
+      <th>S hours</th>
+      <th>S 1</th>
+      <th>S 2</th>
+      <th>S 3</th>
+      <th>S 4</th>
+      <th>S 5</th>
+      <th>S 6</th>
+      <th>S 7</th>
+      <th>S 8</th>
+      <th>S 9</th>
+      <th>S 10</th>
+      <th>S 11</th>
+      <th>S 12</th>
+      <th>S b1</th>
+      <th>S b2</th>
+      <th>S b3</th>
+      <th>S b4</th>
+      <th>S b5</th>
+      <th>S b6</th>
+      <th>S b7</th>
+      <th>S b8</th>
+      <th>S b9</th>
+      <th>S b10</th>
+      <th>S b11</th>
+      <th>S b12</th>
+      <th>S lstyr 1</th>
+      <th>S lstyr 2</th>
+      <th>S lstyr 3</th>
+      <th>S lstyr 4</th>
+      <th>S lstyr 5</th>
+      <th>S lstyr 6</th>
+      <th>S lstyr 7</th>
+      <th>S lstyr 8</th>
+      <th>S lstyr 9</th>
+      <th>S lstyr 10</th>
+      <th>S lstyr 11</th>
+      <th>S lstyr 12</th>
+      <th>S office phone</th>
+      <th>S hours week</th>
+      <th>S face</th>
+      <th>S type</th>
+      <th>S notes</th>
+      <th>S dept</th>
+      <th>S hours act</th>
+      <th>S team</th>
+      <th>S plan week</th>
+      <th>S plan monday</th>
+      <th>S plan tuesday</th>
+      <th>S plan wednesday</th>
+      <th>S plan thursday</th>
+      <th>S plan friday</th>
+      <th>S req time</th>
+      <th>S act monday</th>
+      <th>S act tuesday</th>
+      <th>S act wednesday</th>
+      <th>S act thursday</th>
+      <th>S act friday</th>
+      <th>S act saturday</th>
+      <th>S act sunday</th>
+      <th>S plan saturday</th>
+      <th>S plan sunday</th>
+      <th>S req plan</th>
+      <th>S home phone</th>
+      <th>S ot cost rate</th>
+      <th>S ot bill rate</th>
+      <th>S title</th>
+      <th>S active</th>
+      <th>S email</th>
+      <th>S backup person</th>
+      <th>S freelance</th>
+      <th>S period</th>
+      <th>S time cop</th>
+      <th>S email sig</th>
+      <th>S supervisor</th>
+      <th>S fax</th>
+      <th>S web access</th>
+      <th>S smtp auth id</th>
+      <th>S smtp auth pw</th>
+      <th>S vendor</th>
+      <th>S added by</th>
+      <th>S added when</th>
+      <th>S edited by</th>
+      <th>S edited when</th>
+      <th>S date hired</th>
+      <th>S date term</th>
+      <th>S oa</th>
+      <th>S app version</th>
+      <th>S appr exempt</th>
+      <th>S sw update now</th>
+      <th>S homebase email</th>
+      <th>S jobr</th>
+      <th>S web access1</th>
+      <th>S web access2</th>
+      <th>S web access3</th>
+      <th>S web access4</th>
+      <th>S web access5</th>
+      <th>S web access6</th>
+      <th>S web access7</th>
+      <th>S web access8</th>
+      <th>S web access9</th>
+      <th>S web access10</th>
+      <th>S web access11</th>
+      <th>S web access12</th>
+      <th>S schedulable</th>
+      <th>S winners opt in</th>
+      <th>S time point opt in</th>
+      <th>S send chirps</th>
+      <th>S send chirps to</th>
+      <th>S cside status report</th>
+      <th>S cside traffic report</th>
+      <th>S cside jobs</th>
+      <th>S cside job requests</th>
+      <th>S cside appr ests</th>
+      <th>S cside appr scheds</th>
+      <th>S cside appr changes</th>
+      <th>S cside appr art</th>
+      <th>S cside proposals</th>
+      <th>S gets homebase emails</th>
+      <th>S cside rate jobs</th>
+      <th>S client num</th>
+      <th>S cside appr crebrief</th>
+      <th>S web access suspended</th>
+      <th>S cside clients</th>
+      <th>S web access expires</th>
+      <th>S email overdues</th>
+      <th>S cal1 key</th>
+      <th>S cal2 key</th>
+      <th>S cal3 key</th>
+      <th>S cal4 key</th>
+      <th>S cal5 key</th>
+      <th>S cside type cat</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @staffs.each do |staff| %>
+      <tr>
+        <td><%= staff.primaryKey %></td>
+        <td><%= staff.S_INITIALS %></td>
+        <td><%= staff.S_NAME %></td>
+        <td><%= staff.S_ADDRESS1 %></td>
+        <td><%= staff.S_ADDRESS2 %></td>
+        <td><%= staff.S_ADDRESS3 %></td>
+        <td><%= staff.S_TASK %></td>
+        <td><%= staff.S_BILL_RATE %></td>
+        <td><%= staff.S_COST_RATE %></td>
+        <td><%= staff.S_SSN %></td>
+        <td><%= staff.S_PC_NUM %></td>
+        <td><%= staff.S_MTD %></td>
+        <td><%= staff.S_YTD %></td>
+        <td><%= staff.S_HOURS %></td>
+        <td><%= staff.S_1 %></td>
+        <td><%= staff.S_2 %></td>
+        <td><%= staff.S_3 %></td>
+        <td><%= staff.S_4 %></td>
+        <td><%= staff.S_5 %></td>
+        <td><%= staff.S_6 %></td>
+        <td><%= staff.S_7 %></td>
+        <td><%= staff.S_8 %></td>
+        <td><%= staff.S_9 %></td>
+        <td><%= staff.S_10 %></td>
+        <td><%= staff.S_11 %></td>
+        <td><%= staff.S_12 %></td>
+        <td><%= staff.S_B1 %></td>
+        <td><%= staff.S_B2 %></td>
+        <td><%= staff.S_B3 %></td>
+        <td><%= staff.S_B4 %></td>
+        <td><%= staff.S_B5 %></td>
+        <td><%= staff.S_B6 %></td>
+        <td><%= staff.S_B7 %></td>
+        <td><%= staff.S_B8 %></td>
+        <td><%= staff.S_B9 %></td>
+        <td><%= staff.S_B10 %></td>
+        <td><%= staff.S_B11 %></td>
+        <td><%= staff.S_B12 %></td>
+        <td><%= staff.S_LSTYR_1 %></td>
+        <td><%= staff.S_LSTYR_2 %></td>
+        <td><%= staff.S_LSTYR_3 %></td>
+        <td><%= staff.S_LSTYR_4 %></td>
+        <td><%= staff.S_LSTYR_5 %></td>
+        <td><%= staff.S_LSTYR_6 %></td>
+        <td><%= staff.S_LSTYR_7 %></td>
+        <td><%= staff.S_LSTYR_8 %></td>
+        <td><%= staff.S_LSTYR_9 %></td>
+        <td><%= staff.S_LSTYR_10 %></td>
+        <td><%= staff.S_LSTYR_11 %></td>
+        <td><%= staff.S_LSTYR_12 %></td>
+        <td><%= staff.S_OFFICE_PHONE %></td>
+        <td><%= staff.S_HOURS_WEEK %></td>
+        <td><%= staff.S_FACE %></td>
+        <td><%= staff.S_TYPE %></td>
+        <td><%= staff.S_NOTES %></td>
+        <td><%= staff.S_DEPT %></td>
+        <td><%= staff.S_HOURS_ACT %></td>
+        <td><%= staff.S_TEAM %></td>
+        <td><%= staff.S_PLAN_WEEK %></td>
+        <td><%= staff.S_PLAN_MONDAY %></td>
+        <td><%= staff.S_PLAN_TUESDAY %></td>
+        <td><%= staff.S_PLAN_WEDNESDAY %></td>
+        <td><%= staff.S_PLAN_THURSDAY %></td>
+        <td><%= staff.S_PLAN_FRIDAY %></td>
+        <td><%= staff.S_REQ_TIME %></td>
+        <td><%= staff.S_ACT_MONDAY %></td>
+        <td><%= staff.S_ACT_TUESDAY %></td>
+        <td><%= staff.S_ACT_WEDNESDAY %></td>
+        <td><%= staff.S_ACT_THURSDAY %></td>
+        <td><%= staff.S_ACT_FRIDAY %></td>
+        <td><%= staff.S_ACT_SATURDAY %></td>
+        <td><%= staff.S_ACT_SUNDAY %></td>
+        <td><%= staff.S_PLAN_SATURDAY %></td>
+        <td><%= staff.S_PLAN_SUNDAY %></td>
+        <td><%= staff.S_REQ_PLAN %></td>
+        <td><%= staff.S_HOME_PHONE %></td>
+        <td><%= staff.S_OT_COST_RATE %></td>
+        <td><%= staff.S_OT_BILL_RATE %></td>
+        <td><%= staff.S_TITLE %></td>
+        <td><%= staff.S_ACTIVE %></td>
+        <td><%= staff.S_EMAIL %></td>
+        <td><%= staff.S_BACKUP_PERSON %></td>
+        <td><%= staff.S_FREELANCE %></td>
+        <td><%= staff.S_PERIOD %></td>
+        <td><%= staff.S_TIME_COP %></td>
+        <td><%= staff.S_EMAIL_SIG %></td>
+        <td><%= staff.S_SUPERVISOR %></td>
+        <td><%= staff.S_FAX %></td>
+        <td><%= staff.S_WEB_ACCESS %></td>
+        <td><%= staff.S_SMTP_AUTH_ID %></td>
+        <td><%= staff.S_SMTP_AUTH_PW %></td>
+        <td><%= staff.S_VENDOR %></td>
+        <td><%= staff.S_ADDED_BY %></td>
+        <td><%= staff.S_ADDED_WHEN %></td>
+        <td><%= staff.S_EDITED_BY %></td>
+        <td><%= staff.S_EDITED_WHEN %></td>
+        <td><%= staff.S_DATE_HIRED %></td>
+        <td><%= staff.S_DATE_TERM %></td>
+        <td><%= staff.S_OA %></td>
+        <td><%= staff.S_APP_VERSION %></td>
+        <td><%= staff.S_APPR_EXEMPT %></td>
+        <td><%= staff.S_SW_UPDATE_NOW %></td>
+        <td><%= staff.S_HOMEBASE_EMAIL %></td>
+        <td><%= staff.S_JOBR %></td>
+        <td><%= staff.S_WEB_ACCESS1 %></td>
+        <td><%= staff.S_WEB_ACCESS2 %></td>
+        <td><%= staff.S_WEB_ACCESS3 %></td>
+        <td><%= staff.S_WEB_ACCESS4 %></td>
+        <td><%= staff.S_WEB_ACCESS5 %></td>
+        <td><%= staff.S_WEB_ACCESS6 %></td>
+        <td><%= staff.S_WEB_ACCESS7 %></td>
+        <td><%= staff.S_WEB_ACCESS8 %></td>
+        <td><%= staff.S_WEB_ACCESS9 %></td>
+        <td><%= staff.S_WEB_ACCESS10 %></td>
+        <td><%= staff.S_WEB_ACCESS11 %></td>
+        <td><%= staff.S_WEB_ACCESS12 %></td>
+        <td><%= staff.S_SCHEDULABLE %></td>
+        <td><%= staff.S_WINNERS_OPT_IN %></td>
+        <td><%= staff.S_TIME_POINT_OPT_IN %></td>
+        <td><%= staff.S_SEND_CHIRPS %></td>
+        <td><%= staff.S_SEND_CHIRPS_TO %></td>
+        <td><%= staff.S_CSIDE_STATUS_REPORT %></td>
+        <td><%= staff.S_CSIDE_TRAFFIC_REPORT %></td>
+        <td><%= staff.S_CSIDE_JOBS %></td>
+        <td><%= staff.S_CSIDE_JOB_REQUESTS %></td>
+        <td><%= staff.S_CSIDE_APPR_ESTS %></td>
+        <td><%= staff.S_CSIDE_APPR_SCHEDS %></td>
+        <td><%= staff.S_CSIDE_APPR_CHANGES %></td>
+        <td><%= staff.S_CSIDE_APPR_ART %></td>
+        <td><%= staff.S_CSIDE_PROPOSALS %></td>
+        <td><%= staff.S_GETS_HOMEBASE_EMAILS %></td>
+        <td><%= staff.S_CSIDE_RATE_JOBS %></td>
+        <td><%= staff.S_CLIENT_NUM %></td>
+        <td><%= staff.S_CSIDE_APPR_CREBRIEF %></td>
+        <td><%= staff.S_WEB_ACCESS_SUSPENDED %></td>
+        <td><%= staff.S_CSIDE_CLIENTS %></td>
+        <td><%= staff.S_WEB_ACCESS_EXPIRES %></td>
+        <td><%= staff.S_EMAIL_OVERDUES %></td>
+        <td><%= staff.S_CAL1_KEY %></td>
+        <td><%= staff.S_CAL2_KEY %></td>
+        <td><%= staff.S_CAL3_KEY %></td>
+        <td><%= staff.S_CAL4_KEY %></td>
+        <td><%= staff.S_CAL5_KEY %></td>
+        <td><%= staff.S_CSIDE_TYPE_CAT %></td>
+        <td><%= link_to 'Show', staff %></td>
+        <td><%= link_to 'Edit', edit_staff_path(staff) %></td>
+        <td><%= link_to 'Destroy', staff, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Staff', new_staff_path %>

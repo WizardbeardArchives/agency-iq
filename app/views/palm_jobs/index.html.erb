@@ -1,0 +1,41 @@
+<h1>Listing palm_jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Palm job id</th>
+      <th>Palm job attribs</th>
+      <th>Palm job category</th>
+      <th>Palm job num</th>
+      <th>Palm job name</th>
+      <th>Palm job user</th>
+      <th>Palm job plus</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @palm_jobs.each do |palm_job| %>
+      <tr>
+        <td><%= palm_job.primaryKey %></td>
+        <td><%= palm_job.PALM_JOB_ID %></td>
+        <td><%= palm_job.PALM_JOB_ATTRIBS %></td>
+        <td><%= palm_job.PALM_JOB_CATEGORY %></td>
+        <td><%= palm_job.PALM_JOB_NUM %></td>
+        <td><%= palm_job.PALM_JOB_NAME %></td>
+        <td><%= palm_job.PALM_JOB_USER %></td>
+        <td><%= palm_job.PALM_JOB_PLUS %></td>
+        <td><%= link_to 'Show', palm_job %></td>
+        <td><%= link_to 'Edit', edit_palm_job_path(palm_job) %></td>
+        <td><%= link_to 'Destroy', palm_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Palm job', new_palm_job_path %>

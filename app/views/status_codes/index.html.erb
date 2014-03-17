@@ -1,0 +1,67 @@
+<h1>Listing status_codes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Status num</th>
+      <th>Status desc</th>
+      <th>Status alert</th>
+      <th>Status stop</th>
+      <th>Status prod alert</th>
+      <th>Status bill alert</th>
+      <th>Status alert button</th>
+      <th>Status cat</th>
+      <th>Status mail to</th>
+      <th>Status mail msg</th>
+      <th>Status mail cc</th>
+      <th>Status mail bcc</th>
+      <th>Status added by</th>
+      <th>Status added when</th>
+      <th>Status edited by</th>
+      <th>Status edited when</th>
+      <th>Status color</th>
+      <th>Status prod</th>
+      <th>Status acct</th>
+      <th>Status active</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @status_codes.each do |status_code| %>
+      <tr>
+        <td><%= status_code.primaryKey %></td>
+        <td><%= status_code.STATUS_NUM %></td>
+        <td><%= status_code.STATUS_DESC %></td>
+        <td><%= status_code.STATUS_ALERT %></td>
+        <td><%= status_code.STATUS_STOP %></td>
+        <td><%= status_code.STATUS_PROD_ALERT %></td>
+        <td><%= status_code.STATUS_BILL_ALERT %></td>
+        <td><%= status_code.STATUS_ALERT_BUTTON %></td>
+        <td><%= status_code.STATUS_CAT %></td>
+        <td><%= status_code.STATUS_MAIL_TO %></td>
+        <td><%= status_code.STATUS_MAIL_MSG %></td>
+        <td><%= status_code.STATUS_MAIL_CC %></td>
+        <td><%= status_code.STATUS_MAIL_BCC %></td>
+        <td><%= status_code.STATUS_ADDED_BY %></td>
+        <td><%= status_code.STATUS_ADDED_WHEN %></td>
+        <td><%= status_code.STATUS_EDITED_BY %></td>
+        <td><%= status_code.STATUS_EDITED_WHEN %></td>
+        <td><%= status_code.STATUS_COLOR %></td>
+        <td><%= status_code.STATUS_PROD %></td>
+        <td><%= status_code.STATUS_ACCT %></td>
+        <td><%= status_code.STATUS_ACTIVE %></td>
+        <td><%= link_to 'Show', status_code %></td>
+        <td><%= link_to 'Edit', edit_status_code_path(status_code) %></td>
+        <td><%= link_to 'Destroy', status_code, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Status code', new_status_code_path %>

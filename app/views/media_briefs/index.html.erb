@@ -1,0 +1,109 @@
+<h1>Listing media_briefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Br campaign</th>
+      <th>Br name</th>
+      <th>Br desc</th>
+      <th>Br budget amt</th>
+      <th>Br cost amt</th>
+      <th>Br camp start</th>
+      <th>Br camp end</th>
+      <th>Br spots</th>
+      <th>Br ratings</th>
+      <th>Br cost</th>
+      <th>Br cpp</th>
+      <th>Br cps</th>
+      <th>Br rf</th>
+      <th>Br client num</th>
+      <th>Br due date</th>
+      <th>Br objective</th>
+      <th>Br target age</th>
+      <th>Br target gender</th>
+      <th>Br target occupation</th>
+      <th>Br target lifestyle</th>
+      <th>Br media rec</th>
+      <th>Br media sched</th>
+      <th>Br exhibits</th>
+      <th>Br bud bcast</th>
+      <th>Br bud cable</th>
+      <th>Br bud radio</th>
+      <th>Br bud news</th>
+      <th>Br bud mag</th>
+      <th>Br bud out</th>
+      <th>Br bud inter</th>
+      <th>Br bud other</th>
+      <th>Br added by</th>
+      <th>Br ae</th>
+      <th>Br rep</th>
+      <th>Br status</th>
+      <th>Br status num</th>
+      <th>Br edited by</th>
+      <th>Br edited when</th>
+      <th>Br approved</th>
+      <th>Br approved by</th>
+      <th>Br approved date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @media_briefs.each do |media_brief| %>
+      <tr>
+        <td><%= media_brief.primaryKey %></td>
+        <td><%= media_brief.BR_CAMPAIGN %></td>
+        <td><%= media_brief.BR_NAME %></td>
+        <td><%= media_brief.BR_DESC %></td>
+        <td><%= media_brief.BR_BUDGET_AMT %></td>
+        <td><%= media_brief.BR_COST_AMT %></td>
+        <td><%= media_brief.BR_CAMP_START %></td>
+        <td><%= media_brief.BR_CAMP_END %></td>
+        <td><%= media_brief.BR_SPOTS %></td>
+        <td><%= media_brief.BR_RATINGS %></td>
+        <td><%= media_brief.BR_COST %></td>
+        <td><%= media_brief.BR_CPP %></td>
+        <td><%= media_brief.BR_CPS %></td>
+        <td><%= media_brief.BR_RF %></td>
+        <td><%= media_brief.BR_CLIENT_NUM %></td>
+        <td><%= media_brief.BR_DUE_DATE %></td>
+        <td><%= media_brief.BR_OBJECTIVE %></td>
+        <td><%= media_brief.BR_TARGET_AGE %></td>
+        <td><%= media_brief.BR_TARGET_GENDER %></td>
+        <td><%= media_brief.BR_TARGET_OCCUPATION %></td>
+        <td><%= media_brief.BR_TARGET_LIFESTYLE %></td>
+        <td><%= media_brief.BR_MEDIA_REC %></td>
+        <td><%= media_brief.BR_MEDIA_SCHED %></td>
+        <td><%= media_brief.BR_EXHIBITS %></td>
+        <td><%= media_brief.BR_BUD_BCAST %></td>
+        <td><%= media_brief.BR_BUD_CABLE %></td>
+        <td><%= media_brief.BR_BUD_RADIO %></td>
+        <td><%= media_brief.BR_BUD_NEWS %></td>
+        <td><%= media_brief.BR_BUD_MAG %></td>
+        <td><%= media_brief.BR_BUD_OUT %></td>
+        <td><%= media_brief.BR_BUD_INTER %></td>
+        <td><%= media_brief.BR_BUD_OTHER %></td>
+        <td><%= media_brief.BR_ADDED_BY %></td>
+        <td><%= media_brief.BR_AE %></td>
+        <td><%= media_brief.BR_REP %></td>
+        <td><%= media_brief.BR_STATUS %></td>
+        <td><%= media_brief.BR_STATUS_NUM %></td>
+        <td><%= media_brief.BR_EDITED_BY %></td>
+        <td><%= media_brief.BR_EDITED_WHEN %></td>
+        <td><%= media_brief.BR_APPROVED %></td>
+        <td><%= media_brief.BR_APPROVED_BY %></td>
+        <td><%= media_brief.BR_APPROVED_DATE %></td>
+        <td><%= link_to 'Show', media_brief %></td>
+        <td><%= link_to 'Edit', edit_media_brief_path(media_brief) %></td>
+        <td><%= link_to 'Destroy', media_brief, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Media brief', new_media_brief_path %>

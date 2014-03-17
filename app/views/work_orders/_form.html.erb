@@ -1,0 +1,52 @@
+<%= simple_form_for(@work_order) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :WO_JOB_NUM %>
+    <%= f.input :WO_CLIENT_NUM %>
+    <%= f.input :WO_1_LABEL %>
+    <%= f.input :WO_2_LABEL %>
+    <%= f.input :WO_3_LABEL %>
+    <%= f.input :WO_4_LABEL %>
+    <%= f.input :WO_5_LABEL %>
+    <%= f.input :WO_6_LABEL %>
+    <%= f.input :WO_7_LABEL %>
+    <%= f.input :WO_8_LABEL %>
+    <%= f.input :WO_9_LABEL %>
+    <%= f.input :WO_10_LABEL %>
+    <%= f.input :WO_11_LABEL %>
+    <%= f.input :WO_12_LABEL %>
+    <%= f.input :WO_13_LABEL %>
+    <%= f.input :WO_14_LABEL %>
+    <%= f.input :WO_15_LABEL %>
+    <%= f.input :WO_1 %>
+    <%= f.input :WO_2 %>
+    <%= f.input :WO_3 %>
+    <%= f.input :WO_4 %>
+    <%= f.input :WO_5 %>
+    <%= f.input :WO_6 %>
+    <%= f.input :WO_7 %>
+    <%= f.input :WO_8 %>
+    <%= f.input :WO_9 %>
+    <%= f.input :WO_10 %>
+    <%= f.input :WO_11 %>
+    <%= f.input :WO_12 %>
+    <%= f.input :WO_13 %>
+    <%= f.input :WO_14 %>
+    <%= f.input :WO_15 %>
+    <%= f.input :WO_ADDED_BY %>
+    <%= f.input :WO_REV_BY %>
+    <%= f.input :WO_OK %>
+    <%= f.input :WO_OK_BY %>
+    <%= f.input :WO_OK_DATE %>
+    <%= f.input :WO_APPROVED %>
+    <%= f.input :WO_APPROVED_DATE %>
+    <%= f.input :WO_APPROVED_BY %>
+    <%= f.input :WO_ADR_NAME %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

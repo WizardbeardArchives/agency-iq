@@ -1,0 +1,57 @@
+<h1>Listing temp_tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Tt type</th>
+      <th>Tt task</th>
+      <th>Tt est1</th>
+      <th>Tt lead1</th>
+      <th>Tt name</th>
+      <th>Tt est2</th>
+      <th>Tt lead2</th>
+      <th>Tt est3</th>
+      <th>Tt lead3</th>
+      <th>Tt est hours</th>
+      <th>Tt task desc</th>
+      <th>Tt added by</th>
+      <th>Tt added when</th>
+      <th>Tt edited by</th>
+      <th>Tt edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @temp_tasks.each do |temp_task| %>
+      <tr>
+        <td><%= temp_task.primaryKey %></td>
+        <td><%= temp_task.TT_TYPE %></td>
+        <td><%= temp_task.TT_TASK %></td>
+        <td><%= temp_task.TT_EST1 %></td>
+        <td><%= temp_task.TT_LEAD1 %></td>
+        <td><%= temp_task.TT_NAME %></td>
+        <td><%= temp_task.TT_EST2 %></td>
+        <td><%= temp_task.TT_LEAD2 %></td>
+        <td><%= temp_task.TT_EST3 %></td>
+        <td><%= temp_task.TT_LEAD3 %></td>
+        <td><%= temp_task.TT_EST_HOURS %></td>
+        <td><%= temp_task.TT_TASK_DESC %></td>
+        <td><%= temp_task.TT_ADDED_BY %></td>
+        <td><%= temp_task.TT_ADDED_WHEN %></td>
+        <td><%= temp_task.TT_EDITED_BY %></td>
+        <td><%= temp_task.TT_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', temp_task %></td>
+        <td><%= link_to 'Edit', edit_temp_task_path(temp_task) %></td>
+        <td><%= link_to 'Destroy', temp_task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Temp task', new_temp_task_path %>

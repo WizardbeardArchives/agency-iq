@@ -1,0 +1,42 @@
+<%= simple_form_for(@ar_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :AX_JOB_NUM %>
+    <%= f.input :AX_TASK %>
+    <%= f.input :AX_AR_NUM %>
+    <%= f.input :AX_AMT %>
+    <%= f.input :AX_SORT %>
+    <%= f.input :AX_GROUP %>
+    <%= f.input :AX_TAXABLE1 %>
+    <%= f.input :AX_TAXABLE2 %>
+    <%= f.input :AX_DESC %>
+    <%= f.input :AX_DATE %>
+    <%= f.input :AX_CGL %>
+    <%= f.input :AX_POSTED %>
+    <%= f.input :AX_PERIOD %>
+    <%= f.input :AX_NAME %>
+    <%= f.input :AX_HOURS_BILLED %>
+    <%= f.input :AX_HIDE %>
+    <%= f.input :AX_ROLL_UP %>
+    <%= f.input :AX_SHOW_DESC %>
+    <%= f.input :AX_QTY %>
+    <%= f.input :AX_POX_KEY %>
+    <%= f.input :AX_PUB %>
+    <%= f.input :AX_ISSUE_DATE %>
+    <%= f.input :AX_COST %>
+    <%= f.input :AX_EXPORTED %>
+    <%= f.input :AX_PC %>
+    <%= f.input :AX_CLIENT_NUM %>
+    <%= f.input :AX_COMMISSIONABLE %>
+    <%= f.input :AX_ADDED_BY %>
+    <%= f.input :AX_ADDED_WHEN %>
+    <%= f.input :AX_EDITED_BY %>
+    <%= f.input :AX_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

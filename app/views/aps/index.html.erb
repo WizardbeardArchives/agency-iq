@@ -1,0 +1,125 @@
+<h1>Listing aps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ap num</th>
+      <th>Ap vendor num</th>
+      <th>Ap date</th>
+      <th>Ap key</th>
+      <th>Ap desc</th>
+      <th>Ap cgl</th>
+      <th>Ap net amt</th>
+      <th>Ap comm net</th>
+      <th>Ap markup pc</th>
+      <th>Ap tax amt</th>
+      <th>Ap gross amt</th>
+      <th>Ap posted</th>
+      <th>Ap total amt</th>
+      <th>Ap disc date</th>
+      <th>Ap jumpstart</th>
+      <th>Ap added by</th>
+      <th>Ap added when</th>
+      <th>Ap voucher</th>
+      <th>Ap terms1</th>
+      <th>Ap terms2</th>
+      <th>Ap terms3</th>
+      <th>Ap pay date</th>
+      <th>Ap period</th>
+      <th>Ap current</th>
+      <th>Ap 30</th>
+      <th>Ap 60</th>
+      <th>Ap 90</th>
+      <th>Ap auto pay</th>
+      <th>Ap gst gl</th>
+      <th>Ap gst1</th>
+      <th>Ap gst2</th>
+      <th>Ap amt paid</th>
+      <th>Ap client paid</th>
+      <th>Ap close po</th>
+      <th>Ap unpaid</th>
+      <th>Ap kind</th>
+      <th>Ap disc taken</th>
+      <th>Ap exported</th>
+      <th>Ap approved</th>
+      <th>Ap approved by</th>
+      <th>Ap approved date</th>
+      <th>Ap edited by</th>
+      <th>Ap edited when</th>
+      <th>Ap posted by</th>
+      <th>Ap posted when</th>
+      <th>Ap paid cc</th>
+      <th>Ap date paid</th>
+      <th>Ap paid cc inv num</th>
+      <th>Ap paid online</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @aps.each do |ap| %>
+      <tr>
+        <td><%= ap.primaryKey %></td>
+        <td><%= ap.AP_NUM %></td>
+        <td><%= ap.AP_VENDOR_NUM %></td>
+        <td><%= ap.AP_DATE %></td>
+        <td><%= ap.AP_KEY %></td>
+        <td><%= ap.AP_DESC %></td>
+        <td><%= ap.AP_CGL %></td>
+        <td><%= ap.AP_NET_AMT %></td>
+        <td><%= ap.AP_COMM_NET %></td>
+        <td><%= ap.AP_MARKUP_PC %></td>
+        <td><%= ap.AP_TAX_AMT %></td>
+        <td><%= ap.AP_GROSS_AMT %></td>
+        <td><%= ap.AP_POSTED %></td>
+        <td><%= ap.AP_TOTAL_AMT %></td>
+        <td><%= ap.AP_DISC_DATE %></td>
+        <td><%= ap.AP_JUMPSTART %></td>
+        <td><%= ap.AP_ADDED_BY %></td>
+        <td><%= ap.AP_ADDED_WHEN %></td>
+        <td><%= ap.AP_VOUCHER %></td>
+        <td><%= ap.AP_TERMS1 %></td>
+        <td><%= ap.AP_TERMS2 %></td>
+        <td><%= ap.AP_TERMS3 %></td>
+        <td><%= ap.AP_PAY_DATE %></td>
+        <td><%= ap.AP_PERIOD %></td>
+        <td><%= ap.AP_CURRENT %></td>
+        <td><%= ap.AP_30 %></td>
+        <td><%= ap.AP_60 %></td>
+        <td><%= ap.AP_90 %></td>
+        <td><%= ap.AP_AUTO_PAY %></td>
+        <td><%= ap.AP_GST_GL %></td>
+        <td><%= ap.AP_GST1 %></td>
+        <td><%= ap.AP_GST2 %></td>
+        <td><%= ap.AP_AMT_PAID %></td>
+        <td><%= ap.AP_CLIENT_PAID %></td>
+        <td><%= ap.AP_CLOSE_PO %></td>
+        <td><%= ap.AP_UNPAID %></td>
+        <td><%= ap.AP_KIND %></td>
+        <td><%= ap.AP_DISC_TAKEN %></td>
+        <td><%= ap.AP_EXPORTED %></td>
+        <td><%= ap.AP_APPROVED %></td>
+        <td><%= ap.AP_APPROVED_BY %></td>
+        <td><%= ap.AP_APPROVED_DATE %></td>
+        <td><%= ap.AP_EDITED_BY %></td>
+        <td><%= ap.AP_EDITED_WHEN %></td>
+        <td><%= ap.AP_POSTED_BY %></td>
+        <td><%= ap.AP_POSTED_WHEN %></td>
+        <td><%= ap.AP_PAID_CC %></td>
+        <td><%= ap.AP_DATE_PAID %></td>
+        <td><%= ap.AP_PAID_CC_INV_NUM %></td>
+        <td><%= ap.AP_PAID_ONLINE %></td>
+        <td><%= link_to 'Show', ap %></td>
+        <td><%= link_to 'Edit', edit_ap_path(ap) %></td>
+        <td><%= link_to 'Destroy', ap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ap', new_ap_path %>

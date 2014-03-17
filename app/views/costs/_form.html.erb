@@ -1,0 +1,66 @@
+<%= simple_form_for(@cost) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :COST_NUM %>
+    <%= f.input :COST_JOB_NUM %>
+    <%= f.input :COST_TASK %>
+    <%= f.input :COST_NOTE %>
+    <%= f.input :COST_NET_AMT %>
+    <%= f.input :COST_GROSS_AMT %>
+    <%= f.input :COST_HOURS %>
+    <%= f.input :COST_KIND %>
+    <%= f.input :COST_DATE %>
+    <%= f.input :COST_BILL_RATE %>
+    <%= f.input :COST_COST_RATE %>
+    <%= f.input :COST_PO_NUM %>
+    <%= f.input :COST_BILLABLE %>
+    <%= f.input :COST_VENDOR %>
+    <%= f.input :COST_PERIOD %>
+    <%= f.input :COST_CLIENT_NUM %>
+    <%= f.input :COST_DGL %>
+    <%= f.input :COST_POSTED %>
+    <%= f.input :COST_KEY %>
+    <%= f.input :COST_FINISHED %>
+    <%= f.input :COST_MARKUP %>
+    <%= f.input :COST_BILL_AMT %>
+    <%= f.input :COST_AR_DATE %>
+    <%= f.input :COST_AR_NUM %>
+    <%= f.input :COST_BILLED_AMT %>
+    <%= f.input :COST_STATUS %>
+    <%= f.input :COST_AR_PAID %>
+    <%= f.input :COST_CK_NUM %>
+    <%= f.input :COST_REF %>
+    <%= f.input :COST_HOURS_BILLED %>
+    <%= f.input :COST_OT %>
+    <%= f.input :COST_POX_LINE %>
+    <%= f.input :COST_GL %>
+    <%= f.input :COST_J_PROD_STATUS %>
+    <%= f.input :COST_J_BILL_STATUS %>
+    <%= f.input :COST_PC %>
+    <%= f.input :COST_QTY %>
+    <%= f.input :COST_DAYS %>
+    <%= f.input :COST_COST_EA %>
+    <%= f.input :COST_SIZE %>
+    <%= f.input :COST_ADDED_BY %>
+    <%= f.input :COST_GROSS_EA %>
+    <%= f.input :COST_ADV_CK %>
+    <%= f.input :COST_EXPORTED %>
+    <%= f.input :COST_WIP_EXPORTED %>
+    <%= f.input :COST_WIP_REV_EXPORTED %>
+    <%= f.input :COST_SALES_TAX %>
+    <%= f.input :COST_APPROVED_BY %>
+    <%= f.input :COST_APPROVED_DATE %>
+    <%= f.input :COST_REIMBURSE_AP_NUM %>
+    <%= f.input :COST_EXP_ADDED_BY %>
+    <%= f.input :COST_EDITED_BY %>
+    <%= f.input :COST_EDITED_WHEN %>
+    <%= f.input :COST_POSTED_BY %>
+    <%= f.input :COST_POSTED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

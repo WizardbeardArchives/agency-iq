@@ -1,0 +1,14 @@
+<%= simple_form_for(@palm_cat) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PALM_CAT_NAME %>
+    <%= f.input :PALM_CAT_ID %>
+    <%= f.input :PALM_CAT_USER %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

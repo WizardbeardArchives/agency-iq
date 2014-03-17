@@ -1,0 +1,47 @@
+<h1>Listing rates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rate staff</th>
+      <th>Rate client num</th>
+      <th>Rate task</th>
+      <th>Rate key</th>
+      <th>Rate note</th>
+      <th>Special rate</th>
+      <th>Rate added by</th>
+      <th>Rate added when</th>
+      <th>Rate edited by</th>
+      <th>Rate edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rates.each do |rate| %>
+      <tr>
+        <td><%= rate.primaryKey %></td>
+        <td><%= rate.RATE_STAFF %></td>
+        <td><%= rate.RATE_CLIENT_NUM %></td>
+        <td><%= rate.RATE_TASK %></td>
+        <td><%= rate.RATE_KEY %></td>
+        <td><%= rate.RATE_NOTE %></td>
+        <td><%= rate.SPECIAL_RATE %></td>
+        <td><%= rate.RATE_ADDED_BY %></td>
+        <td><%= rate.RATE_ADDED_WHEN %></td>
+        <td><%= rate.RATE_EDITED_BY %></td>
+        <td><%= rate.RATE_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', rate %></td>
+        <td><%= link_to 'Edit', edit_rate_path(rate) %></td>
+        <td><%= link_to 'Destroy', rate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rate', new_rate_path %>

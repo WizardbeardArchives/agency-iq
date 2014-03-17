@@ -1,0 +1,47 @@
+<h1>Listing web_logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Wlog datetime</th>
+      <th>Wlog user</th>
+      <th>Wlog status</th>
+      <th>Wlog event</th>
+      <th>Wlog page</th>
+      <th>Wlog ip</th>
+      <th>Wlog date</th>
+      <th>Wlog time</th>
+      <th>Wlog day</th>
+      <th>Wlog hour</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @web_logs.each do |web_log| %>
+      <tr>
+        <td><%= web_log.primaryKey %></td>
+        <td><%= web_log.WLOG_DATETIME %></td>
+        <td><%= web_log.WLOG_USER %></td>
+        <td><%= web_log.WLOG_STATUS %></td>
+        <td><%= web_log.WLOG_EVENT %></td>
+        <td><%= web_log.WLOG_PAGE %></td>
+        <td><%= web_log.WLOG_IP %></td>
+        <td><%= web_log.WLOG_DATE %></td>
+        <td><%= web_log.WLOG_TIME %></td>
+        <td><%= web_log.WLOG_DAY %></td>
+        <td><%= web_log.WLOG_HOUR %></td>
+        <td><%= link_to 'Show', web_log %></td>
+        <td><%= link_to 'Edit', edit_web_log_path(web_log) %></td>
+        <td><%= link_to 'Destroy', web_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Web log', new_web_log_path %>

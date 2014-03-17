@@ -1,0 +1,63 @@
+<h1>Listing calendars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Cal kind</th>
+      <th>Cal date</th>
+      <th>Cal to from</th>
+      <th>Cal amt</th>
+      <th>Cal added by</th>
+      <th>Cal desc</th>
+      <th>Cal mail to</th>
+      <th>Cal notified</th>
+      <th>Cal time</th>
+      <th>Cal priority</th>
+      <th>Cal status</th>
+      <th>Cal id</th>
+      <th>Cal client num</th>
+      <th>Cal subject</th>
+      <th>Cal notify days</th>
+      <th>Cal location</th>
+      <th>Cal job num</th>
+      <th>Cal task</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @calendars.each do |calendar| %>
+      <tr>
+        <td><%= calendar.primaryKey %></td>
+        <td><%= calendar.CAL_KIND %></td>
+        <td><%= calendar.CAL_DATE %></td>
+        <td><%= calendar.CAL_TO_FROM %></td>
+        <td><%= calendar.CAL_AMT %></td>
+        <td><%= calendar.CAL_ADDED_BY %></td>
+        <td><%= calendar.CAL_DESC %></td>
+        <td><%= calendar.CAL_MAIL_TO %></td>
+        <td><%= calendar.CAL_NOTIFIED %></td>
+        <td><%= calendar.CAL_TIME %></td>
+        <td><%= calendar.CAL_PRIORITY %></td>
+        <td><%= calendar.CAL_STATUS %></td>
+        <td><%= calendar.CAL_ID %></td>
+        <td><%= calendar.CAL_CLIENT_NUM %></td>
+        <td><%= calendar.CAL_SUBJECT %></td>
+        <td><%= calendar.CAL_NOTIFY_DAYS %></td>
+        <td><%= calendar.CAL_LOCATION %></td>
+        <td><%= calendar.CAL_JOB_NUM %></td>
+        <td><%= calendar.CAL_TASK %></td>
+        <td><%= link_to 'Show', calendar %></td>
+        <td><%= link_to 'Edit', edit_calendar_path(calendar) %></td>
+        <td><%= link_to 'Destroy', calendar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Calendar', new_calendar_path %>

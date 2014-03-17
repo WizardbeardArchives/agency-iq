@@ -1,0 +1,28 @@
+<%= simple_form_for(@rfq_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :RFQX_LINE_NUMBER %>
+    <%= f.input :RFQX_NUM %>
+    <%= f.input :RFQX_VENDOR2 %>
+    <%= f.input :RFQX_JOB_NUM %>
+    <%= f.input :RFQX_TASK %>
+    <%= f.input :RFQX_NAME %>
+    <%= f.input :RFQX_DESC2 %>
+    <%= f.input :RFQX_QTY %>
+    <%= f.input :RFQX_UNIT_COST %>
+    <%= f.input :RFQX_COST %>
+    <%= f.input :RFQX_GROSS %>
+    <%= f.input :RFQX_MARKUP %>
+    <%= f.input :RFQX_PO_NUM %>
+    <%= f.input :RFQX_TAXABLE1 %>
+    <%= f.input :RFQX_TAXABLE2 %>
+    <%= f.input :RFQX_INCLUDE %>
+    <%= f.input :RFQX_TYPE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

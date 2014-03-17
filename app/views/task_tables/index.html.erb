@@ -1,0 +1,127 @@
+<h1>Listing task_tables</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>T task</th>
+      <th>T name</th>
+      <th>T tax1</th>
+      <th>T tax2</th>
+      <th>T markup</th>
+      <th>T bill rate</th>
+      <th>T dgl</th>
+      <th>T cgl</th>
+      <th>T group</th>
+      <th>T sort</th>
+      <th>T lead time</th>
+      <th>T kind</th>
+      <th>T hours</th>
+      <th>T cost</th>
+      <th>T pc</th>
+      <th>T desc</th>
+      <th>T char2</th>
+      <th>T char3</th>
+      <th>T char4</th>
+      <th>T char5</th>
+      <th>T char6</th>
+      <th>T char7</th>
+      <th>T unbillable</th>
+      <th>T sort prod</th>
+      <th>T pref3</th>
+      <th>T pref4</th>
+      <th>T amt1</th>
+      <th>T amt2</th>
+      <th>T icon</th>
+      <th>T roll up</th>
+      <th>T active</th>
+      <th>T commissionable</th>
+      <th>T comm rate ae</th>
+      <th>T comm rate biz</th>
+      <th>T req approval</th>
+      <th>T req approval by</th>
+      <th>T added by</th>
+      <th>T added when</th>
+      <th>T edited by</th>
+      <th>T edited when</th>
+      <th>T payroll</th>
+      <th>T util cat</th>
+      <th>T tags</th>
+      <th>T client sched</th>
+      <th>T milestone</th>
+      <th>T tax3</th>
+      <th>T small icon</th>
+      <th>T always discuss</th>
+      <th>T no time</th>
+      <th>T status finished</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @task_tables.each do |task_table| %>
+      <tr>
+        <td><%= task_table.primaryKey %></td>
+        <td><%= task_table.T_TASK %></td>
+        <td><%= task_table.T_NAME %></td>
+        <td><%= task_table.T_TAX1 %></td>
+        <td><%= task_table.T_TAX2 %></td>
+        <td><%= task_table.T_MARKUP %></td>
+        <td><%= task_table.T_BILL_RATE %></td>
+        <td><%= task_table.T_DGL %></td>
+        <td><%= task_table.T_CGL %></td>
+        <td><%= task_table.T_GROUP %></td>
+        <td><%= task_table.T_SORT %></td>
+        <td><%= task_table.T_LEAD_TIME %></td>
+        <td><%= task_table.T_KIND %></td>
+        <td><%= task_table.T_HOURS %></td>
+        <td><%= task_table.T_COST %></td>
+        <td><%= task_table.T_PC %></td>
+        <td><%= task_table.T_DESC %></td>
+        <td><%= task_table.T_CHAR2 %></td>
+        <td><%= task_table.T_CHAR3 %></td>
+        <td><%= task_table.T_CHAR4 %></td>
+        <td><%= task_table.T_CHAR5 %></td>
+        <td><%= task_table.T_CHAR6 %></td>
+        <td><%= task_table.T_CHAR7 %></td>
+        <td><%= task_table.T_UNBILLABLE %></td>
+        <td><%= task_table.T_SORT_PROD %></td>
+        <td><%= task_table.T_PREF3 %></td>
+        <td><%= task_table.T_PREF4 %></td>
+        <td><%= task_table.T_AMT1 %></td>
+        <td><%= task_table.T_AMT2 %></td>
+        <td><%= task_table.T_ICON %></td>
+        <td><%= task_table.T_ROLL_UP %></td>
+        <td><%= task_table.T_ACTIVE %></td>
+        <td><%= task_table.T_COMMISSIONABLE %></td>
+        <td><%= task_table.T_COMM_RATE_AE %></td>
+        <td><%= task_table.T_COMM_RATE_BIZ %></td>
+        <td><%= task_table.T_REQ_APPROVAL %></td>
+        <td><%= task_table.T_REQ_APPROVAL_BY %></td>
+        <td><%= task_table.T_ADDED_BY %></td>
+        <td><%= task_table.T_ADDED_WHEN %></td>
+        <td><%= task_table.T_EDITED_BY %></td>
+        <td><%= task_table.T_EDITED_WHEN %></td>
+        <td><%= task_table.T_PAYROLL %></td>
+        <td><%= task_table.T_UTIL_CAT %></td>
+        <td><%= task_table.T_TAGS %></td>
+        <td><%= task_table.T_CLIENT_SCHED %></td>
+        <td><%= task_table.T_MILESTONE %></td>
+        <td><%= task_table.T_TAX3 %></td>
+        <td><%= task_table.T_SMALL_ICON %></td>
+        <td><%= task_table.T_ALWAYS_DISCUSS %></td>
+        <td><%= task_table.T_NO_TIME %></td>
+        <td><%= task_table.T_STATUS_FINISHED %></td>
+        <td><%= link_to 'Show', task_table %></td>
+        <td><%= link_to 'Edit', edit_task_table_path(task_table) %></td>
+        <td><%= link_to 'Destroy', task_table, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task table', new_task_table_path %>

@@ -1,0 +1,35 @@
+<h1>Listing logs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Log date</th>
+      <th>Log time</th>
+      <th>Log user</th>
+      <th>Log notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logs.each do |log| %>
+      <tr>
+        <td><%= log.primaryKey %></td>
+        <td><%= log.LOG_DATE %></td>
+        <td><%= log.LOG_TIME %></td>
+        <td><%= log.LOG_USER %></td>
+        <td><%= log.LOG_NOTES %></td>
+        <td><%= link_to 'Show', log %></td>
+        <td><%= link_to 'Edit', edit_log_path(log) %></td>
+        <td><%= link_to 'Destroy', log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log', new_log_path %>

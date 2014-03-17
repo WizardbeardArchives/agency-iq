@@ -1,0 +1,199 @@
+<h1>Listing purchase_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Po num</th>
+      <th>Po job num</th>
+      <th>Po task</th>
+      <th>Po desc label</th>
+      <th>Po desc</th>
+      <th>Po vendor num</th>
+      <th>Po cost</th>
+      <th>Po markup</th>
+      <th>Po comm</th>
+      <th>Po tax</th>
+      <th>Po gross</th>
+      <th>Po amt paid</th>
+      <th>Po type</th>
+      <th>Po client num</th>
+      <th>Po ship note</th>
+      <th>Po ship1</th>
+      <th>Po ship2</th>
+      <th>Po ship3</th>
+      <th>Po ship4</th>
+      <th>Po qty label</th>
+      <th>Po qty</th>
+      <th>Po approval1</th>
+      <th>Po approval2</th>
+      <th>Po approval3</th>
+      <th>Po ordered by</th>
+      <th>Po status</th>
+      <th>Po due date</th>
+      <th>Po terms1</th>
+      <th>Po terms2</th>
+      <th>Po terms3</th>
+      <th>Po date</th>
+      <th>Po pc</th>
+      <th>Po to1</th>
+      <th>Po to2</th>
+      <th>Po to3</th>
+      <th>Po to4</th>
+      <th>Po to5</th>
+      <th>Po vendor1</th>
+      <th>Po vendor2</th>
+      <th>Po vendor3</th>
+      <th>Po vendor4</th>
+      <th>Po vendor5</th>
+      <th>Po field label1</th>
+      <th>Po field label2</th>
+      <th>Po field label3</th>
+      <th>Po field label4</th>
+      <th>Po field label5</th>
+      <th>Po field1</th>
+      <th>Po field2</th>
+      <th>Po field3</th>
+      <th>Po field4</th>
+      <th>Po field5</th>
+      <th>Po hold</th>
+      <th>Po approved</th>
+      <th>Po approved dat</th>
+      <th>Po approved by</th>
+      <th>Po ap alert</th>
+      <th>Po tax exempt</th>
+      <th>Po period</th>
+      <th>Po ar billed</th>
+      <th>Po to be billed</th>
+      <th>Po ar num</th>
+      <th>Po lines</th>
+      <th>Po disclaimer</th>
+      <th>Po closed</th>
+      <th>Po form</th>
+      <th>Po total title</th>
+      <th>Po mat due label</th>
+      <th>Po import from</th>
+      <th>Po traffic instr</th>
+      <th>Po rep instr</th>
+      <th>Po added by</th>
+      <th>Po rev</th>
+      <th>Po field6</th>
+      <th>Po field label6</th>
+      <th>Po rep name</th>
+      <th>Po rep phone</th>
+      <th>Po rep fax</th>
+      <th>Po campaign</th>
+      <th>Po brand</th>
+      <th>Po blanket</th>
+      <th>Po edited by</th>
+      <th>Po edited when</th>
+      <th>Po added when</th>
+      <th>Po ownership</th>
+      <th>Po pt template</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @purchase_orders.each do |purchase_order| %>
+      <tr>
+        <td><%= purchase_order.primaryKey %></td>
+        <td><%= purchase_order.PO_NUM %></td>
+        <td><%= purchase_order.PO_JOB_NUM %></td>
+        <td><%= purchase_order.PO_TASK %></td>
+        <td><%= purchase_order.PO_DESC_LABEL %></td>
+        <td><%= purchase_order.PO_DESC %></td>
+        <td><%= purchase_order.PO_VENDOR_NUM %></td>
+        <td><%= purchase_order.PO_COST %></td>
+        <td><%= purchase_order.PO_MARKUP %></td>
+        <td><%= purchase_order.PO_COMM %></td>
+        <td><%= purchase_order.PO_TAX %></td>
+        <td><%= purchase_order.PO_GROSS %></td>
+        <td><%= purchase_order.PO_AMT_PAID %></td>
+        <td><%= purchase_order.PO_TYPE %></td>
+        <td><%= purchase_order.PO_CLIENT_NUM %></td>
+        <td><%= purchase_order.PO_SHIP_NOTE %></td>
+        <td><%= purchase_order.PO_SHIP1 %></td>
+        <td><%= purchase_order.PO_SHIP2 %></td>
+        <td><%= purchase_order.PO_SHIP3 %></td>
+        <td><%= purchase_order.PO_SHIP4 %></td>
+        <td><%= purchase_order.PO_QTY_LABEL %></td>
+        <td><%= purchase_order.PO_QTY %></td>
+        <td><%= purchase_order.PO_APPROVAL1 %></td>
+        <td><%= purchase_order.PO_APPROVAL2 %></td>
+        <td><%= purchase_order.PO_APPROVAL3 %></td>
+        <td><%= purchase_order.PO_ORDERED_BY %></td>
+        <td><%= purchase_order.PO_STATUS %></td>
+        <td><%= purchase_order.PO_DUE_DATE %></td>
+        <td><%= purchase_order.PO_TERMS1 %></td>
+        <td><%= purchase_order.PO_TERMS2 %></td>
+        <td><%= purchase_order.PO_TERMS3 %></td>
+        <td><%= purchase_order.PO_DATE %></td>
+        <td><%= purchase_order.PO_PC %></td>
+        <td><%= purchase_order.PO_TO1 %></td>
+        <td><%= purchase_order.PO_TO2 %></td>
+        <td><%= purchase_order.PO_TO3 %></td>
+        <td><%= purchase_order.PO_TO4 %></td>
+        <td><%= purchase_order.PO_TO5 %></td>
+        <td><%= purchase_order.PO_VENDOR1 %></td>
+        <td><%= purchase_order.PO_VENDOR2 %></td>
+        <td><%= purchase_order.PO_VENDOR3 %></td>
+        <td><%= purchase_order.PO_VENDOR4 %></td>
+        <td><%= purchase_order.PO_VENDOR5 %></td>
+        <td><%= purchase_order.PO_FIELD_LABEL1 %></td>
+        <td><%= purchase_order.PO_FIELD_LABEL2 %></td>
+        <td><%= purchase_order.PO_FIELD_LABEL3 %></td>
+        <td><%= purchase_order.PO_FIELD_LABEL4 %></td>
+        <td><%= purchase_order.PO_FIELD_LABEL5 %></td>
+        <td><%= purchase_order.PO_FIELD1 %></td>
+        <td><%= purchase_order.PO_FIELD2 %></td>
+        <td><%= purchase_order.PO_FIELD3 %></td>
+        <td><%= purchase_order.PO_FIELD4 %></td>
+        <td><%= purchase_order.PO_FIELD5 %></td>
+        <td><%= purchase_order.PO_HOLD %></td>
+        <td><%= purchase_order.PO_APPROVED %></td>
+        <td><%= purchase_order.PO_APPROVED_DAT %></td>
+        <td><%= purchase_order.PO_APPROVED_BY %></td>
+        <td><%= purchase_order.PO_AP_ALERT %></td>
+        <td><%= purchase_order.PO_TAX_EXEMPT %></td>
+        <td><%= purchase_order.PO_PERIOD %></td>
+        <td><%= purchase_order.PO_AR_BILLED %></td>
+        <td><%= purchase_order.PO_TO_BE_BILLED %></td>
+        <td><%= purchase_order.PO_AR_NUM %></td>
+        <td><%= purchase_order.PO_LINES %></td>
+        <td><%= purchase_order.PO_DISCLAIMER %></td>
+        <td><%= purchase_order.PO_CLOSED %></td>
+        <td><%= purchase_order.PO_FORM %></td>
+        <td><%= purchase_order.PO_TOTAL_TITLE %></td>
+        <td><%= purchase_order.PO_MAT_DUE_LABEL %></td>
+        <td><%= purchase_order.PO_IMPORT_FROM %></td>
+        <td><%= purchase_order.PO_TRAFFIC_INSTR %></td>
+        <td><%= purchase_order.PO_REP_INSTR %></td>
+        <td><%= purchase_order.PO_ADDED_BY %></td>
+        <td><%= purchase_order.PO_REV %></td>
+        <td><%= purchase_order.PO_FIELD6 %></td>
+        <td><%= purchase_order.PO_FIELD_LABEL6 %></td>
+        <td><%= purchase_order.PO_REP_NAME %></td>
+        <td><%= purchase_order.PO_REP_PHONE %></td>
+        <td><%= purchase_order.PO_REP_FAX %></td>
+        <td><%= purchase_order.PO_CAMPAIGN %></td>
+        <td><%= purchase_order.PO_BRAND %></td>
+        <td><%= purchase_order.PO_BLANKET %></td>
+        <td><%= purchase_order.PO_EDITED_BY %></td>
+        <td><%= purchase_order.PO_EDITED_WHEN %></td>
+        <td><%= purchase_order.PO_ADDED_WHEN %></td>
+        <td><%= purchase_order.PO_OWNERSHIP %></td>
+        <td><%= purchase_order.PO_PT_TEMPLATE %></td>
+        <td><%= link_to 'Show', purchase_order %></td>
+        <td><%= link_to 'Edit', edit_purchase_order_path(purchase_order) %></td>
+        <td><%= link_to 'Destroy', purchase_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Purchase order', new_purchase_order_path %>

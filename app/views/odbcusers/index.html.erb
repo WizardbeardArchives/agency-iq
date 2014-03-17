@@ -1,0 +1,31 @@
+<h1>Listing odbcusers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Odbcusername</th>
+      <th>Odbcpassword</th>
+      <th>Odbcaccessmask</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @odbcusers.each do |odbcuser| %>
+      <tr>
+        <td><%= odbcuser.ODBCUSERNAME %></td>
+        <td><%= odbcuser.ODBCPASSWORD %></td>
+        <td><%= odbcuser.ODBCACCESSMASK %></td>
+        <td><%= link_to 'Show', odbcuser %></td>
+        <td><%= link_to 'Edit', edit_odbcuser_path(odbcuser) %></td>
+        <td><%= link_to 'Destroy', odbcuser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Odbcuser', new_odbcuser_path %>

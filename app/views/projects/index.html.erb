@@ -1,0 +1,69 @@
+<h1>Listing projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Proj client num</th>
+      <th>Proj name</th>
+      <th>Proj desc</th>
+      <th>Proj budget</th>
+      <th>Proj num1</th>
+      <th>Proj num2</th>
+      <th>Proj num3</th>
+      <th>Proj num4</th>
+      <th>Proj num5</th>
+      <th>Proj num6</th>
+      <th>Proj num7</th>
+      <th>Proj num8</th>
+      <th>Proj num9</th>
+      <th>Proj num10</th>
+      <th>Proj num11</th>
+      <th>Proj num12</th>
+      <th>Proj status</th>
+      <th>Proj added by</th>
+      <th>Proj added when</th>
+      <th>Proj edited by</th>
+      <th>Proj edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.primaryKey %></td>
+        <td><%= project.PROJ_CLIENT_NUM %></td>
+        <td><%= project.PROJ_NAME %></td>
+        <td><%= project.PROJ_DESC %></td>
+        <td><%= project.PROJ_BUDGET %></td>
+        <td><%= project.PROJ_NUM1 %></td>
+        <td><%= project.PROJ_NUM2 %></td>
+        <td><%= project.PROJ_NUM3 %></td>
+        <td><%= project.PROJ_NUM4 %></td>
+        <td><%= project.PROJ_NUM5 %></td>
+        <td><%= project.PROJ_NUM6 %></td>
+        <td><%= project.PROJ_NUM7 %></td>
+        <td><%= project.PROJ_NUM8 %></td>
+        <td><%= project.PROJ_NUM9 %></td>
+        <td><%= project.PROJ_NUM10 %></td>
+        <td><%= project.PROJ_NUM11 %></td>
+        <td><%= project.PROJ_NUM12 %></td>
+        <td><%= project.PROJ_STATUS %></td>
+        <td><%= project.PROJ_ADDED_BY %></td>
+        <td><%= project.PROJ_ADDED_WHEN %></td>
+        <td><%= project.PROJ_EDITED_BY %></td>
+        <td><%= project.PROJ_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

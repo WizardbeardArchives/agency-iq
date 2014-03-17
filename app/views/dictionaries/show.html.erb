@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @dictionary.primaryKey %>
+</p>
+
+<p>
+  <strong>Dict name:</strong>
+  <%= @dictionary.DICT_NAME %>
+</p>
+
+<p>
+  <strong>Dict lang id:</strong>
+  <%= @dictionary.DICT_LANG_ID %>
+</p>
+
+<%= link_to 'Edit', edit_dictionary_path(@dictionary) %> |
+<%= link_to 'Back', dictionaries_path %>

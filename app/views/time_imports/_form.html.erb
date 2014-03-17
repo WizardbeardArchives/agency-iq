@@ -1,0 +1,27 @@
+<%= simple_form_for(@time_import) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :TM_DATE %>
+    <%= f.input :TM_JOB_NUM %>
+    <%= f.input :TM_TASK %>
+    <%= f.input :TM_HOURS %>
+    <%= f.input :TM_STAFF %>
+    <%= f.input :TM_DESC %>
+    <%= f.input :TM_BAD %>
+    <%= f.input :TM_COST_RATE %>
+    <%= f.input :TM_BILL_RATE %>
+    <%= f.input :TM_CLIENT_NUM %>
+    <%= f.input :TM_BILLABLE %>
+    <%= f.input :TM_PERIOD %>
+    <%= f.input :TM_PALM_ID %>
+    <%= f.input :TM_PALM_CATEGORY %>
+    <%= f.input :TM_PALM_ATTRIBS %>
+    <%= f.input :TM_OT %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

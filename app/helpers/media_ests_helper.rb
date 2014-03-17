@@ -1,0 +1,2 @@
+module MediaEstsHelper
+end

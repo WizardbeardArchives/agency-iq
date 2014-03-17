@@ -1,0 +1,31 @@
+<h1>Listing dictionary_words</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Dword dict name</th>
+      <th>Dword word</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dictionary_words.each do |dictionary_word| %>
+      <tr>
+        <td><%= dictionary_word.primaryKey %></td>
+        <td><%= dictionary_word.DWORD_DICT_NAME %></td>
+        <td><%= dictionary_word.DWORD_WORD %></td>
+        <td><%= link_to 'Show', dictionary_word %></td>
+        <td><%= link_to 'Edit', edit_dictionary_word_path(dictionary_word) %></td>
+        <td><%= link_to 'Destroy', dictionary_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dictionary word', new_dictionary_word_path %>

@@ -1,0 +1,34 @@
+<%= simple_form_for(@recur_ap) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :RAP_VENDOR %>
+    <%= f.input :RAP_DATE %>
+    <%= f.input :RAP_AMT1 %>
+    <%= f.input :RAP_DESC %>
+    <%= f.input :RAP_CGL %>
+    <%= f.input :RAP_DGL1 %>
+    <%= f.input :RAP_ADDED_BY %>
+    <%= f.input :RAP_INV_NUM %>
+    <%= f.input :RAP_PERIOD %>
+    <%= f.input :RAP_INV_DATE %>
+    <%= f.input :RAP_DGL2 %>
+    <%= f.input :RAP_DGL3 %>
+    <%= f.input :RAP_DGL4 %>
+    <%= f.input :RAP_DGL5 %>
+    <%= f.input :RAP_DGL6 %>
+    <%= f.input :RAP_AMT2 %>
+    <%= f.input :RAP_AMT3 %>
+    <%= f.input :RAP_AMT4 %>
+    <%= f.input :RAP_AMT5 %>
+    <%= f.input :RAP_AMT6 %>
+    <%= f.input :RAP_ADDED_WHEN %>
+    <%= f.input :RAP_EDITED_BY %>
+    <%= f.input :RAP_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

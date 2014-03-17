@@ -1,0 +1,21 @@
+<%= simple_form_for(@un_check) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :UNCKS_DEBIT %>
+    <%= f.input :UNCKS_CREDIT %>
+    <%= f.input :UNCKS_DESC %>
+    <%= f.input :UNCKS_REF %>
+    <%= f.input :UNCKS_TEMP_REC %>
+    <%= f.input :UNCKS_PAY_BATCH %>
+    <%= f.input :UNCKS_SOURCE %>
+    <%= f.input :UNCKS_RECONCILE %>
+    <%= f.input :UNCKS_DATE %>
+    <%= f.input :UNCKS_AC_NUM %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

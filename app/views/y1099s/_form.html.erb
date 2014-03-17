@@ -1,0 +1,33 @@
+<%= simple_form_for(@y1099) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :Y_NAME1 %>
+    <%= f.input :Y_ADDRESS1 %>
+    <%= f.input :Y_CITY_STATE1 %>
+    <%= f.input :Y_ZIP1 %>
+    <%= f.input :Y_TAX1 %>
+    <%= f.input :Y_AMT1 %>
+    <%= f.input :Y_NAME2 %>
+    <%= f.input :Y_ADDRESS2 %>
+    <%= f.input :Y_CITY_STATE2 %>
+    <%= f.input :Y_ZIP2 %>
+    <%= f.input :Y_TAX2 %>
+    <%= f.input :Y_AMT2 %>
+    <%= f.input :Y_NAME3 %>
+    <%= f.input :Y_ADDRESS3 %>
+    <%= f.input :Y_CITY_STATE3 %>
+    <%= f.input :Y_ZIP3 %>
+    <%= f.input :Y_AMT3 %>
+    <%= f.input :Y_TAX3 %>
+    <%= f.input :Y_DBA %>
+    <%= f.input :Y_DBA2 %>
+    <%= f.input :Y_RENT %>
+    <%= f.input :Y_RENT2 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

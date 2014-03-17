@@ -1,0 +1,17 @@
+<%= simple_form_for(@print_spec_value) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PSV_CAT %>
+    <%= f.input :PSV_VALUE %>
+    <%= f.input :PSV_ADDED_BY %>
+    <%= f.input :PSV_ADDED_WHEN %>
+    <%= f.input :PSV_EDITED_BY %>
+    <%= f.input :PSV_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

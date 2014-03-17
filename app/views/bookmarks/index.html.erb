@@ -1,0 +1,45 @@
+<h1>Listing bookmarks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Book work</th>
+      <th>Book window</th>
+      <th>Book find value</th>
+      <th>Book desc</th>
+      <th>Book find field</th>
+      <th>Book sort</th>
+      <th>Book desc user</th>
+      <th>Book do method</th>
+      <th>Book do calc</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bookmarks.each do |bookmark| %>
+      <tr>
+        <td><%= bookmark.primaryKey %></td>
+        <td><%= bookmark.BOOK_WORK %></td>
+        <td><%= bookmark.BOOK_WINDOW %></td>
+        <td><%= bookmark.BOOK_FIND_VALUE %></td>
+        <td><%= bookmark.BOOK_DESC %></td>
+        <td><%= bookmark.BOOK_FIND_FIELD %></td>
+        <td><%= bookmark.BOOK_SORT %></td>
+        <td><%= bookmark.BOOK_DESC_USER %></td>
+        <td><%= bookmark.BOOK_DO_METHOD %></td>
+        <td><%= bookmark.BOOK_DO_CALC %></td>
+        <td><%= link_to 'Show', bookmark %></td>
+        <td><%= link_to 'Edit', edit_bookmark_path(bookmark) %></td>
+        <td><%= link_to 'Destroy', bookmark, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bookmark', new_bookmark_path %>

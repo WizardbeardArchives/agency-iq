@@ -1,0 +1,77 @@
+<h1>Listing programs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Pgm code</th>
+      <th>Pgm time pgm</th>
+      <th>Pgm rating ea</th>
+      <th>Pgm cost ea</th>
+      <th>Pgm group</th>
+      <th>Pgm note</th>
+      <th>Pgm type</th>
+      <th>Ad name</th>
+      <th>Ad position</th>
+      <th>Ad notes</th>
+      <th>Ad gross amt</th>
+      <th>Ad comm</th>
+      <th>Ad net amt</th>
+      <th>Ad extra amt</th>
+      <th>Ad bill net</th>
+      <th>Ad issue date</th>
+      <th>Ad space close</th>
+      <th>Ad mat close</th>
+      <th>Pgm key</th>
+      <th>Pgm client num</th>
+      <th>Ad rate basis</th>
+      <th>Pgm added by</th>
+      <th>Pgm added when</th>
+      <th>Pgm edited by</th>
+      <th>Pgm edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @programs.each do |program| %>
+      <tr>
+        <td><%= program.primaryKey %></td>
+        <td><%= program.PGM_CODE %></td>
+        <td><%= program.PGM_TIME_PGM %></td>
+        <td><%= program.PGM_RATING_EA %></td>
+        <td><%= program.PGM_COST_EA %></td>
+        <td><%= program.PGM_GROUP %></td>
+        <td><%= program.PGM_NOTE %></td>
+        <td><%= program.PGM_TYPE %></td>
+        <td><%= program.AD_NAME %></td>
+        <td><%= program.AD_POSITION %></td>
+        <td><%= program.AD_NOTES %></td>
+        <td><%= program.AD_GROSS_AMT %></td>
+        <td><%= program.AD_COMM %></td>
+        <td><%= program.AD_NET_AMT %></td>
+        <td><%= program.AD_EXTRA_AMT %></td>
+        <td><%= program.AD_BILL_NET %></td>
+        <td><%= program.AD_ISSUE_DATE %></td>
+        <td><%= program.AD_SPACE_CLOSE %></td>
+        <td><%= program.AD_MAT_CLOSE %></td>
+        <td><%= program.PGM_KEY %></td>
+        <td><%= program.PGM_CLIENT_NUM %></td>
+        <td><%= program.AD_RATE_BASIS %></td>
+        <td><%= program.PGM_ADDED_BY %></td>
+        <td><%= program.PGM_ADDED_WHEN %></td>
+        <td><%= program.PGM_EDITED_BY %></td>
+        <td><%= program.PGM_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', program %></td>
+        <td><%= link_to 'Edit', edit_program_path(program) %></td>
+        <td><%= link_to 'Destroy', program, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Program', new_program_path %>

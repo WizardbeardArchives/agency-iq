@@ -1,0 +1,31 @@
+<%= simple_form_for(@status_code) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :STATUS_NUM %>
+    <%= f.input :STATUS_DESC %>
+    <%= f.input :STATUS_ALERT %>
+    <%= f.input :STATUS_STOP %>
+    <%= f.input :STATUS_PROD_ALERT %>
+    <%= f.input :STATUS_BILL_ALERT %>
+    <%= f.input :STATUS_ALERT_BUTTON %>
+    <%= f.input :STATUS_CAT %>
+    <%= f.input :STATUS_MAIL_TO %>
+    <%= f.input :STATUS_MAIL_MSG %>
+    <%= f.input :STATUS_MAIL_CC %>
+    <%= f.input :STATUS_MAIL_BCC %>
+    <%= f.input :STATUS_ADDED_BY %>
+    <%= f.input :STATUS_ADDED_WHEN %>
+    <%= f.input :STATUS_EDITED_BY %>
+    <%= f.input :STATUS_EDITED_WHEN %>
+    <%= f.input :STATUS_COLOR %>
+    <%= f.input :STATUS_PROD %>
+    <%= f.input :STATUS_ACCT %>
+    <%= f.input :STATUS_ACTIVE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

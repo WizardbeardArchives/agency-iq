@@ -1,0 +1,69 @@
+<h1>Listing claven_sales</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>S num</th>
+      <th>S pr job num</th>
+      <th>S pr task</th>
+      <th>S client</th>
+      <th>S how paid</th>
+      <th>S terms</th>
+      <th>S invoice date</th>
+      <th>S ship org</th>
+      <th>S price</th>
+      <th>S product name</th>
+      <th>S ts credit amt</th>
+      <th>S disc desc</th>
+      <th>S addl qty</th>
+      <th>S addl user amt</th>
+      <th>S options desc</th>
+      <th>S amt options</th>
+      <th>S tax rate</th>
+      <th>S support amt</th>
+      <th>S ship amt</th>
+      <th>S invoice total</th>
+      <th>S discount</th>
+      <th>S sales tax</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @claven_sales.each do |claven_sale| %>
+      <tr>
+        <td><%= claven_sale.S_NUM %></td>
+        <td><%= claven_sale.S_PR_JOB_NUM %></td>
+        <td><%= claven_sale.S_PR_TASK %></td>
+        <td><%= claven_sale.S_CLIENT %></td>
+        <td><%= claven_sale.S_HOW_PAID %></td>
+        <td><%= claven_sale.S_TERMS %></td>
+        <td><%= claven_sale.S_INVOICE_DATE %></td>
+        <td><%= claven_sale.S_SHIP_ORG %></td>
+        <td><%= claven_sale.S_PRICE %></td>
+        <td><%= claven_sale.S_PRODUCT_NAME %></td>
+        <td><%= claven_sale.S_TS_CREDIT_AMT %></td>
+        <td><%= claven_sale.S_DISC_DESC %></td>
+        <td><%= claven_sale.S_ADDL_QTY %></td>
+        <td><%= claven_sale.S_ADDL_USER_AMT %></td>
+        <td><%= claven_sale.S_OPTIONS_DESC %></td>
+        <td><%= claven_sale.S_AMT_OPTIONS %></td>
+        <td><%= claven_sale.S_TAX_RATE %></td>
+        <td><%= claven_sale.S_SUPPORT_AMT %></td>
+        <td><%= claven_sale.S_SHIP_AMT %></td>
+        <td><%= claven_sale.S_INVOICE_TOTAL %></td>
+        <td><%= claven_sale.S_DISCOUNT %></td>
+        <td><%= claven_sale.S_SALES_TAX %></td>
+        <td><%= link_to 'Show', claven_sale %></td>
+        <td><%= link_to 'Edit', edit_claven_sale_path(claven_sale) %></td>
+        <td><%= link_to 'Destroy', claven_sale, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Claven sale', new_claven_sale_path %>

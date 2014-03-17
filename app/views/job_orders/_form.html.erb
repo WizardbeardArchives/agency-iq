@@ -1,0 +1,55 @@
+<%= simple_form_for(@job_order) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :CB_JOB_NUM %>
+    <%= f.input :CB_CLIENT_NUM %>
+    <%= f.input :CB_1_LABEL %>
+    <%= f.input :CB_1 %>
+    <%= f.input :CB_2_LABEL %>
+    <%= f.input :CB_2 %>
+    <%= f.input :CB_3_LABEL %>
+    <%= f.input :CB_3 %>
+    <%= f.input :CB_4_LABEL %>
+    <%= f.input :CB_4 %>
+    <%= f.input :CB_5_LABEL %>
+    <%= f.input :CB_5 %>
+    <%= f.input :CB_6_LABEL %>
+    <%= f.input :CB_6 %>
+    <%= f.input :CB_7_LABEL %>
+    <%= f.input :CB_7 %>
+    <%= f.input :CB_8_LABEL %>
+    <%= f.input :CB_8 %>
+    <%= f.input :CB_REV %>
+    <%= f.input :CB_9_LABEL %>
+    <%= f.input :CB_9 %>
+    <%= f.input :CB_10_LABEL %>
+    <%= f.input :CB_10 %>
+    <%= f.input :CB_11_LABEL %>
+    <%= f.input :CB_11 %>
+    <%= f.input :CB_12_LABEL %>
+    <%= f.input :CB_12 %>
+    <%= f.input :CB_13_LABEL %>
+    <%= f.input :CB_13 %>
+    <%= f.input :CB_14_LABEL %>
+    <%= f.input :CB_14 %>
+    <%= f.input :CB_15_LABEL %>
+    <%= f.input :CB_15 %>
+    <%= f.input :CB_ADDED_BY %>
+    <%= f.input :CB_REV_BY %>
+    <%= f.input :CB_REV_DATE %>
+    <%= f.input :CB_OK %>
+    <%= f.input :CB_OK_BY %>
+    <%= f.input :CB_OK_DATE %>
+    <%= f.input :CB_APPROVED %>
+    <%= f.input :CB_APPROVED_DATE %>
+    <%= f.input :CB_APPROVED_BY %>
+    <%= f.input :CB_EDITED_BY %>
+    <%= f.input :CB_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

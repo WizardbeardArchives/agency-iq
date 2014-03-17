@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @statement.primaryKey %>
+</p>
+
+<p>
+  <strong>St date:</strong>
+  <%= @statement.ST_DATE %>
+</p>
+
+<p>
+  <strong>St ar num:</strong>
+  <%= @statement.ST_AR_NUM %>
+</p>
+
+<p>
+  <strong>St ck num:</strong>
+  <%= @statement.ST_CK_NUM %>
+</p>
+
+<p>
+  <strong>St client num:</strong>
+  <%= @statement.ST_CLIENT_NUM %>
+</p>
+
+<p>
+  <strong>St type:</strong>
+  <%= @statement.ST_TYPE %>
+</p>
+
+<p>
+  <strong>St job num:</strong>
+  <%= @statement.ST_JOB_NUM %>
+</p>
+
+<p>
+  <strong>St charge amt:</strong>
+  <%= @statement.ST_CHARGE_AMT %>
+</p>
+
+<p>
+  <strong>St pmt amt:</strong>
+  <%= @statement.ST_PMT_AMT %>
+</p>
+
+<p>
+  <strong>St po num:</strong>
+  <%= @statement.ST_PO_NUM %>
+</p>
+
+<p>
+  <strong>St division:</strong>
+  <%= @statement.ST_DIVISION %>
+</p>
+
+<%= link_to 'Edit', edit_statement_path(@statement) %> |
+<%= link_to 'Back', statements_path %>

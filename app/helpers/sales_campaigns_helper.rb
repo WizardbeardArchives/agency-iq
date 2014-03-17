@@ -1,0 +1,2 @@
+module SalesCampaignsHelper
+end

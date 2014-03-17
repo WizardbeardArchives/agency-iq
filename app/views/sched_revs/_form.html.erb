@@ -1,0 +1,38 @@
+<%= simple_form_for(@sched_rev) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :SCV_JOB_NUM %>
+    <%= f.input :SCV_TASK %>
+    <%= f.input :SCV_SORT %>
+    <%= f.input :SCV_TASK_NAME %>
+    <%= f.input :SCV_TASK_SPECS %>
+    <%= f.input :SCV_DUE_DATE %>
+    <%= f.input :SCV_DUE_WHEN %>
+    <%= f.input :SCV_RESOURCE %>
+    <%= f.input :SCV_LEAD_TIME %>
+    <%= f.input :SCV_START_DATE %>
+    <%= f.input :SCV_DATE_FINISHED %>
+    <%= f.input :SCV_FINISHED %>
+    <%= f.input :SCV_FINAL %>
+    <%= f.input :SCV_REVISION %>
+    <%= f.input :SCV_J_DUE_DATE %>
+    <%= f.input :SCV_J_START_DATE %>
+    <%= f.input :SCV_REVISED_BY %>
+    <%= f.input :SCV_REVISION_DATE %>
+    <%= f.input :SCV_REVISION_NOTES %>
+    <%= f.input :SCV_REASON %>
+    <%= f.input :SCV_REV_OKD_BY %>
+    <%= f.input :SCV_REV_OKD_DATE %>
+    <%= f.input :SCV_KIND %>
+    <%= f.input :SCV_ADDED_BY %>
+    <%= f.input :SCV_ADDED_WHEN %>
+    <%= f.input :SCV_EDITED_BY %>
+    <%= f.input :SCV_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

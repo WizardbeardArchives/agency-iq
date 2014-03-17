@@ -1,0 +1,53 @@
+<h1>Listing user_info_ctrs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ui work</th>
+      <th>Ui proc1</th>
+      <th>Ui proc2</th>
+      <th>Ui proc3</th>
+      <th>Ui proc4</th>
+      <th>Ui proc5</th>
+      <th>Ui proc6</th>
+      <th>Ui label1</th>
+      <th>Ui label2</th>
+      <th>Ui label3</th>
+      <th>Ui label4</th>
+      <th>Ui label5</th>
+      <th>Ui label6</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_info_ctrs.each do |user_info_ctr| %>
+      <tr>
+        <td><%= user_info_ctr.primaryKey %></td>
+        <td><%= user_info_ctr.UI_WORK %></td>
+        <td><%= user_info_ctr.UI_PROC1 %></td>
+        <td><%= user_info_ctr.UI_PROC2 %></td>
+        <td><%= user_info_ctr.UI_PROC3 %></td>
+        <td><%= user_info_ctr.UI_PROC4 %></td>
+        <td><%= user_info_ctr.UI_PROC5 %></td>
+        <td><%= user_info_ctr.UI_PROC6 %></td>
+        <td><%= user_info_ctr.UI_LABEL1 %></td>
+        <td><%= user_info_ctr.UI_LABEL2 %></td>
+        <td><%= user_info_ctr.UI_LABEL3 %></td>
+        <td><%= user_info_ctr.UI_LABEL4 %></td>
+        <td><%= user_info_ctr.UI_LABEL5 %></td>
+        <td><%= user_info_ctr.UI_LABEL6 %></td>
+        <td><%= link_to 'Show', user_info_ctr %></td>
+        <td><%= link_to 'Edit', edit_user_info_ctr_path(user_info_ctr) %></td>
+        <td><%= link_to 'Destroy', user_info_ctr, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User info ctr', new_user_info_ctr_path %>

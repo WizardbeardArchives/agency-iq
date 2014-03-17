@@ -1,0 +1,255 @@
+<h1>Listing ars</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ar num</th>
+      <th>Ar job num</th>
+      <th>Ar client num</th>
+      <th>Ar date</th>
+      <th>Ar posted</th>
+      <th>Ar ae</th>
+      <th>Ar terms</th>
+      <th>Ar period</th>
+      <th>Ar po</th>
+      <th>Ar desc</th>
+      <th>Ar due date</th>
+      <th>Ar count</th>
+      <th>Ar disc due</th>
+      <th>Ar disc amt</th>
+      <th>Ar amt paid</th>
+      <th>Ar total</th>
+      <th>Ar days</th>
+      <th>Ar tax amt1</th>
+      <th>Ar tax amt2</th>
+      <th>Ar taxable1</th>
+      <th>Ar taxable2</th>
+      <th>Ar tax rate1</th>
+      <th>Ar tax rate2</th>
+      <th>Ar tax cgl1</th>
+      <th>Ar tax cgl2</th>
+      <th>Ar status</th>
+      <th>Ar open</th>
+      <th>Ar jump</th>
+      <th>Ar dgl</th>
+      <th>Ar curr</th>
+      <th>Ar 30</th>
+      <th>Ar 60</th>
+      <th>Ar 90</th>
+      <th>Ar 120</th>
+      <th>Ar added by</th>
+      <th>Ar added when</th>
+      <th>Ar client contact</th>
+      <th>Ar agency contact</th>
+      <th>Ar show specs</th>
+      <th>Ar retainr note</th>
+      <th>Ar retainer amt</th>
+      <th>Ar retainer gl</th>
+      <th>Ar billing type</th>
+      <th>Ar comm amt</th>
+      <th>Ar comm gl</th>
+      <th>Ar comm desc</th>
+      <th>Ar misc amt1</th>
+      <th>Ar misc gl1</th>
+      <th>Ar misc desc1</th>
+      <th>Ar misc amt2</th>
+      <th>Ar misc gl2</th>
+      <th>Ar misc desc2</th>
+      <th>Ar address1</th>
+      <th>Ar address2</th>
+      <th>Ar address3</th>
+      <th>Ar address4</th>
+      <th>Ar address5</th>
+      <th>Ar to1</th>
+      <th>Ar to2</th>
+      <th>Ar to3</th>
+      <th>Ar to4</th>
+      <th>Ar to5</th>
+      <th>Ar address6</th>
+      <th>Ar zero as</th>
+      <th>Ar finance chg</th>
+      <th>Ar finance amt</th>
+      <th>Ar finance cgl</th>
+      <th>Ar roll up</th>
+      <th>Ar show totals</th>
+      <th>Ar adv pmt</th>
+      <th>Ar adv pmt gl</th>
+      <th>Ar charge num</th>
+      <th>Ar print est</th>
+      <th>Ar show hours</th>
+      <th>Ar unpaid</th>
+      <th>Ar kind</th>
+      <th>Ar key</th>
+      <th>Ar ship address1</th>
+      <th>Ar ship address2</th>
+      <th>Ar ship address3</th>
+      <th>Ar ship address4</th>
+      <th>Ar ship address5</th>
+      <th>Ar ship address6</th>
+      <th>Ar pc</th>
+      <th>Ar approved</th>
+      <th>Ar approved by</th>
+      <th>Ar approved date</th>
+      <th>Ar approval1</th>
+      <th>Ar approval2</th>
+      <th>Ar approval3</th>
+      <th>Ar return date</th>
+      <th>Ar bill instructions</th>
+      <th>Ar exported</th>
+      <th>Ar pmt status</th>
+      <th>Ar pmt status note</th>
+      <th>Ar pmt next date</th>
+      <th>Ar pmt next action</th>
+      <th>Ar pmt next who</th>
+      <th>Ar pmt next note</th>
+      <th>Ar pmt next num</th>
+      <th>Ar bizdev ae</th>
+      <th>Ar commissionable amt</th>
+      <th>Ar comm rate ae</th>
+      <th>Ar comm rate biz</th>
+      <th>Ar date paid</th>
+      <th>Ar edited by</th>
+      <th>Ar edited when</th>
+      <th>Ar posted by</th>
+      <th>Ar posted when</th>
+      <th>Ar terms1</th>
+      <th>Ar terms2</th>
+      <th>Ar terms3</th>
+      <th>Ar tax area</th>
+      <th>Ar ship org</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ars.each do |ar| %>
+      <tr>
+        <td><%= ar.primaryKey %></td>
+        <td><%= ar.AR_NUM %></td>
+        <td><%= ar.AR_JOB_NUM %></td>
+        <td><%= ar.AR_CLIENT_NUM %></td>
+        <td><%= ar.AR_DATE %></td>
+        <td><%= ar.AR_POSTED %></td>
+        <td><%= ar.AR_AE %></td>
+        <td><%= ar.AR_TERMS %></td>
+        <td><%= ar.AR_PERIOD %></td>
+        <td><%= ar.AR_PO %></td>
+        <td><%= ar.AR_DESC %></td>
+        <td><%= ar.AR_DUE_DATE %></td>
+        <td><%= ar.AR_COUNT %></td>
+        <td><%= ar.AR_DISC_DUE %></td>
+        <td><%= ar.AR_DISC_AMT %></td>
+        <td><%= ar.AR_AMT_PAID %></td>
+        <td><%= ar.AR_TOTAL %></td>
+        <td><%= ar.AR_DAYS %></td>
+        <td><%= ar.AR_TAX_AMT1 %></td>
+        <td><%= ar.AR_TAX_AMT2 %></td>
+        <td><%= ar.AR_TAXABLE1 %></td>
+        <td><%= ar.AR_TAXABLE2 %></td>
+        <td><%= ar.AR_TAX_RATE1 %></td>
+        <td><%= ar.AR_TAX_RATE2 %></td>
+        <td><%= ar.AR_TAX_CGL1 %></td>
+        <td><%= ar.AR_TAX_CGL2 %></td>
+        <td><%= ar.AR_STATUS %></td>
+        <td><%= ar.AR_OPEN %></td>
+        <td><%= ar.AR_JUMP %></td>
+        <td><%= ar.AR_DGL %></td>
+        <td><%= ar.AR_CURR %></td>
+        <td><%= ar.AR_30 %></td>
+        <td><%= ar.AR_60 %></td>
+        <td><%= ar.AR_90 %></td>
+        <td><%= ar.AR_120 %></td>
+        <td><%= ar.AR_ADDED_BY %></td>
+        <td><%= ar.AR_ADDED_WHEN %></td>
+        <td><%= ar.AR_CLIENT_CONTACT %></td>
+        <td><%= ar.AR_AGENCY_CONTACT %></td>
+        <td><%= ar.AR_SHOW_SPECS %></td>
+        <td><%= ar.AR_RETAINR_NOTE %></td>
+        <td><%= ar.AR_RETAINER_AMT %></td>
+        <td><%= ar.AR_RETAINER_GL %></td>
+        <td><%= ar.AR_BILLING_TYPE %></td>
+        <td><%= ar.AR_COMM_AMT %></td>
+        <td><%= ar.AR_COMM_GL %></td>
+        <td><%= ar.AR_COMM_DESC %></td>
+        <td><%= ar.AR_MISC_AMT1 %></td>
+        <td><%= ar.AR_MISC_GL1 %></td>
+        <td><%= ar.AR_MISC_DESC1 %></td>
+        <td><%= ar.AR_MISC_AMT2 %></td>
+        <td><%= ar.AR_MISC_GL2 %></td>
+        <td><%= ar.AR_MISC_DESC2 %></td>
+        <td><%= ar.AR_ADDRESS1 %></td>
+        <td><%= ar.AR_ADDRESS2 %></td>
+        <td><%= ar.AR_ADDRESS3 %></td>
+        <td><%= ar.AR_ADDRESS4 %></td>
+        <td><%= ar.AR_ADDRESS5 %></td>
+        <td><%= ar.AR_TO1 %></td>
+        <td><%= ar.AR_TO2 %></td>
+        <td><%= ar.AR_TO3 %></td>
+        <td><%= ar.AR_TO4 %></td>
+        <td><%= ar.AR_TO5 %></td>
+        <td><%= ar.AR_ADDRESS6 %></td>
+        <td><%= ar.AR_ZERO_AS %></td>
+        <td><%= ar.AR_FINANCE_CHG %></td>
+        <td><%= ar.AR_FINANCE_AMT %></td>
+        <td><%= ar.AR_FINANCE_CGL %></td>
+        <td><%= ar.AR_ROLL_UP %></td>
+        <td><%= ar.AR_SHOW_TOTALS %></td>
+        <td><%= ar.AR_ADV_PMT %></td>
+        <td><%= ar.AR_ADV_PMT_GL %></td>
+        <td><%= ar.AR_CHARGE_NUM %></td>
+        <td><%= ar.AR_PRINT_EST %></td>
+        <td><%= ar.AR_SHOW_HOURS %></td>
+        <td><%= ar.AR_UNPAID %></td>
+        <td><%= ar.AR_KIND %></td>
+        <td><%= ar.AR_KEY %></td>
+        <td><%= ar.AR_SHIP_ADDRESS1 %></td>
+        <td><%= ar.AR_SHIP_ADDRESS2 %></td>
+        <td><%= ar.AR_SHIP_ADDRESS3 %></td>
+        <td><%= ar.AR_SHIP_ADDRESS4 %></td>
+        <td><%= ar.AR_SHIP_ADDRESS5 %></td>
+        <td><%= ar.AR_SHIP_ADDRESS6 %></td>
+        <td><%= ar.AR_PC %></td>
+        <td><%= ar.AR_APPROVED %></td>
+        <td><%= ar.AR_APPROVED_BY %></td>
+        <td><%= ar.AR_APPROVED_DATE %></td>
+        <td><%= ar.AR_APPROVAL1 %></td>
+        <td><%= ar.AR_APPROVAL2 %></td>
+        <td><%= ar.AR_APPROVAL3 %></td>
+        <td><%= ar.AR_RETURN_DATE %></td>
+        <td><%= ar.AR_BILL_INSTRUCTIONS %></td>
+        <td><%= ar.AR_EXPORTED %></td>
+        <td><%= ar.AR_PMT_STATUS %></td>
+        <td><%= ar.AR_PMT_STATUS_NOTE %></td>
+        <td><%= ar.AR_PMT_NEXT_DATE %></td>
+        <td><%= ar.AR_PMT_NEXT_ACTION %></td>
+        <td><%= ar.AR_PMT_NEXT_WHO %></td>
+        <td><%= ar.AR_PMT_NEXT_NOTE %></td>
+        <td><%= ar.AR_PMT_NEXT_NUM %></td>
+        <td><%= ar.AR_BIZDEV_AE %></td>
+        <td><%= ar.AR_COMMISSIONABLE_AMT %></td>
+        <td><%= ar.AR_COMM_RATE_AE %></td>
+        <td><%= ar.AR_COMM_RATE_BIZ %></td>
+        <td><%= ar.AR_DATE_PAID %></td>
+        <td><%= ar.AR_EDITED_BY %></td>
+        <td><%= ar.AR_EDITED_WHEN %></td>
+        <td><%= ar.AR_POSTED_BY %></td>
+        <td><%= ar.AR_POSTED_WHEN %></td>
+        <td><%= ar.AR_TERMS1 %></td>
+        <td><%= ar.AR_TERMS2 %></td>
+        <td><%= ar.AR_TERMS3 %></td>
+        <td><%= ar.AR_TAX_AREA %></td>
+        <td><%= ar.AR_SHIP_ORG %></td>
+        <td><%= link_to 'Show', ar %></td>
+        <td><%= link_to 'Edit', edit_ar_path(ar) %></td>
+        <td><%= link_to 'Destroy', ar, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ar', new_ar_path %>

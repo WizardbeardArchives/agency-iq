@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @approvals_item.primaryKey %>
+</p>
+
+<p>
+  <strong>Apprx id:</strong>
+  <%= @approvals_item.APPRX_ID %>
+</p>
+
+<p>
+  <strong>Apprx file name:</strong>
+  <%= @approvals_item.APPRX_FILE_NAME %>
+</p>
+
+<p>
+  <strong>Apprx file cpx:</strong>
+  <%= @approvals_item.APPRX_FILE_CPX %>
+</p>
+
+<p>
+  <strong>Apprx status:</strong>
+  <%= @approvals_item.APPRX_STATUS %>
+</p>
+
+<p>
+  <strong>Apprx status note:</strong>
+  <%= @approvals_item.APPRX_STATUS_NOTE %>
+</p>
+
+<%= link_to 'Edit', edit_approvals_item_path(@approvals_item) %> |
+<%= link_to 'Back', approvals_items_path %>

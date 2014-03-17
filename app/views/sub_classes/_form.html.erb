@@ -1,0 +1,17 @@
+<%= simple_form_for(@sub_class) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :SUB_NUM %>
+    <%= f.input :SUB_DESC %>
+    <%= f.input :SUB_ADDED_BY %>
+    <%= f.input :SUB_ADDED_WHEN %>
+    <%= f.input :SUB_EDITED_BY %>
+    <%= f.input :SUB_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

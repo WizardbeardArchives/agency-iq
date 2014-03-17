@@ -1,0 +1,87 @@
+<h1>Listing worksheets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Est key</th>
+      <th>Est line1</th>
+      <th>Est line2</th>
+      <th>Est line3</th>
+      <th>Est line4</th>
+      <th>Est amt1</th>
+      <th>Est amt2</th>
+      <th>Est amt3</th>
+      <th>Est amt4</th>
+      <th>Est resource1</th>
+      <th>Est resource2</th>
+      <th>Est resource3</th>
+      <th>Est resource4</th>
+      <th>Est rate1</th>
+      <th>Est rate2</th>
+      <th>Est rate3</th>
+      <th>Est rate4</th>
+      <th>Est hrs1</th>
+      <th>Est hrs2</th>
+      <th>Est hrs3</th>
+      <th>Est hrs4</th>
+      <th>Est job num</th>
+      <th>Est column</th>
+      <th>Est task</th>
+      <th>Est markup</th>
+      <th>Est rev</th>
+      <th>Est added by</th>
+      <th>Est added when</th>
+      <th>Est edited by</th>
+      <th>Est edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @worksheets.each do |worksheet| %>
+      <tr>
+        <td><%= worksheet.primaryKey %></td>
+        <td><%= worksheet.EST_KEY %></td>
+        <td><%= worksheet.EST_LINE1 %></td>
+        <td><%= worksheet.EST_LINE2 %></td>
+        <td><%= worksheet.EST_LINE3 %></td>
+        <td><%= worksheet.EST_LINE4 %></td>
+        <td><%= worksheet.EST_AMT1 %></td>
+        <td><%= worksheet.EST_AMT2 %></td>
+        <td><%= worksheet.EST_AMT3 %></td>
+        <td><%= worksheet.EST_AMT4 %></td>
+        <td><%= worksheet.EST_RESOURCE1 %></td>
+        <td><%= worksheet.EST_RESOURCE2 %></td>
+        <td><%= worksheet.EST_RESOURCE3 %></td>
+        <td><%= worksheet.EST_RESOURCE4 %></td>
+        <td><%= worksheet.EST_RATE1 %></td>
+        <td><%= worksheet.EST_RATE2 %></td>
+        <td><%= worksheet.EST_RATE3 %></td>
+        <td><%= worksheet.EST_RATE4 %></td>
+        <td><%= worksheet.EST_HRS1 %></td>
+        <td><%= worksheet.EST_HRS2 %></td>
+        <td><%= worksheet.EST_HRS3 %></td>
+        <td><%= worksheet.EST_HRS4 %></td>
+        <td><%= worksheet.EST_JOB_NUM %></td>
+        <td><%= worksheet.EST_COLUMN %></td>
+        <td><%= worksheet.EST_TASK %></td>
+        <td><%= worksheet.EST_MARKUP %></td>
+        <td><%= worksheet.EST_REV %></td>
+        <td><%= worksheet.EST_ADDED_BY %></td>
+        <td><%= worksheet.EST_ADDED_WHEN %></td>
+        <td><%= worksheet.EST_EDITED_BY %></td>
+        <td><%= worksheet.EST_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', worksheet %></td>
+        <td><%= link_to 'Edit', edit_worksheet_path(worksheet) %></td>
+        <td><%= link_to 'Destroy', worksheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Worksheet', new_worksheet_path %>

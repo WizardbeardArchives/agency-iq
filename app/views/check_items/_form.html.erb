@@ -1,0 +1,33 @@
+<%= simple_form_for(@check_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :CX_CK_DATE %>
+    <%= f.input :CX_NET_AMT %>
+    <%= f.input :CX_DGL %>
+    <%= f.input :CX_AP_NUM %>
+    <%= f.input :CX_VENDOR_NUM %>
+    <%= f.input :CX_JOB_NUM %>
+    <%= f.input :CX_TASK %>
+    <%= f.input :CX_POSTED %>
+    <%= f.input :CX_GROSS_AMT %>
+    <%= f.input :CX_CK_NUM %>
+    <%= f.input :CX_COMM_AMT %>
+    <%= f.input :CX_MARKUP_PC %>
+    <%= f.input :CX_DISC_AMT %>
+    <%= f.input :CX_PERIOD %>
+    <%= f.input :CX_COST__SEQ %>
+    <%= f.input :CX_DISC_DGL %>
+    <%= f.input :CX_BILLABLE %>
+    <%= f.input :CX_NOTE %>
+    <%= f.input :CX_ADDED_BY %>
+    <%= f.input :CX_ADDED_WHEN %>
+    <%= f.input :CX_EDITED_BY %>
+    <%= f.input :CX_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,143 @@
+<h1>Listing media_prefs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Mpf num</th>
+      <th>Mpf prefix</th>
+      <th>Mpf disclaimer</th>
+      <th>Mpf org</th>
+      <th>Mpf address1</th>
+      <th>Mpf address2</th>
+      <th>Mpf address3</th>
+      <th>Mpf phone</th>
+      <th>Mpf comm</th>
+      <th>Mpf to1</th>
+      <th>Mpf to2</th>
+      <th>Mpf to3</th>
+      <th>Mpf to4</th>
+      <th>Mpf to5</th>
+      <th>Mpf to6</th>
+      <th>Mpf field1</th>
+      <th>Mpf field2</th>
+      <th>Mpf field3</th>
+      <th>Mpf field4</th>
+      <th>Mpf field5</th>
+      <th>Mpf auto num</th>
+      <th>Mpf logo</th>
+      <th>Mpf show cl</th>
+      <th>Mpf radio 1q</th>
+      <th>Mpf radio 2q</th>
+      <th>Mpf radio 3q</th>
+      <th>Mpf radio 4q</th>
+      <th>Mpf tv 1q</th>
+      <th>Mpf tv 2q</th>
+      <th>Mpf tv 3q</th>
+      <th>Mpf tv 4q</th>
+      <th>Mpf cable 1q</th>
+      <th>Mpf cable 2q</th>
+      <th>Mpf cable 3q</th>
+      <th>Mpf cable 4q</th>
+      <th>Mpf news 1q</th>
+      <th>Mpf news 2q</th>
+      <th>Mpf news 3q</th>
+      <th>Mpf news 4q</th>
+      <th>Mpf mag 1q</th>
+      <th>Mpf mag 2q</th>
+      <th>Mpf mag 3q</th>
+      <th>Mpf mag 4q</th>
+      <th>Mpf out 1q</th>
+      <th>Mpf out 2q</th>
+      <th>Mpf out 3q</th>
+      <th>Mpf out 4q</th>
+      <th>Mpf int 1q</th>
+      <th>Mpf int 2q</th>
+      <th>Mpf int 3q</th>
+      <th>Mpf int 4q</th>
+      <th>Mpf other 1q</th>
+      <th>Mpf other 2q</th>
+      <th>Mpf other 3q</th>
+      <th>Mpf other 4q</th>
+      <th>Mpf kind</th>
+      <th>Mpf edited by</th>
+      <th>Mpf edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @media_prefs.each do |media_pref| %>
+      <tr>
+        <td><%= media_pref.primaryKey %></td>
+        <td><%= media_pref.MPF_NUM %></td>
+        <td><%= media_pref.MPF_PREFIX %></td>
+        <td><%= media_pref.MPF_DISCLAIMER %></td>
+        <td><%= media_pref.MPF_ORG %></td>
+        <td><%= media_pref.MPF_ADDRESS1 %></td>
+        <td><%= media_pref.MPF_ADDRESS2 %></td>
+        <td><%= media_pref.MPF_ADDRESS3 %></td>
+        <td><%= media_pref.MPF_PHONE %></td>
+        <td><%= media_pref.MPF_COMM %></td>
+        <td><%= media_pref.MPF_TO1 %></td>
+        <td><%= media_pref.MPF_TO2 %></td>
+        <td><%= media_pref.MPF_TO3 %></td>
+        <td><%= media_pref.MPF_TO4 %></td>
+        <td><%= media_pref.MPF_TO5 %></td>
+        <td><%= media_pref.MPF_TO6 %></td>
+        <td><%= media_pref.MPF_FIELD1 %></td>
+        <td><%= media_pref.MPF_FIELD2 %></td>
+        <td><%= media_pref.MPF_FIELD3 %></td>
+        <td><%= media_pref.MPF_FIELD4 %></td>
+        <td><%= media_pref.MPF_FIELD5 %></td>
+        <td><%= media_pref.MPF_AUTO_NUM %></td>
+        <td><%= media_pref.MPF_LOGO %></td>
+        <td><%= media_pref.MPF_SHOW_CL %></td>
+        <td><%= media_pref.MPF_RADIO_1Q %></td>
+        <td><%= media_pref.MPF_RADIO_2Q %></td>
+        <td><%= media_pref.MPF_RADIO_3Q %></td>
+        <td><%= media_pref.MPF_RADIO_4Q %></td>
+        <td><%= media_pref.MPF_TV_1Q %></td>
+        <td><%= media_pref.MPF_TV_2Q %></td>
+        <td><%= media_pref.MPF_TV_3Q %></td>
+        <td><%= media_pref.MPF_TV_4Q %></td>
+        <td><%= media_pref.MPF_CABLE_1Q %></td>
+        <td><%= media_pref.MPF_CABLE_2Q %></td>
+        <td><%= media_pref.MPF_CABLE_3Q %></td>
+        <td><%= media_pref.MPF_CABLE_4Q %></td>
+        <td><%= media_pref.MPF_NEWS_1Q %></td>
+        <td><%= media_pref.MPF_NEWS_2Q %></td>
+        <td><%= media_pref.MPF_NEWS_3Q %></td>
+        <td><%= media_pref.MPF_NEWS_4Q %></td>
+        <td><%= media_pref.MPF_MAG_1Q %></td>
+        <td><%= media_pref.MPF_MAG_2Q %></td>
+        <td><%= media_pref.MPF_MAG_3Q %></td>
+        <td><%= media_pref.MPF_MAG_4Q %></td>
+        <td><%= media_pref.MPF_OUT_1Q %></td>
+        <td><%= media_pref.MPF_OUT_2Q %></td>
+        <td><%= media_pref.MPF_OUT_3Q %></td>
+        <td><%= media_pref.MPF_OUT_4Q %></td>
+        <td><%= media_pref.MPF_INT_1Q %></td>
+        <td><%= media_pref.MPF_INT_2Q %></td>
+        <td><%= media_pref.MPF_INT_3Q %></td>
+        <td><%= media_pref.MPF_INT_4Q %></td>
+        <td><%= media_pref.MPF_OTHER_1Q %></td>
+        <td><%= media_pref.MPF_OTHER_2Q %></td>
+        <td><%= media_pref.MPF_OTHER_3Q %></td>
+        <td><%= media_pref.MPF_OTHER_4Q %></td>
+        <td><%= media_pref.MPF_KIND %></td>
+        <td><%= media_pref.MPF_EDITED_BY %></td>
+        <td><%= media_pref.MPF_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', media_pref %></td>
+        <td><%= link_to 'Edit', edit_media_pref_path(media_pref) %></td>
+        <td><%= link_to 'Destroy', media_pref, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Media pref', new_media_pref_path %>

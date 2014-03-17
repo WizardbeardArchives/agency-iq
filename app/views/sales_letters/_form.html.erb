@@ -1,0 +1,30 @@
+<%= simple_form_for(@sales_letter) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :SLTR_ID %>
+    <%= f.input :SLTR_KIND %>
+    <%= f.input :SLTR_START %>
+    <%= f.input :SLTR_END %>
+    <%= f.input :SLTR_CLIENT_NUM %>
+    <%= f.input :SLTR_DESC %>
+    <%= f.input :SLTR_AUTHOR %>
+    <%= f.input :SLTR_OK %>
+    <%= f.input :SLTR_OK_BY %>
+    <%= f.input :SLTR_SUBJECT %>
+    <%= f.input :SLTR_BODY %>
+    <%= f.input :SLTR_PS %>
+    <%= f.input :SLTR_COUNT %>
+    <%= f.input :SLTR_LAST_USE %>
+    <%= f.input :SLTR_ONE_TIME %>
+    <%= f.input :SLTR_ADDED_BY %>
+    <%= f.input :SLTR_ADDED_WHEN %>
+    <%= f.input :SLTR_EDITED_BY %>
+    <%= f.input :SLTR_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

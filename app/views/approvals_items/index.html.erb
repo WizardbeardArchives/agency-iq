@@ -1,0 +1,37 @@
+<h1>Listing approvals_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Apprx id</th>
+      <th>Apprx file name</th>
+      <th>Apprx file cpx</th>
+      <th>Apprx status</th>
+      <th>Apprx status note</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @approvals_items.each do |approvals_item| %>
+      <tr>
+        <td><%= approvals_item.primaryKey %></td>
+        <td><%= approvals_item.APPRX_ID %></td>
+        <td><%= approvals_item.APPRX_FILE_NAME %></td>
+        <td><%= approvals_item.APPRX_FILE_CPX %></td>
+        <td><%= approvals_item.APPRX_STATUS %></td>
+        <td><%= approvals_item.APPRX_STATUS_NOTE %></td>
+        <td><%= link_to 'Show', approvals_item %></td>
+        <td><%= link_to 'Edit', edit_approvals_item_path(approvals_item) %></td>
+        <td><%= link_to 'Destroy', approvals_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Approvals item', new_approvals_item_path %>

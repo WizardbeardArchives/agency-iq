@@ -1,0 +1,221 @@
+<h1>Listing accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ac num</th>
+      <th>Ac name</th>
+      <th>Ac class</th>
+      <th>Ac sub class</th>
+      <th>Ac confidential</th>
+      <th>Ac rollup only</th>
+      <th>Ac ck num</th>
+      <th>Ac pc</th>
+      <th>Ac 1</th>
+      <th>Ac 2</th>
+      <th>Ac 3</th>
+      <th>Ac 4</th>
+      <th>Ac 5</th>
+      <th>Ac 6</th>
+      <th>Ac 7</th>
+      <th>Ac 8</th>
+      <th>Ac 9</th>
+      <th>Ac 10</th>
+      <th>Ac 11</th>
+      <th>Ac 12</th>
+      <th>Ac beg baln</th>
+      <th>Ac budget1</th>
+      <th>Ac budget2</th>
+      <th>Ac budget3</th>
+      <th>Ac budget4</th>
+      <th>Ac budget5</th>
+      <th>Ac budget6</th>
+      <th>Ac budget7</th>
+      <th>Ac budget8</th>
+      <th>Ac budget9</th>
+      <th>Ac budget10</th>
+      <th>Ac budget11</th>
+      <th>Ac budget12</th>
+      <th>Ac b13</th>
+      <th>Ac l1</th>
+      <th>Ac l2</th>
+      <th>Ac l3</th>
+      <th>Ac l4</th>
+      <th>Ac l5</th>
+      <th>Ac l6</th>
+      <th>Ac l7</th>
+      <th>Ac l8</th>
+      <th>Ac l9</th>
+      <th>Ac l10</th>
+      <th>Ac l11</th>
+      <th>Ac l12</th>
+      <th>Ac l beg baln</th>
+      <th>Ac group</th>
+      <th>Ac category</th>
+      <th>Ac ytd</th>
+      <th>Ac roll up</th>
+      <th>Ac active</th>
+      <th>Ac ck acct</th>
+      <th>Ac desc</th>
+      <th>Ac 13</th>
+      <th>Ac 14</th>
+      <th>Ac 15</th>
+      <th>Ac 16</th>
+      <th>Ac 17</th>
+      <th>Ac 18</th>
+      <th>Ac 19</th>
+      <th>Ac 20</th>
+      <th>Ac 21</th>
+      <th>Ac 22</th>
+      <th>Ac 23</th>
+      <th>Ac 24</th>
+      <th>Ac ytd2</th>
+      <th>Ac cf</th>
+      <th>Ac ratio</th>
+      <th>Ac ar control</th>
+      <th>Ac ap control</th>
+      <th>Ac ar lock</th>
+      <th>Ac ap lock</th>
+      <th>Ac dept</th>
+      <th>Ac budget13</th>
+      <th>Ac budget14</th>
+      <th>Ac budget15</th>
+      <th>Ac budget16</th>
+      <th>Ac budget17</th>
+      <th>Ac budget18</th>
+      <th>Ac budget19</th>
+      <th>Ac budget20</th>
+      <th>Ac budget21</th>
+      <th>Ac budget22</th>
+      <th>Ac budget23</th>
+      <th>Ac budget24</th>
+      <th>Ac corp id</th>
+      <th>Ac added by</th>
+      <th>Ac added when</th>
+      <th>Ac edited by</th>
+      <th>Ac edited when</th>
+      <th>Ac bank routing</th>
+      <th>Ac bank acct num</th>
+      <th>Ac bank name</th>
+      <th>Ac bank location</th>
+      <th>Ac bank num</th>
+      <th>Ac online pmt num</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.primaryKey %></td>
+        <td><%= account.AC_NUM %></td>
+        <td><%= account.AC_NAME %></td>
+        <td><%= account.AC_CLASS %></td>
+        <td><%= account.AC_SUB_CLASS %></td>
+        <td><%= account.AC_CONFIDENTIAL %></td>
+        <td><%= account.AC_ROLLUP_ONLY %></td>
+        <td><%= account.AC_CK_NUM %></td>
+        <td><%= account.AC_PC %></td>
+        <td><%= account.AC_1 %></td>
+        <td><%= account.AC_2 %></td>
+        <td><%= account.AC_3 %></td>
+        <td><%= account.AC_4 %></td>
+        <td><%= account.AC_5 %></td>
+        <td><%= account.AC_6 %></td>
+        <td><%= account.AC_7 %></td>
+        <td><%= account.AC_8 %></td>
+        <td><%= account.AC_9 %></td>
+        <td><%= account.AC_10 %></td>
+        <td><%= account.AC_11 %></td>
+        <td><%= account.AC_12 %></td>
+        <td><%= account.AC_BEG_BALN %></td>
+        <td><%= account.AC_BUDGET1 %></td>
+        <td><%= account.AC_BUDGET2 %></td>
+        <td><%= account.AC_BUDGET3 %></td>
+        <td><%= account.AC_BUDGET4 %></td>
+        <td><%= account.AC_BUDGET5 %></td>
+        <td><%= account.AC_BUDGET6 %></td>
+        <td><%= account.AC_BUDGET7 %></td>
+        <td><%= account.AC_BUDGET8 %></td>
+        <td><%= account.AC_BUDGET9 %></td>
+        <td><%= account.AC_BUDGET10 %></td>
+        <td><%= account.AC_BUDGET11 %></td>
+        <td><%= account.AC_BUDGET12 %></td>
+        <td><%= account.AC_B13 %></td>
+        <td><%= account.AC_L1 %></td>
+        <td><%= account.AC_L2 %></td>
+        <td><%= account.AC_L3 %></td>
+        <td><%= account.AC_L4 %></td>
+        <td><%= account.AC_L5 %></td>
+        <td><%= account.AC_L6 %></td>
+        <td><%= account.AC_L7 %></td>
+        <td><%= account.AC_L8 %></td>
+        <td><%= account.AC_L9 %></td>
+        <td><%= account.AC_L10 %></td>
+        <td><%= account.AC_L11 %></td>
+        <td><%= account.AC_L12 %></td>
+        <td><%= account.AC_L_BEG_BALN %></td>
+        <td><%= account.AC_GROUP %></td>
+        <td><%= account.AC_CATEGORY %></td>
+        <td><%= account.AC_YTD %></td>
+        <td><%= account.AC_ROLL_UP %></td>
+        <td><%= account.AC_ACTIVE %></td>
+        <td><%= account.AC_CK_ACCT %></td>
+        <td><%= account.AC_DESC %></td>
+        <td><%= account.AC_13 %></td>
+        <td><%= account.AC_14 %></td>
+        <td><%= account.AC_15 %></td>
+        <td><%= account.AC_16 %></td>
+        <td><%= account.AC_17 %></td>
+        <td><%= account.AC_18 %></td>
+        <td><%= account.AC_19 %></td>
+        <td><%= account.AC_20 %></td>
+        <td><%= account.AC_21 %></td>
+        <td><%= account.AC_22 %></td>
+        <td><%= account.AC_23 %></td>
+        <td><%= account.AC_24 %></td>
+        <td><%= account.AC_YTD2 %></td>
+        <td><%= account.AC_CF %></td>
+        <td><%= account.AC_RATIO %></td>
+        <td><%= account.AC_AR_CONTROL %></td>
+        <td><%= account.AC_AP_CONTROL %></td>
+        <td><%= account.AC_AR_LOCK %></td>
+        <td><%= account.AC_AP_LOCK %></td>
+        <td><%= account.AC_DEPT %></td>
+        <td><%= account.AC_BUDGET13 %></td>
+        <td><%= account.AC_BUDGET14 %></td>
+        <td><%= account.AC_BUDGET15 %></td>
+        <td><%= account.AC_BUDGET16 %></td>
+        <td><%= account.AC_BUDGET17 %></td>
+        <td><%= account.AC_BUDGET18 %></td>
+        <td><%= account.AC_BUDGET19 %></td>
+        <td><%= account.AC_BUDGET20 %></td>
+        <td><%= account.AC_BUDGET21 %></td>
+        <td><%= account.AC_BUDGET22 %></td>
+        <td><%= account.AC_BUDGET23 %></td>
+        <td><%= account.AC_BUDGET24 %></td>
+        <td><%= account.AC_CORP_ID %></td>
+        <td><%= account.AC_ADDED_BY %></td>
+        <td><%= account.AC_ADDED_WHEN %></td>
+        <td><%= account.AC_EDITED_BY %></td>
+        <td><%= account.AC_EDITED_WHEN %></td>
+        <td><%= account.AC_BANK_ROUTING %></td>
+        <td><%= account.AC_BANK_ACCT_NUM %></td>
+        <td><%= account.AC_BANK_NAME %></td>
+        <td><%= account.AC_BANK_LOCATION %></td>
+        <td><%= account.AC_BANK_NUM %></td>
+        <td><%= account.AC_ONLINE_PMT_NUM %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account', new_account_path %>

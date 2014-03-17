@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Odbcusername:</strong>
+  <%= @odbcuser.ODBCUSERNAME %>
+</p>
+
+<p>
+  <strong>Odbcpassword:</strong>
+  <%= @odbcuser.ODBCPASSWORD %>
+</p>
+
+<p>
+  <strong>Odbcaccessmask:</strong>
+  <%= @odbcuser.ODBCACCESSMASK %>
+</p>
+
+<%= link_to 'Edit', edit_odbcuser_path(@odbcuser) %> |
+<%= link_to 'Back', odbcusers_path %>

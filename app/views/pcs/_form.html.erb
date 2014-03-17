@@ -1,0 +1,26 @@
+<%= simple_form_for(@pc) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PC_NUM %>
+    <%= f.input :PC_NAME %>
+    <%= f.input :PC_DESC %>
+    <%= f.input :PC_CORP_ID %>
+    <%= f.input :PC_ADDED_BY %>
+    <%= f.input :PC_ADDED_WHEN %>
+    <%= f.input :PC_EDITED_BY %>
+    <%= f.input :PC_EDITED_WHEN %>
+    <%= f.input :PC_BUS_UNIT %>
+    <%= f.input :PC_OUTDATED %>
+    <%= f.input :PC_AR_SHOW %>
+    <%= f.input :PC_BILL_ORG %>
+    <%= f.input :PC_BILL_ADDRESS1 %>
+    <%= f.input :PC_BILL_ADDRESS2 %>
+    <%= f.input :PC_BILL_ADDRESS3 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

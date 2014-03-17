@@ -1,0 +1,89 @@
+<h1>Listing media_ests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Me num</th>
+      <th>Me client num</th>
+      <th>Me campaign</th>
+      <th>Me date</th>
+      <th>Me desc</th>
+      <th>Me buyer</th>
+      <th>Me gross</th>
+      <th>Me label1</th>
+      <th>Me label2</th>
+      <th>Me label3</th>
+      <th>Me label4</th>
+      <th>Me label5</th>
+      <th>Me status</th>
+      <th>Me cost</th>
+      <th>Me closed</th>
+      <th>Me show desc</th>
+      <th>Me disclaimer</th>
+      <th>Me approval1</th>
+      <th>Me approval2</th>
+      <th>Me approval3</th>
+      <th>Me comm</th>
+      <th>Me job num</th>
+      <th>Me task</th>
+      <th>Me brand</th>
+      <th>Me inactive</th>
+      <th>Me type</th>
+      <th>Me approved</th>
+      <th>Me approved by</th>
+      <th>Me approved date</th>
+      <th>Me edited by</th>
+      <th>Me edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @media_ests.each do |media_est| %>
+      <tr>
+        <td><%= media_est.primaryKey %></td>
+        <td><%= media_est.ME_NUM %></td>
+        <td><%= media_est.ME_CLIENT_NUM %></td>
+        <td><%= media_est.ME_CAMPAIGN %></td>
+        <td><%= media_est.ME_DATE %></td>
+        <td><%= media_est.ME_DESC %></td>
+        <td><%= media_est.ME_BUYER %></td>
+        <td><%= media_est.ME_GROSS %></td>
+        <td><%= media_est.ME_LABEL1 %></td>
+        <td><%= media_est.ME_LABEL2 %></td>
+        <td><%= media_est.ME_LABEL3 %></td>
+        <td><%= media_est.ME_LABEL4 %></td>
+        <td><%= media_est.ME_LABEL5 %></td>
+        <td><%= media_est.ME_STATUS %></td>
+        <td><%= media_est.ME_COST %></td>
+        <td><%= media_est.ME_CLOSED %></td>
+        <td><%= media_est.ME_SHOW_DESC %></td>
+        <td><%= media_est.ME_DISCLAIMER %></td>
+        <td><%= media_est.ME_APPROVAL1 %></td>
+        <td><%= media_est.ME_APPROVAL2 %></td>
+        <td><%= media_est.ME_APPROVAL3 %></td>
+        <td><%= media_est.ME_COMM %></td>
+        <td><%= media_est.ME_JOB_NUM %></td>
+        <td><%= media_est.ME_TASK %></td>
+        <td><%= media_est.ME_BRAND %></td>
+        <td><%= media_est.ME_INACTIVE %></td>
+        <td><%= media_est.ME_TYPE %></td>
+        <td><%= media_est.ME_APPROVED %></td>
+        <td><%= media_est.ME_APPROVED_BY %></td>
+        <td><%= media_est.ME_APPROVED_DATE %></td>
+        <td><%= media_est.ME_EDITED_BY %></td>
+        <td><%= media_est.ME_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', media_est %></td>
+        <td><%= link_to 'Edit', edit_media_est_path(media_est) %></td>
+        <td><%= link_to 'Destroy', media_est, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Media est', new_media_est_path %>

@@ -1,0 +1,147 @@
+<h1>Listing po_templates</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Pt template</th>
+      <th>Pt job num</th>
+      <th>Pt task</th>
+      <th>Pt desc label</th>
+      <th>Pt desc</th>
+      <th>Pt vendor num</th>
+      <th>Pt cost</th>
+      <th>Pt markup</th>
+      <th>Pt tax</th>
+      <th>Pt gross</th>
+      <th>Pt type</th>
+      <th>Pt ship note</th>
+      <th>Pt ship1</th>
+      <th>Pt ship2</th>
+      <th>Pt ship3</th>
+      <th>Pt ship4</th>
+      <th>Pt qty label</th>
+      <th>Pt qty</th>
+      <th>Pt approval1</th>
+      <th>Pt approval2</th>
+      <th>Pt approval3</th>
+      <th>Pt terms1</th>
+      <th>Pt terms2</th>
+      <th>Pt terms3</th>
+      <th>Pt pc</th>
+      <th>Pt to1</th>
+      <th>Pt to2</th>
+      <th>Pt to3</th>
+      <th>Pt to4</th>
+      <th>Pt to5</th>
+      <th>Pt vendor1</th>
+      <th>Pt vendor2</th>
+      <th>Pt vendor3</th>
+      <th>Pt vendor4</th>
+      <th>Pt vendor5</th>
+      <th>Pt field label1</th>
+      <th>Pt field label2</th>
+      <th>Pt field label3</th>
+      <th>Pt field label4</th>
+      <th>Pt field label5</th>
+      <th>Pt field1</th>
+      <th>Pt field2</th>
+      <th>Pt field3</th>
+      <th>Pt field4</th>
+      <th>Pt field5</th>
+      <th>Pt tax exempt</th>
+      <th>Pt disclaimer</th>
+      <th>Pt item desc</th>
+      <th>Pt kind</th>
+      <th>Pt added by</th>
+      <th>Pt added when</th>
+      <th>Pt edited by</th>
+      <th>Pt edited when</th>
+      <th>Pt terms conditions</th>
+      <th>Pt terms header</th>
+      <th>Pt terms print1</th>
+      <th>Pt terms print2</th>
+      <th>Pt terms print3</th>
+      <th>Pt terms print4</th>
+      <th>Pt terms print5</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @po_templates.each do |po_template| %>
+      <tr>
+        <td><%= po_template.primaryKey %></td>
+        <td><%= po_template.PT_TEMPLATE %></td>
+        <td><%= po_template.PT_JOB_NUM %></td>
+        <td><%= po_template.PT_TASK %></td>
+        <td><%= po_template.PT_DESC_LABEL %></td>
+        <td><%= po_template.PT_DESC %></td>
+        <td><%= po_template.PT_VENDOR_NUM %></td>
+        <td><%= po_template.PT_COST %></td>
+        <td><%= po_template.PT_MARKUP %></td>
+        <td><%= po_template.PT_TAX %></td>
+        <td><%= po_template.PT_GROSS %></td>
+        <td><%= po_template.PT_TYPE %></td>
+        <td><%= po_template.PT_SHIP_NOTE %></td>
+        <td><%= po_template.PT_SHIP1 %></td>
+        <td><%= po_template.PT_SHIP2 %></td>
+        <td><%= po_template.PT_SHIP3 %></td>
+        <td><%= po_template.PT_SHIP4 %></td>
+        <td><%= po_template.PT_QTY_LABEL %></td>
+        <td><%= po_template.PT_QTY %></td>
+        <td><%= po_template.PT_APPROVAL1 %></td>
+        <td><%= po_template.PT_APPROVAL2 %></td>
+        <td><%= po_template.PT_APPROVAL3 %></td>
+        <td><%= po_template.PT_TERMS1 %></td>
+        <td><%= po_template.PT_TERMS2 %></td>
+        <td><%= po_template.PT_TERMS3 %></td>
+        <td><%= po_template.PT_PC %></td>
+        <td><%= po_template.PT_TO1 %></td>
+        <td><%= po_template.PT_TO2 %></td>
+        <td><%= po_template.PT_TO3 %></td>
+        <td><%= po_template.PT_TO4 %></td>
+        <td><%= po_template.PT_TO5 %></td>
+        <td><%= po_template.PT_VENDOR1 %></td>
+        <td><%= po_template.PT_VENDOR2 %></td>
+        <td><%= po_template.PT_VENDOR3 %></td>
+        <td><%= po_template.PT_VENDOR4 %></td>
+        <td><%= po_template.PT_VENDOR5 %></td>
+        <td><%= po_template.PT_FIELD_LABEL1 %></td>
+        <td><%= po_template.PT_FIELD_LABEL2 %></td>
+        <td><%= po_template.PT_FIELD_LABEL3 %></td>
+        <td><%= po_template.PT_FIELD_LABEL4 %></td>
+        <td><%= po_template.PT_FIELD_LABEL5 %></td>
+        <td><%= po_template.PT_FIELD1 %></td>
+        <td><%= po_template.PT_FIELD2 %></td>
+        <td><%= po_template.PT_FIELD3 %></td>
+        <td><%= po_template.PT_FIELD4 %></td>
+        <td><%= po_template.PT_FIELD5 %></td>
+        <td><%= po_template.PT_TAX_EXEMPT %></td>
+        <td><%= po_template.PT_DISCLAIMER %></td>
+        <td><%= po_template.PT_ITEM_DESC %></td>
+        <td><%= po_template.PT_KIND %></td>
+        <td><%= po_template.PT_ADDED_BY %></td>
+        <td><%= po_template.PT_ADDED_WHEN %></td>
+        <td><%= po_template.PT_EDITED_BY %></td>
+        <td><%= po_template.PT_EDITED_WHEN %></td>
+        <td><%= po_template.PT_TERMS_CONDITIONS %></td>
+        <td><%= po_template.PT_TERMS_HEADER %></td>
+        <td><%= po_template.PT_TERMS_PRINT1 %></td>
+        <td><%= po_template.PT_TERMS_PRINT2 %></td>
+        <td><%= po_template.PT_TERMS_PRINT3 %></td>
+        <td><%= po_template.PT_TERMS_PRINT4 %></td>
+        <td><%= po_template.PT_TERMS_PRINT5 %></td>
+        <td><%= link_to 'Show', po_template %></td>
+        <td><%= link_to 'Edit', edit_po_template_path(po_template) %></td>
+        <td><%= link_to 'Destroy', po_template, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Po template', new_po_template_path %>

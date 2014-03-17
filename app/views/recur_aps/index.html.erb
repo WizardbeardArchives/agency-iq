@@ -1,0 +1,73 @@
+<h1>Listing recur_aps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rap vendor</th>
+      <th>Rap date</th>
+      <th>Rap amt1</th>
+      <th>Rap desc</th>
+      <th>Rap cgl</th>
+      <th>Rap dgl1</th>
+      <th>Rap added by</th>
+      <th>Rap inv num</th>
+      <th>Rap period</th>
+      <th>Rap inv date</th>
+      <th>Rap dgl2</th>
+      <th>Rap dgl3</th>
+      <th>Rap dgl4</th>
+      <th>Rap dgl5</th>
+      <th>Rap dgl6</th>
+      <th>Rap amt2</th>
+      <th>Rap amt3</th>
+      <th>Rap amt4</th>
+      <th>Rap amt5</th>
+      <th>Rap amt6</th>
+      <th>Rap added when</th>
+      <th>Rap edited by</th>
+      <th>Rap edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @recur_aps.each do |recur_ap| %>
+      <tr>
+        <td><%= recur_ap.primaryKey %></td>
+        <td><%= recur_ap.RAP_VENDOR %></td>
+        <td><%= recur_ap.RAP_DATE %></td>
+        <td><%= recur_ap.RAP_AMT1 %></td>
+        <td><%= recur_ap.RAP_DESC %></td>
+        <td><%= recur_ap.RAP_CGL %></td>
+        <td><%= recur_ap.RAP_DGL1 %></td>
+        <td><%= recur_ap.RAP_ADDED_BY %></td>
+        <td><%= recur_ap.RAP_INV_NUM %></td>
+        <td><%= recur_ap.RAP_PERIOD %></td>
+        <td><%= recur_ap.RAP_INV_DATE %></td>
+        <td><%= recur_ap.RAP_DGL2 %></td>
+        <td><%= recur_ap.RAP_DGL3 %></td>
+        <td><%= recur_ap.RAP_DGL4 %></td>
+        <td><%= recur_ap.RAP_DGL5 %></td>
+        <td><%= recur_ap.RAP_DGL6 %></td>
+        <td><%= recur_ap.RAP_AMT2 %></td>
+        <td><%= recur_ap.RAP_AMT3 %></td>
+        <td><%= recur_ap.RAP_AMT4 %></td>
+        <td><%= recur_ap.RAP_AMT5 %></td>
+        <td><%= recur_ap.RAP_AMT6 %></td>
+        <td><%= recur_ap.RAP_ADDED_WHEN %></td>
+        <td><%= recur_ap.RAP_EDITED_BY %></td>
+        <td><%= recur_ap.RAP_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', recur_ap %></td>
+        <td><%= link_to 'Edit', edit_recur_ap_path(recur_ap) %></td>
+        <td><%= link_to 'Destroy', recur_ap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Recur ap', new_recur_ap_path %>

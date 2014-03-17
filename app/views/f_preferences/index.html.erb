@@ -1,0 +1,29 @@
+<h1>Listing f_preferences</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Prsqlconvflag</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @f_preferences.each do |f_preference| %>
+      <tr>
+        <td><%= f_preference.primaryKey %></td>
+        <td><%= f_preference.prSQLConvFlag %></td>
+        <td><%= link_to 'Show', f_preference %></td>
+        <td><%= link_to 'Edit', edit_f_preference_path(f_preference) %></td>
+        <td><%= link_to 'Destroy', f_preference, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New F preference', new_f_preference_path %>

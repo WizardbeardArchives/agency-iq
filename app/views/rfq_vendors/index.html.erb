@@ -1,0 +1,43 @@
+<h1>Listing rfq_vendors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Rfqv num</th>
+      <th>Rfqv vendor num</th>
+      <th>Rfqv contact</th>
+      <th>Rfqv phone</th>
+      <th>Rfqv fax</th>
+      <th>Rfqv winner</th>
+      <th>Rfqv vorg</th>
+      <th>Rfqv type</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rfq_vendors.each do |rfq_vendor| %>
+      <tr>
+        <td><%= rfq_vendor.primaryKey %></td>
+        <td><%= rfq_vendor.RFQV_NUM %></td>
+        <td><%= rfq_vendor.RFQV_VENDOR_NUM %></td>
+        <td><%= rfq_vendor.RFQV_CONTACT %></td>
+        <td><%= rfq_vendor.RFQV_PHONE %></td>
+        <td><%= rfq_vendor.RFQV_FAX %></td>
+        <td><%= rfq_vendor.RFQV_WINNER %></td>
+        <td><%= rfq_vendor.RFQV_VORG %></td>
+        <td><%= rfq_vendor.RFQV_TYPE %></td>
+        <td><%= link_to 'Show', rfq_vendor %></td>
+        <td><%= link_to 'Edit', edit_rfq_vendor_path(rfq_vendor) %></td>
+        <td><%= link_to 'Destroy', rfq_vendor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rfq vendor', new_rfq_vendor_path %>

@@ -1,0 +1,65 @@
+<h1>Listing sales_letters</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Sltr id</th>
+      <th>Sltr kind</th>
+      <th>Sltr start</th>
+      <th>Sltr end</th>
+      <th>Sltr client num</th>
+      <th>Sltr desc</th>
+      <th>Sltr author</th>
+      <th>Sltr ok</th>
+      <th>Sltr ok by</th>
+      <th>Sltr subject</th>
+      <th>Sltr body</th>
+      <th>Sltr ps</th>
+      <th>Sltr count</th>
+      <th>Sltr last use</th>
+      <th>Sltr one time</th>
+      <th>Sltr added by</th>
+      <th>Sltr added when</th>
+      <th>Sltr edited by</th>
+      <th>Sltr edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sales_letters.each do |sales_letter| %>
+      <tr>
+        <td><%= sales_letter.primaryKey %></td>
+        <td><%= sales_letter.SLTR_ID %></td>
+        <td><%= sales_letter.SLTR_KIND %></td>
+        <td><%= sales_letter.SLTR_START %></td>
+        <td><%= sales_letter.SLTR_END %></td>
+        <td><%= sales_letter.SLTR_CLIENT_NUM %></td>
+        <td><%= sales_letter.SLTR_DESC %></td>
+        <td><%= sales_letter.SLTR_AUTHOR %></td>
+        <td><%= sales_letter.SLTR_OK %></td>
+        <td><%= sales_letter.SLTR_OK_BY %></td>
+        <td><%= sales_letter.SLTR_SUBJECT %></td>
+        <td><%= sales_letter.SLTR_BODY %></td>
+        <td><%= sales_letter.SLTR_PS %></td>
+        <td><%= sales_letter.SLTR_COUNT %></td>
+        <td><%= sales_letter.SLTR_LAST_USE %></td>
+        <td><%= sales_letter.SLTR_ONE_TIME %></td>
+        <td><%= sales_letter.SLTR_ADDED_BY %></td>
+        <td><%= sales_letter.SLTR_ADDED_WHEN %></td>
+        <td><%= sales_letter.SLTR_EDITED_BY %></td>
+        <td><%= sales_letter.SLTR_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', sales_letter %></td>
+        <td><%= link_to 'Edit', edit_sales_letter_path(sales_letter) %></td>
+        <td><%= link_to 'Destroy', sales_letter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sales letter', new_sales_letter_path %>

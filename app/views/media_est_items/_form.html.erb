@@ -1,0 +1,37 @@
+<%= simple_form_for(@media_est_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :MI_ME_NUM %>
+    <%= f.input :MI_PUB %>
+    <%= f.input :MI_ISSUE_DATE %>
+    <%= f.input :MI_CLOSE_DATE %>
+    <%= f.input :MI_AD_NAME %>
+    <%= f.input :MI_AD_SIZE %>
+    <%= f.input :MI_GROSS %>
+    <%= f.input :MI_COST %>
+    <%= f.input :MI_COMM %>
+    <%= f.input :MI_VENDOR_NUM %>
+    <%= f.input :MI_PO_NUM %>
+    <%= f.input :MI_PO_AMT %>
+    <%= f.input :MI_PO_DATE %>
+    <%= f.input :MI_JOB_NUM %>
+    <%= f.input :MI_TASK %>
+    <%= f.input :MI_STATUS %>
+    <%= f.input :MI_NOTES %>
+    <%= f.input :MI_SHOW_NOTES %>
+    <%= f.input :MI_MATERIALS_DUE %>
+    <%= f.input :MI_PERIOD %>
+    <%= f.input :MI_BILL_NET %>
+    <%= f.input :MI_RUN_DATE %>
+    <%= f.input :MI_ADDED_BY %>
+    <%= f.input :MI_ADDED_WHEN %>
+    <%= f.input :MI_EDITED_BY %>
+    <%= f.input :MI_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @group.primaryKey %>
+</p>
+
+<p>
+  <strong>Group num:</strong>
+  <%= @group.GROUP_NUM %>
+</p>
+
+<p>
+  <strong>Group desc:</strong>
+  <%= @group.GROUP_DESC %>
+</p>
+
+<p>
+  <strong>Group cat:</strong>
+  <%= @group.GROUP_CAT %>
+</p>
+
+<p>
+  <strong>Group added by:</strong>
+  <%= @group.GROUP_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Group added when:</strong>
+  <%= @group.GROUP_ADDED_WHEN %>
+</p>
+
+<p>
+  <strong>Group edited by:</strong>
+  <%= @group.GROUP_EDITED_BY %>
+</p>
+
+<p>
+  <strong>Group edited when:</strong>
+  <%= @group.GROUP_EDITED_WHEN %>
+</p>
+
+<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>

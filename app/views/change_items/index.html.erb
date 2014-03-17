@@ -1,0 +1,57 @@
+<h1>Listing change_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Chx job num</th>
+      <th>Chx task</th>
+      <th>Chx name</th>
+      <th>Chx hours</th>
+      <th>Chx budget</th>
+      <th>Chx estimate</th>
+      <th>Chx notes</th>
+      <th>Chx num</th>
+      <th>Chx taxable1</th>
+      <th>Chx taxable2</th>
+      <th>Chx rollup</th>
+      <th>Chx added by</th>
+      <th>Chx added when</th>
+      <th>Chx edited by</th>
+      <th>Chx edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @change_items.each do |change_item| %>
+      <tr>
+        <td><%= change_item.primaryKey %></td>
+        <td><%= change_item.CHX_JOB_NUM %></td>
+        <td><%= change_item.CHX_TASK %></td>
+        <td><%= change_item.CHX_NAME %></td>
+        <td><%= change_item.CHX_HOURS %></td>
+        <td><%= change_item.CHX_BUDGET %></td>
+        <td><%= change_item.CHX_ESTIMATE %></td>
+        <td><%= change_item.CHX_NOTES %></td>
+        <td><%= change_item.CHX_NUM %></td>
+        <td><%= change_item.CHX_TAXABLE1 %></td>
+        <td><%= change_item.CHX_TAXABLE2 %></td>
+        <td><%= change_item.CHX_ROLLUP %></td>
+        <td><%= change_item.CHX_ADDED_BY %></td>
+        <td><%= change_item.CHX_ADDED_WHEN %></td>
+        <td><%= change_item.CHX_EDITED_BY %></td>
+        <td><%= change_item.CHX_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', change_item %></td>
+        <td><%= link_to 'Edit', edit_change_item_path(change_item) %></td>
+        <td><%= link_to 'Destroy', change_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Change item', new_change_item_path %>

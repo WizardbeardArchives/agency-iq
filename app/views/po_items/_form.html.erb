@@ -1,0 +1,58 @@
+<%= simple_form_for(@po_item) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :POX_LINE_NUMBER %>
+    <%= f.input :POX_JOB_NUM %>
+    <%= f.input :POX_TASK %>
+    <%= f.input :POX_DESC %>
+    <%= f.input :POX_PROGRAM %>
+    <%= f.input :POX_QTY %>
+    <%= f.input :POX_COST_EACH %>
+    <%= f.input :POX_COST %>
+    <%= f.input :POX_MARKUP %>
+    <%= f.input :POX_GROSS %>
+    <%= f.input :POX_COST_PAID %>
+    <%= f.input :POX_GROSS_PAID %>
+    <%= f.input :POX_PO_NUM %>
+    <%= f.input :POX_BILLABLE %>
+    <%= f.input :POX_UNIT %>
+    <%= f.input :POX_NAME %>
+    <%= f.input :POX_KEY %>
+    <%= f.input :POX_BUYDETID %>
+    <%= f.input :POX_DUE_DATE %>
+    <%= f.input :POX_DUE_DATE2 %>
+    <%= f.input :POX_ISSUE_DATE %>
+    <%= f.input :POX_REVISION %>
+    <%= f.input :POX_AP_OK %>
+    <%= f.input :POX_AD_SIZE %>
+    <%= f.input :POX_AD_NAME %>
+    <%= f.input :POX_AR_NUM %>
+    <%= f.input :POX_PUB %>
+    <%= f.input :POX_CLIENT_NUM %>
+    <%= f.input :POX_BILL_NET %>
+    <%= f.input :POX_TYPE %>
+    <%= f.input :POX_RATING %>
+    <%= f.input :POX_CPP %>
+    <%= f.input :POX_CPM %>
+    <%= f.input :POX_MAKEGOOD %>
+    <%= f.input :POX_AR_AMT %>
+    <%= f.input :POX_COST_NUM %>
+    <%= f.input :POX_BILL_DATE %>
+    <%= f.input :POX_SALES_TAX %>
+    <%= f.input :POX_ISSUE_DATE2 %>
+    <%= f.input :POX_TRADE %>
+    <%= f.input :POX_RUN_DATE %>
+    <%= f.input :POX_ADDED_BY %>
+    <%= f.input :POX_ADDED_WHEN %>
+    <%= f.input :POX_EDITED_BY %>
+    <%= f.input :POX_EDITED_WHEN %>
+    <%= f.input :POX_TAXABLE1 %>
+    <%= f.input :POX_TAXABLE2 %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

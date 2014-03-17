@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @ap_pdf.primaryKey %>
+</p>
+
+<p>
+  <strong>Ap pdf key:</strong>
+  <%= @ap_pdf.AP_PDF_KEY %>
+</p>
+
+<p>
+  <strong>Ap pdf binary:</strong>
+  <%= @ap_pdf.AP_PDF_BINARY %>
+</p>
+
+<%= link_to 'Edit', edit_ap_pdf_path(@ap_pdf) %> |
+<%= link_to 'Back', ap_pdfs_path %>

@@ -1,0 +1,2 @@
+module SalesLettersHelper
+end

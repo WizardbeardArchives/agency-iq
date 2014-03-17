@@ -1,0 +1,2 @@
+module ArchivedJobsHelper
+end

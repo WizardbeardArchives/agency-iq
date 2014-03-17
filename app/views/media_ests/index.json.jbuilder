@@ -1,0 +1,4 @@
+json.array!(@media_ests) do |media_est|
+  json.extract! media_est, :id, :primaryKey, :ME_NUM, :ME_CLIENT_NUM, :ME_CAMPAIGN, :ME_DATE, :ME_DESC, :ME_BUYER, :ME_GROSS, :ME_LABEL1, :ME_LABEL2, :ME_LABEL3, :ME_LABEL4, :ME_LABEL5, :ME_STATUS, :ME_COST, :ME_CLOSED, :ME_SHOW_DESC, :ME_DISCLAIMER, :ME_APPROVAL1, :ME_APPROVAL2, :ME_APPROVAL3, :ME_COMM, :ME_JOB_NUM, :ME_TASK, :ME_BRAND, :ME_INACTIVE, :ME_TYPE, :ME_APPROVED, :ME_APPROVED_BY, :ME_APPROVED_DATE, :ME_EDITED_BY, :ME_EDITED_WHEN
+  json.url media_est_url(media_est, format: :json)
+end

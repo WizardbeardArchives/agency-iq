@@ -1,0 +1,137 @@
+<h1>Listing change_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Change job num</th>
+      <th>Change task1</th>
+      <th>Change num</th>
+      <th>Change who</th>
+      <th>Change date</th>
+      <th>Change desc</th>
+      <th>Change ok</th>
+      <th>Change note</th>
+      <th>Change amt1</th>
+      <th>Change type</th>
+      <th>Change task2</th>
+      <th>Change task3</th>
+      <th>Change task4</th>
+      <th>Change amt2</th>
+      <th>Change amt3</th>
+      <th>Change amt4</th>
+      <th>Change total</th>
+      <th>Change task5</th>
+      <th>Change task6</th>
+      <th>Change amt5</th>
+      <th>Change amt6</th>
+      <th>Change other</th>
+      <th>Change name</th>
+      <th>Change bamt1</th>
+      <th>Change bamt2</th>
+      <th>Change bamt3</th>
+      <th>Change bamt4</th>
+      <th>Change bamt5</th>
+      <th>Change bamt6</th>
+      <th>Change sales tax1</th>
+      <th>Change sales tax2</th>
+      <th>Change rollup1</th>
+      <th>Change rollup2</th>
+      <th>Change rollup3</th>
+      <th>Change rollup4</th>
+      <th>Change rollup5</th>
+      <th>Change rollup6</th>
+      <th>Change hours1</th>
+      <th>Change hours2</th>
+      <th>Change hours3</th>
+      <th>Change hours4</th>
+      <th>Change hours5</th>
+      <th>Change hours6</th>
+      <th>Change roll up</th>
+      <th>Change status</th>
+      <th>Change approve</th>
+      <th>Change mail to</th>
+      <th>Change send pdf</th>
+      <th>Change approved by</th>
+      <th>Change approved date</th>
+      <th>Change approved</th>
+      <th>Change edited by</th>
+      <th>Change edited when</th>
+      <th>Change added by</th>
+      <th>Change added when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @change_orders.each do |change_order| %>
+      <tr>
+        <td><%= change_order.primaryKey %></td>
+        <td><%= change_order.CHANGE_JOB_NUM %></td>
+        <td><%= change_order.CHANGE_TASK1 %></td>
+        <td><%= change_order.CHANGE_NUM %></td>
+        <td><%= change_order.CHANGE_WHO %></td>
+        <td><%= change_order.CHANGE_DATE %></td>
+        <td><%= change_order.CHANGE_DESC %></td>
+        <td><%= change_order.CHANGE_OK %></td>
+        <td><%= change_order.CHANGE_NOTE %></td>
+        <td><%= change_order.CHANGE_AMT1 %></td>
+        <td><%= change_order.CHANGE_TYPE %></td>
+        <td><%= change_order.CHANGE_TASK2 %></td>
+        <td><%= change_order.CHANGE_TASK3 %></td>
+        <td><%= change_order.CHANGE_TASK4 %></td>
+        <td><%= change_order.CHANGE_AMT2 %></td>
+        <td><%= change_order.CHANGE_AMT3 %></td>
+        <td><%= change_order.CHANGE_AMT4 %></td>
+        <td><%= change_order.CHANGE_TOTAL %></td>
+        <td><%= change_order.CHANGE_TASK5 %></td>
+        <td><%= change_order.CHANGE_TASK6 %></td>
+        <td><%= change_order.CHANGE_AMT5 %></td>
+        <td><%= change_order.CHANGE_AMT6 %></td>
+        <td><%= change_order.CHANGE_OTHER %></td>
+        <td><%= change_order.CHANGE_NAME %></td>
+        <td><%= change_order.CHANGE_BAMT1 %></td>
+        <td><%= change_order.CHANGE_BAMT2 %></td>
+        <td><%= change_order.CHANGE_BAMT3 %></td>
+        <td><%= change_order.CHANGE_BAMT4 %></td>
+        <td><%= change_order.CHANGE_BAMT5 %></td>
+        <td><%= change_order.CHANGE_BAMT6 %></td>
+        <td><%= change_order.CHANGE_SALES_TAX1 %></td>
+        <td><%= change_order.CHANGE_SALES_TAX2 %></td>
+        <td><%= change_order.CHANGE_ROLLUP1 %></td>
+        <td><%= change_order.CHANGE_ROLLUP2 %></td>
+        <td><%= change_order.CHANGE_ROLLUP3 %></td>
+        <td><%= change_order.CHANGE_ROLLUP4 %></td>
+        <td><%= change_order.CHANGE_ROLLUP5 %></td>
+        <td><%= change_order.CHANGE_ROLLUP6 %></td>
+        <td><%= change_order.CHANGE_HOURS1 %></td>
+        <td><%= change_order.CHANGE_HOURS2 %></td>
+        <td><%= change_order.CHANGE_HOURS3 %></td>
+        <td><%= change_order.CHANGE_HOURS4 %></td>
+        <td><%= change_order.CHANGE_HOURS5 %></td>
+        <td><%= change_order.CHANGE_HOURS6 %></td>
+        <td><%= change_order.CHANGE_ROLL_UP %></td>
+        <td><%= change_order.CHANGE_STATUS %></td>
+        <td><%= change_order.CHANGE_APPROVE %></td>
+        <td><%= change_order.CHANGE_MAIL_TO %></td>
+        <td><%= change_order.CHANGE_SEND_PDF %></td>
+        <td><%= change_order.CHANGE_APPROVED_BY %></td>
+        <td><%= change_order.CHANGE_APPROVED_DATE %></td>
+        <td><%= change_order.CHANGE_APPROVED %></td>
+        <td><%= change_order.CHANGE_EDITED_BY %></td>
+        <td><%= change_order.CHANGE_EDITED_WHEN %></td>
+        <td><%= change_order.CHANGE_ADDED_BY %></td>
+        <td><%= change_order.CHANGE_ADDED_WHEN %></td>
+        <td><%= link_to 'Show', change_order %></td>
+        <td><%= link_to 'Edit', edit_change_order_path(change_order) %></td>
+        <td><%= link_to 'Destroy', change_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Change order', new_change_order_path %>

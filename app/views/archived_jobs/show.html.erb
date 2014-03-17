@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @archived_job.primaryKey %>
+</p>
+
+<p>
+  <strong>Aj job num:</strong>
+  <%= @archived_job.AJ_JOB_NUM %>
+</p>
+
+<p>
+  <strong>Aj name:</strong>
+  <%= @archived_job.AJ_NAME %>
+</p>
+
+<p>
+  <strong>Aj form:</strong>
+  <%= @archived_job.AJ_FORM %>
+</p>
+
+<p>
+  <strong>Aj printer:</strong>
+  <%= @archived_job.AJ_PRINTER %>
+</p>
+
+<p>
+  <strong>Aj artist:</strong>
+  <%= @archived_job.AJ_ARTIST %>
+</p>
+
+<p>
+  <strong>Aj location:</strong>
+  <%= @archived_job.AJ_LOCATION %>
+</p>
+
+<p>
+  <strong>Aj ref:</strong>
+  <%= @archived_job.AJ_REF %>
+</p>
+
+<%= link_to 'Edit', edit_archived_job_path(@archived_job) %> |
+<%= link_to 'Back', archived_jobs_path %>

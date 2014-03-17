@@ -1,0 +1,36 @@
+<%= simple_form_for(@approval) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :APPR_ADDED_BY %>
+    <%= f.input :APPR_DATE_ADDED %>
+    <%= f.input :APPR_DATE_EXPIRES %>
+    <%= f.input :APPR_INSTRUCTIONS %>
+    <%= f.input :APPR_OKD_BY %>
+    <%= f.input :APPR_ID %>
+    <%= f.input :APPR_STATUS %>
+    <%= f.input :APPR_STATUS_NOTE %>
+    <%= f.input :APPR_OKD_DATE %>
+    <%= f.input :APPR_RUSH %>
+    <%= f.input :APPR_JOB_NUM %>
+    <%= f.input :APPR_CLIENT_NUM %>
+    <%= f.input :APPR_REPLY_TO %>
+    <%= f.input :APPR_NEEDED_WHEN %>
+    <%= f.input :APPR_NEEDED_BY %>
+    <%= f.input :APPR_SENT_DATE %>
+    <%= f.input :APPR_DRAFT %>
+    <%= f.input :APPR_KIND %>
+    <%= f.input :APPR_CHANGES %>
+    <%= f.input :APPR_STEP_DESC %>
+    <%= f.input :APPR_REF_NUM %>
+    <%= f.input :APPR_NEEDED_BY_NAME %>
+    <%= f.input :APPR_FILE_PATH %>
+    <%= f.input :APPR_EDITED_BY %>
+    <%= f.input :APPR_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

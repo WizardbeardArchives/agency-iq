@@ -1,0 +1,59 @@
+<h1>Listing schedule_headers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Sh date1</th>
+      <th>Sh date2</th>
+      <th>Sh client num</th>
+      <th>Sh job num</th>
+      <th>Sh 1</th>
+      <th>Sh 2</th>
+      <th>Sh 3</th>
+      <th>Sh 4</th>
+      <th>Sh 5</th>
+      <th>Sh 6</th>
+      <th>Sh 7</th>
+      <th>Sh 8</th>
+      <th>Sh 9</th>
+      <th>Sh 10</th>
+      <th>Sh 11</th>
+      <th>Sh 12</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @schedule_headers.each do |schedule_header| %>
+      <tr>
+        <td><%= schedule_header.primaryKey %></td>
+        <td><%= schedule_header.SH_DATE1 %></td>
+        <td><%= schedule_header.SH_DATE2 %></td>
+        <td><%= schedule_header.SH_CLIENT_NUM %></td>
+        <td><%= schedule_header.SH_JOB_NUM %></td>
+        <td><%= schedule_header.SH_1 %></td>
+        <td><%= schedule_header.SH_2 %></td>
+        <td><%= schedule_header.SH_3 %></td>
+        <td><%= schedule_header.SH_4 %></td>
+        <td><%= schedule_header.SH_5 %></td>
+        <td><%= schedule_header.SH_6 %></td>
+        <td><%= schedule_header.SH_7 %></td>
+        <td><%= schedule_header.SH_8 %></td>
+        <td><%= schedule_header.SH_9 %></td>
+        <td><%= schedule_header.SH_10 %></td>
+        <td><%= schedule_header.SH_11 %></td>
+        <td><%= schedule_header.SH_12 %></td>
+        <td><%= link_to 'Show', schedule_header %></td>
+        <td><%= link_to 'Edit', edit_schedule_header_path(schedule_header) %></td>
+        <td><%= link_to 'Destroy', schedule_header, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Schedule header', new_schedule_header_path %>

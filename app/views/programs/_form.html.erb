@@ -1,0 +1,36 @@
+<%= simple_form_for(@program) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PGM_CODE %>
+    <%= f.input :PGM_TIME_PGM %>
+    <%= f.input :PGM_RATING_EA %>
+    <%= f.input :PGM_COST_EA %>
+    <%= f.input :PGM_GROUP %>
+    <%= f.input :PGM_NOTE %>
+    <%= f.input :PGM_TYPE %>
+    <%= f.input :AD_NAME %>
+    <%= f.input :AD_POSITION %>
+    <%= f.input :AD_NOTES %>
+    <%= f.input :AD_GROSS_AMT %>
+    <%= f.input :AD_COMM %>
+    <%= f.input :AD_NET_AMT %>
+    <%= f.input :AD_EXTRA_AMT %>
+    <%= f.input :AD_BILL_NET %>
+    <%= f.input :AD_ISSUE_DATE %>
+    <%= f.input :AD_SPACE_CLOSE %>
+    <%= f.input :AD_MAT_CLOSE %>
+    <%= f.input :PGM_KEY %>
+    <%= f.input :PGM_CLIENT_NUM %>
+    <%= f.input :AD_RATE_BASIS %>
+    <%= f.input :PGM_ADDED_BY %>
+    <%= f.input :PGM_ADDED_WHEN %>
+    <%= f.input :PGM_EDITED_BY %>
+    <%= f.input :PGM_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

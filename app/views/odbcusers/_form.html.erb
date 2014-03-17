@@ -1,0 +1,13 @@
+<%= simple_form_for(@odbcuser) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :ODBCUSERNAME %>
+    <%= f.input :ODBCPASSWORD %>
+    <%= f.input :ODBCACCESSMASK %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

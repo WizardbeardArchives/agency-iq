@@ -1,0 +1,61 @@
+<h1>Listing history_clients</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Hc client num</th>
+      <th>Hc num</th>
+      <th>Hc added by</th>
+      <th>Hc date</th>
+      <th>Hc subject</th>
+      <th>Hc ok</th>
+      <th>Hc for</th>
+      <th>Hc desc</th>
+      <th>Hc mail to</th>
+      <th>Hc cc</th>
+      <th>Hc bcc</th>
+      <th>Hc notified</th>
+      <th>Hc inv num</th>
+      <th>Hc kind</th>
+      <th>Hc auto diary</th>
+      <th>Hc edited by</th>
+      <th>Hc edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @history_clients.each do |history_client| %>
+      <tr>
+        <td><%= history_client.primaryKey %></td>
+        <td><%= history_client.HC_CLIENT_NUM %></td>
+        <td><%= history_client.HC_NUM %></td>
+        <td><%= history_client.HC_ADDED_BY %></td>
+        <td><%= history_client.HC_DATE %></td>
+        <td><%= history_client.HC_SUBJECT %></td>
+        <td><%= history_client.HC_OK %></td>
+        <td><%= history_client.HC_FOR %></td>
+        <td><%= history_client.HC_DESC %></td>
+        <td><%= history_client.HC_MAIL_TO %></td>
+        <td><%= history_client.HC_CC %></td>
+        <td><%= history_client.HC_BCC %></td>
+        <td><%= history_client.HC_NOTIFIED %></td>
+        <td><%= history_client.HC_INV_NUM %></td>
+        <td><%= history_client.HC_KIND %></td>
+        <td><%= history_client.HC_AUTO_DIARY %></td>
+        <td><%= history_client.HC_EDITED_BY %></td>
+        <td><%= history_client.HC_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', history_client %></td>
+        <td><%= link_to 'Edit', edit_history_client_path(history_client) %></td>
+        <td><%= link_to 'Destroy', history_client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New History client', new_history_client_path %>

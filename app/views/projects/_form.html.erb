@@ -1,0 +1,32 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PROJ_CLIENT_NUM %>
+    <%= f.input :PROJ_NAME %>
+    <%= f.input :PROJ_DESC %>
+    <%= f.input :PROJ_BUDGET %>
+    <%= f.input :PROJ_NUM1 %>
+    <%= f.input :PROJ_NUM2 %>
+    <%= f.input :PROJ_NUM3 %>
+    <%= f.input :PROJ_NUM4 %>
+    <%= f.input :PROJ_NUM5 %>
+    <%= f.input :PROJ_NUM6 %>
+    <%= f.input :PROJ_NUM7 %>
+    <%= f.input :PROJ_NUM8 %>
+    <%= f.input :PROJ_NUM9 %>
+    <%= f.input :PROJ_NUM10 %>
+    <%= f.input :PROJ_NUM11 %>
+    <%= f.input :PROJ_NUM12 %>
+    <%= f.input :PROJ_STATUS %>
+    <%= f.input :PROJ_ADDED_BY %>
+    <%= f.input :PROJ_ADDED_WHEN %>
+    <%= f.input :PROJ_EDITED_BY %>
+    <%= f.input :PROJ_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

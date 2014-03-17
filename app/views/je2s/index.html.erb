@@ -1,0 +1,83 @@
+<h1>Listing je2s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Je2 date</th>
+      <th>Je2 ref</th>
+      <th>Je2 posted</th>
+      <th>Je2 desc</th>
+      <th>Je2 debit</th>
+      <th>Je2 credit</th>
+      <th>Je2 ac num</th>
+      <th>Je2 period</th>
+      <th>Je2 job num</th>
+      <th>Je2 client num</th>
+      <th>Je2 reconcile</th>
+      <th>Je2 source</th>
+      <th>Je2 added by</th>
+      <th>Je2 added when</th>
+      <th>Je2 vendor num</th>
+      <th>Je2 auto rev</th>
+      <th>Je2 auto acc</th>
+      <th>Je2 temp rec</th>
+      <th>Je2 kind</th>
+      <th>Je2 pay batch</th>
+      <th>Je2 gl rec</th>
+      <th>Je2 exported</th>
+      <th>Je2 edited by</th>
+      <th>Je2 edited when</th>
+      <th>Je2 posted by</th>
+      <th>Je2 posted when</th>
+      <th>Je2 fiscal year</th>
+      <th>Je2 period first day</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @je2s.each do |je2| %>
+      <tr>
+        <td><%= je2.primaryKey %></td>
+        <td><%= je2.JE2_DATE %></td>
+        <td><%= je2.JE2_REF %></td>
+        <td><%= je2.JE2_POSTED %></td>
+        <td><%= je2.JE2_DESC %></td>
+        <td><%= je2.JE2_DEBIT %></td>
+        <td><%= je2.JE2_CREDIT %></td>
+        <td><%= je2.JE2_AC_NUM %></td>
+        <td><%= je2.JE2_PERIOD %></td>
+        <td><%= je2.JE2_JOB_NUM %></td>
+        <td><%= je2.JE2_CLIENT_NUM %></td>
+        <td><%= je2.JE2_RECONCILE %></td>
+        <td><%= je2.JE2_SOURCE %></td>
+        <td><%= je2.JE2_ADDED_BY %></td>
+        <td><%= je2.JE2_ADDED_WHEN %></td>
+        <td><%= je2.JE2_VENDOR_NUM %></td>
+        <td><%= je2.JE2_AUTO_REV %></td>
+        <td><%= je2.JE2_AUTO_ACC %></td>
+        <td><%= je2.JE2_TEMP_REC %></td>
+        <td><%= je2.JE2_KIND %></td>
+        <td><%= je2.JE2_PAY_BATCH %></td>
+        <td><%= je2.JE2_GL_REC %></td>
+        <td><%= je2.JE2_EXPORTED %></td>
+        <td><%= je2.JE2_EDITED_BY %></td>
+        <td><%= je2.JE2_EDITED_WHEN %></td>
+        <td><%= je2.JE2_POSTED_BY %></td>
+        <td><%= je2.JE2_POSTED_WHEN %></td>
+        <td><%= je2.JE2_FISCAL_YEAR %></td>
+        <td><%= je2.JE2_PERIOD_FIRST_DAY %></td>
+        <td><%= link_to 'Show', je2 %></td>
+        <td><%= link_to 'Edit', edit_je2_path(je2) %></td>
+        <td><%= link_to 'Destroy', je2, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Je2', new_je2_path %>

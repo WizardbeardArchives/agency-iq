@@ -1,0 +1,19 @@
+<%= simple_form_for(@timer) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :TIMER_INITIALS %>
+    <%= f.input :TIMER_START %>
+    <%= f.input :TIMER_PAUSED %>
+    <%= f.input :TIMER_RESUMED %>
+    <%= f.input :TIMER_ELAPSED_SECS %>
+    <%= f.input :TIMER_JOB_NUM %>
+    <%= f.input :TIMER_TASK %>
+    <%= f.input :TIMER_NOTE %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

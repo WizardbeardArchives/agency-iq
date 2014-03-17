@@ -1,0 +1,65 @@
+<h1>Listing addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Adr client num</th>
+      <th>Adr name</th>
+      <th>Adr address1</th>
+      <th>Adr address2</th>
+      <th>Adr address3</th>
+      <th>Adr address4</th>
+      <th>Adr address5</th>
+      <th>Adr address6</th>
+      <th>Adr kind</th>
+      <th>Adr org</th>
+      <th>Adr tax area</th>
+      <th>Adr tax rate1</th>
+      <th>Adr tax rate2</th>
+      <th>Adr tax gl1</th>
+      <th>Adr tax gl2</th>
+      <th>Adr added by</th>
+      <th>Adr added when</th>
+      <th>Adr edited by</th>
+      <th>Adr edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addresses.each do |address| %>
+      <tr>
+        <td><%= address.primaryKey %></td>
+        <td><%= address.ADR_CLIENT_NUM %></td>
+        <td><%= address.ADR_NAME %></td>
+        <td><%= address.ADR_ADDRESS1 %></td>
+        <td><%= address.ADR_ADDRESS2 %></td>
+        <td><%= address.ADR_ADDRESS3 %></td>
+        <td><%= address.ADR_ADDRESS4 %></td>
+        <td><%= address.ADR_ADDRESS5 %></td>
+        <td><%= address.ADR_ADDRESS6 %></td>
+        <td><%= address.ADR_KIND %></td>
+        <td><%= address.ADR_ORG %></td>
+        <td><%= address.ADR_TAX_AREA %></td>
+        <td><%= address.ADR_TAX_RATE1 %></td>
+        <td><%= address.ADR_TAX_RATE2 %></td>
+        <td><%= address.ADR_TAX_GL1 %></td>
+        <td><%= address.ADR_TAX_GL2 %></td>
+        <td><%= address.ADR_ADDED_BY %></td>
+        <td><%= address.ADR_ADDED_WHEN %></td>
+        <td><%= address.ADR_EDITED_BY %></td>
+        <td><%= address.ADR_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', address %></td>
+        <td><%= link_to 'Edit', edit_address_path(address) %></td>
+        <td><%= link_to 'Destroy', address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Address', new_address_path %>

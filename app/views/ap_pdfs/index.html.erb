@@ -1,0 +1,31 @@
+<h1>Listing ap_pdfs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ap pdf key</th>
+      <th>Ap pdf binary</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ap_pdfs.each do |ap_pdf| %>
+      <tr>
+        <td><%= ap_pdf.primaryKey %></td>
+        <td><%= ap_pdf.AP_PDF_KEY %></td>
+        <td><%= ap_pdf.AP_PDF_BINARY %></td>
+        <td><%= link_to 'Show', ap_pdf %></td>
+        <td><%= link_to 'Edit', edit_ap_pdf_path(ap_pdf) %></td>
+        <td><%= link_to 'Destroy', ap_pdf, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ap pdf', new_ap_pdf_path %>

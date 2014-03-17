@@ -1,0 +1,1 @@
+json.extract! @rfq_sku, :id, :primaryKey, :RFQSKU_PART_NUM, :RFQSKU_NAME, :RFQSKU_DESC, :RFQSKU_TYPE, :RFQSKU_MARKUP, :RFQSKU_UNIT_COST, :RFQSKU_VENDOR_NUM, :RFQSKU_TASK, :RFQSKU_JOB_TYPE, :created_at, :updated_at

@@ -1,0 +1,15 @@
+<%= simple_form_for(@thought) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :MSG_DATE %>
+    <%= f.input :MSG_TEXT %>
+    <%= f.input :MSG_1 %>
+    <%= f.input :MSG_DAILY_INFO_CTR %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

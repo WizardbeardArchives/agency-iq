@@ -1,0 +1,47 @@
+<%= simple_form_for(@homebasis) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :HOME_JOB_NUM %>
+    <%= f.input :HOME_TASK %>
+    <%= f.input :HOME_STATUS %>
+    <%= f.input :HOME_S_INITIALS %>
+    <%= f.input :HOME_ADDED_BY %>
+    <%= f.input :HOME_DATE_ADDED %>
+    <%= f.input :HOME_DUE_DATE %>
+    <%= f.input :HOME_SUBJECT %>
+    <%= f.input :HOME_KIND %>
+    <%= f.input :HOME_REPLY %>
+    <%= f.input :HOME_PRIVATE1 %>
+    <%= f.input :HOME_PRIVATE2 %>
+    <%= f.input :HOME_PRIORITY %>
+    <%= f.input :HOME_SORT %>
+    <%= f.input :HOME_CHOICE1 %>
+    <%= f.input :HOME_CHOICE2 %>
+    <%= f.input :HOME_CHOICE3 %>
+    <%= f.input :HOME_CHOICE4 %>
+    <%= f.input :HOME_CHOICE5 %>
+    <%= f.input :HOME_CHOICE6 %>
+    <%= f.input :HOME_LAST_REPLY %>
+    <%= f.input :HOME_MESSAGE %>
+    <%= f.input :HOME_LOCKED %>
+    <%= f.input :HOME_ADDED_KIND %>
+    <%= f.input :HOME_COMMENT %>
+    <%= f.input :HOME_RATING %>
+    <%= f.input :HOME_PROD_STATUS %>
+    <%= f.input :HOME_ORIG__SEQ %>
+    <%= f.input :HOME_FILE_NAME %>
+    <%= f.input :HOME_X_PHASE %>
+    <%= f.input :HOME_AVAIL_CREATIVE %>
+    <%= f.input :HOME_AVAIL_PROD %>
+    <%= f.input :HOME_AVAIL_STAFF %>
+    <%= f.input :HOME_AVAIL_CLIENTS %>
+    <%= f.input :HOME_AVAIL_VENDORS %>
+    <%= f.input :HOME_EMAIL_IT %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

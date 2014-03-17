@@ -1,0 +1,155 @@
+<h1>Listing retainers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Ret client num</th>
+      <th>Ret amt1</th>
+      <th>Ret amt2</th>
+      <th>Ret amt3</th>
+      <th>Ret amt4</th>
+      <th>Ret amt5</th>
+      <th>Ret amt6</th>
+      <th>Ret amt7</th>
+      <th>Ret amt8</th>
+      <th>Ret amt9</th>
+      <th>Ret amt10</th>
+      <th>Ret amt11</th>
+      <th>Ret amt12</th>
+      <th>Ret 1</th>
+      <th>Ret 2</th>
+      <th>Ret 3</th>
+      <th>Ret 4</th>
+      <th>Ret 5</th>
+      <th>Ret 6</th>
+      <th>Ret 7</th>
+      <th>Ret 8</th>
+      <th>Ret 9</th>
+      <th>Ret 10</th>
+      <th>Ret 11</th>
+      <th>Ret 12</th>
+      <th>Ret 1 ok</th>
+      <th>Ret 2 ok</th>
+      <th>Ret 3 ok</th>
+      <th>Ret 4 ok</th>
+      <th>Ret 5 ok</th>
+      <th>Ret 6 ok</th>
+      <th>Ret 7 ok</th>
+      <th>Ret 8 ok</th>
+      <th>Ret 9 ok</th>
+      <th>Ret 10 ok</th>
+      <th>Ret 11 ok</th>
+      <th>Ret 12 ok</th>
+      <th>Ret date1</th>
+      <th>Ret date2</th>
+      <th>Ret date3</th>
+      <th>Ret date4</th>
+      <th>Ret date5</th>
+      <th>Ret date6</th>
+      <th>Ret date7</th>
+      <th>Ret date8</th>
+      <th>Ret date9</th>
+      <th>Ret date10</th>
+      <th>Ret date11</th>
+      <th>Ret date12</th>
+      <th>Ret ar num1</th>
+      <th>Ret ar num2</th>
+      <th>Ret ar num3</th>
+      <th>Ret ar num4</th>
+      <th>Ret ar num5</th>
+      <th>Ret ar num6</th>
+      <th>Ret ar num7</th>
+      <th>Ret ar num8</th>
+      <th>Ret ar num9</th>
+      <th>Ret ar num10</th>
+      <th>Ret ar num11</th>
+      <th>Ret ar num12</th>
+      <th>Ret added by</th>
+      <th>Ret added when</th>
+      <th>Ret edited by</th>
+      <th>Ret edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @retainers.each do |retainer| %>
+      <tr>
+        <td><%= retainer.RET_CLIENT_NUM %></td>
+        <td><%= retainer.RET_AMT1 %></td>
+        <td><%= retainer.RET_AMT2 %></td>
+        <td><%= retainer.RET_AMT3 %></td>
+        <td><%= retainer.RET_AMT4 %></td>
+        <td><%= retainer.RET_AMT5 %></td>
+        <td><%= retainer.RET_AMT6 %></td>
+        <td><%= retainer.RET_AMT7 %></td>
+        <td><%= retainer.RET_AMT8 %></td>
+        <td><%= retainer.RET_AMT9 %></td>
+        <td><%= retainer.RET_AMT10 %></td>
+        <td><%= retainer.RET_AMT11 %></td>
+        <td><%= retainer.RET_AMT12 %></td>
+        <td><%= retainer.RET_1 %></td>
+        <td><%= retainer.RET_2 %></td>
+        <td><%= retainer.RET_3 %></td>
+        <td><%= retainer.RET_4 %></td>
+        <td><%= retainer.RET_5 %></td>
+        <td><%= retainer.RET_6 %></td>
+        <td><%= retainer.RET_7 %></td>
+        <td><%= retainer.RET_8 %></td>
+        <td><%= retainer.RET_9 %></td>
+        <td><%= retainer.RET_10 %></td>
+        <td><%= retainer.RET_11 %></td>
+        <td><%= retainer.RET_12 %></td>
+        <td><%= retainer.RET_1_OK %></td>
+        <td><%= retainer.RET_2_OK %></td>
+        <td><%= retainer.RET_3_OK %></td>
+        <td><%= retainer.RET_4_OK %></td>
+        <td><%= retainer.RET_5_OK %></td>
+        <td><%= retainer.RET_6_OK %></td>
+        <td><%= retainer.RET_7_OK %></td>
+        <td><%= retainer.RET_8_OK %></td>
+        <td><%= retainer.RET_9_OK %></td>
+        <td><%= retainer.RET_10_OK %></td>
+        <td><%= retainer.RET_11_OK %></td>
+        <td><%= retainer.RET_12_OK %></td>
+        <td><%= retainer.RET_DATE1 %></td>
+        <td><%= retainer.RET_DATE2 %></td>
+        <td><%= retainer.RET_DATE3 %></td>
+        <td><%= retainer.RET_DATE4 %></td>
+        <td><%= retainer.RET_DATE5 %></td>
+        <td><%= retainer.RET_DATE6 %></td>
+        <td><%= retainer.RET_DATE7 %></td>
+        <td><%= retainer.RET_DATE8 %></td>
+        <td><%= retainer.RET_DATE9 %></td>
+        <td><%= retainer.RET_DATE10 %></td>
+        <td><%= retainer.RET_DATE11 %></td>
+        <td><%= retainer.RET_DATE12 %></td>
+        <td><%= retainer.RET_AR_NUM1 %></td>
+        <td><%= retainer.RET_AR_NUM2 %></td>
+        <td><%= retainer.RET_AR_NUM3 %></td>
+        <td><%= retainer.RET_AR_NUM4 %></td>
+        <td><%= retainer.RET_AR_NUM5 %></td>
+        <td><%= retainer.RET_AR_NUM6 %></td>
+        <td><%= retainer.RET_AR_NUM7 %></td>
+        <td><%= retainer.RET_AR_NUM8 %></td>
+        <td><%= retainer.RET_AR_NUM9 %></td>
+        <td><%= retainer.RET_AR_NUM10 %></td>
+        <td><%= retainer.RET_AR_NUM11 %></td>
+        <td><%= retainer.RET_AR_NUM12 %></td>
+        <td><%= retainer.RET_ADDED_BY %></td>
+        <td><%= retainer.RET_ADDED_WHEN %></td>
+        <td><%= retainer.RET_EDITED_BY %></td>
+        <td><%= retainer.RET_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', retainer %></td>
+        <td><%= link_to 'Edit', edit_retainer_path(retainer) %></td>
+        <td><%= link_to 'Destroy', retainer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Retainer', new_retainer_path %>

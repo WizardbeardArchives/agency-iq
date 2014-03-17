@@ -1,0 +1,32 @@
+<%= simple_form_for(@claven_sale) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :S_NUM %>
+    <%= f.input :S_PR_JOB_NUM %>
+    <%= f.input :S_PR_TASK %>
+    <%= f.input :S_CLIENT %>
+    <%= f.input :S_HOW_PAID %>
+    <%= f.input :S_TERMS %>
+    <%= f.input :S_INVOICE_DATE %>
+    <%= f.input :S_SHIP_ORG %>
+    <%= f.input :S_PRICE %>
+    <%= f.input :S_PRODUCT_NAME %>
+    <%= f.input :S_TS_CREDIT_AMT %>
+    <%= f.input :S_DISC_DESC %>
+    <%= f.input :S_ADDL_QTY %>
+    <%= f.input :S_ADDL_USER_AMT %>
+    <%= f.input :S_OPTIONS_DESC %>
+    <%= f.input :S_AMT_OPTIONS %>
+    <%= f.input :S_TAX_RATE %>
+    <%= f.input :S_SUPPORT_AMT %>
+    <%= f.input :S_SHIP_AMT %>
+    <%= f.input :S_INVOICE_TOTAL %>
+    <%= f.input :S_DISCOUNT %>
+    <%= f.input :S_SALES_TAX %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,39 @@
+<%= simple_form_for(@je2) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :JE2_DATE %>
+    <%= f.input :JE2_REF %>
+    <%= f.input :JE2_POSTED %>
+    <%= f.input :JE2_DESC %>
+    <%= f.input :JE2_DEBIT %>
+    <%= f.input :JE2_CREDIT %>
+    <%= f.input :JE2_AC_NUM %>
+    <%= f.input :JE2_PERIOD %>
+    <%= f.input :JE2_JOB_NUM %>
+    <%= f.input :JE2_CLIENT_NUM %>
+    <%= f.input :JE2_RECONCILE %>
+    <%= f.input :JE2_SOURCE %>
+    <%= f.input :JE2_ADDED_BY %>
+    <%= f.input :JE2_ADDED_WHEN %>
+    <%= f.input :JE2_VENDOR_NUM %>
+    <%= f.input :JE2_AUTO_REV %>
+    <%= f.input :JE2_AUTO_ACC %>
+    <%= f.input :JE2_TEMP_REC %>
+    <%= f.input :JE2_KIND %>
+    <%= f.input :JE2_PAY_BATCH %>
+    <%= f.input :JE2_GL_REC %>
+    <%= f.input :JE2_EXPORTED %>
+    <%= f.input :JE2_EDITED_BY %>
+    <%= f.input :JE2_EDITED_WHEN %>
+    <%= f.input :JE2_POSTED_BY %>
+    <%= f.input :JE2_POSTED_WHEN %>
+    <%= f.input :JE2_FISCAL_YEAR %>
+    <%= f.input :JE2_PERIOD_FIRST_DAY %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

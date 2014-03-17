@@ -1,0 +1,4 @@
+json.array!(@status_codes) do |status_code|
+  json.extract! status_code, :id, :primaryKey, :STATUS_NUM, :STATUS_DESC, :STATUS_ALERT, :STATUS_STOP, :STATUS_PROD_ALERT, :STATUS_BILL_ALERT, :STATUS_ALERT_BUTTON, :STATUS_CAT, :STATUS_MAIL_TO, :STATUS_MAIL_MSG, :STATUS_MAIL_CC, :STATUS_MAIL_BCC, :STATUS_ADDED_BY, :STATUS_ADDED_WHEN, :STATUS_EDITED_BY, :STATUS_EDITED_WHEN, :STATUS_COLOR, :STATUS_PROD, :STATUS_ACCT, :STATUS_ACTIVE
+  json.url status_code_url(status_code, format: :json)
+end

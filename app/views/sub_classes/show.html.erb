@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @sub_class.primaryKey %>
+</p>
+
+<p>
+  <strong>Sub num:</strong>
+  <%= @sub_class.SUB_NUM %>
+</p>
+
+<p>
+  <strong>Sub desc:</strong>
+  <%= @sub_class.SUB_DESC %>
+</p>
+
+<p>
+  <strong>Sub added by:</strong>
+  <%= @sub_class.SUB_ADDED_BY %>
+</p>
+
+<p>
+  <strong>Sub added when:</strong>
+  <%= @sub_class.SUB_ADDED_WHEN %>
+</p>
+
+<p>
+  <strong>Sub edited by:</strong>
+  <%= @sub_class.SUB_EDITED_BY %>
+</p>
+
+<p>
+  <strong>Sub edited when:</strong>
+  <%= @sub_class.SUB_EDITED_WHEN %>
+</p>
+
+<%= link_to 'Edit', edit_sub_class_path(@sub_class) %> |
+<%= link_to 'Back', sub_classes_path %>

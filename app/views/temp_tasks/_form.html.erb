@@ -1,0 +1,26 @@
+<%= simple_form_for(@temp_task) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :TT_TYPE %>
+    <%= f.input :TT_TASK %>
+    <%= f.input :TT_EST1 %>
+    <%= f.input :TT_LEAD1 %>
+    <%= f.input :TT_NAME %>
+    <%= f.input :TT_EST2 %>
+    <%= f.input :TT_LEAD2 %>
+    <%= f.input :TT_EST3 %>
+    <%= f.input :TT_LEAD3 %>
+    <%= f.input :TT_EST_HOURS %>
+    <%= f.input :TT_TASK_DESC %>
+    <%= f.input :TT_ADDED_BY %>
+    <%= f.input :TT_ADDED_WHEN %>
+    <%= f.input :TT_EDITED_BY %>
+    <%= f.input :TT_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

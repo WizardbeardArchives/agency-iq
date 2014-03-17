@@ -1,0 +1,37 @@
+<%= simple_form_for(@station) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PUB_CODE %>
+    <%= f.input :PUB_NAME %>
+    <%= f.input :PUB_REP %>
+    <%= f.input :PUB_PHONE %>
+    <%= f.input :PUB_ADDRESS1 %>
+    <%= f.input :PUB_ADDRESS2 %>
+    <%= f.input :PUB_ADDRESS3 %>
+    <%= f.input :PUB_ADDRESS4 %>
+    <%= f.input :PUB_NOTE %>
+    <%= f.input :PUB_FAX %>
+    <%= f.input :PUB_VENDOR_NUM %>
+    <%= f.input :PUB_COMM_PC %>
+    <%= f.input :PUB_TYPE %>
+    <%= f.input :PUB_REP_ADDRESS1 %>
+    <%= f.input :PUB_REP_ADDRESS2 %>
+    <%= f.input :PUB_REP_ADDRESS3 %>
+    <%= f.input :PUB_REP_ADDRESS4 %>
+    <%= f.input :PUB_REP_ADDRESS5 %>
+    <%= f.input :PUB_ISSUE_DATE %>
+    <%= f.input :PUB_CLOSE_DATE %>
+    <%= f.input :PUB_CIRC %>
+    <%= f.input :PUB_MARKET %>
+    <%= f.input :PUB_ADDED_BY %>
+    <%= f.input :PUB_ADDED_WHEN %>
+    <%= f.input :PUB_EDITED_BY %>
+    <%= f.input :PUB_EDITED_WHEN %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

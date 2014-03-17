@@ -1,0 +1,71 @@
+<h1>Listing home_comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Comment home  seq</th>
+      <th>Comment job num</th>
+      <th>Comment task</th>
+      <th>Comment added by</th>
+      <th>Comment date added</th>
+      <th>Comment kind</th>
+      <th>Comment reply</th>
+      <th>Comment private1</th>
+      <th>Comment private2</th>
+      <th>Comment priority</th>
+      <th>Comment sort</th>
+      <th>Comment choice</th>
+      <th>Comment message</th>
+      <th>Comment locked</th>
+      <th>Comment added kind</th>
+      <th>Comment rating</th>
+      <th>Comment prod status</th>
+      <th>Comment file name</th>
+      <th>Comment x phase</th>
+      <th>Comment ping</th>
+      <th>Comment final</th>
+      <th>Comment star</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @home_comments.each do |home_comment| %>
+      <tr>
+        <td><%= home_comment.primaryKey %></td>
+        <td><%= home_comment.COMMENT_HOME__SEQ %></td>
+        <td><%= home_comment.COMMENT_JOB_NUM %></td>
+        <td><%= home_comment.COMMENT_TASK %></td>
+        <td><%= home_comment.COMMENT_ADDED_BY %></td>
+        <td><%= home_comment.COMMENT_DATE_ADDED %></td>
+        <td><%= home_comment.COMMENT_KIND %></td>
+        <td><%= home_comment.COMMENT_REPLY %></td>
+        <td><%= home_comment.COMMENT_PRIVATE1 %></td>
+        <td><%= home_comment.COMMENT_PRIVATE2 %></td>
+        <td><%= home_comment.COMMENT_PRIORITY %></td>
+        <td><%= home_comment.COMMENT_SORT %></td>
+        <td><%= home_comment.COMMENT_CHOICE %></td>
+        <td><%= home_comment.COMMENT_MESSAGE %></td>
+        <td><%= home_comment.COMMENT_LOCKED %></td>
+        <td><%= home_comment.COMMENT_ADDED_KIND %></td>
+        <td><%= home_comment.COMMENT_RATING %></td>
+        <td><%= home_comment.COMMENT_PROD_STATUS %></td>
+        <td><%= home_comment.COMMENT_FILE_NAME %></td>
+        <td><%= home_comment.COMMENT_X_PHASE %></td>
+        <td><%= home_comment.COMMENT_PING %></td>
+        <td><%= home_comment.COMMENT_FINAL %></td>
+        <td><%= home_comment.COMMENT_STAR %></td>
+        <td><%= link_to 'Show', home_comment %></td>
+        <td><%= link_to 'Edit', edit_home_comment_path(home_comment) %></td>
+        <td><%= link_to 'Destroy', home_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Home comment', new_home_comment_path %>

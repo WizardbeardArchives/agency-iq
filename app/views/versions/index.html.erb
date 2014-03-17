@@ -1,0 +1,41 @@
+<h1>Listing versions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ver program</th>
+      <th>Ver name</th>
+      <th>Ver a</th>
+      <th>Ver b</th>
+      <th>Ver c</th>
+      <th>Ver beta num</th>
+      <th>Ver demo</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @versions.each do |version| %>
+      <tr>
+        <td><%= version.primaryKey %></td>
+        <td><%= version.VER_PROGRAM %></td>
+        <td><%= version.VER_NAME %></td>
+        <td><%= version.VER_A %></td>
+        <td><%= version.VER_B %></td>
+        <td><%= version.VER_C %></td>
+        <td><%= version.VER_BETA_NUM %></td>
+        <td><%= version.VER_DEMO %></td>
+        <td><%= link_to 'Show', version %></td>
+        <td><%= link_to 'Edit', edit_version_path(version) %></td>
+        <td><%= link_to 'Destroy', version, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Version', new_version_path %>

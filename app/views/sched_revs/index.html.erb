@@ -1,0 +1,81 @@
+<h1>Listing sched_revs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Scv job num</th>
+      <th>Scv task</th>
+      <th>Scv sort</th>
+      <th>Scv task name</th>
+      <th>Scv task specs</th>
+      <th>Scv due date</th>
+      <th>Scv due when</th>
+      <th>Scv resource</th>
+      <th>Scv lead time</th>
+      <th>Scv start date</th>
+      <th>Scv date finished</th>
+      <th>Scv finished</th>
+      <th>Scv final</th>
+      <th>Scv revision</th>
+      <th>Scv j due date</th>
+      <th>Scv j start date</th>
+      <th>Scv revised by</th>
+      <th>Scv revision date</th>
+      <th>Scv revision notes</th>
+      <th>Scv reason</th>
+      <th>Scv rev okd by</th>
+      <th>Scv rev okd date</th>
+      <th>Scv kind</th>
+      <th>Scv added by</th>
+      <th>Scv added when</th>
+      <th>Scv edited by</th>
+      <th>Scv edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sched_revs.each do |sched_rev| %>
+      <tr>
+        <td><%= sched_rev.primaryKey %></td>
+        <td><%= sched_rev.SCV_JOB_NUM %></td>
+        <td><%= sched_rev.SCV_TASK %></td>
+        <td><%= sched_rev.SCV_SORT %></td>
+        <td><%= sched_rev.SCV_TASK_NAME %></td>
+        <td><%= sched_rev.SCV_TASK_SPECS %></td>
+        <td><%= sched_rev.SCV_DUE_DATE %></td>
+        <td><%= sched_rev.SCV_DUE_WHEN %></td>
+        <td><%= sched_rev.SCV_RESOURCE %></td>
+        <td><%= sched_rev.SCV_LEAD_TIME %></td>
+        <td><%= sched_rev.SCV_START_DATE %></td>
+        <td><%= sched_rev.SCV_DATE_FINISHED %></td>
+        <td><%= sched_rev.SCV_FINISHED %></td>
+        <td><%= sched_rev.SCV_FINAL %></td>
+        <td><%= sched_rev.SCV_REVISION %></td>
+        <td><%= sched_rev.SCV_J_DUE_DATE %></td>
+        <td><%= sched_rev.SCV_J_START_DATE %></td>
+        <td><%= sched_rev.SCV_REVISED_BY %></td>
+        <td><%= sched_rev.SCV_REVISION_DATE %></td>
+        <td><%= sched_rev.SCV_REVISION_NOTES %></td>
+        <td><%= sched_rev.SCV_REASON %></td>
+        <td><%= sched_rev.SCV_REV_OKD_BY %></td>
+        <td><%= sched_rev.SCV_REV_OKD_DATE %></td>
+        <td><%= sched_rev.SCV_KIND %></td>
+        <td><%= sched_rev.SCV_ADDED_BY %></td>
+        <td><%= sched_rev.SCV_ADDED_WHEN %></td>
+        <td><%= sched_rev.SCV_EDITED_BY %></td>
+        <td><%= sched_rev.SCV_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', sched_rev %></td>
+        <td><%= link_to 'Edit', edit_sched_rev_path(sched_rev) %></td>
+        <td><%= link_to 'Destroy', sched_rev, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sched rev', new_sched_rev_path %>

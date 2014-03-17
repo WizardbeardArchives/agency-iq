@@ -1,0 +1,79 @@
+<h1>Listing jes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Je date</th>
+      <th>Je ref</th>
+      <th>Je posted</th>
+      <th>Je desc</th>
+      <th>Je debit</th>
+      <th>Je credit</th>
+      <th>Je ac num</th>
+      <th>Je period</th>
+      <th>Je job num</th>
+      <th>Je client num</th>
+      <th>Je reconcile</th>
+      <th>Je source</th>
+      <th>Je added by</th>
+      <th>Je added when</th>
+      <th>Je vendor num</th>
+      <th>Je auto rev</th>
+      <th>Je auto acc</th>
+      <th>Je temp rec</th>
+      <th>Je kind</th>
+      <th>Je pay batch</th>
+      <th>Je gl rec</th>
+      <th>Je exported</th>
+      <th>Je edited by</th>
+      <th>Je edited when</th>
+      <th>Je posted by</th>
+      <th>Je posted when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jes.each do |je| %>
+      <tr>
+        <td><%= je.primaryKey %></td>
+        <td><%= je.JE_DATE %></td>
+        <td><%= je.JE_REF %></td>
+        <td><%= je.JE_POSTED %></td>
+        <td><%= je.JE_DESC %></td>
+        <td><%= je.JE_DEBIT %></td>
+        <td><%= je.JE_CREDIT %></td>
+        <td><%= je.JE_AC_NUM %></td>
+        <td><%= je.JE_PERIOD %></td>
+        <td><%= je.JE_JOB_NUM %></td>
+        <td><%= je.JE_CLIENT_NUM %></td>
+        <td><%= je.JE_RECONCILE %></td>
+        <td><%= je.JE_SOURCE %></td>
+        <td><%= je.JE_ADDED_BY %></td>
+        <td><%= je.JE_ADDED_WHEN %></td>
+        <td><%= je.JE_VENDOR_NUM %></td>
+        <td><%= je.JE_AUTO_REV %></td>
+        <td><%= je.JE_AUTO_ACC %></td>
+        <td><%= je.JE_TEMP_REC %></td>
+        <td><%= je.JE_KIND %></td>
+        <td><%= je.JE_PAY_BATCH %></td>
+        <td><%= je.JE_GL_REC %></td>
+        <td><%= je.JE_EXPORTED %></td>
+        <td><%= je.JE_EDITED_BY %></td>
+        <td><%= je.JE_EDITED_WHEN %></td>
+        <td><%= je.JE_POSTED_BY %></td>
+        <td><%= je.JE_POSTED_WHEN %></td>
+        <td><%= link_to 'Show', je %></td>
+        <td><%= link_to 'Edit', edit_je_path(je) %></td>
+        <td><%= link_to 'Destroy', je, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Je', new_je_path %>

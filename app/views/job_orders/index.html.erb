@@ -1,0 +1,115 @@
+<h1>Listing job_orders</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Cb job num</th>
+      <th>Cb client num</th>
+      <th>Cb 1 label</th>
+      <th>Cb 1</th>
+      <th>Cb 2 label</th>
+      <th>Cb 2</th>
+      <th>Cb 3 label</th>
+      <th>Cb 3</th>
+      <th>Cb 4 label</th>
+      <th>Cb 4</th>
+      <th>Cb 5 label</th>
+      <th>Cb 5</th>
+      <th>Cb 6 label</th>
+      <th>Cb 6</th>
+      <th>Cb 7 label</th>
+      <th>Cb 7</th>
+      <th>Cb 8 label</th>
+      <th>Cb 8</th>
+      <th>Cb rev</th>
+      <th>Cb 9 label</th>
+      <th>Cb 9</th>
+      <th>Cb 10 label</th>
+      <th>Cb 10</th>
+      <th>Cb 11 label</th>
+      <th>Cb 11</th>
+      <th>Cb 12 label</th>
+      <th>Cb 12</th>
+      <th>Cb 13 label</th>
+      <th>Cb 13</th>
+      <th>Cb 14 label</th>
+      <th>Cb 14</th>
+      <th>Cb 15 label</th>
+      <th>Cb 15</th>
+      <th>Cb added by</th>
+      <th>Cb rev by</th>
+      <th>Cb rev date</th>
+      <th>Cb ok</th>
+      <th>Cb ok by</th>
+      <th>Cb ok date</th>
+      <th>Cb approved</th>
+      <th>Cb approved date</th>
+      <th>Cb approved by</th>
+      <th>Cb edited by</th>
+      <th>Cb edited when</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_orders.each do |job_order| %>
+      <tr>
+        <td><%= job_order.primaryKey %></td>
+        <td><%= job_order.CB_JOB_NUM %></td>
+        <td><%= job_order.CB_CLIENT_NUM %></td>
+        <td><%= job_order.CB_1_LABEL %></td>
+        <td><%= job_order.CB_1 %></td>
+        <td><%= job_order.CB_2_LABEL %></td>
+        <td><%= job_order.CB_2 %></td>
+        <td><%= job_order.CB_3_LABEL %></td>
+        <td><%= job_order.CB_3 %></td>
+        <td><%= job_order.CB_4_LABEL %></td>
+        <td><%= job_order.CB_4 %></td>
+        <td><%= job_order.CB_5_LABEL %></td>
+        <td><%= job_order.CB_5 %></td>
+        <td><%= job_order.CB_6_LABEL %></td>
+        <td><%= job_order.CB_6 %></td>
+        <td><%= job_order.CB_7_LABEL %></td>
+        <td><%= job_order.CB_7 %></td>
+        <td><%= job_order.CB_8_LABEL %></td>
+        <td><%= job_order.CB_8 %></td>
+        <td><%= job_order.CB_REV %></td>
+        <td><%= job_order.CB_9_LABEL %></td>
+        <td><%= job_order.CB_9 %></td>
+        <td><%= job_order.CB_10_LABEL %></td>
+        <td><%= job_order.CB_10 %></td>
+        <td><%= job_order.CB_11_LABEL %></td>
+        <td><%= job_order.CB_11 %></td>
+        <td><%= job_order.CB_12_LABEL %></td>
+        <td><%= job_order.CB_12 %></td>
+        <td><%= job_order.CB_13_LABEL %></td>
+        <td><%= job_order.CB_13 %></td>
+        <td><%= job_order.CB_14_LABEL %></td>
+        <td><%= job_order.CB_14 %></td>
+        <td><%= job_order.CB_15_LABEL %></td>
+        <td><%= job_order.CB_15 %></td>
+        <td><%= job_order.CB_ADDED_BY %></td>
+        <td><%= job_order.CB_REV_BY %></td>
+        <td><%= job_order.CB_REV_DATE %></td>
+        <td><%= job_order.CB_OK %></td>
+        <td><%= job_order.CB_OK_BY %></td>
+        <td><%= job_order.CB_OK_DATE %></td>
+        <td><%= job_order.CB_APPROVED %></td>
+        <td><%= job_order.CB_APPROVED_DATE %></td>
+        <td><%= job_order.CB_APPROVED_BY %></td>
+        <td><%= job_order.CB_EDITED_BY %></td>
+        <td><%= job_order.CB_EDITED_WHEN %></td>
+        <td><%= link_to 'Show', job_order %></td>
+        <td><%= link_to 'Edit', edit_job_order_path(job_order) %></td>
+        <td><%= link_to 'Destroy', job_order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job order', new_job_order_path %>

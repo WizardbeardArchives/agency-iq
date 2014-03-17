@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Primarykey:</strong>
+  <%= @web_ip_log.primaryKey %>
+</p>
+
+<p>
+  <strong>Wip ip:</strong>
+  <%= @web_ip_log.WIP_IP %>
+</p>
+
+<p>
+  <strong>Wip name:</strong>
+  <%= @web_ip_log.WIP_NAME %>
+</p>
+
+<p>
+  <strong>Wip date:</strong>
+  <%= @web_ip_log.WIP_DATE %>
+</p>
+
+<p>
+  <strong>Wip datetime:</strong>
+  <%= @web_ip_log.WIP_DATETIME %>
+</p>
+
+<%= link_to 'Edit', edit_web_ip_log_path(@web_ip_log) %> |
+<%= link_to 'Back', web_ip_logs_path %>

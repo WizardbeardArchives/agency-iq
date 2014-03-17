@@ -1,0 +1,18 @@
+<%= simple_form_for(@palm_job) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :PALM_JOB_ID %>
+    <%= f.input :PALM_JOB_ATTRIBS %>
+    <%= f.input :PALM_JOB_CATEGORY %>
+    <%= f.input :PALM_JOB_NUM %>
+    <%= f.input :PALM_JOB_NAME %>
+    <%= f.input :PALM_JOB_USER %>
+    <%= f.input :PALM_JOB_PLUS %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

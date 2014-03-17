@@ -1,0 +1,2 @@
+module AssetsPrefsHelper
+end

@@ -1,0 +1,2 @@
+module HistoryVendorsHelper
+end

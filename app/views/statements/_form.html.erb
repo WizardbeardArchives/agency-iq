@@ -1,0 +1,21 @@
+<%= simple_form_for(@statement) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :primaryKey %>
+    <%= f.input :ST_DATE %>
+    <%= f.input :ST_AR_NUM %>
+    <%= f.input :ST_CK_NUM %>
+    <%= f.input :ST_CLIENT_NUM %>
+    <%= f.input :ST_TYPE %>
+    <%= f.input :ST_JOB_NUM %>
+    <%= f.input :ST_CHARGE_AMT %>
+    <%= f.input :ST_PMT_AMT %>
+    <%= f.input :ST_PO_NUM %>
+    <%= f.input :ST_DIVISION %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

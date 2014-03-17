@@ -1,0 +1,2 @@
+module PalmJobsHelper
+end

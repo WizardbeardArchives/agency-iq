@@ -1,0 +1,31 @@
+<h1>Listing job_user_fields</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Ju field</th>
+      <th>Ju value</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @job_user_fields.each do |job_user_field| %>
+      <tr>
+        <td><%= job_user_field.primaryKey %></td>
+        <td><%= job_user_field.JU_FIELD %></td>
+        <td><%= job_user_field.JU_VALUE %></td>
+        <td><%= link_to 'Show', job_user_field %></td>
+        <td><%= link_to 'Edit', edit_job_user_field_path(job_user_field) %></td>
+        <td><%= link_to 'Destroy', job_user_field, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job user field', new_job_user_field_path %>

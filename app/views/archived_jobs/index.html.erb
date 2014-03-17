@@ -1,0 +1,41 @@
+<h1>Listing archived_jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Aj job num</th>
+      <th>Aj name</th>
+      <th>Aj form</th>
+      <th>Aj printer</th>
+      <th>Aj artist</th>
+      <th>Aj location</th>
+      <th>Aj ref</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @archived_jobs.each do |archived_job| %>
+      <tr>
+        <td><%= archived_job.primaryKey %></td>
+        <td><%= archived_job.AJ_JOB_NUM %></td>
+        <td><%= archived_job.AJ_NAME %></td>
+        <td><%= archived_job.AJ_FORM %></td>
+        <td><%= archived_job.AJ_PRINTER %></td>
+        <td><%= archived_job.AJ_ARTIST %></td>
+        <td><%= archived_job.AJ_LOCATION %></td>
+        <td><%= archived_job.AJ_REF %></td>
+        <td><%= link_to 'Show', archived_job %></td>
+        <td><%= link_to 'Edit', edit_archived_job_path(archived_job) %></td>
+        <td><%= link_to 'Destroy', archived_job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Archived job', new_archived_job_path %>

@@ -1,0 +1,59 @@
+<h1>Listing time_imports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Primarykey</th>
+      <th>Tm date</th>
+      <th>Tm job num</th>
+      <th>Tm task</th>
+      <th>Tm hours</th>
+      <th>Tm staff</th>
+      <th>Tm desc</th>
+      <th>Tm bad</th>
+      <th>Tm cost rate</th>
+      <th>Tm bill rate</th>
+      <th>Tm client num</th>
+      <th>Tm billable</th>
+      <th>Tm period</th>
+      <th>Tm palm id</th>
+      <th>Tm palm category</th>
+      <th>Tm palm attribs</th>
+      <th>Tm ot</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @time_imports.each do |time_import| %>
+      <tr>
+        <td><%= time_import.primaryKey %></td>
+        <td><%= time_import.TM_DATE %></td>
+        <td><%= time_import.TM_JOB_NUM %></td>
+        <td><%= time_import.TM_TASK %></td>
+        <td><%= time_import.TM_HOURS %></td>
+        <td><%= time_import.TM_STAFF %></td>
+        <td><%= time_import.TM_DESC %></td>
+        <td><%= time_import.TM_BAD %></td>
+        <td><%= time_import.TM_COST_RATE %></td>
+        <td><%= time_import.TM_BILL_RATE %></td>
+        <td><%= time_import.TM_CLIENT_NUM %></td>
+        <td><%= time_import.TM_BILLABLE %></td>
+        <td><%= time_import.TM_PERIOD %></td>
+        <td><%= time_import.TM_PALM_ID %></td>
+        <td><%= time_import.TM_PALM_CATEGORY %></td>
+        <td><%= time_import.TM_PALM_ATTRIBS %></td>
+        <td><%= time_import.TM_OT %></td>
+        <td><%= link_to 'Show', time_import %></td>
+        <td><%= link_to 'Edit', edit_time_import_path(time_import) %></td>
+        <td><%= link_to 'Destroy', time_import, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Time import', new_time_import_path %>
