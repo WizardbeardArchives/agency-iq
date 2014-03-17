@@ -45,6 +45,17 @@ GEM
       axlsx
       rails (>= 3.1)
     bouncy-castle-java (1.5.0147)
+    brakeman (2.4.1)
+      erubis (~> 2.6)
+      fastercsv (~> 1.5)
+      haml (>= 3.0, < 5.0)
+      highline (~> 1.6.20)
+      multi_json (~> 1.2)
+      ruby2ruby (~> 2.0.5)
+      ruby_parser (~> 3.4.0)
+      sass (~> 3.0)
+      slim (>= 1.3.6, < 3.0)
+      terminal-table (~> 1.4)
     builder (3.1.4)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -57,9 +68,13 @@ GEM
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
+    fastercsv (1.5.5)
     foundation-rails (5.2.1.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    haml (4.0.5)
+      tilt
+    highline (1.6.21)
     hike (1.2.3)
     htmlentities (4.3.1)
     i18n (0.6.9)
@@ -113,6 +128,11 @@ GEM
     rmre (0.0.8)
       activerecord (>= 3.0.0)
       erubis
+    ruby2ruby (2.0.7)
+      ruby_parser (~> 3.1)
+      sexp_processor (~> 4.0)
+    ruby_parser (3.4.1)
+      sexp_processor (~> 4.1)
     rubyzip (1.0.0)
     sass (3.3.2)
     sass-rails (4.0.1)
@@ -124,9 +144,13 @@ GEM
     sdoc (0.4.0)
       json (~> 1.8)
       rdoc (~> 4.0, < 5.0)
+    sexp_processor (4.4.2)
     simple_form (3.0.1)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
+    slim (2.0.2)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -136,6 +160,8 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    temple (0.6.7)
+    terminal-table (1.4.5)
     therubyrhino (2.0.3)
       therubyrhino_jar (>= 1.7.3)
     therubyrhino_jar (1.7.4)
@@ -167,6 +193,7 @@ DEPENDENCIES
   activerecord-jdbch2-adapter
   acts_as_xlsx
   axlsx_rails
+  brakeman
   coffee-rails (~> 4.0.0)
   factory_girl
   foundation-rails

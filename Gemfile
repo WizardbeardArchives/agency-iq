@@ -86,3 +86,8 @@ gem 'rmre'
 gem 'schema_to_scaffold'
 
 gem 'factory_girl'
+
+# Brakeman offers some excellent static code analysis.  Be sure to:
+# gem cert --add <(curl -Ls https://raw.github.com/presidentbeef/brakeman/master/brakeman-public_cert.pem)
+# before running 'bundle'
+gem 'brakeman'
