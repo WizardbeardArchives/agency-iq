@@ -11,5535 +11,5422 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140312030001) do
 
-  create_table "access_privs", primary_key: "ACS_SEQ", force: true do |t|
-    t.string  "ACS_CLIENT_NUM", limit: 10
-    t.string  "ACS_INITIALS",   limit: 10
-    t.string  "ACS_KEY",        limit: 20
-    t.integer "ACS_SEE",        limit: 1
-    t.integer "ACS_EDIT",       limit: 1
-    t.integer "ACS_DEL",        limit: 1
-    t.integer "ACS_PRINT",      limit: 1
+  create_table "access_privs", primary_key: "acs_seq", force: true do |t|
+    t.string  "acs_client_num", limit: 10
+    t.string  "acs_initials",   limit: 10
+    t.string  "acs_key",        limit: 20
+    t.integer "acs_see",        limit: 1
+    t.integer "acs_edit",       limit: 1
+    t.integer "acs_del",        limit: 1
+    t.integer "acs_print",      limit: 1
   end
 
-  add_index "access_privs", ["ACS_CLIENT_NUM"], name: "ACS_CLIENT_NUM", using: :btree
-  add_index "access_privs", ["ACS_INITIALS"], name: "ACS_INITIALS", using: :btree
-  add_index "access_privs", ["ACS_KEY"], name: "ACS_KEY", using: :btree
-  add_index "access_privs", ["ACS_SEQ"], name: "ACS_SEQ", unique: true, using: :btree
+  add_index "access_privs", ["acs_client_num"], name: "acs_client_num"
+  add_index "access_privs", ["acs_initials"], name: "acs_initials"
+  add_index "access_privs", ["acs_key"], name: "acs_key"
 
-  create_table "accounts", primary_key: "AC_SEQ", force: true do |t|
-    t.decimal  "AC_NUM",                        precision: 15, scale: 2
-    t.string   "AC_NAME",           limit: 40
-    t.decimal  "AC_CLASS",                      precision: 15, scale: 0
-    t.decimal  "AC_SUB_CLASS",                  precision: 15, scale: 0
-    t.decimal  "AC_CONFIDENTIAL",               precision: 9,  scale: 0
-    t.decimal  "AC_ROLLUP_ONLY",                precision: 15, scale: 2
-    t.decimal  "AC_CK_NUM",                     precision: 15, scale: 0
-    t.string   "AC_PC",             limit: 10
-    t.decimal  "AC_1",                          precision: 15, scale: 2
-    t.decimal  "AC_2",                          precision: 15, scale: 2
-    t.decimal  "AC_3",                          precision: 15, scale: 2
-    t.decimal  "AC_4",                          precision: 15, scale: 2
-    t.decimal  "AC_5",                          precision: 15, scale: 2
-    t.decimal  "AC_6",                          precision: 15, scale: 2
-    t.decimal  "AC_7",                          precision: 15, scale: 2
-    t.decimal  "AC_8",                          precision: 15, scale: 2
-    t.decimal  "AC_9",                          precision: 15, scale: 2
-    t.decimal  "AC_10",                         precision: 15, scale: 2
-    t.decimal  "AC_11",                         precision: 15, scale: 2
-    t.decimal  "AC_12",                         precision: 15, scale: 2
-    t.decimal  "AC_BEG_BALN",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET1",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET2",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET3",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET4",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET5",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET6",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET7",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET8",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET9",                    precision: 15, scale: 2
-    t.decimal  "AC_BUDGET10",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET11",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET12",                   precision: 15, scale: 2
-    t.decimal  "AC_B13",                        precision: 15, scale: 2
-    t.decimal  "AC_L1",                         precision: 15, scale: 2
-    t.decimal  "AC_L2",                         precision: 15, scale: 2
-    t.decimal  "AC_L3",                         precision: 15, scale: 2
-    t.decimal  "AC_L4",                         precision: 15, scale: 2
-    t.decimal  "AC_L5",                         precision: 15, scale: 2
-    t.decimal  "AC_L6",                         precision: 15, scale: 2
-    t.decimal  "AC_L7",                         precision: 15, scale: 2
-    t.decimal  "AC_L8",                         precision: 15, scale: 2
-    t.decimal  "AC_L9",                         precision: 15, scale: 2
-    t.decimal  "AC_L10",                        precision: 15, scale: 2
-    t.decimal  "AC_L11",                        precision: 15, scale: 2
-    t.decimal  "AC_L12",                        precision: 15, scale: 2
-    t.decimal  "AC_L_BEG_BALN",                 precision: 15, scale: 2
-    t.decimal  "AC_GROUP",                      precision: 15, scale: 0
-    t.decimal  "AC_CATEGORY",                   precision: 15, scale: 0
-    t.decimal  "AC_YTD",                        precision: 15, scale: 2
-    t.decimal  "AC_ROLL_UP",                    precision: 15, scale: 2
-    t.decimal  "AC_ACTIVE",                     precision: 15, scale: 0
-    t.decimal  "AC_CK_ACCT",                    precision: 15, scale: 0
-    t.text     "AC_DESC"
-    t.decimal  "AC_13",                         precision: 15, scale: 2
-    t.decimal  "AC_14",                         precision: 15, scale: 2
-    t.decimal  "AC_15",                         precision: 15, scale: 2
-    t.decimal  "AC_16",                         precision: 15, scale: 2
-    t.decimal  "AC_17",                         precision: 15, scale: 2
-    t.decimal  "AC_18",                         precision: 15, scale: 2
-    t.decimal  "AC_19",                         precision: 15, scale: 2
-    t.decimal  "AC_20",                         precision: 15, scale: 2
-    t.decimal  "AC_21",                         precision: 15, scale: 2
-    t.decimal  "AC_22",                         precision: 15, scale: 2
-    t.decimal  "AC_23",                         precision: 15, scale: 2
-    t.decimal  "AC_24",                         precision: 15, scale: 2
-    t.decimal  "AC_YTD2",                       precision: 15, scale: 2
-    t.integer  "AC_CF",             limit: 1
-    t.integer  "AC_RATIO",          limit: 1
-    t.decimal  "AC_AR_CONTROL",                 precision: 15, scale: 0
-    t.decimal  "AC_AP_CONTROL",                 precision: 15, scale: 0
-    t.string   "AC_AR_LOCK",        limit: 1
-    t.string   "AC_AP_LOCK",        limit: 1
-    t.decimal  "AC_DEPT",                       precision: 9,  scale: 0
-    t.decimal  "AC_BUDGET13",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET14",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET15",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET16",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET17",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET18",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET19",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET20",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET21",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET22",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET23",                   precision: 15, scale: 2
-    t.decimal  "AC_BUDGET24",                   precision: 15, scale: 2
-    t.string   "AC_CORP_ID",        limit: 100
-    t.string   "AC_ADDED_BY",       limit: 4
-    t.datetime "AC_ADDED_WHEN"
-    t.string   "AC_EDITED_BY",      limit: 4
-    t.datetime "AC_EDITED_WHEN"
-    t.decimal  "AC_BANK_ROUTING",               precision: 15, scale: 0
-    t.decimal  "AC_BANK_ACCT_NUM",              precision: 15, scale: 0
-    t.string   "AC_BANK_NAME",      limit: 40
-    t.string   "AC_BANK_LOCATION",  limit: 40
-    t.string   "AC_BANK_NUM",       limit: 40
-    t.decimal  "AC_ONLINE_PMT_NUM",             precision: 9,  scale: 0
+  create_table "accounts", primary_key: "ac_seq", force: true do |t|
+    t.decimal   "ac_num",                        precision: 15, scale: 2
+    t.string    "ac_name",           limit: 40
+    t.decimal   "ac_class",                      precision: 15, scale: 0
+    t.decimal   "ac_sub_class",                  precision: 15, scale: 0
+    t.decimal   "ac_confidential",               precision: 9,  scale: 0
+    t.decimal   "ac_rollup_only",                precision: 15, scale: 2
+    t.decimal   "ac_ck_num",                     precision: 15, scale: 0
+    t.string    "ac_pc",             limit: 10
+    t.decimal   "ac_1",                          precision: 15, scale: 2
+    t.decimal   "ac_2",                          precision: 15, scale: 2
+    t.decimal   "ac_3",                          precision: 15, scale: 2
+    t.decimal   "ac_4",                          precision: 15, scale: 2
+    t.decimal   "ac_5",                          precision: 15, scale: 2
+    t.decimal   "ac_6",                          precision: 15, scale: 2
+    t.decimal   "ac_7",                          precision: 15, scale: 2
+    t.decimal   "ac_8",                          precision: 15, scale: 2
+    t.decimal   "ac_9",                          precision: 15, scale: 2
+    t.decimal   "ac_10",                         precision: 15, scale: 2
+    t.decimal   "ac_11",                         precision: 15, scale: 2
+    t.decimal   "ac_12",                         precision: 15, scale: 2
+    t.decimal   "ac_beg_baln",                   precision: 15, scale: 2
+    t.decimal   "ac_budget1",                    precision: 15, scale: 2
+    t.decimal   "ac_budget2",                    precision: 15, scale: 2
+    t.decimal   "ac_budget3",                    precision: 15, scale: 2
+    t.decimal   "ac_budget4",                    precision: 15, scale: 2
+    t.decimal   "ac_budget5",                    precision: 15, scale: 2
+    t.decimal   "ac_budget6",                    precision: 15, scale: 2
+    t.decimal   "ac_budget7",                    precision: 15, scale: 2
+    t.decimal   "ac_budget8",                    precision: 15, scale: 2
+    t.decimal   "ac_budget9",                    precision: 15, scale: 2
+    t.decimal   "ac_budget10",                   precision: 15, scale: 2
+    t.decimal   "ac_budget11",                   precision: 15, scale: 2
+    t.decimal   "ac_budget12",                   precision: 15, scale: 2
+    t.decimal   "ac_b13",                        precision: 15, scale: 2
+    t.decimal   "ac_l1",                         precision: 15, scale: 2
+    t.decimal   "ac_l2",                         precision: 15, scale: 2
+    t.decimal   "ac_l3",                         precision: 15, scale: 2
+    t.decimal   "ac_l4",                         precision: 15, scale: 2
+    t.decimal   "ac_l5",                         precision: 15, scale: 2
+    t.decimal   "ac_l6",                         precision: 15, scale: 2
+    t.decimal   "ac_l7",                         precision: 15, scale: 2
+    t.decimal   "ac_l8",                         precision: 15, scale: 2
+    t.decimal   "ac_l9",                         precision: 15, scale: 2
+    t.decimal   "ac_l10",                        precision: 15, scale: 2
+    t.decimal   "ac_l11",                        precision: 15, scale: 2
+    t.decimal   "ac_l12",                        precision: 15, scale: 2
+    t.decimal   "ac_l_beg_baln",                 precision: 15, scale: 2
+    t.decimal   "ac_group",                      precision: 15, scale: 0
+    t.decimal   "ac_category",                   precision: 15, scale: 0
+    t.decimal   "ac_ytd",                        precision: 15, scale: 2
+    t.decimal   "ac_roll_up",                    precision: 15, scale: 2
+    t.decimal   "ac_active",                     precision: 15, scale: 0
+    t.decimal   "ac_ck_acct",                    precision: 15, scale: 0
+    t.text      "ac_desc"
+    t.decimal   "ac_13",                         precision: 15, scale: 2
+    t.decimal   "ac_14",                         precision: 15, scale: 2
+    t.decimal   "ac_15",                         precision: 15, scale: 2
+    t.decimal   "ac_16",                         precision: 15, scale: 2
+    t.decimal   "ac_17",                         precision: 15, scale: 2
+    t.decimal   "ac_18",                         precision: 15, scale: 2
+    t.decimal   "ac_19",                         precision: 15, scale: 2
+    t.decimal   "ac_20",                         precision: 15, scale: 2
+    t.decimal   "ac_21",                         precision: 15, scale: 2
+    t.decimal   "ac_22",                         precision: 15, scale: 2
+    t.decimal   "ac_23",                         precision: 15, scale: 2
+    t.decimal   "ac_24",                         precision: 15, scale: 2
+    t.decimal   "ac_ytd2",                       precision: 15, scale: 2
+    t.integer   "ac_cf",             limit: 1
+    t.integer   "ac_ratio",          limit: 1
+    t.decimal   "ac_ar_control",                 precision: 15, scale: 0
+    t.decimal   "ac_ap_control",                 precision: 15, scale: 0
+    t.string    "ac_ar_lock",        limit: 1
+    t.string    "ac_ap_lock",        limit: 1
+    t.decimal   "ac_dept",                       precision: 9,  scale: 0
+    t.decimal   "ac_budget13",                   precision: 15, scale: 2
+    t.decimal   "ac_budget14",                   precision: 15, scale: 2
+    t.decimal   "ac_budget15",                   precision: 15, scale: 2
+    t.decimal   "ac_budget16",                   precision: 15, scale: 2
+    t.decimal   "ac_budget17",                   precision: 15, scale: 2
+    t.decimal   "ac_budget18",                   precision: 15, scale: 2
+    t.decimal   "ac_budget19",                   precision: 15, scale: 2
+    t.decimal   "ac_budget20",                   precision: 15, scale: 2
+    t.decimal   "ac_budget21",                   precision: 15, scale: 2
+    t.decimal   "ac_budget22",                   precision: 15, scale: 2
+    t.decimal   "ac_budget23",                   precision: 15, scale: 2
+    t.decimal   "ac_budget24",                   precision: 15, scale: 2
+    t.string    "ac_corp_id",        limit: 100
+    t.string    "ac_added_by",       limit: 4
+    t.timestamp "ac_added_when"
+    t.string    "ac_edited_by",      limit: 4
+    t.timestamp "ac_edited_when"
+    t.decimal   "ac_bank_routing",               precision: 15, scale: 0
+    t.decimal   "ac_bank_acct_num",              precision: 15, scale: 0
+    t.string    "ac_bank_name",      limit: 40
+    t.string    "ac_bank_location",  limit: 40
+    t.string    "ac_bank_num",       limit: 40
+    t.decimal   "ac_online_pmt_num",             precision: 9,  scale: 0
   end
 
-  add_index "accounts", ["AC_ADDED_WHEN"], name: "AC_ADDED_WHEN", using: :btree
-  add_index "accounts", ["AC_AP_CONTROL"], name: "AC_AP_CONTROL", using: :btree
-  add_index "accounts", ["AC_AR_CONTROL"], name: "AC_AR_CONTROL", using: :btree
-  add_index "accounts", ["AC_CF"], name: "AC_CF", using: :btree
-  add_index "accounts", ["AC_CLASS"], name: "AC_CLASS", using: :btree
-  add_index "accounts", ["AC_NAME"], name: "AC_NAME", using: :btree
-  add_index "accounts", ["AC_NUM"], name: "AC_NUM", using: :btree
-  add_index "accounts", ["AC_PC"], name: "AC_PC", using: :btree
-  add_index "accounts", ["AC_ROLLUP_ONLY"], name: "AC_ROLLUP_ONLY", using: :btree
-  add_index "accounts", ["AC_SEQ"], name: "AC_SEQ", unique: true, using: :btree
+  add_index "accounts", ["ac_added_when"], name: "ac_added_when"
+  add_index "accounts", ["ac_ap_control"], name: "ac_ap_control"
+  add_index "accounts", ["ac_ar_control"], name: "ac_ar_control"
+  add_index "accounts", ["ac_cf"], name: "ac_cf"
+  add_index "accounts", ["ac_class"], name: "ac_class"
+  add_index "accounts", ["ac_name"], name: "ac_name"
+  add_index "accounts", ["ac_num"], name: "ac_num"
+  add_index "accounts", ["ac_pc"], name: "ac_pc"
+  add_index "accounts", ["ac_rollup_only"], name: "ac_rollup_only"
 
   create_table "acct_periods", id: false, force: true do |t|
-    t.string  "PERIOD_ID",        limit: 4
-    t.string  "PERIOD_1",         limit: 15
-    t.string  "PERIOD_2",         limit: 15
-    t.string  "PERIOD_3",         limit: 15
-    t.string  "PERIOD_4",         limit: 15
-    t.string  "PERIOD_5",         limit: 15
-    t.string  "PERIOD_6",         limit: 15
-    t.string  "PERIOD_7",         limit: 15
-    t.string  "PERIOD_8",         limit: 15
-    t.string  "PERIOD_9",         limit: 15
-    t.string  "PERIOD_10",        limit: 15
-    t.string  "PERIOD_11",        limit: 15
-    t.string  "PERIOD_12",        limit: 15
-    t.string  "PERIOD_13",        limit: 15
-    t.string  "PERIOD_14",        limit: 15
-    t.string  "PERIOD_15",        limit: 15
-    t.string  "PERIOD_16",        limit: 15
-    t.string  "PERIOD_17",        limit: 15
-    t.string  "PERIOD_18",        limit: 15
-    t.string  "PERIOD_19",        limit: 15
-    t.string  "PERIOD_20",        limit: 15
-    t.string  "PERIOD_21",        limit: 15
-    t.string  "PERIOD_22",        limit: 15
-    t.string  "PERIOD_23",        limit: 15
-    t.string  "PERIOD_24",        limit: 15
-    t.integer "PERIOD_LOCK1",     limit: 1
-    t.integer "PERIOD_LOCK2",     limit: 1
-    t.integer "PERIOD_LOCK3",     limit: 1
-    t.integer "PERIOD_LOCK4",     limit: 1
-    t.integer "PERIOD_LOCK5",     limit: 1
-    t.integer "PERIOD_LOCK6",     limit: 1
-    t.integer "PERIOD_LOCK7",     limit: 1
-    t.integer "PERIOD_LOCK8",     limit: 1
-    t.integer "PERIOD_LOCK9",     limit: 1
-    t.integer "PERIOD_LOCK10",    limit: 1
-    t.integer "PERIOD_LOCK11",    limit: 1
-    t.integer "PERIOD_LOCK12",    limit: 1
-    t.integer "PERIOD_LOCK13",    limit: 1
-    t.integer "PERIOD_LOCK14",    limit: 1
-    t.integer "PERIOD_LOCK15",    limit: 1
-    t.integer "PERIOD_LOCK16",    limit: 1
-    t.integer "PERIOD_LOCK17",    limit: 1
-    t.integer "PERIOD_LOCK18",    limit: 1
-    t.integer "PERIOD_LOCK19",    limit: 1
-    t.integer "PERIOD_LOCK20",    limit: 1
-    t.integer "PERIOD_LOCK21",    limit: 1
-    t.integer "PERIOD_LOCK22",    limit: 1
-    t.integer "PERIOD_LOCK23",    limit: 1
-    t.integer "PERIOD_LOCK24",    limit: 1
-    t.date    "PERIOD_FIRST_DAY"
-    t.integer "PERIOD_CURR_PER",  limit: 1
-    t.string  "PERIOD_FY1_NAME",  limit: 15
-    t.string  "PERIOD_FY2_NAME",  limit: 15
+    t.string  "period_id",        limit: 4
+    t.string  "period_1",         limit: 15
+    t.string  "period_2",         limit: 15
+    t.string  "period_3",         limit: 15
+    t.string  "period_4",         limit: 15
+    t.string  "period_5",         limit: 15
+    t.string  "period_6",         limit: 15
+    t.string  "period_7",         limit: 15
+    t.string  "period_8",         limit: 15
+    t.string  "period_9",         limit: 15
+    t.string  "period_10",        limit: 15
+    t.string  "period_11",        limit: 15
+    t.string  "period_12",        limit: 15
+    t.string  "period_13",        limit: 15
+    t.string  "period_14",        limit: 15
+    t.string  "period_15",        limit: 15
+    t.string  "period_16",        limit: 15
+    t.string  "period_17",        limit: 15
+    t.string  "period_18",        limit: 15
+    t.string  "period_19",        limit: 15
+    t.string  "period_20",        limit: 15
+    t.string  "period_21",        limit: 15
+    t.string  "period_22",        limit: 15
+    t.string  "period_23",        limit: 15
+    t.string  "period_24",        limit: 15
+    t.integer "period_lock1",     limit: 1
+    t.integer "period_lock2",     limit: 1
+    t.integer "period_lock3",     limit: 1
+    t.integer "period_lock4",     limit: 1
+    t.integer "period_lock5",     limit: 1
+    t.integer "period_lock6",     limit: 1
+    t.integer "period_lock7",     limit: 1
+    t.integer "period_lock8",     limit: 1
+    t.integer "period_lock9",     limit: 1
+    t.integer "period_lock10",    limit: 1
+    t.integer "period_lock11",    limit: 1
+    t.integer "period_lock12",    limit: 1
+    t.integer "period_lock13",    limit: 1
+    t.integer "period_lock14",    limit: 1
+    t.integer "period_lock15",    limit: 1
+    t.integer "period_lock16",    limit: 1
+    t.integer "period_lock17",    limit: 1
+    t.integer "period_lock18",    limit: 1
+    t.integer "period_lock19",    limit: 1
+    t.integer "period_lock20",    limit: 1
+    t.integer "period_lock21",    limit: 1
+    t.integer "period_lock22",    limit: 1
+    t.integer "period_lock23",    limit: 1
+    t.integer "period_lock24",    limit: 1
+    t.date    "period_first_day"
+    t.integer "period_curr_per",  limit: 1
+    t.string  "period_fy1_name",  limit: 15
+    t.string  "period_fy2_name",  limit: 15
   end
 
-  add_index "acct_periods", ["PERIOD_ID"], name: "PERIOD_ID", using: :btree
+  add_index "acct_periods", ["period_id"], name: "period_id"
 
-  create_table "addresses", primary_key: "ADR_SEQ", force: true do |t|
-    t.string   "ADR_CLIENT_NUM",  limit: 10
-    t.string   "ADR_NAME",        limit: 20
-    t.string   "ADR_ADDRESS1",    limit: 50
-    t.string   "ADR_ADDRESS2",    limit: 50
-    t.string   "ADR_ADDRESS3",    limit: 50
-    t.string   "ADR_ADDRESS4",    limit: 50
-    t.string   "ADR_ADDRESS5",    limit: 50
-    t.string   "ADR_ADDRESS6",    limit: 50
-    t.integer  "ADR_KIND",        limit: 1
-    t.string   "ADR_ORG",         limit: 50
-    t.string   "ADR_TAX_AREA",    limit: 30
-    t.decimal  "ADR_TAX_RATE1",              precision: 15, scale: 4
-    t.decimal  "ADR_TAX_RATE2",              precision: 15, scale: 4
-    t.decimal  "ADR_TAX_GL1",                precision: 15, scale: 0
-    t.decimal  "ADR_TAX_GL2",                precision: 15, scale: 0
-    t.string   "ADR_ADDED_BY",    limit: 4
-    t.datetime "ADR_ADDED_WHEN"
-    t.string   "ADR_EDITED_BY",   limit: 4
-    t.datetime "ADR_EDITED_WHEN"
+  create_table "addresses", primary_key: "adr_seq", force: true do |t|
+    t.string    "adr_client_num",  limit: 10
+    t.string    "adr_name",        limit: 20
+    t.string    "adr_address1",    limit: 50
+    t.string    "adr_address2",    limit: 50
+    t.string    "adr_address3",    limit: 50
+    t.string    "adr_address4",    limit: 50
+    t.string    "adr_address5",    limit: 50
+    t.string    "adr_address6",    limit: 50
+    t.integer   "adr_kind",        limit: 1
+    t.string    "adr_org",         limit: 50
+    t.string    "adr_tax_area",    limit: 30
+    t.decimal   "adr_tax_rate1",              precision: 15, scale: 4
+    t.decimal   "adr_tax_rate2",              precision: 15, scale: 4
+    t.decimal   "adr_tax_gl1",                precision: 15, scale: 0
+    t.decimal   "adr_tax_gl2",                precision: 15, scale: 0
+    t.string    "adr_added_by",    limit: 4
+    t.timestamp "adr_added_when"
+    t.string    "adr_edited_by",   limit: 4
+    t.timestamp "adr_edited_when"
   end
 
-  add_index "addresses", ["ADR_CLIENT_NUM"], name: "ADR_CLIENT_NUM", using: :btree
-  add_index "addresses", ["ADR_NAME"], name: "ADR_NAME", using: :btree
-  add_index "addresses", ["ADR_SEQ"], name: "ADR_SEQ", unique: true, using: :btree
+  add_index "addresses", ["adr_client_num"], name: "adr_client_num"
+  add_index "addresses", ["adr_name"], name: "adr_name"
 
-  create_table "ap", primary_key: "AP_SEQ", force: true do |t|
-    t.string   "AP_NUM",             limit: 20
-    t.string   "AP_VENDOR_NUM",      limit: 10
-    t.date     "AP_DATE"
-    t.string   "AP_KEY",             limit: 30
-    t.text     "AP_DESC"
-    t.decimal  "AP_CGL",                        precision: 15, scale: 2
-    t.decimal  "AP_NET_AMT",                    precision: 15, scale: 2
-    t.decimal  "AP_COMM_NET",                   precision: 9,  scale: 2
-    t.decimal  "AP_MARKUP_PC",                  precision: 9,  scale: 2
-    t.decimal  "AP_TAX_AMT",                    precision: 9,  scale: 2
-    t.decimal  "AP_GROSS_AMT",                  precision: 15, scale: 2
-    t.date     "AP_POSTED"
-    t.decimal  "AP_TOTAL_AMT",                  precision: 15, scale: 2
-    t.date     "AP_DISC_DATE"
-    t.integer  "AP_JUMPSTART",       limit: 1
-    t.string   "AP_ADDED_BY",        limit: 4
-    t.date     "AP_ADDED_WHEN"
-    t.string   "AP_VOUCHER",         limit: 10
-    t.decimal  "AP_TERMS1",                     precision: 9,  scale: 0
-    t.decimal  "AP_TERMS2",                     precision: 9,  scale: 0
-    t.decimal  "AP_TERMS3",                     precision: 9,  scale: 0
-    t.date     "AP_PAY_DATE"
-    t.decimal  "AP_PERIOD",                     precision: 9,  scale: 0
-    t.decimal  "AP_CURRENT",                    precision: 9,  scale: 2
-    t.decimal  "AP_30",                         precision: 9,  scale: 2
-    t.decimal  "AP_60",                         precision: 9,  scale: 2
-    t.decimal  "AP_90",                         precision: 9,  scale: 2
-    t.string   "AP_AUTO_PAY",        limit: 10
-    t.decimal  "AP_GST_GL",                     precision: 15, scale: 2
-    t.decimal  "AP_GST1",                       precision: 9,  scale: 2
-    t.decimal  "AP_GST2",                       precision: 9,  scale: 2
-    t.decimal  "AP_AMT_PAID",                   precision: 15, scale: 2
-    t.date     "AP_CLIENT_PAID"
-    t.integer  "AP_CLOSE_PO",        limit: 1
-    t.decimal  "AP_UNPAID",                     precision: 9,  scale: 0
-    t.integer  "AP_KIND",            limit: 1
-    t.decimal  "AP_DISC_TAKEN",                 precision: 9,  scale: 2
-    t.date     "AP_EXPORTED"
-    t.integer  "AP_APPROVED",        limit: 1
-    t.string   "AP_APPROVED_BY",     limit: 4
-    t.datetime "AP_APPROVED_DATE"
-    t.string   "AP_EDITED_BY",       limit: 4
-    t.datetime "AP_EDITED_WHEN"
-    t.string   "AP_POSTED_BY",       limit: 4
-    t.date     "AP_POSTED_WHEN"
-    t.string   "AP_PAID_CC",         limit: 10
-    t.date     "AP_DATE_PAID"
-    t.string   "AP_PAID_CC_INV_NUM", limit: 20
-    t.integer  "AP_PAID_ONLINE",     limit: 1
+  create_table "ap", primary_key: "ap_seq", force: true do |t|
+    t.string    "ap_num",             limit: 20
+    t.string    "ap_vendor_num",      limit: 10
+    t.date      "ap_date"
+    t.string    "ap_key",             limit: 30
+    t.text      "ap_desc"
+    t.decimal   "ap_cgl",                        precision: 15, scale: 2
+    t.decimal   "ap_net_amt",                    precision: 15, scale: 2
+    t.decimal   "ap_comm_net",                   precision: 9,  scale: 2
+    t.decimal   "ap_markup_pc",                  precision: 9,  scale: 2
+    t.decimal   "ap_tax_amt",                    precision: 9,  scale: 2
+    t.decimal   "ap_gross_amt",                  precision: 15, scale: 2
+    t.date      "ap_posted"
+    t.decimal   "ap_total_amt",                  precision: 15, scale: 2
+    t.date      "ap_disc_date"
+    t.integer   "ap_jumpstart",       limit: 1
+    t.string    "ap_added_by",        limit: 4
+    t.date      "ap_added_when"
+    t.string    "ap_voucher",         limit: 10
+    t.decimal   "ap_terms1",                     precision: 9,  scale: 0
+    t.decimal   "ap_terms2",                     precision: 9,  scale: 0
+    t.decimal   "ap_terms3",                     precision: 9,  scale: 0
+    t.date      "ap_pay_date"
+    t.decimal   "ap_period",                     precision: 9,  scale: 0
+    t.decimal   "ap_current",                    precision: 9,  scale: 2
+    t.decimal   "ap_30",                         precision: 9,  scale: 2
+    t.decimal   "ap_60",                         precision: 9,  scale: 2
+    t.decimal   "ap_90",                         precision: 9,  scale: 2
+    t.string    "ap_auto_pay",        limit: 10
+    t.decimal   "ap_gst_gl",                     precision: 15, scale: 2
+    t.decimal   "ap_gst1",                       precision: 9,  scale: 2
+    t.decimal   "ap_gst2",                       precision: 9,  scale: 2
+    t.decimal   "ap_amt_paid",                   precision: 15, scale: 2
+    t.date      "ap_client_paid"
+    t.integer   "ap_close_po",        limit: 1
+    t.decimal   "ap_unpaid",                     precision: 9,  scale: 0
+    t.integer   "ap_kind",            limit: 1
+    t.decimal   "ap_disc_taken",                 precision: 9,  scale: 2
+    t.date      "ap_exported"
+    t.integer   "ap_approved",        limit: 1
+    t.string    "ap_approved_by",     limit: 4
+    t.timestamp "ap_approved_date"
+    t.string    "ap_edited_by",       limit: 4
+    t.timestamp "ap_edited_when"
+    t.string    "ap_posted_by",       limit: 4
+    t.date      "ap_posted_when"
+    t.string    "ap_paid_cc",         limit: 10
+    t.date      "ap_date_paid"
+    t.string    "ap_paid_cc_inv_num", limit: 20
+    t.integer   "ap_paid_online",     limit: 1
   end
 
-  add_index "ap", ["AP_AUTO_PAY"], name: "AP_AUTO_PAY", using: :btree
-  add_index "ap", ["AP_DATE"], name: "AP_DATE", using: :btree
-  add_index "ap", ["AP_EDITED_BY"], name: "AP_EDITED_BY", using: :btree
-  add_index "ap", ["AP_KEY"], name: "AP_KEY", using: :btree
-  add_index "ap", ["AP_NUM"], name: "AP_NUM", using: :btree
-  add_index "ap", ["AP_PAY_DATE"], name: "AP_PAY_DATE", using: :btree
-  add_index "ap", ["AP_POSTED"], name: "AP_POSTED", using: :btree
-  add_index "ap", ["AP_SEQ"], name: "AP_SEQ", unique: true, using: :btree
-  add_index "ap", ["AP_UNPAID"], name: "AP_UNPAID", using: :btree
-  add_index "ap", ["AP_VENDOR_NUM"], name: "AP_VENDOR_NUM", using: :btree
+  add_index "ap", ["ap_auto_pay"], name: "ap_auto_pay"
+  add_index "ap", ["ap_date"], name: "ap_date"
+  add_index "ap", ["ap_edited_by"], name: "ap_edited_by"
+  add_index "ap", ["ap_key"], name: "ap_key"
+  add_index "ap", ["ap_num"], name: "ap_num"
+  add_index "ap", ["ap_pay_date"], name: "ap_pay_date"
+  add_index "ap", ["ap_posted"], name: "ap_posted"
+  add_index "ap", ["ap_unpaid"], name: "ap_unpaid"
+  add_index "ap", ["ap_vendor_num"], name: "ap_vendor_num"
 
-  create_table "ap_pdfs", primary_key: "AP_PDF_SEQ", force: true do |t|
-    t.string "AP_PDF_KEY",    limit: 30
-    t.binary "AP_PDF_BINARY", limit: 16777215
+  create_table "ap_pdfs", primary_key: "ap_pdf_seq", force: true do |t|
+    t.string "ap_pdf_key",    limit: 30
+    t.binary "ap_pdf_binary"
   end
 
-  add_index "ap_pdfs", ["AP_PDF_KEY"], name: "AP_PDF_KEY", using: :btree
-  add_index "ap_pdfs", ["AP_PDF_SEQ"], name: "AP_PDF_SEQ", unique: true, using: :btree
+  add_index "ap_pdfs", ["ap_pdf_key"], name: "ap_pdf_key"
 
-  create_table "approvals", primary_key: "APPR_SEQ", force: true do |t|
-    t.string   "APPR_ADDED_BY",       limit: 4
-    t.datetime "APPR_DATE_ADDED"
-    t.datetime "APPR_DATE_EXPIRES"
-    t.text     "APPR_INSTRUCTIONS"
-    t.string   "APPR_OKD_BY",         limit: 4
-    t.string   "APPR_ID",             limit: 20
-    t.integer  "APPR_STATUS",         limit: 1
-    t.text     "APPR_STATUS_NOTE"
-    t.datetime "APPR_OKD_DATE"
-    t.integer  "APPR_RUSH",           limit: 1
-    t.string   "APPR_JOB_NUM",        limit: 10
-    t.string   "APPR_CLIENT_NUM",     limit: 10
-    t.string   "APPR_REPLY_TO",       limit: 100
-    t.datetime "APPR_NEEDED_WHEN"
-    t.string   "APPR_NEEDED_BY",      limit: 4
-    t.datetime "APPR_SENT_DATE"
-    t.integer  "APPR_DRAFT",          limit: 1
-    t.integer  "APPR_KIND",           limit: 1
-    t.text     "APPR_CHANGES"
-    t.string   "APPR_STEP_DESC",      limit: 200
-    t.string   "APPR_REF_NUM",        limit: 20
-    t.string   "APPR_NEEDED_BY_NAME", limit: 200
-    t.text     "APPR_FILE_PATH"
-    t.string   "APPR_EDITED_BY",      limit: 4
-    t.datetime "APPR_EDITED_WHEN"
+  create_table "approvals", primary_key: "appr_seq", force: true do |t|
+    t.string    "appr_added_by",       limit: 4
+    t.timestamp "appr_date_added"
+    t.timestamp "appr_date_expires"
+    t.text      "appr_instructions"
+    t.string    "appr_okd_by",         limit: 4
+    t.string    "appr_id",             limit: 20
+    t.integer   "appr_status",         limit: 1
+    t.text      "appr_status_note"
+    t.timestamp "appr_okd_date"
+    t.integer   "appr_rush",           limit: 1
+    t.string    "appr_job_num",        limit: 10
+    t.string    "appr_client_num",     limit: 10
+    t.string    "appr_reply_to",       limit: 100
+    t.timestamp "appr_needed_when"
+    t.string    "appr_needed_by",      limit: 4
+    t.timestamp "appr_sent_date"
+    t.integer   "appr_draft",          limit: 1
+    t.integer   "appr_kind",           limit: 1
+    t.text      "appr_changes"
+    t.string    "appr_step_desc",      limit: 200
+    t.string    "appr_ref_num",        limit: 20
+    t.string    "appr_needed_by_name", limit: 200
+    t.text      "appr_file_path"
+    t.string    "appr_edited_by",      limit: 4
+    t.timestamp "appr_edited_when"
   end
 
-  add_index "approvals", ["APPR_ADDED_BY"], name: "APPR_ADDED_BY", using: :btree
-  add_index "approvals", ["APPR_CLIENT_NUM"], name: "APPR_CLIENT_NUM", using: :btree
-  add_index "approvals", ["APPR_DATE_EXPIRES"], name: "APPR_DATE_EXPIRES", using: :btree
-  add_index "approvals", ["APPR_ID"], name: "APPR_ID", using: :btree
-  add_index "approvals", ["APPR_JOB_NUM"], name: "APPR_JOB_NUM", using: :btree
-  add_index "approvals", ["APPR_KIND"], name: "APPR_KIND", using: :btree
-  add_index "approvals", ["APPR_NEEDED_BY"], name: "APPR_NEEDED_BY", using: :btree
-  add_index "approvals", ["APPR_SEQ"], name: "APPR_SEQ", unique: true, using: :btree
+  add_index "approvals", ["appr_added_by"], name: "appr_added_by"
+  add_index "approvals", ["appr_client_num"], name: "appr_client_num"
+  add_index "approvals", ["appr_date_expires"], name: "appr_date_expires"
+  add_index "approvals", ["appr_id"], name: "appr_id"
+  add_index "approvals", ["appr_job_num"], name: "appr_job_num"
+  add_index "approvals", ["appr_kind"], name: "appr_kind"
+  add_index "approvals", ["appr_needed_by"], name: "appr_needed_by"
 
-  create_table "approvals_items", primary_key: "APPRX_SEQ", force: true do |t|
-    t.string  "APPRX_ID",          limit: 20
-    t.string  "APPRX_FILE_NAME",   limit: 100
-    t.text    "APPRX_FILE_CPX"
-    t.integer "APPRX_STATUS",      limit: 1
-    t.text    "APPRX_STATUS_NOTE"
+  create_table "approvals_items", primary_key: "apprx_seq", force: true do |t|
+    t.string  "apprx_id",          limit: 20
+    t.string  "apprx_file_name",   limit: 100
+    t.text    "apprx_file_cpx"
+    t.integer "apprx_status",      limit: 1
+    t.text    "apprx_status_note"
   end
 
-  add_index "approvals_items", ["APPRX_ID"], name: "APPRX_ID", using: :btree
-  add_index "approvals_items", ["APPRX_SEQ"], name: "APPRX_SEQ", unique: true, using: :btree
+  add_index "approvals_items", ["apprx_id"], name: "apprx_id"
 
-  create_table "ar", primary_key: "AR_SEQ", force: true do |t|
-    t.string   "AR_NUM",                limit: 10
-    t.string   "AR_JOB_NUM",            limit: 10
-    t.string   "AR_CLIENT_NUM",         limit: 10
-    t.date     "AR_DATE"
-    t.date     "AR_POSTED"
-    t.string   "AR_AE",                 limit: 10
-    t.string   "AR_TERMS",              limit: 50
-    t.decimal  "AR_PERIOD",                        precision: 9,  scale: 0
-    t.string   "AR_PO",                 limit: 15
-    t.text     "AR_DESC"
-    t.date     "AR_DUE_DATE"
-    t.decimal  "AR_COUNT",                         precision: 9,  scale: 0
-    t.date     "AR_DISC_DUE"
-    t.decimal  "AR_DISC_AMT",                      precision: 15, scale: 2
-    t.decimal  "AR_AMT_PAID",                      precision: 15, scale: 2
-    t.decimal  "AR_TOTAL",                         precision: 15, scale: 2
-    t.decimal  "AR_DAYS",                          precision: 9,  scale: 0
-    t.decimal  "AR_TAX_AMT1",                      precision: 15, scale: 2
-    t.decimal  "AR_TAX_AMT2",                      precision: 15, scale: 2
-    t.decimal  "AR_TAXABLE1",                      precision: 15, scale: 2
-    t.decimal  "AR_TAXABLE2",                      precision: 15, scale: 2
-    t.decimal  "AR_TAX_RATE1",                     precision: 15, scale: 4
-    t.decimal  "AR_TAX_RATE2",                     precision: 15, scale: 4
-    t.decimal  "AR_TAX_CGL1",                      precision: 15, scale: 2
-    t.decimal  "AR_TAX_CGL2",                      precision: 15, scale: 2
-    t.string   "AR_STATUS",             limit: 20
-    t.integer  "AR_OPEN",               limit: 1
-    t.integer  "AR_JUMP",               limit: 1
-    t.decimal  "AR_DGL",                           precision: 15, scale: 2
-    t.decimal  "AR_CURR",                          precision: 15, scale: 2
-    t.decimal  "AR_30",                            precision: 15, scale: 2
-    t.decimal  "AR_60",                            precision: 15, scale: 2
-    t.decimal  "AR_90",                            precision: 15, scale: 2
-    t.decimal  "AR_120",                           precision: 15, scale: 2
-    t.string   "AR_ADDED_BY",           limit: 4
-    t.date     "AR_ADDED_WHEN"
-    t.string   "AR_CLIENT_CONTACT",     limit: 40
-    t.string   "AR_AGENCY_CONTACT",     limit: 40
-    t.integer  "AR_SHOW_SPECS",         limit: 1
-    t.string   "AR_RETAINR_NOTE",       limit: 80
-    t.decimal  "AR_RETAINER_AMT",                  precision: 15, scale: 2
-    t.decimal  "AR_RETAINER_GL",                   precision: 15, scale: 2
-    t.decimal  "AR_BILLING_TYPE",                  precision: 9,  scale: 0
-    t.decimal  "AR_COMM_AMT",                      precision: 15, scale: 2
-    t.decimal  "AR_COMM_GL",                       precision: 15, scale: 2
-    t.text     "AR_COMM_DESC"
-    t.decimal  "AR_MISC_AMT1",                     precision: 15, scale: 2
-    t.decimal  "AR_MISC_GL1",                      precision: 15, scale: 2
-    t.text     "AR_MISC_DESC1"
-    t.decimal  "AR_MISC_AMT2",                     precision: 15, scale: 2
-    t.decimal  "AR_MISC_GL2",                      precision: 15, scale: 2
-    t.text     "AR_MISC_DESC2"
-    t.string   "AR_ADDRESS1",           limit: 50
-    t.string   "AR_ADDRESS2",           limit: 50
-    t.string   "AR_ADDRESS3",           limit: 50
-    t.string   "AR_ADDRESS4",           limit: 50
-    t.string   "AR_ADDRESS5",           limit: 50
-    t.string   "AR_TO1",                limit: 10
-    t.string   "AR_TO2",                limit: 10
-    t.string   "AR_TO3",                limit: 10
-    t.string   "AR_TO4",                limit: 10
-    t.string   "AR_TO5",                limit: 10
-    t.string   "AR_ADDRESS6",           limit: 50
-    t.string   "AR_ZERO_AS",            limit: 10
-    t.decimal  "AR_FINANCE_CHG",                   precision: 15, scale: 2
-    t.decimal  "AR_FINANCE_AMT",                   precision: 15, scale: 2
-    t.decimal  "AR_FINANCE_CGL",                   precision: 15, scale: 2
-    t.decimal  "AR_ROLL_UP",                       precision: 15, scale: 0
-    t.decimal  "AR_SHOW_TOTALS",                   precision: 15, scale: 0
-    t.decimal  "AR_ADV_PMT",                       precision: 15, scale: 2
-    t.decimal  "AR_ADV_PMT_GL",                    precision: 15, scale: 2
-    t.string   "AR_CHARGE_NUM",         limit: 20
-    t.integer  "AR_PRINT_EST",          limit: 1
-    t.boolean  "AR_SHOW_HOURS"
-    t.decimal  "AR_UNPAID",                        precision: 9,  scale: 0
-    t.integer  "AR_KIND",               limit: 1
-    t.string   "AR_KEY",                limit: 20
-    t.string   "AR_SHIP_ADDRESS1",      limit: 50
-    t.string   "AR_SHIP_ADDRESS2",      limit: 50
-    t.string   "AR_SHIP_ADDRESS3",      limit: 50
-    t.string   "AR_SHIP_ADDRESS4",      limit: 50
-    t.string   "AR_SHIP_ADDRESS5",      limit: 50
-    t.string   "AR_SHIP_ADDRESS6",      limit: 50
-    t.string   "AR_PC",                 limit: 10
-    t.integer  "AR_APPROVED",           limit: 1
-    t.string   "AR_APPROVED_BY",        limit: 4
-    t.datetime "AR_APPROVED_DATE"
-    t.string   "AR_APPROVAL1",          limit: 40
-    t.string   "AR_APPROVAL2",          limit: 40
-    t.string   "AR_APPROVAL3",          limit: 40
-    t.date     "AR_RETURN_DATE"
-    t.text     "AR_BILL_INSTRUCTIONS"
-    t.date     "AR_EXPORTED"
-    t.integer  "AR_PMT_STATUS",         limit: 1
-    t.text     "AR_PMT_STATUS_NOTE"
-    t.datetime "AR_PMT_NEXT_DATE"
-    t.integer  "AR_PMT_NEXT_ACTION",    limit: 1
-    t.string   "AR_PMT_NEXT_WHO",       limit: 4
-    t.text     "AR_PMT_NEXT_NOTE"
-    t.decimal  "AR_PMT_NEXT_NUM",                  precision: 9,  scale: 0
-    t.string   "AR_BIZDEV_AE",          limit: 10
-    t.decimal  "AR_COMMISSIONABLE_AMT",            precision: 9,  scale: 2
-    t.decimal  "AR_COMM_RATE_AE",                  precision: 9,  scale: 2
-    t.decimal  "AR_COMM_RATE_BIZ",                 precision: 9,  scale: 2
-    t.date     "AR_DATE_PAID"
-    t.string   "AR_EDITED_BY",          limit: 4
-    t.datetime "AR_EDITED_WHEN"
-    t.string   "AR_POSTED_BY",          limit: 4
-    t.datetime "AR_POSTED_WHEN"
-    t.decimal  "AR_TERMS1",                        precision: 9,  scale: 0
-    t.decimal  "AR_TERMS2",                        precision: 9,  scale: 0
-    t.decimal  "AR_TERMS3",                        precision: 9,  scale: 0
-    t.string   "AR_TAX_AREA",           limit: 20
-    t.string   "AR_SHIP_ORG",           limit: 50
+  create_table "ar", primary_key: "ar_seq", force: true do |t|
+    t.string    "ar_num",                limit: 10
+    t.string    "ar_job_num",            limit: 10
+    t.string    "ar_client_num",         limit: 10
+    t.date      "ar_date"
+    t.date      "ar_posted"
+    t.string    "ar_ae",                 limit: 10
+    t.string    "ar_terms",              limit: 50
+    t.decimal   "ar_period",                        precision: 9,  scale: 0
+    t.string    "ar_po",                 limit: 15
+    t.text      "ar_desc"
+    t.date      "ar_due_date"
+    t.decimal   "ar_count",                         precision: 9,  scale: 0
+    t.date      "ar_disc_due"
+    t.decimal   "ar_disc_amt",                      precision: 15, scale: 2
+    t.decimal   "ar_amt_paid",                      precision: 15, scale: 2
+    t.decimal   "ar_total",                         precision: 15, scale: 2
+    t.decimal   "ar_days",                          precision: 9,  scale: 0
+    t.decimal   "ar_tax_amt1",                      precision: 15, scale: 2
+    t.decimal   "ar_tax_amt2",                      precision: 15, scale: 2
+    t.decimal   "ar_taxable1",                      precision: 15, scale: 2
+    t.decimal   "ar_taxable2",                      precision: 15, scale: 2
+    t.decimal   "ar_tax_rate1",                     precision: 15, scale: 4
+    t.decimal   "ar_tax_rate2",                     precision: 15, scale: 4
+    t.decimal   "ar_tax_cgl1",                      precision: 15, scale: 2
+    t.decimal   "ar_tax_cgl2",                      precision: 15, scale: 2
+    t.string    "ar_status",             limit: 20
+    t.integer   "ar_open",               limit: 1
+    t.integer   "ar_jump",               limit: 1
+    t.decimal   "ar_dgl",                           precision: 15, scale: 2
+    t.decimal   "ar_curr",                          precision: 15, scale: 2
+    t.decimal   "ar_30",                            precision: 15, scale: 2
+    t.decimal   "ar_60",                            precision: 15, scale: 2
+    t.decimal   "ar_90",                            precision: 15, scale: 2
+    t.decimal   "ar_120",                           precision: 15, scale: 2
+    t.string    "ar_added_by",           limit: 4
+    t.date      "ar_added_when"
+    t.string    "ar_client_contact",     limit: 40
+    t.string    "ar_agency_contact",     limit: 40
+    t.integer   "ar_show_specs",         limit: 1
+    t.string    "ar_retainr_note",       limit: 80
+    t.decimal   "ar_retainer_amt",                  precision: 15, scale: 2
+    t.decimal   "ar_retainer_gl",                   precision: 15, scale: 2
+    t.decimal   "ar_billing_type",                  precision: 9,  scale: 0
+    t.decimal   "ar_comm_amt",                      precision: 15, scale: 2
+    t.decimal   "ar_comm_gl",                       precision: 15, scale: 2
+    t.text      "ar_comm_desc"
+    t.decimal   "ar_misc_amt1",                     precision: 15, scale: 2
+    t.decimal   "ar_misc_gl1",                      precision: 15, scale: 2
+    t.text      "ar_misc_desc1"
+    t.decimal   "ar_misc_amt2",                     precision: 15, scale: 2
+    t.decimal   "ar_misc_gl2",                      precision: 15, scale: 2
+    t.text      "ar_misc_desc2"
+    t.string    "ar_address1",           limit: 50
+    t.string    "ar_address2",           limit: 50
+    t.string    "ar_address3",           limit: 50
+    t.string    "ar_address4",           limit: 50
+    t.string    "ar_address5",           limit: 50
+    t.string    "ar_to1",                limit: 10
+    t.string    "ar_to2",                limit: 10
+    t.string    "ar_to3",                limit: 10
+    t.string    "ar_to4",                limit: 10
+    t.string    "ar_to5",                limit: 10
+    t.string    "ar_address6",           limit: 50
+    t.string    "ar_zero_as",            limit: 10
+    t.decimal   "ar_finance_chg",                   precision: 15, scale: 2
+    t.decimal   "ar_finance_amt",                   precision: 15, scale: 2
+    t.decimal   "ar_finance_cgl",                   precision: 15, scale: 2
+    t.decimal   "ar_roll_up",                       precision: 15, scale: 0
+    t.decimal   "ar_show_totals",                   precision: 15, scale: 0
+    t.decimal   "ar_adv_pmt",                       precision: 15, scale: 2
+    t.decimal   "ar_adv_pmt_gl",                    precision: 15, scale: 2
+    t.string    "ar_charge_num",         limit: 20
+    t.integer   "ar_print_est",          limit: 1
+    t.boolean   "ar_show_hours"
+    t.decimal   "ar_unpaid",                        precision: 9,  scale: 0
+    t.integer   "ar_kind",               limit: 1
+    t.string    "ar_key",                limit: 20
+    t.string    "ar_ship_address1",      limit: 50
+    t.string    "ar_ship_address2",      limit: 50
+    t.string    "ar_ship_address3",      limit: 50
+    t.string    "ar_ship_address4",      limit: 50
+    t.string    "ar_ship_address5",      limit: 50
+    t.string    "ar_ship_address6",      limit: 50
+    t.string    "ar_pc",                 limit: 10
+    t.integer   "ar_approved",           limit: 1
+    t.string    "ar_approved_by",        limit: 4
+    t.timestamp "ar_approved_date"
+    t.string    "ar_approval1",          limit: 40
+    t.string    "ar_approval2",          limit: 40
+    t.string    "ar_approval3",          limit: 40
+    t.date      "ar_return_date"
+    t.text      "ar_bill_instructions"
+    t.date      "ar_exported"
+    t.integer   "ar_pmt_status",         limit: 1
+    t.text      "ar_pmt_status_note"
+    t.timestamp "ar_pmt_next_date"
+    t.integer   "ar_pmt_next_action",    limit: 1
+    t.string    "ar_pmt_next_who",       limit: 4
+    t.text      "ar_pmt_next_note"
+    t.decimal   "ar_pmt_next_num",                  precision: 9,  scale: 0
+    t.string    "ar_bizdev_ae",          limit: 10
+    t.decimal   "ar_commissionable_amt",            precision: 9,  scale: 2
+    t.decimal   "ar_comm_rate_ae",                  precision: 9,  scale: 2
+    t.decimal   "ar_comm_rate_biz",                 precision: 9,  scale: 2
+    t.date      "ar_date_paid"
+    t.string    "ar_edited_by",          limit: 4
+    t.timestamp "ar_edited_when"
+    t.string    "ar_posted_by",          limit: 4
+    t.timestamp "ar_posted_when"
+    t.decimal   "ar_terms1",                        precision: 9,  scale: 0
+    t.decimal   "ar_terms2",                        precision: 9,  scale: 0
+    t.decimal   "ar_terms3",                        precision: 9,  scale: 0
+    t.string    "ar_tax_area",           limit: 20
+    t.string    "ar_ship_org",           limit: 50
   end
 
-  add_index "ar", ["AR_ADDED_BY"], name: "AR_ADDED_BY", using: :btree
-  add_index "ar", ["AR_AE"], name: "AR_AE", using: :btree
-  add_index "ar", ["AR_BILLING_TYPE"], name: "AR_BILLING_TYPE", using: :btree
-  add_index "ar", ["AR_CLIENT_NUM"], name: "AR_CLIENT_NUM", using: :btree
-  add_index "ar", ["AR_DATE"], name: "AR_DATE", using: :btree
-  add_index "ar", ["AR_DATE_PAID"], name: "AR_DATE_PAID", using: :btree
-  add_index "ar", ["AR_DUE_DATE"], name: "AR_DUE_DATE", using: :btree
-  add_index "ar", ["AR_JOB_NUM"], name: "AR_JOB_NUM", using: :btree
-  add_index "ar", ["AR_KEY"], name: "AR_KEY", using: :btree
-  add_index "ar", ["AR_NUM"], name: "AR_NUM", using: :btree
-  add_index "ar", ["AR_PC"], name: "AR_PC", using: :btree
-  add_index "ar", ["AR_PERIOD"], name: "AR_PERIOD", using: :btree
-  add_index "ar", ["AR_PMT_NEXT_ACTION"], name: "AR_PMT_NEXT_ACTION", using: :btree
-  add_index "ar", ["AR_PMT_NEXT_DATE"], name: "AR_PMT_NEXT_DATE", using: :btree
-  add_index "ar", ["AR_PMT_STATUS"], name: "AR_PMT_STATUS", using: :btree
-  add_index "ar", ["AR_PO"], name: "AR_PO", using: :btree
-  add_index "ar", ["AR_POSTED"], name: "AR_POSTED", using: :btree
-  add_index "ar", ["AR_SEQ"], name: "AR_SEQ", unique: true, using: :btree
-  add_index "ar", ["AR_UNPAID"], name: "AR_UNPAID", using: :btree
+  add_index "ar", ["ar_added_by"], name: "ar_added_by"
+  add_index "ar", ["ar_ae"], name: "ar_ae"
+  add_index "ar", ["ar_billing_type"], name: "ar_billing_type"
+  add_index "ar", ["ar_client_num"], name: "ar_client_num"
+  add_index "ar", ["ar_date"], name: "ar_date"
+  add_index "ar", ["ar_date_paid"], name: "ar_date_paid"
+  add_index "ar", ["ar_due_date"], name: "ar_due_date"
+  add_index "ar", ["ar_job_num"], name: "ar_job_num"
+  add_index "ar", ["ar_key"], name: "ar_key"
+  add_index "ar", ["ar_num"], name: "ar_num"
+  add_index "ar", ["ar_pc"], name: "ar_pc"
+  add_index "ar", ["ar_period"], name: "ar_period"
+  add_index "ar", ["ar_pmt_next_action"], name: "ar_pmt_next_action"
+  add_index "ar", ["ar_pmt_next_date"], name: "ar_pmt_next_date"
+  add_index "ar", ["ar_pmt_status"], name: "ar_pmt_status"
+  add_index "ar", ["ar_po"], name: "ar_po"
+  add_index "ar", ["ar_posted"], name: "ar_posted"
+  add_index "ar", ["ar_unpaid"], name: "ar_unpaid"
 
-  create_table "ar_items", primary_key: "AX_SEQ", force: true do |t|
-    t.string   "AX_JOB_NUM",        limit: 10
-    t.string   "AX_TASK",           limit: 4
-    t.string   "AX_AR_NUM",         limit: 10
-    t.decimal  "AX_AMT",                       precision: 15, scale: 2
-    t.decimal  "AX_SORT",                      precision: 9,  scale: 0
-    t.decimal  "AX_GROUP",                     precision: 9,  scale: 0
-    t.boolean  "AX_TAXABLE1"
-    t.boolean  "AX_TAXABLE2"
-    t.text     "AX_DESC"
-    t.date     "AX_DATE"
-    t.decimal  "AX_CGL",                       precision: 15, scale: 2
-    t.date     "AX_POSTED"
-    t.decimal  "AX_PERIOD",                    precision: 9,  scale: 0
-    t.string   "AX_NAME",           limit: 50
-    t.decimal  "AX_HOURS_BILLED",              precision: 15, scale: 2
-    t.decimal  "AX_HIDE",                      precision: 9,  scale: 0
-    t.string   "AX_ROLL_UP",        limit: 4
-    t.integer  "AX_SHOW_DESC",      limit: 1
-    t.decimal  "AX_QTY",                       precision: 15, scale: 0
-    t.string   "AX_POX_KEY",        limit: 15
-    t.string   "AX_PUB",            limit: 20
-    t.string   "AX_ISSUE_DATE",     limit: 15
-    t.decimal  "AX_COST",                      precision: 9,  scale: 2
-    t.date     "AX_EXPORTED"
-    t.string   "AX_PC",             limit: 10
-    t.string   "AX_CLIENT_NUM",     limit: 10
-    t.integer  "AX_COMMISSIONABLE", limit: 1
-    t.string   "AX_ADDED_BY",       limit: 4
-    t.datetime "AX_ADDED_WHEN"
-    t.string   "AX_EDITED_BY",      limit: 4
-    t.datetime "AX_EDITED_WHEN"
+  create_table "ar_items", primary_key: "ax_seq", force: true do |t|
+    t.string    "ax_job_num",        limit: 10
+    t.string    "ax_task",           limit: 4
+    t.string    "ax_ar_num",         limit: 10
+    t.decimal   "ax_amt",                       precision: 15, scale: 2
+    t.decimal   "ax_sort",                      precision: 9,  scale: 0
+    t.decimal   "ax_group",                     precision: 9,  scale: 0
+    t.boolean   "ax_taxable1"
+    t.boolean   "ax_taxable2"
+    t.text      "ax_desc"
+    t.date      "ax_date"
+    t.decimal   "ax_cgl",                       precision: 15, scale: 2
+    t.date      "ax_posted"
+    t.decimal   "ax_period",                    precision: 9,  scale: 0
+    t.string    "ax_name",           limit: 50
+    t.decimal   "ax_hours_billed",              precision: 15, scale: 2
+    t.decimal   "ax_hide",                      precision: 9,  scale: 0
+    t.string    "ax_roll_up",        limit: 4
+    t.integer   "ax_show_desc",      limit: 1
+    t.decimal   "ax_qty",                       precision: 15, scale: 0
+    t.string    "ax_pox_key",        limit: 15
+    t.string    "ax_pub",            limit: 20
+    t.string    "ax_issue_date",     limit: 15
+    t.decimal   "ax_cost",                      precision: 9,  scale: 2
+    t.date      "ax_exported"
+    t.string    "ax_pc",             limit: 10
+    t.string    "ax_client_num",     limit: 10
+    t.integer   "ax_commissionable", limit: 1
+    t.string    "ax_added_by",       limit: 4
+    t.timestamp "ax_added_when"
+    t.string    "ax_edited_by",      limit: 4
+    t.timestamp "ax_edited_when"
   end
 
-  add_index "ar_items", ["AX_AR_NUM"], name: "AX_AR_NUM", using: :btree
-  add_index "ar_items", ["AX_DATE"], name: "AX_DATE", using: :btree
-  add_index "ar_items", ["AX_JOB_NUM"], name: "AX_JOB_NUM", using: :btree
-  add_index "ar_items", ["AX_PERIOD"], name: "AX_PERIOD", using: :btree
-  add_index "ar_items", ["AX_POSTED"], name: "AX_POSTED", using: :btree
-  add_index "ar_items", ["AX_POX_KEY"], name: "AX_POX_KEY", using: :btree
-  add_index "ar_items", ["AX_SEQ"], name: "AX_SEQ", unique: true, using: :btree
-  add_index "ar_items", ["AX_TASK"], name: "AX_TASK", using: :btree
+  add_index "ar_items", ["ax_ar_num"], name: "ax_ar_num"
+  add_index "ar_items", ["ax_date"], name: "ax_date"
+  add_index "ar_items", ["ax_job_num"], name: "ax_job_num"
+  add_index "ar_items", ["ax_period"], name: "ax_period"
+  add_index "ar_items", ["ax_posted"], name: "ax_posted"
+  add_index "ar_items", ["ax_pox_key"], name: "ax_pox_key"
+  add_index "ar_items", ["ax_task"], name: "ax_task"
 
-  create_table "archived_jobs", primary_key: "AJ_SEQ", force: true do |t|
-    t.string "AJ_JOB_NUM",  limit: 10
-    t.string "AJ_NAME",     limit: 50
-    t.string "AJ_FORM",     limit: 25
-    t.string "AJ_PRINTER",  limit: 25
-    t.string "AJ_ARTIST",   limit: 25
-    t.string "AJ_LOCATION", limit: 25
-    t.text   "AJ_REF"
+  create_table "archived_jobs", primary_key: "aj_seq", force: true do |t|
+    t.string "aj_job_num",  limit: 10
+    t.string "aj_name",     limit: 50
+    t.string "aj_form",     limit: 25
+    t.string "aj_printer",  limit: 25
+    t.string "aj_artist",   limit: 25
+    t.string "aj_location", limit: 25
+    t.text   "aj_ref"
   end
 
-  add_index "archived_jobs", ["AJ_JOB_NUM"], name: "AJ_JOB_NUM", using: :btree
-  add_index "archived_jobs", ["AJ_SEQ"], name: "AJ_SEQ", unique: true, using: :btree
+  add_index "archived_jobs", ["aj_job_num"], name: "aj_job_num"
 
-  create_table "assets_files", primary_key: "ASF_SEQ", force: true do |t|
-    t.string   "ASF_JOB_NUM",           limit: 10
-    t.string   "ASF_FILE_NAME",         limit: 40
-    t.string   "ASF_FILE_KIND",         limit: 20
-    t.string   "ASF_ADDED_BY",          limit: 4
-    t.datetime "ASF_DATE_ADDED"
-    t.date     "ASF_DATE_ACQUIRED"
-    t.text     "ASF_DESC"
-    t.string   "ASF_KEYWORD1",          limit: 20
-    t.string   "ASF_KEYWORD2",          limit: 20
-    t.string   "ASF_KEYWORD3",          limit: 20
-    t.string   "ASF_SOURCE",            limit: 10
-    t.string   "ASF_FIELD1_LABEL",      limit: 20
-    t.string   "ASF_FIELD2_LABEL",      limit: 20
-    t.string   "ASF_FIELD3_LABEL",      limit: 20
-    t.string   "ASF_FIELD4_LABEL",      limit: 20
-    t.string   "ASF_FIELD5_LABEL",      limit: 20
-    t.string   "ASF_FIELD1",            limit: 20
-    t.string   "ASF_FIELD2",            limit: 20
-    t.string   "ASF_FIELD3",            limit: 20
-    t.string   "ASF_FIELD4",            limit: 20
-    t.string   "ASF_FIELD5",            limit: 20
-    t.integer  "ASF_OWNERSHIP",         limit: 1
-    t.string   "ASF_AUTHOR_NAME",       limit: 40
-    t.string   "ASF_AUTHOR_PHONE",      limit: 15
-    t.string   "ASF_COPYRIGHT",         limit: 80
-    t.text     "ASF_USAGE_RESTRICTION"
-    t.datetime "ASF_LAST_MOD_DATE"
-    t.string   "ASF_LAST_MOD_BY",       limit: 4
-    t.text     "ASF_LAST_MOD_DESC"
-    t.integer  "ASF_PROTECTED",         limit: 1
-    t.string   "ASF_EDITED_BY",         limit: 4
-    t.datetime "ASF_EDITED_WHEN"
+  create_table "assets_files", primary_key: "asf_seq", force: true do |t|
+    t.string    "asf_job_num",           limit: 10
+    t.string    "asf_file_name",         limit: 40
+    t.string    "asf_file_kind",         limit: 20
+    t.string    "asf_added_by",          limit: 4
+    t.timestamp "asf_date_added"
+    t.date      "asf_date_acquired"
+    t.text      "asf_desc"
+    t.string    "asf_keyword1",          limit: 20
+    t.string    "asf_keyword2",          limit: 20
+    t.string    "asf_keyword3",          limit: 20
+    t.string    "asf_source",            limit: 10
+    t.string    "asf_field1_label",      limit: 20
+    t.string    "asf_field2_label",      limit: 20
+    t.string    "asf_field3_label",      limit: 20
+    t.string    "asf_field4_label",      limit: 20
+    t.string    "asf_field5_label",      limit: 20
+    t.string    "asf_field1",            limit: 20
+    t.string    "asf_field2",            limit: 20
+    t.string    "asf_field3",            limit: 20
+    t.string    "asf_field4",            limit: 20
+    t.string    "asf_field5",            limit: 20
+    t.integer   "asf_ownership",         limit: 1
+    t.string    "asf_author_name",       limit: 40
+    t.string    "asf_author_phone",      limit: 15
+    t.string    "asf_copyright",         limit: 80
+    t.text      "asf_usage_restriction"
+    t.timestamp "asf_last_mod_date"
+    t.string    "asf_last_mod_by",       limit: 4
+    t.text      "asf_last_mod_desc"
+    t.integer   "asf_protected",         limit: 1
+    t.string    "asf_edited_by",         limit: 4
+    t.timestamp "asf_edited_when"
   end
 
-  add_index "assets_files", ["ASF_FILE_NAME"], name: "ASF_FILE_NAME", using: :btree
-  add_index "assets_files", ["ASF_JOB_NUM"], name: "ASF_JOB_NUM", using: :btree
-  add_index "assets_files", ["ASF_KEYWORD1"], name: "ASF_KEYWORD1", using: :btree
-  add_index "assets_files", ["ASF_KEYWORD2"], name: "ASF_KEYWORD2", using: :btree
-  add_index "assets_files", ["ASF_KEYWORD3"], name: "ASF_KEYWORD3", using: :btree
-  add_index "assets_files", ["ASF_SEQ"], name: "ASF_SEQ", unique: true, using: :btree
+  add_index "assets_files", ["asf_file_name"], name: "asf_file_name"
+  add_index "assets_files", ["asf_job_num"], name: "asf_job_num"
+  add_index "assets_files", ["asf_keyword1"], name: "asf_keyword1"
+  add_index "assets_files", ["asf_keyword2"], name: "asf_keyword2"
+  add_index "assets_files", ["asf_keyword3"], name: "asf_keyword3"
 
-  create_table "assets_prefs", primary_key: "ASP_SEQ", force: true do |t|
-    t.string   "ASP_CODE",          limit: 4
-    t.integer  "ASP_AUTO_FOLDER",   limit: 1
-    t.string   "ASP_ART_SERVER",    limit: 200
-    t.string   "ASP_IP",            limit: 15
-    t.string   "ASP_FIELD1",        limit: 20
-    t.string   "ASP_FIELD2",        limit: 20
-    t.string   "ASP_FIELD3",        limit: 20
-    t.string   "ASP_FIELD4",        limit: 20
-    t.string   "ASP_FIELD5",        limit: 20
-    t.integer  "ASP_TRACK_USAGE",   limit: 1
-    t.string   "ASP_ART_SERVER_W",  limit: 200
-    t.string   "ASP_EDITED_BY",     limit: 4
-    t.datetime "ASP_EDITED_WHEN"
-    t.integer  "ASP_INCL_JNAME",    limit: 1
-    t.integer  "ASP_ORG_BY_CLIENT", limit: 1
+  create_table "assets_prefs", primary_key: "asp_seq", force: true do |t|
+    t.string    "asp_code",          limit: 4
+    t.integer   "asp_auto_folder",   limit: 1
+    t.string    "asp_art_server",    limit: 200
+    t.string    "asp_ip",            limit: 15
+    t.string    "asp_field1",        limit: 20
+    t.string    "asp_field2",        limit: 20
+    t.string    "asp_field3",        limit: 20
+    t.string    "asp_field4",        limit: 20
+    t.string    "asp_field5",        limit: 20
+    t.integer   "asp_track_usage",   limit: 1
+    t.string    "asp_art_server_w",  limit: 200
+    t.string    "asp_edited_by",     limit: 4
+    t.timestamp "asp_edited_when"
+    t.integer   "asp_incl_jname",    limit: 1
+    t.integer   "asp_org_by_client", limit: 1
   end
 
-  add_index "assets_prefs", ["ASP_CODE"], name: "ASP_CODE", using: :btree
-  add_index "assets_prefs", ["ASP_SEQ"], name: "ASP_SEQ", unique: true, using: :btree
+  add_index "assets_prefs", ["asp_code"], name: "asp_code"
 
-  create_table "assets_types", primary_key: "AST_SEQ", force: true do |t|
-    t.string  "AST_FILE_EXT", limit: 4
-    t.string  "AST_APP_NAME", limit: 100
-    t.string  "AST_DESC",     limit: 200
-    t.string  "AST_CREATOR",  limit: 10
-    t.binary  "AST_ICON",     limit: 16777215
-    t.string  "AST_USER",     limit: 4
-    t.integer "AST_KIND",     limit: 1
+  create_table "assets_types", primary_key: "ast_seq", force: true do |t|
+    t.string  "ast_file_ext", limit: 4
+    t.string  "ast_app_name", limit: 100
+    t.string  "ast_desc",     limit: 200
+    t.string  "ast_creator",  limit: 10
+    t.binary  "ast_icon"
+    t.string  "ast_user",     limit: 4
+    t.integer "ast_kind",     limit: 1
   end
 
-  add_index "assets_types", ["AST_APP_NAME"], name: "AST_APP_NAME", using: :btree
-  add_index "assets_types", ["AST_CREATOR"], name: "AST_CREATOR", using: :btree
-  add_index "assets_types", ["AST_FILE_EXT"], name: "AST_FILE_EXT", using: :btree
-  add_index "assets_types", ["AST_SEQ"], name: "AST_SEQ", unique: true, using: :btree
-  add_index "assets_types", ["AST_USER"], name: "AST_USER", using: :btree
+  add_index "assets_types", ["ast_app_name"], name: "ast_app_name"
+  add_index "assets_types", ["ast_creator"], name: "ast_creator"
+  add_index "assets_types", ["ast_file_ext"], name: "ast_file_ext"
+  add_index "assets_types", ["ast_user"], name: "ast_user"
 
-  create_table "avail", primary_key: "AV_SEQ", force: true do |t|
-    t.string   "AV_INITIALS",   limit: 10
-    t.date     "AV_DATE"
-    t.string   "AV_KEY",        limit: 16
-    t.integer  "AV_KIND",       limit: 1
-    t.text     "AV_NOTE"
-    t.string   "AV_DESC",       limit: 20
-    t.string   "AV_ADDED_BY",   limit: 4
-    t.datetime "AV_ADDED_WHEN"
-    t.string   "AV_EDITED_BY",  limit: 4
-    t.datetime "AV_EDIT_WHEN"
+  create_table "avail", primary_key: "av_seq", force: true do |t|
+    t.string    "av_initials",   limit: 10
+    t.date      "av_date"
+    t.string    "av_key",        limit: 16
+    t.integer   "av_kind",       limit: 1
+    t.text      "av_note"
+    t.string    "av_desc",       limit: 20
+    t.string    "av_added_by",   limit: 4
+    t.timestamp "av_added_when"
+    t.string    "av_edited_by",  limit: 4
+    t.timestamp "av_edit_when"
   end
 
-  add_index "avail", ["AV_ADDED_WHEN"], name: "AV_ADDED_WHEN", using: :btree
-  add_index "avail", ["AV_DATE"], name: "AV_DATE", using: :btree
-  add_index "avail", ["AV_INITIALS"], name: "AV_INITIALS", using: :btree
-  add_index "avail", ["AV_KEY"], name: "AV_KEY", using: :btree
-  add_index "avail", ["AV_SEQ"], name: "AV_SEQ", unique: true, using: :btree
+  add_index "avail", ["av_added_when"], name: "av_added_when"
+  add_index "avail", ["av_date"], name: "av_date"
+  add_index "avail", ["av_initials"], name: "av_initials"
+  add_index "avail", ["av_key"], name: "av_key"
 
-  create_table "billing_info", primary_key: "B_SEQ", force: true do |t|
-    t.string   "B_JOB_NUM",     limit: 10
-    t.string   "B_COST_CTR1",   limit: 15
-    t.string   "B_COST_CTR2",   limit: 15
-    t.string   "B_COST_CTR3",   limit: 15
-    t.string   "B_COST_CTR4",   limit: 15
-    t.string   "B_COST_CTR5",   limit: 15
-    t.string   "B_COST_CTR6",   limit: 15
-    t.string   "B_COST_CTR7",   limit: 15
-    t.string   "B_COST_CTR8",   limit: 15
-    t.string   "B_COST_CTR9",   limit: 15
-    t.string   "B_ACCT1",       limit: 10
-    t.string   "B_ACCT2",       limit: 10
-    t.string   "B_ACCT3",       limit: 10
-    t.string   "B_ACCT4",       limit: 10
-    t.string   "B_ACCT5",       limit: 10
-    t.string   "B_ACCT6",       limit: 10
-    t.string   "B_ACCT7",       limit: 10
-    t.string   "B_ACCT8",       limit: 10
-    t.string   "B_ACCT9",       limit: 10
-    t.decimal  "B_PERCENT1",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT2",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT3",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT4",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT5",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT6",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT7",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT8",               precision: 9, scale: 2
-    t.decimal  "B_PERCENT9",               precision: 9, scale: 2
-    t.string   "B_EDITED_BY",   limit: 4
-    t.datetime "B_EDITED_WHEN"
+  create_table "billing_info", primary_key: "b_seq", force: true do |t|
+    t.string    "b_job_num",     limit: 10
+    t.string    "b_cost_ctr1",   limit: 15
+    t.string    "b_cost_ctr2",   limit: 15
+    t.string    "b_cost_ctr3",   limit: 15
+    t.string    "b_cost_ctr4",   limit: 15
+    t.string    "b_cost_ctr5",   limit: 15
+    t.string    "b_cost_ctr6",   limit: 15
+    t.string    "b_cost_ctr7",   limit: 15
+    t.string    "b_cost_ctr8",   limit: 15
+    t.string    "b_cost_ctr9",   limit: 15
+    t.string    "b_acct1",       limit: 10
+    t.string    "b_acct2",       limit: 10
+    t.string    "b_acct3",       limit: 10
+    t.string    "b_acct4",       limit: 10
+    t.string    "b_acct5",       limit: 10
+    t.string    "b_acct6",       limit: 10
+    t.string    "b_acct7",       limit: 10
+    t.string    "b_acct8",       limit: 10
+    t.string    "b_acct9",       limit: 10
+    t.decimal   "b_percent1",               precision: 9, scale: 2
+    t.decimal   "b_percent2",               precision: 9, scale: 2
+    t.decimal   "b_percent3",               precision: 9, scale: 2
+    t.decimal   "b_percent4",               precision: 9, scale: 2
+    t.decimal   "b_percent5",               precision: 9, scale: 2
+    t.decimal   "b_percent6",               precision: 9, scale: 2
+    t.decimal   "b_percent7",               precision: 9, scale: 2
+    t.decimal   "b_percent8",               precision: 9, scale: 2
+    t.decimal   "b_percent9",               precision: 9, scale: 2
+    t.string    "b_edited_by",   limit: 4
+    t.timestamp "b_edited_when"
   end
 
-  add_index "billing_info", ["B_JOB_NUM"], name: "B_JOB_NUM", using: :btree
-  add_index "billing_info", ["B_SEQ"], name: "B_SEQ", unique: true, using: :btree
+  add_index "billing_info", ["b_job_num"], name: "b_job_num"
 
-  create_table "bookmarks", primary_key: "BOOK_SEQ", force: true do |t|
-    t.string  "BOOK_WORK",       limit: 4
-    t.string  "BOOK_WINDOW",     limit: 200
-    t.text    "BOOK_FIND_VALUE"
-    t.string  "BOOK_DESC",       limit: 200
-    t.string  "BOOK_FIND_FIELD", limit: 200
-    t.decimal "BOOK_SORT",                   precision: 9, scale: 0
-    t.text    "BOOK_DESC_USER"
-    t.text    "BOOK_DO_METHOD"
-    t.text    "BOOK_DO_CALC"
+  create_table "bookmarks", primary_key: "book_seq", force: true do |t|
+    t.string  "book_work",       limit: 4
+    t.string  "book_window",     limit: 200
+    t.text    "book_find_value"
+    t.string  "book_desc",       limit: 200
+    t.string  "book_find_field", limit: 200
+    t.decimal "book_sort",                   precision: 9, scale: 0
+    t.text    "book_desc_user"
+    t.text    "book_do_method"
+    t.text    "book_do_calc"
   end
 
-  add_index "bookmarks", ["BOOK_SEQ"], name: "BOOK_SEQ", unique: true, using: :btree
-
-  create_table "cal", primary_key: "CL_SEQ", force: true do |t|
-    t.string  "CL_MONTH", limit: 20
-    t.decimal "CL_YEAR",              precision: 9, scale: 0
-    t.integer "CL_DAY01", limit: 1
-    t.integer "CL_DAY02", limit: 1
-    t.integer "CL_DAY03", limit: 1
-    t.integer "CL_DAY04", limit: 1
-    t.integer "CL_DAY05", limit: 1
-    t.integer "CL_DAY06", limit: 1
-    t.integer "CL_DAY07", limit: 1
-    t.integer "CL_DAY08", limit: 1
-    t.integer "CL_DAY09", limit: 1
-    t.integer "CL_DAY10", limit: 1
-    t.integer "CL_DAY11", limit: 1
-    t.integer "CL_DAY12", limit: 1
-    t.integer "CL_DAY13", limit: 1
-    t.integer "CL_DAY14", limit: 1
-    t.integer "CL_DAY15", limit: 1
-    t.integer "CL_DAY16", limit: 1
-    t.integer "CL_DAY17", limit: 1
-    t.integer "CL_DAY18", limit: 1
-    t.integer "CL_DAY19", limit: 1
-    t.integer "CL_DAY20", limit: 1
-    t.integer "CL_DAY21", limit: 1
-    t.integer "CL_DAY22", limit: 1
-    t.integer "CL_DAY23", limit: 1
-    t.integer "CL_DAY24", limit: 1
-    t.integer "CL_DAY25", limit: 1
-    t.integer "CL_DAY26", limit: 1
-    t.integer "CL_DAY27", limit: 1
-    t.integer "CL_DAY28", limit: 1
-    t.integer "CL_DAY29", limit: 1
-    t.integer "CL_DAY30", limit: 1
-    t.integer "CL_DAY31", limit: 1
-    t.integer "CL_DAY32", limit: 1
-    t.integer "CL_DAY33", limit: 1
-    t.integer "CL_DAY34", limit: 1
-    t.integer "CL_DAY35", limit: 1
-    t.integer "CL_DAY36", limit: 1
-    t.integer "CL_DAY37", limit: 1
-    t.integer "CL_DAY38", limit: 1
-    t.integer "CL_DAY39", limit: 1
-    t.integer "CL_DAY40", limit: 1
-    t.integer "CL_DAY41", limit: 1
-    t.integer "CL_DAY42", limit: 1
-    t.string  "CL_CAL01", limit: 100
-    t.string  "CL_CAL02", limit: 100
-    t.string  "CL_CAL03", limit: 100
-    t.string  "CL_CAL04", limit: 100
-    t.string  "CL_CAL05", limit: 100
-    t.string  "CL_CAL06", limit: 100
-    t.string  "CL_CAL07", limit: 100
-    t.string  "CL_CAL08", limit: 100
-    t.string  "CL_CAL09", limit: 100
-    t.string  "CL_CAL10", limit: 100
-    t.string  "CL_CAL11", limit: 100
-    t.string  "CL_CAL12", limit: 100
-    t.string  "CL_CAL13", limit: 100
-    t.string  "CL_CAL14", limit: 100
-    t.string  "CL_CAL15", limit: 100
-    t.string  "CL_CAL16", limit: 100
-    t.string  "CL_CAL17", limit: 100
-    t.string  "CL_CAL18", limit: 100
-    t.string  "CL_CAL19", limit: 100
-    t.string  "CL_CAL20", limit: 100
-    t.string  "CL_CAL21", limit: 100
-    t.string  "CL_CAL22", limit: 100
-    t.string  "CL_CAL23", limit: 100
-    t.string  "CL_CAL24", limit: 100
-    t.string  "CL_CAL25", limit: 100
-    t.string  "CL_CAL26", limit: 100
-    t.string  "CL_CAL27", limit: 100
-    t.string  "CL_CAL28", limit: 100
-    t.string  "CL_CAL29", limit: 100
-    t.string  "CL_CAL30", limit: 100
-    t.string  "CL_CAL31", limit: 100
-    t.string  "CL_CAL32", limit: 100
-    t.string  "CL_CAL33", limit: 100
-    t.string  "CL_CAL34", limit: 100
-    t.string  "CL_CAL35", limit: 100
-    t.string  "CL_CAL36", limit: 100
-    t.string  "CL_CAL37", limit: 100
-    t.string  "CL_CAL38", limit: 100
-    t.string  "CL_CAL39", limit: 100
-    t.string  "CL_CAL40", limit: 100
-    t.string  "CL_CAL41", limit: 100
-    t.string  "CL_CAL42", limit: 100
+  create_table "cal", primary_key: "cl_seq", force: true do |t|
+    t.string  "cl_month", limit: 20
+    t.decimal "cl_year",              precision: 9, scale: 0
+    t.integer "cl_day01", limit: 1
+    t.integer "cl_day02", limit: 1
+    t.integer "cl_day03", limit: 1
+    t.integer "cl_day04", limit: 1
+    t.integer "cl_day05", limit: 1
+    t.integer "cl_day06", limit: 1
+    t.integer "cl_day07", limit: 1
+    t.integer "cl_day08", limit: 1
+    t.integer "cl_day09", limit: 1
+    t.integer "cl_day10", limit: 1
+    t.integer "cl_day11", limit: 1
+    t.integer "cl_day12", limit: 1
+    t.integer "cl_day13", limit: 1
+    t.integer "cl_day14", limit: 1
+    t.integer "cl_day15", limit: 1
+    t.integer "cl_day16", limit: 1
+    t.integer "cl_day17", limit: 1
+    t.integer "cl_day18", limit: 1
+    t.integer "cl_day19", limit: 1
+    t.integer "cl_day20", limit: 1
+    t.integer "cl_day21", limit: 1
+    t.integer "cl_day22", limit: 1
+    t.integer "cl_day23", limit: 1
+    t.integer "cl_day24", limit: 1
+    t.integer "cl_day25", limit: 1
+    t.integer "cl_day26", limit: 1
+    t.integer "cl_day27", limit: 1
+    t.integer "cl_day28", limit: 1
+    t.integer "cl_day29", limit: 1
+    t.integer "cl_day30", limit: 1
+    t.integer "cl_day31", limit: 1
+    t.integer "cl_day32", limit: 1
+    t.integer "cl_day33", limit: 1
+    t.integer "cl_day34", limit: 1
+    t.integer "cl_day35", limit: 1
+    t.integer "cl_day36", limit: 1
+    t.integer "cl_day37", limit: 1
+    t.integer "cl_day38", limit: 1
+    t.integer "cl_day39", limit: 1
+    t.integer "cl_day40", limit: 1
+    t.integer "cl_day41", limit: 1
+    t.integer "cl_day42", limit: 1
+    t.string  "cl_cal01", limit: 100
+    t.string  "cl_cal02", limit: 100
+    t.string  "cl_cal03", limit: 100
+    t.string  "cl_cal04", limit: 100
+    t.string  "cl_cal05", limit: 100
+    t.string  "cl_cal06", limit: 100
+    t.string  "cl_cal07", limit: 100
+    t.string  "cl_cal08", limit: 100
+    t.string  "cl_cal09", limit: 100
+    t.string  "cl_cal10", limit: 100
+    t.string  "cl_cal11", limit: 100
+    t.string  "cl_cal12", limit: 100
+    t.string  "cl_cal13", limit: 100
+    t.string  "cl_cal14", limit: 100
+    t.string  "cl_cal15", limit: 100
+    t.string  "cl_cal16", limit: 100
+    t.string  "cl_cal17", limit: 100
+    t.string  "cl_cal18", limit: 100
+    t.string  "cl_cal19", limit: 100
+    t.string  "cl_cal20", limit: 100
+    t.string  "cl_cal21", limit: 100
+    t.string  "cl_cal22", limit: 100
+    t.string  "cl_cal23", limit: 100
+    t.string  "cl_cal24", limit: 100
+    t.string  "cl_cal25", limit: 100
+    t.string  "cl_cal26", limit: 100
+    t.string  "cl_cal27", limit: 100
+    t.string  "cl_cal28", limit: 100
+    t.string  "cl_cal29", limit: 100
+    t.string  "cl_cal30", limit: 100
+    t.string  "cl_cal31", limit: 100
+    t.string  "cl_cal32", limit: 100
+    t.string  "cl_cal33", limit: 100
+    t.string  "cl_cal34", limit: 100
+    t.string  "cl_cal35", limit: 100
+    t.string  "cl_cal36", limit: 100
+    t.string  "cl_cal37", limit: 100
+    t.string  "cl_cal38", limit: 100
+    t.string  "cl_cal39", limit: 100
+    t.string  "cl_cal40", limit: 100
+    t.string  "cl_cal41", limit: 100
+    t.string  "cl_cal42", limit: 100
   end
 
-  add_index "cal", ["CL_DAY02"], name: "CL_DAY02", using: :btree
-  add_index "cal", ["CL_SEQ"], name: "CL_SEQ", unique: true, using: :btree
+  add_index "cal", ["cl_day02"], name: "cl_day02"
 
-  create_table "calendar", primary_key: "CAL_SEQ", force: true do |t|
-    t.integer "CAL_KIND",        limit: 1
-    t.date    "CAL_DATE"
-    t.string  "CAL_TO_FROM",     limit: 30
-    t.decimal "CAL_AMT",                     precision: 9, scale: 2
-    t.string  "CAL_ADDED_BY",    limit: 3
-    t.text    "CAL_DESC"
-    t.text    "CAL_MAIL_TO"
-    t.integer "CAL_NOTIFIED",    limit: 1
-    t.time    "CAL_TIME"
-    t.integer "CAL_PRIORITY",    limit: 1
-    t.string  "CAL_STATUS",      limit: 100
-    t.string  "CAL_ID",          limit: 10
-    t.string  "CAL_CLIENT_NUM",  limit: 10
-    t.string  "CAL_SUBJECT",     limit: 150
-    t.integer "CAL_NOTIFY_DAYS", limit: 1
-    t.string  "CAL_LOCATION",    limit: 25
-    t.string  "CAL_JOB_NUM",     limit: 15
-    t.string  "CAL_TASK",        limit: 4
+  create_table "calendar", primary_key: "cal_seq", force: true do |t|
+    t.integer "cal_kind",        limit: 1
+    t.date    "cal_date"
+    t.string  "cal_to_from",     limit: 30
+    t.decimal "cal_amt",                     precision: 9, scale: 2
+    t.string  "cal_added_by",    limit: 3
+    t.text    "cal_desc"
+    t.text    "cal_mail_to"
+    t.integer "cal_notified",    limit: 1
+    t.time    "cal_time"
+    t.integer "cal_priority",    limit: 1
+    t.string  "cal_status",      limit: 100
+    t.string  "cal_id",          limit: 10
+    t.string  "cal_client_num",  limit: 10
+    t.string  "cal_subject",     limit: 150
+    t.integer "cal_notify_days", limit: 1
+    t.string  "cal_location",    limit: 25
+    t.string  "cal_job_num",     limit: 15
+    t.string  "cal_task",        limit: 4
   end
 
-  add_index "calendar", ["CAL_CLIENT_NUM"], name: "CAL_CLIENT_NUM", using: :btree
-  add_index "calendar", ["CAL_DATE"], name: "CAL_DATE", using: :btree
-  add_index "calendar", ["CAL_ID"], name: "CAL_ID", using: :btree
-  add_index "calendar", ["CAL_KIND"], name: "CAL_KIND", using: :btree
-  add_index "calendar", ["CAL_SEQ"], name: "CAL_SEQ", unique: true, using: :btree
+  add_index "calendar", ["cal_client_num"], name: "cal_client_num"
+  add_index "calendar", ["cal_date"], name: "cal_date"
+  add_index "calendar", ["cal_id"], name: "cal_id"
+  add_index "calendar", ["cal_kind"], name: "cal_kind"
 
-  create_table "change_items", primary_key: "CHX_SEQ", force: true do |t|
-    t.string   "CHX_JOB_NUM",     limit: 10
-    t.string   "CHX_TASK",        limit: 4
-    t.string   "CHX_NAME",        limit: 100
-    t.decimal  "CHX_HOURS",                   precision: 9, scale: 2
-    t.decimal  "CHX_BUDGET",                  precision: 9, scale: 2
-    t.decimal  "CHX_ESTIMATE",                precision: 9, scale: 2
-    t.text     "CHX_NOTES"
-    t.string   "CHX_NUM",         limit: 14
-    t.integer  "CHX_TAXABLE1",    limit: 1
-    t.integer  "CHX_TAXABLE2",    limit: 1
-    t.integer  "CHX_ROLLUP",      limit: 1
-    t.string   "CHX_ADDED_BY",    limit: 4
-    t.datetime "CHX_ADDED_WHEN"
-    t.string   "CHX_EDITED_BY",   limit: 4
-    t.datetime "CHX_EDITED_WHEN"
+  create_table "change_items", primary_key: "chx_seq", force: true do |t|
+    t.string    "chx_job_num",     limit: 10
+    t.string    "chx_task",        limit: 4
+    t.string    "chx_name",        limit: 100
+    t.decimal   "chx_hours",                   precision: 9, scale: 2
+    t.decimal   "chx_budget",                  precision: 9, scale: 2
+    t.decimal   "chx_estimate",                precision: 9, scale: 2
+    t.text      "chx_notes"
+    t.string    "chx_num",         limit: 14
+    t.integer   "chx_taxable1",    limit: 1
+    t.integer   "chx_taxable2",    limit: 1
+    t.integer   "chx_rollup",      limit: 1
+    t.string    "chx_added_by",    limit: 4
+    t.timestamp "chx_added_when"
+    t.string    "chx_edited_by",   limit: 4
+    t.timestamp "chx_edited_when"
   end
 
-  add_index "change_items", ["CHX_JOB_NUM"], name: "CHX_JOB_NUM", using: :btree
-  add_index "change_items", ["CHX_NUM"], name: "CHX_NUM", using: :btree
-  add_index "change_items", ["CHX_SEQ"], name: "CHX_SEQ", unique: true, using: :btree
+  add_index "change_items", ["chx_job_num"], name: "chx_job_num"
+  add_index "change_items", ["chx_num"], name: "chx_num"
 
-  create_table "change_order", primary_key: "CHANGE_SEQ", force: true do |t|
-    t.string   "CHANGE_JOB_NUM",       limit: 10
-    t.string   "CHANGE_TASK1",         limit: 4
-    t.string   "CHANGE_NUM",           limit: 14
-    t.string   "CHANGE_WHO",           limit: 4
-    t.datetime "CHANGE_DATE"
-    t.string   "CHANGE_DESC",          limit: 60
-    t.decimal  "CHANGE_OK",                       precision: 15, scale: 0
-    t.text     "CHANGE_NOTE"
-    t.decimal  "CHANGE_AMT1",                     precision: 9,  scale: 2
-    t.decimal  "CHANGE_TYPE",                     precision: 9,  scale: 0
-    t.string   "CHANGE_TASK2",         limit: 4
-    t.string   "CHANGE_TASK3",         limit: 4
-    t.string   "CHANGE_TASK4",         limit: 4
-    t.decimal  "CHANGE_AMT2",                     precision: 9,  scale: 2
-    t.decimal  "CHANGE_AMT3",                     precision: 9,  scale: 2
-    t.decimal  "CHANGE_AMT4",                     precision: 9,  scale: 2
-    t.decimal  "CHANGE_TOTAL",                    precision: 9,  scale: 2
-    t.string   "CHANGE_TASK5",         limit: 4
-    t.string   "CHANGE_TASK6",         limit: 4
-    t.decimal  "CHANGE_AMT5",                     precision: 9,  scale: 2
-    t.decimal  "CHANGE_AMT6",                     precision: 9,  scale: 2
-    t.string   "CHANGE_OTHER",         limit: 20
-    t.string   "CHANGE_NAME",          limit: 40
-    t.decimal  "CHANGE_BAMT1",                    precision: 9,  scale: 2
-    t.decimal  "CHANGE_BAMT2",                    precision: 9,  scale: 2
-    t.decimal  "CHANGE_BAMT3",                    precision: 9,  scale: 2
-    t.decimal  "CHANGE_BAMT4",                    precision: 9,  scale: 2
-    t.decimal  "CHANGE_BAMT5",                    precision: 9,  scale: 2
-    t.decimal  "CHANGE_BAMT6",                    precision: 9,  scale: 2
-    t.decimal  "CHANGE_SALES_TAX1",               precision: 9,  scale: 2
-    t.decimal  "CHANGE_SALES_TAX2",               precision: 9,  scale: 2
-    t.string   "CHANGE_ROLLUP1",       limit: 4
-    t.string   "CHANGE_ROLLUP2",       limit: 4
-    t.string   "CHANGE_ROLLUP3",       limit: 4
-    t.string   "CHANGE_ROLLUP4",       limit: 4
-    t.string   "CHANGE_ROLLUP5",       limit: 4
-    t.string   "CHANGE_ROLLUP6",       limit: 4
-    t.decimal  "CHANGE_HOURS1",                   precision: 9,  scale: 2
-    t.decimal  "CHANGE_HOURS2",                   precision: 9,  scale: 2
-    t.decimal  "CHANGE_HOURS3",                   precision: 9,  scale: 2
-    t.decimal  "CHANGE_HOURS4",                   precision: 9,  scale: 2
-    t.decimal  "CHANGE_HOURS5",                   precision: 9,  scale: 2
-    t.decimal  "CHANGE_HOURS6",                   precision: 9,  scale: 2
-    t.integer  "CHANGE_ROLL_UP",       limit: 1
-    t.string   "CHANGE_STATUS",        limit: 40
-    t.integer  "CHANGE_APPROVE",       limit: 1
-    t.text     "CHANGE_MAIL_TO"
-    t.integer  "CHANGE_SEND_PDF",      limit: 1
-    t.string   "CHANGE_APPROVED_BY",   limit: 10
-    t.datetime "CHANGE_APPROVED_DATE"
-    t.integer  "CHANGE_APPROVED",      limit: 1
-    t.string   "CHANGE_EDITED_BY",     limit: 4
-    t.datetime "CHANGE_EDITED_WHEN"
-    t.string   "CHANGE_ADDED_BY",      limit: 4
-    t.datetime "CHANGE_ADDED_WHEN"
+  create_table "change_order", primary_key: "change_seq", force: true do |t|
+    t.string    "change_job_num",       limit: 10
+    t.string    "change_task1",         limit: 4
+    t.string    "change_num",           limit: 14
+    t.string    "change_who",           limit: 4
+    t.timestamp "change_date"
+    t.string    "change_desc",          limit: 60
+    t.decimal   "change_ok",                       precision: 15, scale: 0
+    t.text      "change_note"
+    t.decimal   "change_amt1",                     precision: 9,  scale: 2
+    t.decimal   "change_type",                     precision: 9,  scale: 0
+    t.string    "change_task2",         limit: 4
+    t.string    "change_task3",         limit: 4
+    t.string    "change_task4",         limit: 4
+    t.decimal   "change_amt2",                     precision: 9,  scale: 2
+    t.decimal   "change_amt3",                     precision: 9,  scale: 2
+    t.decimal   "change_amt4",                     precision: 9,  scale: 2
+    t.decimal   "change_total",                    precision: 9,  scale: 2
+    t.string    "change_task5",         limit: 4
+    t.string    "change_task6",         limit: 4
+    t.decimal   "change_amt5",                     precision: 9,  scale: 2
+    t.decimal   "change_amt6",                     precision: 9,  scale: 2
+    t.string    "change_other",         limit: 20
+    t.string    "change_name",          limit: 40
+    t.decimal   "change_bamt1",                    precision: 9,  scale: 2
+    t.decimal   "change_bamt2",                    precision: 9,  scale: 2
+    t.decimal   "change_bamt3",                    precision: 9,  scale: 2
+    t.decimal   "change_bamt4",                    precision: 9,  scale: 2
+    t.decimal   "change_bamt5",                    precision: 9,  scale: 2
+    t.decimal   "change_bamt6",                    precision: 9,  scale: 2
+    t.decimal   "change_sales_tax1",               precision: 9,  scale: 2
+    t.decimal   "change_sales_tax2",               precision: 9,  scale: 2
+    t.string    "change_rollup1",       limit: 4
+    t.string    "change_rollup2",       limit: 4
+    t.string    "change_rollup3",       limit: 4
+    t.string    "change_rollup4",       limit: 4
+    t.string    "change_rollup5",       limit: 4
+    t.string    "change_rollup6",       limit: 4
+    t.decimal   "change_hours1",                   precision: 9,  scale: 2
+    t.decimal   "change_hours2",                   precision: 9,  scale: 2
+    t.decimal   "change_hours3",                   precision: 9,  scale: 2
+    t.decimal   "change_hours4",                   precision: 9,  scale: 2
+    t.decimal   "change_hours5",                   precision: 9,  scale: 2
+    t.decimal   "change_hours6",                   precision: 9,  scale: 2
+    t.integer   "change_roll_up",       limit: 1
+    t.string    "change_status",        limit: 40
+    t.integer   "change_approve",       limit: 1
+    t.text      "change_mail_to"
+    t.integer   "change_send_pdf",      limit: 1
+    t.string    "change_approved_by",   limit: 10
+    t.timestamp "change_approved_date"
+    t.integer   "change_approved",      limit: 1
+    t.string    "change_edited_by",     limit: 4
+    t.timestamp "change_edited_when"
+    t.string    "change_added_by",      limit: 4
+    t.timestamp "change_added_when"
   end
 
-  add_index "change_order", ["CHANGE_DATE"], name: "CHANGE_DATE", using: :btree
-  add_index "change_order", ["CHANGE_JOB_NUM"], name: "CHANGE_JOB_NUM", using: :btree
-  add_index "change_order", ["CHANGE_NUM"], name: "CHANGE_NUM", using: :btree
-  add_index "change_order", ["CHANGE_OK"], name: "CHANGE_OK", using: :btree
-  add_index "change_order", ["CHANGE_SEQ"], name: "CHANGE_SEQ", unique: true, using: :btree
+  add_index "change_order", ["change_date"], name: "change_date"
+  add_index "change_order", ["change_job_num"], name: "change_job_num"
+  add_index "change_order", ["change_num"], name: "change_num"
+  add_index "change_order", ["change_ok"], name: "change_ok"
 
-  create_table "check_items", primary_key: "CX_SEQ", force: true do |t|
-    t.date     "CX_CK_DATE"
-    t.decimal  "CX_NET_AMT",                precision: 15, scale: 2
-    t.decimal  "CX_DGL",                    precision: 15, scale: 2
-    t.string   "CX_AP_NUM",      limit: 20
-    t.string   "CX_VENDOR_NUM",  limit: 10
-    t.string   "CX_JOB_NUM",     limit: 10
-    t.string   "CX_TASK",        limit: 4
-    t.date     "CX_POSTED"
-    t.decimal  "CX_GROSS_AMT",              precision: 15, scale: 2
-    t.decimal  "CX_CK_NUM",                 precision: 15, scale: 0
-    t.decimal  "CX_COMM_AMT",               precision: 9,  scale: 2
-    t.decimal  "CX_MARKUP_PC",              precision: 15, scale: 2
-    t.decimal  "CX_DISC_AMT",               precision: 15, scale: 2
-    t.integer  "CX_PERIOD",      limit: 1
-    t.decimal  "CX_COST_SEQ",               precision: 9,  scale: 0
-    t.decimal  "CX_DISC_DGL",               precision: 15, scale: 2
-    t.integer  "CX_BILLABLE",    limit: 1
-    t.text     "CX_NOTE"
-    t.string   "CX_ADDED_BY",    limit: 4
-    t.datetime "CX_ADDED_WHEN"
-    t.string   "CX_EDITED_BY",   limit: 4
-    t.datetime "CX_EDITED_WHEN"
+  create_table "check_items", primary_key: "cx_seq", force: true do |t|
+    t.date      "cx_ck_date"
+    t.decimal   "cx_net_amt",                precision: 15, scale: 2
+    t.decimal   "cx_dgl",                    precision: 15, scale: 2
+    t.string    "cx_ap_num",      limit: 20
+    t.string    "cx_vendor_num",  limit: 10
+    t.string    "cx_job_num",     limit: 10
+    t.string    "cx_task",        limit: 4
+    t.date      "cx_posted"
+    t.decimal   "cx_gross_amt",              precision: 15, scale: 2
+    t.decimal   "cx_ck_num",                 precision: 15, scale: 0
+    t.decimal   "cx_comm_amt",               precision: 9,  scale: 2
+    t.decimal   "cx_markup_pc",              precision: 15, scale: 2
+    t.decimal   "cx_disc_amt",               precision: 15, scale: 2
+    t.integer   "cx_period",      limit: 1
+    t.decimal   "cx_cost_seq",               precision: 9,  scale: 0
+    t.decimal   "cx_disc_dgl",               precision: 15, scale: 2
+    t.integer   "cx_billable",    limit: 1
+    t.text      "cx_note"
+    t.string    "cx_added_by",    limit: 4
+    t.timestamp "cx_added_when"
+    t.string    "cx_edited_by",   limit: 4
+    t.timestamp "cx_edited_when"
   end
 
-  add_index "check_items", ["CX_AP_NUM"], name: "CX_AP_NUM", using: :btree
-  add_index "check_items", ["CX_CK_DATE"], name: "CX_CK_DATE", using: :btree
-  add_index "check_items", ["CX_CK_NUM"], name: "CX_CK_NUM", using: :btree
-  add_index "check_items", ["CX_COST_SEQ"], name: "CX_COST_SEQ", using: :btree
-  add_index "check_items", ["CX_JOB_NUM"], name: "CX_JOB_NUM", using: :btree
-  add_index "check_items", ["CX_PERIOD"], name: "CX_PERIOD", using: :btree
-  add_index "check_items", ["CX_POSTED"], name: "CX_POSTED", using: :btree
-  add_index "check_items", ["CX_SEQ"], name: "CX_SEQ", unique: true, using: :btree
-  add_index "check_items", ["CX_TASK"], name: "CX_TASK", using: :btree
-  add_index "check_items", ["CX_VENDOR_NUM"], name: "CX_VENDOR_NUM", using: :btree
+  add_index "check_items", ["cx_ap_num"], name: "cx_ap_num"
+  add_index "check_items", ["cx_ck_date"], name: "cx_ck_date"
+  add_index "check_items", ["cx_ck_num"], name: "cx_ck_num"
+  add_index "check_items", ["cx_cost_seq"], name: "cx_cost_seq"
+  add_index "check_items", ["cx_job_num"], name: "cx_job_num"
+  add_index "check_items", ["cx_period"], name: "cx_period"
+  add_index "check_items", ["cx_posted"], name: "cx_posted"
+  add_index "check_items", ["cx_task"], name: "cx_task"
+  add_index "check_items", ["cx_vendor_num"], name: "cx_vendor_num"
 
-  create_table "checks", primary_key: "CK_SEQ", force: true do |t|
-    t.decimal  "CK_NUM",                               precision: 9,  scale: 0
-    t.string   "CK_VENDOR_NUM",             limit: 10
-    t.string   "CK_PAYEE",                  limit: 40
-    t.string   "CK_ADDRESS1",               limit: 40
-    t.string   "CK_ADDRESS2",               limit: 40
-    t.string   "CK_ADDRESS3",               limit: 40
-    t.date     "CK_DATE"
-    t.date     "CK_POSTED"
-    t.text     "CK_MEMO"
-    t.decimal  "CK_NET_AMT",                           precision: 15, scale: 2
-    t.decimal  "CK_CGL",                               precision: 15, scale: 2
-    t.integer  "CK_PAY",                    limit: 1
-    t.string   "CK_ADDED_BY",               limit: 4
-    t.date     "CK_ADDED_WHEN"
-    t.integer  "CK_CLEARED",                limit: 1
-    t.integer  "CK_DONT_PRINT",             limit: 1
-    t.string   "CK_AMOUNT",                 limit: 80
-    t.string   "CK_TYPE",                   limit: 10
-    t.decimal  "CK_GROSS",                             precision: 15, scale: 2
-    t.decimal  "CK_DISC_AMT",                          precision: 15, scale: 2
-    t.decimal  "CK_DISC_GL",                           precision: 15, scale: 2
-    t.integer  "CK_OK",                     limit: 1
-    t.decimal  "CK_PERIOD",                            precision: 9,  scale: 0
-    t.integer  "CK_1099"
-    t.string   "CK_TAX_ID",                 limit: 15
-    t.decimal  "CK_EMP_ADV_EXP",                       precision: 9,  scale: 2
-    t.decimal  "CK_EMPL_ADV_CK",                       precision: 9,  scale: 0
-    t.string   "CK_EDITED_BY",              limit: 4
-    t.datetime "CK_EDITED_WHEN"
-    t.string   "CK_POSTED_BY",              limit: 4
-    t.datetime "CK_POSTED_WHEN"
-    t.string   "CK_ONLINE_PMT_CONFIRM_NUM", limit: 50
+  create_table "checks", primary_key: "ck_seq", force: true do |t|
+    t.decimal   "ck_num",                               precision: 9,  scale: 0
+    t.string    "ck_vendor_num",             limit: 10
+    t.string    "ck_payee",                  limit: 40
+    t.string    "ck_address1",               limit: 40
+    t.string    "ck_address2",               limit: 40
+    t.string    "ck_address3",               limit: 40
+    t.date      "ck_date"
+    t.date      "ck_posted"
+    t.text      "ck_memo"
+    t.decimal   "ck_net_amt",                           precision: 15, scale: 2
+    t.decimal   "ck_cgl",                               precision: 15, scale: 2
+    t.integer   "ck_pay",                    limit: 1
+    t.string    "ck_added_by",               limit: 4
+    t.date      "ck_added_when"
+    t.integer   "ck_cleared",                limit: 1
+    t.integer   "ck_dont_print",             limit: 1
+    t.string    "ck_amount",                 limit: 80
+    t.string    "ck_type",                   limit: 10
+    t.decimal   "ck_gross",                             precision: 15, scale: 2
+    t.decimal   "ck_disc_amt",                          precision: 15, scale: 2
+    t.decimal   "ck_disc_gl",                           precision: 15, scale: 2
+    t.integer   "ck_ok",                     limit: 1
+    t.decimal   "ck_period",                            precision: 9,  scale: 0
+    t.integer   "ck_1099"
+    t.string    "ck_tax_id",                 limit: 15
+    t.decimal   "ck_emp_adv_exp",                       precision: 9,  scale: 2
+    t.decimal   "ck_empl_adv_ck",                       precision: 9,  scale: 0
+    t.string    "ck_edited_by",              limit: 4
+    t.timestamp "ck_edited_when"
+    t.string    "ck_posted_by",              limit: 4
+    t.timestamp "ck_posted_when"
+    t.string    "ck_online_pmt_confirm_num", limit: 50
   end
 
-  add_index "checks", ["CK_1099"], name: "CK_1099", using: :btree
-  add_index "checks", ["CK_ADDED_BY"], name: "CK_ADDED_BY", using: :btree
-  add_index "checks", ["CK_CLEARED"], name: "CK_CLEARED", using: :btree
-  add_index "checks", ["CK_DATE"], name: "CK_DATE", using: :btree
-  add_index "checks", ["CK_EMPL_ADV_CK"], name: "CK_EMPL_ADV_CK", using: :btree
-  add_index "checks", ["CK_NUM"], name: "CK_NUM", using: :btree
-  add_index "checks", ["CK_OK"], name: "CK_OK", using: :btree
-  add_index "checks", ["CK_PAY"], name: "CK_PAY", using: :btree
-  add_index "checks", ["CK_PAYEE"], name: "CK_PAYEE", using: :btree
-  add_index "checks", ["CK_PERIOD"], name: "CK_PERIOD", using: :btree
-  add_index "checks", ["CK_POSTED"], name: "CK_POSTED", using: :btree
-  add_index "checks", ["CK_SEQ"], name: "CK_SEQ", unique: true, using: :btree
-  add_index "checks", ["CK_TYPE"], name: "CK_TYPE", using: :btree
-  add_index "checks", ["CK_VENDOR_NUM"], name: "CK_VENDOR_NUM", using: :btree
+  add_index "checks", ["ck_1099"], name: "ck_1099"
+  add_index "checks", ["ck_added_by"], name: "ck_added_by"
+  add_index "checks", ["ck_cleared"], name: "ck_cleared"
+  add_index "checks", ["ck_date"], name: "ck_date"
+  add_index "checks", ["ck_empl_adv_ck"], name: "ck_empl_adv_ck"
+  add_index "checks", ["ck_num"], name: "ck_num"
+  add_index "checks", ["ck_ok"], name: "ck_ok"
+  add_index "checks", ["ck_pay"], name: "ck_pay"
+  add_index "checks", ["ck_payee"], name: "ck_payee"
+  add_index "checks", ["ck_period"], name: "ck_period"
+  add_index "checks", ["ck_posted"], name: "ck_posted"
+  add_index "checks", ["ck_type"], name: "ck_type"
+  add_index "checks", ["ck_vendor_num"], name: "ck_vendor_num"
 
   create_table "claven_sales", id: false, force: true do |t|
-    t.string  "S_NUM",           limit: 10
-    t.string  "S_PR_JOB_NUM",    limit: 10
-    t.string  "S_PR_TASK",       limit: 4
-    t.string  "S_CLIENT",        limit: 10
-    t.float   "S_HOW_PAID"
-    t.string  "S_TERMS",         limit: 40
-    t.date    "S_INVOICE_DATE"
-    t.string  "S_SHIP_ORG",      limit: 40
-    t.decimal "S_PRICE",                    precision: 9,  scale: 2
-    t.string  "S_PRODUCT_NAME",  limit: 60
-    t.decimal "S_TS_CREDIT_AMT",            precision: 15, scale: 2
-    t.string  "S_DISC_DESC",     limit: 40
-    t.decimal "S_ADDL_QTY",                 precision: 9,  scale: 0
-    t.decimal "S_ADDL_USER_AMT",            precision: 15, scale: 2
-    t.string  "S_OPTIONS_DESC",  limit: 40
-    t.decimal "S_AMT_OPTIONS",              precision: 9,  scale: 2
-    t.decimal "S_TAX_RATE",                 precision: 9,  scale: 2
-    t.decimal "S_SUPPORT_AMT",              precision: 9,  scale: 2
-    t.decimal "S_SHIP_AMT",                 precision: 9,  scale: 2
-    t.decimal "S_INVOICE_TOTAL",            precision: 9,  scale: 2
-    t.decimal "S_DISCOUNT",                 precision: 9,  scale: 2
-    t.decimal "S_SALES_TAX",                precision: 9,  scale: 2
+    t.string  "s_num",           limit: 10
+    t.string  "s_pr_job_num",    limit: 10
+    t.string  "s_pr_task",       limit: 4
+    t.string  "s_client",        limit: 10
+    t.float   "s_how_paid"
+    t.string  "s_terms",         limit: 40
+    t.date    "s_invoice_date"
+    t.string  "s_ship_org",      limit: 40
+    t.decimal "s_price",                    precision: 9,  scale: 2
+    t.string  "s_product_name",  limit: 60
+    t.decimal "s_ts_credit_amt",            precision: 15, scale: 2
+    t.string  "s_disc_desc",     limit: 40
+    t.decimal "s_addl_qty",                 precision: 9,  scale: 0
+    t.decimal "s_addl_user_amt",            precision: 15, scale: 2
+    t.string  "s_options_desc",  limit: 40
+    t.decimal "s_amt_options",              precision: 9,  scale: 2
+    t.decimal "s_tax_rate",                 precision: 9,  scale: 2
+    t.decimal "s_support_amt",              precision: 9,  scale: 2
+    t.decimal "s_ship_amt",                 precision: 9,  scale: 2
+    t.decimal "s_invoice_total",            precision: 9,  scale: 2
+    t.decimal "s_discount",                 precision: 9,  scale: 2
+    t.decimal "s_sales_tax",                precision: 9,  scale: 2
   end
 
-  create_table "clients", primary_key: "C_SEQ", force: true do |t|
-    t.string   "C_NUM",               limit: 10
-    t.string   "C_ORG",               limit: 40
-    t.string   "C_ADDRESS1",          limit: 50
-    t.string   "C_ADDRESS2",          limit: 50
-    t.string   "C_ADDRESS3",          limit: 50
-    t.string   "C_ADDRESS4",          limit: 50
-    t.string   "C_CONTACT1",          limit: 75
-    t.string   "C_CONTACT2",          limit: 75
-    t.string   "C_CONTACT3",          limit: 75
-    t.string   "C_CONTACT4",          limit: 75
-    t.string   "C_PHONE1",            limit: 20
-    t.string   "C_PHONE2",            limit: 20
-    t.string   "C_PHONE3",            limit: 20
-    t.string   "C_PHONE4",            limit: 20
-    t.string   "C_TERMS",             limit: 20
-    t.string   "C_TYPE",              limit: 10
-    t.decimal  "C_JOB_NUM",                       precision: 15, scale: 0
-    t.text     "C_NOTE"
-    t.decimal  "C1",                              precision: 15, scale: 2
-    t.decimal  "C2",                              precision: 15, scale: 2
-    t.decimal  "C3",                              precision: 15, scale: 2
-    t.decimal  "C4",                              precision: 15, scale: 2
-    t.decimal  "C5",                              precision: 15, scale: 2
-    t.decimal  "C6",                              precision: 15, scale: 2
-    t.decimal  "C7",                              precision: 15, scale: 2
-    t.decimal  "C8",                              precision: 15, scale: 2
-    t.decimal  "C9",                              precision: 15, scale: 2
-    t.decimal  "C10",                             precision: 15, scale: 2
-    t.decimal  "C11",                             precision: 15, scale: 2
-    t.decimal  "C12",                             precision: 15, scale: 2
-    t.string   "C_ADDRESS5",          limit: 50
-    t.string   "C_ADDRESS6",          limit: 50
-    t.text     "C_JOB_ALERT"
-    t.text     "C_AR_ALERT"
-    t.text     "C_PAY_ALERT"
-    t.decimal  "C_YTD",                           precision: 15, scale: 2
-    t.text     "C_NOTES"
-    t.decimal  "C_CURR",                          precision: 9,  scale: 2
-    t.decimal  "C_30",                            precision: 9,  scale: 2
-    t.decimal  "C_60",                            precision: 9,  scale: 2
-    t.decimal  "C_90",                            precision: 9,  scale: 2
-    t.decimal  "C_CREDIT_LIMIT",                  precision: 15, scale: 2
-    t.date     "C_LAST_AGING"
-    t.decimal  "C_MARKUP",                        precision: 9,  scale: 2
-    t.decimal  "C_RETAINER_BAL",                  precision: 15, scale: 2
-    t.decimal  "C_RETAINER_CGL",                  precision: 15, scale: 2
-    t.decimal  "C_TAX_RATE1",                     precision: 15, scale: 4
-    t.decimal  "C_TAX_RATE2",                     precision: 15, scale: 4
-    t.string   "C_TAX_AREA",          limit: 20
-    t.decimal  "C_TAX_GL1",                       precision: 15, scale: 2
-    t.decimal  "C_TAX_GL2",                       precision: 15, scale: 2
-    t.decimal  "C_BUDGET_1",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_2",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_3",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_4",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_5",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_6",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_7",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_8",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_9",                      precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_10",                     precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_11",                     precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_12",                     precision: 9,  scale: 2
-    t.decimal  "C_BUDGET_YTD",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR1",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR2",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR3",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR4",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR5",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR6",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR7",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR8",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR9",                    precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR10",                   precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR11",                   precision: 9,  scale: 2
-    t.decimal  "C_LAST_YEAR12",                   precision: 9,  scale: 2
-    t.integer  "C_IN_HOUSE",          limit: 1
-    t.string   "C_AE",                limit: 10
-    t.decimal  "C_BALN",                          precision: 15, scale: 2
-    t.decimal  "C_BILL_RATE",                     precision: 15, scale: 2
-    t.decimal  "C_FINANCE_CHG",                   precision: 15, scale: 2
-    t.string   "C_FAX",               limit: 20
-    t.integer  "C_LOGO",              limit: 1
-    t.string   "C_DIVISION",          limit: 10
-    t.string   "C_TO1",               limit: 10
-    t.string   "C_TO2",               limit: 10
-    t.string   "C_TO3",               limit: 10
-    t.string   "C_TO4",               limit: 10
-    t.string   "C_TO5",               limit: 10
-    t.string   "C_COST_CENTER",       limit: 20
-    t.decimal  "C_RETAINER_DGL",                  precision: 15, scale: 2
-    t.decimal  "C_RETAINER_PMTS",                 precision: 15, scale: 2
-    t.decimal  "C_MEDIA_PLAN",                    precision: 9,  scale: 0
-    t.string   "C_PO",                limit: 15
-    t.string   "C_BILL_ADDRESS1",     limit: 50
-    t.string   "C_BILL_ADDRESS2",     limit: 50
-    t.string   "C_BILL_ADDRESS3",     limit: 50
-    t.string   "C_BILL_ADDRESS4",     limit: 50
-    t.string   "C_BILL_ADDRESS5",     limit: 50
-    t.string   "C_BILL_ADDRESS6",     limit: 50
-    t.decimal  "C_ACTIVE",                        precision: 9,  scale: 0
-    t.string   "C_MEDIA_JNUM",        limit: 10
-    t.string   "C_MEDIA_TASK",        limit: 4
-    t.decimal  "C_MEDIA_COMM",                    precision: 9,  scale: 2
-    t.decimal  "C_MEDIA_EST_NUM",                 precision: 15, scale: 0
-    t.integer  "C_TEAM_ACCESS",       limit: 1
-    t.string   "C_TEAM",              limit: 10
-    t.text     "C_MAIL_JOB_TO"
-    t.text     "C_MAIL_JOB_MSG"
-    t.string   "C_MAIL_JOB_CC",       limit: 40
-    t.string   "C_MAIL_JOB_BCC",      limit: 40
-    t.text     "C_MAIL_AR_TO"
-    t.text     "C_MAIL_AR_MSG"
-    t.string   "C_MAIL_AR_CC",        limit: 40
-    t.string   "C_MAIL_AR_BCC",       limit: 40
-    t.text     "C_MAIL_PMT_TO"
-    t.text     "C_MAIL_PMT_MSG"
-    t.string   "C_MAIL_PMT_CC",       limit: 40
-    t.string   "C_MAIL_PMT_BCC",      limit: 40
-    t.integer  "C_UNBILLABLE",        limit: 1
-    t.string   "C_PC",                limit: 10
-    t.integer  "C_OA_PERIOD",         limit: 1
-    t.decimal  "C_OA_MTD",                        precision: 15, scale: 2
-    t.decimal  "C_OA_YTD",                        precision: 15, scale: 2
-    t.decimal  "C_OA_LABOR",                      precision: 15, scale: 2
-    t.string   "C_URL",               limit: 50
-    t.string   "C_EMAIL",             limit: 100
-    t.decimal  "C_MEDIA_DGL",                     precision: 15, scale: 2
-    t.decimal  "C_MEDIA_DISC",                    precision: 15, scale: 2
-    t.string   "C_SHIP_ADDRESS1",     limit: 50
-    t.string   "C_SHIP_ADDRESS2",     limit: 50
-    t.string   "C_SHIP_ADDRESS3",     limit: 50
-    t.string   "C_SHIP_ADDRESS4",     limit: 50
-    t.string   "C_SHIP_ADDRESS5",     limit: 50
-    t.string   "C_SHIP_ADDRESS6",     limit: 50
-    t.string   "C_CORP_ID",           limit: 100
-    t.date     "C_FIRST_CALL"
-    t.datetime "C_LAST_CALL"
-    t.integer  "C_CREDIT_HOLD",       limit: 1
-    t.string   "C_BIZDEV_AE",         limit: 10
-    t.integer  "C_COMMISSIONABLE",    limit: 1
-    t.integer  "C_SHOW_HOURS",        limit: 1
-    t.string   "C_EDITED_BY",         limit: 4
-    t.datetime "C_EDITED_WHEN"
-    t.decimal  "C_TERMS1",                        precision: 9,  scale: 0
-    t.decimal  "C_TERMS2",                        precision: 9,  scale: 0
-    t.decimal  "C_TERMS3",                        precision: 9,  scale: 0
-    t.decimal  "C_DGL",                           precision: 15, scale: 2
-    t.string   "C_NCF_PREFIX",        limit: 19
-    t.string   "C_CTC_COL1",          limit: 25
-    t.string   "C_CTC_COL2",          limit: 25
-    t.string   "C_CTC_COL4",          limit: 25
-    t.string   "C_CTC_COL6",          limit: 25
-    t.string   "C_CTC_COL7",          limit: 25
-    t.string   "C_CTC_COL8",          limit: 25
-    t.string   "C_CTC_COL9",          limit: 25
-    t.integer  "C_FAST_FIN_GRADE_A",  limit: 1
-    t.integer  "C_FAST_FIN_GRADE_B",  limit: 1
-    t.integer  "C_FAST_FIN_GRADE_C",  limit: 1
-    t.integer  "C_FAST_FIN_GRADE_D",  limit: 1
-    t.integer  "C_FAST_TIME_GRADE_C", limit: 1
-    t.integer  "C_FAST_TIME_GRADE_D", limit: 1
-    t.decimal  "C_TAX_RATE3",                     precision: 15, scale: 4
-    t.decimal  "C_TAX_GL3",                       precision: 15, scale: 2
-    t.decimal  "C_AR_SHOW_TOTALS",                precision: 15, scale: 0
-    t.decimal  "C_AR_ROLL_UP",                    precision: 15, scale: 0
-    t.decimal  "C_AR_SHOW_SPECS",                 precision: 15, scale: 0
-    t.decimal  "C_AR_SHOW_HOURS",                 precision: 15, scale: 0
-    t.decimal  "C_AR_PRINT_EST",                  precision: 15, scale: 0
-    t.string   "C_AR_ZERO_AS",        limit: 10
-    t.integer  "C_OT_WEEKEND",        limit: 1
-    t.integer  "C_OT_HOLIDAY",        limit: 1
-    t.string   "C_PIPELINE_COL1",     limit: 20
-    t.string   "C_PIPELINE_COL2",     limit: 20
-    t.string   "C_PIPELINE_COL3",     limit: 20
-    t.string   "C_PIPELINE_COL4",     limit: 20
-    t.string   "C_PIPELINE_COL5",     limit: 20
-    t.string   "C_PIPELINE_COL6",     limit: 20
-    t.string   "C_PIPELINE_COL7",     limit: 20
-    t.string   "C_PIPELINE_COL8",     limit: 20
-    t.string   "C_PIPELINE_COL9",     limit: 20
+  create_table "clients", primary_key: "c_seq", force: true do |t|
+    t.string    "c_num",               limit: 10
+    t.string    "c_org",               limit: 40
+    t.string    "c_address1",          limit: 50
+    t.string    "c_address2",          limit: 50
+    t.string    "c_address3",          limit: 50
+    t.string    "c_address4",          limit: 50
+    t.string    "c_contact1",          limit: 75
+    t.string    "c_contact2",          limit: 75
+    t.string    "c_contact3",          limit: 75
+    t.string    "c_contact4",          limit: 75
+    t.string    "c_phone1",            limit: 20
+    t.string    "c_phone2",            limit: 20
+    t.string    "c_phone3",            limit: 20
+    t.string    "c_phone4",            limit: 20
+    t.string    "c_terms",             limit: 20
+    t.string    "c_type",              limit: 10
+    t.decimal   "c_job_num",                       precision: 15, scale: 0
+    t.text      "c_note"
+    t.decimal   "c1",                              precision: 15, scale: 2
+    t.decimal   "c2",                              precision: 15, scale: 2
+    t.decimal   "c3",                              precision: 15, scale: 2
+    t.decimal   "c4",                              precision: 15, scale: 2
+    t.decimal   "c5",                              precision: 15, scale: 2
+    t.decimal   "c6",                              precision: 15, scale: 2
+    t.decimal   "c7",                              precision: 15, scale: 2
+    t.decimal   "c8",                              precision: 15, scale: 2
+    t.decimal   "c9",                              precision: 15, scale: 2
+    t.decimal   "c10",                             precision: 15, scale: 2
+    t.decimal   "c11",                             precision: 15, scale: 2
+    t.decimal   "c12",                             precision: 15, scale: 2
+    t.string    "c_address5",          limit: 50
+    t.string    "c_address6",          limit: 50
+    t.text      "c_job_alert"
+    t.text      "c_ar_alert"
+    t.text      "c_pay_alert"
+    t.decimal   "c_ytd",                           precision: 15, scale: 2
+    t.text      "c_notes"
+    t.decimal   "c_curr",                          precision: 9,  scale: 2
+    t.decimal   "c_30",                            precision: 9,  scale: 2
+    t.decimal   "c_60",                            precision: 9,  scale: 2
+    t.decimal   "c_90",                            precision: 9,  scale: 2
+    t.decimal   "c_credit_limit",                  precision: 15, scale: 2
+    t.date      "c_last_aging"
+    t.decimal   "c_markup",                        precision: 9,  scale: 2
+    t.decimal   "c_retainer_bal",                  precision: 15, scale: 2
+    t.decimal   "c_retainer_cgl",                  precision: 15, scale: 2
+    t.decimal   "c_tax_rate1",                     precision: 15, scale: 4
+    t.decimal   "c_tax_rate2",                     precision: 15, scale: 4
+    t.string    "c_tax_area",          limit: 20
+    t.decimal   "c_tax_gl1",                       precision: 15, scale: 2
+    t.decimal   "c_tax_gl2",                       precision: 15, scale: 2
+    t.decimal   "c_budget_1",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_2",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_3",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_4",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_5",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_6",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_7",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_8",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_9",                      precision: 9,  scale: 2
+    t.decimal   "c_budget_10",                     precision: 9,  scale: 2
+    t.decimal   "c_budget_11",                     precision: 9,  scale: 2
+    t.decimal   "c_budget_12",                     precision: 9,  scale: 2
+    t.decimal   "c_budget_ytd",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year1",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year2",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year3",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year4",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year5",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year6",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year7",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year8",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year9",                    precision: 9,  scale: 2
+    t.decimal   "c_last_year10",                   precision: 9,  scale: 2
+    t.decimal   "c_last_year11",                   precision: 9,  scale: 2
+    t.decimal   "c_last_year12",                   precision: 9,  scale: 2
+    t.integer   "c_in_house",          limit: 1
+    t.string    "c_ae",                limit: 10
+    t.decimal   "c_baln",                          precision: 15, scale: 2
+    t.decimal   "c_bill_rate",                     precision: 15, scale: 2
+    t.decimal   "c_finance_chg",                   precision: 15, scale: 2
+    t.string    "c_fax",               limit: 20
+    t.integer   "c_logo",              limit: 1
+    t.string    "c_division",          limit: 10
+    t.string    "c_to1",               limit: 10
+    t.string    "c_to2",               limit: 10
+    t.string    "c_to3",               limit: 10
+    t.string    "c_to4",               limit: 10
+    t.string    "c_to5",               limit: 10
+    t.string    "c_cost_center",       limit: 20
+    t.decimal   "c_retainer_dgl",                  precision: 15, scale: 2
+    t.decimal   "c_retainer_pmts",                 precision: 15, scale: 2
+    t.decimal   "c_media_plan",                    precision: 9,  scale: 0
+    t.string    "c_po",                limit: 15
+    t.string    "c_bill_address1",     limit: 50
+    t.string    "c_bill_address2",     limit: 50
+    t.string    "c_bill_address3",     limit: 50
+    t.string    "c_bill_address4",     limit: 50
+    t.string    "c_bill_address5",     limit: 50
+    t.string    "c_bill_address6",     limit: 50
+    t.decimal   "c_active",                        precision: 9,  scale: 0
+    t.string    "c_media_jnum",        limit: 10
+    t.string    "c_media_task",        limit: 4
+    t.decimal   "c_media_comm",                    precision: 9,  scale: 2
+    t.decimal   "c_media_est_num",                 precision: 15, scale: 0
+    t.integer   "c_team_access",       limit: 1
+    t.string    "c_team",              limit: 10
+    t.text      "c_mail_job_to"
+    t.text      "c_mail_job_msg"
+    t.string    "c_mail_job_cc",       limit: 40
+    t.string    "c_mail_job_bcc",      limit: 40
+    t.text      "c_mail_ar_to"
+    t.text      "c_mail_ar_msg"
+    t.string    "c_mail_ar_cc",        limit: 40
+    t.string    "c_mail_ar_bcc",       limit: 40
+    t.text      "c_mail_pmt_to"
+    t.text      "c_mail_pmt_msg"
+    t.string    "c_mail_pmt_cc",       limit: 40
+    t.string    "c_mail_pmt_bcc",      limit: 40
+    t.integer   "c_unbillable",        limit: 1
+    t.string    "c_pc",                limit: 10
+    t.integer   "c_oa_period",         limit: 1
+    t.decimal   "c_oa_mtd",                        precision: 15, scale: 2
+    t.decimal   "c_oa_ytd",                        precision: 15, scale: 2
+    t.decimal   "c_oa_labor",                      precision: 15, scale: 2
+    t.string    "c_url",               limit: 50
+    t.string    "c_email",             limit: 100
+    t.decimal   "c_media_dgl",                     precision: 15, scale: 2
+    t.decimal   "c_media_disc",                    precision: 15, scale: 2
+    t.string    "c_ship_address1",     limit: 50
+    t.string    "c_ship_address2",     limit: 50
+    t.string    "c_ship_address3",     limit: 50
+    t.string    "c_ship_address4",     limit: 50
+    t.string    "c_ship_address5",     limit: 50
+    t.string    "c_ship_address6",     limit: 50
+    t.string    "c_corp_id",           limit: 100
+    t.date      "c_first_call"
+    t.timestamp "c_last_call"
+    t.integer   "c_credit_hold",       limit: 1
+    t.string    "c_bizdev_ae",         limit: 10
+    t.integer   "c_commissionable",    limit: 1
+    t.integer   "c_show_hours",        limit: 1
+    t.string    "c_edited_by",         limit: 4
+    t.timestamp "c_edited_when"
+    t.decimal   "c_terms1",                        precision: 9,  scale: 0
+    t.decimal   "c_terms2",                        precision: 9,  scale: 0
+    t.decimal   "c_terms3",                        precision: 9,  scale: 0
+    t.decimal   "c_dgl",                           precision: 15, scale: 2
+    t.string    "c_ncf_prefix",        limit: 19
+    t.string    "c_ctc_col1",          limit: 25
+    t.string    "c_ctc_col2",          limit: 25
+    t.string    "c_ctc_col4",          limit: 25
+    t.string    "c_ctc_col6",          limit: 25
+    t.string    "c_ctc_col7",          limit: 25
+    t.string    "c_ctc_col8",          limit: 25
+    t.string    "c_ctc_col9",          limit: 25
+    t.integer   "c_fast_fin_grade_a",  limit: 1
+    t.integer   "c_fast_fin_grade_b",  limit: 1
+    t.integer   "c_fast_fin_grade_c",  limit: 1
+    t.integer   "c_fast_fin_grade_d",  limit: 1
+    t.integer   "c_fast_time_grade_c", limit: 1
+    t.integer   "c_fast_time_grade_d", limit: 1
+    t.decimal   "c_tax_rate3",                     precision: 15, scale: 4
+    t.decimal   "c_tax_gl3",                       precision: 15, scale: 2
+    t.decimal   "c_ar_show_totals",                precision: 15, scale: 0
+    t.decimal   "c_ar_roll_up",                    precision: 15, scale: 0
+    t.decimal   "c_ar_show_specs",                 precision: 15, scale: 0
+    t.decimal   "c_ar_show_hours",                 precision: 15, scale: 0
+    t.decimal   "c_ar_print_est",                  precision: 15, scale: 0
+    t.string    "c_ar_zero_as",        limit: 10
+    t.integer   "c_ot_weekend",        limit: 1
+    t.integer   "c_ot_holiday",        limit: 1
+    t.string    "c_pipeline_col1",     limit: 20
+    t.string    "c_pipeline_col2",     limit: 20
+    t.string    "c_pipeline_col3",     limit: 20
+    t.string    "c_pipeline_col4",     limit: 20
+    t.string    "c_pipeline_col5",     limit: 20
+    t.string    "c_pipeline_col6",     limit: 20
+    t.string    "c_pipeline_col7",     limit: 20
+    t.string    "c_pipeline_col8",     limit: 20
+    t.string    "c_pipeline_col9",     limit: 20
   end
 
-  add_index "clients", ["C_ACTIVE"], name: "C_ACTIVE", using: :btree
-  add_index "clients", ["C_AE"], name: "C_AE", using: :btree
-  add_index "clients", ["C_CORP_ID"], name: "C_CORP_ID", using: :btree
-  add_index "clients", ["C_COST_CENTER"], name: "C_COST_CENTER", using: :btree
-  add_index "clients", ["C_DIVISION"], name: "C_DIVISION", using: :btree
-  add_index "clients", ["C_NUM"], name: "C_NUM", using: :btree
-  add_index "clients", ["C_ORG"], name: "C_ORG", using: :btree
-  add_index "clients", ["C_SEQ"], name: "C_SEQ", unique: true, using: :btree
-  add_index "clients", ["C_TEAM"], name: "C_TEAM", using: :btree
-  add_index "clients", ["C_TYPE"], name: "C_TYPE", using: :btree
+  add_index "clients", ["c_active"], name: "c_active"
+  add_index "clients", ["c_ae"], name: "c_ae"
+  add_index "clients", ["c_corp_id"], name: "c_corp_id"
+  add_index "clients", ["c_cost_center"], name: "c_cost_center"
+  add_index "clients", ["c_division"], name: "c_division"
+  add_index "clients", ["c_num"], name: "c_num"
+  add_index "clients", ["c_org"], name: "c_org"
+  add_index "clients", ["c_team"], name: "c_team"
+  add_index "clients", ["c_type"], name: "c_type"
 
-  create_table "contacts", primary_key: "CON_SEQ", force: true do |t|
-    t.string   "CON_C_NUM",          limit: 10
-    t.string   "CON_V_NUM",          limit: 10
-    t.integer  "CON_KIND",           limit: 1
-    t.string   "CON_FIRST_NAME",     limit: 25
-    t.string   "CON_LAST_NAME",      limit: 40
-    t.string   "CON_MID_INITIAL",    limit: 5
-    t.string   "CON_SAL",            limit: 20
-    t.string   "CON_TITLE",          limit: 25
-    t.integer  "CON_DECISION_MAKER", limit: 1
-    t.string   "CON_PHONE_WORK",     limit: 20
-    t.string   "CON_PHONE_HOME",     limit: 20
-    t.string   "CON_PHONE_MOBILE",   limit: 20
-    t.string   "CON_FAX_WORK",       limit: 20
-    t.string   "CON_PAGER",          limit: 20
-    t.text     "CON_NOTE"
-    t.string   "CON_EMAIL_WORK",     limit: 40
-    t.string   "CON_EMAIL_HOME",     limit: 40
-    t.date     "CON_DATE_ADDED"
-    t.string   "CON_ADDED_BY",       limit: 4
-    t.datetime "CON_LAST_CALL"
-    t.string   "CON_LAST_BY",        limit: 4
-    t.string   "CON_FAX_HOME",       limit: 20
-    t.integer  "CON_SALES_EMAIL",    limit: 1
-    t.string   "CON_ORG",            limit: 100
-    t.string   "CON_FULL_NAME",      limit: 66
-    t.string   "CON_ADDRESS1",       limit: 60
-    t.string   "CON_ADDRESS2",       limit: 60
-    t.string   "CON_ADDRESS3",       limit: 60
-    t.string   "CON_ADDRESS4",       limit: 60
-    t.string   "CON_ADDRESS5",       limit: 60
-    t.string   "CON_ADDRESS6",       limit: 60
-    t.integer  "CON_APPROVE_JOBS",   limit: 1
-    t.string   "CON_EDITED_BY",      limit: 4
-    t.datetime "CON_EDITED_WHEN"
+  create_table "comments", force: true do |t|
+    t.string    "name"
+    t.text      "body"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
-  add_index "contacts", ["CON_C_NUM"], name: "CON_C_NUM", using: :btree
-  add_index "contacts", ["CON_DECISION_MAKER"], name: "CON_DECISION_MAKER", using: :btree
-  add_index "contacts", ["CON_FULL_NAME"], name: "CON_FULL_NAME", using: :btree
-  add_index "contacts", ["CON_KIND"], name: "CON_KIND", using: :btree
-  add_index "contacts", ["CON_PHONE_WORK"], name: "CON_PHONE_WORK", using: :btree
-  add_index "contacts", ["CON_SEQ"], name: "CON_SEQ", unique: true, using: :btree
-  add_index "contacts", ["CON_V_NUM"], name: "CON_V_NUM", using: :btree
-
-  create_table "costs", primary_key: "COST_SEQ", force: true do |t|
-    t.string   "COST_NUM",              limit: 20
-    t.string   "COST_JOB_NUM",          limit: 10
-    t.string   "COST_TASK",             limit: 4
-    t.text     "COST_NOTE"
-    t.decimal  "COST_NET_AMT",                     precision: 9,  scale: 2
-    t.decimal  "COST_GROSS_AMT",                   precision: 9,  scale: 2
-    t.decimal  "COST_HOURS",                       precision: 9,  scale: 2
-    t.integer  "COST_KIND",             limit: 1
-    t.date     "COST_DATE"
-    t.decimal  "COST_BILL_RATE",                   precision: 9,  scale: 2
-    t.decimal  "COST_COST_RATE",                   precision: 9,  scale: 2
-    t.string   "COST_PO_NUM",           limit: 15
-    t.integer  "COST_BILLABLE",         limit: 1
-    t.string   "COST_VENDOR",           limit: 10
-    t.integer  "COST_PERIOD",           limit: 1
-    t.string   "COST_CLIENT_NUM",       limit: 10
-    t.decimal  "COST_DGL",                         precision: 15, scale: 2
-    t.date     "COST_POSTED"
-    t.string   "COST_KEY",              limit: 15
-    t.integer  "COST_FINISHED",         limit: 1
-    t.decimal  "COST_MARKUP",                      precision: 9,  scale: 2
-    t.decimal  "COST_BILL_AMT",                    precision: 15, scale: 2
-    t.date     "COST_AR_DATE"
-    t.string   "COST_AR_NUM",           limit: 12
-    t.decimal  "COST_BILLED_AMT",                  precision: 15, scale: 2
-    t.string   "COST_STATUS",           limit: 10
-    t.date     "COST_AR_PAID"
-    t.string   "COST_CK_NUM",           limit: 10
-    t.string   "COST_REF",              limit: 18
-    t.decimal  "COST_HOURS_BILLED",                precision: 9,  scale: 2
-    t.decimal  "COST_OT",                          precision: 9,  scale: 0
-    t.integer  "COST_POX_LINE"
-    t.string   "COST_GL",               limit: 20
-    t.decimal  "COST_J_PROD_STATUS",               precision: 9,  scale: 0
-    t.decimal  "COST_J_BILL_STATUS",               precision: 9,  scale: 0
-    t.string   "COST_PC",               limit: 10
-    t.decimal  "COST_QTY",                         precision: 9,  scale: 2
-    t.decimal  "COST_DAYS",                        precision: 9,  scale: 2
-    t.decimal  "COST_COST_EA",                     precision: 9,  scale: 2
-    t.string   "COST_SIZE",             limit: 6
-    t.string   "COST_ADDED_BY",         limit: 4
-    t.decimal  "COST_GROSS_EA",                    precision: 9,  scale: 2
-    t.decimal  "COST_ADV_CK",                      precision: 9,  scale: 0
-    t.date     "COST_EXPORTED"
-    t.date     "COST_WIP_EXPORTED"
-    t.date     "COST_WIP_REV_EXPORTED"
-    t.integer  "COST_SALES_TAX",        limit: 1
-    t.string   "COST_APPROVED_BY",      limit: 10
-    t.datetime "COST_APPROVED_DATE"
-    t.string   "COST_REIMBURSE_AP_NUM", limit: 10
-    t.string   "COST_EXP_ADDED_BY",     limit: 4
-    t.string   "COST_EDITED_BY",        limit: 4
-    t.datetime "COST_EDITED_WHEN"
-    t.string   "COST_POSTED_BY",        limit: 4
-    t.datetime "COST_POSTED_WHEN"
+  create_table "contacts", primary_key: "con_seq", force: true do |t|
+    t.string    "con_c_num",          limit: 10
+    t.string    "con_v_num",          limit: 10
+    t.integer   "con_kind",           limit: 1
+    t.string    "con_first_name",     limit: 25
+    t.string    "con_last_name",      limit: 40
+    t.string    "con_mid_initial",    limit: 5
+    t.string    "con_sal",            limit: 20
+    t.string    "con_title",          limit: 25
+    t.integer   "con_decision_maker", limit: 1
+    t.string    "con_phone_work",     limit: 20
+    t.string    "con_phone_home",     limit: 20
+    t.string    "con_phone_mobile",   limit: 20
+    t.string    "con_fax_work",       limit: 20
+    t.string    "con_pager",          limit: 20
+    t.text      "con_note"
+    t.string    "con_email_work",     limit: 40
+    t.string    "con_email_home",     limit: 40
+    t.date      "con_date_added"
+    t.string    "con_added_by",       limit: 4
+    t.timestamp "con_last_call"
+    t.string    "con_last_by",        limit: 4
+    t.string    "con_fax_home",       limit: 20
+    t.integer   "con_sales_email",    limit: 1
+    t.string    "con_org",            limit: 100
+    t.string    "con_full_name",      limit: 66
+    t.string    "con_address1",       limit: 60
+    t.string    "con_address2",       limit: 60
+    t.string    "con_address3",       limit: 60
+    t.string    "con_address4",       limit: 60
+    t.string    "con_address5",       limit: 60
+    t.string    "con_address6",       limit: 60
+    t.integer   "con_approve_jobs",   limit: 1
+    t.string    "con_edited_by",      limit: 4
+    t.timestamp "con_edited_when"
   end
 
-  add_index "costs", ["COST_AR_DATE"], name: "COST_AR_DATE", using: :btree
-  add_index "costs", ["COST_AR_NUM"], name: "COST_AR_NUM", using: :btree
-  add_index "costs", ["COST_CLIENT_NUM"], name: "COST_CLIENT_NUM", using: :btree
-  add_index "costs", ["COST_DATE"], name: "COST_DATE", using: :btree
-  add_index "costs", ["COST_JOB_NUM"], name: "COST_JOB_NUM", using: :btree
-  add_index "costs", ["COST_KIND"], name: "COST_KIND", using: :btree
-  add_index "costs", ["COST_NUM"], name: "COST_NUM", using: :btree
-  add_index "costs", ["COST_OT"], name: "COST_OT", using: :btree
-  add_index "costs", ["COST_PERIOD"], name: "COST_PERIOD", using: :btree
-  add_index "costs", ["COST_POSTED"], name: "COST_POSTED", using: :btree
-  add_index "costs", ["COST_PO_NUM"], name: "COST_PO_NUM", using: :btree
-  add_index "costs", ["COST_REF"], name: "COST_REF", using: :btree
-  add_index "costs", ["COST_SEQ"], name: "COST_SEQ", unique: true, using: :btree
-  add_index "costs", ["COST_STATUS"], name: "COST_STATUS", using: :btree
-  add_index "costs", ["COST_TASK"], name: "COST_TASK", using: :btree
-  add_index "costs", ["COST_VENDOR"], name: "COST_VENDOR", using: :btree
+  add_index "contacts", ["con_c_num"], name: "con_c_num"
+  add_index "contacts", ["con_decision_maker"], name: "con_decision_maker"
+  add_index "contacts", ["con_full_name"], name: "con_full_name"
+  add_index "contacts", ["con_kind"], name: "con_kind"
+  add_index "contacts", ["con_phone_work"], name: "con_phone_work"
+  add_index "contacts", ["con_v_num"], name: "con_v_num"
 
-  create_table "credit_card_prefs", primary_key: "CC_SEQ", force: true do |t|
-    t.integer "CC_KIND",       limit: 1
-    t.string  "CC_VENDOR_NUM", limit: 10
-    t.decimal "CC_CGL",                   precision: 9, scale: 0
-    t.string  "CC_PAYEE",      limit: 40
-    t.string  "CC_JOB_NUM",    limit: 10
-    t.string  "CC_TASK",       limit: 4
-    t.decimal "CC_DGL",                   precision: 9, scale: 0
-    t.string  "CC_ACCT_NUM",   limit: 4
+  create_table "costs", primary_key: "cost_seq", force: true do |t|
+    t.string    "cost_num",              limit: 20
+    t.string    "cost_job_num",          limit: 10
+    t.string    "cost_task",             limit: 4
+    t.text      "cost_note"
+    t.decimal   "cost_net_amt",                     precision: 9,  scale: 2
+    t.decimal   "cost_gross_amt",                   precision: 9,  scale: 2
+    t.decimal   "cost_hours",                       precision: 9,  scale: 2
+    t.integer   "cost_kind",             limit: 1
+    t.date      "cost_date"
+    t.decimal   "cost_bill_rate",                   precision: 9,  scale: 2
+    t.decimal   "cost_cost_rate",                   precision: 9,  scale: 2
+    t.string    "cost_po_num",           limit: 15
+    t.integer   "cost_billable",         limit: 1
+    t.string    "cost_vendor",           limit: 10
+    t.integer   "cost_period",           limit: 1
+    t.string    "cost_client_num",       limit: 10
+    t.decimal   "cost_dgl",                         precision: 15, scale: 2
+    t.date      "cost_posted"
+    t.string    "cost_key",              limit: 15
+    t.integer   "cost_finished",         limit: 1
+    t.decimal   "cost_markup",                      precision: 9,  scale: 2
+    t.decimal   "cost_bill_amt",                    precision: 15, scale: 2
+    t.date      "cost_ar_date"
+    t.string    "cost_ar_num",           limit: 12
+    t.decimal   "cost_billed_amt",                  precision: 15, scale: 2
+    t.string    "cost_status",           limit: 10
+    t.date      "cost_ar_paid"
+    t.string    "cost_ck_num",           limit: 10
+    t.string    "cost_ref",              limit: 18
+    t.decimal   "cost_hours_billed",                precision: 9,  scale: 2
+    t.decimal   "cost_ot",                          precision: 9,  scale: 0
+    t.integer   "cost_pox_line"
+    t.string    "cost_gl",               limit: 20
+    t.decimal   "cost_j_prod_status",               precision: 9,  scale: 0
+    t.decimal   "cost_j_bill_status",               precision: 9,  scale: 0
+    t.string    "cost_pc",               limit: 10
+    t.decimal   "cost_qty",                         precision: 9,  scale: 2
+    t.decimal   "cost_days",                        precision: 9,  scale: 2
+    t.decimal   "cost_cost_ea",                     precision: 9,  scale: 2
+    t.string    "cost_size",             limit: 6
+    t.string    "cost_added_by",         limit: 4
+    t.decimal   "cost_gross_ea",                    precision: 9,  scale: 2
+    t.decimal   "cost_adv_ck",                      precision: 9,  scale: 0
+    t.date      "cost_exported"
+    t.date      "cost_wip_exported"
+    t.date      "cost_wip_rev_exported"
+    t.integer   "cost_sales_tax",        limit: 1
+    t.string    "cost_approved_by",      limit: 10
+    t.timestamp "cost_approved_date"
+    t.string    "cost_reimburse_ap_num", limit: 10
+    t.string    "cost_exp_added_by",     limit: 4
+    t.string    "cost_edited_by",        limit: 4
+    t.timestamp "cost_edited_when"
+    t.string    "cost_posted_by",        limit: 4
+    t.timestamp "cost_posted_when"
   end
 
-  add_index "credit_card_prefs", ["CC_KIND"], name: "CC_KIND", using: :btree
-  add_index "credit_card_prefs", ["CC_PAYEE"], name: "CC_PAYEE", using: :btree
-  add_index "credit_card_prefs", ["CC_SEQ"], name: "CC_SEQ", unique: true, using: :btree
-  add_index "credit_card_prefs", ["CC_VENDOR_NUM"], name: "CC_VENDOR_NUM", using: :btree
+  add_index "costs", ["cost_ar_date"], name: "cost_ar_date"
+  add_index "costs", ["cost_ar_num"], name: "cost_ar_num"
+  add_index "costs", ["cost_client_num"], name: "cost_client_num"
+  add_index "costs", ["cost_date"], name: "cost_date"
+  add_index "costs", ["cost_job_num"], name: "cost_job_num"
+  add_index "costs", ["cost_kind"], name: "cost_kind"
+  add_index "costs", ["cost_num"], name: "cost_num"
+  add_index "costs", ["cost_ot"], name: "cost_ot"
+  add_index "costs", ["cost_period"], name: "cost_period"
+  add_index "costs", ["cost_po_num"], name: "cost_po_num"
+  add_index "costs", ["cost_posted"], name: "cost_posted"
+  add_index "costs", ["cost_ref"], name: "cost_ref"
+  add_index "costs", ["cost_status"], name: "cost_status"
+  add_index "costs", ["cost_task"], name: "cost_task"
+  add_index "costs", ["cost_vendor"], name: "cost_vendor"
 
-  create_table "data_count", primary_key: "DATA_SEQ", force: true do |t|
-    t.date    "DATA_DATE"
-    t.decimal "DATA_AP",       precision: 15, scale: 0
-    t.decimal "DATA_AR",       precision: 15, scale: 0
-    t.decimal "DATA_JOBS",     precision: 15, scale: 0
-    t.decimal "DATA_CHECKS",   precision: 15, scale: 0
-    t.decimal "DATA_CLIENTS",  precision: 15, scale: 0
-    t.decimal "DATA_GL",       precision: 15, scale: 0
-    t.decimal "DATA_PAYMENTS", precision: 15, scale: 0
-    t.decimal "DATA_PO",       precision: 15, scale: 0
-    t.decimal "DATA_VENDORS",  precision: 15, scale: 0
-    t.decimal "DATA_TOTAL",    precision: 15, scale: 0
+  create_table "credit_card_prefs", primary_key: "cc_seq", force: true do |t|
+    t.integer "cc_kind",       limit: 1
+    t.string  "cc_vendor_num", limit: 10
+    t.decimal "cc_cgl",                   precision: 9, scale: 0
+    t.string  "cc_payee",      limit: 40
+    t.string  "cc_job_num",    limit: 10
+    t.string  "cc_task",       limit: 4
+    t.decimal "cc_dgl",                   precision: 9, scale: 0
+    t.string  "cc_acct_num",   limit: 4
   end
 
-  add_index "data_count", ["DATA_DATE"], name: "DATA_DATE", using: :btree
-  add_index "data_count", ["DATA_SEQ"], name: "DATA_SEQ", unique: true, using: :btree
+  add_index "credit_card_prefs", ["cc_kind"], name: "cc_kind"
+  add_index "credit_card_prefs", ["cc_payee"], name: "cc_payee"
+  add_index "credit_card_prefs", ["cc_vendor_num"], name: "cc_vendor_num"
 
-  create_table "depts", primary_key: "DEPT_SEQ", force: true do |t|
-    t.string   "DEPT_OFFICE",      limit: 10
-    t.string   "DEPT_NAME",        limit: 15
-    t.string   "DEPT_DESC",        limit: 40
-    t.string   "DEPT_MGR",         limit: 10
-    t.decimal  "DEPT_NUM",                    precision: 9, scale: 0
-    t.string   "DEPT_ADDED_BY",    limit: 4
-    t.datetime "DEPT_ADDED_WHEN"
-    t.string   "DEPT_EDITED_BY",   limit: 4
-    t.datetime "DEPT_EDITED_WHEN"
+  create_table "data_count", primary_key: "data_seq", force: true do |t|
+    t.date    "data_date"
+    t.decimal "data_ap",       precision: 15, scale: 0
+    t.decimal "data_ar",       precision: 15, scale: 0
+    t.decimal "data_jobs",     precision: 15, scale: 0
+    t.decimal "data_checks",   precision: 15, scale: 0
+    t.decimal "data_clients",  precision: 15, scale: 0
+    t.decimal "data_gl",       precision: 15, scale: 0
+    t.decimal "data_payments", precision: 15, scale: 0
+    t.decimal "data_po",       precision: 15, scale: 0
+    t.decimal "data_vendors",  precision: 15, scale: 0
+    t.decimal "data_total",    precision: 15, scale: 0
   end
 
-  add_index "depts", ["DEPT_MGR"], name: "DEPT_MGR", using: :btree
-  add_index "depts", ["DEPT_NAME"], name: "DEPT_NAME", using: :btree
-  add_index "depts", ["DEPT_NUM"], name: "DEPT_NUM", using: :btree
-  add_index "depts", ["DEPT_SEQ"], name: "DEPT_SEQ", unique: true, using: :btree
+  add_index "data_count", ["data_date"], name: "data_date"
 
-  create_table "dictionary", primary_key: "DICT_SEQ", force: true do |t|
-    t.string  "DICT_NAME",    limit: 12
-    t.integer "DICT_LANG_ID"
+  create_table "depts", primary_key: "dept_seq", force: true do |t|
+    t.string    "dept_office",      limit: 10
+    t.string    "dept_name",        limit: 15
+    t.string    "dept_desc",        limit: 40
+    t.string    "dept_mgr",         limit: 10
+    t.decimal   "dept_num",                    precision: 9, scale: 0
+    t.string    "dept_added_by",    limit: 4
+    t.timestamp "dept_added_when"
+    t.string    "dept_edited_by",   limit: 4
+    t.timestamp "dept_edited_when"
   end
 
-  add_index "dictionary", ["DICT_NAME"], name: "DICT_NAME", using: :btree
-  add_index "dictionary", ["DICT_SEQ"], name: "DICT_SEQ", unique: true, using: :btree
+  add_index "depts", ["dept_mgr"], name: "dept_mgr"
+  add_index "depts", ["dept_name"], name: "dept_name"
+  add_index "depts", ["dept_num"], name: "dept_num"
 
-  create_table "dictionary_word", primary_key: "DWORD_SEQ", force: true do |t|
-    t.string "DWORD_DICT_NAME", limit: 12
-    t.string "DWORD_WORD",      limit: 40
+  create_table "dictionary", primary_key: "dict_seq", force: true do |t|
+    t.string  "dict_name",    limit: 12
+    t.integer "dict_lang_id"
   end
 
-  add_index "dictionary_word", ["DWORD_DICT_NAME"], name: "DWORD_DICT_NAME", using: :btree
-  add_index "dictionary_word", ["DWORD_SEQ"], name: "DWORD_SEQ", unique: true, using: :btree
+  add_index "dictionary", ["dict_name"], name: "dict_name"
 
-  create_table "est_revs", primary_key: "RV_SEQ", force: true do |t|
-    t.string   "RV_JOB_NUM",        limit: 10
-    t.string   "RV_TASK",           limit: 4
-    t.decimal  "RV_EST1",                      precision: 9, scale: 2
-    t.decimal  "RV_EST2",                      precision: 9, scale: 2
-    t.decimal  "RV_EST3",                      precision: 9, scale: 2
-    t.string   "RV_NAME",           limit: 40
-    t.decimal  "RV_GROUP",                     precision: 9, scale: 0
-    t.decimal  "RV_SORT",                      precision: 9, scale: 0
-    t.integer  "RV_FINAL",          limit: 1
-    t.decimal  "RV_REVISION",                  precision: 9, scale: 0
-    t.string   "RV_EST_HEAD1",      limit: 15
-    t.string   "RV_EST_HEAD2",      limit: 15
-    t.string   "RV_EST_HEAD3",      limit: 15
-    t.decimal  "RV_EST_HRS1",                  precision: 9, scale: 2
-    t.decimal  "RV_EST_HRS2",                  precision: 9, scale: 2
-    t.decimal  "RV_EST_HRS3",                  precision: 9, scale: 2
-    t.decimal  "RV_BUDGET",                    precision: 9, scale: 2
-    t.string   "RV_REVISED_BY",     limit: 4
-    t.date     "RV_REVISION_DATE"
-    t.text     "RV_REVISION_NOTES"
-    t.text     "RV_REASON"
-    t.string   "RV_REV_OKD_BY",     limit: 4
-    t.datetime "RV_REV_OKD_DATE"
-    t.string   "RV_ADDED_BY",       limit: 4
-    t.datetime "RV_ADDED_WHEN"
-    t.string   "RV_EDITED_BY",      limit: 4
-    t.datetime "RV_EDITED_WHEN"
+  create_table "dictionary_word", primary_key: "dword_seq", force: true do |t|
+    t.string "dword_dict_name", limit: 12
+    t.string "dword_word",      limit: 40
   end
 
-  add_index "est_revs", ["RV_JOB_NUM"], name: "RV_JOB_NUM", using: :btree
-  add_index "est_revs", ["RV_REVISION"], name: "RV_REVISION", using: :btree
-  add_index "est_revs", ["RV_SEQ"], name: "RV_SEQ", unique: true, using: :btree
-  add_index "est_revs", ["RV_TASK"], name: "RV_TASK", using: :btree
+  add_index "dictionary_word", ["dword_dict_name"], name: "dword_dict_name"
 
-  create_table "f_preference", primary_key: "PR_RSN", force: true do |t|
-    t.integer "prSQLConvFlag", limit: 1
+  create_table "est_revs", primary_key: "rv_seq", force: true do |t|
+    t.string    "rv_job_num",        limit: 10
+    t.string    "rv_task",           limit: 4
+    t.decimal   "rv_est1",                      precision: 9, scale: 2
+    t.decimal   "rv_est2",                      precision: 9, scale: 2
+    t.decimal   "rv_est3",                      precision: 9, scale: 2
+    t.string    "rv_name",           limit: 40
+    t.decimal   "rv_group",                     precision: 9, scale: 0
+    t.decimal   "rv_sort",                      precision: 9, scale: 0
+    t.integer   "rv_final",          limit: 1
+    t.decimal   "rv_revision",                  precision: 9, scale: 0
+    t.string    "rv_est_head1",      limit: 15
+    t.string    "rv_est_head2",      limit: 15
+    t.string    "rv_est_head3",      limit: 15
+    t.decimal   "rv_est_hrs1",                  precision: 9, scale: 2
+    t.decimal   "rv_est_hrs2",                  precision: 9, scale: 2
+    t.decimal   "rv_est_hrs3",                  precision: 9, scale: 2
+    t.decimal   "rv_budget",                    precision: 9, scale: 2
+    t.string    "rv_revised_by",     limit: 4
+    t.date      "rv_revision_date"
+    t.text      "rv_revision_notes"
+    t.text      "rv_reason"
+    t.string    "rv_rev_okd_by",     limit: 4
+    t.timestamp "rv_rev_okd_date"
+    t.string    "rv_added_by",       limit: 4
+    t.timestamp "rv_added_when"
+    t.string    "rv_edited_by",      limit: 4
+    t.timestamp "rv_edited_when"
   end
 
-  add_index "f_preference", ["PR_RSN"], name: "PR_RSN", unique: true, using: :btree
+  add_index "est_revs", ["rv_job_num"], name: "rv_job_num"
+  add_index "est_revs", ["rv_revision"], name: "rv_revision"
+  add_index "est_revs", ["rv_task"], name: "rv_task"
 
-  create_table "finance", primary_key: "FI_SEQ", force: true do |t|
-    t.string  "FI_AC_NUM",        limit: 15
-    t.integer "FI_CATEGORY",      limit: 1
-    t.integer "FI_CLASS",         limit: 1
-    t.decimal "FI_MTD",                      precision: 15, scale: 2
-    t.float   "FI_MTD_PERCENT"
-    t.decimal "FI_YTD",                      precision: 15, scale: 2
-    t.float   "FI_YTD_PERCENT"
-    t.decimal "FI_MONTH",                    precision: 15, scale: 2
-    t.decimal "FI_YEAR",                     precision: 15, scale: 2
-    t.decimal "FI_1",                        precision: 15, scale: 2
-    t.decimal "FI_2",                        precision: 15, scale: 2
-    t.decimal "FI_3",                        precision: 15, scale: 2
-    t.decimal "FI_4",                        precision: 15, scale: 2
-    t.decimal "FI_5",                        precision: 15, scale: 2
-    t.decimal "FI_6",                        precision: 15, scale: 2
-    t.decimal "FI_7",                        precision: 15, scale: 2
-    t.decimal "FI_8",                        precision: 15, scale: 2
-    t.text    "FI_NAME"
-    t.text    "FI_NOTE"
-    t.decimal "FI_SUB_CLASS",                precision: 15, scale: 0
-    t.decimal "FI_ROLL_UP",                  precision: 15, scale: 2
-    t.float   "FI_PCT1"
-    t.float   "FI_PCT2"
-    t.float   "FI_PCT3"
-    t.float   "FI_PCT4"
-    t.decimal "FI_L_MONTH",                  precision: 15, scale: 2
-    t.decimal "FI_L_MTD",                    precision: 15, scale: 2
-    t.decimal "FI_L_YEAR",                   precision: 15, scale: 2
-    t.decimal "FI_L_YTD",                    precision: 15, scale: 2
-    t.float   "FI_L_MTD_PERCENT"
-    t.float   "FI_L_YTD_PERCENT"
-    t.float   "FI_L_PCT1"
-    t.float   "FI_L_PCT2"
-    t.float   "FI_L_PCT3"
-    t.float   "FI_L_PCT4"
-    t.string  "FI_CLIENT_NUM",    limit: 10
-    t.decimal "FI_GROUP",                    precision: 9,  scale: 0
-    t.float   "FI_PCT5"
-    t.float   "FI_L_PCT5"
+  create_table "f_preference", primary_key: "pr_rsn", force: true do |t|
+    t.integer "prsqlconvflag", limit: 1
   end
 
-  add_index "finance", ["FI_AC_NUM"], name: "FI_AC_NUM", using: :btree
-  add_index "finance", ["FI_SEQ"], name: "FI_SEQ", unique: true, using: :btree
-
-  create_table "groups", primary_key: "GROUP_SEQ", force: true do |t|
-    t.decimal  "GROUP_NUM",                    precision: 9, scale: 0
-    t.string   "GROUP_DESC",        limit: 40
-    t.integer  "GROUP_CAT",         limit: 1
-    t.string   "GROUP_ADDED_BY",    limit: 4
-    t.datetime "GROUP_ADDED_WHEN"
-    t.string   "GROUP_EDITED_BY",   limit: 4
-    t.datetime "GROUP_EDITED_WHEN"
+  create_table "finance", primary_key: "fi_seq", force: true do |t|
+    t.string  "fi_ac_num",        limit: 15
+    t.integer "fi_category",      limit: 1
+    t.integer "fi_class",         limit: 1
+    t.decimal "fi_mtd",                      precision: 15, scale: 2
+    t.float   "fi_mtd_percent"
+    t.decimal "fi_ytd",                      precision: 15, scale: 2
+    t.float   "fi_ytd_percent"
+    t.decimal "fi_month",                    precision: 15, scale: 2
+    t.decimal "fi_year",                     precision: 15, scale: 2
+    t.decimal "fi_1",                        precision: 15, scale: 2
+    t.decimal "fi_2",                        precision: 15, scale: 2
+    t.decimal "fi_3",                        precision: 15, scale: 2
+    t.decimal "fi_4",                        precision: 15, scale: 2
+    t.decimal "fi_5",                        precision: 15, scale: 2
+    t.decimal "fi_6",                        precision: 15, scale: 2
+    t.decimal "fi_7",                        precision: 15, scale: 2
+    t.decimal "fi_8",                        precision: 15, scale: 2
+    t.text    "fi_name"
+    t.text    "fi_note"
+    t.decimal "fi_sub_class",                precision: 15, scale: 0
+    t.decimal "fi_roll_up",                  precision: 15, scale: 2
+    t.float   "fi_pct1"
+    t.float   "fi_pct2"
+    t.float   "fi_pct3"
+    t.float   "fi_pct4"
+    t.decimal "fi_l_month",                  precision: 15, scale: 2
+    t.decimal "fi_l_mtd",                    precision: 15, scale: 2
+    t.decimal "fi_l_year",                   precision: 15, scale: 2
+    t.decimal "fi_l_ytd",                    precision: 15, scale: 2
+    t.float   "fi_l_mtd_percent"
+    t.float   "fi_l_ytd_percent"
+    t.float   "fi_l_pct1"
+    t.float   "fi_l_pct2"
+    t.float   "fi_l_pct3"
+    t.float   "fi_l_pct4"
+    t.string  "fi_client_num",    limit: 10
+    t.decimal "fi_group",                    precision: 9,  scale: 0
+    t.float   "fi_pct5"
+    t.float   "fi_l_pct5"
   end
 
-  add_index "groups", ["GROUP_NUM"], name: "GROUP_NUM", using: :btree
-  add_index "groups", ["GROUP_SEQ"], name: "GROUP_SEQ", unique: true, using: :btree
+  add_index "finance", ["fi_ac_num"], name: "fi_ac_num"
 
-  create_table "history", primary_key: "H_SEQ", force: true do |t|
-    t.string   "H_JOB_NUM",     limit: 10
-    t.decimal  "H_NUM",                    precision: 9, scale: 0
-    t.string   "H_WHO",         limit: 4
-    t.datetime "H_DATE"
-    t.text     "H_DESC"
-    t.integer  "H_RESOLVED",    limit: 1
-    t.string   "H_FOR",         limit: 4
-    t.text     "H_USER_NOTE"
-    t.text     "H_MAIL_TO"
-    t.integer  "H_MANUAL",      limit: 1
-    t.string   "H_ADDED_BY",    limit: 4
-    t.datetime "H_ADDED_WHEN"
-    t.string   "H_EDITED_BY",   limit: 4
-    t.datetime "H_EDITED_WHEN"
+  create_table "groups", primary_key: "group_seq", force: true do |t|
+    t.decimal   "group_num",                    precision: 9, scale: 0
+    t.string    "group_desc",        limit: 40
+    t.integer   "group_cat",         limit: 1
+    t.string    "group_added_by",    limit: 4
+    t.timestamp "group_added_when"
+    t.string    "group_edited_by",   limit: 4
+    t.timestamp "group_edited_when"
   end
 
-  add_index "history", ["H_JOB_NUM"], name: "H_JOB_NUM", using: :btree
-  add_index "history", ["H_RESOLVED"], name: "H_RESOLVED", using: :btree
-  add_index "history", ["H_SEQ"], name: "H_SEQ", unique: true, using: :btree
-  add_index "history", ["H_WHO"], name: "H_WHO", using: :btree
+  add_index "groups", ["group_num"], name: "group_num"
 
-  create_table "history_client", primary_key: "HC_SEQ", force: true do |t|
-    t.string   "HC_CLIENT_NUM",  limit: 10
-    t.decimal  "HC_NUM",                    precision: 9, scale: 0
-    t.string   "HC_ADDED_BY",    limit: 4
-    t.datetime "HC_DATE"
-    t.string   "HC_SUBJECT",     limit: 80
-    t.integer  "HC_OK",          limit: 1
-    t.string   "HC_FOR",         limit: 4
-    t.text     "HC_DESC"
-    t.text     "HC_MAIL_TO"
-    t.string   "HC_CC",          limit: 80
-    t.string   "HC_BCC",         limit: 80
-    t.integer  "HC_NOTIFIED",    limit: 1
-    t.string   "HC_INV_NUM",     limit: 10
-    t.integer  "HC_KIND",        limit: 1
-    t.integer  "HC_AUTO_DIARY",  limit: 1
-    t.string   "HC_EDITED_BY",   limit: 4
-    t.datetime "HC_EDITED_WHEN"
+  create_table "history", primary_key: "h_seq", force: true do |t|
+    t.string    "h_job_num",     limit: 10
+    t.decimal   "h_num",                    precision: 9, scale: 0
+    t.string    "h_who",         limit: 4
+    t.timestamp "h_date"
+    t.text      "h_desc"
+    t.integer   "h_resolved",    limit: 1
+    t.string    "h_for",         limit: 4
+    t.text      "h_user_note"
+    t.text      "h_mail_to"
+    t.integer   "h_manual",      limit: 1
+    t.string    "h_added_by",    limit: 4
+    t.timestamp "h_added_when"
+    t.string    "h_edited_by",   limit: 4
+    t.timestamp "h_edited_when"
   end
 
-  add_index "history_client", ["HC_ADDED_BY"], name: "HC_ADDED_BY", using: :btree
-  add_index "history_client", ["HC_CLIENT_NUM"], name: "HC_CLIENT_NUM", using: :btree
-  add_index "history_client", ["HC_DATE"], name: "HC_DATE", using: :btree
-  add_index "history_client", ["HC_KIND"], name: "HC_KIND", using: :btree
-  add_index "history_client", ["HC_OK"], name: "HC_OK", using: :btree
-  add_index "history_client", ["HC_SEQ"], name: "HC_SEQ", unique: true, using: :btree
+  add_index "history", ["h_job_num"], name: "h_job_num"
+  add_index "history", ["h_resolved"], name: "h_resolved"
+  add_index "history", ["h_who"], name: "h_who"
 
-  create_table "history_vendor", primary_key: "HV_SEQ", force: true do |t|
-    t.string   "HV_VENDOR_NUM",  limit: 10
-    t.decimal  "HV_NUM",                    precision: 9, scale: 0
-    t.string   "HV_ADDED_BY",    limit: 4
-    t.datetime "HV_DATE"
-    t.string   "HV_SUBJECT",     limit: 80
-    t.integer  "HV_OK",          limit: 1
-    t.string   "HV_FOR",         limit: 4
-    t.text     "HV_DESC"
-    t.text     "HV_MAIL_TO"
-    t.string   "HV_CC",          limit: 80
-    t.string   "HV_BCC",         limit: 80
-    t.integer  "HV_NOTIFIED",    limit: 1
-    t.string   "HV_INV_NUM",     limit: 20
-    t.string   "HV_EDITED_BY",   limit: 4
-    t.datetime "HV_EDITED_WHEN"
+  create_table "history_client", primary_key: "hc_seq", force: true do |t|
+    t.string    "hc_client_num",  limit: 10
+    t.decimal   "hc_num",                    precision: 9, scale: 0
+    t.string    "hc_added_by",    limit: 4
+    t.timestamp "hc_date"
+    t.string    "hc_subject",     limit: 80
+    t.integer   "hc_ok",          limit: 1
+    t.string    "hc_for",         limit: 4
+    t.text      "hc_desc"
+    t.text      "hc_mail_to"
+    t.string    "hc_cc",          limit: 80
+    t.string    "hc_bcc",         limit: 80
+    t.integer   "hc_notified",    limit: 1
+    t.string    "hc_inv_num",     limit: 10
+    t.integer   "hc_kind",        limit: 1
+    t.integer   "hc_auto_diary",  limit: 1
+    t.string    "hc_edited_by",   limit: 4
+    t.timestamp "hc_edited_when"
   end
 
-  add_index "history_vendor", ["HV_ADDED_BY"], name: "HV_ADDED_BY", using: :btree
-  add_index "history_vendor", ["HV_DATE"], name: "HV_DATE", using: :btree
-  add_index "history_vendor", ["HV_OK"], name: "HV_OK", using: :btree
-  add_index "history_vendor", ["HV_SEQ"], name: "HV_SEQ", unique: true, using: :btree
-  add_index "history_vendor", ["HV_VENDOR_NUM"], name: "HV_VENDOR_NUM", using: :btree
+  add_index "history_client", ["hc_added_by"], name: "hc_added_by"
+  add_index "history_client", ["hc_client_num"], name: "hc_client_num"
+  add_index "history_client", ["hc_date"], name: "hc_date"
+  add_index "history_client", ["hc_kind"], name: "hc_kind"
+  add_index "history_client", ["hc_ok"], name: "hc_ok"
 
-  create_table "home_comments", primary_key: "COMMENT_SEQ", force: true do |t|
-    t.integer  "COMMENT_HOME_SEQ"
-    t.string   "COMMENT_JOB_NUM",     limit: 15
-    t.string   "COMMENT_TASK",        limit: 4
-    t.string   "COMMENT_ADDED_BY",    limit: 10
-    t.datetime "COMMENT_DATE_ADDED"
-    t.integer  "COMMENT_KIND",        limit: 1
-    t.integer  "COMMENT_REPLY",       limit: 1
-    t.integer  "COMMENT_PRIVATE1",    limit: 1
-    t.integer  "COMMENT_PRIVATE2",    limit: 1
-    t.integer  "COMMENT_PRIORITY",    limit: 1
-    t.decimal  "COMMENT_SORT",                         precision: 15, scale: 0
-    t.integer  "COMMENT_CHOICE",      limit: 1
-    t.text     "COMMENT_MESSAGE",     limit: 16777215
-    t.integer  "COMMENT_LOCKED",      limit: 1
-    t.integer  "COMMENT_ADDED_KIND",  limit: 1
-    t.integer  "COMMENT_RATING",      limit: 1
-    t.decimal  "COMMENT_PROD_STATUS",                  precision: 15, scale: 0
-    t.text     "COMMENT_FILE_NAME"
-    t.string   "COMMENT_X_PHASE",     limit: 20
-    t.string   "COMMENT_PING",        limit: 10
-    t.integer  "COMMENT_FINAL",       limit: 1
-    t.integer  "COMMENT_STAR",        limit: 1
+  create_table "history_vendor", primary_key: "hv_seq", force: true do |t|
+    t.string    "hv_vendor_num",  limit: 10
+    t.decimal   "hv_num",                    precision: 9, scale: 0
+    t.string    "hv_added_by",    limit: 4
+    t.timestamp "hv_date"
+    t.string    "hv_subject",     limit: 80
+    t.integer   "hv_ok",          limit: 1
+    t.string    "hv_for",         limit: 4
+    t.text      "hv_desc"
+    t.text      "hv_mail_to"
+    t.string    "hv_cc",          limit: 80
+    t.string    "hv_bcc",         limit: 80
+    t.integer   "hv_notified",    limit: 1
+    t.string    "hv_inv_num",     limit: 20
+    t.string    "hv_edited_by",   limit: 4
+    t.timestamp "hv_edited_when"
   end
 
-  add_index "home_comments", ["COMMENT_HOME_SEQ"], name: "COMMENT_HOME_SEQ", using: :btree
-  add_index "home_comments", ["COMMENT_SEQ"], name: "COMMENT_SEQ", unique: true, using: :btree
+  add_index "history_vendor", ["hv_added_by"], name: "hv_added_by"
+  add_index "history_vendor", ["hv_date"], name: "hv_date"
+  add_index "history_vendor", ["hv_ok"], name: "hv_ok"
+  add_index "history_vendor", ["hv_vendor_num"], name: "hv_vendor_num"
 
-  create_table "homebase", primary_key: "HOME_SEQ", force: true do |t|
-    t.string   "HOME_JOB_NUM",        limit: 15
-    t.string   "HOME_TASK",           limit: 4
-    t.integer  "HOME_STATUS",         limit: 1
-    t.string   "HOME_S_INITIALS",     limit: 10
-    t.string   "HOME_ADDED_BY",       limit: 4
-    t.datetime "HOME_DATE_ADDED"
-    t.datetime "HOME_DUE_DATE"
-    t.string   "HOME_SUBJECT",        limit: 200
-    t.integer  "HOME_KIND",           limit: 1
-    t.integer  "HOME_REPLY",          limit: 1
-    t.integer  "HOME_PRIVATE1",       limit: 1
-    t.integer  "HOME_PRIVATE2",       limit: 1
-    t.integer  "HOME_PRIORITY",       limit: 1
-    t.decimal  "HOME_SORT",                       precision: 15, scale: 0
-    t.string   "HOME_CHOICE1",        limit: 100
-    t.string   "HOME_CHOICE2",        limit: 100
-    t.string   "HOME_CHOICE3",        limit: 100
-    t.string   "HOME_CHOICE4",        limit: 100
-    t.string   "HOME_CHOICE5",        limit: 100
-    t.string   "HOME_CHOICE6",        limit: 100
-    t.datetime "HOME_LAST_REPLY"
-    t.text     "HOME_MESSAGE"
-    t.integer  "HOME_LOCKED",         limit: 1
-    t.integer  "HOME_ADDED_KIND",     limit: 1
-    t.text     "HOME_COMMENT"
-    t.decimal  "HOME_RATING",                     precision: 15, scale: 1
-    t.decimal  "HOME_PROD_STATUS",                precision: 15, scale: 0
-    t.decimal  "HOME_ORIG_SEQ",                   precision: 15, scale: 0
-    t.text     "HOME_FILE_NAME"
-    t.string   "HOME_X_PHASE",        limit: 20
-    t.integer  "HOME_AVAIL_CREATIVE", limit: 1
-    t.integer  "HOME_AVAIL_PROD",     limit: 1
-    t.integer  "HOME_AVAIL_STAFF",    limit: 1
-    t.integer  "HOME_AVAIL_CLIENTS",  limit: 1
-    t.integer  "HOME_AVAIL_VENDORS",  limit: 1
-    t.integer  "HOME_EMAIL_IT",       limit: 1
+  create_table "home_comments", primary_key: "comment_seq", force: true do |t|
+    t.integer   "comment_home_seq"
+    t.string    "comment_job_num",     limit: 15
+    t.string    "comment_task",        limit: 4
+    t.string    "comment_added_by",    limit: 10
+    t.timestamp "comment_date_added"
+    t.integer   "comment_kind",        limit: 1
+    t.integer   "comment_reply",       limit: 1
+    t.integer   "comment_private1",    limit: 1
+    t.integer   "comment_private2",    limit: 1
+    t.integer   "comment_priority",    limit: 1
+    t.decimal   "comment_sort",                   precision: 15, scale: 0
+    t.integer   "comment_choice",      limit: 1
+    t.text      "comment_message"
+    t.integer   "comment_locked",      limit: 1
+    t.integer   "comment_added_kind",  limit: 1
+    t.integer   "comment_rating",      limit: 1
+    t.decimal   "comment_prod_status",            precision: 15, scale: 0
+    t.text      "comment_file_name"
+    t.string    "comment_x_phase",     limit: 20
+    t.string    "comment_ping",        limit: 10
+    t.integer   "comment_final",       limit: 1
+    t.integer   "comment_star",        limit: 1
   end
 
-  add_index "homebase", ["HOME_JOB_NUM"], name: "HOME_JOB_NUM", using: :btree
-  add_index "homebase", ["HOME_SEQ"], name: "HOME_SEQ", unique: true, using: :btree
+  add_index "home_comments", ["comment_home_seq"], name: "comment_home_seq"
 
-  create_table "int_items", primary_key: "INT_SEQ", force: true do |t|
-    t.string   "INT_ITEM",        limit: 10
-    t.string   "INT_SIZE",        limit: 6
-    t.string   "INT_KEY",         limit: 16
-    t.string   "INT_DESC",        limit: 40
-    t.string   "INT_TASK",        limit: 4
-    t.decimal  "INT_COST_EA",                precision: 9, scale: 2
-    t.string   "INT_UNIT",        limit: 8
-    t.decimal  "INT_GROSS_EA",               precision: 9, scale: 2
-    t.string   "INT_ADDED_BY",    limit: 4
-    t.datetime "INT_ADDED_WHEN"
-    t.string   "INT_EDITED_BY",   limit: 4
-    t.datetime "INT_EDITED_WHEN"
+  create_table "homebase", primary_key: "home_seq", force: true do |t|
+    t.string    "home_job_num",        limit: 15
+    t.string    "home_task",           limit: 4
+    t.integer   "home_status",         limit: 1
+    t.string    "home_s_initials",     limit: 10
+    t.string    "home_added_by",       limit: 4
+    t.timestamp "home_date_added"
+    t.timestamp "home_due_date"
+    t.string    "home_subject",        limit: 200
+    t.integer   "home_kind",           limit: 1
+    t.integer   "home_reply",          limit: 1
+    t.integer   "home_private1",       limit: 1
+    t.integer   "home_private2",       limit: 1
+    t.integer   "home_priority",       limit: 1
+    t.decimal   "home_sort",                       precision: 15, scale: 0
+    t.string    "home_choice1",        limit: 100
+    t.string    "home_choice2",        limit: 100
+    t.string    "home_choice3",        limit: 100
+    t.string    "home_choice4",        limit: 100
+    t.string    "home_choice5",        limit: 100
+    t.string    "home_choice6",        limit: 100
+    t.timestamp "home_last_reply"
+    t.text      "home_message"
+    t.integer   "home_locked",         limit: 1
+    t.integer   "home_added_kind",     limit: 1
+    t.text      "home_comment"
+    t.decimal   "home_rating",                     precision: 15, scale: 1
+    t.decimal   "home_prod_status",                precision: 15, scale: 0
+    t.decimal   "home_orig_seq",                   precision: 15, scale: 0
+    t.text      "home_file_name"
+    t.string    "home_x_phase",        limit: 20
+    t.integer   "home_avail_creative", limit: 1
+    t.integer   "home_avail_prod",     limit: 1
+    t.integer   "home_avail_staff",    limit: 1
+    t.integer   "home_avail_clients",  limit: 1
+    t.integer   "home_avail_vendors",  limit: 1
+    t.integer   "home_email_it",       limit: 1
   end
 
-  add_index "int_items", ["INT_ITEM"], name: "INT_ITEM", using: :btree
-  add_index "int_items", ["INT_KEY"], name: "INT_KEY", using: :btree
-  add_index "int_items", ["INT_SEQ"], name: "INT_SEQ", unique: true, using: :btree
-  add_index "int_items", ["INT_SIZE"], name: "INT_SIZE", using: :btree
+  add_index "homebase", ["home_job_num"], name: "home_job_num"
 
-  create_table "je", primary_key: "JE_SEQ", force: true do |t|
-    t.date     "JE_DATE"
-    t.string   "JE_REF",         limit: 30
-    t.date     "JE_POSTED"
-    t.text     "JE_DESC"
-    t.decimal  "JE_DEBIT",                  precision: 15, scale: 2
-    t.decimal  "JE_CREDIT",                 precision: 15, scale: 2
-    t.decimal  "JE_AC_NUM",                 precision: 15, scale: 2
-    t.decimal  "JE_PERIOD",                 precision: 9,  scale: 0
-    t.string   "JE_JOB_NUM",     limit: 10
-    t.string   "JE_CLIENT_NUM",  limit: 10
-    t.decimal  "JE_RECONCILE",              precision: 9,  scale: 2
-    t.integer  "JE_SOURCE",      limit: 1
-    t.string   "JE_ADDED_BY",    limit: 4
-    t.datetime "JE_ADDED_WHEN"
-    t.string   "JE_VENDOR_NUM",  limit: 10
-    t.integer  "JE_AUTO_REV",    limit: 1
-    t.integer  "JE_AUTO_ACC",    limit: 1
-    t.integer  "JE_TEMP_REC",    limit: 1
-    t.integer  "JE_KIND",        limit: 1
-    t.string   "JE_PAY_BATCH",   limit: 10
-    t.integer  "JE_GL_REC",      limit: 1
-    t.date     "JE_EXPORTED"
-    t.string   "JE_EDITED_BY",   limit: 4
-    t.datetime "JE_EDITED_WHEN"
-    t.string   "JE_POSTED_BY",   limit: 4
-    t.datetime "JE_POSTED_WHEN"
+  create_table "int_items", primary_key: "int_seq", force: true do |t|
+    t.string    "int_item",        limit: 10
+    t.string    "int_size",        limit: 6
+    t.string    "int_key",         limit: 16
+    t.string    "int_desc",        limit: 40
+    t.string    "int_task",        limit: 4
+    t.decimal   "int_cost_ea",                precision: 9, scale: 2
+    t.string    "int_unit",        limit: 8
+    t.decimal   "int_gross_ea",               precision: 9, scale: 2
+    t.string    "int_added_by",    limit: 4
+    t.timestamp "int_added_when"
+    t.string    "int_edited_by",   limit: 4
+    t.timestamp "int_edited_when"
   end
 
-  add_index "je", ["JE_AC_NUM"], name: "JE_AC_NUM", using: :btree
-  add_index "je", ["JE_ADDED_BY"], name: "JE_ADDED_BY", using: :btree
-  add_index "je", ["JE_CLIENT_NUM"], name: "JE_CLIENT_NUM", using: :btree
-  add_index "je", ["JE_DATE"], name: "JE_DATE", using: :btree
-  add_index "je", ["JE_GL_REC"], name: "JE_GL_REC", using: :btree
-  add_index "je", ["JE_JOB_NUM"], name: "JE_JOB_NUM", using: :btree
-  add_index "je", ["JE_KIND"], name: "JE_KIND", using: :btree
-  add_index "je", ["JE_PERIOD"], name: "JE_PERIOD", using: :btree
-  add_index "je", ["JE_POSTED"], name: "JE_POSTED", using: :btree
-  add_index "je", ["JE_RECONCILE"], name: "JE_RECONCILE", using: :btree
-  add_index "je", ["JE_REF"], name: "JE_REF", using: :btree
-  add_index "je", ["JE_SEQ"], name: "JE_SEQ", unique: true, using: :btree
-  add_index "je", ["JE_SOURCE"], name: "JE_SOURCE", using: :btree
-  add_index "je", ["JE_VENDOR_NUM"], name: "JE_VENDOR_NUM", using: :btree
+  add_index "int_items", ["int_item"], name: "int_item"
+  add_index "int_items", ["int_key"], name: "int_key"
+  add_index "int_items", ["int_size"], name: "int_size"
 
-  create_table "je2", primary_key: "JE2_SEQ", force: true do |t|
-    t.date     "JE2_DATE"
-    t.string   "JE2_REF",              limit: 30
-    t.date     "JE2_POSTED"
-    t.text     "JE2_DESC"
-    t.decimal  "JE2_DEBIT",                       precision: 15, scale: 2
-    t.decimal  "JE2_CREDIT",                      precision: 15, scale: 1
-    t.decimal  "JE2_AC_NUM",                      precision: 15, scale: 2
-    t.integer  "JE2_PERIOD",           limit: 1
-    t.string   "JE2_JOB_NUM",          limit: 15
-    t.string   "JE2_CLIENT_NUM",       limit: 10
-    t.decimal  "JE2_RECONCILE",                   precision: 9,  scale: 2
-    t.integer  "JE2_SOURCE",           limit: 1
-    t.string   "JE2_ADDED_BY",         limit: 4
-    t.datetime "JE2_ADDED_WHEN"
-    t.string   "JE2_VENDOR_NUM",       limit: 10
-    t.integer  "JE2_AUTO_REV",         limit: 1
-    t.integer  "JE2_AUTO_ACC",         limit: 1
-    t.integer  "JE2_TEMP_REC",         limit: 1
-    t.integer  "JE2_KIND",             limit: 1
-    t.string   "JE2_PAY_BATCH",        limit: 10
-    t.integer  "JE2_GL_REC",           limit: 1
-    t.date     "JE2_EXPORTED"
-    t.string   "JE2_EDITED_BY",        limit: 4
-    t.datetime "JE2_EDITED_WHEN"
-    t.string   "JE2_POSTED_BY",        limit: 4
-    t.datetime "JE2_POSTED_WHEN"
-    t.string   "JE2_FISCAL_YEAR",      limit: 15
-    t.date     "JE2_PERIOD_FIRST_DAY"
+  create_table "je", primary_key: "je_seq", force: true do |t|
+    t.date      "je_date"
+    t.string    "je_ref",         limit: 30
+    t.date      "je_posted"
+    t.text      "je_desc"
+    t.decimal   "je_debit",                  precision: 15, scale: 2
+    t.decimal   "je_credit",                 precision: 15, scale: 2
+    t.decimal   "je_ac_num",                 precision: 15, scale: 2
+    t.decimal   "je_period",                 precision: 9,  scale: 0
+    t.string    "je_job_num",     limit: 10
+    t.string    "je_client_num",  limit: 10
+    t.decimal   "je_reconcile",              precision: 9,  scale: 2
+    t.integer   "je_source",      limit: 1
+    t.string    "je_added_by",    limit: 4
+    t.timestamp "je_added_when"
+    t.string    "je_vendor_num",  limit: 10
+    t.integer   "je_auto_rev",    limit: 1
+    t.integer   "je_auto_acc",    limit: 1
+    t.integer   "je_temp_rec",    limit: 1
+    t.integer   "je_kind",        limit: 1
+    t.string    "je_pay_batch",   limit: 10
+    t.integer   "je_gl_rec",      limit: 1
+    t.date      "je_exported"
+    t.string    "je_edited_by",   limit: 4
+    t.timestamp "je_edited_when"
+    t.string    "je_posted_by",   limit: 4
+    t.timestamp "je_posted_when"
   end
 
-  add_index "je2", ["JE2_REF"], name: "JE2_REF", using: :btree
-  add_index "je2", ["JE2_SEQ"], name: "JE2_SEQ", unique: true, using: :btree
+  add_index "je", ["je_ac_num"], name: "je_ac_num"
+  add_index "je", ["je_added_by"], name: "je_added_by"
+  add_index "je", ["je_client_num"], name: "je_client_num"
+  add_index "je", ["je_date"], name: "je_date"
+  add_index "je", ["je_gl_rec"], name: "je_gl_rec"
+  add_index "je", ["je_job_num"], name: "je_job_num"
+  add_index "je", ["je_kind"], name: "je_kind"
+  add_index "je", ["je_period"], name: "je_period"
+  add_index "je", ["je_posted"], name: "je_posted"
+  add_index "je", ["je_reconcile"], name: "je_reconcile"
+  add_index "je", ["je_ref"], name: "je_ref"
+  add_index "je", ["je_source"], name: "je_source"
+  add_index "je", ["je_vendor_num"], name: "je_vendor_num"
 
-  create_table "job_order", primary_key: "CB_SEQ", force: true do |t|
-    t.string   "CB_JOB_NUM",       limit: 10
-    t.string   "CB_CLIENT_NUM",    limit: 10
-    t.text     "CB_1_LABEL"
-    t.text     "CB_1"
-    t.text     "CB_2_LABEL"
-    t.text     "CB_2"
-    t.text     "CB_3_LABEL"
-    t.text     "CB_3"
-    t.text     "CB_4_LABEL"
-    t.text     "CB_4"
-    t.text     "CB_5_LABEL"
-    t.text     "CB_5"
-    t.text     "CB_6_LABEL"
-    t.text     "CB_6"
-    t.text     "CB_7_LABEL"
-    t.text     "CB_7"
-    t.text     "CB_8_LABEL"
-    t.text     "CB_8"
-    t.decimal  "CB_REV",                      precision: 9, scale: 0
-    t.text     "CB_9_LABEL"
-    t.text     "CB_9"
-    t.text     "CB_10_LABEL"
-    t.text     "CB_10"
-    t.text     "CB_11_LABEL"
-    t.text     "CB_11"
-    t.text     "CB_12_LABEL"
-    t.text     "CB_12"
-    t.text     "CB_13_LABEL"
-    t.text     "CB_13"
-    t.text     "CB_14_LABEL"
-    t.text     "CB_14"
-    t.text     "CB_15_LABEL"
-    t.text     "CB_15"
-    t.string   "CB_ADDED_BY",      limit: 4
-    t.string   "CB_REV_BY",        limit: 4
-    t.datetime "CB_REV_DATE"
-    t.integer  "CB_OK",            limit: 1
-    t.string   "CB_OK_BY",         limit: 4
-    t.datetime "CB_OK_DATE"
-    t.integer  "CB_APPROVED",      limit: 1
-    t.datetime "CB_APPROVED_DATE"
-    t.string   "CB_APPROVED_BY",   limit: 4
-    t.string   "CB_EDITED_BY",     limit: 4
-    t.datetime "CB_EDITED_WHEN"
+  create_table "je2", primary_key: "je2_seq", force: true do |t|
+    t.date      "je2_date"
+    t.string    "je2_ref",              limit: 30
+    t.date      "je2_posted"
+    t.text      "je2_desc"
+    t.decimal   "je2_debit",                       precision: 15, scale: 2
+    t.decimal   "je2_credit",                      precision: 15, scale: 1
+    t.decimal   "je2_ac_num",                      precision: 15, scale: 2
+    t.integer   "je2_period",           limit: 1
+    t.string    "je2_job_num",          limit: 15
+    t.string    "je2_client_num",       limit: 10
+    t.decimal   "je2_reconcile",                   precision: 9,  scale: 2
+    t.integer   "je2_source",           limit: 1
+    t.string    "je2_added_by",         limit: 4
+    t.timestamp "je2_added_when"
+    t.string    "je2_vendor_num",       limit: 10
+    t.integer   "je2_auto_rev",         limit: 1
+    t.integer   "je2_auto_acc",         limit: 1
+    t.integer   "je2_temp_rec",         limit: 1
+    t.integer   "je2_kind",             limit: 1
+    t.string    "je2_pay_batch",        limit: 10
+    t.integer   "je2_gl_rec",           limit: 1
+    t.date      "je2_exported"
+    t.string    "je2_edited_by",        limit: 4
+    t.timestamp "je2_edited_when"
+    t.string    "je2_posted_by",        limit: 4
+    t.timestamp "je2_posted_when"
+    t.string    "je2_fiscal_year",      limit: 15
+    t.date      "je2_period_first_day"
   end
 
-  add_index "job_order", ["CB_CLIENT_NUM"], name: "CB_CLIENT_NUM", using: :btree
-  add_index "job_order", ["CB_JOB_NUM"], name: "CB_JOB_NUM", using: :btree
-  add_index "job_order", ["CB_SEQ"], name: "CB_SEQ", unique: true, using: :btree
+  add_index "je2", ["je2_ref"], name: "je2_ref"
 
-  create_table "job_task", primary_key: "X_SEQ", force: true do |t|
-    t.string   "X_JOB_NUM",           limit: 15
-    t.string   "X_TASK",              limit: 4
-    t.text     "X_DESC"
-    t.decimal  "X_ESTIMATE",                     precision: 15, scale: 2
-    t.decimal  "X_BUDGET",                       precision: 15, scale: 2
-    t.decimal  "X_HOURS_EST",                    precision: 15, scale: 2
-    t.decimal  "X_HOURS_ACT",                    precision: 15, scale: 2
-    t.decimal  "X_LABOR",                        precision: 15, scale: 2
-    t.decimal  "X_COST",                         precision: 15, scale: 2
-    t.decimal  "X_EXPENSES",                     precision: 15, scale: 2
-    t.decimal  "X_PO_NET",                       precision: 15, scale: 2
-    t.decimal  "X_PO_GROSS",                     precision: 15, scale: 2
-    t.decimal  "X_UNBILLED",                     precision: 15, scale: 2
-    t.decimal  "X_BILL_RATE",                    precision: 15, scale: 2
-    t.decimal  "X_MARKUP",                       precision: 15, scale: 2
-    t.decimal  "X_STATUS",                       precision: 15, scale: 0
-    t.text     "X_NOTE"
-    t.integer  "X_TAXABLE1",          limit: 1
-    t.integer  "X_TAXABLE2",          limit: 1
-    t.integer  "X_FINISHED",          limit: 1
-    t.date     "X_DUE_DATE"
-    t.date     "X_START_DATE"
-    t.integer  "X_KIND",              limit: 1
-    t.string   "X_RESOURCE",          limit: 10
-    t.decimal  "X_LEAD_TIME",                    precision: 9,  scale: 0
-    t.string   "X_KEY",               limit: 19
-    t.decimal  "X_SORT",                         precision: 9,  scale: 0
-    t.decimal  "X_GROUP",                        precision: 9,  scale: 0
-    t.decimal  "X_CGL",                          precision: 15, scale: 2
-    t.decimal  "X_DGL",                          precision: 15, scale: 2
-    t.date     "X_LAST_WORK"
-    t.integer  "X_SHOW_DESC",         limit: 1
-    t.integer  "X_PC",                limit: 1
-    t.string   "X_NAME",              limit: 50
-    t.decimal  "X_TAX1_RATE",                    precision: 15, scale: 4
-    t.decimal  "X_TAX2_RATE",                    precision: 15, scale: 4
-    t.decimal  "X_EST1",                         precision: 15, scale: 2
-    t.decimal  "X_EST2",                         precision: 15, scale: 2
-    t.decimal  "X_EST3",                         precision: 15, scale: 2
-    t.decimal  "X_BILLED",                       precision: 15, scale: 2
-    t.string   "X_ROLL_UP",           limit: 4
-    t.decimal  "X_CHANGE_AMT",                   precision: 15, scale: 2
-    t.string   "X_CHAR30",            limit: 30
-    t.string   "X_CHAR20",            limit: 20
-    t.decimal  "X_MEDIA_COMM",                   precision: 15, scale: 2
-    t.decimal  "X_CHANGE_HRS",                   precision: 15, scale: 2
-    t.decimal  "X_CHANGE_BUDGET",                precision: 15, scale: 2
-    t.decimal  "X_AMT4",                         precision: 15, scale: 2
-    t.string   "X_KEY_RESOURCE",      limit: 29
-    t.string   "X_GROUP_PROD",        limit: 10
-    t.string   "X_CHAR10_2",          limit: 10
-    t.string   "X_CHAR10_3",          limit: 10
-    t.decimal  "X_SORT_PROD",                    precision: 15, scale: 0
-    t.decimal  "X_RATE_KIND",                    precision: 15, scale: 0
-    t.decimal  "X_SUB_EST_HRS",                  precision: 15, scale: 2
-    t.decimal  "X_SUB_ACT_HRS",                  precision: 15, scale: 2
-    t.decimal  "X_NUM2D_5",                      precision: 15, scale: 2
-    t.decimal  "X_NUM2D_6",                      precision: 15, scale: 2
-    t.decimal  "X_NUM2D_7",                      precision: 15, scale: 2
-    t.decimal  "X_HRS_UNBILLED",                 precision: 15, scale: 2
-    t.integer  "X_UNBILLABLE",        limit: 1
-    t.decimal  "X_GROSS_COSTS",                  precision: 15, scale: 2
-    t.decimal  "X_GROSS_LABOR",                  precision: 15, scale: 2
-    t.decimal  "X_GROSS_EXP",                    precision: 15, scale: 2
-    t.decimal  "X_MU_AMT",                       precision: 15, scale: 2
-    t.text     "X_SPECS"
-    t.date     "X_DATE_FINISHED"
-    t.time     "X_DUE_WHEN"
-    t.decimal  "X_HOURS_BILLED",                 precision: 15, scale: 2
-    t.decimal  "X_EST_HRS1",                     precision: 9,  scale: 2
-    t.decimal  "X_EST_HRS2",                     precision: 9,  scale: 2
-    t.decimal  "X_EST_HRS3",                     precision: 9,  scale: 2
-    t.integer  "X_COMMISSIONABLE",    limit: 1
-    t.string   "X_ADDED_BY",          limit: 4
-    t.datetime "X_ADDED_WHEN"
-    t.string   "X_EDITED_BY",         limit: 4
-    t.datetime "X_EDITED_WHEN"
-    t.text     "X_TAGS"
-    t.decimal  "X_COMPLETED",                    precision: 15, scale: 0
-    t.integer  "X_RELATION"
-    t.integer  "X_RELATION_TYPE",     limit: 1
-    t.decimal  "X_COLOR",                        precision: 15, scale: 0
-    t.integer  "X_CLIENT_SCHED",      limit: 1
-    t.string   "X_PHASE",             limit: 20
-    t.decimal  "X_HOURS_WK1_1",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK1_2",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK1_3",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK1_4",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK1_5",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK2_1",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK2_2",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK2_3",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK2_4",                  precision: 15, scale: 2
-    t.decimal  "X_HOURS_WK2_5",                  precision: 15, scale: 2
-    t.decimal  "X_TAXABLE3",                     precision: 15, scale: 0
-    t.decimal  "X_TAX3_RATE",                    precision: 15, scale: 4
-    t.decimal  "X_NEXT_BILL_AMT",                precision: 15, scale: 2
-    t.decimal  "X_NEXT_BILL_HRS",                precision: 15, scale: 2
-    t.date     "X_NEXT_BILL_DATE"
-    t.integer  "X_NO_TIME",           limit: 1
-    t.integer  "X_MILESTONE",         limit: 1
-    t.integer  "X_REQ_APPROVAL",      limit: 1
-    t.datetime "X_REQ_APPROVED_DATE"
-    t.decimal  "X_PRIORITY",                     precision: 9,  scale: 0
+  create_table "job_order", primary_key: "cb_seq", force: true do |t|
+    t.string    "cb_job_num",       limit: 10
+    t.string    "cb_client_num",    limit: 10
+    t.text      "cb_1_label"
+    t.text      "cb_1"
+    t.text      "cb_2_label"
+    t.text      "cb_2"
+    t.text      "cb_3_label"
+    t.text      "cb_3"
+    t.text      "cb_4_label"
+    t.text      "cb_4"
+    t.text      "cb_5_label"
+    t.text      "cb_5"
+    t.text      "cb_6_label"
+    t.text      "cb_6"
+    t.text      "cb_7_label"
+    t.text      "cb_7"
+    t.text      "cb_8_label"
+    t.text      "cb_8"
+    t.decimal   "cb_rev",                      precision: 9, scale: 0
+    t.text      "cb_9_label"
+    t.text      "cb_9"
+    t.text      "cb_10_label"
+    t.text      "cb_10"
+    t.text      "cb_11_label"
+    t.text      "cb_11"
+    t.text      "cb_12_label"
+    t.text      "cb_12"
+    t.text      "cb_13_label"
+    t.text      "cb_13"
+    t.text      "cb_14_label"
+    t.text      "cb_14"
+    t.text      "cb_15_label"
+    t.text      "cb_15"
+    t.string    "cb_added_by",      limit: 4
+    t.string    "cb_rev_by",        limit: 4
+    t.timestamp "cb_rev_date"
+    t.integer   "cb_ok",            limit: 1
+    t.string    "cb_ok_by",         limit: 4
+    t.timestamp "cb_ok_date"
+    t.integer   "cb_approved",      limit: 1
+    t.timestamp "cb_approved_date"
+    t.string    "cb_approved_by",   limit: 4
+    t.string    "cb_edited_by",     limit: 4
+    t.timestamp "cb_edited_when"
   end
 
-  add_index "job_task", ["X_DATE_FINISHED"], name: "X_DATE_FINISHED", using: :btree
-  add_index "job_task", ["X_DUE_DATE"], name: "X_DUE_DATE", using: :btree
-  add_index "job_task", ["X_FINISHED"], name: "X_FINISHED", using: :btree
-  add_index "job_task", ["X_JOB_NUM"], name: "X_JOB_NUM", using: :btree
-  add_index "job_task", ["X_KEY"], name: "X_KEY", using: :btree
-  add_index "job_task", ["X_KEY_RESOURCE"], name: "X_KEY_RESOURCE", using: :btree
-  add_index "job_task", ["X_KIND"], name: "X_KIND", using: :btree
-  add_index "job_task", ["X_RESOURCE"], name: "X_RESOURCE", using: :btree
-  add_index "job_task", ["X_SEQ"], name: "X_SEQ", unique: true, using: :btree
-  add_index "job_task", ["X_START_DATE"], name: "X_START_DATE", using: :btree
-  add_index "job_task", ["X_TASK"], name: "X_TASK", using: :btree
+  add_index "job_order", ["cb_client_num"], name: "cb_client_num"
+  add_index "job_order", ["cb_job_num"], name: "cb_job_num"
 
-  create_table "job_types", primary_key: "TYPE_SEQ", force: true do |t|
-    t.string   "TYPE_CODE",           limit: 15
-    t.string   "TYPE_NAME",           limit: 40
-    t.text     "TYPE_DISCLAIMER"
-    t.string   "TYPE_TRAFFIC1",       limit: 7
-    t.string   "TYPE_TRAFFIC2",       limit: 7
-    t.string   "TYPE_TRAFFIC3",       limit: 7
-    t.string   "TYPE_TRAFFIC4",       limit: 7
-    t.string   "TYPE_TRAFFIC5",       limit: 7
-    t.string   "TYPE_TRAFFIC6",       limit: 7
-    t.string   "TYPE_TRAFFIC7",       limit: 7
-    t.string   "TYPE_TRAFFIC8",       limit: 7
-    t.string   "TYPE_TRAFFIC9",       limit: 7
-    t.string   "TYPE_TRAFFIC10",      limit: 7
-    t.decimal  "TYPE_MARKUP",                          precision: 9, scale: 2
-    t.decimal  "TYPE_RATE",                            precision: 9, scale: 2
-    t.binary   "TYPE_TASK_LIST",      limit: 16777215
-    t.string   "TYPE_HEADING",        limit: 20
-    t.string   "TYPE_EST_COL1",       limit: 15
-    t.string   "TYPE_EST_COL2",       limit: 15
-    t.string   "TYPE_EST_COL3",       limit: 15
-    t.string   "TYPE_TRAFFIC11",      limit: 7
-    t.string   "TYPE_TRAFFIC12",      limit: 7
-    t.string   "TYPE_FIELD1",         limit: 20
-    t.string   "TYPE_FIELD2",         limit: 20
-    t.string   "TYPE_FIELD3",         limit: 20
-    t.string   "TYPE_FIELD4",         limit: 20
-    t.string   "TYPE_FIELD5",         limit: 20
-    t.string   "TYPE_FIELD6",         limit: 20
-    t.integer  "TYPE_CONTING",        limit: 1
-    t.decimal  "TYPE_CON_PC",                          precision: 9, scale: 2
-    t.decimal  "TYPE_CON_AMT",                         precision: 9, scale: 2
-    t.text     "TYPE_CON_NOTE"
-    t.integer  "TYPE_SHOW_HRS",       limit: 1
-    t.string   "TYPE_AE_TITLE",       limit: 20
-    t.text     "TYPE_JOB_SPECS"
-    t.integer  "TYPE_RATE_KIND",      limit: 1
-    t.integer  "TYPE_TAX",            limit: 1
-    t.text     "TYPE_CB_1_LABEL"
-    t.text     "TYPE_CB_2_LABEL"
-    t.text     "TYPE_CB_3_LABEL"
-    t.text     "TYPE_CB_4_LABEL"
-    t.text     "TYPE_CB_5_LABEL"
-    t.text     "TYPE_CB_6_LABEL"
-    t.text     "TYPE_CB_7_LABEL"
-    t.text     "TYPE_CB_8_LABEL"
-    t.text     "TYPE_CB_9_LABEL"
-    t.text     "TYPE_CB_10_LABEL"
-    t.text     "TYPE_CB_11_LABEL"
-    t.text     "TYPE_CB_12_LABEL"
-    t.text     "TYPE_CB_13_LABEL"
-    t.text     "TYPE_CB_14_LABEL"
-    t.text     "TYPE_CB_15_LABEL"
-    t.integer  "TYPE_COMMISSIONABLE", limit: 1
-    t.decimal  "TYPE_COMM_RATE",                       precision: 9, scale: 2
-    t.decimal  "TYPE_COMM_SPIFF",                      precision: 9, scale: 2
-    t.integer  "TYPE_COMM_TYPE_AE",   limit: 1
-    t.decimal  "TYPE_COMM_RATE_BIZ",                   precision: 9, scale: 2
-    t.integer  "TYPE_ACTIVE",         limit: 1
-    t.string   "TYPE_ADDED_BY",       limit: 4
-    t.datetime "TYPE_ADDED_WHEN"
-    t.string   "TYPE_EDITED_BY",      limit: 4
-    t.datetime "TYPE_EDITED_WHEN"
-    t.text     "TYPE_WO_1_LABEL"
-    t.text     "TYPE_WO_2_LABEL"
-    t.text     "TYPE_WO_3_LABEL"
-    t.text     "TYPE_WO_4_LABEL"
-    t.text     "TYPE_WO_5_LABEL"
-    t.text     "TYPE_WO_6_LABEL"
-    t.text     "TYPE_WO_7_LABEL"
-    t.text     "TYPE_WO_8_LABEL"
-    t.text     "TYPE_WO_9_LABEL"
-    t.text     "TYPE_WO_10_LABEL"
-    t.text     "TYPE_WO_11_LABEL"
-    t.text     "TYPE_WO_12_LABEL"
-    t.text     "TYPE_WO_13_LABEL"
-    t.text     "TYPE_WO_14_LABEL"
-    t.text     "TYPE_WO_15_LABEL"
-    t.string   "TYPE_PC",             limit: 10
-    t.integer  "TYPE_CHECKLIST1",     limit: 1
-    t.integer  "TYPE_CHECKLIST2",     limit: 1
-    t.integer  "TYPE_CHECKLIST3",     limit: 1
-    t.integer  "TYPE_CHECKLIST4",     limit: 1
-    t.integer  "TYPE_CHECKLIST5",     limit: 1
-    t.integer  "TYPE_CHECKLIST6",     limit: 1
-    t.integer  "TYPE_CHECKLIST7",     limit: 1
-    t.integer  "TYPE_CHECKLIST8",     limit: 1
-    t.string   "TYPE_CHECK1_NAME",    limit: 40
-    t.string   "TYPE_CHECK2_NAME",    limit: 40
-    t.string   "TYPE_CHECK3_NAME",    limit: 40
-    t.string   "TYPE_CHECK4_NAME",    limit: 40
-    t.string   "TYPE_CHECK5_NAME",    limit: 40
-    t.string   "TYPE_CHECK6_NAME",    limit: 40
-    t.string   "TYPE_CHECK7_NAME",    limit: 40
-    t.string   "TYPE_CHECK8_NAME",    limit: 40
-    t.decimal  "TYPE_FORECAST_COSTS",                  precision: 9, scale: 0
-    t.decimal  "TYPE_FORECAST_LABOR",                  precision: 9, scale: 0
-    t.string   "TYPE_USER_DATE1",     limit: 40
-    t.string   "TYPE_USER_DATE2",     limit: 40
-    t.string   "TYPE_REVIEWER",       limit: 10
-    t.integer  "TYPE_REQUESTABLE",    limit: 1
-    t.string   "TYPE_J_FIELD1_LABEL", limit: 20
-    t.string   "TYPE_J_FIELD2_LABEL", limit: 20
-    t.string   "TYPE_J_FIELD3_LABEL", limit: 20
-    t.string   "TYPE_J_FIELD4_LABEL", limit: 20
-    t.string   "TYPE_J_FIELD5_LABEL", limit: 20
-    t.string   "TYPE_J_FIELD6_LABEL", limit: 20
-    t.integer  "TYPE_REQ_J_FIELD1",   limit: 1
-    t.integer  "TYPE_REQ_J_FIELD2",   limit: 1
-    t.integer  "TYPE_REQ_J_FIELD3",   limit: 1
-    t.integer  "TYPE_REQ_J_FIELD4",   limit: 1
-    t.integer  "TYPE_REQ_J_FIELD5",   limit: 1
-    t.integer  "TYPE_REQ_J_FIELD6",   limit: 1
-    t.string   "TYPE_CATEGORY",       limit: 25
-    t.string   "TYPE_JOB_OPTION1",    limit: 25
-    t.string   "TYPE_JOB_OPTION2",    limit: 25
-    t.string   "TYPE_JOB_OPTION3",    limit: 25
-    t.string   "TYPE_JOB_OPTION4",    limit: 25
-    t.string   "TYPE_JOB_OPTION5",    limit: 25
-    t.string   "TYPE_JOB_OPTION6",    limit: 25
-    t.string   "TYPE_JOB_OPTION7",    limit: 25
-    t.string   "TYPE_JOB_OPTION8",    limit: 25
-    t.integer  "TYPE_HOME_CB1",       limit: 1
-    t.integer  "TYPE_HOME_CB2",       limit: 1
-    t.integer  "TYPE_HOME_CB3",       limit: 1
-    t.integer  "TYPE_HOME_CB4",       limit: 1
-    t.integer  "TYPE_HOME_CB5",       limit: 1
-    t.integer  "TYPE_HOME_CB6",       limit: 1
-    t.integer  "TYPE_HOME_CB7",       limit: 1
-    t.integer  "TYPE_HOME_CB8",       limit: 1
-    t.integer  "TYPE_HOME_CB9",       limit: 1
-    t.integer  "TYPE_HOME_CB10",      limit: 1
-    t.integer  "TYPE_HOME_CB11",      limit: 1
-    t.integer  "TYPE_HOME_CB12",      limit: 1
-    t.integer  "TYPE_HOME_CB13",      limit: 1
-    t.integer  "TYPE_HOME_CB14",      limit: 1
-    t.integer  "TYPE_HOME_CB15",      limit: 1
-    t.integer  "TYPE_HOME_WO1",       limit: 1
-    t.integer  "TYPE_HOME_WO2",       limit: 1
-    t.integer  "TYPE_HOME_WO3",       limit: 1
-    t.integer  "TYPE_HOME_WO4",       limit: 1
-    t.integer  "TYPE_HOME_WO5",       limit: 1
-    t.integer  "TYPE_HOME_WO6",       limit: 1
-    t.integer  "TYPE_HOME_WO7",       limit: 1
-    t.integer  "TYPE_HOME_WO8",       limit: 1
-    t.integer  "TYPE_HOME_WO9",       limit: 1
-    t.integer  "TYPE_HOME_WO10",      limit: 1
-    t.integer  "TYPE_HOME_WO11",      limit: 1
-    t.integer  "TYPE_HOME_WO12",      limit: 1
-    t.integer  "TYPE_HOME_WO13",      limit: 1
-    t.integer  "TYPE_HOME_WO14",      limit: 1
-    t.integer  "TYPE_HOME_WO15",      limit: 1
-    t.integer  "TYPE_CHECK_RULE1",    limit: 1
-    t.integer  "TYPE_CHECK_RULE2",    limit: 1
-    t.integer  "TYPE_CHECK_RULE3",    limit: 1
-    t.integer  "TYPE_CHECK_RULE4",    limit: 1
-    t.integer  "TYPE_JOB_REQUESTS",   limit: 1
-    t.string   "TYPE_REVIEWER2",      limit: 10
-    t.string   "TYPE_REVIEWER3",      limit: 10
+  create_table "job_task", primary_key: "x_seq", force: true do |t|
+    t.string    "x_job_num",           limit: 15
+    t.string    "x_task",              limit: 4
+    t.text      "x_desc"
+    t.decimal   "x_estimate",                     precision: 15, scale: 2
+    t.decimal   "x_budget",                       precision: 15, scale: 2
+    t.decimal   "x_hours_est",                    precision: 15, scale: 2
+    t.decimal   "x_hours_act",                    precision: 15, scale: 2
+    t.decimal   "x_labor",                        precision: 15, scale: 2
+    t.decimal   "x_cost",                         precision: 15, scale: 2
+    t.decimal   "x_expenses",                     precision: 15, scale: 2
+    t.decimal   "x_po_net",                       precision: 15, scale: 2
+    t.decimal   "x_po_gross",                     precision: 15, scale: 2
+    t.decimal   "x_unbilled",                     precision: 15, scale: 2
+    t.decimal   "x_bill_rate",                    precision: 15, scale: 2
+    t.decimal   "x_markup",                       precision: 15, scale: 2
+    t.decimal   "x_status",                       precision: 15, scale: 0
+    t.text      "x_note"
+    t.integer   "x_taxable1",          limit: 1
+    t.integer   "x_taxable2",          limit: 1
+    t.integer   "x_finished",          limit: 1
+    t.date      "x_due_date"
+    t.date      "x_start_date"
+    t.integer   "x_kind",              limit: 1
+    t.string    "x_resource",          limit: 10
+    t.decimal   "x_lead_time",                    precision: 9,  scale: 0
+    t.string    "x_key",               limit: 19
+    t.decimal   "x_sort",                         precision: 9,  scale: 0
+    t.decimal   "x_group",                        precision: 9,  scale: 0
+    t.decimal   "x_cgl",                          precision: 15, scale: 2
+    t.decimal   "x_dgl",                          precision: 15, scale: 2
+    t.date      "x_last_work"
+    t.integer   "x_show_desc",         limit: 1
+    t.integer   "x_pc",                limit: 1
+    t.string    "x_name",              limit: 50
+    t.decimal   "x_tax1_rate",                    precision: 15, scale: 4
+    t.decimal   "x_tax2_rate",                    precision: 15, scale: 4
+    t.decimal   "x_est1",                         precision: 15, scale: 2
+    t.decimal   "x_est2",                         precision: 15, scale: 2
+    t.decimal   "x_est3",                         precision: 15, scale: 2
+    t.decimal   "x_billed",                       precision: 15, scale: 2
+    t.string    "x_roll_up",           limit: 4
+    t.decimal   "x_change_amt",                   precision: 15, scale: 2
+    t.string    "x_char30",            limit: 30
+    t.string    "x_char20",            limit: 20
+    t.decimal   "x_media_comm",                   precision: 15, scale: 2
+    t.decimal   "x_change_hrs",                   precision: 15, scale: 2
+    t.decimal   "x_change_budget",                precision: 15, scale: 2
+    t.decimal   "x_amt4",                         precision: 15, scale: 2
+    t.string    "x_key_resource",      limit: 29
+    t.string    "x_group_prod",        limit: 10
+    t.string    "x_char10_2",          limit: 10
+    t.string    "x_char10_3",          limit: 10
+    t.decimal   "x_sort_prod",                    precision: 15, scale: 0
+    t.decimal   "x_rate_kind",                    precision: 15, scale: 0
+    t.decimal   "x_sub_est_hrs",                  precision: 15, scale: 2
+    t.decimal   "x_sub_act_hrs",                  precision: 15, scale: 2
+    t.decimal   "x_num2d_5",                      precision: 15, scale: 2
+    t.decimal   "x_num2d_6",                      precision: 15, scale: 2
+    t.decimal   "x_num2d_7",                      precision: 15, scale: 2
+    t.decimal   "x_hrs_unbilled",                 precision: 15, scale: 2
+    t.integer   "x_unbillable",        limit: 1
+    t.decimal   "x_gross_costs",                  precision: 15, scale: 2
+    t.decimal   "x_gross_labor",                  precision: 15, scale: 2
+    t.decimal   "x_gross_exp",                    precision: 15, scale: 2
+    t.decimal   "x_mu_amt",                       precision: 15, scale: 2
+    t.text      "x_specs"
+    t.date      "x_date_finished"
+    t.time      "x_due_when"
+    t.decimal   "x_hours_billed",                 precision: 15, scale: 2
+    t.decimal   "x_est_hrs1",                     precision: 9,  scale: 2
+    t.decimal   "x_est_hrs2",                     precision: 9,  scale: 2
+    t.decimal   "x_est_hrs3",                     precision: 9,  scale: 2
+    t.integer   "x_commissionable",    limit: 1
+    t.string    "x_added_by",          limit: 4
+    t.timestamp "x_added_when"
+    t.string    "x_edited_by",         limit: 4
+    t.timestamp "x_edited_when"
+    t.text      "x_tags"
+    t.decimal   "x_completed",                    precision: 15, scale: 0
+    t.integer   "x_relation"
+    t.integer   "x_relation_type",     limit: 1
+    t.decimal   "x_color",                        precision: 15, scale: 0
+    t.integer   "x_client_sched",      limit: 1
+    t.string    "x_phase",             limit: 20
+    t.decimal   "x_hours_wk1_1",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk1_2",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk1_3",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk1_4",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk1_5",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk2_1",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk2_2",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk2_3",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk2_4",                  precision: 15, scale: 2
+    t.decimal   "x_hours_wk2_5",                  precision: 15, scale: 2
+    t.decimal   "x_taxable3",                     precision: 15, scale: 0
+    t.decimal   "x_tax3_rate",                    precision: 15, scale: 4
+    t.decimal   "x_next_bill_amt",                precision: 15, scale: 2
+    t.decimal   "x_next_bill_hrs",                precision: 15, scale: 2
+    t.date      "x_next_bill_date"
+    t.integer   "x_no_time",           limit: 1
+    t.integer   "x_milestone",         limit: 1
+    t.integer   "x_req_approval",      limit: 1
+    t.timestamp "x_req_approved_date"
+    t.decimal   "x_priority",                     precision: 9,  scale: 0
   end
 
-  add_index "job_types", ["TYPE_CODE"], name: "TYPE_CODE", using: :btree
-  add_index "job_types", ["TYPE_SEQ"], name: "TYPE_SEQ", unique: true, using: :btree
+  add_index "job_task", ["x_date_finished"], name: "x_date_finished"
+  add_index "job_task", ["x_due_date"], name: "x_due_date"
+  add_index "job_task", ["x_finished"], name: "x_finished"
+  add_index "job_task", ["x_job_num"], name: "x_job_num"
+  add_index "job_task", ["x_key"], name: "x_key"
+  add_index "job_task", ["x_key_resource"], name: "x_key_resource"
+  add_index "job_task", ["x_kind"], name: "x_kind"
+  add_index "job_task", ["x_resource"], name: "x_resource"
+  add_index "job_task", ["x_start_date"], name: "x_start_date"
+  add_index "job_task", ["x_task"], name: "x_task"
 
-  create_table "job_user_fields", primary_key: "JU_SEQ", force: true do |t|
-    t.string "JU_FIELD", limit: 20
-    t.string "JU_VALUE", limit: 20
+  create_table "job_types", primary_key: "type_seq", force: true do |t|
+    t.string    "type_code",           limit: 15
+    t.string    "type_name",           limit: 40
+    t.text      "type_disclaimer"
+    t.string    "type_traffic1",       limit: 7
+    t.string    "type_traffic2",       limit: 7
+    t.string    "type_traffic3",       limit: 7
+    t.string    "type_traffic4",       limit: 7
+    t.string    "type_traffic5",       limit: 7
+    t.string    "type_traffic6",       limit: 7
+    t.string    "type_traffic7",       limit: 7
+    t.string    "type_traffic8",       limit: 7
+    t.string    "type_traffic9",       limit: 7
+    t.string    "type_traffic10",      limit: 7
+    t.decimal   "type_markup",                    precision: 9, scale: 2
+    t.decimal   "type_rate",                      precision: 9, scale: 2
+    t.binary    "type_task_list"
+    t.string    "type_heading",        limit: 20
+    t.string    "type_est_col1",       limit: 15
+    t.string    "type_est_col2",       limit: 15
+    t.string    "type_est_col3",       limit: 15
+    t.string    "type_traffic11",      limit: 7
+    t.string    "type_traffic12",      limit: 7
+    t.string    "type_field1",         limit: 20
+    t.string    "type_field2",         limit: 20
+    t.string    "type_field3",         limit: 20
+    t.string    "type_field4",         limit: 20
+    t.string    "type_field5",         limit: 20
+    t.string    "type_field6",         limit: 20
+    t.integer   "type_conting",        limit: 1
+    t.decimal   "type_con_pc",                    precision: 9, scale: 2
+    t.decimal   "type_con_amt",                   precision: 9, scale: 2
+    t.text      "type_con_note"
+    t.integer   "type_show_hrs",       limit: 1
+    t.string    "type_ae_title",       limit: 20
+    t.text      "type_job_specs"
+    t.integer   "type_rate_kind",      limit: 1
+    t.integer   "type_tax",            limit: 1
+    t.text      "type_cb_1_label"
+    t.text      "type_cb_2_label"
+    t.text      "type_cb_3_label"
+    t.text      "type_cb_4_label"
+    t.text      "type_cb_5_label"
+    t.text      "type_cb_6_label"
+    t.text      "type_cb_7_label"
+    t.text      "type_cb_8_label"
+    t.text      "type_cb_9_label"
+    t.text      "type_cb_10_label"
+    t.text      "type_cb_11_label"
+    t.text      "type_cb_12_label"
+    t.text      "type_cb_13_label"
+    t.text      "type_cb_14_label"
+    t.text      "type_cb_15_label"
+    t.integer   "type_commissionable", limit: 1
+    t.decimal   "type_comm_rate",                 precision: 9, scale: 2
+    t.decimal   "type_comm_spiff",                precision: 9, scale: 2
+    t.integer   "type_comm_type_ae",   limit: 1
+    t.decimal   "type_comm_rate_biz",             precision: 9, scale: 2
+    t.integer   "type_active",         limit: 1
+    t.string    "type_added_by",       limit: 4
+    t.timestamp "type_added_when"
+    t.string    "type_edited_by",      limit: 4
+    t.timestamp "type_edited_when"
+    t.text      "type_wo_1_label"
+    t.text      "type_wo_2_label"
+    t.text      "type_wo_3_label"
+    t.text      "type_wo_4_label"
+    t.text      "type_wo_5_label"
+    t.text      "type_wo_6_label"
+    t.text      "type_wo_7_label"
+    t.text      "type_wo_8_label"
+    t.text      "type_wo_9_label"
+    t.text      "type_wo_10_label"
+    t.text      "type_wo_11_label"
+    t.text      "type_wo_12_label"
+    t.text      "type_wo_13_label"
+    t.text      "type_wo_14_label"
+    t.text      "type_wo_15_label"
+    t.string    "type_pc",             limit: 10
+    t.integer   "type_checklist1",     limit: 1
+    t.integer   "type_checklist2",     limit: 1
+    t.integer   "type_checklist3",     limit: 1
+    t.integer   "type_checklist4",     limit: 1
+    t.integer   "type_checklist5",     limit: 1
+    t.integer   "type_checklist6",     limit: 1
+    t.integer   "type_checklist7",     limit: 1
+    t.integer   "type_checklist8",     limit: 1
+    t.string    "type_check1_name",    limit: 40
+    t.string    "type_check2_name",    limit: 40
+    t.string    "type_check3_name",    limit: 40
+    t.string    "type_check4_name",    limit: 40
+    t.string    "type_check5_name",    limit: 40
+    t.string    "type_check6_name",    limit: 40
+    t.string    "type_check7_name",    limit: 40
+    t.string    "type_check8_name",    limit: 40
+    t.decimal   "type_forecast_costs",            precision: 9, scale: 0
+    t.decimal   "type_forecast_labor",            precision: 9, scale: 0
+    t.string    "type_user_date1",     limit: 40
+    t.string    "type_user_date2",     limit: 40
+    t.string    "type_reviewer",       limit: 10
+    t.integer   "type_requestable",    limit: 1
+    t.string    "type_j_field1_label", limit: 20
+    t.string    "type_j_field2_label", limit: 20
+    t.string    "type_j_field3_label", limit: 20
+    t.string    "type_j_field4_label", limit: 20
+    t.string    "type_j_field5_label", limit: 20
+    t.string    "type_j_field6_label", limit: 20
+    t.integer   "type_req_j_field1",   limit: 1
+    t.integer   "type_req_j_field2",   limit: 1
+    t.integer   "type_req_j_field3",   limit: 1
+    t.integer   "type_req_j_field4",   limit: 1
+    t.integer   "type_req_j_field5",   limit: 1
+    t.integer   "type_req_j_field6",   limit: 1
+    t.string    "type_category",       limit: 25
+    t.string    "type_job_option1",    limit: 25
+    t.string    "type_job_option2",    limit: 25
+    t.string    "type_job_option3",    limit: 25
+    t.string    "type_job_option4",    limit: 25
+    t.string    "type_job_option5",    limit: 25
+    t.string    "type_job_option6",    limit: 25
+    t.string    "type_job_option7",    limit: 25
+    t.string    "type_job_option8",    limit: 25
+    t.integer   "type_home_cb1",       limit: 1
+    t.integer   "type_home_cb2",       limit: 1
+    t.integer   "type_home_cb3",       limit: 1
+    t.integer   "type_home_cb4",       limit: 1
+    t.integer   "type_home_cb5",       limit: 1
+    t.integer   "type_home_cb6",       limit: 1
+    t.integer   "type_home_cb7",       limit: 1
+    t.integer   "type_home_cb8",       limit: 1
+    t.integer   "type_home_cb9",       limit: 1
+    t.integer   "type_home_cb10",      limit: 1
+    t.integer   "type_home_cb11",      limit: 1
+    t.integer   "type_home_cb12",      limit: 1
+    t.integer   "type_home_cb13",      limit: 1
+    t.integer   "type_home_cb14",      limit: 1
+    t.integer   "type_home_cb15",      limit: 1
+    t.integer   "type_home_wo1",       limit: 1
+    t.integer   "type_home_wo2",       limit: 1
+    t.integer   "type_home_wo3",       limit: 1
+    t.integer   "type_home_wo4",       limit: 1
+    t.integer   "type_home_wo5",       limit: 1
+    t.integer   "type_home_wo6",       limit: 1
+    t.integer   "type_home_wo7",       limit: 1
+    t.integer   "type_home_wo8",       limit: 1
+    t.integer   "type_home_wo9",       limit: 1
+    t.integer   "type_home_wo10",      limit: 1
+    t.integer   "type_home_wo11",      limit: 1
+    t.integer   "type_home_wo12",      limit: 1
+    t.integer   "type_home_wo13",      limit: 1
+    t.integer   "type_home_wo14",      limit: 1
+    t.integer   "type_home_wo15",      limit: 1
+    t.integer   "type_check_rule1",    limit: 1
+    t.integer   "type_check_rule2",    limit: 1
+    t.integer   "type_check_rule3",    limit: 1
+    t.integer   "type_check_rule4",    limit: 1
+    t.integer   "type_job_requests",   limit: 1
+    t.string    "type_reviewer2",      limit: 10
+    t.string    "type_reviewer3",      limit: 10
   end
 
-  add_index "job_user_fields", ["JU_FIELD"], name: "JU_FIELD", using: :btree
-  add_index "job_user_fields", ["JU_SEQ"], name: "JU_SEQ", unique: true, using: :btree
+  add_index "job_types", ["type_code"], name: "type_code"
 
-  create_table "jobs", primary_key: "J_SEQ", force: true do |t|
-    t.string   "J_NUM",                  limit: 15
-    t.date     "J_START_DATE"
-    t.string   "J_NAME",                 limit: 60
-    t.string   "J_CLIENT_NUM",           limit: 10
-    t.integer  "J_CLOSED",               limit: 1
-    t.date     "J_DUE_DATE"
-    t.string   "J_USER_FIELD2",          limit: 15
-    t.decimal  "J_CONT_AMT",                        precision: 15, scale: 2
-    t.decimal  "J_REVISION",                        precision: 9,  scale: 0
-    t.string   "J_USER_FIELD1",          limit: 20
-    t.decimal  "J_PROD_STATUS",                     precision: 9,  scale: 0
-    t.text     "J_DESC"
-    t.string   "J_WHO",                  limit: 4
-    t.string   "J_CLIENT_CONTACT",       limit: 30
-    t.string   "J_AGENCY_CONTACT",       limit: 30
-    t.string   "J_AE_TEAM",              limit: 10
-    t.string   "J_TYPE",                 limit: 15
-    t.decimal  "J_AMT1",                            precision: 9,  scale: 2
-    t.decimal  "J_AMT2",                            precision: 9,  scale: 2
-    t.decimal  "J_AMT3",                            precision: 9,  scale: 2
-    t.decimal  "J_AMT4",                            precision: 9,  scale: 2
-    t.decimal  "J_AMT5",                            precision: 9,  scale: 2
-    t.decimal  "J_AMT6",                            precision: 9,  scale: 2
-    t.text     "J_NEXT_STEPS"
-    t.datetime "J_DATE_ADDED"
-    t.string   "J_PC",                   limit: 10
-    t.text     "J_CONT_NOTE"
-    t.decimal  "J_BILL_STATUS",                     precision: 9,  scale: 0
-    t.string   "J_MILE1",                limit: 6
-    t.string   "J_MILE2",                limit: 6
-    t.string   "J_MILE3",                limit: 6
-    t.string   "J_MILE4",                limit: 6
-    t.string   "J_MILE5",                limit: 6
-    t.string   "J_MILE6",                limit: 6
-    t.string   "J_MILE7",                limit: 6
-    t.string   "J_MILE8",                limit: 6
-    t.string   "J_MILE9",                limit: 6
-    t.string   "J_MILE10",               limit: 6
-    t.string   "J_MILE11",               limit: 6
-    t.string   "J_MILE12",               limit: 6
-    t.decimal  "J_HISTORY_COUNT",                   precision: 9,  scale: 0
-    t.integer  "J_CONTINGENCY",          limit: 1
-    t.decimal  "J_CONT_PC",                         precision: 9,  scale: 2
-    t.string   "J_EST_FORM",             limit: 20
-    t.string   "J_APPROVAL1",            limit: 40
-    t.string   "J_APPROVAL2",            limit: 40
-    t.string   "J_APPROVAL3",            limit: 40
-    t.string   "J_SHOW_ZERO_AS",         limit: 15
-    t.string   "J_HEADING",              limit: 25
-    t.integer  "J_SHOW_HOURS",           limit: 1
-    t.integer  "J_SHOW_DATES",           limit: 1
-    t.integer  "J_SHOW_TOTALS",          limit: 1
-    t.text     "J_DISCLAIMER"
-    t.string   "J_EST_CUSTOM",           limit: 12
-    t.string   "J_EST_COLUMN1",          limit: 15
-    t.string   "J_EST_COLUMN2",          limit: 15
-    t.string   "J_EST_COLUMN3",          limit: 15
-    t.decimal  "J_FINAL_EST",                       precision: 9,  scale: 0
-    t.string   "J_TO1",                  limit: 10
-    t.string   "J_TO2",                  limit: 10
-    t.string   "J_TO3",                  limit: 10
-    t.string   "J_TO4",                  limit: 10
-    t.string   "J_TO5",                  limit: 10
-    t.string   "J_AE_TITLE",             limit: 20
-    t.decimal  "J_ADV_BILLED",                      precision: 15, scale: 2
-    t.decimal  "J_EST_TO_GO",                       precision: 15, scale: 2
-    t.decimal  "J_HOURS_TO_GO",                     precision: 15, scale: 2
-    t.date     "J_SNAP_UPDATED"
-    t.decimal  "J_COSTS_TO_GO",                     precision: 15, scale: 2
-    t.decimal  "J_NEXT_BILL_AMT",                   precision: 15, scale: 2
-    t.date     "J_NEXT_BILL_DATE"
-    t.decimal  "J_HIDE_EST_TASKS",                  precision: 15, scale: 2
-    t.decimal  "J_CLIENT_BILLED",                   precision: 15, scale: 2
-    t.decimal  "J_CLIENT_PAID",                     precision: 15, scale: 2
-    t.integer  "J_UNBILLABLE",           limit: 1
-    t.string   "J_CLIENT_PHONE",         limit: 15
-    t.string   "J_CLIENT_TITLE",         limit: 20
-    t.string   "J_AE_PHONE",             limit: 15
-    t.string   "J_FIELD1_LABEL",         limit: 20
-    t.string   "J_FIELD2_LABEL",         limit: 20
-    t.string   "J_FIELD3_LABEL",         limit: 20
-    t.string   "J_USER_FIELD3",          limit: 20
-    t.string   "J_CHARGE_NUM",           limit: 20
-    t.string   "J_FIELD4_LABEL",         limit: 20
-    t.string   "J_FIELD5_LABEL",         limit: 20
-    t.string   "J_FIELD6_LABEL",         limit: 20
-    t.string   "J_USER_FIELD4",          limit: 20
-    t.string   "J_USER_FIELD5",          limit: 20
-    t.string   "J_USER_FIELD6",          limit: 20
-    t.date     "J_LAST_BILLED"
-    t.date     "J_DATE_CLOSED"
-    t.date     "J_DATE3"
-    t.string   "J_STATUS_NOTE",          limit: 40
-    t.integer  "J_RATE_KIND",            limit: 1
-    t.text     "J_WORK_ORDER"
-    t.string   "J_TRAF1",                limit: 4
-    t.string   "J_TRAF2",                limit: 4
-    t.string   "J_TRAF3",                limit: 4
-    t.string   "J_TRAF4",                limit: 4
-    t.string   "J_TRAF5",                limit: 4
-    t.string   "J_TRAF6",                limit: 4
-    t.string   "J_ADDRESS1",             limit: 50
-    t.string   "J_ADDRESS2",             limit: 50
-    t.string   "J_ADDRESS3",             limit: 50
-    t.string   "J_ADDRESS4",             limit: 50
-    t.string   "J_ADDRESS5",             limit: 50
-    t.string   "J_ADDRESS6",             limit: 50
-    t.decimal  "J_BUDGET",                          precision: 9,  scale: 2
-    t.string   "J_SHIP_TO1",             limit: 50
-    t.string   "J_SHIP_TO2",             limit: 50
-    t.string   "J_SHIP_TO3",             limit: 50
-    t.string   "J_SHIP_TO4",             limit: 50
-    t.string   "J_ARCHIVED_ON",          limit: 15
-    t.string   "J_BILL_TO",              limit: 10
-    t.integer  "J_EST_OK",               limit: 1
-    t.string   "J_EST_OK_BY",            limit: 4
-    t.datetime "J_EST_OK_WHEN"
-    t.date     "J_EXPORTED"
-    t.string   "J_CLOSED_BY",            limit: 4
-    t.decimal  "J_PRIORITY",                        precision: 9,  scale: 0
-    t.decimal  "J_ALL_REVS",                        precision: 9,  scale: 0
-    t.decimal  "J_SCHED_REVS",                      precision: 9,  scale: 0
-    t.decimal  "J_ALL_SCH_REVS",                    precision: 9,  scale: 0
-    t.integer  "J_COMMISSIONABLE",       limit: 1
-    t.string   "J_BIZDEV_AE",            limit: 10
-    t.integer  "J_SCHED_OK",             limit: 1
-    t.string   "J_SCHED_OK_BY",          limit: 4
-    t.datetime "J_SCHED_OK_WHEN"
-    t.string   "J_EDITED_BY",            limit: 4
-    t.datetime "J_EDITED_WHEN"
-    t.string   "J_ADR_NAME",             limit: 20
-    t.string   "J_PROJECT",              limit: 20
-    t.text     "J_TAGS"
-    t.text     "J_DISCUSSION_MEMBERS"
-    t.integer  "J_CHECKLIST1",           limit: 1
-    t.integer  "J_CHECKLIST2",           limit: 1
-    t.integer  "J_CHECKLIST3",           limit: 1
-    t.integer  "J_CHECKLIST4",           limit: 1
-    t.integer  "J_CHECKLIST5",           limit: 1
-    t.integer  "J_CHECKLIST6",           limit: 1
-    t.integer  "J_CHECKLIST7",           limit: 1
-    t.integer  "J_CHECKLIST8",           limit: 1
-    t.string   "J_USER_DATE1",           limit: 10
-    t.string   "J_USER_DATE2",           limit: 10
-    t.string   "J_HILITE",               limit: 1
-    t.string   "J_PO",                   limit: 15
-    t.integer  "J_FINISHED",             limit: 1
-    t.datetime "J_FINISHED_DATE"
-    t.string   "J_FAST_SCORE_F",         limit: 2
-    t.string   "J_FAST_SCORE_A",         limit: 2
-    t.string   "J_FAST_SCORE_S",         limit: 2
-    t.string   "J_FAST_SCORE_T",         limit: 2
-    t.decimal  "J_FORECAST_JAN",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_FEB",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_MAR",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_APR",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_MAY",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_JUN",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_JUL",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_AUG",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_SEP",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_OCT",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_NOV",                    precision: 15, scale: 2
-    t.decimal  "J_FORECAST_DEC",                    precision: 15, scale: 2
-    t.integer  "J_ADDED_HOW",            limit: 1
-    t.integer  "J_OPTION1",              limit: 1
-    t.integer  "J_OPTION2",              limit: 1
-    t.integer  "J_OPTION3",              limit: 1
-    t.integer  "J_OPTION4",              limit: 1
-    t.integer  "J_OPTION5",              limit: 1
-    t.integer  "J_OPTION6",              limit: 1
-    t.integer  "J_OPTION7",              limit: 1
-    t.integer  "J_OPTION8",              limit: 1
-    t.integer  "J_BILLING_STEP1",        limit: 1
-    t.integer  "J_BILLING_STEP2",        limit: 1
-    t.integer  "J_BILLING_STEP3",        limit: 1
-    t.integer  "J_BILLING_STEP4",        limit: 1
-    t.integer  "J_BILLING_STEP5",        limit: 1
-    t.integer  "J_BILLING_STEP6",        limit: 1
-    t.integer  "J_BILLING_STEP7",        limit: 1
-    t.integer  "J_BILLING_STEP8",        limit: 1
-    t.decimal  "J_CLIENT_RATING",                   precision: 15, scale: 1
-    t.integer  "J_EST_OK_CLIENT",        limit: 1
-    t.string   "J_EST_OK_CLIENT_BY",     limit: 10
-    t.datetime "J_EST_OK_CLIENT_WHEN"
-    t.integer  "J_SCHED_OK_CLIENT",      limit: 1
-    t.string   "J_SCHED_OK_CLIENT_BY",   limit: 10
-    t.datetime "J_SCHED_OK_CLIENT_WHEN"
-    t.string   "J_AD_ID",                limit: 20
+  create_table "job_user_fields", primary_key: "ju_seq", force: true do |t|
+    t.string "ju_field", limit: 20
+    t.string "ju_value", limit: 20
   end
 
-  add_index "jobs", ["J_AE_TEAM"], name: "J_AE_TEAM", using: :btree
-  add_index "jobs", ["J_BILL_STATUS"], name: "J_BILL_STATUS", using: :btree
-  add_index "jobs", ["J_CHARGE_NUM"], name: "J_CHARGE_NUM", using: :btree
-  add_index "jobs", ["J_CLIENT_CONTACT"], name: "J_CLIENT_CONTACT", using: :btree
-  add_index "jobs", ["J_CLIENT_NUM"], name: "J_CLIENT_NUM", using: :btree
-  add_index "jobs", ["J_CLOSED"], name: "J_CLOSED", using: :btree
-  add_index "jobs", ["J_DATE_ADDED"], name: "J_DATE_ADDED", using: :btree
-  add_index "jobs", ["J_DUE_DATE"], name: "J_DUE_DATE", using: :btree
-  add_index "jobs", ["J_NAME"], name: "J_NAME", using: :btree
-  add_index "jobs", ["J_NEXT_BILL_DATE"], name: "J_NEXT_BILL_DATE", using: :btree
-  add_index "jobs", ["J_NUM"], name: "J_NUM", using: :btree
-  add_index "jobs", ["J_PC"], name: "J_PC", using: :btree
-  add_index "jobs", ["J_PRIORITY"], name: "J_PRIORITY", using: :btree
-  add_index "jobs", ["J_PROD_STATUS"], name: "J_PROD_STATUS", using: :btree
-  add_index "jobs", ["J_PROJECT"], name: "J_PROJECT", using: :btree
-  add_index "jobs", ["J_SEQ"], name: "J_SEQ", unique: true, using: :btree
-  add_index "jobs", ["J_START_DATE"], name: "J_START_DATE", using: :btree
-  add_index "jobs", ["J_TYPE"], name: "J_TYPE", using: :btree
-  add_index "jobs", ["J_USER_FIELD1"], name: "J_USER_FIELD1", using: :btree
-  add_index "jobs", ["J_USER_FIELD2"], name: "J_USER_FIELD2", using: :btree
-  add_index "jobs", ["J_WHO"], name: "J_WHO", using: :btree
+  add_index "job_user_fields", ["ju_field"], name: "ju_field"
 
-  create_table "log", primary_key: "LOG_SEQ", force: true do |t|
-    t.date     "LOG_DATE"
-    t.datetime "LOG_TIME"
-    t.string   "LOG_USER",  limit: 4
-    t.text     "LOG_NOTES"
+  create_table "jobs", primary_key: "j_seq", force: true do |t|
+    t.string    "j_num",                  limit: 15
+    t.date      "j_start_date"
+    t.string    "j_name",                 limit: 60
+    t.string    "j_client_num",           limit: 10
+    t.integer   "j_closed",               limit: 1
+    t.date      "j_due_date"
+    t.string    "j_user_field2",          limit: 15
+    t.decimal   "j_cont_amt",                        precision: 15, scale: 2
+    t.decimal   "j_revision",                        precision: 9,  scale: 0
+    t.string    "j_user_field1",          limit: 20
+    t.decimal   "j_prod_status",                     precision: 9,  scale: 0
+    t.text      "j_desc"
+    t.string    "j_who",                  limit: 4
+    t.string    "j_client_contact",       limit: 30
+    t.string    "j_agency_contact",       limit: 30
+    t.string    "j_ae_team",              limit: 10
+    t.string    "j_type",                 limit: 15
+    t.decimal   "j_amt1",                            precision: 9,  scale: 2
+    t.decimal   "j_amt2",                            precision: 9,  scale: 2
+    t.decimal   "j_amt3",                            precision: 9,  scale: 2
+    t.decimal   "j_amt4",                            precision: 9,  scale: 2
+    t.decimal   "j_amt5",                            precision: 9,  scale: 2
+    t.decimal   "j_amt6",                            precision: 9,  scale: 2
+    t.text      "j_next_steps"
+    t.timestamp "j_date_added"
+    t.string    "j_pc",                   limit: 10
+    t.text      "j_cont_note"
+    t.decimal   "j_bill_status",                     precision: 9,  scale: 0
+    t.string    "j_mile1",                limit: 6
+    t.string    "j_mile2",                limit: 6
+    t.string    "j_mile3",                limit: 6
+    t.string    "j_mile4",                limit: 6
+    t.string    "j_mile5",                limit: 6
+    t.string    "j_mile6",                limit: 6
+    t.string    "j_mile7",                limit: 6
+    t.string    "j_mile8",                limit: 6
+    t.string    "j_mile9",                limit: 6
+    t.string    "j_mile10",               limit: 6
+    t.string    "j_mile11",               limit: 6
+    t.string    "j_mile12",               limit: 6
+    t.decimal   "j_history_count",                   precision: 9,  scale: 0
+    t.integer   "j_contingency",          limit: 1
+    t.decimal   "j_cont_pc",                         precision: 9,  scale: 2
+    t.string    "j_est_form",             limit: 20
+    t.string    "j_approval1",            limit: 40
+    t.string    "j_approval2",            limit: 40
+    t.string    "j_approval3",            limit: 40
+    t.string    "j_show_zero_as",         limit: 15
+    t.string    "j_heading",              limit: 25
+    t.integer   "j_show_hours",           limit: 1
+    t.integer   "j_show_dates",           limit: 1
+    t.integer   "j_show_totals",          limit: 1
+    t.text      "j_disclaimer"
+    t.string    "j_est_custom",           limit: 12
+    t.string    "j_est_column1",          limit: 15
+    t.string    "j_est_column2",          limit: 15
+    t.string    "j_est_column3",          limit: 15
+    t.decimal   "j_final_est",                       precision: 9,  scale: 0
+    t.string    "j_to1",                  limit: 10
+    t.string    "j_to2",                  limit: 10
+    t.string    "j_to3",                  limit: 10
+    t.string    "j_to4",                  limit: 10
+    t.string    "j_to5",                  limit: 10
+    t.string    "j_ae_title",             limit: 20
+    t.decimal   "j_adv_billed",                      precision: 15, scale: 2
+    t.decimal   "j_est_to_go",                       precision: 15, scale: 2
+    t.decimal   "j_hours_to_go",                     precision: 15, scale: 2
+    t.date      "j_snap_updated"
+    t.decimal   "j_costs_to_go",                     precision: 15, scale: 2
+    t.decimal   "j_next_bill_amt",                   precision: 15, scale: 2
+    t.date      "j_next_bill_date"
+    t.decimal   "j_hide_est_tasks",                  precision: 15, scale: 2
+    t.decimal   "j_client_billed",                   precision: 15, scale: 2
+    t.decimal   "j_client_paid",                     precision: 15, scale: 2
+    t.integer   "j_unbillable",           limit: 1
+    t.string    "j_client_phone",         limit: 15
+    t.string    "j_client_title",         limit: 20
+    t.string    "j_ae_phone",             limit: 15
+    t.string    "j_field1_label",         limit: 20
+    t.string    "j_field2_label",         limit: 20
+    t.string    "j_field3_label",         limit: 20
+    t.string    "j_user_field3",          limit: 20
+    t.string    "j_charge_num",           limit: 20
+    t.string    "j_field4_label",         limit: 20
+    t.string    "j_field5_label",         limit: 20
+    t.string    "j_field6_label",         limit: 20
+    t.string    "j_user_field4",          limit: 20
+    t.string    "j_user_field5",          limit: 20
+    t.string    "j_user_field6",          limit: 20
+    t.date      "j_last_billed"
+    t.date      "j_date_closed"
+    t.date      "j_date3"
+    t.string    "j_status_note",          limit: 40
+    t.integer   "j_rate_kind",            limit: 1
+    t.text      "j_work_order"
+    t.string    "j_traf1",                limit: 4
+    t.string    "j_traf2",                limit: 4
+    t.string    "j_traf3",                limit: 4
+    t.string    "j_traf4",                limit: 4
+    t.string    "j_traf5",                limit: 4
+    t.string    "j_traf6",                limit: 4
+    t.string    "j_address1",             limit: 50
+    t.string    "j_address2",             limit: 50
+    t.string    "j_address3",             limit: 50
+    t.string    "j_address4",             limit: 50
+    t.string    "j_address5",             limit: 50
+    t.string    "j_address6",             limit: 50
+    t.decimal   "j_budget",                          precision: 9,  scale: 2
+    t.string    "j_ship_to1",             limit: 50
+    t.string    "j_ship_to2",             limit: 50
+    t.string    "j_ship_to3",             limit: 50
+    t.string    "j_ship_to4",             limit: 50
+    t.string    "j_archived_on",          limit: 15
+    t.string    "j_bill_to",              limit: 10
+    t.integer   "j_est_ok",               limit: 1
+    t.string    "j_est_ok_by",            limit: 4
+    t.timestamp "j_est_ok_when"
+    t.date      "j_exported"
+    t.string    "j_closed_by",            limit: 4
+    t.decimal   "j_priority",                        precision: 9,  scale: 0
+    t.decimal   "j_all_revs",                        precision: 9,  scale: 0
+    t.decimal   "j_sched_revs",                      precision: 9,  scale: 0
+    t.decimal   "j_all_sch_revs",                    precision: 9,  scale: 0
+    t.integer   "j_commissionable",       limit: 1
+    t.string    "j_bizdev_ae",            limit: 10
+    t.integer   "j_sched_ok",             limit: 1
+    t.string    "j_sched_ok_by",          limit: 4
+    t.timestamp "j_sched_ok_when"
+    t.string    "j_edited_by",            limit: 4
+    t.timestamp "j_edited_when"
+    t.string    "j_adr_name",             limit: 20
+    t.string    "j_project",              limit: 20
+    t.text      "j_tags"
+    t.text      "j_discussion_members"
+    t.integer   "j_checklist1",           limit: 1
+    t.integer   "j_checklist2",           limit: 1
+    t.integer   "j_checklist3",           limit: 1
+    t.integer   "j_checklist4",           limit: 1
+    t.integer   "j_checklist5",           limit: 1
+    t.integer   "j_checklist6",           limit: 1
+    t.integer   "j_checklist7",           limit: 1
+    t.integer   "j_checklist8",           limit: 1
+    t.string    "j_user_date1",           limit: 10
+    t.string    "j_user_date2",           limit: 10
+    t.string    "j_hilite",               limit: 1
+    t.string    "j_po",                   limit: 15
+    t.integer   "j_finished",             limit: 1
+    t.timestamp "j_finished_date"
+    t.string    "j_fast_score_f",         limit: 2
+    t.string    "j_fast_score_a",         limit: 2
+    t.string    "j_fast_score_s",         limit: 2
+    t.string    "j_fast_score_t",         limit: 2
+    t.decimal   "j_forecast_jan",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_feb",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_mar",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_apr",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_may",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_jun",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_jul",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_aug",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_sep",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_oct",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_nov",                    precision: 15, scale: 2
+    t.decimal   "j_forecast_dec",                    precision: 15, scale: 2
+    t.integer   "j_added_how",            limit: 1
+    t.integer   "j_option1",              limit: 1
+    t.integer   "j_option2",              limit: 1
+    t.integer   "j_option3",              limit: 1
+    t.integer   "j_option4",              limit: 1
+    t.integer   "j_option5",              limit: 1
+    t.integer   "j_option6",              limit: 1
+    t.integer   "j_option7",              limit: 1
+    t.integer   "j_option8",              limit: 1
+    t.integer   "j_billing_step1",        limit: 1
+    t.integer   "j_billing_step2",        limit: 1
+    t.integer   "j_billing_step3",        limit: 1
+    t.integer   "j_billing_step4",        limit: 1
+    t.integer   "j_billing_step5",        limit: 1
+    t.integer   "j_billing_step6",        limit: 1
+    t.integer   "j_billing_step7",        limit: 1
+    t.integer   "j_billing_step8",        limit: 1
+    t.decimal   "j_client_rating",                   precision: 15, scale: 1
+    t.integer   "j_est_ok_client",        limit: 1
+    t.string    "j_est_ok_client_by",     limit: 10
+    t.timestamp "j_est_ok_client_when"
+    t.integer   "j_sched_ok_client",      limit: 1
+    t.string    "j_sched_ok_client_by",   limit: 10
+    t.timestamp "j_sched_ok_client_when"
+    t.string    "j_ad_id",                limit: 20
   end
 
-  add_index "log", ["LOG_DATE"], name: "LOG_DATE", using: :btree
-  add_index "log", ["LOG_SEQ"], name: "LOG_SEQ", unique: true, using: :btree
+  add_index "jobs", ["j_ae_team"], name: "j_ae_team"
+  add_index "jobs", ["j_bill_status"], name: "j_bill_status"
+  add_index "jobs", ["j_charge_num"], name: "j_charge_num"
+  add_index "jobs", ["j_client_contact"], name: "j_client_contact"
+  add_index "jobs", ["j_client_num"], name: "j_client_num"
+  add_index "jobs", ["j_closed"], name: "j_closed"
+  add_index "jobs", ["j_date_added"], name: "j_date_added"
+  add_index "jobs", ["j_due_date"], name: "j_due_date"
+  add_index "jobs", ["j_name"], name: "j_name"
+  add_index "jobs", ["j_next_bill_date"], name: "j_next_bill_date"
+  add_index "jobs", ["j_num"], name: "j_num"
+  add_index "jobs", ["j_pc"], name: "j_pc"
+  add_index "jobs", ["j_priority"], name: "j_priority"
+  add_index "jobs", ["j_prod_status"], name: "j_prod_status"
+  add_index "jobs", ["j_project"], name: "j_project"
+  add_index "jobs", ["j_start_date"], name: "j_start_date"
+  add_index "jobs", ["j_type"], name: "j_type"
+  add_index "jobs", ["j_user_field1"], name: "j_user_field1"
+  add_index "jobs", ["j_user_field2"], name: "j_user_field2"
+  add_index "jobs", ["j_who"], name: "j_who"
 
-  create_table "media_briefs", primary_key: "BR_SEQ", force: true do |t|
-    t.string   "BR_CAMPAIGN",          limit: 10
-    t.string   "BR_NAME",              limit: 40
-    t.text     "BR_DESC"
-    t.decimal  "BR_BUDGET_AMT",                    precision: 9, scale: 2
-    t.decimal  "BR_COST_AMT",                      precision: 9, scale: 2
-    t.date     "BR_CAMP_START"
-    t.date     "BR_CAMP_END"
-    t.decimal  "BR_SPOTS",                         precision: 9, scale: 0
-    t.decimal  "BR_RATINGS",                       precision: 9, scale: 2
-    t.decimal  "BR_COST",                          precision: 9, scale: 2
-    t.decimal  "BR_CPP",                           precision: 9, scale: 2
-    t.decimal  "BR_CPS",                           precision: 9, scale: 2
-    t.decimal  "BR_RF",                            precision: 9, scale: 2
-    t.string   "BR_CLIENT_NUM",        limit: 10
-    t.date     "BR_DUE_DATE"
-    t.text     "BR_OBJECTIVE"
-    t.text     "BR_TARGET_AGE"
-    t.text     "BR_TARGET_GENDER"
-    t.text     "BR_TARGET_OCCUPATION"
-    t.text     "BR_TARGET_LIFESTYLE"
-    t.text     "BR_MEDIA_REC"
-    t.text     "BR_MEDIA_SCHED"
-    t.text     "BR_EXHIBITS"
-    t.decimal  "BR_BUD_BCAST",                     precision: 9, scale: 0
-    t.decimal  "BR_BUD_CABLE",                     precision: 9, scale: 0
-    t.decimal  "BR_BUD_RADIO",                     precision: 9, scale: 0
-    t.decimal  "BR_BUD_NEWS",                      precision: 9, scale: 0
-    t.decimal  "BR_BUD_MAG",                       precision: 9, scale: 0
-    t.decimal  "BR_BUD_OUT",                       precision: 9, scale: 0
-    t.decimal  "BR_BUD_INTER",                     precision: 9, scale: 0
-    t.decimal  "BR_BUD_OTHER",                     precision: 9, scale: 0
-    t.string   "BR_ADDED_BY",          limit: 4
-    t.string   "BR_AE",                limit: 4
-    t.string   "BR_REP",               limit: 40
-    t.string   "BR_STATUS",            limit: 200
-    t.integer  "BR_STATUS_NUM",        limit: 1
-    t.string   "BR_EDITED_BY",         limit: 4
-    t.datetime "BR_EDITED_WHEN"
-    t.integer  "BR_APPROVED",          limit: 1
-    t.string   "BR_APPROVED_BY",       limit: 4
-    t.datetime "BR_APPROVED_DATE"
+  create_table "log", primary_key: "log_seq", force: true do |t|
+    t.date      "log_date"
+    t.timestamp "log_time"
+    t.string    "log_user",  limit: 4
+    t.text      "log_notes"
   end
 
-  add_index "media_briefs", ["BR_BUD_CABLE"], name: "BR_BUD_CABLE", using: :btree
-  add_index "media_briefs", ["BR_CAMPAIGN"], name: "BR_CAMPAIGN", using: :btree
-  add_index "media_briefs", ["BR_CLIENT_NUM"], name: "BR_CLIENT_NUM", using: :btree
-  add_index "media_briefs", ["BR_SEQ"], name: "BR_SEQ", unique: true, using: :btree
+  add_index "log", ["log_date"], name: "log_date"
 
-  create_table "media_est", primary_key: "ME_SEQ", force: true do |t|
-    t.string   "ME_NUM",           limit: 10
-    t.string   "ME_CLIENT_NUM",    limit: 10
-    t.string   "ME_CAMPAIGN",      limit: 20
-    t.date     "ME_DATE"
-    t.text     "ME_DESC"
-    t.string   "ME_BUYER",         limit: 3
-    t.decimal  "ME_GROSS",                    precision: 15, scale: 2
-    t.string   "ME_LABEL1",        limit: 20
-    t.string   "ME_LABEL2",        limit: 20
-    t.string   "ME_LABEL3",        limit: 20
-    t.string   "ME_LABEL4",        limit: 20
-    t.string   "ME_LABEL5",        limit: 20
-    t.string   "ME_STATUS",        limit: 60
-    t.decimal  "ME_COST",                     precision: 15, scale: 2
-    t.integer  "ME_CLOSED",        limit: 1
-    t.integer  "ME_SHOW_DESC",     limit: 1
-    t.text     "ME_DISCLAIMER"
-    t.string   "ME_APPROVAL1",     limit: 30
-    t.string   "ME_APPROVAL2",     limit: 30
-    t.string   "ME_APPROVAL3",     limit: 30
-    t.decimal  "ME_COMM",                     precision: 9,  scale: 2
-    t.string   "ME_JOB_NUM",       limit: 10
-    t.string   "ME_TASK",          limit: 4
-    t.string   "ME_BRAND",         limit: 20
-    t.integer  "ME_INACTIVE",      limit: 1
-    t.integer  "ME_TYPE",          limit: 1
-    t.integer  "ME_APPROVED",      limit: 1
-    t.string   "ME_APPROVED_BY",   limit: 4
-    t.datetime "ME_APPROVED_DATE"
-    t.string   "ME_EDITED_BY",     limit: 4
-    t.datetime "ME_EDITED_WHEN"
+  create_table "media_briefs", primary_key: "br_seq", force: true do |t|
+    t.string    "br_campaign",          limit: 10
+    t.string    "br_name",              limit: 40
+    t.text      "br_desc"
+    t.decimal   "br_budget_amt",                    precision: 9, scale: 2
+    t.decimal   "br_cost_amt",                      precision: 9, scale: 2
+    t.date      "br_camp_start"
+    t.date      "br_camp_end"
+    t.decimal   "br_spots",                         precision: 9, scale: 0
+    t.decimal   "br_ratings",                       precision: 9, scale: 2
+    t.decimal   "br_cost",                          precision: 9, scale: 2
+    t.decimal   "br_cpp",                           precision: 9, scale: 2
+    t.decimal   "br_cps",                           precision: 9, scale: 2
+    t.decimal   "br_rf",                            precision: 9, scale: 2
+    t.string    "br_client_num",        limit: 10
+    t.date      "br_due_date"
+    t.text      "br_objective"
+    t.text      "br_target_age"
+    t.text      "br_target_gender"
+    t.text      "br_target_occupation"
+    t.text      "br_target_lifestyle"
+    t.text      "br_media_rec"
+    t.text      "br_media_sched"
+    t.text      "br_exhibits"
+    t.decimal   "br_bud_bcast",                     precision: 9, scale: 0
+    t.decimal   "br_bud_cable",                     precision: 9, scale: 0
+    t.decimal   "br_bud_radio",                     precision: 9, scale: 0
+    t.decimal   "br_bud_news",                      precision: 9, scale: 0
+    t.decimal   "br_bud_mag",                       precision: 9, scale: 0
+    t.decimal   "br_bud_out",                       precision: 9, scale: 0
+    t.decimal   "br_bud_inter",                     precision: 9, scale: 0
+    t.decimal   "br_bud_other",                     precision: 9, scale: 0
+    t.string    "br_added_by",          limit: 4
+    t.string    "br_ae",                limit: 4
+    t.string    "br_rep",               limit: 40
+    t.string    "br_status",            limit: 200
+    t.integer   "br_status_num",        limit: 1
+    t.string    "br_edited_by",         limit: 4
+    t.timestamp "br_edited_when"
+    t.integer   "br_approved",          limit: 1
+    t.string    "br_approved_by",       limit: 4
+    t.timestamp "br_approved_date"
   end
 
-  add_index "media_est", ["ME_BUYER"], name: "ME_BUYER", using: :btree
-  add_index "media_est", ["ME_CAMPAIGN"], name: "ME_CAMPAIGN", using: :btree
-  add_index "media_est", ["ME_CLIENT_NUM"], name: "ME_CLIENT_NUM", using: :btree
-  add_index "media_est", ["ME_DATE"], name: "ME_DATE", using: :btree
-  add_index "media_est", ["ME_NUM"], name: "ME_NUM", using: :btree
-  add_index "media_est", ["ME_SEQ"], name: "ME_SEQ", unique: true, using: :btree
-  add_index "media_est", ["ME_TYPE"], name: "ME_TYPE", using: :btree
+  add_index "media_briefs", ["br_bud_cable"], name: "br_bud_cable"
+  add_index "media_briefs", ["br_campaign"], name: "br_campaign"
+  add_index "media_briefs", ["br_client_num"], name: "br_client_num"
 
-  create_table "media_est_items", primary_key: "MI_SEQ", force: true do |t|
-    t.string   "MI_ME_NUM",        limit: 10
-    t.string   "MI_PUB",           limit: 20
-    t.string   "MI_ISSUE_DATE",    limit: 12
-    t.date     "MI_CLOSE_DATE"
-    t.string   "MI_AD_NAME",       limit: 25
-    t.string   "MI_AD_SIZE",       limit: 30
-    t.decimal  "MI_GROSS",                    precision: 15, scale: 2
-    t.decimal  "MI_COST",                     precision: 15, scale: 2
-    t.decimal  "MI_COMM",                     precision: 15, scale: 2
-    t.string   "MI_VENDOR_NUM",    limit: 5
-    t.string   "MI_PO_NUM",        limit: 10
-    t.decimal  "MI_PO_AMT",                   precision: 15, scale: 2
-    t.date     "MI_PO_DATE"
-    t.string   "MI_JOB_NUM",       limit: 10
-    t.string   "MI_TASK",          limit: 4
-    t.string   "MI_STATUS",        limit: 30
-    t.text     "MI_NOTES"
-    t.integer  "MI_SHOW_NOTES",    limit: 1
-    t.date     "MI_MATERIALS_DUE"
-    t.integer  "MI_PERIOD",        limit: 1
-    t.integer  "MI_BILL_NET",      limit: 1
-    t.date     "MI_RUN_DATE"
-    t.string   "MI_ADDED_BY",      limit: 4
-    t.datetime "MI_ADDED_WHEN"
-    t.string   "MI_EDITED_BY",     limit: 4
-    t.datetime "MI_EDITED_WHEN"
+  create_table "media_est", primary_key: "me_seq", force: true do |t|
+    t.string    "me_num",           limit: 10
+    t.string    "me_client_num",    limit: 10
+    t.string    "me_campaign",      limit: 20
+    t.date      "me_date"
+    t.text      "me_desc"
+    t.string    "me_buyer",         limit: 3
+    t.decimal   "me_gross",                    precision: 15, scale: 2
+    t.string    "me_label1",        limit: 20
+    t.string    "me_label2",        limit: 20
+    t.string    "me_label3",        limit: 20
+    t.string    "me_label4",        limit: 20
+    t.string    "me_label5",        limit: 20
+    t.string    "me_status",        limit: 60
+    t.decimal   "me_cost",                     precision: 15, scale: 2
+    t.integer   "me_closed",        limit: 1
+    t.integer   "me_show_desc",     limit: 1
+    t.text      "me_disclaimer"
+    t.string    "me_approval1",     limit: 30
+    t.string    "me_approval2",     limit: 30
+    t.string    "me_approval3",     limit: 30
+    t.decimal   "me_comm",                     precision: 9,  scale: 2
+    t.string    "me_job_num",       limit: 10
+    t.string    "me_task",          limit: 4
+    t.string    "me_brand",         limit: 20
+    t.integer   "me_inactive",      limit: 1
+    t.integer   "me_type",          limit: 1
+    t.integer   "me_approved",      limit: 1
+    t.string    "me_approved_by",   limit: 4
+    t.timestamp "me_approved_date"
+    t.string    "me_edited_by",     limit: 4
+    t.timestamp "me_edited_when"
   end
 
-  add_index "media_est_items", ["MI_CLOSE_DATE"], name: "MI_CLOSE_DATE", using: :btree
-  add_index "media_est_items", ["MI_MATERIALS_DUE"], name: "MI_MATERIALS_DUE", using: :btree
-  add_index "media_est_items", ["MI_ME_NUM"], name: "MI_ME_NUM", using: :btree
-  add_index "media_est_items", ["MI_PUB"], name: "MI_PUB", using: :btree
-  add_index "media_est_items", ["MI_RUN_DATE"], name: "MI_RUN_DATE", using: :btree
-  add_index "media_est_items", ["MI_SEQ"], name: "MI_SEQ", unique: true, using: :btree
+  add_index "media_est", ["me_buyer"], name: "me_buyer"
+  add_index "media_est", ["me_campaign"], name: "me_campaign"
+  add_index "media_est", ["me_client_num"], name: "me_client_num"
+  add_index "media_est", ["me_date"], name: "me_date"
+  add_index "media_est", ["me_num"], name: "me_num"
+  add_index "media_est", ["me_type"], name: "me_type"
 
-  create_table "media_items", primary_key: "MX_SEQ", force: true do |t|
-    t.string   "MX_CAMPAIGN_NUM",  limit: 10
-    t.datetime "MX_DATE"
-    t.string   "MX_STATION",       limit: 20
-    t.string   "MX_GROUP",         limit: 6
-    t.string   "MX_TIME_PGM",      limit: 30
-    t.decimal  "MX_GROSS_EA",                 precision: 15, scale: 2
-    t.decimal  "MX_F1",                       precision: 15, scale: 0
-    t.decimal  "MX_SA1",                      precision: 15, scale: 0
-    t.decimal  "MX_SU1",                      precision: 15, scale: 0
-    t.decimal  "MX_M1",                       precision: 15, scale: 0
-    t.decimal  "MX_T1",                       precision: 15, scale: 0
-    t.decimal  "MX_W1",                       precision: 15, scale: 0
-    t.decimal  "MX_TH1",                      precision: 15, scale: 0
-    t.decimal  "MX_F2",                       precision: 15, scale: 0
-    t.decimal  "MX_SA2",                      precision: 15, scale: 0
-    t.decimal  "MX_SU2",                      precision: 15, scale: 0
-    t.decimal  "MX_M2",                       precision: 15, scale: 0
-    t.decimal  "MX_T2",                       precision: 15, scale: 0
-    t.decimal  "MX_W2",                       precision: 15, scale: 0
-    t.decimal  "MX_TH2",                      precision: 15, scale: 0
-    t.decimal  "MX_F3",                       precision: 15, scale: 0
-    t.decimal  "MX_RATING_EA",                precision: 15, scale: 1
-    t.decimal  "MX_RATING",                   precision: 15, scale: 1
-    t.decimal  "MX_GROSS_AMT",                precision: 15, scale: 2
-    t.decimal  "MX_SPOTS",                    precision: 15, scale: 0
-    t.string   "MX_WEEK1_1",       limit: 30
-    t.string   "MX_WEEK1_2",       limit: 25
-    t.decimal  "MX_WEEK1_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK2_1",       limit: 30
-    t.string   "MX_WEEK2_2",       limit: 25
-    t.decimal  "MX_WEEK2_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK3_1",       limit: 30
-    t.string   "MX_WEEK3_2",       limit: 25
-    t.decimal  "MX_WEEK3_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK4_1",       limit: 30
-    t.string   "MX_WEEK4_2",       limit: 25
-    t.decimal  "MX_WEEK4_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK5_1",       limit: 30
-    t.string   "MX_WEEK5_2",       limit: 25
-    t.decimal  "MX_WEEK5_COST",               precision: 15, scale: 2
-    t.text     "MX_NOTES"
-    t.string   "MX_M_NUM",         limit: 10
-    t.string   "MX_MEDIA1",        limit: 40
-    t.string   "MX_MEDIA2",        limit: 40
-    t.string   "MX_MEDIA3",        limit: 40
-    t.string   "MX_PO_NUM",        limit: 10
-    t.date     "MX_DATE_ORDERED"
-    t.string   "MX_ORDERED",       limit: 1
-    t.string   "MX_WEEK6_1",       limit: 30
-    t.string   "MX_WEEK6_2",       limit: 25
-    t.decimal  "MX_WEEK6_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK7_1",       limit: 30
-    t.string   "MX_WEEK7_2",       limit: 25
-    t.decimal  "MX_WEEK7_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK8_1",       limit: 30
-    t.string   "MX_WEEK8_2",       limit: 25
-    t.decimal  "MX_WEEK8_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK9_1",       limit: 30
-    t.string   "MX_WEEK9_2",       limit: 25
-    t.decimal  "MX_WEEK9_COST",               precision: 15, scale: 2
-    t.string   "MX_WEEK10_1",      limit: 30
-    t.string   "MX_WEEK10_2",      limit: 25
-    t.decimal  "MX_WEEK10_COST",              precision: 15, scale: 2
-    t.string   "MX_WEEK11_1",      limit: 30
-    t.string   "MX_WEEK11_2",      limit: 25
-    t.decimal  "MX_WEEK11_COST",              precision: 15, scale: 2
-    t.string   "MX_WEEK12_1",      limit: 30
-    t.string   "MX_WEEK12_2",      limit: 25
-    t.decimal  "MX_WEEK12_COST",              precision: 15, scale: 2
-    t.decimal  "MX_AMT_ORDERED",              precision: 15, scale: 2
-    t.string   "MX_WEEK1_PO",      limit: 12
-    t.string   "MX_WEEK2_PO",      limit: 12
-    t.string   "MX_WEEK3_PO",      limit: 12
-    t.string   "MX_WEEK4_PO",      limit: 12
-    t.string   "MX_WEEK5_PO",      limit: 12
-    t.string   "MX_WEEK6_PO",      limit: 12
-    t.string   "MX_WEEK7_PO",      limit: 12
-    t.string   "MX_WEEK8_PO",      limit: 12
-    t.string   "MX_WEEK9_PO",      limit: 12
-    t.string   "MX_WEEK10_PO",     limit: 12
-    t.string   "MX_WEEK11_PO",     limit: 12
-    t.string   "MX_WEEK12_PO",     limit: 12
-    t.string   "MX_AD_CAPTION",    limit: 50
-    t.string   "MX_WEEK1_3",       limit: 25
-    t.string   "MX_WEEK2_3",       limit: 25
-    t.string   "MX_WEEK3_3",       limit: 25
-    t.string   "MX_WEEK4_3",       limit: 25
-    t.string   "MX_WEEK5_3",       limit: 25
-    t.string   "MX_WEEK6_3",       limit: 25
-    t.string   "MX_WEEK7_3",       limit: 25
-    t.string   "MX_WEEK8_3",       limit: 25
-    t.string   "MX_WEEK9_3",       limit: 25
-    t.string   "MX_WEEK10_3",      limit: 25
-    t.string   "MX_WEEK11_3",      limit: 25
-    t.string   "MX_WEEK12_3",      limit: 25
-    t.string   "MX_RATE_BASIS",    limit: 5
-    t.date     "MX_SPACE_CLOSE1"
-    t.date     "MX_SPACE_CLOSE2"
-    t.date     "MX_SPACE_CLOSE3"
-    t.date     "MX_SPACE_CLOSE4"
-    t.date     "MX_SPACE_CLOSE5"
-    t.date     "MX_SPACE_CLOSE6"
-    t.date     "MX_SPACE_CLOSE7"
-    t.date     "MX_SPACE_CLOSE8"
-    t.date     "MX_SPACE_CLOSE9"
-    t.date     "MX_SPACE_CLOSE10"
-    t.date     "MX_SPACE_CLOSE11"
-    t.date     "MX_SPACE_CLOSE12"
-    t.date     "MX_MAT_DUE1"
-    t.date     "MX_MAT_DUE2"
-    t.date     "MX_MAT_DUE3"
-    t.date     "MX_MAT_DUE4"
-    t.date     "MX_MAT_DUE5"
-    t.date     "MX_MAT_DUE6"
-    t.date     "MX_MAT_DUE7"
-    t.date     "MX_MAT_DUE8"
-    t.date     "MX_MAT_DUE9"
-    t.date     "MX_MAT_DUE10"
-    t.date     "MX_MAT_DUE11"
-    t.date     "MX_MAT_DUE12"
-    t.string   "MX_LENGTH",        limit: 6
-    t.string   "MX_DAY",           limit: 12
-    t.string   "MX_DATES",         limit: 25
-    t.string   "MX_TIME",          limit: 25
-    t.decimal  "MX_QTY",                      precision: 9,  scale: 0
-    t.date     "MX_START_DATE"
-    t.date     "MX_RUN_DATE1"
-    t.date     "MX_RUN_DATE2"
-    t.date     "MX_RUN_DATE3"
-    t.date     "MX_RUN_DATE4"
-    t.date     "MX_RUN_DATE5"
-    t.date     "MX_RUN_DATE6"
-    t.date     "MX_RUN_DATE7"
-    t.date     "MX_RUN_DATE8"
-    t.date     "MX_RUN_DATE9"
-    t.date     "MX_RUN_DATE10"
-    t.date     "MX_RUN_DATE11"
-    t.date     "MX_RUN_DATE12"
-    t.string   "MX_ADDED_BY",      limit: 4
-    t.datetime "MX_ADDED_WHEN"
-    t.string   "MX_EDITED_BY",     limit: 4
-    t.datetime "MX_EDITED_WHEN"
+  create_table "media_est_items", primary_key: "mi_seq", force: true do |t|
+    t.string    "mi_me_num",        limit: 10
+    t.string    "mi_pub",           limit: 20
+    t.string    "mi_issue_date",    limit: 12
+    t.date      "mi_close_date"
+    t.string    "mi_ad_name",       limit: 25
+    t.string    "mi_ad_size",       limit: 30
+    t.decimal   "mi_gross",                    precision: 15, scale: 2
+    t.decimal   "mi_cost",                     precision: 15, scale: 2
+    t.decimal   "mi_comm",                     precision: 15, scale: 2
+    t.string    "mi_vendor_num",    limit: 5
+    t.string    "mi_po_num",        limit: 10
+    t.decimal   "mi_po_amt",                   precision: 15, scale: 2
+    t.date      "mi_po_date"
+    t.string    "mi_job_num",       limit: 10
+    t.string    "mi_task",          limit: 4
+    t.string    "mi_status",        limit: 30
+    t.text      "mi_notes"
+    t.integer   "mi_show_notes",    limit: 1
+    t.date      "mi_materials_due"
+    t.integer   "mi_period",        limit: 1
+    t.integer   "mi_bill_net",      limit: 1
+    t.date      "mi_run_date"
+    t.string    "mi_added_by",      limit: 4
+    t.timestamp "mi_added_when"
+    t.string    "mi_edited_by",     limit: 4
+    t.timestamp "mi_edited_when"
   end
 
-  add_index "media_items", ["MX_CAMPAIGN_NUM"], name: "MX_CAMPAIGN_NUM", using: :btree
-  add_index "media_items", ["MX_MEDIA1"], name: "MX_MEDIA1", using: :btree
-  add_index "media_items", ["MX_M_NUM"], name: "MX_M_NUM", using: :btree
-  add_index "media_items", ["MX_SEQ"], name: "MX_SEQ", unique: true, using: :btree
-  add_index "media_items", ["MX_SPACE_CLOSE3"], name: "MX_SPACE_CLOSE3", using: :btree
-  add_index "media_items", ["MX_STATION"], name: "MX_STATION", using: :btree
+  add_index "media_est_items", ["mi_close_date"], name: "mi_close_date"
+  add_index "media_est_items", ["mi_materials_due"], name: "mi_materials_due"
+  add_index "media_est_items", ["mi_me_num"], name: "mi_me_num"
+  add_index "media_est_items", ["mi_pub"], name: "mi_pub"
+  add_index "media_est_items", ["mi_run_date"], name: "mi_run_date"
 
-  create_table "media_plans", primary_key: "M_SEQ", force: true do |t|
-    t.string   "M_CAMPAIGN",      limit: 10
-    t.string   "M_NAME",          limit: 100
-    t.text     "M_DESC"
-    t.decimal  "M_BUDGET",                    precision: 15, scale: 2
-    t.decimal  "M_COST",                      precision: 15, scale: 2
-    t.date     "M_START_DATE"
-    t.date     "M_END_START"
-    t.decimal  "M_SPOTS_TOTAL",               precision: 15, scale: 0
-    t.decimal  "M_RATING_TOTAL",              precision: 15, scale: 2
-    t.decimal  "M_COST_TOTAL",                precision: 15, scale: 2
-    t.decimal  "M_CPP_TOTAL",                 precision: 15, scale: 2
-    t.decimal  "M_CPS_TOTAL",                 precision: 15, scale: 2
-    t.decimal  "M_RF_TOTAL",                  precision: 15, scale: 2
-    t.string   "M_CLIENT_NUM",    limit: 10
-    t.datetime "M_DATE_ADDED"
-    t.string   "M_ADDED_BY",      limit: 4
-    t.decimal  "M_REVISION",                  precision: 9,  scale: 0
-    t.string   "M_REV_NOTE",      limit: 40
-    t.string   "M_STATUS_NOTE",   limit: 40
-    t.decimal  "M_PO_COST",                   precision: 15, scale: 2
-    t.decimal  "M_PO_GROSS",                  precision: 15, scale: 2
-    t.decimal  "M_BILLED",                    precision: 15, scale: 2
-    t.string   "M_PERIOD1",       limit: 10
-    t.string   "M_PERIOD2",       limit: 10
-    t.string   "M_PERIOD3",       limit: 10
-    t.string   "M_PERIOD4",       limit: 10
-    t.string   "M_PERIOD5",       limit: 10
-    t.decimal  "M_TYPE",                      precision: 15, scale: 0
-    t.text     "M_MEMO"
-    t.string   "M_NUM",           limit: 10
-    t.string   "M_FIELD_LABEL1",  limit: 20
-    t.string   "M_FIELD_LABEL2",  limit: 20
-    t.string   "M_FIELD_LABEL3",  limit: 20
-    t.string   "M_FIELD_LABEL4",  limit: 20
-    t.string   "M_FIELD_LABEL5",  limit: 20
-    t.string   "M_FIELD_LABEL6",  limit: 20
-    t.string   "M_FIELD1",        limit: 20
-    t.string   "M_FIELD2",        limit: 20
-    t.string   "M_FIELD3",        limit: 20
-    t.string   "M_FIELD4",        limit: 20
-    t.string   "M_FIELD5",        limit: 20
-    t.string   "M_FIELD6",        limit: 20
-    t.string   "M_AE_TEAM",       limit: 10
-    t.string   "M_CLIENT_CONT",   limit: 40
-    t.string   "M_CLIENT_PHONE",  limit: 20
-    t.string   "M_F1",            limit: 2
-    t.string   "M_SA1",           limit: 2
-    t.string   "M_SU1",           limit: 2
-    t.string   "M_M1",            limit: 2
-    t.string   "M_TU1",           limit: 2
-    t.string   "M_W1",            limit: 2
-    t.string   "M_TH1",           limit: 2
-    t.string   "M_F2",            limit: 2
-    t.string   "M_SA2",           limit: 2
-    t.string   "M_SU2",           limit: 2
-    t.string   "M_M2",            limit: 2
-    t.string   "M_TU2",           limit: 2
-    t.string   "M_W2",            limit: 2
-    t.string   "M_TH2",           limit: 2
-    t.string   "M_F3",            limit: 2
-    t.string   "M_PER_LABEL1",    limit: 10
-    t.string   "M_PER_LABEL2",    limit: 10
-    t.string   "M_PER_LABEL3",    limit: 10
-    t.string   "M_PER_LABEL4",    limit: 10
-    t.string   "M_PER_LABEL5",    limit: 10
-    t.string   "M_PER_LABEL6",    limit: 10
-    t.string   "M_PER_LABEL7",    limit: 10
-    t.string   "M_PER_LABEL8",    limit: 10
-    t.string   "M_PER_LABEL9",    limit: 10
-    t.string   "M_PER_LABEL10",   limit: 10
-    t.string   "M_PER_LABEL11",   limit: 10
-    t.string   "M_PER_LABEL12",   limit: 10
-    t.string   "M_PERIOD6",       limit: 10
-    t.string   "M_PERIOD7",       limit: 10
-    t.string   "M_PERIOD8",       limit: 10
-    t.string   "M_PERIOD9",       limit: 10
-    t.string   "M_PERIOD10",      limit: 10
-    t.string   "M_PERIOD11",      limit: 10
-    t.string   "M_PERIOD12",      limit: 10
-    t.string   "M_JOB_NUM",       limit: 10
-    t.string   "M_TASK",          limit: 4
-    t.string   "M_APPROVAL1",     limit: 30
-    t.string   "M_APPROVAL2",     limit: 30
-    t.string   "M_APPROVAL3",     limit: 30
-    t.string   "M_FLIGHT",        limit: 100
-    t.integer  "M_KIND",          limit: 1
-    t.decimal  "M_COMMISSION",                precision: 9,  scale: 2
-    t.decimal  "M_STATUS",                    precision: 9,  scale: 0
-    t.string   "M_BRAND",         limit: 20
-    t.integer  "M_CLOSED",        limit: 1
-    t.integer  "M_INACTIVE",      limit: 1
-    t.integer  "M_APPROVED",      limit: 1
-    t.string   "M_APPROVED_BY",   limit: 4
-    t.datetime "M_APPROVED_DATE"
-    t.string   "M_EDITED_BY",     limit: 4
-    t.datetime "M_EDITED_WHEN"
+  create_table "media_items", primary_key: "mx_seq", force: true do |t|
+    t.string    "mx_campaign_num",  limit: 10
+    t.timestamp "mx_date"
+    t.string    "mx_station",       limit: 20
+    t.string    "mx_group",         limit: 6
+    t.string    "mx_time_pgm",      limit: 30
+    t.decimal   "mx_gross_ea",                 precision: 15, scale: 2
+    t.decimal   "mx_f1",                       precision: 15, scale: 0
+    t.decimal   "mx_sa1",                      precision: 15, scale: 0
+    t.decimal   "mx_su1",                      precision: 15, scale: 0
+    t.decimal   "mx_m1",                       precision: 15, scale: 0
+    t.decimal   "mx_t1",                       precision: 15, scale: 0
+    t.decimal   "mx_w1",                       precision: 15, scale: 0
+    t.decimal   "mx_th1",                      precision: 15, scale: 0
+    t.decimal   "mx_f2",                       precision: 15, scale: 0
+    t.decimal   "mx_sa2",                      precision: 15, scale: 0
+    t.decimal   "mx_su2",                      precision: 15, scale: 0
+    t.decimal   "mx_m2",                       precision: 15, scale: 0
+    t.decimal   "mx_t2",                       precision: 15, scale: 0
+    t.decimal   "mx_w2",                       precision: 15, scale: 0
+    t.decimal   "mx_th2",                      precision: 15, scale: 0
+    t.decimal   "mx_f3",                       precision: 15, scale: 0
+    t.decimal   "mx_rating_ea",                precision: 15, scale: 1
+    t.decimal   "mx_rating",                   precision: 15, scale: 1
+    t.decimal   "mx_gross_amt",                precision: 15, scale: 2
+    t.decimal   "mx_spots",                    precision: 15, scale: 0
+    t.string    "mx_week1_1",       limit: 30
+    t.string    "mx_week1_2",       limit: 25
+    t.decimal   "mx_week1_cost",               precision: 15, scale: 2
+    t.string    "mx_week2_1",       limit: 30
+    t.string    "mx_week2_2",       limit: 25
+    t.decimal   "mx_week2_cost",               precision: 15, scale: 2
+    t.string    "mx_week3_1",       limit: 30
+    t.string    "mx_week3_2",       limit: 25
+    t.decimal   "mx_week3_cost",               precision: 15, scale: 2
+    t.string    "mx_week4_1",       limit: 30
+    t.string    "mx_week4_2",       limit: 25
+    t.decimal   "mx_week4_cost",               precision: 15, scale: 2
+    t.string    "mx_week5_1",       limit: 30
+    t.string    "mx_week5_2",       limit: 25
+    t.decimal   "mx_week5_cost",               precision: 15, scale: 2
+    t.text      "mx_notes"
+    t.string    "mx_m_num",         limit: 10
+    t.string    "mx_media1",        limit: 40
+    t.string    "mx_media2",        limit: 40
+    t.string    "mx_media3",        limit: 40
+    t.string    "mx_po_num",        limit: 10
+    t.date      "mx_date_ordered"
+    t.string    "mx_ordered",       limit: 1
+    t.string    "mx_week6_1",       limit: 30
+    t.string    "mx_week6_2",       limit: 25
+    t.decimal   "mx_week6_cost",               precision: 15, scale: 2
+    t.string    "mx_week7_1",       limit: 30
+    t.string    "mx_week7_2",       limit: 25
+    t.decimal   "mx_week7_cost",               precision: 15, scale: 2
+    t.string    "mx_week8_1",       limit: 30
+    t.string    "mx_week8_2",       limit: 25
+    t.decimal   "mx_week8_cost",               precision: 15, scale: 2
+    t.string    "mx_week9_1",       limit: 30
+    t.string    "mx_week9_2",       limit: 25
+    t.decimal   "mx_week9_cost",               precision: 15, scale: 2
+    t.string    "mx_week10_1",      limit: 30
+    t.string    "mx_week10_2",      limit: 25
+    t.decimal   "mx_week10_cost",              precision: 15, scale: 2
+    t.string    "mx_week11_1",      limit: 30
+    t.string    "mx_week11_2",      limit: 25
+    t.decimal   "mx_week11_cost",              precision: 15, scale: 2
+    t.string    "mx_week12_1",      limit: 30
+    t.string    "mx_week12_2",      limit: 25
+    t.decimal   "mx_week12_cost",              precision: 15, scale: 2
+    t.decimal   "mx_amt_ordered",              precision: 15, scale: 2
+    t.string    "mx_week1_po",      limit: 12
+    t.string    "mx_week2_po",      limit: 12
+    t.string    "mx_week3_po",      limit: 12
+    t.string    "mx_week4_po",      limit: 12
+    t.string    "mx_week5_po",      limit: 12
+    t.string    "mx_week6_po",      limit: 12
+    t.string    "mx_week7_po",      limit: 12
+    t.string    "mx_week8_po",      limit: 12
+    t.string    "mx_week9_po",      limit: 12
+    t.string    "mx_week10_po",     limit: 12
+    t.string    "mx_week11_po",     limit: 12
+    t.string    "mx_week12_po",     limit: 12
+    t.string    "mx_ad_caption",    limit: 50
+    t.string    "mx_week1_3",       limit: 25
+    t.string    "mx_week2_3",       limit: 25
+    t.string    "mx_week3_3",       limit: 25
+    t.string    "mx_week4_3",       limit: 25
+    t.string    "mx_week5_3",       limit: 25
+    t.string    "mx_week6_3",       limit: 25
+    t.string    "mx_week7_3",       limit: 25
+    t.string    "mx_week8_3",       limit: 25
+    t.string    "mx_week9_3",       limit: 25
+    t.string    "mx_week10_3",      limit: 25
+    t.string    "mx_week11_3",      limit: 25
+    t.string    "mx_week12_3",      limit: 25
+    t.string    "mx_rate_basis",    limit: 5
+    t.date      "mx_space_close1"
+    t.date      "mx_space_close2"
+    t.date      "mx_space_close3"
+    t.date      "mx_space_close4"
+    t.date      "mx_space_close5"
+    t.date      "mx_space_close6"
+    t.date      "mx_space_close7"
+    t.date      "mx_space_close8"
+    t.date      "mx_space_close9"
+    t.date      "mx_space_close10"
+    t.date      "mx_space_close11"
+    t.date      "mx_space_close12"
+    t.date      "mx_mat_due1"
+    t.date      "mx_mat_due2"
+    t.date      "mx_mat_due3"
+    t.date      "mx_mat_due4"
+    t.date      "mx_mat_due5"
+    t.date      "mx_mat_due6"
+    t.date      "mx_mat_due7"
+    t.date      "mx_mat_due8"
+    t.date      "mx_mat_due9"
+    t.date      "mx_mat_due10"
+    t.date      "mx_mat_due11"
+    t.date      "mx_mat_due12"
+    t.string    "mx_length",        limit: 6
+    t.string    "mx_day",           limit: 12
+    t.string    "mx_dates",         limit: 25
+    t.string    "mx_time",          limit: 25
+    t.decimal   "mx_qty",                      precision: 9,  scale: 0
+    t.date      "mx_start_date"
+    t.date      "mx_run_date1"
+    t.date      "mx_run_date2"
+    t.date      "mx_run_date3"
+    t.date      "mx_run_date4"
+    t.date      "mx_run_date5"
+    t.date      "mx_run_date6"
+    t.date      "mx_run_date7"
+    t.date      "mx_run_date8"
+    t.date      "mx_run_date9"
+    t.date      "mx_run_date10"
+    t.date      "mx_run_date11"
+    t.date      "mx_run_date12"
+    t.string    "mx_added_by",      limit: 4
+    t.timestamp "mx_added_when"
+    t.string    "mx_edited_by",     limit: 4
+    t.timestamp "mx_edited_when"
   end
 
-  add_index "media_plans", ["M_AE_TEAM"], name: "M_AE_TEAM", using: :btree
-  add_index "media_plans", ["M_APPROVED_DATE"], name: "M_APPROVED_DATE", using: :btree
-  add_index "media_plans", ["M_CAMPAIGN"], name: "M_CAMPAIGN", using: :btree
-  add_index "media_plans", ["M_CLIENT_NUM"], name: "M_CLIENT_NUM", using: :btree
-  add_index "media_plans", ["M_JOB_NUM"], name: "M_JOB_NUM", using: :btree
-  add_index "media_plans", ["M_NAME"], name: "M_NAME", using: :btree
-  add_index "media_plans", ["M_NUM"], name: "M_NUM", using: :btree
-  add_index "media_plans", ["M_SEQ"], name: "M_SEQ", unique: true, using: :btree
-  add_index "media_plans", ["M_START_DATE"], name: "M_START_DATE", using: :btree
-  add_index "media_plans", ["M_TYPE"], name: "M_TYPE", using: :btree
+  add_index "media_items", ["mx_campaign_num"], name: "mx_campaign_num"
+  add_index "media_items", ["mx_m_num"], name: "mx_m_num"
+  add_index "media_items", ["mx_media1"], name: "mx_media1"
+  add_index "media_items", ["mx_space_close3"], name: "mx_space_close3"
+  add_index "media_items", ["mx_station"], name: "mx_station"
 
-  create_table "media_prefs", primary_key: "MPF_SEQ", force: true do |t|
-    t.decimal  "MPF_NUM",                          precision: 15, scale: 0
-    t.string   "MPF_PREFIX",      limit: 3
-    t.text     "MPF_DISCLAIMER"
-    t.string   "MPF_ORG",         limit: 50
-    t.string   "MPF_ADDRESS1",    limit: 50
-    t.string   "MPF_ADDRESS2",    limit: 50
-    t.string   "MPF_ADDRESS3",    limit: 50
-    t.string   "MPF_PHONE",       limit: 50
-    t.decimal  "MPF_COMM",                         precision: 15, scale: 2
-    t.string   "MPF_TO1",         limit: 10
-    t.string   "MPF_TO2",         limit: 10
-    t.string   "MPF_TO3",         limit: 10
-    t.string   "MPF_TO4",         limit: 10
-    t.string   "MPF_TO5",         limit: 10
-    t.string   "MPF_TO6",         limit: 10
-    t.string   "MPF_FIELD1",      limit: 15
-    t.string   "MPF_FIELD2",      limit: 15
-    t.string   "MPF_FIELD3",      limit: 15
-    t.string   "MPF_FIELD4",      limit: 15
-    t.string   "MPF_FIELD5",      limit: 15
-    t.integer  "MPF_AUTO_NUM",    limit: 1
-    t.binary   "MPF_LOGO",        limit: 16777215
-    t.integer  "MPF_SHOW_CL",     limit: 1
-    t.decimal  "MPF_RADIO_1Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_RADIO_2Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_RADIO_3Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_RADIO_4Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_TV_1Q",                        precision: 15, scale: 0
-    t.decimal  "MPF_TV_2Q",                        precision: 15, scale: 0
-    t.decimal  "MPF_TV_3Q",                        precision: 15, scale: 0
-    t.decimal  "MPF_TV_4Q",                        precision: 15, scale: 0
-    t.decimal  "MPF_CABLE_1Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_CABLE_2Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_CABLE_3Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_CABLE_4Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_NEWS_1Q",                      precision: 15, scale: 0
-    t.decimal  "MPF_NEWS_2Q",                      precision: 15, scale: 0
-    t.decimal  "MPF_NEWS_3Q",                      precision: 15, scale: 0
-    t.decimal  "MPF_NEWS_4Q",                      precision: 15, scale: 0
-    t.decimal  "MPF_MAG_1Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_MAG_2Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_MAG_3Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_MAG_4Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_OUT_1Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_OUT_2Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_OUT_3Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_OUT_4Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_INT_1Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_INT_2Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_INT_3Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_INT_4Q",                       precision: 15, scale: 0
-    t.decimal  "MPF_OTHER_1Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_OTHER_2Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_OTHER_3Q",                     precision: 15, scale: 0
-    t.decimal  "MPF_OTHER_4Q",                     precision: 15, scale: 0
-    t.integer  "MPF_KIND",        limit: 1
-    t.string   "MPF_EDITED_BY",   limit: 4
-    t.datetime "MPF_EDITED_WHEN"
+  create_table "media_plans", primary_key: "m_seq", force: true do |t|
+    t.string    "m_campaign",      limit: 10
+    t.string    "m_name",          limit: 100
+    t.text      "m_desc"
+    t.decimal   "m_budget",                    precision: 15, scale: 2
+    t.decimal   "m_cost",                      precision: 15, scale: 2
+    t.date      "m_start_date"
+    t.date      "m_end_start"
+    t.decimal   "m_spots_total",               precision: 15, scale: 0
+    t.decimal   "m_rating_total",              precision: 15, scale: 2
+    t.decimal   "m_cost_total",                precision: 15, scale: 2
+    t.decimal   "m_cpp_total",                 precision: 15, scale: 2
+    t.decimal   "m_cps_total",                 precision: 15, scale: 2
+    t.decimal   "m_rf_total",                  precision: 15, scale: 2
+    t.string    "m_client_num",    limit: 10
+    t.timestamp "m_date_added"
+    t.string    "m_added_by",      limit: 4
+    t.decimal   "m_revision",                  precision: 9,  scale: 0
+    t.string    "m_rev_note",      limit: 40
+    t.string    "m_status_note",   limit: 40
+    t.decimal   "m_po_cost",                   precision: 15, scale: 2
+    t.decimal   "m_po_gross",                  precision: 15, scale: 2
+    t.decimal   "m_billed",                    precision: 15, scale: 2
+    t.string    "m_period1",       limit: 10
+    t.string    "m_period2",       limit: 10
+    t.string    "m_period3",       limit: 10
+    t.string    "m_period4",       limit: 10
+    t.string    "m_period5",       limit: 10
+    t.decimal   "m_type",                      precision: 15, scale: 0
+    t.text      "m_memo"
+    t.string    "m_num",           limit: 10
+    t.string    "m_field_label1",  limit: 20
+    t.string    "m_field_label2",  limit: 20
+    t.string    "m_field_label3",  limit: 20
+    t.string    "m_field_label4",  limit: 20
+    t.string    "m_field_label5",  limit: 20
+    t.string    "m_field_label6",  limit: 20
+    t.string    "m_field1",        limit: 20
+    t.string    "m_field2",        limit: 20
+    t.string    "m_field3",        limit: 20
+    t.string    "m_field4",        limit: 20
+    t.string    "m_field5",        limit: 20
+    t.string    "m_field6",        limit: 20
+    t.string    "m_ae_team",       limit: 10
+    t.string    "m_client_cont",   limit: 40
+    t.string    "m_client_phone",  limit: 20
+    t.string    "m_f1",            limit: 2
+    t.string    "m_sa1",           limit: 2
+    t.string    "m_su1",           limit: 2
+    t.string    "m_m1",            limit: 2
+    t.string    "m_tu1",           limit: 2
+    t.string    "m_w1",            limit: 2
+    t.string    "m_th1",           limit: 2
+    t.string    "m_f2",            limit: 2
+    t.string    "m_sa2",           limit: 2
+    t.string    "m_su2",           limit: 2
+    t.string    "m_m2",            limit: 2
+    t.string    "m_tu2",           limit: 2
+    t.string    "m_w2",            limit: 2
+    t.string    "m_th2",           limit: 2
+    t.string    "m_f3",            limit: 2
+    t.string    "m_per_label1",    limit: 10
+    t.string    "m_per_label2",    limit: 10
+    t.string    "m_per_label3",    limit: 10
+    t.string    "m_per_label4",    limit: 10
+    t.string    "m_per_label5",    limit: 10
+    t.string    "m_per_label6",    limit: 10
+    t.string    "m_per_label7",    limit: 10
+    t.string    "m_per_label8",    limit: 10
+    t.string    "m_per_label9",    limit: 10
+    t.string    "m_per_label10",   limit: 10
+    t.string    "m_per_label11",   limit: 10
+    t.string    "m_per_label12",   limit: 10
+    t.string    "m_period6",       limit: 10
+    t.string    "m_period7",       limit: 10
+    t.string    "m_period8",       limit: 10
+    t.string    "m_period9",       limit: 10
+    t.string    "m_period10",      limit: 10
+    t.string    "m_period11",      limit: 10
+    t.string    "m_period12",      limit: 10
+    t.string    "m_job_num",       limit: 10
+    t.string    "m_task",          limit: 4
+    t.string    "m_approval1",     limit: 30
+    t.string    "m_approval2",     limit: 30
+    t.string    "m_approval3",     limit: 30
+    t.string    "m_flight",        limit: 100
+    t.integer   "m_kind",          limit: 1
+    t.decimal   "m_commission",                precision: 9,  scale: 2
+    t.decimal   "m_status",                    precision: 9,  scale: 0
+    t.string    "m_brand",         limit: 20
+    t.integer   "m_closed",        limit: 1
+    t.integer   "m_inactive",      limit: 1
+    t.integer   "m_approved",      limit: 1
+    t.string    "m_approved_by",   limit: 4
+    t.timestamp "m_approved_date"
+    t.string    "m_edited_by",     limit: 4
+    t.timestamp "m_edited_when"
   end
 
-  add_index "media_prefs", ["MPF_KIND"], name: "MPF_KIND", using: :btree
-  add_index "media_prefs", ["MPF_SEQ"], name: "MPF_SEQ", unique: true, using: :btree
+  add_index "media_plans", ["m_ae_team"], name: "m_ae_team"
+  add_index "media_plans", ["m_approved_date"], name: "m_approved_date"
+  add_index "media_plans", ["m_campaign"], name: "m_campaign"
+  add_index "media_plans", ["m_client_num"], name: "m_client_num"
+  add_index "media_plans", ["m_job_num"], name: "m_job_num"
+  add_index "media_plans", ["m_name"], name: "m_name"
+  add_index "media_plans", ["m_num"], name: "m_num"
+  add_index "media_plans", ["m_start_date"], name: "m_start_date"
+  add_index "media_plans", ["m_type"], name: "m_type"
 
-  create_table "meetings", primary_key: "MEET_SEQ", force: true do |t|
-    t.date     "MEET_DATE"
-    t.datetime "MEET_TIME"
-    t.string   "MEET_ADDED_BY",     limit: 4
-    t.decimal  "MEET_DURATION",                 precision: 9, scale: 0
-    t.string   "MEET_TOPIC",        limit: 100
-    t.text     "MEET_OBJECTIVE"
-    t.text     "MEET_DISCUSSION"
-    t.string   "MEET_LOCATION",     limit: 40
-    t.text     "MEET_DIRECTIONS"
-    t.text     "MEET_ATTENDEES"
-    t.string   "MEET_JOB_NUM",      limit: 10
-    t.text     "MEET_ACTION_ITEMS"
-    t.integer  "MEET_FWD_SUM",      limit: 1
-    t.string   "MEET_CC",           limit: 100
-    t.string   "MEET_COORD",        limit: 4
-    t.string   "MEET_CLIENT_NUM",   limit: 10
-    t.text     "MEET_EMAIL_TO"
-    t.integer  "MEET_NOTIFY",       limit: 1
-    t.integer  "MEET_STATUS",       limit: 1
-    t.datetime "MEET_NEXT_DATE"
-    t.string   "MEET_EDITED_BY",    limit: 4
-    t.datetime "MEET_EDITED_WHEN"
+  create_table "media_prefs", primary_key: "mpf_seq", force: true do |t|
+    t.decimal   "mpf_num",                    precision: 15, scale: 0
+    t.string    "mpf_prefix",      limit: 3
+    t.text      "mpf_disclaimer"
+    t.string    "mpf_org",         limit: 50
+    t.string    "mpf_address1",    limit: 50
+    t.string    "mpf_address2",    limit: 50
+    t.string    "mpf_address3",    limit: 50
+    t.string    "mpf_phone",       limit: 50
+    t.decimal   "mpf_comm",                   precision: 15, scale: 2
+    t.string    "mpf_to1",         limit: 10
+    t.string    "mpf_to2",         limit: 10
+    t.string    "mpf_to3",         limit: 10
+    t.string    "mpf_to4",         limit: 10
+    t.string    "mpf_to5",         limit: 10
+    t.string    "mpf_to6",         limit: 10
+    t.string    "mpf_field1",      limit: 15
+    t.string    "mpf_field2",      limit: 15
+    t.string    "mpf_field3",      limit: 15
+    t.string    "mpf_field4",      limit: 15
+    t.string    "mpf_field5",      limit: 15
+    t.integer   "mpf_auto_num",    limit: 1
+    t.binary    "mpf_logo"
+    t.integer   "mpf_show_cl",     limit: 1
+    t.decimal   "mpf_radio_1q",               precision: 15, scale: 0
+    t.decimal   "mpf_radio_2q",               precision: 15, scale: 0
+    t.decimal   "mpf_radio_3q",               precision: 15, scale: 0
+    t.decimal   "mpf_radio_4q",               precision: 15, scale: 0
+    t.decimal   "mpf_tv_1q",                  precision: 15, scale: 0
+    t.decimal   "mpf_tv_2q",                  precision: 15, scale: 0
+    t.decimal   "mpf_tv_3q",                  precision: 15, scale: 0
+    t.decimal   "mpf_tv_4q",                  precision: 15, scale: 0
+    t.decimal   "mpf_cable_1q",               precision: 15, scale: 0
+    t.decimal   "mpf_cable_2q",               precision: 15, scale: 0
+    t.decimal   "mpf_cable_3q",               precision: 15, scale: 0
+    t.decimal   "mpf_cable_4q",               precision: 15, scale: 0
+    t.decimal   "mpf_news_1q",                precision: 15, scale: 0
+    t.decimal   "mpf_news_2q",                precision: 15, scale: 0
+    t.decimal   "mpf_news_3q",                precision: 15, scale: 0
+    t.decimal   "mpf_news_4q",                precision: 15, scale: 0
+    t.decimal   "mpf_mag_1q",                 precision: 15, scale: 0
+    t.decimal   "mpf_mag_2q",                 precision: 15, scale: 0
+    t.decimal   "mpf_mag_3q",                 precision: 15, scale: 0
+    t.decimal   "mpf_mag_4q",                 precision: 15, scale: 0
+    t.decimal   "mpf_out_1q",                 precision: 15, scale: 0
+    t.decimal   "mpf_out_2q",                 precision: 15, scale: 0
+    t.decimal   "mpf_out_3q",                 precision: 15, scale: 0
+    t.decimal   "mpf_out_4q",                 precision: 15, scale: 0
+    t.decimal   "mpf_int_1q",                 precision: 15, scale: 0
+    t.decimal   "mpf_int_2q",                 precision: 15, scale: 0
+    t.decimal   "mpf_int_3q",                 precision: 15, scale: 0
+    t.decimal   "mpf_int_4q",                 precision: 15, scale: 0
+    t.decimal   "mpf_other_1q",               precision: 15, scale: 0
+    t.decimal   "mpf_other_2q",               precision: 15, scale: 0
+    t.decimal   "mpf_other_3q",               precision: 15, scale: 0
+    t.decimal   "mpf_other_4q",               precision: 15, scale: 0
+    t.integer   "mpf_kind",        limit: 1
+    t.string    "mpf_edited_by",   limit: 4
+    t.timestamp "mpf_edited_when"
   end
 
-  add_index "meetings", ["MEET_CLIENT_NUM"], name: "MEET_CLIENT_NUM", using: :btree
-  add_index "meetings", ["MEET_DATE"], name: "MEET_DATE", using: :btree
-  add_index "meetings", ["MEET_JOB_NUM"], name: "MEET_JOB_NUM", using: :btree
-  add_index "meetings", ["MEET_SEQ"], name: "MEET_SEQ", unique: true, using: :btree
+  add_index "media_prefs", ["mpf_kind"], name: "mpf_kind"
 
-  create_table "mlink_log", primary_key: "MLOG_SEQ", force: true do |t|
-    t.datetime "MLOG_DATE"
-    t.string   "MLOG_BUYID",    limit: 15
-    t.text     "MLOG_STATUS"
-    t.string   "MLOG_ADDED_BY", limit: 10
+  create_table "meetings", primary_key: "meet_seq", force: true do |t|
+    t.date      "meet_date"
+    t.timestamp "meet_time"
+    t.string    "meet_added_by",     limit: 4
+    t.decimal   "meet_duration",                 precision: 9, scale: 0
+    t.string    "meet_topic",        limit: 100
+    t.text      "meet_objective"
+    t.text      "meet_discussion"
+    t.string    "meet_location",     limit: 40
+    t.text      "meet_directions"
+    t.text      "meet_attendees"
+    t.string    "meet_job_num",      limit: 10
+    t.text      "meet_action_items"
+    t.integer   "meet_fwd_sum",      limit: 1
+    t.string    "meet_cc",           limit: 100
+    t.string    "meet_coord",        limit: 4
+    t.string    "meet_client_num",   limit: 10
+    t.text      "meet_email_to"
+    t.integer   "meet_notify",       limit: 1
+    t.integer   "meet_status",       limit: 1
+    t.timestamp "meet_next_date"
+    t.string    "meet_edited_by",    limit: 4
+    t.timestamp "meet_edited_when"
   end
 
-  add_index "mlink_log", ["MLOG_DATE"], name: "MLOG_DATE", using: :btree
-  add_index "mlink_log", ["MLOG_SEQ"], name: "MLOG_SEQ", unique: true, using: :btree
+  add_index "meetings", ["meet_client_num"], name: "meet_client_num"
+  add_index "meetings", ["meet_date"], name: "meet_date"
+  add_index "meetings", ["meet_job_num"], name: "meet_job_num"
 
-  create_table "mlink_prefs", primary_key: "MLINK_SEQ", force: true do |t|
-    t.integer  "MLINK_ENABLE_LOG",      limit: 1
-    t.text     "MLINK_PATH"
-    t.integer  "MLINK_AUTO_IMPORT",     limit: 1
-    t.integer  "MLINK_IMPORT_EVERY",    limit: 1
-    t.time     "MLINK_IMPORT_TIME"
-    t.decimal  "MLINK_IMPORT_MINUTES",              precision: 9,  scale: 0
-    t.integer  "MLINK_CLIENTS_PREF",    limit: 1
-    t.integer  "MLINK_AFTER_PREF",      limit: 1
-    t.text     "MLINK_MOVE_PATH"
-    t.string   "MLINK_SYSTEM",          limit: 30
-    t.string   "MLINK_STATUS",          limit: 100
-    t.datetime "MLINK_LAST_IMPORT"
-    t.decimal  "MLINK_COUNT_TODAY",                 precision: 9,  scale: 0
-    t.decimal  "MLINK_COUNT_TOTAL",                 precision: 9,  scale: 0
-    t.decimal  "MLINK_AMT",                         precision: 15, scale: 2
-    t.string   "MLINK_IMPORT_INTERVAL", limit: 40
-    t.date     "MLINK_DATE"
-    t.integer  "MLINK_VENDORS_PREF",    limit: 1
-    t.integer  "MLINK_BELL",            limit: 1
-    t.integer  "MLINK_NOTIFY",          limit: 1
-    t.string   "MLINK_EMAIL_NAME",      limit: 50
-    t.string   "MLINK_EMAIL_ADDRESS",   limit: 50
-    t.integer  "MLINK_TV_BILL_NET",     limit: 1
-    t.integer  "MLINK_PRINT_BILL_NET",  limit: 1
-    t.integer  "MLINK_BROAD_COMM",      limit: 1
-    t.integer  "MLINK_PRINT_COMM",      limit: 1
-    t.string   "MLINK_EDITED_BY",       limit: 4
-    t.datetime "MLINK_EDITED_WHEN"
+  create_table "mlink_log", primary_key: "mlog_seq", force: true do |t|
+    t.timestamp "mlog_date"
+    t.string    "mlog_buyid",    limit: 15
+    t.text      "mlog_status"
+    t.string    "mlog_added_by", limit: 10
   end
 
-  add_index "mlink_prefs", ["MLINK_SEQ"], name: "MLINK_SEQ", unique: true, using: :btree
+  add_index "mlink_log", ["mlog_date"], name: "mlog_date"
+
+  create_table "mlink_prefs", primary_key: "mlink_seq", force: true do |t|
+    t.integer   "mlink_enable_log",      limit: 1
+    t.text      "mlink_path"
+    t.integer   "mlink_auto_import",     limit: 1
+    t.integer   "mlink_import_every",    limit: 1
+    t.time      "mlink_import_time"
+    t.decimal   "mlink_import_minutes",              precision: 9,  scale: 0
+    t.integer   "mlink_clients_pref",    limit: 1
+    t.integer   "mlink_after_pref",      limit: 1
+    t.text      "mlink_move_path"
+    t.string    "mlink_system",          limit: 30
+    t.string    "mlink_status",          limit: 100
+    t.timestamp "mlink_last_import"
+    t.decimal   "mlink_count_today",                 precision: 9,  scale: 0
+    t.decimal   "mlink_count_total",                 precision: 9,  scale: 0
+    t.decimal   "mlink_amt",                         precision: 15, scale: 2
+    t.string    "mlink_import_interval", limit: 40
+    t.date      "mlink_date"
+    t.integer   "mlink_vendors_pref",    limit: 1
+    t.integer   "mlink_bell",            limit: 1
+    t.integer   "mlink_notify",          limit: 1
+    t.string    "mlink_email_name",      limit: 50
+    t.string    "mlink_email_address",   limit: 50
+    t.integer   "mlink_tv_bill_net",     limit: 1
+    t.integer   "mlink_print_bill_net",  limit: 1
+    t.integer   "mlink_broad_comm",      limit: 1
+    t.integer   "mlink_print_comm",      limit: 1
+    t.string    "mlink_edited_by",       limit: 4
+    t.timestamp "mlink_edited_when"
+  end
 
   create_table "odbcusers", id: false, force: true do |t|
-    t.string  "ODBCUSERNAME",   limit: 32
-    t.string  "ODBCPASSWORD",   limit: 64
-    t.integer "ODBCACCESSMASK"
+    t.string  "odbcusername",   limit: 32
+    t.string  "odbcpassword",   limit: 64
+    t.integer "odbcaccessmask"
   end
 
-  add_index "odbcusers", ["ODBCUSERNAME"], name: "ODBCUSERNAME", using: :btree
+  add_index "odbcusers", ["odbcusername"], name: "odbcusername"
 
-  create_table "outbox", primary_key: "OUT_SEQ", force: true do |t|
-    t.string   "OUT_FROM_EMAIL", limit: 40
-    t.string   "OUT_TO_EMAIL",   limit: 40
-    t.string   "OUT_SUBJECT",    limit: 120
-    t.text     "OUT_BODY"
-    t.string   "OUT_CC",         limit: 40
-    t.string   "OUT_BCC",        limit: 40
-    t.string   "OUT_REAL_NAME",  limit: 60
-    t.string   "OUT_ATTACHMENT", limit: 40
-    t.datetime "OUT_DATE_ADDED"
-    t.string   "OUT_ADDED_BY",   limit: 4
-    t.datetime "OUT_SEND_DATE"
-    t.integer  "OUT_OK",         limit: 1
+  create_table "outbox", primary_key: "out_seq", force: true do |t|
+    t.string    "out_from_email", limit: 40
+    t.string    "out_to_email",   limit: 40
+    t.string    "out_subject",    limit: 120
+    t.text      "out_body"
+    t.string    "out_cc",         limit: 40
+    t.string    "out_bcc",        limit: 40
+    t.string    "out_real_name",  limit: 60
+    t.string    "out_attachment", limit: 40
+    t.timestamp "out_date_added"
+    t.string    "out_added_by",   limit: 4
+    t.timestamp "out_send_date"
+    t.integer   "out_ok",         limit: 1
   end
 
-  add_index "outbox", ["OUT_OK"], name: "OUT_OK", using: :btree
-  add_index "outbox", ["OUT_SEND_DATE"], name: "OUT_SEND_DATE", using: :btree
-  add_index "outbox", ["OUT_SEQ"], name: "OUT_SEQ", unique: true, using: :btree
+  add_index "outbox", ["out_ok"], name: "out_ok"
+  add_index "outbox", ["out_send_date"], name: "out_send_date"
 
-  create_table "palm_cats", primary_key: "PALM_CAT_SEQ", force: true do |t|
-    t.string  "PALM_CAT_NAME", limit: 15
-    t.integer "PALM_CAT_ID",   limit: 1
-    t.string  "PALM_CAT_USER", limit: 10
+  create_table "palm_cats", primary_key: "palm_cat_seq", force: true do |t|
+    t.string  "palm_cat_name", limit: 15
+    t.integer "palm_cat_id",   limit: 1
+    t.string  "palm_cat_user", limit: 10
   end
 
-  add_index "palm_cats", ["PALM_CAT_ID"], name: "PALM_CAT_ID", using: :btree
-  add_index "palm_cats", ["PALM_CAT_SEQ"], name: "PALM_CAT_SEQ", unique: true, using: :btree
-  add_index "palm_cats", ["PALM_CAT_USER"], name: "PALM_CAT_USER", using: :btree
+  add_index "palm_cats", ["palm_cat_id"], name: "palm_cat_id"
+  add_index "palm_cats", ["palm_cat_user"], name: "palm_cat_user"
 
-  create_table "palm_jobs", primary_key: "PALM_JOB_SEQ", force: true do |t|
-    t.integer "PALM_JOB_ID"
-    t.string  "PALM_JOB_ATTRIBS",  limit: 4
-    t.integer "PALM_JOB_CATEGORY", limit: 1
-    t.string  "PALM_JOB_NUM",      limit: 10
-    t.string  "PALM_JOB_NAME",     limit: 73
-    t.string  "PALM_JOB_USER",     limit: 10
-    t.integer "PALM_JOB_PLUS",     limit: 1
+  create_table "palm_jobs", primary_key: "palm_job_seq", force: true do |t|
+    t.integer "palm_job_id"
+    t.string  "palm_job_attribs",  limit: 4
+    t.integer "palm_job_category", limit: 1
+    t.string  "palm_job_num",      limit: 10
+    t.string  "palm_job_name",     limit: 73
+    t.string  "palm_job_user",     limit: 10
+    t.integer "palm_job_plus",     limit: 1
   end
 
-  add_index "palm_jobs", ["PALM_JOB_NUM"], name: "PALM_JOB_NUM", using: :btree
-  add_index "palm_jobs", ["PALM_JOB_SEQ"], name: "PALM_JOB_SEQ", unique: true, using: :btree
-  add_index "palm_jobs", ["PALM_JOB_USER"], name: "PALM_JOB_USER", using: :btree
+  add_index "palm_jobs", ["palm_job_num"], name: "palm_job_num"
+  add_index "palm_jobs", ["palm_job_user"], name: "palm_job_user"
 
-  create_table "palm_tasks", primary_key: "PALM_TASK_SEQ", force: true do |t|
-    t.string  "PALM_TASK_CODE",    limit: 4
-    t.string  "PALM_TASK_NAME",    limit: 57
-    t.string  "PALM_TASK_USER",    limit: 10
-    t.integer "PALM_TASK_ID"
-    t.integer "PALM_TASK_CAT",     limit: 1
-    t.string  "PALM_TASK_ATTRIBS", limit: 4
+  create_table "palm_tasks", primary_key: "palm_task_seq", force: true do |t|
+    t.string  "palm_task_code",    limit: 4
+    t.string  "palm_task_name",    limit: 57
+    t.string  "palm_task_user",    limit: 10
+    t.integer "palm_task_id"
+    t.integer "palm_task_cat",     limit: 1
+    t.string  "palm_task_attribs", limit: 4
   end
 
-  add_index "palm_tasks", ["PALM_TASK_CODE"], name: "PALM_TASK_CODE", using: :btree
-  add_index "palm_tasks", ["PALM_TASK_ID"], name: "PALM_TASK_ID", using: :btree
-  add_index "palm_tasks", ["PALM_TASK_SEQ"], name: "PALM_TASK_SEQ", unique: true, using: :btree
-  add_index "palm_tasks", ["PALM_TASK_USER"], name: "PALM_TASK_USER", using: :btree
+  add_index "palm_tasks", ["palm_task_code"], name: "palm_task_code"
+  add_index "palm_tasks", ["palm_task_id"], name: "palm_task_id"
+  add_index "palm_tasks", ["palm_task_user"], name: "palm_task_user"
 
-  create_table "payment_items", primary_key: "PX_SEQ", force: true do |t|
-    t.string   "PX_AR_NUM",      limit: 10
-    t.decimal  "PX_AMT",                    precision: 15, scale: 2
-    t.decimal  "PX_CGL",                    precision: 15, scale: 2
-    t.date     "PX_POSTED"
-    t.decimal  "PX_PERIOD",                 precision: 9,  scale: 0
-    t.string   "PX_CHECK_NUM",   limit: 12
-    t.string   "PX_CLIENT_NUM",  limit: 10
-    t.decimal  "PX_DISC_AMT",               precision: 15, scale: 2
-    t.decimal  "PX_DISC_GL",                precision: 15, scale: 2
-    t.string   "PX_ADDED_BY",    limit: 4
-    t.datetime "PX_ADDED_WHEN"
-    t.string   "PX_EDITED_BY",   limit: 4
-    t.datetime "PX_EDITED_WHEN"
+  create_table "payment_items", primary_key: "px_seq", force: true do |t|
+    t.string    "px_ar_num",      limit: 10
+    t.decimal   "px_amt",                    precision: 15, scale: 2
+    t.decimal   "px_cgl",                    precision: 15, scale: 2
+    t.date      "px_posted"
+    t.decimal   "px_period",                 precision: 9,  scale: 0
+    t.string    "px_check_num",   limit: 12
+    t.string    "px_client_num",  limit: 10
+    t.decimal   "px_disc_amt",               precision: 15, scale: 2
+    t.decimal   "px_disc_gl",                precision: 15, scale: 2
+    t.string    "px_added_by",    limit: 4
+    t.timestamp "px_added_when"
+    t.string    "px_edited_by",   limit: 4
+    t.timestamp "px_edited_when"
   end
 
-  add_index "payment_items", ["PX_AR_NUM"], name: "PX_AR_NUM", using: :btree
-  add_index "payment_items", ["PX_CHECK_NUM"], name: "PX_CHECK_NUM", using: :btree
-  add_index "payment_items", ["PX_CLIENT_NUM"], name: "PX_CLIENT_NUM", using: :btree
-  add_index "payment_items", ["PX_PERIOD"], name: "PX_PERIOD", using: :btree
-  add_index "payment_items", ["PX_POSTED"], name: "PX_POSTED", using: :btree
-  add_index "payment_items", ["PX_SEQ"], name: "PX_SEQ", unique: true, using: :btree
+  add_index "payment_items", ["px_ar_num"], name: "px_ar_num"
+  add_index "payment_items", ["px_check_num"], name: "px_check_num"
+  add_index "payment_items", ["px_client_num"], name: "px_client_num"
+  add_index "payment_items", ["px_period"], name: "px_period"
+  add_index "payment_items", ["px_posted"], name: "px_posted"
 
-  create_table "payments", primary_key: "PAY_SEQ", force: true do |t|
-    t.string   "PAY_CLIENT_NUM",  limit: 10
-    t.string   "PAY_CHECK_NUM",   limit: 10
-    t.decimal  "PAY_AMT",                    precision: 15, scale: 2
-    t.date     "PAY_CHECK_DATE"
-    t.string   "PAY_TYPE",        limit: 10
-    t.date     "PAY_DATE"
-    t.text     "PAY_DESC"
-    t.decimal  "PAY_DGL",                    precision: 15, scale: 2
-    t.boolean  "PAY_BOOLEAN"
-    t.date     "PAY_POSTED"
-    t.string   "PAY_ADDED_BY",    limit: 4
-    t.date     "PAY_ADDED_WHEN"
-    t.integer  "PAY_OK",          limit: 1
-    t.decimal  "PAY_PERIOD",                 precision: 9,  scale: 0
-    t.string   "PAY_BANK",        limit: 10
-    t.integer  "PAY_KIND",        limit: 1
-    t.string   "PAY_BATCH",       limit: 10
-    t.string   "PAY_BANK_ID",     limit: 10
-    t.string   "PAY_EDITED_BY",   limit: 4
-    t.datetime "PAY_EDITED_WHEN"
-    t.string   "PAY_POSTED_BY",   limit: 4
-    t.datetime "PAY_POSTED_WHEN"
+  create_table "payments", primary_key: "pay_seq", force: true do |t|
+    t.string    "pay_client_num",  limit: 10
+    t.string    "pay_check_num",   limit: 10
+    t.decimal   "pay_amt",                    precision: 15, scale: 2
+    t.date      "pay_check_date"
+    t.string    "pay_type",        limit: 10
+    t.date      "pay_date"
+    t.text      "pay_desc"
+    t.decimal   "pay_dgl",                    precision: 15, scale: 2
+    t.boolean   "pay_boolean"
+    t.date      "pay_posted"
+    t.string    "pay_added_by",    limit: 4
+    t.date      "pay_added_when"
+    t.integer   "pay_ok",          limit: 1
+    t.decimal   "pay_period",                 precision: 9,  scale: 0
+    t.string    "pay_bank",        limit: 10
+    t.integer   "pay_kind",        limit: 1
+    t.string    "pay_batch",       limit: 10
+    t.string    "pay_bank_id",     limit: 10
+    t.string    "pay_edited_by",   limit: 4
+    t.timestamp "pay_edited_when"
+    t.string    "pay_posted_by",   limit: 4
+    t.timestamp "pay_posted_when"
   end
 
-  add_index "payments", ["PAY_ADDED_BY"], name: "PAY_ADDED_BY", using: :btree
-  add_index "payments", ["PAY_ADDED_WHEN"], name: "PAY_ADDED_WHEN", using: :btree
-  add_index "payments", ["PAY_BATCH"], name: "PAY_BATCH", using: :btree
-  add_index "payments", ["PAY_CHECK_DATE"], name: "PAY_CHECK_DATE", using: :btree
-  add_index "payments", ["PAY_CHECK_NUM"], name: "PAY_CHECK_NUM", using: :btree
-  add_index "payments", ["PAY_CLIENT_NUM"], name: "PAY_CLIENT_NUM", using: :btree
-  add_index "payments", ["PAY_DATE"], name: "PAY_DATE", using: :btree
-  add_index "payments", ["PAY_OK"], name: "PAY_OK", using: :btree
-  add_index "payments", ["PAY_PERIOD"], name: "PAY_PERIOD", using: :btree
-  add_index "payments", ["PAY_POSTED"], name: "PAY_POSTED", using: :btree
-  add_index "payments", ["PAY_SEQ"], name: "PAY_SEQ", unique: true, using: :btree
+  add_index "payments", ["pay_added_by"], name: "pay_added_by"
+  add_index "payments", ["pay_added_when"], name: "pay_added_when"
+  add_index "payments", ["pay_batch"], name: "pay_batch"
+  add_index "payments", ["pay_check_date"], name: "pay_check_date"
+  add_index "payments", ["pay_check_num"], name: "pay_check_num"
+  add_index "payments", ["pay_client_num"], name: "pay_client_num"
+  add_index "payments", ["pay_date"], name: "pay_date"
+  add_index "payments", ["pay_ok"], name: "pay_ok"
+  add_index "payments", ["pay_period"], name: "pay_period"
+  add_index "payments", ["pay_posted"], name: "pay_posted"
 
-  create_table "pc", primary_key: "PC_SEQ", force: true do |t|
-    t.string   "PC_NUM",           limit: 10
-    t.string   "PC_NAME",          limit: 40
-    t.text     "PC_DESC"
-    t.string   "PC_CORP_ID",       limit: 100
-    t.string   "PC_ADDED_BY",      limit: 4
-    t.datetime "PC_ADDED_WHEN"
-    t.string   "PC_EDITED_BY",     limit: 4
-    t.datetime "PC_EDITED_WHEN"
-    t.string   "PC_BUS_UNIT",      limit: 20
-    t.integer  "PC_OUTDATED",      limit: 1
-    t.integer  "PC_AR_SHOW",       limit: 1
-    t.string   "PC_BILL_ORG",      limit: 60
-    t.string   "PC_BILL_ADDRESS1", limit: 60
-    t.string   "PC_BILL_ADDRESS2", limit: 60
-    t.string   "PC_BILL_ADDRESS3", limit: 60
+  create_table "pc", primary_key: "pc_seq", force: true do |t|
+    t.string    "pc_num",           limit: 10
+    t.string    "pc_name",          limit: 40
+    t.text      "pc_desc"
+    t.string    "pc_corp_id",       limit: 100
+    t.string    "pc_added_by",      limit: 4
+    t.timestamp "pc_added_when"
+    t.string    "pc_edited_by",     limit: 4
+    t.timestamp "pc_edited_when"
+    t.string    "pc_bus_unit",      limit: 20
+    t.integer   "pc_outdated",      limit: 1
+    t.integer   "pc_ar_show",       limit: 1
+    t.string    "pc_bill_org",      limit: 60
+    t.string    "pc_bill_address1", limit: 60
+    t.string    "pc_bill_address2", limit: 60
+    t.string    "pc_bill_address3", limit: 60
   end
 
-  add_index "pc", ["PC_NUM"], name: "PC_NUM", using: :btree
-  add_index "pc", ["PC_SEQ"], name: "PC_SEQ", unique: true, using: :btree
+  add_index "pc", ["pc_num"], name: "pc_num"
 
-  create_table "pictures", primary_key: "PICTURE_SEQ", force: true do |t|
-    t.string   "PICTURE_NUM",         limit: 10
-    t.binary   "PICTURE_PHOTO",       limit: 16777215
-    t.text     "PICTURE_TEXT"
-    t.string   "PICTURE_ADDED_BY",    limit: 4
-    t.datetime "PICTURE_ADDED_WHEN"
-    t.string   "PICTURE_EDITED_BY",   limit: 4
-    t.datetime "PICTURE_EDITED_WHEN"
+  create_table "pictures", primary_key: "picture_seq", force: true do |t|
+    t.string    "picture_num",         limit: 10
+    t.binary    "picture_photo"
+    t.text      "picture_text"
+    t.string    "picture_added_by",    limit: 4
+    t.timestamp "picture_added_when"
+    t.string    "picture_edited_by",   limit: 4
+    t.timestamp "picture_edited_when"
   end
 
-  add_index "pictures", ["PICTURE_NUM"], name: "PICTURE_NUM", using: :btree
-  add_index "pictures", ["PICTURE_SEQ"], name: "PICTURE_SEQ", unique: true, using: :btree
+  add_index "pictures", ["picture_num"], name: "picture_num"
 
-  create_table "po_items", primary_key: "POX_SEQ", force: true do |t|
-    t.integer  "POX_LINE_NUMBER"
-    t.string   "POX_JOB_NUM",     limit: 10
-    t.string   "POX_TASK",        limit: 4
-    t.text     "POX_DESC"
-    t.string   "POX_PROGRAM",     limit: 30
-    t.decimal  "POX_QTY",                    precision: 9,  scale: 0
-    t.decimal  "POX_COST_EACH",              precision: 15, scale: 4
-    t.decimal  "POX_COST",                   precision: 15, scale: 2
-    t.decimal  "POX_MARKUP",                 precision: 9,  scale: 2
-    t.decimal  "POX_GROSS",                  precision: 15, scale: 2
-    t.decimal  "POX_COST_PAID",              precision: 15, scale: 2
-    t.decimal  "POX_GROSS_PAID",             precision: 15, scale: 2
-    t.string   "POX_PO_NUM",      limit: 12
-    t.integer  "POX_BILLABLE",    limit: 1
-    t.string   "POX_UNIT",        limit: 6
-    t.string   "POX_NAME",        limit: 40
-    t.string   "POX_KEY",         limit: 15
-    t.decimal  "POX_BUYDETID",               precision: 9,  scale: 0
-    t.date     "POX_DUE_DATE"
-    t.date     "POX_DUE_DATE2"
-    t.string   "POX_ISSUE_DATE",  limit: 12
-    t.string   "POX_REVISION",    limit: 10
-    t.string   "POX_AP_OK",       limit: 10
-    t.string   "POX_AD_SIZE",     limit: 25
-    t.string   "POX_AD_NAME",     limit: 25
-    t.string   "POX_AR_NUM",      limit: 12
-    t.string   "POX_PUB",         limit: 25
-    t.string   "POX_CLIENT_NUM",  limit: 10
-    t.integer  "POX_BILL_NET",    limit: 1
-    t.decimal  "POX_TYPE",                   precision: 9,  scale: 0
-    t.decimal  "POX_RATING",                 precision: 9,  scale: 2
-    t.decimal  "POX_CPP",                    precision: 9,  scale: 2
-    t.decimal  "POX_CPM",                    precision: 9,  scale: 2
-    t.integer  "POX_MAKEGOOD",    limit: 1
-    t.decimal  "POX_AR_AMT",                 precision: 9,  scale: 2
-    t.string   "POX_COST_NUM",    limit: 20
-    t.date     "POX_BILL_DATE"
-    t.integer  "POX_SALES_TAX",   limit: 1
-    t.date     "POX_ISSUE_DATE2"
-    t.integer  "POX_TRADE",       limit: 1
-    t.date     "POX_RUN_DATE"
-    t.string   "POX_ADDED_BY",    limit: 5
-    t.datetime "POX_ADDED_WHEN"
-    t.string   "POX_EDITED_BY",   limit: 4
-    t.datetime "POX_EDITED_WHEN"
-    t.integer  "POX_TAXABLE1",    limit: 1
-    t.integer  "POX_TAXABLE2",    limit: 1
+  create_table "po_items", primary_key: "pox_seq", force: true do |t|
+    t.integer   "pox_line_number"
+    t.string    "pox_job_num",     limit: 10
+    t.string    "pox_task",        limit: 4
+    t.text      "pox_desc"
+    t.string    "pox_program",     limit: 30
+    t.decimal   "pox_qty",                    precision: 9,  scale: 0
+    t.decimal   "pox_cost_each",              precision: 15, scale: 4
+    t.decimal   "pox_cost",                   precision: 15, scale: 2
+    t.decimal   "pox_markup",                 precision: 9,  scale: 2
+    t.decimal   "pox_gross",                  precision: 15, scale: 2
+    t.decimal   "pox_cost_paid",              precision: 15, scale: 2
+    t.decimal   "pox_gross_paid",             precision: 15, scale: 2
+    t.string    "pox_po_num",      limit: 12
+    t.integer   "pox_billable",    limit: 1
+    t.string    "pox_unit",        limit: 6
+    t.string    "pox_name",        limit: 40
+    t.string    "pox_key",         limit: 15
+    t.decimal   "pox_buydetid",               precision: 9,  scale: 0
+    t.date      "pox_due_date"
+    t.date      "pox_due_date2"
+    t.string    "pox_issue_date",  limit: 12
+    t.string    "pox_revision",    limit: 10
+    t.string    "pox_ap_ok",       limit: 10
+    t.string    "pox_ad_size",     limit: 25
+    t.string    "pox_ad_name",     limit: 25
+    t.string    "pox_ar_num",      limit: 12
+    t.string    "pox_pub",         limit: 25
+    t.string    "pox_client_num",  limit: 10
+    t.integer   "pox_bill_net",    limit: 1
+    t.decimal   "pox_type",                   precision: 9,  scale: 0
+    t.decimal   "pox_rating",                 precision: 9,  scale: 2
+    t.decimal   "pox_cpp",                    precision: 9,  scale: 2
+    t.decimal   "pox_cpm",                    precision: 9,  scale: 2
+    t.integer   "pox_makegood",    limit: 1
+    t.decimal   "pox_ar_amt",                 precision: 9,  scale: 2
+    t.string    "pox_cost_num",    limit: 20
+    t.date      "pox_bill_date"
+    t.integer   "pox_sales_tax",   limit: 1
+    t.date      "pox_issue_date2"
+    t.integer   "pox_trade",       limit: 1
+    t.date      "pox_run_date"
+    t.string    "pox_added_by",    limit: 5
+    t.timestamp "pox_added_when"
+    t.string    "pox_edited_by",   limit: 4
+    t.timestamp "pox_edited_when"
+    t.integer   "pox_taxable1",    limit: 1
+    t.integer   "pox_taxable2",    limit: 1
   end
 
-  add_index "po_items", ["POX_AR_NUM"], name: "POX_AR_NUM", using: :btree
-  add_index "po_items", ["POX_BILL_DATE"], name: "POX_BILL_DATE", using: :btree
-  add_index "po_items", ["POX_CLIENT_NUM"], name: "POX_CLIENT_NUM", using: :btree
-  add_index "po_items", ["POX_DUE_DATE"], name: "POX_DUE_DATE", using: :btree
-  add_index "po_items", ["POX_DUE_DATE2"], name: "POX_DUE_DATE2", using: :btree
-  add_index "po_items", ["POX_ISSUE_DATE2"], name: "POX_ISSUE_DATE2", using: :btree
-  add_index "po_items", ["POX_JOB_NUM"], name: "POX_JOB_NUM", using: :btree
-  add_index "po_items", ["POX_KEY"], name: "POX_KEY", using: :btree
-  add_index "po_items", ["POX_PO_NUM"], name: "POX_PO_NUM", using: :btree
-  add_index "po_items", ["POX_PROGRAM"], name: "POX_PROGRAM", using: :btree
-  add_index "po_items", ["POX_RUN_DATE"], name: "POX_RUN_DATE", using: :btree
-  add_index "po_items", ["POX_SEQ"], name: "POX_SEQ", unique: true, using: :btree
-  add_index "po_items", ["POX_TRADE"], name: "POX_TRADE", using: :btree
-  add_index "po_items", ["POX_TYPE"], name: "POX_TYPE", using: :btree
+  add_index "po_items", ["pox_ar_num"], name: "pox_ar_num"
+  add_index "po_items", ["pox_bill_date"], name: "pox_bill_date"
+  add_index "po_items", ["pox_client_num"], name: "pox_client_num"
+  add_index "po_items", ["pox_due_date"], name: "pox_due_date"
+  add_index "po_items", ["pox_due_date2"], name: "pox_due_date2"
+  add_index "po_items", ["pox_issue_date2"], name: "pox_issue_date2"
+  add_index "po_items", ["pox_job_num"], name: "pox_job_num"
+  add_index "po_items", ["pox_key"], name: "pox_key"
+  add_index "po_items", ["pox_po_num"], name: "pox_po_num"
+  add_index "po_items", ["pox_program"], name: "pox_program"
+  add_index "po_items", ["pox_run_date"], name: "pox_run_date"
+  add_index "po_items", ["pox_trade"], name: "pox_trade"
+  add_index "po_items", ["pox_type"], name: "pox_type"
 
-  create_table "po_template", primary_key: "PT_SEQ", force: true do |t|
-    t.string   "PT_TEMPLATE",         limit: 20
-    t.string   "PT_JOB_NUM",          limit: 10
-    t.string   "PT_TASK",             limit: 4
-    t.string   "PT_DESC_LABEL",       limit: 15
-    t.text     "PT_DESC"
-    t.string   "PT_VENDOR_NUM",       limit: 10
-    t.decimal  "PT_COST",                        precision: 15, scale: 2
-    t.decimal  "PT_MARKUP",                      precision: 9,  scale: 2
-    t.decimal  "PT_TAX",                         precision: 9,  scale: 2
-    t.decimal  "PT_GROSS",                       precision: 15, scale: 2
-    t.integer  "PT_TYPE",             limit: 1
-    t.text     "PT_SHIP_NOTE"
-    t.string   "PT_SHIP1",            limit: 40
-    t.string   "PT_SHIP2",            limit: 40
-    t.string   "PT_SHIP3",            limit: 40
-    t.string   "PT_SHIP4",            limit: 40
-    t.string   "PT_QTY_LABEL",        limit: 15
-    t.string   "PT_QTY",              limit: 20
-    t.string   "PT_APPROVAL1",        limit: 30
-    t.string   "PT_APPROVAL2",        limit: 30
-    t.string   "PT_APPROVAL3",        limit: 30
-    t.decimal  "PT_TERMS1",                      precision: 9,  scale: 2
-    t.decimal  "PT_TERMS2",                      precision: 9,  scale: 0
-    t.decimal  "PT_TERMS3",                      precision: 9,  scale: 0
-    t.string   "PT_PC",               limit: 10
-    t.string   "PT_TO1",              limit: 10
-    t.string   "PT_TO2",              limit: 10
-    t.string   "PT_TO3",              limit: 10
-    t.string   "PT_TO4",              limit: 10
-    t.string   "PT_TO5",              limit: 10
-    t.string   "PT_VENDOR1",          limit: 40
-    t.string   "PT_VENDOR2",          limit: 40
-    t.string   "PT_VENDOR3",          limit: 40
-    t.string   "PT_VENDOR4",          limit: 40
-    t.string   "PT_VENDOR5",          limit: 40
-    t.string   "PT_FIELD_LABEL1",     limit: 15
-    t.string   "PT_FIELD_LABEL2",     limit: 15
-    t.string   "PT_FIELD_LABEL3",     limit: 15
-    t.string   "PT_FIELD_LABEL4",     limit: 15
-    t.string   "PT_FIELD_LABEL5",     limit: 15
-    t.string   "PT_FIELD1",           limit: 15
-    t.string   "PT_FIELD2",           limit: 15
-    t.string   "PT_FIELD3",           limit: 15
-    t.string   "PT_FIELD4",           limit: 15
-    t.string   "PT_FIELD5",           limit: 15
-    t.integer  "PT_TAX_EXEMPT",       limit: 1
-    t.text     "PT_DISCLAIMER"
-    t.string   "PT_ITEM_DESC",        limit: 50
-    t.integer  "PT_KIND",             limit: 1
-    t.string   "PT_ADDED_BY",         limit: 4
-    t.datetime "PT_ADDED_WHEN"
-    t.string   "PT_EDITED_BY",        limit: 4
-    t.datetime "PT_EDITED_WHEN"
-    t.text     "PT_TERMS_CONDITIONS"
-    t.text     "PT_TERMS_HEADER"
-    t.integer  "PT_TERMS_PRINT1",     limit: 1
-    t.integer  "PT_TERMS_PRINT2",     limit: 1
-    t.integer  "PT_TERMS_PRINT3",     limit: 1
-    t.integer  "PT_TERMS_PRINT4",     limit: 1
-    t.integer  "PT_TERMS_PRINT5",     limit: 1
+  create_table "po_template", primary_key: "pt_seq", force: true do |t|
+    t.string    "pt_template",         limit: 20
+    t.string    "pt_job_num",          limit: 10
+    t.string    "pt_task",             limit: 4
+    t.string    "pt_desc_label",       limit: 15
+    t.text      "pt_desc"
+    t.string    "pt_vendor_num",       limit: 10
+    t.decimal   "pt_cost",                        precision: 15, scale: 2
+    t.decimal   "pt_markup",                      precision: 9,  scale: 2
+    t.decimal   "pt_tax",                         precision: 9,  scale: 2
+    t.decimal   "pt_gross",                       precision: 15, scale: 2
+    t.integer   "pt_type",             limit: 1
+    t.text      "pt_ship_note"
+    t.string    "pt_ship1",            limit: 40
+    t.string    "pt_ship2",            limit: 40
+    t.string    "pt_ship3",            limit: 40
+    t.string    "pt_ship4",            limit: 40
+    t.string    "pt_qty_label",        limit: 15
+    t.string    "pt_qty",              limit: 20
+    t.string    "pt_approval1",        limit: 30
+    t.string    "pt_approval2",        limit: 30
+    t.string    "pt_approval3",        limit: 30
+    t.decimal   "pt_terms1",                      precision: 9,  scale: 2
+    t.decimal   "pt_terms2",                      precision: 9,  scale: 0
+    t.decimal   "pt_terms3",                      precision: 9,  scale: 0
+    t.string    "pt_pc",               limit: 10
+    t.string    "pt_to1",              limit: 10
+    t.string    "pt_to2",              limit: 10
+    t.string    "pt_to3",              limit: 10
+    t.string    "pt_to4",              limit: 10
+    t.string    "pt_to5",              limit: 10
+    t.string    "pt_vendor1",          limit: 40
+    t.string    "pt_vendor2",          limit: 40
+    t.string    "pt_vendor3",          limit: 40
+    t.string    "pt_vendor4",          limit: 40
+    t.string    "pt_vendor5",          limit: 40
+    t.string    "pt_field_label1",     limit: 15
+    t.string    "pt_field_label2",     limit: 15
+    t.string    "pt_field_label3",     limit: 15
+    t.string    "pt_field_label4",     limit: 15
+    t.string    "pt_field_label5",     limit: 15
+    t.string    "pt_field1",           limit: 15
+    t.string    "pt_field2",           limit: 15
+    t.string    "pt_field3",           limit: 15
+    t.string    "pt_field4",           limit: 15
+    t.string    "pt_field5",           limit: 15
+    t.integer   "pt_tax_exempt",       limit: 1
+    t.text      "pt_disclaimer"
+    t.string    "pt_item_desc",        limit: 50
+    t.integer   "pt_kind",             limit: 1
+    t.string    "pt_added_by",         limit: 4
+    t.timestamp "pt_added_when"
+    t.string    "pt_edited_by",        limit: 4
+    t.timestamp "pt_edited_when"
+    t.text      "pt_terms_conditions"
+    t.text      "pt_terms_header"
+    t.integer   "pt_terms_print1",     limit: 1
+    t.integer   "pt_terms_print2",     limit: 1
+    t.integer   "pt_terms_print3",     limit: 1
+    t.integer   "pt_terms_print4",     limit: 1
+    t.integer   "pt_terms_print5",     limit: 1
   end
 
-  add_index "po_template", ["PT_KIND"], name: "PT_KIND", using: :btree
-  add_index "po_template", ["PT_SEQ"], name: "PT_SEQ", unique: true, using: :btree
-  add_index "po_template", ["PT_TEMPLATE"], name: "PT_TEMPLATE", using: :btree
+  add_index "po_template", ["pt_kind"], name: "pt_kind"
+  add_index "po_template", ["pt_template"], name: "pt_template"
 
-  create_table "prefs", primary_key: "PREF_SEQ", force: true do |t|
-    t.integer  "PREF_GL",                   limit: 1
-    t.integer  "PREF_AP_AGING",             limit: 1
-    t.integer  "PREF_AR_AGING",             limit: 1
-    t.integer  "PREF_DIARY",                limit: 1
-    t.integer  "PREF_CHARGE_NUM",           limit: 1
-    t.integer  "PREF_JOB_TYPE",             limit: 1
-    t.integer  "PREF_CLOSE_JOB_COSTS",      limit: 1
-    t.integer  "PREF_RATE_KIND",            limit: 1
-    t.integer  "PREF_SHARED_PICTS",         limit: 1
-    t.integer  "PREF_DATES",                limit: 1
-    t.integer  "PREF_FIND_TIME",            limit: 1
-    t.integer  "PREF_MAIL",                 limit: 1
-    t.integer  "PREF_CK_COPIES",            limit: 1
-    t.integer  "PREF_WIP",                  limit: 1
-    t.integer  "PREF_PROOF_PRINTER",        limit: 1
-    t.integer  "PREF_CLOSE_JOB_TASKS",      limit: 1
-    t.integer  "PREF_OVERDUE_EMAIL",        limit: 1
-    t.string   "PREF_CODE",                 limit: 4
-    t.string   "PREF_TRAFFIC1",             limit: 25
-    t.string   "PREF_TRAFFIC2",             limit: 25
-    t.string   "PREF_TRAFFIC3",             limit: 25
-    t.string   "PREF_TRAFFIC4",             limit: 25
-    t.string   "PREF_TRAFFIC5",             limit: 25
-    t.string   "PREF_TRAFFIC6",             limit: 25
-    t.string   "PREF_TRAF1_INIT",           limit: 2
-    t.string   "PREF_TRAF2_INIT",           limit: 2
-    t.string   "PREF_TRAF3_INIT",           limit: 2
-    t.string   "PREF_TRAF4_INIT",           limit: 2
-    t.string   "PREF_TRAF5_INIT",           limit: 2
-    t.string   "PREF_TRAF6_INIT",           limit: 2
-    t.string   "PREF_TAX_ID1",              limit: 20
-    t.string   "PREF_TAX_ID2",              limit: 20
-    t.string   "PREF_ADDRESS1",             limit: 60
-    t.string   "PREF_ADDRESS2",             limit: 60
-    t.string   "PREF_ADDRESS3",             limit: 60
-    t.string   "PREF_BILL_ORG",             limit: 60
-    t.string   "PREF_BILL_ADDRESS1",        limit: 60
-    t.string   "PREF_BILL_ADDRESS2",        limit: 60
-    t.string   "PREF_BILL_ADDRESS3",        limit: 60
-    t.string   "PREF_ORG",                  limit: 60
-    t.string   "PREF_CURRENCY",             limit: 5
-    t.decimal  "PREF_STD_MARKUP",                            precision: 9,  scale: 2
-    t.string   "PREF_SYS_MGR",              limit: 40
-    t.date     "PREF_DATE_STARTED"
-    t.string   "PREF_SMTP_SERVER",          limit: 40
-    t.string   "PREF_SYS_MGR_EMAIL",        limit: 100
-    t.decimal  "PREF_JE_REF",                                precision: 9,  scale: 0
-    t.decimal  "PREF_AR_NUM",                                precision: 9,  scale: 0
-    t.string   "PREF_OFFICE_NUM",           limit: 10
-    t.text     "PREF_HELP_SYS_TEXT"
-    t.date     "PREF_TIME_CHECKED"
-    t.text     "PREF_TIME_MSG"
-    t.decimal  "PREF_EST_T_MARGIN",                          precision: 9,  scale: 2
-    t.decimal  "PREF_EST_B_MARGIN",                          precision: 9,  scale: 2
-    t.decimal  "PREF_EST_L_MARGIN",                          precision: 9,  scale: 2
-    t.decimal  "PREF_INV_T_MARGIN",                          precision: 9,  scale: 2
-    t.decimal  "PREF_INV_B_MARGIN",                          precision: 9,  scale: 2
-    t.decimal  "PREF_INV_L_MARGIN",                          precision: 9,  scale: 2
-    t.decimal  "PREF_PO_T_MARGIN",                           precision: 9,  scale: 2
-    t.decimal  "PREF_PO_B_MARGIN",                           precision: 9,  scale: 2
-    t.decimal  "PREF_PO_L_MARGIN",                           precision: 9,  scale: 2
-    t.decimal  "PREF_STMT_T_MARGIN",                         precision: 9,  scale: 2
-    t.decimal  "PREF_STMT_B_MARGIN",                         precision: 9,  scale: 2
-    t.decimal  "PREF_STMT_L_MARGIN",                         precision: 9,  scale: 2
-    t.integer  "PREF_AR_SHOW_ADDR",         limit: 1
-    t.string   "PREF_BILL1",                limit: 30
-    t.string   "PREF_BILL2",                limit: 30
-    t.string   "PREF_BILL3",                limit: 30
-    t.string   "PREF_BILL4",                limit: 30
-    t.string   "PREF_BILL5",                limit: 30
-    t.string   "PREF_BILL6",                limit: 30
-    t.string   "PREF_BILL7",                limit: 30
-    t.string   "PREF_BILL8",                limit: 30
-    t.integer  "PREF_OVERBUDGET_EMAIL",     limit: 1
-    t.integer  "PREF_CLOSE_WRITE_OFF",      limit: 1
-    t.integer  "PREF_SPELL",                limit: 1
-    t.string   "PREF_CURR_NAME",            limit: 12
-    t.integer  "PREF_APPROVE_AR",           limit: 1
-    t.string   "PREF_AR_APPROVAL1",         limit: 40
-    t.string   "PREF_AR_APPROVAL2",         limit: 40
-    t.string   "PREF_AR_APPROVAL3",         limit: 40
-    t.integer  "PREF_AR_SHOW_EST",          limit: 1
-    t.integer  "PREF_AR_SHOW_JOB",          limit: 1
-    t.text     "PREF_BILL_INSTRUCTIONS"
-    t.integer  "PREF_AR_RETURN_DAYS",       limit: 1
-    t.string   "PREF_HELP_EMAIL",           limit: 100
-    t.string   "PREF_WISH_EMAIL",           limit: 100
-    t.integer  "PREF_USER_FIELD1",          limit: 1
-    t.integer  "PREF_USER_FIELD2",          limit: 1
-    t.integer  "PREF_USER_FIELD3",          limit: 1
-    t.integer  "PREF_USER_FIELD4",          limit: 1
-    t.integer  "PREF_USER_FIELD5",          limit: 1
-    t.integer  "PREF_USER_FIELD6",          limit: 1
-    t.integer  "PREF_PC",                   limit: 1
-    t.integer  "PREF_BILL_EMAIL",           limit: 1
-    t.integer  "PREF_BILL_EMAIL_AE",        limit: 1
-    t.integer  "PREF_BILL_EMAIL_TRAF1",     limit: 1
-    t.integer  "PREF_BILL_EMAIL_TRAF2",     limit: 1
-    t.integer  "PREF_BILL_EMAIL_TRAF3",     limit: 1
-    t.integer  "PREF_BILL_EMAIL_TRAF4",     limit: 1
-    t.integer  "PREF_BILL_EMAIL_TRAF5",     limit: 1
-    t.integer  "PREF_BILL_EMAIL_TRAF6",     limit: 1
-    t.integer  "PREF_PING_SERVER",          limit: 1
-    t.integer  "PREF_EXPORT_FORMAT",        limit: 1
-    t.integer  "PREF_JOB_COMPLETE",         limit: 1
-    t.integer  "PREF_STATUS_AMIN",          limit: 1
-    t.string   "PREF_CLIENT_KIND1",         limit: 20
-    t.string   "PREF_CLIENT_KIND2",         limit: 20
-    t.string   "PREF_CLIENT_KIND3",         limit: 20
-    t.string   "PREF_CLIENT_KIND4",         limit: 20
-    t.string   "PREF_CLIENT_KIND5",         limit: 20
-    t.string   "PREF_CLIENT_KIND6",         limit: 20
-    t.integer  "PREF_PDF_DRIVER",           limit: 1
-    t.integer  "PREF_USER_GUIDE",           limit: 1
-    t.text     "PREF_EMAIL_BODY_INV"
-    t.text     "PREF_EMAIL_BODY_EST"
-    t.string   "PREF_PRIORITY1",            limit: 20
-    t.string   "PREF_PRIORITY2",            limit: 20
-    t.string   "PREF_PRIORITY3",            limit: 20
-    t.string   "PREF_PRIORITY4",            limit: 20
-    t.string   "PREF_PRIORITY5",            limit: 20
-    t.string   "PREF_PRIORITY6",            limit: 20
-    t.integer  "PREF_TIME_APPROVE",         limit: 1
-    t.date     "PREF_VERIFY"
-    t.integer  "PREF_NO_MERCHANT_IMP",      limit: 1
-    t.integer  "PREF_NO_GRAPHS_JOBS",       limit: 1
-    t.integer  "PREF_NO_GRAPHS_CLIENTS",    limit: 1
-    t.decimal  "PREF_LNUM",                                  precision: 9,  scale: 0
-    t.decimal  "PREF_LSERIAL",                               precision: 9,  scale: 0
-    t.date     "PREF_LAST_UPDATE"
-    t.integer  "PREF_WEB_RUNNING",          limit: 1
-    t.text     "PREF_APPR_FTP_PATH"
-    t.string   "PREF_APPR_FTP_LOGIN",       limit: 200
-    t.string   "PREF_APPR_FTP_PW",          limit: 200
-    t.decimal  "PREF_APPR_EXPIRES",                          precision: 9,  scale: 0
-    t.text     "PREF_APPR_HEADER"
-    t.string   "PREF_SUPPORT_EXP",          limit: 200
-    t.integer  "PREF_REQ_J_FIELD1",         limit: 1
-    t.integer  "PREF_REQ_J_FIELD2",         limit: 1
-    t.integer  "PREF_REQ_J_FIELD3",         limit: 1
-    t.integer  "PREF_REQ_J_FIELD4",         limit: 1
-    t.integer  "PREF_REQ_J_FIELD5",         limit: 1
-    t.integer  "PREF_REQ_J_FIELD6",         limit: 1
-    t.string   "PREF_J_FIELD1_LABEL",       limit: 20
-    t.string   "PREF_J_FIELD2_LABEL",       limit: 20
-    t.string   "PREF_J_FIELD3_LABEL",       limit: 20
-    t.string   "PREF_J_FIELD4_LABEL",       limit: 20
-    t.string   "PREF_J_FIELD5_LABEL",       limit: 20
-    t.string   "PREF_J_FIELD6_LABEL",       limit: 20
-    t.text     "PREF_PSX_STD_TERMS"
-    t.text     "PREF_PSX_WIN_EMAIL"
-    t.text     "PREF_PSX_LOSER_EMAIL"
-    t.integer  "PREF_PSX_NOTIFY_WINNER",    limit: 1
-    t.integer  "PREF_PSX_NOTIFY_LOSERS",    limit: 1
-    t.integer  "PREF_REQ_APPR_PROPS",       limit: 1
-    t.integer  "PREF_REQ_APPR_CB",          limit: 1
-    t.integer  "PREF_REQ_APPR_EST",         limit: 1
-    t.integer  "PREF_REQ_APPR_SCHED",       limit: 1
-    t.integer  "PREF_REQ_APPR_JOB",         limit: 1
-    t.integer  "PREF_REQ_APPR_PO",          limit: 1
-    t.integer  "PREF_REQ_APPR_AP",          limit: 1
-    t.integer  "PREF_REQ_APPR_AR",          limit: 1
-    t.integer  "PREF_REQ_APPR_MO",          limit: 1
-    t.integer  "PREF_REQ_APPR_MEDIA",       limit: 1
-    t.text     "PREF_APPR_EMAIL"
-    t.integer  "PREF_APPR_ONLINE_OKS",      limit: 1
-    t.string   "PREF_REQ_CB_BY",            limit: 4
-    t.string   "PREF_REQ_PROPS_BY",         limit: 4
-    t.string   "PREF_REQ_EST_BY",           limit: 4
-    t.string   "PREF_REQ_SCHED_BY",         limit: 4
-    t.string   "PREF_REQ_JOB_BY",           limit: 4
-    t.string   "PREF_REQ_PO_BY",            limit: 4
-    t.string   "PREF_REQ_AP_BY",            limit: 4
-    t.string   "PREF_REQ_AR_BY",            limit: 4
-    t.string   "PREF_REQ_MO_BY",            limit: 4
-    t.string   "PREF_REQ_MEDIA_BY",         limit: 4
-    t.integer  "PREF_OVERHOURS_EMAIL",      limit: 1
-    t.integer  "PREF_HIDE_TAX_ON_ESTS",     limit: 1
-    t.text     "PREF_APPR_SERVER_URL"
-    t.text     "PREF_APPR_MYX_URL"
-    t.integer  "PREF_DISABLE_BAD_LOGIN",    limit: 1
-    t.integer  "PREF_SKIP_SAT",             limit: 1
-    t.integer  "PREF_SKIP_SUN",             limit: 1
-    t.integer  "PREF_SKIP_HOLIDAYS",        limit: 1
-    t.string   "PREF_EDITED_BY",            limit: 4
-    t.datetime "PREF_EDITED_WHEN"
-    t.string   "PREF_COUNTRY",              limit: 3
-    t.decimal  "PREF_HOURS_OVERTIME",                        precision: 9,  scale: 2
-    t.integer  "PREF_PAPER_SIZE",           limit: 1
-    t.integer  "PREF_AR_NUMBERING",         limit: 1
-    t.integer  "PREF_SHARE_PROJ_NUM",       limit: 1
-    t.integer  "PREF_OUTBOX",               limit: 1
-    t.binary   "PREF_OWRITE_STYLES",        limit: 16777215
-    t.string   "PREF_DB_NICKNAME",          limit: 30
-    t.integer  "PREF_DISABLE_SW_UPDATE",    limit: 1
-    t.integer  "PREF_FAST_F_SCORE",         limit: 1
-    t.integer  "PREF_FAST_A_SCORE",         limit: 1
-    t.integer  "PREF_FAST_S_SCORE",         limit: 1
-    t.integer  "PREF_FAST_T_SCORE",         limit: 1
-    t.string   "PREF_GRADE_A",              limit: 25
-    t.string   "PREF_GRADE_B",              limit: 25
-    t.string   "PREF_GRADE_C",              limit: 25
-    t.string   "PREF_GRADE_D",              limit: 25
-    t.string   "PREF_GRADE_F",              limit: 25
-    t.string   "PREF_LANGUAGE",             limit: 35
-    t.integer  "PREF_WINNERS_DO_TIME",      limit: 1
-    t.string   "PREF_WINNERS_NOTIFY_EMAIL", limit: 100
-    t.date     "PREF_WINNERS_CHECKED"
-    t.string   "PREF_JOB_USER_DATE1",       limit: 20
-    t.string   "PREF_JOB_USER_DATE2",       limit: 20
-    t.integer  "PREF_ICAL_SYNC",            limit: 1
-    t.integer  "PREF_TAX3_OPTION1",         limit: 1
-    t.integer  "PREF_TAX3_OPTION2",         limit: 1
-    t.decimal  "PREF_TAX3_PERCENT",                          precision: 15, scale: 2
-    t.string   "PREF_HOMEBASE_DROPBOX",     limit: 100
-    t.text     "PREF_HOMEBASE_PW",          limit: 16777215
-    t.decimal  "PREF_JOB_COMPLETE_PC",                       precision: 15, scale: 0
-    t.decimal  "PREF_RUSH_CHG1",                             precision: 15, scale: 0
-    t.decimal  "PREF_RUSH_CHG2",                             precision: 15, scale: 0
-    t.decimal  "PREF_RUSH_CHG3",                             precision: 15, scale: 0
-    t.integer  "PREF_EMAIL_PW",             limit: 1
-    t.integer  "PREF_STRONG_PW",            limit: 1
-    t.integer  "PREF_TIME_POINT1",          limit: 1
-    t.integer  "PREF_TIME_POINT2",          limit: 1
-    t.integer  "PREF_TIME_POINT3",          limit: 1
-    t.integer  "PREF_WINDOW_LOGO",          limit: 1
-    t.integer  "PREF_JOB_REQ_USER_FIELDS",  limit: 1
-    t.integer  "PREF_EXPIRE_PW"
-    t.integer  "PREF_REQ_PC_TASKS",         limit: 1
-    t.integer  "PREF_PRJ_INVITE"
-    t.integer  "PREF_SMTP_PORT"
-    t.integer  "PREF_SMTP_SSL",             limit: 1
+  create_table "prefs", primary_key: "pref_seq", force: true do |t|
+    t.integer   "pref_gl",                   limit: 1
+    t.integer   "pref_ap_aging",             limit: 1
+    t.integer   "pref_ar_aging",             limit: 1
+    t.integer   "pref_diary",                limit: 1
+    t.integer   "pref_charge_num",           limit: 1
+    t.integer   "pref_job_type",             limit: 1
+    t.integer   "pref_close_job_costs",      limit: 1
+    t.integer   "pref_rate_kind",            limit: 1
+    t.integer   "pref_shared_picts",         limit: 1
+    t.integer   "pref_dates",                limit: 1
+    t.integer   "pref_find_time",            limit: 1
+    t.integer   "pref_mail",                 limit: 1
+    t.integer   "pref_ck_copies",            limit: 1
+    t.integer   "pref_wip",                  limit: 1
+    t.integer   "pref_proof_printer",        limit: 1
+    t.integer   "pref_close_job_tasks",      limit: 1
+    t.integer   "pref_overdue_email",        limit: 1
+    t.string    "pref_code",                 limit: 4
+    t.string    "pref_traffic1",             limit: 25
+    t.string    "pref_traffic2",             limit: 25
+    t.string    "pref_traffic3",             limit: 25
+    t.string    "pref_traffic4",             limit: 25
+    t.string    "pref_traffic5",             limit: 25
+    t.string    "pref_traffic6",             limit: 25
+    t.string    "pref_traf1_init",           limit: 2
+    t.string    "pref_traf2_init",           limit: 2
+    t.string    "pref_traf3_init",           limit: 2
+    t.string    "pref_traf4_init",           limit: 2
+    t.string    "pref_traf5_init",           limit: 2
+    t.string    "pref_traf6_init",           limit: 2
+    t.string    "pref_tax_id1",              limit: 20
+    t.string    "pref_tax_id2",              limit: 20
+    t.string    "pref_address1",             limit: 60
+    t.string    "pref_address2",             limit: 60
+    t.string    "pref_address3",             limit: 60
+    t.string    "pref_bill_org",             limit: 60
+    t.string    "pref_bill_address1",        limit: 60
+    t.string    "pref_bill_address2",        limit: 60
+    t.string    "pref_bill_address3",        limit: 60
+    t.string    "pref_org",                  limit: 60
+    t.string    "pref_currency",             limit: 5
+    t.decimal   "pref_std_markup",                       precision: 9,  scale: 2
+    t.string    "pref_sys_mgr",              limit: 40
+    t.date      "pref_date_started"
+    t.string    "pref_smtp_server",          limit: 40
+    t.string    "pref_sys_mgr_email",        limit: 100
+    t.decimal   "pref_je_ref",                           precision: 9,  scale: 0
+    t.decimal   "pref_ar_num",                           precision: 9,  scale: 0
+    t.string    "pref_office_num",           limit: 10
+    t.text      "pref_help_sys_text"
+    t.date      "pref_time_checked"
+    t.text      "pref_time_msg"
+    t.decimal   "pref_est_t_margin",                     precision: 9,  scale: 2
+    t.decimal   "pref_est_b_margin",                     precision: 9,  scale: 2
+    t.decimal   "pref_est_l_margin",                     precision: 9,  scale: 2
+    t.decimal   "pref_inv_t_margin",                     precision: 9,  scale: 2
+    t.decimal   "pref_inv_b_margin",                     precision: 9,  scale: 2
+    t.decimal   "pref_inv_l_margin",                     precision: 9,  scale: 2
+    t.decimal   "pref_po_t_margin",                      precision: 9,  scale: 2
+    t.decimal   "pref_po_b_margin",                      precision: 9,  scale: 2
+    t.decimal   "pref_po_l_margin",                      precision: 9,  scale: 2
+    t.decimal   "pref_stmt_t_margin",                    precision: 9,  scale: 2
+    t.decimal   "pref_stmt_b_margin",                    precision: 9,  scale: 2
+    t.decimal   "pref_stmt_l_margin",                    precision: 9,  scale: 2
+    t.integer   "pref_ar_show_addr",         limit: 1
+    t.string    "pref_bill1",                limit: 30
+    t.string    "pref_bill2",                limit: 30
+    t.string    "pref_bill3",                limit: 30
+    t.string    "pref_bill4",                limit: 30
+    t.string    "pref_bill5",                limit: 30
+    t.string    "pref_bill6",                limit: 30
+    t.string    "pref_bill7",                limit: 30
+    t.string    "pref_bill8",                limit: 30
+    t.integer   "pref_overbudget_email",     limit: 1
+    t.integer   "pref_close_write_off",      limit: 1
+    t.integer   "pref_spell",                limit: 1
+    t.string    "pref_curr_name",            limit: 12
+    t.integer   "pref_approve_ar",           limit: 1
+    t.string    "pref_ar_approval1",         limit: 40
+    t.string    "pref_ar_approval2",         limit: 40
+    t.string    "pref_ar_approval3",         limit: 40
+    t.integer   "pref_ar_show_est",          limit: 1
+    t.integer   "pref_ar_show_job",          limit: 1
+    t.text      "pref_bill_instructions"
+    t.integer   "pref_ar_return_days",       limit: 1
+    t.string    "pref_help_email",           limit: 100
+    t.string    "pref_wish_email",           limit: 100
+    t.integer   "pref_user_field1",          limit: 1
+    t.integer   "pref_user_field2",          limit: 1
+    t.integer   "pref_user_field3",          limit: 1
+    t.integer   "pref_user_field4",          limit: 1
+    t.integer   "pref_user_field5",          limit: 1
+    t.integer   "pref_user_field6",          limit: 1
+    t.integer   "pref_pc",                   limit: 1
+    t.integer   "pref_bill_email",           limit: 1
+    t.integer   "pref_bill_email_ae",        limit: 1
+    t.integer   "pref_bill_email_traf1",     limit: 1
+    t.integer   "pref_bill_email_traf2",     limit: 1
+    t.integer   "pref_bill_email_traf3",     limit: 1
+    t.integer   "pref_bill_email_traf4",     limit: 1
+    t.integer   "pref_bill_email_traf5",     limit: 1
+    t.integer   "pref_bill_email_traf6",     limit: 1
+    t.integer   "pref_ping_server",          limit: 1
+    t.integer   "pref_export_format",        limit: 1
+    t.integer   "pref_job_complete",         limit: 1
+    t.integer   "pref_status_amin",          limit: 1
+    t.string    "pref_client_kind1",         limit: 20
+    t.string    "pref_client_kind2",         limit: 20
+    t.string    "pref_client_kind3",         limit: 20
+    t.string    "pref_client_kind4",         limit: 20
+    t.string    "pref_client_kind5",         limit: 20
+    t.string    "pref_client_kind6",         limit: 20
+    t.integer   "pref_pdf_driver",           limit: 1
+    t.integer   "pref_user_guide",           limit: 1
+    t.text      "pref_email_body_inv"
+    t.text      "pref_email_body_est"
+    t.string    "pref_priority1",            limit: 20
+    t.string    "pref_priority2",            limit: 20
+    t.string    "pref_priority3",            limit: 20
+    t.string    "pref_priority4",            limit: 20
+    t.string    "pref_priority5",            limit: 20
+    t.string    "pref_priority6",            limit: 20
+    t.integer   "pref_time_approve",         limit: 1
+    t.date      "pref_verify"
+    t.integer   "pref_no_merchant_imp",      limit: 1
+    t.integer   "pref_no_graphs_jobs",       limit: 1
+    t.integer   "pref_no_graphs_clients",    limit: 1
+    t.decimal   "pref_lnum",                             precision: 9,  scale: 0
+    t.decimal   "pref_lserial",                          precision: 9,  scale: 0
+    t.date      "pref_last_update"
+    t.integer   "pref_web_running",          limit: 1
+    t.text      "pref_appr_ftp_path"
+    t.string    "pref_appr_ftp_login",       limit: 200
+    t.string    "pref_appr_ftp_pw",          limit: 200
+    t.decimal   "pref_appr_expires",                     precision: 9,  scale: 0
+    t.text      "pref_appr_header"
+    t.string    "pref_support_exp",          limit: 200
+    t.integer   "pref_req_j_field1",         limit: 1
+    t.integer   "pref_req_j_field2",         limit: 1
+    t.integer   "pref_req_j_field3",         limit: 1
+    t.integer   "pref_req_j_field4",         limit: 1
+    t.integer   "pref_req_j_field5",         limit: 1
+    t.integer   "pref_req_j_field6",         limit: 1
+    t.string    "pref_j_field1_label",       limit: 20
+    t.string    "pref_j_field2_label",       limit: 20
+    t.string    "pref_j_field3_label",       limit: 20
+    t.string    "pref_j_field4_label",       limit: 20
+    t.string    "pref_j_field5_label",       limit: 20
+    t.string    "pref_j_field6_label",       limit: 20
+    t.text      "pref_psx_std_terms"
+    t.text      "pref_psx_win_email"
+    t.text      "pref_psx_loser_email"
+    t.integer   "pref_psx_notify_winner",    limit: 1
+    t.integer   "pref_psx_notify_losers",    limit: 1
+    t.integer   "pref_req_appr_props",       limit: 1
+    t.integer   "pref_req_appr_cb",          limit: 1
+    t.integer   "pref_req_appr_est",         limit: 1
+    t.integer   "pref_req_appr_sched",       limit: 1
+    t.integer   "pref_req_appr_job",         limit: 1
+    t.integer   "pref_req_appr_po",          limit: 1
+    t.integer   "pref_req_appr_ap",          limit: 1
+    t.integer   "pref_req_appr_ar",          limit: 1
+    t.integer   "pref_req_appr_mo",          limit: 1
+    t.integer   "pref_req_appr_media",       limit: 1
+    t.text      "pref_appr_email"
+    t.integer   "pref_appr_online_oks",      limit: 1
+    t.string    "pref_req_cb_by",            limit: 4
+    t.string    "pref_req_props_by",         limit: 4
+    t.string    "pref_req_est_by",           limit: 4
+    t.string    "pref_req_sched_by",         limit: 4
+    t.string    "pref_req_job_by",           limit: 4
+    t.string    "pref_req_po_by",            limit: 4
+    t.string    "pref_req_ap_by",            limit: 4
+    t.string    "pref_req_ar_by",            limit: 4
+    t.string    "pref_req_mo_by",            limit: 4
+    t.string    "pref_req_media_by",         limit: 4
+    t.integer   "pref_overhours_email",      limit: 1
+    t.integer   "pref_hide_tax_on_ests",     limit: 1
+    t.text      "pref_appr_server_url"
+    t.text      "pref_appr_myx_url"
+    t.integer   "pref_disable_bad_login",    limit: 1
+    t.integer   "pref_skip_sat",             limit: 1
+    t.integer   "pref_skip_sun",             limit: 1
+    t.integer   "pref_skip_holidays",        limit: 1
+    t.string    "pref_edited_by",            limit: 4
+    t.timestamp "pref_edited_when"
+    t.string    "pref_country",              limit: 3
+    t.decimal   "pref_hours_overtime",                   precision: 9,  scale: 2
+    t.integer   "pref_paper_size",           limit: 1
+    t.integer   "pref_ar_numbering",         limit: 1
+    t.integer   "pref_share_proj_num",       limit: 1
+    t.integer   "pref_outbox",               limit: 1
+    t.binary    "pref_owrite_styles"
+    t.string    "pref_db_nickname",          limit: 30
+    t.integer   "pref_disable_sw_update",    limit: 1
+    t.integer   "pref_fast_f_score",         limit: 1
+    t.integer   "pref_fast_a_score",         limit: 1
+    t.integer   "pref_fast_s_score",         limit: 1
+    t.integer   "pref_fast_t_score",         limit: 1
+    t.string    "pref_grade_a",              limit: 25
+    t.string    "pref_grade_b",              limit: 25
+    t.string    "pref_grade_c",              limit: 25
+    t.string    "pref_grade_d",              limit: 25
+    t.string    "pref_grade_f",              limit: 25
+    t.string    "pref_language",             limit: 35
+    t.integer   "pref_winners_do_time",      limit: 1
+    t.string    "pref_winners_notify_email", limit: 100
+    t.date      "pref_winners_checked"
+    t.string    "pref_job_user_date1",       limit: 20
+    t.string    "pref_job_user_date2",       limit: 20
+    t.integer   "pref_ical_sync",            limit: 1
+    t.integer   "pref_tax3_option1",         limit: 1
+    t.integer   "pref_tax3_option2",         limit: 1
+    t.decimal   "pref_tax3_percent",                     precision: 15, scale: 2
+    t.string    "pref_homebase_dropbox",     limit: 100
+    t.text      "pref_homebase_pw"
+    t.decimal   "pref_job_complete_pc",                  precision: 15, scale: 0
+    t.decimal   "pref_rush_chg1",                        precision: 15, scale: 0
+    t.decimal   "pref_rush_chg2",                        precision: 15, scale: 0
+    t.decimal   "pref_rush_chg3",                        precision: 15, scale: 0
+    t.integer   "pref_email_pw",             limit: 1
+    t.integer   "pref_strong_pw",            limit: 1
+    t.integer   "pref_time_point1",          limit: 1
+    t.integer   "pref_time_point2",          limit: 1
+    t.integer   "pref_time_point3",          limit: 1
+    t.integer   "pref_window_logo",          limit: 1
+    t.integer   "pref_job_req_user_fields",  limit: 1
+    t.integer   "pref_expire_pw"
+    t.integer   "pref_req_pc_tasks",         limit: 1
+    t.integer   "pref_prj_invite"
+    t.integer   "pref_smtp_port"
+    t.integer   "pref_smtp_ssl",             limit: 1
   end
 
-  add_index "prefs", ["PREF_CODE"], name: "PREF_CODE", using: :btree
-  add_index "prefs", ["PREF_SEQ"], name: "PREF_SEQ", unique: true, using: :btree
+  add_index "prefs", ["pref_code"], name: "pref_code"
 
-  create_table "print_spec_values", primary_key: "PSV_SEQ", force: true do |t|
-    t.string   "PSV_CAT",         limit: 25
-    t.text     "PSV_VALUE"
-    t.string   "PSV_ADDED_BY",    limit: 4
-    t.datetime "PSV_ADDED_WHEN"
-    t.string   "PSV_EDITED_BY",   limit: 4
-    t.datetime "PSV_EDITED_WHEN"
+  create_table "print_spec_values", primary_key: "psv_seq", force: true do |t|
+    t.string    "psv_cat",         limit: 25
+    t.text      "psv_value"
+    t.string    "psv_added_by",    limit: 4
+    t.timestamp "psv_added_when"
+    t.string    "psv_edited_by",   limit: 4
+    t.timestamp "psv_edited_when"
   end
 
-  add_index "print_spec_values", ["PSV_CAT"], name: "PSV_CAT", using: :btree
-  add_index "print_spec_values", ["PSV_SEQ"], name: "PSV_SEQ", unique: true, using: :btree
+  add_index "print_spec_values", ["psv_cat"], name: "psv_cat"
 
-  create_table "print_specs", primary_key: "PSPEC_SEQ", force: true do |t|
-    t.string   "PSPEC_JOB_NUM",          limit: 10
-    t.string   "PSPEC_PROD_COORD",       limit: 10
-    t.date     "PSPEC_DATE"
-    t.date     "PSPEC_DATE_NEEDED"
-    t.text     "PSPEC_DESCRIPTION"
-    t.date     "PSPEC_ART_DUE"
-    t.date     "PSPEC_FINAL_DUE"
-    t.string   "PSPEC_QTY",              limit: 30
-    t.string   "PSPEC_OVERRUN",          limit: 30
-    t.string   "PSPEC_COV_FLATSIZE",     limit: 30
-    t.string   "PSPEC_COV_FOLDSIZE",     limit: 30
-    t.string   "PSPEC_COV_STOCK",        limit: 60
-    t.string   "PSPEC_COV_OUTSIDE",      limit: 60
-    t.string   "PSPEC_COV_INSIDE",       limit: 60
-    t.string   "PSPEC_COV_O_BLEEDS",     limit: 30
-    t.string   "PSPEC_COV_I_BLEEDS",     limit: 30
-    t.string   "PSPEC_COV_PANTONE",      limit: 60
-    t.string   "PSPEC_TX_FLATSIZE",      limit: 30
-    t.string   "PSPEC_TX_FOLDSIZE",      limit: 30
-    t.string   "PSPEC_TX_STOCK",         limit: 60
-    t.string   "PSPEC_TX_COLORS",        limit: 60
-    t.string   "PSPEC_TX_BLEEDS",        limit: 30
-    t.string   "PSPEC_TX_PANTONE",       limit: 60
-    t.string   "PSPEC_TX_PAGES",         limit: 30
-    t.string   "PSPEC_IN_FLATSIZE",      limit: 30
-    t.string   "PSPEC_IN_FOLDSIZE",      limit: 30
-    t.string   "PSPEC_IN_STOCK",         limit: 60
-    t.string   "PSPEC_IN_COLORS",        limit: 60
-    t.string   "PSPEC_IN_PAGES",         limit: 30
-    t.string   "PSPEC_IN_BLEEDS",        limit: 30
-    t.string   "PSPEC_IN_PANTONE",       limit: 60
-    t.boolean  "PSPEC_IN_COLLATE"
-    t.boolean  "PSPEC_MECH"
-    t.boolean  "PSPEC_ELEC"
-    t.boolean  "PSPEC_FILM"
-    t.string   "PSPEC_NO_IMAGES",        limit: 60
-    t.string   "PSPEC_T1",               limit: 60
-    t.string   "PSPEC_T2",               limit: 60
-    t.string   "PSPEC_T3",               limit: 60
-    t.string   "PSPEC_T4",               limit: 60
-    t.string   "PSPEC_TRANS_SPEC",       limit: 60
-    t.string   "PSPEC_R1",               limit: 60
-    t.string   "PSPEC_R2",               limit: 60
-    t.string   "PSPEC_R3",               limit: 60
-    t.string   "PSPEC_R4",               limit: 60
-    t.string   "PSPEC_REF_SPEC",         limit: 60
-    t.text     "PSPEC_STRIPPING"
-    t.text     "PSPEC_PROOFING"
-    t.text     "PSPEC_BINDERY"
-    t.text     "PSPEC_PACKAGE"
-    t.string   "PSPEC_ADDED_BY",         limit: 4
-    t.text     "PSPEC_STATUS"
-    t.string   "PSX_PROD_CONTACT",       limit: 200
-    t.string   "PSX_FORMAT",             limit: 40
-    t.string   "PSX_FORMAT_OTHER",       limit: 200
-    t.decimal  "PSX_QTY_EACH",                       precision: 9, scale: 0
-    t.decimal  "PSX_QTY_TOTAL",                      precision: 9, scale: 0
-    t.integer  "PSX_PREPRESS",           limit: 1
-    t.text     "PSX_PREPRESS_OTHER"
-    t.text     "PSX_STATUS"
-    t.string   "PSX_TRIM",               limit: 50
-    t.string   "PSX_FOLDS_TO",           limit: 20
-    t.string   "PSX_FOLDS_OTHER",        limit: 50
-    t.string   "PSX_WEIGHT",             limit: 10
-    t.string   "PSX_FINISH",             limit: 40
-    t.string   "PSX_TYPE",               limit: 40
-    t.string   "PSX_SPECIAL_STOCK",      limit: 100
-    t.string   "PSX_AVAILABLE_FROM",     limit: 40
-    t.integer  "PSX_CLIENT_SUPPLIED",    limit: 1
-    t.string   "PSX_DRILL",              limit: 40
-    t.string   "PSX_FOLD_GLUE",          limit: 40
-    t.integer  "PSX_CUT",                limit: 1
-    t.integer  "PSX_COLLATE",            limit: 1
-    t.string   "PSX_STITCHING",          limit: 200
-    t.string   "PSX_WRAPPING",           limit: 40
-    t.string   "PSX_TABS",               limit: 200
-    t.integer  "PSX_SPECIAL_DIECUT",     limit: 1
-    t.integer  "PSX_SPECIAL_FOIL",       limit: 1
-    t.integer  "PSX_SPECIAL_LAM",        limit: 1
-    t.integer  "PSX_SPECIAL_PRESSCHECK", limit: 1
-    t.integer  "PSX_SPECIAL_SPOTUV",     limit: 1
-    t.integer  "PSX_SPECIAL_BIND",       limit: 1
-    t.integer  "PSX_SPECIAL_GLUE",       limit: 1
-    t.text     "PSX_SPECIAL_OTHER"
-    t.text     "PSX_SPECIAL_NOTES"
-    t.string   "PSX_COLOR1_PROCESS",     limit: 20
-    t.string   "PSX_COLOR2_PROCESS",     limit: 20
-    t.decimal  "PSX_COVR1_PROCESS",                  precision: 9, scale: 0
-    t.decimal  "PSX_COVR2_PROCESS",                  precision: 9, scale: 0
-    t.string   "PSX_COLOR1_PMS",         limit: 20
-    t.string   "PSX_COLOR2_PMS",         limit: 20
-    t.decimal  "PSX_COVR1_PMS",                      precision: 9, scale: 0
-    t.decimal  "PSX_COVR2_PMS",                      precision: 9, scale: 0
-    t.string   "PSX_COLOR1_METAL",       limit: 20
-    t.string   "PSX_COLOR2_METAL",       limit: 20
-    t.decimal  "PSX_COVR1_METAL",                    precision: 9, scale: 0
-    t.decimal  "PSX_COVR2_METAL",                    precision: 9, scale: 0
-    t.string   "PSX_SIDE1_COATING",      limit: 40
-    t.string   "PSX_SIDE2_COATING",      limit: 40
-    t.integer  "PSX_SPECIAL_OPTION",     limit: 1
-    t.date     "PSX_DEL_DATE"
-    t.integer  "PSX_DELIVERY",           limit: 1
-    t.string   "PSX_DELIVER1_TO1",       limit: 40
-    t.string   "PSX_DELIVER1_TO2",       limit: 40
-    t.string   "PSX_DELIVER1_TO3",       limit: 40
-    t.string   "PSX_DELIVER1_TO4",       limit: 40
-    t.string   "PSX_DELIVER1_QTY",       limit: 15
-    t.string   "PSX_DELIVER2_TO1",       limit: 40
-    t.string   "PSX_DELIVER2_TO2",       limit: 40
-    t.string   "PSX_DELIVER2_TO3",       limit: 40
-    t.string   "PSX_DELIVER2_TO4",       limit: 40
-    t.string   "PSX_DELIVER2_QTY",       limit: 15
-    t.string   "PSX_DELIVER3_TO1",       limit: 40
-    t.string   "PSX_DELIVER3_TO2",       limit: 40
-    t.string   "PSX_DELIVER3_TO3",       limit: 40
-    t.string   "PSX_DELIVER3_TO4",       limit: 40
-    t.string   "PSX_DELIVER3_QTY",       limit: 15
-    t.text     "PSX_DEL_INSTRUCTIONS"
-    t.text     "PSX_SPEC_INSTRUCTIONS"
-    t.text     "PSX_INV_INSTRUCTIONS"
-    t.string   "PSX_VENDOR1",            limit: 10
-    t.string   "PSX_VENDOR2",            limit: 10
-    t.string   "PSX_VENDOR3",            limit: 10
-    t.string   "PSX_BID1_1",             limit: 40
-    t.string   "PSX_BID1_2",             limit: 40
-    t.string   "PSX_BID1_3",             limit: 40
-    t.string   "PSX_BID1_4",             limit: 40
-    t.string   "PSX_BID2_1",             limit: 40
-    t.string   "PSX_BID2_2",             limit: 40
-    t.string   "PSX_BID2_3",             limit: 40
-    t.string   "PSX_BID2_4",             limit: 40
-    t.string   "PSX_BID3_1",             limit: 40
-    t.string   "PSX_BID3_2",             limit: 40
-    t.string   "PSX_BID3_3",             limit: 40
-    t.string   "PSX_BID3_4",             limit: 40
-    t.decimal  "PSX_BID1_AMT",                       precision: 9, scale: 2
-    t.decimal  "PSX_BID2_AMT",                       precision: 9, scale: 2
-    t.decimal  "PSX_BID3_AMT",                       precision: 9, scale: 2
-    t.decimal  "PSX_BID4_AMT",                       precision: 9, scale: 2
-    t.text     "PSX_BID1_NOTES"
-    t.text     "PSX_BID2_NOTES"
-    t.text     "PSX_BID3_NOTES"
-    t.integer  "PSX_BID_WINNER",         limit: 1
-    t.date     "PSX_DATE_AWARDED"
-    t.string   "PSX_AWARDED_BY",         limit: 4
-    t.integer  "PSX_TAXABLE",            limit: 1
-    t.string   "PSX_PROD_CONTACT_PH",    limit: 40
-    t.string   "PSX_PROD_CONTACT_EMAIL", limit: 40
-    t.string   "PSX_TASK",               limit: 4
-    t.date     "PSX_NEED_QUOTE_BY"
-    t.string   "PSX_DRILL_OTHER",        limit: 40
-    t.string   "PSX_ADDED_BY",           limit: 4
-    t.datetime "PSX_ADDED_WHEN"
-    t.string   "PSX_EDITED_BY",          limit: 4
-    t.datetime "PSX_EDITED_WHEN"
+  create_table "print_specs", primary_key: "pspec_seq", force: true do |t|
+    t.string    "pspec_job_num",          limit: 10
+    t.string    "pspec_prod_coord",       limit: 10
+    t.date      "pspec_date"
+    t.date      "pspec_date_needed"
+    t.text      "pspec_description"
+    t.date      "pspec_art_due"
+    t.date      "pspec_final_due"
+    t.string    "pspec_qty",              limit: 30
+    t.string    "pspec_overrun",          limit: 30
+    t.string    "pspec_cov_flatsize",     limit: 30
+    t.string    "pspec_cov_foldsize",     limit: 30
+    t.string    "pspec_cov_stock",        limit: 60
+    t.string    "pspec_cov_outside",      limit: 60
+    t.string    "pspec_cov_inside",       limit: 60
+    t.string    "pspec_cov_o_bleeds",     limit: 30
+    t.string    "pspec_cov_i_bleeds",     limit: 30
+    t.string    "pspec_cov_pantone",      limit: 60
+    t.string    "pspec_tx_flatsize",      limit: 30
+    t.string    "pspec_tx_foldsize",      limit: 30
+    t.string    "pspec_tx_stock",         limit: 60
+    t.string    "pspec_tx_colors",        limit: 60
+    t.string    "pspec_tx_bleeds",        limit: 30
+    t.string    "pspec_tx_pantone",       limit: 60
+    t.string    "pspec_tx_pages",         limit: 30
+    t.string    "pspec_in_flatsize",      limit: 30
+    t.string    "pspec_in_foldsize",      limit: 30
+    t.string    "pspec_in_stock",         limit: 60
+    t.string    "pspec_in_colors",        limit: 60
+    t.string    "pspec_in_pages",         limit: 30
+    t.string    "pspec_in_bleeds",        limit: 30
+    t.string    "pspec_in_pantone",       limit: 60
+    t.boolean   "pspec_in_collate"
+    t.boolean   "pspec_mech"
+    t.boolean   "pspec_elec"
+    t.boolean   "pspec_film"
+    t.string    "pspec_no_images",        limit: 60
+    t.string    "pspec_t1",               limit: 60
+    t.string    "pspec_t2",               limit: 60
+    t.string    "pspec_t3",               limit: 60
+    t.string    "pspec_t4",               limit: 60
+    t.string    "pspec_trans_spec",       limit: 60
+    t.string    "pspec_r1",               limit: 60
+    t.string    "pspec_r2",               limit: 60
+    t.string    "pspec_r3",               limit: 60
+    t.string    "pspec_r4",               limit: 60
+    t.string    "pspec_ref_spec",         limit: 60
+    t.text      "pspec_stripping"
+    t.text      "pspec_proofing"
+    t.text      "pspec_bindery"
+    t.text      "pspec_package"
+    t.string    "pspec_added_by",         limit: 4
+    t.text      "pspec_status"
+    t.string    "psx_prod_contact",       limit: 200
+    t.string    "psx_format",             limit: 40
+    t.string    "psx_format_other",       limit: 200
+    t.decimal   "psx_qty_each",                       precision: 9, scale: 0
+    t.decimal   "psx_qty_total",                      precision: 9, scale: 0
+    t.integer   "psx_prepress",           limit: 1
+    t.text      "psx_prepress_other"
+    t.text      "psx_status"
+    t.string    "psx_trim",               limit: 50
+    t.string    "psx_folds_to",           limit: 20
+    t.string    "psx_folds_other",        limit: 50
+    t.string    "psx_weight",             limit: 10
+    t.string    "psx_finish",             limit: 40
+    t.string    "psx_type",               limit: 40
+    t.string    "psx_special_stock",      limit: 100
+    t.string    "psx_available_from",     limit: 40
+    t.integer   "psx_client_supplied",    limit: 1
+    t.string    "psx_drill",              limit: 40
+    t.string    "psx_fold_glue",          limit: 40
+    t.integer   "psx_cut",                limit: 1
+    t.integer   "psx_collate",            limit: 1
+    t.string    "psx_stitching",          limit: 200
+    t.string    "psx_wrapping",           limit: 40
+    t.string    "psx_tabs",               limit: 200
+    t.integer   "psx_special_diecut",     limit: 1
+    t.integer   "psx_special_foil",       limit: 1
+    t.integer   "psx_special_lam",        limit: 1
+    t.integer   "psx_special_presscheck", limit: 1
+    t.integer   "psx_special_spotuv",     limit: 1
+    t.integer   "psx_special_bind",       limit: 1
+    t.integer   "psx_special_glue",       limit: 1
+    t.text      "psx_special_other"
+    t.text      "psx_special_notes"
+    t.string    "psx_color1_process",     limit: 20
+    t.string    "psx_color2_process",     limit: 20
+    t.decimal   "psx_covr1_process",                  precision: 9, scale: 0
+    t.decimal   "psx_covr2_process",                  precision: 9, scale: 0
+    t.string    "psx_color1_pms",         limit: 20
+    t.string    "psx_color2_pms",         limit: 20
+    t.decimal   "psx_covr1_pms",                      precision: 9, scale: 0
+    t.decimal   "psx_covr2_pms",                      precision: 9, scale: 0
+    t.string    "psx_color1_metal",       limit: 20
+    t.string    "psx_color2_metal",       limit: 20
+    t.decimal   "psx_covr1_metal",                    precision: 9, scale: 0
+    t.decimal   "psx_covr2_metal",                    precision: 9, scale: 0
+    t.string    "psx_side1_coating",      limit: 40
+    t.string    "psx_side2_coating",      limit: 40
+    t.integer   "psx_special_option",     limit: 1
+    t.date      "psx_del_date"
+    t.integer   "psx_delivery",           limit: 1
+    t.string    "psx_deliver1_to1",       limit: 40
+    t.string    "psx_deliver1_to2",       limit: 40
+    t.string    "psx_deliver1_to3",       limit: 40
+    t.string    "psx_deliver1_to4",       limit: 40
+    t.string    "psx_deliver1_qty",       limit: 15
+    t.string    "psx_deliver2_to1",       limit: 40
+    t.string    "psx_deliver2_to2",       limit: 40
+    t.string    "psx_deliver2_to3",       limit: 40
+    t.string    "psx_deliver2_to4",       limit: 40
+    t.string    "psx_deliver2_qty",       limit: 15
+    t.string    "psx_deliver3_to1",       limit: 40
+    t.string    "psx_deliver3_to2",       limit: 40
+    t.string    "psx_deliver3_to3",       limit: 40
+    t.string    "psx_deliver3_to4",       limit: 40
+    t.string    "psx_deliver3_qty",       limit: 15
+    t.text      "psx_del_instructions"
+    t.text      "psx_spec_instructions"
+    t.text      "psx_inv_instructions"
+    t.string    "psx_vendor1",            limit: 10
+    t.string    "psx_vendor2",            limit: 10
+    t.string    "psx_vendor3",            limit: 10
+    t.string    "psx_bid1_1",             limit: 40
+    t.string    "psx_bid1_2",             limit: 40
+    t.string    "psx_bid1_3",             limit: 40
+    t.string    "psx_bid1_4",             limit: 40
+    t.string    "psx_bid2_1",             limit: 40
+    t.string    "psx_bid2_2",             limit: 40
+    t.string    "psx_bid2_3",             limit: 40
+    t.string    "psx_bid2_4",             limit: 40
+    t.string    "psx_bid3_1",             limit: 40
+    t.string    "psx_bid3_2",             limit: 40
+    t.string    "psx_bid3_3",             limit: 40
+    t.string    "psx_bid3_4",             limit: 40
+    t.decimal   "psx_bid1_amt",                       precision: 9, scale: 2
+    t.decimal   "psx_bid2_amt",                       precision: 9, scale: 2
+    t.decimal   "psx_bid3_amt",                       precision: 9, scale: 2
+    t.decimal   "psx_bid4_amt",                       precision: 9, scale: 2
+    t.text      "psx_bid1_notes"
+    t.text      "psx_bid2_notes"
+    t.text      "psx_bid3_notes"
+    t.integer   "psx_bid_winner",         limit: 1
+    t.date      "psx_date_awarded"
+    t.string    "psx_awarded_by",         limit: 4
+    t.integer   "psx_taxable",            limit: 1
+    t.string    "psx_prod_contact_ph",    limit: 40
+    t.string    "psx_prod_contact_email", limit: 40
+    t.string    "psx_task",               limit: 4
+    t.date      "psx_need_quote_by"
+    t.string    "psx_drill_other",        limit: 40
+    t.string    "psx_added_by",           limit: 4
+    t.timestamp "psx_added_when"
+    t.string    "psx_edited_by",          limit: 4
+    t.timestamp "psx_edited_when"
   end
 
-  add_index "print_specs", ["PSPEC_JOB_NUM"], name: "PSPEC_JOB_NUM", using: :btree
-  add_index "print_specs", ["PSPEC_SEQ"], name: "PSPEC_SEQ", unique: true, using: :btree
-  add_index "print_specs", ["PSX_COVR2_PROCESS"], name: "PSX_COVR2_PROCESS", using: :btree
+  add_index "print_specs", ["pspec_job_num"], name: "pspec_job_num"
+  add_index "print_specs", ["psx_covr2_process"], name: "psx_covr2_process"
 
-  create_table "programs", primary_key: "PGM_SEQ", force: true do |t|
-    t.string   "PGM_CODE",        limit: 20
-    t.string   "PGM_TIME_PGM",    limit: 30
-    t.decimal  "PGM_RATING_EA",              precision: 9,  scale: 2
-    t.decimal  "PGM_COST_EA",                precision: 9,  scale: 2
-    t.string   "PGM_GROUP",       limit: 6
-    t.text     "PGM_NOTE"
-    t.string   "PGM_TYPE",        limit: 2
-    t.string   "AD_NAME",         limit: 30
-    t.string   "AD_POSITION",     limit: 30
-    t.text     "AD_NOTES"
-    t.decimal  "AD_GROSS_AMT",               precision: 15, scale: 2
-    t.decimal  "AD_COMM",                    precision: 9,  scale: 2
-    t.decimal  "AD_NET_AMT",                 precision: 15, scale: 2
-    t.decimal  "AD_EXTRA_AMT",               precision: 15, scale: 2
-    t.decimal  "AD_BILL_NET",                precision: 9,  scale: 0
-    t.string   "AD_ISSUE_DATE",   limit: 30
-    t.string   "AD_SPACE_CLOSE",  limit: 30
-    t.decimal  "AD_MAT_CLOSE",               precision: 9,  scale: 0
-    t.string   "PGM_KEY",         limit: 60
-    t.string   "PGM_CLIENT_NUM",  limit: 10
-    t.string   "AD_RATE_BASIS",   limit: 4
-    t.string   "PGM_ADDED_BY",    limit: 4
-    t.datetime "PGM_ADDED_WHEN"
-    t.string   "PGM_EDITED_BY",   limit: 4
-    t.datetime "PGM_EDITED_WHEN"
+  create_table "programs", primary_key: "pgm_seq", force: true do |t|
+    t.string    "pgm_code",        limit: 20
+    t.string    "pgm_time_pgm",    limit: 30
+    t.decimal   "pgm_rating_ea",              precision: 9,  scale: 2
+    t.decimal   "pgm_cost_ea",                precision: 9,  scale: 2
+    t.string    "pgm_group",       limit: 6
+    t.text      "pgm_note"
+    t.string    "pgm_type",        limit: 2
+    t.string    "ad_name",         limit: 30
+    t.string    "ad_position",     limit: 30
+    t.text      "ad_notes"
+    t.decimal   "ad_gross_amt",               precision: 15, scale: 2
+    t.decimal   "ad_comm",                    precision: 9,  scale: 2
+    t.decimal   "ad_net_amt",                 precision: 15, scale: 2
+    t.decimal   "ad_extra_amt",               precision: 15, scale: 2
+    t.decimal   "ad_bill_net",                precision: 9,  scale: 0
+    t.string    "ad_issue_date",   limit: 30
+    t.string    "ad_space_close",  limit: 30
+    t.decimal   "ad_mat_close",               precision: 9,  scale: 0
+    t.string    "pgm_key",         limit: 60
+    t.string    "pgm_client_num",  limit: 10
+    t.string    "ad_rate_basis",   limit: 4
+    t.string    "pgm_added_by",    limit: 4
+    t.timestamp "pgm_added_when"
+    t.string    "pgm_edited_by",   limit: 4
+    t.timestamp "pgm_edited_when"
   end
 
-  add_index "programs", ["PGM_CLIENT_NUM"], name: "PGM_CLIENT_NUM", using: :btree
-  add_index "programs", ["PGM_CODE"], name: "PGM_CODE", using: :btree
-  add_index "programs", ["PGM_KEY"], name: "PGM_KEY", using: :btree
-  add_index "programs", ["PGM_SEQ"], name: "PGM_SEQ", unique: true, using: :btree
-  add_index "programs", ["PGM_TIME_PGM"], name: "PGM_TIME_PGM", using: :btree
-  add_index "programs", ["PGM_TYPE"], name: "PGM_TYPE", using: :btree
+  add_index "programs", ["pgm_client_num"], name: "pgm_client_num"
+  add_index "programs", ["pgm_code"], name: "pgm_code"
+  add_index "programs", ["pgm_key"], name: "pgm_key"
+  add_index "programs", ["pgm_time_pgm"], name: "pgm_time_pgm"
+  add_index "programs", ["pgm_type"], name: "pgm_type"
 
-  create_table "projects", primary_key: "PROJ_SEQ", force: true do |t|
-    t.string   "PROJ_CLIENT_NUM",  limit: 10
-    t.string   "PROJ_NAME",        limit: 20
-    t.text     "PROJ_DESC"
-    t.decimal  "PROJ_BUDGET",                 precision: 15, scale: 2
-    t.decimal  "PROJ_NUM1",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM2",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM3",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM4",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM5",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM6",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM7",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM8",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM9",                   precision: 15, scale: 2
-    t.decimal  "PROJ_NUM10",                  precision: 15, scale: 2
-    t.decimal  "PROJ_NUM11",                  precision: 15, scale: 2
-    t.decimal  "PROJ_NUM12",                  precision: 15, scale: 2
-    t.string   "PROJ_STATUS",      limit: 20
-    t.string   "PROJ_ADDED_BY",    limit: 4
-    t.datetime "PROJ_ADDED_WHEN"
-    t.string   "PROJ_EDITED_BY",   limit: 4
-    t.datetime "PROJ_EDITED_WHEN"
+  create_table "projects", primary_key: "proj_seq", force: true do |t|
+    t.string    "proj_client_num",  limit: 10
+    t.string    "proj_name",        limit: 20
+    t.text      "proj_desc"
+    t.decimal   "proj_budget",                 precision: 15, scale: 2
+    t.decimal   "proj_num1",                   precision: 15, scale: 2
+    t.decimal   "proj_num2",                   precision: 15, scale: 2
+    t.decimal   "proj_num3",                   precision: 15, scale: 2
+    t.decimal   "proj_num4",                   precision: 15, scale: 2
+    t.decimal   "proj_num5",                   precision: 15, scale: 2
+    t.decimal   "proj_num6",                   precision: 15, scale: 2
+    t.decimal   "proj_num7",                   precision: 15, scale: 2
+    t.decimal   "proj_num8",                   precision: 15, scale: 2
+    t.decimal   "proj_num9",                   precision: 15, scale: 2
+    t.decimal   "proj_num10",                  precision: 15, scale: 2
+    t.decimal   "proj_num11",                  precision: 15, scale: 2
+    t.decimal   "proj_num12",                  precision: 15, scale: 2
+    t.string    "proj_status",      limit: 20
+    t.string    "proj_added_by",    limit: 4
+    t.timestamp "proj_added_when"
+    t.string    "proj_edited_by",   limit: 4
+    t.timestamp "proj_edited_when"
   end
 
-  add_index "projects", ["PROJ_CLIENT_NUM"], name: "PROJ_CLIENT_NUM", using: :btree
-  add_index "projects", ["PROJ_NAME"], name: "PROJ_NAME", using: :btree
-  add_index "projects", ["PROJ_SEQ"], name: "PROJ_SEQ", unique: true, using: :btree
+  add_index "projects", ["proj_client_num"], name: "proj_client_num"
+  add_index "projects", ["proj_name"], name: "proj_name"
 
-  create_table "proposals", primary_key: "PROPS_SEQ", force: true do |t|
-    t.string   "PROPS_CLIENT_NUM",    limit: 10
-    t.date     "PROPS_DATE_ADDED"
-    t.string   "PROPS_REQUESTOR",     limit: 100
-    t.string   "PROPS_TYPE",          limit: 15
-    t.decimal  "PROPS_BUDGET",                    precision: 15, scale: 2
-    t.date     "PROPS_START_DATE"
-    t.date     "PROPS_DUE_DATE"
-    t.string   "PROPS_OK_BY",         limit: 10
-    t.text     "PROPS_CB1"
-    t.text     "PROPS_CB2"
-    t.text     "PROPS_CB3"
-    t.text     "PROPS_CB4"
-    t.text     "PROPS_CB5"
-    t.text     "PROPS_CB6"
-    t.text     "PROPS_CB7"
-    t.text     "PROPS_CB8"
-    t.text     "PROPS_CB9"
-    t.text     "PROPS_CB10"
-    t.text     "PROPS_CB11"
-    t.text     "PROPS_CB12"
-    t.text     "PROPS_CB13"
-    t.text     "PROPS_CB14"
-    t.text     "PROPS_CB15"
-    t.string   "PROPS_NAME",          limit: 60
-    t.date     "PROPS_OK_DATE"
-    t.text     "PROPS_DESC"
-    t.string   "PROPS_CHARGE_NUM",    limit: 20
-    t.string   "PROPS_STATUS_DESC",   limit: 40
-    t.integer  "PROPS_STATUS",        limit: 1
-    t.string   "PROPS_ADDED_BY",      limit: 10
-    t.integer  "PROPS_APPROVED",      limit: 1
-    t.string   "PROPS_APPROVED_BY",   limit: 4
-    t.datetime "PROPS_APPROVED_DATE"
-    t.string   "PROPS_EDITED_BY",     limit: 4
-    t.datetime "PROPS_EDITED_WHEN"
-    t.string   "PROPS_REVIEWER",      limit: 10
+  create_table "proposals", primary_key: "props_seq", force: true do |t|
+    t.string    "props_client_num",    limit: 10
+    t.date      "props_date_added"
+    t.string    "props_requestor",     limit: 100
+    t.string    "props_type",          limit: 15
+    t.decimal   "props_budget",                    precision: 15, scale: 2
+    t.date      "props_start_date"
+    t.date      "props_due_date"
+    t.string    "props_ok_by",         limit: 10
+    t.text      "props_cb1"
+    t.text      "props_cb2"
+    t.text      "props_cb3"
+    t.text      "props_cb4"
+    t.text      "props_cb5"
+    t.text      "props_cb6"
+    t.text      "props_cb7"
+    t.text      "props_cb8"
+    t.text      "props_cb9"
+    t.text      "props_cb10"
+    t.text      "props_cb11"
+    t.text      "props_cb12"
+    t.text      "props_cb13"
+    t.text      "props_cb14"
+    t.text      "props_cb15"
+    t.string    "props_name",          limit: 60
+    t.date      "props_ok_date"
+    t.text      "props_desc"
+    t.string    "props_charge_num",    limit: 20
+    t.string    "props_status_desc",   limit: 40
+    t.integer   "props_status",        limit: 1
+    t.string    "props_added_by",      limit: 10
+    t.integer   "props_approved",      limit: 1
+    t.string    "props_approved_by",   limit: 4
+    t.timestamp "props_approved_date"
+    t.string    "props_edited_by",     limit: 4
+    t.timestamp "props_edited_when"
+    t.string    "props_reviewer",      limit: 10
   end
 
-  add_index "proposals", ["PROPS_CLIENT_NUM"], name: "PROPS_CLIENT_NUM", using: :btree
-  add_index "proposals", ["PROPS_DUE_DATE"], name: "PROPS_DUE_DATE", using: :btree
-  add_index "proposals", ["PROPS_SEQ"], name: "PROPS_SEQ", unique: true, using: :btree
-  add_index "proposals", ["PROPS_START_DATE"], name: "PROPS_START_DATE", using: :btree
+  add_index "proposals", ["props_client_num"], name: "props_client_num"
+  add_index "proposals", ["props_due_date"], name: "props_due_date"
+  add_index "proposals", ["props_start_date"], name: "props_start_date"
 
-  create_table "purchase_order", primary_key: "PO_SEQ", force: true do |t|
-    t.string   "PO_NUM",           limit: 12
-    t.string   "PO_JOB_NUM",       limit: 15
-    t.string   "PO_TASK",          limit: 4
-    t.string   "PO_DESC_LABEL",    limit: 15
-    t.text     "PO_DESC"
-    t.string   "PO_VENDOR_NUM",    limit: 10
-    t.decimal  "PO_COST",                     precision: 9,  scale: 2
-    t.decimal  "PO_MARKUP",                   precision: 9,  scale: 2
-    t.decimal  "PO_COMM",                     precision: 9,  scale: 2
-    t.decimal  "PO_TAX",                      precision: 9,  scale: 2
-    t.decimal  "PO_GROSS",                    precision: 15, scale: 2
-    t.decimal  "PO_AMT_PAID",                 precision: 9,  scale: 2
-    t.decimal  "PO_TYPE",                     precision: 9,  scale: 0
-    t.string   "PO_CLIENT_NUM",    limit: 10
-    t.text     "PO_SHIP_NOTE"
-    t.string   "PO_SHIP1",         limit: 40
-    t.string   "PO_SHIP2",         limit: 40
-    t.string   "PO_SHIP3",         limit: 40
-    t.string   "PO_SHIP4",         limit: 40
-    t.string   "PO_QTY_LABEL",     limit: 15
-    t.string   "PO_QTY",           limit: 20
-    t.string   "PO_APPROVAL1",     limit: 30
-    t.string   "PO_APPROVAL2",     limit: 30
-    t.string   "PO_APPROVAL3",     limit: 30
-    t.string   "PO_ORDERED_BY",    limit: 4
-    t.string   "PO_STATUS",        limit: 80
-    t.date     "PO_DUE_DATE"
-    t.decimal  "PO_TERMS1",                   precision: 9,  scale: 2
-    t.decimal  "PO_TERMS2",                   precision: 9,  scale: 0
-    t.decimal  "PO_TERMS3",                   precision: 9,  scale: 0
-    t.date     "PO_DATE"
-    t.decimal  "PO_PC",                       precision: 9,  scale: 0
-    t.string   "PO_TO1",           limit: 10
-    t.string   "PO_TO2",           limit: 10
-    t.string   "PO_TO3",           limit: 10
-    t.string   "PO_TO4",           limit: 10
-    t.string   "PO_TO5",           limit: 10
-    t.string   "PO_VENDOR1",       limit: 40
-    t.string   "PO_VENDOR2",       limit: 40
-    t.string   "PO_VENDOR3",       limit: 40
-    t.string   "PO_VENDOR4",       limit: 40
-    t.string   "PO_VENDOR5",       limit: 40
-    t.string   "PO_FIELD_LABEL1",  limit: 20
-    t.string   "PO_FIELD_LABEL2",  limit: 20
-    t.string   "PO_FIELD_LABEL3",  limit: 20
-    t.string   "PO_FIELD_LABEL4",  limit: 20
-    t.string   "PO_FIELD_LABEL5",  limit: 20
-    t.string   "PO_FIELD1",        limit: 30
-    t.string   "PO_FIELD2",        limit: 30
-    t.string   "PO_FIELD3",        limit: 30
-    t.string   "PO_FIELD4",        limit: 30
-    t.string   "PO_FIELD5",        limit: 30
-    t.integer  "PO_HOLD",          limit: 1
-    t.integer  "PO_APPROVED",      limit: 1
-    t.datetime "PO_APPROVED_DAT"
-    t.string   "PO_APPROVED_BY",   limit: 4
-    t.string   "PO_AP_ALERT",      limit: 40
-    t.integer  "PO_TAX_EXEMPT",    limit: 1
-    t.integer  "PO_PERIOD",        limit: 1
-    t.decimal  "PO_AR_BILLED",                precision: 15, scale: 2
-    t.decimal  "PO_TO_BE_BILLED",             precision: 15, scale: 2
-    t.string   "PO_AR_NUM",        limit: 10
-    t.decimal  "PO_LINES",                    precision: 15, scale: 0
-    t.text     "PO_DISCLAIMER"
-    t.decimal  "PO_CLOSED",                   precision: 9,  scale: 0
-    t.decimal  "PO_FORM",                     precision: 9,  scale: 0
-    t.string   "PO_TOTAL_TITLE",   limit: 20
-    t.string   "PO_MAT_DUE_LABEL", limit: 20
-    t.string   "PO_IMPORT_FROM",   limit: 15
-    t.text     "PO_TRAFFIC_INSTR"
-    t.text     "PO_REP_INSTR"
-    t.string   "PO_ADDED_BY",      limit: 3
-    t.decimal  "PO_REV",                      precision: 9,  scale: 0
-    t.string   "PO_FIELD6",        limit: 15
-    t.string   "PO_FIELD_LABEL6",  limit: 20
-    t.string   "PO_REP_NAME",      limit: 40
-    t.string   "PO_REP_PHONE",     limit: 20
-    t.string   "PO_REP_FAX",       limit: 20
-    t.string   "PO_CAMPAIGN",      limit: 20
-    t.string   "PO_BRAND",         limit: 20
-    t.integer  "PO_BLANKET",       limit: 1
-    t.string   "PO_EDITED_BY",     limit: 4
-    t.datetime "PO_EDITED_WHEN"
-    t.datetime "PO_ADDED_WHEN"
-    t.integer  "PO_OWNERSHIP",     limit: 1
-    t.string   "PO_PT_TEMPLATE",   limit: 20
+  create_table "purchase_order", primary_key: "po_seq", force: true do |t|
+    t.string    "po_num",           limit: 12
+    t.string    "po_job_num",       limit: 15
+    t.string    "po_task",          limit: 4
+    t.string    "po_desc_label",    limit: 15
+    t.text      "po_desc"
+    t.string    "po_vendor_num",    limit: 10
+    t.decimal   "po_cost",                     precision: 9,  scale: 2
+    t.decimal   "po_markup",                   precision: 9,  scale: 2
+    t.decimal   "po_comm",                     precision: 9,  scale: 2
+    t.decimal   "po_tax",                      precision: 9,  scale: 2
+    t.decimal   "po_gross",                    precision: 15, scale: 2
+    t.decimal   "po_amt_paid",                 precision: 9,  scale: 2
+    t.decimal   "po_type",                     precision: 9,  scale: 0
+    t.string    "po_client_num",    limit: 10
+    t.text      "po_ship_note"
+    t.string    "po_ship1",         limit: 40
+    t.string    "po_ship2",         limit: 40
+    t.string    "po_ship3",         limit: 40
+    t.string    "po_ship4",         limit: 40
+    t.string    "po_qty_label",     limit: 15
+    t.string    "po_qty",           limit: 20
+    t.string    "po_approval1",     limit: 30
+    t.string    "po_approval2",     limit: 30
+    t.string    "po_approval3",     limit: 30
+    t.string    "po_ordered_by",    limit: 4
+    t.string    "po_status",        limit: 80
+    t.date      "po_due_date"
+    t.decimal   "po_terms1",                   precision: 9,  scale: 2
+    t.decimal   "po_terms2",                   precision: 9,  scale: 0
+    t.decimal   "po_terms3",                   precision: 9,  scale: 0
+    t.date      "po_date"
+    t.decimal   "po_pc",                       precision: 9,  scale: 0
+    t.string    "po_to1",           limit: 10
+    t.string    "po_to2",           limit: 10
+    t.string    "po_to3",           limit: 10
+    t.string    "po_to4",           limit: 10
+    t.string    "po_to5",           limit: 10
+    t.string    "po_vendor1",       limit: 40
+    t.string    "po_vendor2",       limit: 40
+    t.string    "po_vendor3",       limit: 40
+    t.string    "po_vendor4",       limit: 40
+    t.string    "po_vendor5",       limit: 40
+    t.string    "po_field_label1",  limit: 20
+    t.string    "po_field_label2",  limit: 20
+    t.string    "po_field_label3",  limit: 20
+    t.string    "po_field_label4",  limit: 20
+    t.string    "po_field_label5",  limit: 20
+    t.string    "po_field1",        limit: 30
+    t.string    "po_field2",        limit: 30
+    t.string    "po_field3",        limit: 30
+    t.string    "po_field4",        limit: 30
+    t.string    "po_field5",        limit: 30
+    t.integer   "po_hold",          limit: 1
+    t.integer   "po_approved",      limit: 1
+    t.timestamp "po_approved_dat"
+    t.string    "po_approved_by",   limit: 4
+    t.string    "po_ap_alert",      limit: 40
+    t.integer   "po_tax_exempt",    limit: 1
+    t.integer   "po_period",        limit: 1
+    t.decimal   "po_ar_billed",                precision: 15, scale: 2
+    t.decimal   "po_to_be_billed",             precision: 15, scale: 2
+    t.string    "po_ar_num",        limit: 10
+    t.decimal   "po_lines",                    precision: 15, scale: 0
+    t.text      "po_disclaimer"
+    t.decimal   "po_closed",                   precision: 9,  scale: 0
+    t.decimal   "po_form",                     precision: 9,  scale: 0
+    t.string    "po_total_title",   limit: 20
+    t.string    "po_mat_due_label", limit: 20
+    t.string    "po_import_from",   limit: 15
+    t.text      "po_traffic_instr"
+    t.text      "po_rep_instr"
+    t.string    "po_added_by",      limit: 3
+    t.decimal   "po_rev",                      precision: 9,  scale: 0
+    t.string    "po_field6",        limit: 15
+    t.string    "po_field_label6",  limit: 20
+    t.string    "po_rep_name",      limit: 40
+    t.string    "po_rep_phone",     limit: 20
+    t.string    "po_rep_fax",       limit: 20
+    t.string    "po_campaign",      limit: 20
+    t.string    "po_brand",         limit: 20
+    t.integer   "po_blanket",       limit: 1
+    t.string    "po_edited_by",     limit: 4
+    t.timestamp "po_edited_when"
+    t.timestamp "po_added_when"
+    t.integer   "po_ownership",     limit: 1
+    t.string    "po_pt_template",   limit: 20
   end
 
-  add_index "purchase_order", ["PO_APPROVED"], name: "PO_APPROVED", using: :btree
-  add_index "purchase_order", ["PO_CLIENT_NUM"], name: "PO_CLIENT_NUM", using: :btree
-  add_index "purchase_order", ["PO_CLOSED"], name: "PO_CLOSED", using: :btree
-  add_index "purchase_order", ["PO_DATE"], name: "PO_DATE", using: :btree
-  add_index "purchase_order", ["PO_DUE_DATE"], name: "PO_DUE_DATE", using: :btree
-  add_index "purchase_order", ["PO_FIELD1"], name: "PO_FIELD1", using: :btree
-  add_index "purchase_order", ["PO_JOB_NUM"], name: "PO_JOB_NUM", using: :btree
-  add_index "purchase_order", ["PO_NUM"], name: "PO_NUM", using: :btree
-  add_index "purchase_order", ["PO_PERIOD"], name: "PO_PERIOD", using: :btree
-  add_index "purchase_order", ["PO_SEQ"], name: "PO_SEQ", unique: true, using: :btree
-  add_index "purchase_order", ["PO_TASK"], name: "PO_TASK", using: :btree
-  add_index "purchase_order", ["PO_TYPE"], name: "PO_TYPE", using: :btree
-  add_index "purchase_order", ["PO_VENDOR_NUM"], name: "PO_VENDOR_NUM", using: :btree
+  add_index "purchase_order", ["po_approved"], name: "po_approved"
+  add_index "purchase_order", ["po_client_num"], name: "po_client_num"
+  add_index "purchase_order", ["po_closed"], name: "po_closed"
+  add_index "purchase_order", ["po_date"], name: "po_date"
+  add_index "purchase_order", ["po_due_date"], name: "po_due_date"
+  add_index "purchase_order", ["po_field1"], name: "po_field1"
+  add_index "purchase_order", ["po_job_num"], name: "po_job_num"
+  add_index "purchase_order", ["po_num"], name: "po_num"
+  add_index "purchase_order", ["po_period"], name: "po_period"
+  add_index "purchase_order", ["po_task"], name: "po_task"
+  add_index "purchase_order", ["po_type"], name: "po_type"
+  add_index "purchase_order", ["po_vendor_num"], name: "po_vendor_num"
 
-  create_table "rates", primary_key: "RATE_SEQ", force: true do |t|
-    t.string   "RATE_STAFF",       limit: 10
-    t.string   "RATE_CLIENT_NUM",  limit: 10
-    t.string   "RATE_TASK",        limit: 4
-    t.string   "RATE_KEY",         limit: 24
-    t.text     "RATE_NOTE"
-    t.decimal  "SPECIAL_RATE",                precision: 15, scale: 2
-    t.string   "RATE_ADDED_BY",    limit: 4
-    t.datetime "RATE_ADDED_WHEN"
-    t.string   "RATE_EDITED_BY",   limit: 4
-    t.datetime "RATE_EDITED_WHEN"
+  create_table "rates", primary_key: "rate_seq", force: true do |t|
+    t.string    "rate_staff",       limit: 10
+    t.string    "rate_client_num",  limit: 10
+    t.string    "rate_task",        limit: 4
+    t.string    "rate_key",         limit: 24
+    t.text      "rate_note"
+    t.decimal   "special_rate",                precision: 15, scale: 2
+    t.string    "rate_added_by",    limit: 4
+    t.timestamp "rate_added_when"
+    t.string    "rate_edited_by",   limit: 4
+    t.timestamp "rate_edited_when"
   end
 
-  add_index "rates", ["RATE_KEY"], name: "RATE_KEY", using: :btree
-  add_index "rates", ["RATE_SEQ"], name: "RATE_SEQ", unique: true, using: :btree
-  add_index "rates", ["RATE_STAFF"], name: "RATE_STAFF", using: :btree
+  add_index "rates", ["rate_key"], name: "rate_key"
+  add_index "rates", ["rate_staff"], name: "rate_staff"
 
-  create_table "recur_ap", primary_key: "RAP_SEQ", force: true do |t|
-    t.string   "RAP_VENDOR",      limit: 10
-    t.date     "RAP_DATE"
-    t.decimal  "RAP_AMT1",                   precision: 9,  scale: 2
-    t.text     "RAP_DESC"
-    t.decimal  "RAP_CGL",                    precision: 15, scale: 2
-    t.decimal  "RAP_DGL1",                   precision: 15, scale: 2
-    t.string   "RAP_ADDED_BY",    limit: 3
-    t.string   "RAP_INV_NUM",     limit: 20
-    t.integer  "RAP_PERIOD",      limit: 1
-    t.date     "RAP_INV_DATE"
-    t.decimal  "RAP_DGL2",                   precision: 15, scale: 2
-    t.decimal  "RAP_DGL3",                   precision: 15, scale: 2
-    t.decimal  "RAP_DGL4",                   precision: 15, scale: 2
-    t.decimal  "RAP_DGL5",                   precision: 15, scale: 2
-    t.decimal  "RAP_DGL6",                   precision: 15, scale: 2
-    t.decimal  "RAP_AMT2",                   precision: 9,  scale: 2
-    t.decimal  "RAP_AMT3",                   precision: 9,  scale: 2
-    t.decimal  "RAP_AMT4",                   precision: 9,  scale: 2
-    t.decimal  "RAP_AMT5",                   precision: 9,  scale: 2
-    t.decimal  "RAP_AMT6",                   precision: 9,  scale: 2
-    t.datetime "RAP_ADDED_WHEN"
-    t.string   "RAP_EDITED_BY",   limit: 4
-    t.datetime "RAP_EDITED_WHEN"
+  create_table "recur_ap", primary_key: "rap_seq", force: true do |t|
+    t.string    "rap_vendor",      limit: 10
+    t.date      "rap_date"
+    t.decimal   "rap_amt1",                   precision: 9,  scale: 2
+    t.text      "rap_desc"
+    t.decimal   "rap_cgl",                    precision: 15, scale: 2
+    t.decimal   "rap_dgl1",                   precision: 15, scale: 2
+    t.string    "rap_added_by",    limit: 3
+    t.string    "rap_inv_num",     limit: 20
+    t.integer   "rap_period",      limit: 1
+    t.date      "rap_inv_date"
+    t.decimal   "rap_dgl2",                   precision: 15, scale: 2
+    t.decimal   "rap_dgl3",                   precision: 15, scale: 2
+    t.decimal   "rap_dgl4",                   precision: 15, scale: 2
+    t.decimal   "rap_dgl5",                   precision: 15, scale: 2
+    t.decimal   "rap_dgl6",                   precision: 15, scale: 2
+    t.decimal   "rap_amt2",                   precision: 9,  scale: 2
+    t.decimal   "rap_amt3",                   precision: 9,  scale: 2
+    t.decimal   "rap_amt4",                   precision: 9,  scale: 2
+    t.decimal   "rap_amt5",                   precision: 9,  scale: 2
+    t.decimal   "rap_amt6",                   precision: 9,  scale: 2
+    t.timestamp "rap_added_when"
+    t.string    "rap_edited_by",   limit: 4
+    t.timestamp "rap_edited_when"
   end
 
-  add_index "recur_ap", ["RAP_DATE"], name: "RAP_DATE", using: :btree
-  add_index "recur_ap", ["RAP_SEQ"], name: "RAP_SEQ", unique: true, using: :btree
-  add_index "recur_ap", ["RAP_VENDOR"], name: "RAP_VENDOR", using: :btree
+  add_index "recur_ap", ["rap_date"], name: "rap_date"
+  add_index "recur_ap", ["rap_vendor"], name: "rap_vendor"
 
-  create_table "recur_ar", primary_key: "RAR_SEQ", force: true do |t|
-    t.string   "RAR_CLIENT_NUM",  limit: 10
-    t.date     "RAR_DATE"
-    t.decimal  "RAR_AMT1",                   precision: 9, scale: 2
-    t.text     "RAR_DESC"
-    t.decimal  "RAR_DGL",                    precision: 9, scale: 2
-    t.string   "RAR_ADDED_BY",    limit: 4
-    t.string   "RAR_INV_NUM",     limit: 10
-    t.integer  "RAR_PERIOD",      limit: 1
-    t.string   "RAR_JOB_NUM",     limit: 10
-    t.date     "RAR_INV_DATE"
-    t.string   "RAR_AX_TASK1",    limit: 4
-    t.string   "RAR_AX_NAME1",    limit: 50
-    t.decimal  "RAR_AX_HOURS1",              precision: 9, scale: 2
-    t.decimal  "RAR_AX_AMT1",                precision: 9, scale: 2
-    t.string   "RAR_AX_TASK2",    limit: 4
-    t.string   "RAR_AX_NAME2",    limit: 50
-    t.decimal  "RAR_AX_HOURS2",              precision: 9, scale: 2
-    t.decimal  "RAR_AX_AMT2",                precision: 9, scale: 2
-    t.string   "RAR_AX_TASK3",    limit: 4
-    t.string   "RAR_AX_NAME3",    limit: 50
-    t.decimal  "RAR_AX_HOURS3",              precision: 9, scale: 2
-    t.decimal  "RAR_AX_AMT3",                precision: 9, scale: 2
-    t.string   "RAR_AX_TASK4",    limit: 4
-    t.string   "RAR_AX_NAME4",    limit: 50
-    t.decimal  "RAR_AX_HOURS4",              precision: 9, scale: 2
-    t.decimal  "RAR_AX_AMT4",                precision: 9, scale: 2
-    t.string   "RAR_AX_TASK5",    limit: 4
-    t.string   "RAR_AX_NAME5",    limit: 50
-    t.decimal  "RAR_AX_HOURS5",              precision: 9, scale: 2
-    t.decimal  "RAR_AX_AMT5",                precision: 9, scale: 2
-    t.string   "RAR_AX_TASK6",    limit: 4
-    t.string   "RAR_AX_NAME6",    limit: 50
-    t.decimal  "RAR_AX_HOURS6",              precision: 9, scale: 2
-    t.decimal  "RAR_AX_AMT6",                precision: 9, scale: 2
-    t.decimal  "RAR_AX_CGL1",                precision: 9, scale: 2
-    t.decimal  "RAR_AX_CGL2",                precision: 9, scale: 2
-    t.decimal  "RAR_AX_CGL3",                precision: 9, scale: 2
-    t.decimal  "RAR_AX_CGL4",                precision: 9, scale: 2
-    t.decimal  "RAR_AX_CGL5",                precision: 9, scale: 2
-    t.decimal  "RAR_AX_CGL6",                precision: 9, scale: 2
-    t.integer  "RAR_OPTION1",     limit: 1
-    t.integer  "RAR_OPTION2",     limit: 1
-    t.integer  "RAR_OPTION3",     limit: 1
-    t.datetime "RAR_ADDED_WHEN"
-    t.string   "RAR_EDITED_BY",   limit: 4
-    t.datetime "RAR_EDITED_WHEN"
+  create_table "recur_ar", primary_key: "rar_seq", force: true do |t|
+    t.string    "rar_client_num",  limit: 10
+    t.date      "rar_date"
+    t.decimal   "rar_amt1",                   precision: 9, scale: 2
+    t.text      "rar_desc"
+    t.decimal   "rar_dgl",                    precision: 9, scale: 2
+    t.string    "rar_added_by",    limit: 4
+    t.string    "rar_inv_num",     limit: 10
+    t.integer   "rar_period",      limit: 1
+    t.string    "rar_job_num",     limit: 10
+    t.date      "rar_inv_date"
+    t.string    "rar_ax_task1",    limit: 4
+    t.string    "rar_ax_name1",    limit: 50
+    t.decimal   "rar_ax_hours1",              precision: 9, scale: 2
+    t.decimal   "rar_ax_amt1",                precision: 9, scale: 2
+    t.string    "rar_ax_task2",    limit: 4
+    t.string    "rar_ax_name2",    limit: 50
+    t.decimal   "rar_ax_hours2",              precision: 9, scale: 2
+    t.decimal   "rar_ax_amt2",                precision: 9, scale: 2
+    t.string    "rar_ax_task3",    limit: 4
+    t.string    "rar_ax_name3",    limit: 50
+    t.decimal   "rar_ax_hours3",              precision: 9, scale: 2
+    t.decimal   "rar_ax_amt3",                precision: 9, scale: 2
+    t.string    "rar_ax_task4",    limit: 4
+    t.string    "rar_ax_name4",    limit: 50
+    t.decimal   "rar_ax_hours4",              precision: 9, scale: 2
+    t.decimal   "rar_ax_amt4",                precision: 9, scale: 2
+    t.string    "rar_ax_task5",    limit: 4
+    t.string    "rar_ax_name5",    limit: 50
+    t.decimal   "rar_ax_hours5",              precision: 9, scale: 2
+    t.decimal   "rar_ax_amt5",                precision: 9, scale: 2
+    t.string    "rar_ax_task6",    limit: 4
+    t.string    "rar_ax_name6",    limit: 50
+    t.decimal   "rar_ax_hours6",              precision: 9, scale: 2
+    t.decimal   "rar_ax_amt6",                precision: 9, scale: 2
+    t.decimal   "rar_ax_cgl1",                precision: 9, scale: 2
+    t.decimal   "rar_ax_cgl2",                precision: 9, scale: 2
+    t.decimal   "rar_ax_cgl3",                precision: 9, scale: 2
+    t.decimal   "rar_ax_cgl4",                precision: 9, scale: 2
+    t.decimal   "rar_ax_cgl5",                precision: 9, scale: 2
+    t.decimal   "rar_ax_cgl6",                precision: 9, scale: 2
+    t.integer   "rar_option1",     limit: 1
+    t.integer   "rar_option2",     limit: 1
+    t.integer   "rar_option3",     limit: 1
+    t.timestamp "rar_added_when"
+    t.string    "rar_edited_by",   limit: 4
+    t.timestamp "rar_edited_when"
   end
 
-  add_index "recur_ar", ["RAR_CLIENT_NUM"], name: "RAR_CLIENT_NUM", using: :btree
-  add_index "recur_ar", ["RAR_DATE"], name: "RAR_DATE", using: :btree
-  add_index "recur_ar", ["RAR_JOB_NUM"], name: "RAR_JOB_NUM", using: :btree
-  add_index "recur_ar", ["RAR_SEQ"], name: "RAR_SEQ", unique: true, using: :btree
+  add_index "recur_ar", ["rar_client_num"], name: "rar_client_num"
+  add_index "recur_ar", ["rar_date"], name: "rar_date"
+  add_index "recur_ar", ["rar_job_num"], name: "rar_job_num"
 
   create_table "retainers", id: false, force: true do |t|
-    t.string   "RET_CLIENT_NUM",  limit: 10
-    t.decimal  "RET_AMT1",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT2",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT3",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT4",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT5",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT6",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT7",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT8",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT9",                   precision: 15, scale: 2
-    t.decimal  "RET_AMT10",                  precision: 15, scale: 2
-    t.decimal  "RET_AMT11",                  precision: 15, scale: 2
-    t.decimal  "RET_AMT12",                  precision: 15, scale: 2
-    t.string   "RET_1",           limit: 40
-    t.string   "RET_2",           limit: 40
-    t.string   "RET_3",           limit: 40
-    t.string   "RET_4",           limit: 40
-    t.string   "RET_5",           limit: 40
-    t.string   "RET_6",           limit: 40
-    t.string   "RET_7",           limit: 40
-    t.string   "RET_8",           limit: 40
-    t.string   "RET_9",           limit: 40
-    t.string   "RET_10",          limit: 40
-    t.string   "RET_11",          limit: 40
-    t.string   "RET_12",          limit: 40
-    t.integer  "RET_1_OK",        limit: 1
-    t.integer  "RET_2_OK",        limit: 1
-    t.integer  "RET_3_OK",        limit: 1
-    t.integer  "RET_4_OK",        limit: 1
-    t.integer  "RET_5_OK",        limit: 1
-    t.integer  "RET_6_OK",        limit: 1
-    t.integer  "RET_7_OK",        limit: 1
-    t.integer  "RET_8_OK",        limit: 1
-    t.integer  "RET_9_OK",        limit: 1
-    t.integer  "RET_10_OK",       limit: 1
-    t.integer  "RET_11_OK",       limit: 1
-    t.integer  "RET_12_OK",       limit: 1
-    t.date     "RET_DATE1"
-    t.date     "RET_DATE2"
-    t.date     "RET_DATE3"
-    t.date     "RET_DATE4"
-    t.date     "RET_DATE5"
-    t.date     "RET_DATE6"
-    t.date     "RET_DATE7"
-    t.date     "RET_DATE8"
-    t.date     "RET_DATE9"
-    t.date     "RET_DATE10"
-    t.date     "RET_DATE11"
-    t.date     "RET_DATE12"
-    t.string   "RET_AR_NUM1",     limit: 10
-    t.string   "RET_AR_NUM2",     limit: 10
-    t.string   "RET_AR_NUM3",     limit: 10
-    t.string   "RET_AR_NUM4",     limit: 10
-    t.string   "RET_AR_NUM5",     limit: 10
-    t.string   "RET_AR_NUM6",     limit: 10
-    t.string   "RET_AR_NUM7",     limit: 10
-    t.string   "RET_AR_NUM8",     limit: 10
-    t.string   "RET_AR_NUM9",     limit: 10
-    t.string   "RET_AR_NUM10",    limit: 10
-    t.string   "RET_AR_NUM11",    limit: 10
-    t.string   "RET_AR_NUM12",    limit: 10
-    t.string   "RET_ADDED_BY",    limit: 4
-    t.datetime "RET_ADDED_WHEN"
-    t.string   "RET_EDITED_BY",   limit: 4
-    t.datetime "RET_EDITED_WHEN"
+    t.string    "ret_client_num",  limit: 10
+    t.decimal   "ret_amt1",                   precision: 15, scale: 2
+    t.decimal   "ret_amt2",                   precision: 15, scale: 2
+    t.decimal   "ret_amt3",                   precision: 15, scale: 2
+    t.decimal   "ret_amt4",                   precision: 15, scale: 2
+    t.decimal   "ret_amt5",                   precision: 15, scale: 2
+    t.decimal   "ret_amt6",                   precision: 15, scale: 2
+    t.decimal   "ret_amt7",                   precision: 15, scale: 2
+    t.decimal   "ret_amt8",                   precision: 15, scale: 2
+    t.decimal   "ret_amt9",                   precision: 15, scale: 2
+    t.decimal   "ret_amt10",                  precision: 15, scale: 2
+    t.decimal   "ret_amt11",                  precision: 15, scale: 2
+    t.decimal   "ret_amt12",                  precision: 15, scale: 2
+    t.string    "ret_1",           limit: 40
+    t.string    "ret_2",           limit: 40
+    t.string    "ret_3",           limit: 40
+    t.string    "ret_4",           limit: 40
+    t.string    "ret_5",           limit: 40
+    t.string    "ret_6",           limit: 40
+    t.string    "ret_7",           limit: 40
+    t.string    "ret_8",           limit: 40
+    t.string    "ret_9",           limit: 40
+    t.string    "ret_10",          limit: 40
+    t.string    "ret_11",          limit: 40
+    t.string    "ret_12",          limit: 40
+    t.integer   "ret_1_ok",        limit: 1
+    t.integer   "ret_2_ok",        limit: 1
+    t.integer   "ret_3_ok",        limit: 1
+    t.integer   "ret_4_ok",        limit: 1
+    t.integer   "ret_5_ok",        limit: 1
+    t.integer   "ret_6_ok",        limit: 1
+    t.integer   "ret_7_ok",        limit: 1
+    t.integer   "ret_8_ok",        limit: 1
+    t.integer   "ret_9_ok",        limit: 1
+    t.integer   "ret_10_ok",       limit: 1
+    t.integer   "ret_11_ok",       limit: 1
+    t.integer   "ret_12_ok",       limit: 1
+    t.date      "ret_date1"
+    t.date      "ret_date2"
+    t.date      "ret_date3"
+    t.date      "ret_date4"
+    t.date      "ret_date5"
+    t.date      "ret_date6"
+    t.date      "ret_date7"
+    t.date      "ret_date8"
+    t.date      "ret_date9"
+    t.date      "ret_date10"
+    t.date      "ret_date11"
+    t.date      "ret_date12"
+    t.string    "ret_ar_num1",     limit: 10
+    t.string    "ret_ar_num2",     limit: 10
+    t.string    "ret_ar_num3",     limit: 10
+    t.string    "ret_ar_num4",     limit: 10
+    t.string    "ret_ar_num5",     limit: 10
+    t.string    "ret_ar_num6",     limit: 10
+    t.string    "ret_ar_num7",     limit: 10
+    t.string    "ret_ar_num8",     limit: 10
+    t.string    "ret_ar_num9",     limit: 10
+    t.string    "ret_ar_num10",    limit: 10
+    t.string    "ret_ar_num11",    limit: 10
+    t.string    "ret_ar_num12",    limit: 10
+    t.string    "ret_added_by",    limit: 4
+    t.timestamp "ret_added_when"
+    t.string    "ret_edited_by",   limit: 4
+    t.timestamp "ret_edited_when"
   end
 
-  add_index "retainers", ["RET_CLIENT_NUM"], name: "RET_CLIENT_NUM", using: :btree
+  add_index "retainers", ["ret_client_num"], name: "ret_client_num"
 
-  create_table "rfq_items", primary_key: "RFQX_SEQ", force: true do |t|
-    t.integer "RFQX_LINE_NUMBER"
-    t.string  "RFQX_NUM",         limit: 12
-    t.string  "RFQX_VENDOR2",     limit: 10
-    t.string  "RFQX_JOB_NUM",     limit: 15
-    t.string  "RFQX_TASK",        limit: 4
-    t.string  "RFQX_NAME",        limit: 200
-    t.text    "RFQX_DESC2"
-    t.decimal "RFQX_QTY",                     precision: 15, scale: 0
-    t.decimal "RFQX_UNIT_COST",               precision: 15, scale: 4
-    t.decimal "RFQX_COST",                    precision: 15, scale: 2
-    t.decimal "RFQX_GROSS",                   precision: 15, scale: 2
-    t.decimal "RFQX_MARKUP",                  precision: 15, scale: 2
-    t.string  "RFQX_PO_NUM",      limit: 12
-    t.integer "RFQX_TAXABLE1",    limit: 1
-    t.integer "RFQX_TAXABLE2",    limit: 1
-    t.integer "RFQX_INCLUDE",     limit: 1
-    t.string  "RFQX_TYPE",        limit: 20
+  create_table "rfq_items", primary_key: "rfqx_seq", force: true do |t|
+    t.integer "rfqx_line_number"
+    t.string  "rfqx_num",         limit: 12
+    t.string  "rfqx_vendor2",     limit: 10
+    t.string  "rfqx_job_num",     limit: 15
+    t.string  "rfqx_task",        limit: 4
+    t.string  "rfqx_name",        limit: 200
+    t.text    "rfqx_desc2"
+    t.decimal "rfqx_qty",                     precision: 15, scale: 0
+    t.decimal "rfqx_unit_cost",               precision: 15, scale: 4
+    t.decimal "rfqx_cost",                    precision: 15, scale: 2
+    t.decimal "rfqx_gross",                   precision: 15, scale: 2
+    t.decimal "rfqx_markup",                  precision: 15, scale: 2
+    t.string  "rfqx_po_num",      limit: 12
+    t.integer "rfqx_taxable1",    limit: 1
+    t.integer "rfqx_taxable2",    limit: 1
+    t.integer "rfqx_include",     limit: 1
+    t.string  "rfqx_type",        limit: 20
   end
 
-  add_index "rfq_items", ["RFQX_NUM"], name: "RFQX_NUM", using: :btree
-  add_index "rfq_items", ["RFQX_SEQ"], name: "RFQX_SEQ", unique: true, using: :btree
-  add_index "rfq_items", ["RFQX_VENDOR2"], name: "RFQX_VENDOR2", using: :btree
+  add_index "rfq_items", ["rfqx_num"], name: "rfqx_num"
+  add_index "rfq_items", ["rfqx_vendor2"], name: "rfqx_vendor2"
 
-  create_table "rfq_skus", primary_key: "RFQSKU_SEQ", force: true do |t|
-    t.decimal "RFQSKU_PART_NUM",              precision: 15, scale: 0
-    t.string  "RFQSKU_NAME",       limit: 40
-    t.text    "RFQSKU_DESC"
-    t.string  "RFQSKU_TYPE",       limit: 20
-    t.decimal "RFQSKU_MARKUP",                precision: 15, scale: 2
-    t.decimal "RFQSKU_UNIT_COST",             precision: 15, scale: 4
-    t.string  "RFQSKU_VENDOR_NUM", limit: 10
-    t.string  "RFQSKU_TASK",       limit: 4
-    t.string  "RFQSKU_JOB_TYPE",   limit: 15
+  create_table "rfq_skus", primary_key: "rfqsku_seq", force: true do |t|
+    t.decimal "rfqsku_part_num",              precision: 15, scale: 0
+    t.string  "rfqsku_name",       limit: 40
+    t.text    "rfqsku_desc"
+    t.string  "rfqsku_type",       limit: 20
+    t.decimal "rfqsku_markup",                precision: 15, scale: 2
+    t.decimal "rfqsku_unit_cost",             precision: 15, scale: 4
+    t.string  "rfqsku_vendor_num", limit: 10
+    t.string  "rfqsku_task",       limit: 4
+    t.string  "rfqsku_job_type",   limit: 15
   end
 
-  add_index "rfq_skus", ["RFQSKU_NAME"], name: "RFQSKU_NAME", using: :btree
-  add_index "rfq_skus", ["RFQSKU_PART_NUM"], name: "RFQSKU_PART_NUM", using: :btree
-  add_index "rfq_skus", ["RFQSKU_SEQ"], name: "RFQSKU_SEQ", unique: true, using: :btree
+  add_index "rfq_skus", ["rfqsku_name"], name: "rfqsku_name"
+  add_index "rfq_skus", ["rfqsku_part_num"], name: "rfqsku_part_num"
 
-  create_table "rfq_vendors", primary_key: "RFQV_SEQ", force: true do |t|
-    t.string  "RFQV_NUM",        limit: 12
-    t.string  "RFQV_VENDOR_NUM", limit: 10
-    t.string  "RFQV_CONTACT",    limit: 50
-    t.string  "RFQV_PHONE",      limit: 30
-    t.string  "RFQV_FAX",        limit: 30
-    t.integer "RFQV_WINNER",     limit: 1
-    t.string  "RFQV_VORG",       limit: 40
-    t.string  "RFQV_TYPE",       limit: 20
+  create_table "rfq_vendors", primary_key: "rfqv_seq", force: true do |t|
+    t.string  "rfqv_num",        limit: 12
+    t.string  "rfqv_vendor_num", limit: 10
+    t.string  "rfqv_contact",    limit: 50
+    t.string  "rfqv_phone",      limit: 30
+    t.string  "rfqv_fax",        limit: 30
+    t.integer "rfqv_winner",     limit: 1
+    t.string  "rfqv_vorg",       limit: 40
+    t.string  "rfqv_type",       limit: 20
   end
 
-  add_index "rfq_vendors", ["RFQV_NUM"], name: "RFQV_NUM", using: :btree
-  add_index "rfq_vendors", ["RFQV_SEQ"], name: "RFQV_SEQ", unique: true, using: :btree
+  add_index "rfq_vendors", ["rfqv_num"], name: "rfqv_num"
 
-  create_table "rfqs", primary_key: "RFQ_SEQ", force: true do |t|
-    t.string   "RFQ_NUM",                limit: 12
-    t.string   "RFQ_JOB_NUM",            limit: 15
-    t.string   "RFQ_TASK",               limit: 4
-    t.string   "RFQ_VENDOR_NUM",         limit: 10
-    t.datetime "RFQ_DATE"
-    t.string   "RFQ_PROD_CONTACT",       limit: 50
-    t.string   "RFQ_NAME",               limit: 200
-    t.text     "RFQ_DESC"
-    t.decimal  "RFQ_QTY",                            precision: 15, scale: 0
-    t.string   "RFQ_CLIENT_NUM",         limit: 10
-    t.string   "RFQ_CLIENT_CONTACT",     limit: 100
-    t.string   "RFQ_CLIENT_ADDR1",       limit: 50
-    t.string   "RFQ_CLIENT_ADDR2",       limit: 50
-    t.string   "RFQ_CLIENT_ADDR3",       limit: 50
-    t.string   "RFQ_CLIENT_ADDR4",       limit: 50
-    t.string   "RFQ_CLIENT_ADDR5",       limit: 50
-    t.string   "RFQ_CLIENT_ADDR6",       limit: 50
-    t.text     "RFQ_PREP"
-    t.text     "RFQ_KITTING"
-    t.text     "RFQ_SHIPPING"
-    t.text     "RFQ_CLIENT_NOTES"
-    t.text     "RFQ_TERMS"
-    t.integer  "RFQ_APPROVED",           limit: 1
-    t.integer  "RFQ_CLIENT_OK",          limit: 1
-    t.datetime "RFQ_CLIENT_OK_DATE"
-    t.string   "RFQ_CLIENT_OK_BY",       limit: 10
-    t.decimal  "RFQ_TOTAL_COST",                     precision: 15, scale: 2
-    t.decimal  "RFQ_TOTAL_GROSS",                    precision: 15, scale: 2
-    t.text     "RFQ_SPECIAL_INSTR"
-    t.text     "RFQ_DEL_INSTR"
-    t.text     "RFQ_AUTH"
-    t.string   "RFQ_STATUS",             limit: 30
-    t.string   "RFQ_ADDED_BY",           limit: 4
-    t.datetime "RFQ_QUOTE_NEEDED"
-    t.datetime "RFQ_DEL_DATE"
-    t.string   "RFQ_PROD_CONTACT_EMAIL", limit: 40
-    t.integer  "RFQ_TAXABLE1",           limit: 1
-    t.integer  "RFQ_TAXABLE2",           limit: 1
-    t.string   "RFQ_PROD_CONTACT_PH",    limit: 40
+  create_table "rfqs", primary_key: "rfq_seq", force: true do |t|
+    t.string    "rfq_num",                limit: 12
+    t.string    "rfq_job_num",            limit: 15
+    t.string    "rfq_task",               limit: 4
+    t.string    "rfq_vendor_num",         limit: 10
+    t.timestamp "rfq_date"
+    t.string    "rfq_prod_contact",       limit: 50
+    t.string    "rfq_name",               limit: 200
+    t.text      "rfq_desc"
+    t.decimal   "rfq_qty",                            precision: 15, scale: 0
+    t.string    "rfq_client_num",         limit: 10
+    t.string    "rfq_client_contact",     limit: 100
+    t.string    "rfq_client_addr1",       limit: 50
+    t.string    "rfq_client_addr2",       limit: 50
+    t.string    "rfq_client_addr3",       limit: 50
+    t.string    "rfq_client_addr4",       limit: 50
+    t.string    "rfq_client_addr5",       limit: 50
+    t.string    "rfq_client_addr6",       limit: 50
+    t.text      "rfq_prep"
+    t.text      "rfq_kitting"
+    t.text      "rfq_shipping"
+    t.text      "rfq_client_notes"
+    t.text      "rfq_terms"
+    t.integer   "rfq_approved",           limit: 1
+    t.integer   "rfq_client_ok",          limit: 1
+    t.timestamp "rfq_client_ok_date"
+    t.string    "rfq_client_ok_by",       limit: 10
+    t.decimal   "rfq_total_cost",                     precision: 15, scale: 2
+    t.decimal   "rfq_total_gross",                    precision: 15, scale: 2
+    t.text      "rfq_special_instr"
+    t.text      "rfq_del_instr"
+    t.text      "rfq_auth"
+    t.string    "rfq_status",             limit: 30
+    t.string    "rfq_added_by",           limit: 4
+    t.timestamp "rfq_quote_needed"
+    t.timestamp "rfq_del_date"
+    t.string    "rfq_prod_contact_email", limit: 40
+    t.integer   "rfq_taxable1",           limit: 1
+    t.integer   "rfq_taxable2",           limit: 1
+    t.string    "rfq_prod_contact_ph",    limit: 40
   end
 
-  add_index "rfqs", ["RFQ_JOB_NUM"], name: "RFQ_JOB_NUM", using: :btree
-  add_index "rfqs", ["RFQ_SEQ"], name: "RFQ_SEQ", unique: true, using: :btree
+  add_index "rfqs", ["rfq_job_num"], name: "rfq_job_num"
 
-  create_table "sales_actions", primary_key: "SACT_SEQ", force: true do |t|
-    t.integer  "SACT_KIND",        limit: 1
-    t.date     "SACT_DATE"
-    t.time     "SACT_TIME"
-    t.integer  "SACT_LENGTH",      limit: 1
-    t.string   "SACT_CAMPAIGN",    limit: 20
-    t.decimal  "SACT_CON_SEQ",                precision: 9, scale: 0
-    t.integer  "SACT_PRIORITY",    limit: 1
-    t.decimal  "SACT_SLTR_SEQ",               precision: 9, scale: 0
-    t.string   "SACT_FROM_STAFF",  limit: 4
-    t.datetime "SACT_PRINTED"
-    t.string   "SACT_PRINTED_BY",  limit: 4
-    t.string   "SACT_CLIENT_NUM",  limit: 10
-    t.string   "SACT_ADDED_BY",    limit: 4
-    t.text     "SACT_SUBJECT"
-    t.text     "SACT_BODY"
-    t.text     "SACT_PS"
-    t.datetime "SACT_ADDED_WHEN"
-    t.string   "SACT_EDITED_BY",   limit: 4
-    t.datetime "SACT_EDITED_WHEN"
+  create_table "sales_actions", primary_key: "sact_seq", force: true do |t|
+    t.integer   "sact_kind",        limit: 1
+    t.date      "sact_date"
+    t.time      "sact_time"
+    t.integer   "sact_length",      limit: 1
+    t.string    "sact_campaign",    limit: 20
+    t.decimal   "sact_con_seq",                precision: 9, scale: 0
+    t.integer   "sact_priority",    limit: 1
+    t.decimal   "sact_sltr_seq",               precision: 9, scale: 0
+    t.string    "sact_from_staff",  limit: 4
+    t.timestamp "sact_printed"
+    t.string    "sact_printed_by",  limit: 4
+    t.string    "sact_client_num",  limit: 10
+    t.string    "sact_added_by",    limit: 4
+    t.text      "sact_subject"
+    t.text      "sact_body"
+    t.text      "sact_ps"
+    t.timestamp "sact_added_when"
+    t.string    "sact_edited_by",   limit: 4
+    t.timestamp "sact_edited_when"
   end
 
-  add_index "sales_actions", ["SACT_CLIENT_NUM"], name: "SACT_CLIENT_NUM", using: :btree
-  add_index "sales_actions", ["SACT_DATE"], name: "SACT_DATE", using: :btree
-  add_index "sales_actions", ["SACT_FROM_STAFF"], name: "SACT_FROM_STAFF", using: :btree
-  add_index "sales_actions", ["SACT_KIND"], name: "SACT_KIND", using: :btree
-  add_index "sales_actions", ["SACT_SEQ"], name: "SACT_SEQ", unique: true, using: :btree
+  add_index "sales_actions", ["sact_client_num"], name: "sact_client_num"
+  add_index "sales_actions", ["sact_date"], name: "sact_date"
+  add_index "sales_actions", ["sact_from_staff"], name: "sact_from_staff"
+  add_index "sales_actions", ["sact_kind"], name: "sact_kind"
 
-  create_table "sales_campaigns", primary_key: "SCAM_SEQ", force: true do |t|
-    t.string   "SCAM_ID",           limit: 20
-    t.text     "SCAM_DESC"
-    t.string   "SCAM_ADDED_BY",     limit: 4
-    t.date     "SCAM_START"
-    t.date     "SCAM_END"
-    t.decimal  "SCAM_ACTION",                  precision: 9, scale: 0
-    t.decimal  "SCAM_ACTION1",                 precision: 9, scale: 0
-    t.integer  "SCAM_ACTION1_DAYS", limit: 1
-    t.decimal  "SCAM_ACTION2",                 precision: 9, scale: 0
-    t.integer  "SCAM_ACTION2_DAYS", limit: 1
-    t.decimal  "SCAM_ACTION3",                 precision: 9, scale: 0
-    t.integer  "SCAM_ACTION3_DAYS", limit: 1
-    t.string   "SCAM_CLIENT_NUM",   limit: 10
-    t.integer  "SCAM_OK",           limit: 1
-    t.string   "SCAM_OK_BY",        limit: 4
-    t.datetime "SCAM_ADDED_WHEN"
-    t.string   "SCAM_EDITED_BY",    limit: 4
-    t.datetime "SCAM_EDITED_WHEN"
+  create_table "sales_campaigns", primary_key: "scam_seq", force: true do |t|
+    t.string    "scam_id",           limit: 20
+    t.text      "scam_desc"
+    t.string    "scam_added_by",     limit: 4
+    t.date      "scam_start"
+    t.date      "scam_end"
+    t.decimal   "scam_action",                  precision: 9, scale: 0
+    t.decimal   "scam_action1",                 precision: 9, scale: 0
+    t.integer   "scam_action1_days", limit: 1
+    t.decimal   "scam_action2",                 precision: 9, scale: 0
+    t.integer   "scam_action2_days", limit: 1
+    t.decimal   "scam_action3",                 precision: 9, scale: 0
+    t.integer   "scam_action3_days", limit: 1
+    t.string    "scam_client_num",   limit: 10
+    t.integer   "scam_ok",           limit: 1
+    t.string    "scam_ok_by",        limit: 4
+    t.timestamp "scam_added_when"
+    t.string    "scam_edited_by",    limit: 4
+    t.timestamp "scam_edited_when"
   end
 
-  add_index "sales_campaigns", ["SCAM_CLIENT_NUM"], name: "SCAM_CLIENT_NUM", using: :btree
-  add_index "sales_campaigns", ["SCAM_ID"], name: "SCAM_ID", using: :btree
-  add_index "sales_campaigns", ["SCAM_SEQ"], name: "SCAM_SEQ", unique: true, using: :btree
+  add_index "sales_campaigns", ["scam_client_num"], name: "scam_client_num"
+  add_index "sales_campaigns", ["scam_id"], name: "scam_id"
 
-  create_table "sales_letters", primary_key: "SLTR_SEQ", force: true do |t|
-    t.string   "SLTR_ID",          limit: 20
-    t.integer  "SLTR_KIND",        limit: 1
-    t.date     "SLTR_START"
-    t.date     "SLTR_END"
-    t.string   "SLTR_CLIENT_NUM",  limit: 10
-    t.text     "SLTR_DESC"
-    t.string   "SLTR_AUTHOR",      limit: 4
-    t.integer  "SLTR_OK",          limit: 1
-    t.string   "SLTR_OK_BY",       limit: 4
-    t.text     "SLTR_SUBJECT"
-    t.text     "SLTR_BODY"
-    t.text     "SLTR_PS"
-    t.decimal  "SLTR_COUNT",                  precision: 9, scale: 0
-    t.date     "SLTR_LAST_USE"
-    t.integer  "SLTR_ONE_TIME",    limit: 1
-    t.string   "SLTR_ADDED_BY",    limit: 4
-    t.datetime "SLTR_ADDED_WHEN"
-    t.string   "SLTR_EDITED_BY",   limit: 4
-    t.datetime "SLTR_EDITED_WHEN"
+  create_table "sales_letters", primary_key: "sltr_seq", force: true do |t|
+    t.string    "sltr_id",          limit: 20
+    t.integer   "sltr_kind",        limit: 1
+    t.date      "sltr_start"
+    t.date      "sltr_end"
+    t.string    "sltr_client_num",  limit: 10
+    t.text      "sltr_desc"
+    t.string    "sltr_author",      limit: 4
+    t.integer   "sltr_ok",          limit: 1
+    t.string    "sltr_ok_by",       limit: 4
+    t.text      "sltr_subject"
+    t.text      "sltr_body"
+    t.text      "sltr_ps"
+    t.decimal   "sltr_count",                  precision: 9, scale: 0
+    t.date      "sltr_last_use"
+    t.integer   "sltr_one_time",    limit: 1
+    t.string    "sltr_added_by",    limit: 4
+    t.timestamp "sltr_added_when"
+    t.string    "sltr_edited_by",   limit: 4
+    t.timestamp "sltr_edited_when"
   end
 
-  add_index "sales_letters", ["SLTR_CLIENT_NUM"], name: "SLTR_CLIENT_NUM", using: :btree
-  add_index "sales_letters", ["SLTR_EDITED_WHEN"], name: "SLTR_EDITED_WHEN", using: :btree
-  add_index "sales_letters", ["SLTR_ID"], name: "SLTR_ID", using: :btree
-  add_index "sales_letters", ["SLTR_KIND"], name: "SLTR_KIND", using: :btree
-  add_index "sales_letters", ["SLTR_SEQ"], name: "SLTR_SEQ", unique: true, using: :btree
+  add_index "sales_letters", ["sltr_client_num"], name: "sltr_client_num"
+  add_index "sales_letters", ["sltr_edited_when"], name: "sltr_edited_when"
+  add_index "sales_letters", ["sltr_id"], name: "sltr_id"
+  add_index "sales_letters", ["sltr_kind"], name: "sltr_kind"
 
-  create_table "sched_revs", primary_key: "SCV_SEQ", force: true do |t|
-    t.string   "SCV_JOB_NUM",        limit: 10
-    t.string   "SCV_TASK",           limit: 4
-    t.decimal  "SCV_SORT",                       precision: 9, scale: 0
-    t.string   "SCV_TASK_NAME",      limit: 100
-    t.text     "SCV_TASK_SPECS"
-    t.date     "SCV_DUE_DATE"
-    t.time     "SCV_DUE_WHEN"
-    t.string   "SCV_RESOURCE",       limit: 10
-    t.decimal  "SCV_LEAD_TIME",                  precision: 9, scale: 0
-    t.date     "SCV_START_DATE"
-    t.date     "SCV_DATE_FINISHED"
-    t.integer  "SCV_FINISHED",       limit: 1
-    t.integer  "SCV_FINAL",          limit: 1
-    t.integer  "SCV_REVISION",       limit: 1
-    t.date     "SCV_J_DUE_DATE"
-    t.date     "SCV_J_START_DATE"
-    t.string   "SCV_REVISED_BY",     limit: 4
-    t.datetime "SCV_REVISION_DATE"
-    t.text     "SCV_REVISION_NOTES"
-    t.integer  "SCV_REASON",         limit: 1
-    t.string   "SCV_REV_OKD_BY",     limit: 4
-    t.datetime "SCV_REV_OKD_DATE"
-    t.integer  "SCV_KIND",           limit: 1
-    t.string   "SCV_ADDED_BY",       limit: 4
-    t.datetime "SCV_ADDED_WHEN"
-    t.string   "SCV_EDITED_BY",      limit: 4
-    t.datetime "SCV_EDITED_WHEN"
+  create_table "sched_revs", primary_key: "scv_seq", force: true do |t|
+    t.string    "scv_job_num",        limit: 10
+    t.string    "scv_task",           limit: 4
+    t.decimal   "scv_sort",                       precision: 9, scale: 0
+    t.string    "scv_task_name",      limit: 100
+    t.text      "scv_task_specs"
+    t.date      "scv_due_date"
+    t.time      "scv_due_when"
+    t.string    "scv_resource",       limit: 10
+    t.decimal   "scv_lead_time",                  precision: 9, scale: 0
+    t.date      "scv_start_date"
+    t.date      "scv_date_finished"
+    t.integer   "scv_finished",       limit: 1
+    t.integer   "scv_final",          limit: 1
+    t.integer   "scv_revision",       limit: 1
+    t.date      "scv_j_due_date"
+    t.date      "scv_j_start_date"
+    t.string    "scv_revised_by",     limit: 4
+    t.timestamp "scv_revision_date"
+    t.text      "scv_revision_notes"
+    t.integer   "scv_reason",         limit: 1
+    t.string    "scv_rev_okd_by",     limit: 4
+    t.timestamp "scv_rev_okd_date"
+    t.integer   "scv_kind",           limit: 1
+    t.string    "scv_added_by",       limit: 4
+    t.timestamp "scv_added_when"
+    t.string    "scv_edited_by",      limit: 4
+    t.timestamp "scv_edited_when"
   end
 
-  add_index "sched_revs", ["SCV_SEQ"], name: "SCV_SEQ", unique: true, using: :btree
-
-  create_table "schedule_chart", primary_key: "SC_SEQ", force: true do |t|
-    t.string "SC_J_NUM",      limit: 10
-    t.string "SC_1",          limit: 10
-    t.string "SC_2",          limit: 10
-    t.string "SC_3",          limit: 10
-    t.string "SC_4",          limit: 10
-    t.string "SC_5",          limit: 10
-    t.string "SC_6",          limit: 10
-    t.string "SC_7",          limit: 10
-    t.string "SC_8",          limit: 10
-    t.string "SC_9",          limit: 10
-    t.string "SC_10",         limit: 10
-    t.string "SC_11",         limit: 10
-    t.string "SC_12",         limit: 10
-    t.string "SC_CLIENT_NUM", limit: 10
+  create_table "schedule_chart", primary_key: "sc_seq", force: true do |t|
+    t.string "sc_j_num",      limit: 10
+    t.string "sc_1",          limit: 10
+    t.string "sc_2",          limit: 10
+    t.string "sc_3",          limit: 10
+    t.string "sc_4",          limit: 10
+    t.string "sc_5",          limit: 10
+    t.string "sc_6",          limit: 10
+    t.string "sc_7",          limit: 10
+    t.string "sc_8",          limit: 10
+    t.string "sc_9",          limit: 10
+    t.string "sc_10",         limit: 10
+    t.string "sc_11",         limit: 10
+    t.string "sc_12",         limit: 10
+    t.string "sc_client_num", limit: 10
   end
 
-  add_index "schedule_chart", ["SC_J_NUM"], name: "SC_J_NUM", using: :btree
-  add_index "schedule_chart", ["SC_SEQ"], name: "SC_SEQ", unique: true, using: :btree
+  add_index "schedule_chart", ["sc_j_num"], name: "sc_j_num"
 
-  create_table "schedule_header", primary_key: "SH_SEQ", force: true do |t|
-    t.date   "SH_DATE1"
-    t.date   "SH_DATE2"
-    t.string "SH_CLIENT_NUM", limit: 10
-    t.string "SH_JOB_NUM",    limit: 10
-    t.string "SH_1",          limit: 10
-    t.string "SH_2",          limit: 10
-    t.string "SH_3",          limit: 10
-    t.string "SH_4",          limit: 10
-    t.string "SH_5",          limit: 10
-    t.string "SH_6",          limit: 10
-    t.string "SH_7",          limit: 10
-    t.string "SH_8",          limit: 10
-    t.string "SH_9",          limit: 10
-    t.string "SH_10",         limit: 10
-    t.string "SH_11",         limit: 10
-    t.string "SH_12",         limit: 10
+  create_table "schedule_header", primary_key: "sh_seq", force: true do |t|
+    t.date   "sh_date1"
+    t.date   "sh_date2"
+    t.string "sh_client_num", limit: 10
+    t.string "sh_job_num",    limit: 10
+    t.string "sh_1",          limit: 10
+    t.string "sh_2",          limit: 10
+    t.string "sh_3",          limit: 10
+    t.string "sh_4",          limit: 10
+    t.string "sh_5",          limit: 10
+    t.string "sh_6",          limit: 10
+    t.string "sh_7",          limit: 10
+    t.string "sh_8",          limit: 10
+    t.string "sh_9",          limit: 10
+    t.string "sh_10",         limit: 10
+    t.string "sh_11",         limit: 10
+    t.string "sh_12",         limit: 10
   end
 
-  add_index "schedule_header", ["SH_JOB_NUM"], name: "SH_JOB_NUM", using: :btree
-  add_index "schedule_header", ["SH_SEQ"], name: "SH_SEQ", unique: true, using: :btree
+  add_index "schedule_header", ["sh_job_num"], name: "sh_job_num"
 
-  create_table "staff", primary_key: "S_SEQ", force: true do |t|
-    t.string   "S_INITIALS",             limit: 10
-    t.string   "S_NAME",                 limit: 40
-    t.string   "S_ADDRESS1",             limit: 50
-    t.string   "S_ADDRESS2",             limit: 50
-    t.string   "S_ADDRESS3",             limit: 50
-    t.string   "S_TASK",                 limit: 4
-    t.decimal  "S_BILL_RATE",                             precision: 9,  scale: 2
-    t.decimal  "S_COST_RATE",                             precision: 9,  scale: 2
-    t.string   "S_SSN",                  limit: 20
-    t.string   "S_PC_NUM",               limit: 10
-    t.decimal  "S_MTD",                                   precision: 9,  scale: 2
-    t.decimal  "S_YTD",                                   precision: 9,  scale: 2
-    t.decimal  "S_HOURS",                                 precision: 9,  scale: 2
-    t.decimal  "S_1",                                     precision: 9,  scale: 2
-    t.decimal  "S_2",                                     precision: 9,  scale: 2
-    t.decimal  "S_3",                                     precision: 9,  scale: 2
-    t.decimal  "S_4",                                     precision: 9,  scale: 2
-    t.decimal  "S_5",                                     precision: 9,  scale: 2
-    t.decimal  "S_6",                                     precision: 9,  scale: 2
-    t.decimal  "S_7",                                     precision: 9,  scale: 2
-    t.decimal  "S_8",                                     precision: 9,  scale: 2
-    t.decimal  "S_9",                                     precision: 9,  scale: 2
-    t.decimal  "S_10",                                    precision: 9,  scale: 2
-    t.decimal  "S_11",                                    precision: 9,  scale: 2
-    t.decimal  "S_12",                                    precision: 9,  scale: 2
-    t.decimal  "S_B1",                                    precision: 9,  scale: 2
-    t.decimal  "S_B2",                                    precision: 9,  scale: 2
-    t.decimal  "S_B3",                                    precision: 9,  scale: 2
-    t.decimal  "S_B4",                                    precision: 9,  scale: 2
-    t.decimal  "S_B5",                                    precision: 9,  scale: 2
-    t.decimal  "S_B6",                                    precision: 9,  scale: 2
-    t.decimal  "S_B7",                                    precision: 9,  scale: 2
-    t.decimal  "S_B8",                                    precision: 9,  scale: 2
-    t.decimal  "S_B9",                                    precision: 9,  scale: 2
-    t.decimal  "S_B10",                                   precision: 9,  scale: 2
-    t.decimal  "S_B11",                                   precision: 9,  scale: 2
-    t.decimal  "S_B12",                                   precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_1",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_2",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_3",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_4",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_5",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_6",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_7",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_8",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_9",                               precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_10",                              precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_11",                              precision: 9,  scale: 2
-    t.decimal  "S_LSTYR_12",                              precision: 9,  scale: 2
-    t.string   "S_OFFICE_PHONE",         limit: 20
-    t.decimal  "S_HOURS_WEEK",                            precision: 15, scale: 2
-    t.integer  "S_FACE",                 limit: 1
-    t.integer  "S_TYPE",                 limit: 1
-    t.text     "S_NOTES"
-    t.string   "S_DEPT",                 limit: 15
-    t.decimal  "S_HOURS_ACT",                             precision: 15, scale: 2
-    t.string   "S_TEAM",                 limit: 10
-    t.decimal  "S_PLAN_WEEK",                             precision: 15, scale: 2
-    t.decimal  "S_PLAN_MONDAY",                           precision: 15, scale: 2
-    t.decimal  "S_PLAN_TUESDAY",                          precision: 15, scale: 2
-    t.decimal  "S_PLAN_WEDNESDAY",                        precision: 15, scale: 2
-    t.decimal  "S_PLAN_THURSDAY",                         precision: 15, scale: 2
-    t.decimal  "S_PLAN_FRIDAY",                           precision: 15, scale: 2
-    t.integer  "S_REQ_TIME",             limit: 1
-    t.decimal  "S_ACT_MONDAY",                            precision: 9,  scale: 2
-    t.decimal  "S_ACT_TUESDAY",                           precision: 9,  scale: 2
-    t.decimal  "S_ACT_WEDNESDAY",                         precision: 9,  scale: 2
-    t.decimal  "S_ACT_THURSDAY",                          precision: 9,  scale: 2
-    t.decimal  "S_ACT_FRIDAY",                            precision: 9,  scale: 2
-    t.decimal  "S_ACT_SATURDAY",                          precision: 9,  scale: 2
-    t.decimal  "S_ACT_SUNDAY",                            precision: 9,  scale: 2
-    t.decimal  "S_PLAN_SATURDAY",                         precision: 9,  scale: 2
-    t.decimal  "S_PLAN_SUNDAY",                           precision: 9,  scale: 2
-    t.integer  "S_REQ_PLAN",             limit: 1
-    t.string   "S_HOME_PHONE",           limit: 12
-    t.decimal  "S_OT_COST_RATE",                          precision: 9,  scale: 2
-    t.decimal  "S_OT_BILL_RATE",                          precision: 9,  scale: 2
-    t.string   "S_TITLE",                limit: 40
-    t.integer  "S_ACTIVE",               limit: 1
-    t.string   "S_EMAIL",                limit: 100
-    t.string   "S_BACKUP_PERSON",        limit: 4
-    t.integer  "S_FREELANCE",            limit: 1
-    t.integer  "S_PERIOD",               limit: 1
-    t.integer  "S_TIME_COP",             limit: 1
-    t.text     "S_EMAIL_SIG"
-    t.integer  "S_SUPERVISOR",           limit: 1
-    t.string   "S_FAX",                  limit: 20
-    t.string   "S_WEB_ACCESS",           limit: 100
-    t.text     "S_SMTP_AUTH_ID"
-    t.text     "S_SMTP_AUTH_PW"
-    t.string   "S_VENDOR",               limit: 10
-    t.string   "S_ADDED_BY",             limit: 4
-    t.datetime "S_ADDED_WHEN"
-    t.string   "S_EDITED_BY",            limit: 4
-    t.datetime "S_EDITED_WHEN"
-    t.date     "S_DATE_HIRED"
-    t.date     "S_DATE_TERM"
-    t.binary   "S_OA",                   limit: 16777215
-    t.string   "S_APP_VERSION",          limit: 15
-    t.integer  "S_APPR_EXEMPT",          limit: 1
-    t.integer  "S_SW_UPDATE_NOW",        limit: 1
-    t.integer  "S_HOMEBASE_EMAIL",       limit: 1
-    t.integer  "S_JOBR",                 limit: 1
-    t.integer  "S_WEB_ACCESS1",          limit: 1
-    t.integer  "S_WEB_ACCESS2",          limit: 1
-    t.integer  "S_WEB_ACCESS3",          limit: 1
-    t.integer  "S_WEB_ACCESS4",          limit: 1
-    t.integer  "S_WEB_ACCESS5",          limit: 1
-    t.integer  "S_WEB_ACCESS6",          limit: 1
-    t.integer  "S_WEB_ACCESS7",          limit: 1
-    t.integer  "S_WEB_ACCESS8",          limit: 1
-    t.integer  "S_WEB_ACCESS9",          limit: 1
-    t.integer  "S_WEB_ACCESS10",         limit: 1
-    t.integer  "S_WEB_ACCESS11",         limit: 1
-    t.integer  "S_WEB_ACCESS12",         limit: 1
-    t.integer  "S_SCHEDULABLE",          limit: 1
-    t.integer  "S_WINNERS_OPT_IN",       limit: 1
-    t.integer  "S_TIME_POINT_OPT_IN",    limit: 1
-    t.integer  "S_SEND_CHIRPS",          limit: 1
-    t.string   "S_SEND_CHIRPS_TO",       limit: 100
-    t.integer  "S_CSIDE_STATUS_REPORT",  limit: 1
-    t.integer  "S_CSIDE_TRAFFIC_REPORT", limit: 1
-    t.integer  "S_CSIDE_JOBS",           limit: 1
-    t.integer  "S_CSIDE_JOB_REQUESTS",   limit: 1
-    t.integer  "S_CSIDE_APPR_ESTS",      limit: 1
-    t.integer  "S_CSIDE_APPR_SCHEDS",    limit: 1
-    t.integer  "S_CSIDE_APPR_CHANGES",   limit: 1
-    t.integer  "S_CSIDE_APPR_ART",       limit: 1
-    t.integer  "S_CSIDE_PROPOSALS",      limit: 1
-    t.integer  "S_GETS_HOMEBASE_EMAILS", limit: 1
-    t.integer  "S_CSIDE_RATE_JOBS",      limit: 1
-    t.string   "S_CLIENT_NUM",           limit: 10
-    t.integer  "S_CSIDE_APPR_CREBRIEF",  limit: 1
-    t.integer  "S_WEB_ACCESS_SUSPENDED", limit: 1
-    t.text     "S_CSIDE_CLIENTS"
-    t.date     "S_WEB_ACCESS_EXPIRES"
-    t.integer  "S_EMAIL_OVERDUES",       limit: 1
-    t.string   "S_CAL1_KEY",             limit: 10
-    t.string   "S_CAL2_KEY",             limit: 10
-    t.string   "S_CAL3_KEY",             limit: 10
-    t.string   "S_CAL4_KEY",             limit: 10
-    t.string   "S_CAL5_KEY",             limit: 10
-    t.text     "S_CSIDE_TYPE_CAT"
+  create_table "staff", primary_key: "s_seq", force: true do |t|
+    t.string    "s_initials",             limit: 10
+    t.string    "s_name",                 limit: 40
+    t.string    "s_address1",             limit: 50
+    t.string    "s_address2",             limit: 50
+    t.string    "s_address3",             limit: 50
+    t.string    "s_task",                 limit: 4
+    t.decimal   "s_bill_rate",                        precision: 9,  scale: 2
+    t.decimal   "s_cost_rate",                        precision: 9,  scale: 2
+    t.string    "s_ssn",                  limit: 20
+    t.string    "s_pc_num",               limit: 10
+    t.decimal   "s_mtd",                              precision: 9,  scale: 2
+    t.decimal   "s_ytd",                              precision: 9,  scale: 2
+    t.decimal   "s_hours",                            precision: 9,  scale: 2
+    t.decimal   "s_1",                                precision: 9,  scale: 2
+    t.decimal   "s_2",                                precision: 9,  scale: 2
+    t.decimal   "s_3",                                precision: 9,  scale: 2
+    t.decimal   "s_4",                                precision: 9,  scale: 2
+    t.decimal   "s_5",                                precision: 9,  scale: 2
+    t.decimal   "s_6",                                precision: 9,  scale: 2
+    t.decimal   "s_7",                                precision: 9,  scale: 2
+    t.decimal   "s_8",                                precision: 9,  scale: 2
+    t.decimal   "s_9",                                precision: 9,  scale: 2
+    t.decimal   "s_10",                               precision: 9,  scale: 2
+    t.decimal   "s_11",                               precision: 9,  scale: 2
+    t.decimal   "s_12",                               precision: 9,  scale: 2
+    t.decimal   "s_b1",                               precision: 9,  scale: 2
+    t.decimal   "s_b2",                               precision: 9,  scale: 2
+    t.decimal   "s_b3",                               precision: 9,  scale: 2
+    t.decimal   "s_b4",                               precision: 9,  scale: 2
+    t.decimal   "s_b5",                               precision: 9,  scale: 2
+    t.decimal   "s_b6",                               precision: 9,  scale: 2
+    t.decimal   "s_b7",                               precision: 9,  scale: 2
+    t.decimal   "s_b8",                               precision: 9,  scale: 2
+    t.decimal   "s_b9",                               precision: 9,  scale: 2
+    t.decimal   "s_b10",                              precision: 9,  scale: 2
+    t.decimal   "s_b11",                              precision: 9,  scale: 2
+    t.decimal   "s_b12",                              precision: 9,  scale: 2
+    t.decimal   "s_lstyr_1",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_2",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_3",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_4",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_5",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_6",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_7",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_8",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_9",                          precision: 9,  scale: 2
+    t.decimal   "s_lstyr_10",                         precision: 9,  scale: 2
+    t.decimal   "s_lstyr_11",                         precision: 9,  scale: 2
+    t.decimal   "s_lstyr_12",                         precision: 9,  scale: 2
+    t.string    "s_office_phone",         limit: 20
+    t.decimal   "s_hours_week",                       precision: 15, scale: 2
+    t.integer   "s_face",                 limit: 1
+    t.integer   "s_type",                 limit: 1
+    t.text      "s_notes"
+    t.string    "s_dept",                 limit: 15
+    t.decimal   "s_hours_act",                        precision: 15, scale: 2
+    t.string    "s_team",                 limit: 10
+    t.decimal   "s_plan_week",                        precision: 15, scale: 2
+    t.decimal   "s_plan_monday",                      precision: 15, scale: 2
+    t.decimal   "s_plan_tuesday",                     precision: 15, scale: 2
+    t.decimal   "s_plan_wednesday",                   precision: 15, scale: 2
+    t.decimal   "s_plan_thursday",                    precision: 15, scale: 2
+    t.decimal   "s_plan_friday",                      precision: 15, scale: 2
+    t.integer   "s_req_time",             limit: 1
+    t.decimal   "s_act_monday",                       precision: 9,  scale: 2
+    t.decimal   "s_act_tuesday",                      precision: 9,  scale: 2
+    t.decimal   "s_act_wednesday",                    precision: 9,  scale: 2
+    t.decimal   "s_act_thursday",                     precision: 9,  scale: 2
+    t.decimal   "s_act_friday",                       precision: 9,  scale: 2
+    t.decimal   "s_act_saturday",                     precision: 9,  scale: 2
+    t.decimal   "s_act_sunday",                       precision: 9,  scale: 2
+    t.decimal   "s_plan_saturday",                    precision: 9,  scale: 2
+    t.decimal   "s_plan_sunday",                      precision: 9,  scale: 2
+    t.integer   "s_req_plan",             limit: 1
+    t.string    "s_home_phone",           limit: 12
+    t.decimal   "s_ot_cost_rate",                     precision: 9,  scale: 2
+    t.decimal   "s_ot_bill_rate",                     precision: 9,  scale: 2
+    t.string    "s_title",                limit: 40
+    t.integer   "s_active",               limit: 1
+    t.string    "s_email",                limit: 100
+    t.string    "s_backup_person",        limit: 4
+    t.integer   "s_freelance",            limit: 1
+    t.integer   "s_period",               limit: 1
+    t.integer   "s_time_cop",             limit: 1
+    t.text      "s_email_sig"
+    t.integer   "s_supervisor",           limit: 1
+    t.string    "s_fax",                  limit: 20
+    t.string    "s_web_access",           limit: 100
+    t.text      "s_smtp_auth_id"
+    t.text      "s_smtp_auth_pw"
+    t.string    "s_vendor",               limit: 10
+    t.string    "s_added_by",             limit: 4
+    t.timestamp "s_added_when"
+    t.string    "s_edited_by",            limit: 4
+    t.timestamp "s_edited_when"
+    t.date      "s_date_hired"
+    t.date      "s_date_term"
+    t.binary    "s_oa"
+    t.string    "s_app_version",          limit: 15
+    t.integer   "s_appr_exempt",          limit: 1
+    t.integer   "s_sw_update_now",        limit: 1
+    t.integer   "s_homebase_email",       limit: 1
+    t.integer   "s_jobr",                 limit: 1
+    t.integer   "s_web_access1",          limit: 1
+    t.integer   "s_web_access2",          limit: 1
+    t.integer   "s_web_access3",          limit: 1
+    t.integer   "s_web_access4",          limit: 1
+    t.integer   "s_web_access5",          limit: 1
+    t.integer   "s_web_access6",          limit: 1
+    t.integer   "s_web_access7",          limit: 1
+    t.integer   "s_web_access8",          limit: 1
+    t.integer   "s_web_access9",          limit: 1
+    t.integer   "s_web_access10",         limit: 1
+    t.integer   "s_web_access11",         limit: 1
+    t.integer   "s_web_access12",         limit: 1
+    t.integer   "s_schedulable",          limit: 1
+    t.integer   "s_winners_opt_in",       limit: 1
+    t.integer   "s_time_point_opt_in",    limit: 1
+    t.integer   "s_send_chirps",          limit: 1
+    t.string    "s_send_chirps_to",       limit: 100
+    t.integer   "s_cside_status_report",  limit: 1
+    t.integer   "s_cside_traffic_report", limit: 1
+    t.integer   "s_cside_jobs",           limit: 1
+    t.integer   "s_cside_job_requests",   limit: 1
+    t.integer   "s_cside_appr_ests",      limit: 1
+    t.integer   "s_cside_appr_scheds",    limit: 1
+    t.integer   "s_cside_appr_changes",   limit: 1
+    t.integer   "s_cside_appr_art",       limit: 1
+    t.integer   "s_cside_proposals",      limit: 1
+    t.integer   "s_gets_homebase_emails", limit: 1
+    t.integer   "s_cside_rate_jobs",      limit: 1
+    t.string    "s_client_num",           limit: 10
+    t.integer   "s_cside_appr_crebrief",  limit: 1
+    t.integer   "s_web_access_suspended", limit: 1
+    t.text      "s_cside_clients"
+    t.date      "s_web_access_expires"
+    t.integer   "s_email_overdues",       limit: 1
+    t.string    "s_cal1_key",             limit: 10
+    t.string    "s_cal2_key",             limit: 10
+    t.string    "s_cal3_key",             limit: 10
+    t.string    "s_cal4_key",             limit: 10
+    t.string    "s_cal5_key",             limit: 10
+    t.text      "s_cside_type_cat"
   end
 
-  add_index "staff", ["S_DEPT"], name: "S_DEPT", using: :btree
-  add_index "staff", ["S_INITIALS"], name: "S_INITIALS", using: :btree
-  add_index "staff", ["S_NAME"], name: "S_NAME", using: :btree
-  add_index "staff", ["S_SEQ"], name: "S_SEQ", unique: true, using: :btree
-  add_index "staff", ["S_TASK"], name: "S_TASK", using: :btree
-  add_index "staff", ["S_TEAM"], name: "S_TEAM", using: :btree
+  add_index "staff", ["s_dept"], name: "s_dept"
+  add_index "staff", ["s_initials"], name: "s_initials"
+  add_index "staff", ["s_name"], name: "s_name"
+  add_index "staff", ["s_task"], name: "s_task"
+  add_index "staff", ["s_team"], name: "s_team"
 
-  create_table "statements", primary_key: "ST_SEQ", force: true do |t|
-    t.date    "ST_DATE"
-    t.string  "ST_AR_NUM",     limit: 10
-    t.string  "ST_CK_NUM",     limit: 10
-    t.string  "ST_CLIENT_NUM", limit: 10
-    t.string  "ST_TYPE",       limit: 10
-    t.string  "ST_JOB_NUM",    limit: 10
-    t.decimal "ST_CHARGE_AMT",            precision: 9, scale: 2
-    t.decimal "ST_PMT_AMT",               precision: 9, scale: 2
-    t.string  "ST_PO_NUM",     limit: 10
-    t.string  "ST_DIVISION",   limit: 10
+  create_table "statements", primary_key: "st_seq", force: true do |t|
+    t.date    "st_date"
+    t.string  "st_ar_num",     limit: 10
+    t.string  "st_ck_num",     limit: 10
+    t.string  "st_client_num", limit: 10
+    t.string  "st_type",       limit: 10
+    t.string  "st_job_num",    limit: 10
+    t.decimal "st_charge_amt",            precision: 9, scale: 2
+    t.decimal "st_pmt_amt",               precision: 9, scale: 2
+    t.string  "st_po_num",     limit: 10
+    t.string  "st_division",   limit: 10
   end
 
-  add_index "statements", ["ST_SEQ"], name: "ST_SEQ", unique: true, using: :btree
-
-  create_table "stations", primary_key: "PUB_SEQ", force: true do |t|
-    t.string   "PUB_CODE",         limit: 20
-    t.string   "PUB_NAME",         limit: 40
-    t.string   "PUB_REP",          limit: 40
-    t.string   "PUB_PHONE",        limit: 20
-    t.string   "PUB_ADDRESS1",     limit: 40
-    t.string   "PUB_ADDRESS2",     limit: 40
-    t.string   "PUB_ADDRESS3",     limit: 40
-    t.string   "PUB_ADDRESS4",     limit: 40
-    t.text     "PUB_NOTE"
-    t.string   "PUB_FAX",          limit: 15
-    t.string   "PUB_VENDOR_NUM",   limit: 10
-    t.decimal  "PUB_COMM_PC",                 precision: 9, scale: 2
-    t.string   "PUB_TYPE",         limit: 2
-    t.string   "PUB_REP_ADDRESS1", limit: 40
-    t.string   "PUB_REP_ADDRESS2", limit: 40
-    t.string   "PUB_REP_ADDRESS3", limit: 40
-    t.string   "PUB_REP_ADDRESS4", limit: 40
-    t.string   "PUB_REP_ADDRESS5", limit: 40
-    t.string   "PUB_ISSUE_DATE",   limit: 30
-    t.string   "PUB_CLOSE_DATE",   limit: 30
-    t.string   "PUB_CIRC",         limit: 20
-    t.string   "PUB_MARKET",       limit: 40
-    t.string   "PUB_ADDED_BY",     limit: 4
-    t.datetime "PUB_ADDED_WHEN"
-    t.string   "PUB_EDITED_BY",    limit: 4
-    t.datetime "PUB_EDITED_WHEN"
+  create_table "stations", primary_key: "pub_seq", force: true do |t|
+    t.string    "pub_code",         limit: 20
+    t.string    "pub_name",         limit: 40
+    t.string    "pub_rep",          limit: 40
+    t.string    "pub_phone",        limit: 20
+    t.string    "pub_address1",     limit: 40
+    t.string    "pub_address2",     limit: 40
+    t.string    "pub_address3",     limit: 40
+    t.string    "pub_address4",     limit: 40
+    t.text      "pub_note"
+    t.string    "pub_fax",          limit: 15
+    t.string    "pub_vendor_num",   limit: 10
+    t.decimal   "pub_comm_pc",                 precision: 9, scale: 2
+    t.string    "pub_type",         limit: 2
+    t.string    "pub_rep_address1", limit: 40
+    t.string    "pub_rep_address2", limit: 40
+    t.string    "pub_rep_address3", limit: 40
+    t.string    "pub_rep_address4", limit: 40
+    t.string    "pub_rep_address5", limit: 40
+    t.string    "pub_issue_date",   limit: 30
+    t.string    "pub_close_date",   limit: 30
+    t.string    "pub_circ",         limit: 20
+    t.string    "pub_market",       limit: 40
+    t.string    "pub_added_by",     limit: 4
+    t.timestamp "pub_added_when"
+    t.string    "pub_edited_by",    limit: 4
+    t.timestamp "pub_edited_when"
   end
 
-  add_index "stations", ["PUB_CODE"], name: "PUB_CODE", using: :btree
-  add_index "stations", ["PUB_NAME"], name: "PUB_NAME", using: :btree
-  add_index "stations", ["PUB_SEQ"], name: "PUB_SEQ", unique: true, using: :btree
-  add_index "stations", ["PUB_TYPE"], name: "PUB_TYPE", using: :btree
-  add_index "stations", ["PUB_VENDOR_NUM"], name: "PUB_VENDOR_NUM", using: :btree
+  add_index "stations", ["pub_code"], name: "pub_code"
+  add_index "stations", ["pub_name"], name: "pub_name"
+  add_index "stations", ["pub_type"], name: "pub_type"
+  add_index "stations", ["pub_vendor_num"], name: "pub_vendor_num"
 
-  create_table "status_codes", primary_key: "STATUS_SEQ", force: true do |t|
-    t.decimal  "STATUS_NUM",                      precision: 9,  scale: 0
-    t.string   "STATUS_DESC",         limit: 40
-    t.string   "STATUS_ALERT",        limit: 240
-    t.integer  "STATUS_STOP",         limit: 1
-    t.integer  "STATUS_PROD_ALERT",   limit: 1
-    t.integer  "STATUS_BILL_ALERT",   limit: 1
-    t.string   "STATUS_ALERT_BUTTON", limit: 20
-    t.string   "STATUS_CAT",          limit: 20
-    t.text     "STATUS_MAIL_TO"
-    t.text     "STATUS_MAIL_MSG"
-    t.string   "STATUS_MAIL_CC",      limit: 40
-    t.string   "STATUS_MAIL_BCC",     limit: 40
-    t.string   "STATUS_ADDED_BY",     limit: 4
-    t.datetime "STATUS_ADDED_WHEN"
-    t.string   "STATUS_EDITED_BY",    limit: 4
-    t.datetime "STATUS_EDITED_WHEN"
-    t.decimal  "STATUS_COLOR",                    precision: 15, scale: 0
-    t.integer  "STATUS_PROD",         limit: 1
-    t.integer  "STATUS_ACCT",         limit: 1
-    t.integer  "STATUS_ACTIVE",       limit: 1
+  create_table "status_codes", primary_key: "status_seq", force: true do |t|
+    t.decimal   "status_num",                      precision: 9,  scale: 0
+    t.string    "status_desc",         limit: 40
+    t.string    "status_alert",        limit: 240
+    t.integer   "status_stop",         limit: 1
+    t.integer   "status_prod_alert",   limit: 1
+    t.integer   "status_bill_alert",   limit: 1
+    t.string    "status_alert_button", limit: 20
+    t.string    "status_cat",          limit: 20
+    t.text      "status_mail_to"
+    t.text      "status_mail_msg"
+    t.string    "status_mail_cc",      limit: 40
+    t.string    "status_mail_bcc",     limit: 40
+    t.string    "status_added_by",     limit: 4
+    t.timestamp "status_added_when"
+    t.string    "status_edited_by",    limit: 4
+    t.timestamp "status_edited_when"
+    t.decimal   "status_color",                    precision: 15, scale: 0
+    t.integer   "status_prod",         limit: 1
+    t.integer   "status_acct",         limit: 1
+    t.integer   "status_active",       limit: 1
   end
 
-  add_index "status_codes", ["STATUS_NUM"], name: "STATUS_NUM", using: :btree
-  add_index "status_codes", ["STATUS_SEQ"], name: "STATUS_SEQ", unique: true, using: :btree
+  add_index "status_codes", ["status_num"], name: "status_num"
 
-  create_table "sub_classes", primary_key: "SUB_SEQ", force: true do |t|
-    t.decimal  "SUB_NUM",                    precision: 15, scale: 0
-    t.string   "SUB_DESC",        limit: 30
-    t.string   "SUB_ADDED_BY",    limit: 4
-    t.datetime "SUB_ADDED_WHEN"
-    t.string   "SUB_EDITED_BY",   limit: 4
-    t.datetime "SUB_EDITED_WHEN"
+  create_table "sub_classes", primary_key: "sub_seq", force: true do |t|
+    t.decimal   "sub_num",                    precision: 15, scale: 0
+    t.string    "sub_desc",        limit: 30
+    t.string    "sub_added_by",    limit: 4
+    t.timestamp "sub_added_when"
+    t.string    "sub_edited_by",   limit: 4
+    t.timestamp "sub_edited_when"
   end
 
-  add_index "sub_classes", ["SUB_NUM"], name: "SUB_NUM", using: :btree
-  add_index "sub_classes", ["SUB_SEQ"], name: "SUB_SEQ", unique: true, using: :btree
+  add_index "sub_classes", ["sub_num"], name: "sub_num"
 
-  create_table "task_table", primary_key: "T_SEQ", force: true do |t|
-    t.string   "T_TASK",            limit: 4
-    t.string   "T_NAME",            limit: 50
-    t.integer  "T_TAX1",            limit: 1
-    t.integer  "T_TAX2",            limit: 1
-    t.decimal  "T_MARKUP",                           precision: 9,  scale: 2
-    t.decimal  "T_BILL_RATE",                        precision: 9,  scale: 2
-    t.decimal  "T_DGL",                              precision: 15, scale: 2
-    t.decimal  "T_CGL",                              precision: 15, scale: 2
-    t.decimal  "T_GROUP",                            precision: 9,  scale: 0
-    t.decimal  "T_SORT",                             precision: 9,  scale: 0
-    t.decimal  "T_LEAD_TIME",                        precision: 9,  scale: 0
-    t.integer  "T_KIND",            limit: 1
-    t.decimal  "T_HOURS",                            precision: 9,  scale: 2
-    t.decimal  "T_COST",                             precision: 9,  scale: 2
-    t.string   "T_PC",              limit: 10
-    t.text     "T_DESC"
-    t.string   "T_CHAR2",           limit: 20
-    t.string   "T_CHAR3",           limit: 1
-    t.string   "T_CHAR4",           limit: 1
-    t.string   "T_CHAR5",           limit: 1
-    t.string   "T_CHAR6",           limit: 1
-    t.string   "T_CHAR7",           limit: 1
-    t.decimal  "T_UNBILLABLE",                       precision: 9,  scale: 0
-    t.decimal  "T_SORT_PROD",                        precision: 9,  scale: 0
-    t.decimal  "T_PREF3",                            precision: 9,  scale: 0
-    t.decimal  "T_PREF4",                            precision: 9,  scale: 0
-    t.decimal  "T_AMT1",                             precision: 9,  scale: 0
-    t.decimal  "T_AMT2",                             precision: 9,  scale: 0
-    t.binary   "T_ICON",            limit: 16777215
-    t.string   "T_ROLL_UP",         limit: 4
-    t.integer  "T_ACTIVE",          limit: 1
-    t.integer  "T_COMMISSIONABLE",  limit: 1
-    t.decimal  "T_COMM_RATE_AE",                     precision: 9,  scale: 2
-    t.decimal  "T_COMM_RATE_BIZ",                    precision: 9,  scale: 2
-    t.integer  "T_REQ_APPROVAL",    limit: 1
-    t.string   "T_REQ_APPROVAL_BY", limit: 10
-    t.string   "T_ADDED_BY",        limit: 4
-    t.datetime "T_ADDED_WHEN"
-    t.string   "T_EDITED_BY",       limit: 4
-    t.datetime "T_EDITED_WHEN"
-    t.integer  "T_PAYROLL",         limit: 1
-    t.integer  "T_UTIL_CAT",        limit: 1
-    t.text     "T_TAGS"
-    t.integer  "T_CLIENT_SCHED",    limit: 1
-    t.integer  "T_MILESTONE",       limit: 1
-    t.integer  "T_TAX3",            limit: 1
-    t.binary   "T_SMALL_ICON",      limit: 16777215
-    t.integer  "T_ALWAYS_DISCUSS",  limit: 1
-    t.integer  "T_NO_TIME",         limit: 1
-    t.decimal  "T_STATUS_FINISHED",                  precision: 9,  scale: 0
+  create_table "task_table", primary_key: "t_seq", force: true do |t|
+    t.string    "t_task",            limit: 4
+    t.string    "t_name",            limit: 50
+    t.integer   "t_tax1",            limit: 1
+    t.integer   "t_tax2",            limit: 1
+    t.decimal   "t_markup",                     precision: 9,  scale: 2
+    t.decimal   "t_bill_rate",                  precision: 9,  scale: 2
+    t.decimal   "t_dgl",                        precision: 15, scale: 2
+    t.decimal   "t_cgl",                        precision: 15, scale: 2
+    t.decimal   "t_group",                      precision: 9,  scale: 0
+    t.decimal   "t_sort",                       precision: 9,  scale: 0
+    t.decimal   "t_lead_time",                  precision: 9,  scale: 0
+    t.integer   "t_kind",            limit: 1
+    t.decimal   "t_hours",                      precision: 9,  scale: 2
+    t.decimal   "t_cost",                       precision: 9,  scale: 2
+    t.string    "t_pc",              limit: 10
+    t.text      "t_desc"
+    t.string    "t_char2",           limit: 20
+    t.string    "t_char3",           limit: 1
+    t.string    "t_char4",           limit: 1
+    t.string    "t_char5",           limit: 1
+    t.string    "t_char6",           limit: 1
+    t.string    "t_char7",           limit: 1
+    t.decimal   "t_unbillable",                 precision: 9,  scale: 0
+    t.decimal   "t_sort_prod",                  precision: 9,  scale: 0
+    t.decimal   "t_pref3",                      precision: 9,  scale: 0
+    t.decimal   "t_pref4",                      precision: 9,  scale: 0
+    t.decimal   "t_amt1",                       precision: 9,  scale: 0
+    t.decimal   "t_amt2",                       precision: 9,  scale: 0
+    t.binary    "t_icon"
+    t.string    "t_roll_up",         limit: 4
+    t.integer   "t_active",          limit: 1
+    t.integer   "t_commissionable",  limit: 1
+    t.decimal   "t_comm_rate_ae",               precision: 9,  scale: 2
+    t.decimal   "t_comm_rate_biz",              precision: 9,  scale: 2
+    t.integer   "t_req_approval",    limit: 1
+    t.string    "t_req_approval_by", limit: 10
+    t.string    "t_added_by",        limit: 4
+    t.timestamp "t_added_when"
+    t.string    "t_edited_by",       limit: 4
+    t.timestamp "t_edited_when"
+    t.integer   "t_payroll",         limit: 1
+    t.integer   "t_util_cat",        limit: 1
+    t.text      "t_tags"
+    t.integer   "t_client_sched",    limit: 1
+    t.integer   "t_milestone",       limit: 1
+    t.integer   "t_tax3",            limit: 1
+    t.binary    "t_small_icon"
+    t.integer   "t_always_discuss",  limit: 1
+    t.integer   "t_no_time",         limit: 1
+    t.decimal   "t_status_finished",            precision: 9,  scale: 0
   end
 
-  add_index "task_table", ["T_SEQ"], name: "T_SEQ", unique: true, using: :btree
-  add_index "task_table", ["T_TASK"], name: "T_TASK", using: :btree
+  add_index "task_table", ["t_task"], name: "t_task"
 
-  create_table "temp_tasks", primary_key: "TT_SEQ", force: true do |t|
-    t.string   "TT_TYPE",        limit: 15
-    t.string   "TT_TASK",        limit: 4
-    t.decimal  "TT_EST1",                   precision: 15, scale: 2
-    t.decimal  "TT_LEAD1",                  precision: 9,  scale: 0
-    t.string   "TT_NAME",        limit: 40
-    t.decimal  "TT_EST2",                   precision: 15, scale: 2
-    t.decimal  "TT_LEAD2",                  precision: 9,  scale: 0
-    t.decimal  "TT_EST3",                   precision: 15, scale: 2
-    t.decimal  "TT_LEAD3",                  precision: 9,  scale: 0
-    t.decimal  "TT_EST_HOURS",              precision: 9,  scale: 2
-    t.text     "TT_TASK_DESC"
-    t.string   "TT_ADDED_BY",    limit: 4
-    t.datetime "TT_ADDED_WHEN"
-    t.string   "TT_EDITED_BY",   limit: 4
-    t.datetime "TT_EDITED_WHEN"
+  create_table "temp_tasks", primary_key: "tt_seq", force: true do |t|
+    t.string    "tt_type",        limit: 15
+    t.string    "tt_task",        limit: 4
+    t.decimal   "tt_est1",                   precision: 15, scale: 2
+    t.decimal   "tt_lead1",                  precision: 9,  scale: 0
+    t.string    "tt_name",        limit: 40
+    t.decimal   "tt_est2",                   precision: 15, scale: 2
+    t.decimal   "tt_lead2",                  precision: 9,  scale: 0
+    t.decimal   "tt_est3",                   precision: 15, scale: 2
+    t.decimal   "tt_lead3",                  precision: 9,  scale: 0
+    t.decimal   "tt_est_hours",              precision: 9,  scale: 2
+    t.text      "tt_task_desc"
+    t.string    "tt_added_by",    limit: 4
+    t.timestamp "tt_added_when"
+    t.string    "tt_edited_by",   limit: 4
+    t.timestamp "tt_edited_when"
   end
 
-  add_index "temp_tasks", ["TT_SEQ"], name: "TT_SEQ", unique: true, using: :btree
-  add_index "temp_tasks", ["TT_TASK"], name: "TT_TASK", using: :btree
-  add_index "temp_tasks", ["TT_TYPE"], name: "TT_TYPE", using: :btree
+  add_index "temp_tasks", ["tt_task"], name: "tt_task"
+  add_index "temp_tasks", ["tt_type"], name: "tt_type"
 
-  create_table "thoughts", primary_key: "MSG_SEQ", force: true do |t|
-    t.date   "MSG_DATE"
-    t.string "MSG_TEXT",           limit: 100
-    t.string "MSG_1",              limit: 100
-    t.string "MSG_DAILY_INFO_CTR", limit: 80
+  create_table "thoughts", primary_key: "msg_seq", force: true do |t|
+    t.date   "msg_date"
+    t.string "msg_text",           limit: 100
+    t.string "msg_1",              limit: 100
+    t.string "msg_daily_info_ctr", limit: 80
   end
 
-  add_index "thoughts", ["MSG_DATE"], name: "MSG_DATE", using: :btree
-  add_index "thoughts", ["MSG_SEQ"], name: "MSG_SEQ", unique: true, using: :btree
+  add_index "thoughts", ["msg_date"], name: "msg_date"
 
-  create_table "time_card", primary_key: "TIME_SEQ", force: true do |t|
-    t.time    "TIME_START1"
-    t.time    "TIME_START2"
-    t.time    "TIME_START3"
-    t.time    "TIME_START4"
-    t.time    "TIME_START5"
-    t.time    "TIME_START6"
-    t.time    "TIME_START7"
-    t.time    "TIME_START8"
-    t.time    "TIME_START9"
-    t.time    "TIME_START10"
-    t.time    "TIME_START11"
-    t.time    "TIME_START12"
-    t.time    "TIME_START13"
-    t.time    "TIME_START14"
-    t.time    "TIME_START15"
-    t.time    "TIME_START16"
-    t.time    "TIME_START17"
-    t.time    "TIME_START18"
-    t.time    "TIME_START19"
-    t.time    "TIME_START20"
-    t.time    "TIME_END1"
-    t.time    "TIME_END2"
-    t.time    "TIME_END3"
-    t.time    "TIME_END4"
-    t.time    "TIME_END5"
-    t.time    "TIME_END6"
-    t.time    "TIME_END7"
-    t.time    "TIME_END8"
-    t.time    "TIME_END9"
-    t.time    "TIME_END10"
-    t.time    "TIME_END11"
-    t.time    "TIME_END12"
-    t.time    "TIME_END13"
-    t.time    "TIME_END14"
-    t.time    "TIME_END15"
-    t.time    "TIME_END16"
-    t.time    "TIME_END17"
-    t.time    "TIME_END18"
-    t.time    "TIME_END19"
-    t.time    "TIME_END20"
-    t.string  "TIME_JOB1",       limit: 10
-    t.string  "TIME_JOB2",       limit: 10
-    t.string  "TIME_JOB3",       limit: 10
-    t.string  "TIME_JOB4",       limit: 10
-    t.string  "TIME_JOB5",       limit: 10
-    t.string  "TIME_JOB6",       limit: 10
-    t.string  "TIME_JOB7",       limit: 10
-    t.string  "TIME_JOB8",       limit: 10
-    t.string  "TIME_JOB9",       limit: 10
-    t.string  "TIME_JOB10",      limit: 10
-    t.string  "TIME_JOB11",      limit: 10
-    t.string  "TIME_JOB12",      limit: 10
-    t.string  "TIME_JOB13",      limit: 10
-    t.string  "TIME_JOB14",      limit: 10
-    t.string  "TIME_JOB15",      limit: 10
-    t.string  "TIME_JOB16",      limit: 10
-    t.string  "TIME_JOB17",      limit: 10
-    t.string  "TIME_JOB18",      limit: 10
-    t.string  "TIME_JOB19",      limit: 10
-    t.string  "TIME_JOB20",      limit: 10
-    t.string  "TIME_TASK1",      limit: 4
-    t.string  "TIME_TASK2",      limit: 4
-    t.string  "TIME_TASK3",      limit: 4
-    t.string  "TIME_TASK4",      limit: 4
-    t.string  "TIME_TASK5",      limit: 4
-    t.string  "TIME_TASK6",      limit: 4
-    t.string  "TIME_TASK7",      limit: 4
-    t.string  "TIME_TASK8",      limit: 4
-    t.string  "TIME_TASK9",      limit: 4
-    t.string  "TIME_TASK10",     limit: 4
-    t.string  "TIME_TASK11",     limit: 4
-    t.string  "TIME_TASK12",     limit: 4
-    t.string  "TIME_TASK13",     limit: 4
-    t.string  "TIME_TASK14",     limit: 4
-    t.string  "TIME_TASK15",     limit: 4
-    t.string  "TIME_TASK16",     limit: 4
-    t.string  "TIME_TASK17",     limit: 4
-    t.string  "TIME_TASK18",     limit: 4
-    t.string  "TIME_TASK19",     limit: 4
-    t.string  "TIME_TASK20",     limit: 4
-    t.decimal "TIME_HOURS1",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS2",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS3",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS4",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS5",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS6",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS7",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS8",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS9",                      precision: 9, scale: 2
-    t.decimal "TIME_HOURS10",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS11",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS12",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS13",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS14",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS15",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS16",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS17",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS18",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS19",                     precision: 9, scale: 2
-    t.decimal "TIME_HOURS20",                     precision: 9, scale: 2
-    t.string  "TIME_DESC1",      limit: 40
-    t.string  "TIME_DESC2",      limit: 40
-    t.string  "TIME_DESC3",      limit: 40
-    t.string  "TIME_DESC4",      limit: 40
-    t.string  "TIME_DESC5",      limit: 40
-    t.string  "TIME_DESC6",      limit: 40
-    t.string  "TIME_DESC7",      limit: 40
-    t.string  "TIME_DESC8",      limit: 40
-    t.string  "TIME_DESC9",      limit: 40
-    t.string  "TIME_DESC10",     limit: 40
-    t.string  "TIME_DESC11",     limit: 40
-    t.string  "TIME_DESC12",     limit: 40
-    t.string  "TIME_DESC13",     limit: 40
-    t.string  "TIME_DESC14",     limit: 40
-    t.string  "TIME_DESC15",     limit: 40
-    t.string  "TIME_DESC16",     limit: 40
-    t.string  "TIME_DESC17",     limit: 40
-    t.string  "TIME_DESC18",     limit: 40
-    t.string  "TIME_DESC19",     limit: 40
-    t.string  "TIME_DESC20",     limit: 40
-    t.boolean "TIME_BILLABLE1"
-    t.boolean "TIME_BILLABLE2"
-    t.boolean "TIME_BILLABLE3"
-    t.boolean "TIME_BILLABLE4"
-    t.boolean "TIME_BILLABLE5"
-    t.boolean "TIME_BILLABLE6"
-    t.boolean "TIME_BILLABLE7"
-    t.boolean "TIME_BILLABLE8"
-    t.boolean "TIME_BILLABLE9"
-    t.boolean "TIME_BILLABLE10"
-    t.boolean "TIME_BILLABLE11"
-    t.boolean "TIME_BILLABLE12"
-    t.boolean "TIME_BILLABLE13"
-    t.boolean "TIME_BILLABLE14"
-    t.boolean "TIME_BILLABLE15"
-    t.boolean "TIME_BILLABLE16"
-    t.boolean "TIME_BILLABLE17"
-    t.boolean "TIME_BILLABLE18"
-    t.boolean "TIME_BILLABLE19"
-    t.boolean "TIME_BILLABLE20"
-    t.string  "TIME_STAFF",      limit: 10
-    t.date    "TIME_DATE"
-    t.string  "TIME_KEY",        limit: 20
-    t.boolean "TIME_POSTED"
-    t.decimal "TIME_OT1",                         precision: 9, scale: 0
-    t.decimal "TIME_OT2",                         precision: 9, scale: 0
-    t.decimal "TIME_OT3",                         precision: 9, scale: 0
-    t.decimal "TIME_OT4",                         precision: 9, scale: 0
-    t.decimal "TIME_OT5",                         precision: 9, scale: 0
-    t.decimal "TIME_OT6",                         precision: 9, scale: 0
-    t.decimal "TIME_OT7",                         precision: 9, scale: 0
-    t.decimal "TIME_OT8",                         precision: 9, scale: 0
-    t.decimal "TIME_OT9",                         precision: 9, scale: 0
-    t.decimal "TIME_OT10",                        precision: 9, scale: 0
-    t.decimal "TIME_OT11",                        precision: 9, scale: 0
-    t.decimal "TIME_OT12",                        precision: 9, scale: 0
-    t.decimal "TIME_OT13",                        precision: 9, scale: 0
-    t.decimal "TIME_OT14",                        precision: 9, scale: 0
-    t.decimal "TIME_OT15",                        precision: 9, scale: 0
-    t.decimal "TIME_OT16",                        precision: 9, scale: 0
-    t.decimal "TIME_OT17",                        precision: 9, scale: 0
-    t.decimal "TIME_OT18",                        precision: 9, scale: 0
-    t.decimal "TIME_OT19",                        precision: 9, scale: 0
-    t.decimal "TIME_OT20",                        precision: 9, scale: 0
-    t.binary  "TIME_CARD_LIST",  limit: 16777215
-    t.string  "TIME_NEW",        limit: 50
+  create_table "time_card", primary_key: "time_seq", force: true do |t|
+    t.time    "time_start1"
+    t.time    "time_start2"
+    t.time    "time_start3"
+    t.time    "time_start4"
+    t.time    "time_start5"
+    t.time    "time_start6"
+    t.time    "time_start7"
+    t.time    "time_start8"
+    t.time    "time_start9"
+    t.time    "time_start10"
+    t.time    "time_start11"
+    t.time    "time_start12"
+    t.time    "time_start13"
+    t.time    "time_start14"
+    t.time    "time_start15"
+    t.time    "time_start16"
+    t.time    "time_start17"
+    t.time    "time_start18"
+    t.time    "time_start19"
+    t.time    "time_start20"
+    t.time    "time_end1"
+    t.time    "time_end2"
+    t.time    "time_end3"
+    t.time    "time_end4"
+    t.time    "time_end5"
+    t.time    "time_end6"
+    t.time    "time_end7"
+    t.time    "time_end8"
+    t.time    "time_end9"
+    t.time    "time_end10"
+    t.time    "time_end11"
+    t.time    "time_end12"
+    t.time    "time_end13"
+    t.time    "time_end14"
+    t.time    "time_end15"
+    t.time    "time_end16"
+    t.time    "time_end17"
+    t.time    "time_end18"
+    t.time    "time_end19"
+    t.time    "time_end20"
+    t.string  "time_job1",       limit: 10
+    t.string  "time_job2",       limit: 10
+    t.string  "time_job3",       limit: 10
+    t.string  "time_job4",       limit: 10
+    t.string  "time_job5",       limit: 10
+    t.string  "time_job6",       limit: 10
+    t.string  "time_job7",       limit: 10
+    t.string  "time_job8",       limit: 10
+    t.string  "time_job9",       limit: 10
+    t.string  "time_job10",      limit: 10
+    t.string  "time_job11",      limit: 10
+    t.string  "time_job12",      limit: 10
+    t.string  "time_job13",      limit: 10
+    t.string  "time_job14",      limit: 10
+    t.string  "time_job15",      limit: 10
+    t.string  "time_job16",      limit: 10
+    t.string  "time_job17",      limit: 10
+    t.string  "time_job18",      limit: 10
+    t.string  "time_job19",      limit: 10
+    t.string  "time_job20",      limit: 10
+    t.string  "time_task1",      limit: 4
+    t.string  "time_task2",      limit: 4
+    t.string  "time_task3",      limit: 4
+    t.string  "time_task4",      limit: 4
+    t.string  "time_task5",      limit: 4
+    t.string  "time_task6",      limit: 4
+    t.string  "time_task7",      limit: 4
+    t.string  "time_task8",      limit: 4
+    t.string  "time_task9",      limit: 4
+    t.string  "time_task10",     limit: 4
+    t.string  "time_task11",     limit: 4
+    t.string  "time_task12",     limit: 4
+    t.string  "time_task13",     limit: 4
+    t.string  "time_task14",     limit: 4
+    t.string  "time_task15",     limit: 4
+    t.string  "time_task16",     limit: 4
+    t.string  "time_task17",     limit: 4
+    t.string  "time_task18",     limit: 4
+    t.string  "time_task19",     limit: 4
+    t.string  "time_task20",     limit: 4
+    t.decimal "time_hours1",                precision: 9, scale: 2
+    t.decimal "time_hours2",                precision: 9, scale: 2
+    t.decimal "time_hours3",                precision: 9, scale: 2
+    t.decimal "time_hours4",                precision: 9, scale: 2
+    t.decimal "time_hours5",                precision: 9, scale: 2
+    t.decimal "time_hours6",                precision: 9, scale: 2
+    t.decimal "time_hours7",                precision: 9, scale: 2
+    t.decimal "time_hours8",                precision: 9, scale: 2
+    t.decimal "time_hours9",                precision: 9, scale: 2
+    t.decimal "time_hours10",               precision: 9, scale: 2
+    t.decimal "time_hours11",               precision: 9, scale: 2
+    t.decimal "time_hours12",               precision: 9, scale: 2
+    t.decimal "time_hours13",               precision: 9, scale: 2
+    t.decimal "time_hours14",               precision: 9, scale: 2
+    t.decimal "time_hours15",               precision: 9, scale: 2
+    t.decimal "time_hours16",               precision: 9, scale: 2
+    t.decimal "time_hours17",               precision: 9, scale: 2
+    t.decimal "time_hours18",               precision: 9, scale: 2
+    t.decimal "time_hours19",               precision: 9, scale: 2
+    t.decimal "time_hours20",               precision: 9, scale: 2
+    t.string  "time_desc1",      limit: 40
+    t.string  "time_desc2",      limit: 40
+    t.string  "time_desc3",      limit: 40
+    t.string  "time_desc4",      limit: 40
+    t.string  "time_desc5",      limit: 40
+    t.string  "time_desc6",      limit: 40
+    t.string  "time_desc7",      limit: 40
+    t.string  "time_desc8",      limit: 40
+    t.string  "time_desc9",      limit: 40
+    t.string  "time_desc10",     limit: 40
+    t.string  "time_desc11",     limit: 40
+    t.string  "time_desc12",     limit: 40
+    t.string  "time_desc13",     limit: 40
+    t.string  "time_desc14",     limit: 40
+    t.string  "time_desc15",     limit: 40
+    t.string  "time_desc16",     limit: 40
+    t.string  "time_desc17",     limit: 40
+    t.string  "time_desc18",     limit: 40
+    t.string  "time_desc19",     limit: 40
+    t.string  "time_desc20",     limit: 40
+    t.boolean "time_billable1"
+    t.boolean "time_billable2"
+    t.boolean "time_billable3"
+    t.boolean "time_billable4"
+    t.boolean "time_billable5"
+    t.boolean "time_billable6"
+    t.boolean "time_billable7"
+    t.boolean "time_billable8"
+    t.boolean "time_billable9"
+    t.boolean "time_billable10"
+    t.boolean "time_billable11"
+    t.boolean "time_billable12"
+    t.boolean "time_billable13"
+    t.boolean "time_billable14"
+    t.boolean "time_billable15"
+    t.boolean "time_billable16"
+    t.boolean "time_billable17"
+    t.boolean "time_billable18"
+    t.boolean "time_billable19"
+    t.boolean "time_billable20"
+    t.string  "time_staff",      limit: 10
+    t.date    "time_date"
+    t.string  "time_key",        limit: 20
+    t.boolean "time_posted"
+    t.decimal "time_ot1",                   precision: 9, scale: 0
+    t.decimal "time_ot2",                   precision: 9, scale: 0
+    t.decimal "time_ot3",                   precision: 9, scale: 0
+    t.decimal "time_ot4",                   precision: 9, scale: 0
+    t.decimal "time_ot5",                   precision: 9, scale: 0
+    t.decimal "time_ot6",                   precision: 9, scale: 0
+    t.decimal "time_ot7",                   precision: 9, scale: 0
+    t.decimal "time_ot8",                   precision: 9, scale: 0
+    t.decimal "time_ot9",                   precision: 9, scale: 0
+    t.decimal "time_ot10",                  precision: 9, scale: 0
+    t.decimal "time_ot11",                  precision: 9, scale: 0
+    t.decimal "time_ot12",                  precision: 9, scale: 0
+    t.decimal "time_ot13",                  precision: 9, scale: 0
+    t.decimal "time_ot14",                  precision: 9, scale: 0
+    t.decimal "time_ot15",                  precision: 9, scale: 0
+    t.decimal "time_ot16",                  precision: 9, scale: 0
+    t.decimal "time_ot17",                  precision: 9, scale: 0
+    t.decimal "time_ot18",                  precision: 9, scale: 0
+    t.decimal "time_ot19",                  precision: 9, scale: 0
+    t.decimal "time_ot20",                  precision: 9, scale: 0
+    t.binary  "time_card_list"
+    t.string  "time_new",        limit: 50
   end
 
-  add_index "time_card", ["TIME_DATE"], name: "TIME_DATE", using: :btree
-  add_index "time_card", ["TIME_KEY"], name: "TIME_KEY", using: :btree
-  add_index "time_card", ["TIME_SEQ"], name: "TIME_SEQ", unique: true, using: :btree
-  add_index "time_card", ["TIME_STAFF"], name: "TIME_STAFF", using: :btree
+  add_index "time_card", ["time_date"], name: "time_date"
+  add_index "time_card", ["time_key"], name: "time_key"
+  add_index "time_card", ["time_staff"], name: "time_staff"
 
-  create_table "time_import", primary_key: "TM_SEQ", force: true do |t|
-    t.date    "TM_DATE"
-    t.string  "TM_JOB_NUM",       limit: 10
-    t.string  "TM_TASK",          limit: 4
-    t.decimal "TM_HOURS",                    precision: 15, scale: 2
-    t.string  "TM_STAFF",         limit: 10
-    t.text    "TM_DESC"
-    t.decimal "TM_BAD",                      precision: 15, scale: 2
-    t.decimal "TM_COST_RATE",                precision: 15, scale: 2
-    t.decimal "TM_BILL_RATE",                precision: 15, scale: 2
-    t.string  "TM_CLIENT_NUM",    limit: 10
-    t.integer "TM_BILLABLE",      limit: 1
-    t.integer "TM_PERIOD",        limit: 1
-    t.integer "TM_PALM_ID"
-    t.integer "TM_PALM_CATEGORY", limit: 1
-    t.string  "TM_PALM_ATTRIBS",  limit: 4
-    t.integer "TM_OT",            limit: 1
+  create_table "time_import", primary_key: "tm_seq", force: true do |t|
+    t.date    "tm_date"
+    t.string  "tm_job_num",       limit: 10
+    t.string  "tm_task",          limit: 4
+    t.decimal "tm_hours",                    precision: 15, scale: 2
+    t.string  "tm_staff",         limit: 10
+    t.text    "tm_desc"
+    t.decimal "tm_bad",                      precision: 15, scale: 2
+    t.decimal "tm_cost_rate",                precision: 15, scale: 2
+    t.decimal "tm_bill_rate",                precision: 15, scale: 2
+    t.string  "tm_client_num",    limit: 10
+    t.integer "tm_billable",      limit: 1
+    t.integer "tm_period",        limit: 1
+    t.integer "tm_palm_id"
+    t.integer "tm_palm_category", limit: 1
+    t.string  "tm_palm_attribs",  limit: 4
+    t.integer "tm_ot",            limit: 1
   end
 
-  add_index "time_import", ["TM_DATE"], name: "TM_DATE", using: :btree
-  add_index "time_import", ["TM_JOB_NUM"], name: "TM_JOB_NUM", using: :btree
-  add_index "time_import", ["TM_PALM_ID"], name: "TM_PALM_ID", using: :btree
-  add_index "time_import", ["TM_SEQ"], name: "TM_SEQ", unique: true, using: :btree
-  add_index "time_import", ["TM_STAFF"], name: "TM_STAFF", using: :btree
-  add_index "time_import", ["TM_TASK"], name: "TM_TASK", using: :btree
+  add_index "time_import", ["tm_date"], name: "tm_date"
+  add_index "time_import", ["tm_job_num"], name: "tm_job_num"
+  add_index "time_import", ["tm_palm_id"], name: "tm_palm_id"
+  add_index "time_import", ["tm_staff"], name: "tm_staff"
+  add_index "time_import", ["tm_task"], name: "tm_task"
 
-  create_table "timers", primary_key: "TIMER_SEQ", force: true do |t|
-    t.string   "TIMER_INITIALS",     limit: 4
-    t.datetime "TIMER_START"
-    t.datetime "TIMER_PAUSED"
-    t.datetime "TIMER_RESUMED"
-    t.decimal  "TIMER_ELAPSED_SECS",            precision: 15, scale: 0
-    t.string   "TIMER_JOB_NUM",      limit: 15
-    t.string   "TIMER_TASK",         limit: 4
-    t.text     "TIMER_NOTE"
+  create_table "timers", primary_key: "timer_seq", force: true do |t|
+    t.string    "timer_initials",     limit: 4
+    t.timestamp "timer_start"
+    t.timestamp "timer_paused"
+    t.timestamp "timer_resumed"
+    t.decimal   "timer_elapsed_secs",            precision: 15, scale: 0
+    t.string    "timer_job_num",      limit: 15
+    t.string    "timer_task",         limit: 4
+    t.text      "timer_note"
   end
 
-  add_index "timers", ["TIMER_INITIALS"], name: "TIMER_INITIALS", using: :btree
-  add_index "timers", ["TIMER_SEQ"], name: "TIMER_SEQ", unique: true, using: :btree
+  add_index "timers", ["timer_initials"], name: "timer_initials"
 
-  create_table "un_checks", primary_key: "UNCKS_SEQ", force: true do |t|
-    t.decimal "UNCKS_DEBIT",                precision: 9, scale: 2
-    t.decimal "UNCKS_CREDIT",               precision: 9, scale: 2
-    t.text    "UNCKS_DESC"
-    t.string  "UNCKS_REF",       limit: 15
-    t.integer "UNCKS_TEMP_REC",  limit: 1
-    t.string  "UNCKS_PAY_BATCH", limit: 10
-    t.integer "UNCKS_SOURCE",    limit: 1
-    t.decimal "UNCKS_RECONCILE",            precision: 9, scale: 2
-    t.date    "UNCKS_DATE"
-    t.decimal "UNCKS_AC_NUM",               precision: 9, scale: 2
+  create_table "un_checks", primary_key: "uncks_seq", force: true do |t|
+    t.decimal "uncks_debit",                precision: 9, scale: 2
+    t.decimal "uncks_credit",               precision: 9, scale: 2
+    t.text    "uncks_desc"
+    t.string  "uncks_ref",       limit: 15
+    t.integer "uncks_temp_rec",  limit: 1
+    t.string  "uncks_pay_batch", limit: 10
+    t.integer "uncks_source",    limit: 1
+    t.decimal "uncks_reconcile",            precision: 9, scale: 2
+    t.date    "uncks_date"
+    t.decimal "uncks_ac_num",               precision: 9, scale: 2
   end
 
-  add_index "un_checks", ["UNCKS_SEQ"], name: "UNCKS_SEQ", unique: true, using: :btree
-
-  create_table "user_info_ctr", primary_key: "UI_SEQ", force: true do |t|
-    t.string "UI_WORK",   limit: 4
-    t.string "UI_PROC1",  limit: 100
-    t.string "UI_PROC2",  limit: 100
-    t.string "UI_PROC3",  limit: 100
-    t.string "UI_PROC4",  limit: 100
-    t.string "UI_PROC5",  limit: 100
-    t.string "UI_PROC6",  limit: 100
-    t.string "UI_LABEL1", limit: 25
-    t.string "UI_LABEL2", limit: 25
-    t.string "UI_LABEL3", limit: 25
-    t.string "UI_LABEL4", limit: 25
-    t.string "UI_LABEL5", limit: 25
-    t.string "UI_LABEL6", limit: 25
+  create_table "user_info_ctr", primary_key: "ui_seq", force: true do |t|
+    t.string "ui_work",   limit: 4
+    t.string "ui_proc1",  limit: 100
+    t.string "ui_proc2",  limit: 100
+    t.string "ui_proc3",  limit: 100
+    t.string "ui_proc4",  limit: 100
+    t.string "ui_proc5",  limit: 100
+    t.string "ui_proc6",  limit: 100
+    t.string "ui_label1", limit: 25
+    t.string "ui_label2", limit: 25
+    t.string "ui_label3", limit: 25
+    t.string "ui_label4", limit: 25
+    t.string "ui_label5", limit: 25
+    t.string "ui_label6", limit: 25
   end
 
-  add_index "user_info_ctr", ["UI_SEQ"], name: "UI_SEQ", unique: true, using: :btree
-  add_index "user_info_ctr", ["UI_WORK"], name: "UI_WORK", using: :btree
+  add_index "user_info_ctr", ["ui_work"], name: "ui_work"
 
-  create_table "user_windows", primary_key: "UW_SEQ", force: true do |t|
-    t.string "UW_WORK",                     limit: 4
-    t.string "UW_wPopAR",                   limit: 100
-    t.string "UW_wPopCalendar",             limit: 100
-    t.string "UW_wPopCampaigns",            limit: 100
-    t.string "UW_wPopChargeItems",          limit: 100
-    t.string "UW_wPopClients",              limit: 100
-    t.string "UW_wPopCOA",                  limit: 100
-    t.string "UW_wPopContacts",             limit: 100
-    t.string "UW_wPopDept",                 limit: 100
-    t.string "UW_wPopGroups",               limit: 100
-    t.string "UW_wPopJobs",                 limit: 100
-    t.string "UW_wPopJobTasks",             limit: 100
-    t.string "UW_wPopPC",                   limit: 100
-    t.string "UW_wPopPOs",                  limit: 100
-    t.string "UW_wPopProjects",             limit: 100
-    t.string "UW_wPopStaff",                limit: 100
-    t.string "UW_wPopStatus",               limit: 100
-    t.string "UW_wPopTaskTable",            limit: 100
-    t.string "UW_wPopTraffic",              limit: 100
-    t.string "UW_wPopVendors",              limit: 100
-    t.string "UW_wPopSpecSheets",           limit: 100
-    t.string "UW_wInOutBoard",              limit: 100
-    t.string "UW_wSmartTimer",              limit: 20
-    t.string "UW_wTimeCard",                limit: 100
-    t.string "UW_wTimeCardWeek",            limit: 100
-    t.string "UW_wUpdateTraffic",           limit: 100
-    t.string "UW_wWorkToDo",                limit: 100
-    t.string "UW_wDailyJobStatus",          limit: 100
-    t.string "UW_wProdPlanner",             limit: 100
-    t.string "UW_wWeeklyTraffic",           limit: 100
-    t.string "UW_wTaskMaster",              limit: 100
-    t.string "UW_wJobs",                    limit: 100
-    t.string "UW_wJobSchedule",             limit: 100
-    t.string "UW_shortcut1",                limit: 100
-    t.string "UW_shortcut2",                limit: 100
-    t.string "UW_shortcut3",                limit: 100
-    t.string "UW_shortcut4",                limit: 100
-    t.string "UW_shortcut5",                limit: 100
-    t.string "UW_shortcut6",                limit: 100
-    t.string "UW_shortcut7",                limit: 100
-    t.string "UW_shortcut8",                limit: 100
-    t.string "UW_shortcut9",                limit: 100
-    t.string "UW_shortcut10",               limit: 100
-    t.string "UW_shortcut11",               limit: 100
-    t.string "UW_shortcut12",               limit: 100
-    t.string "UW_wClientTrafficController", limit: 100
-    t.string "UW_wJobDiary",                limit: 100
-    t.string "UW_wAR",                      limit: 100
-    t.string "UW_wCheckbook",               limit: 100
-    t.string "UW_wGL",                      limit: 100
-    t.string "UW_wPO",                      limit: 100
-    t.string "UW_wMO",                      limit: 100
-    t.string "UW_wTimeSheets",              limit: 100
-    t.string "UW_wPayments",                limit: 100
-    t.string "UW_wCalendar",                limit: 100
-    t.string "UW_wCollectionMgr",           limit: 100
-    t.string "UW_wProjectManager",          limit: 100
-    t.string "UW_wTimeCardClick",           limit: 100
-    t.string "UW_wCreativeDashboard",       limit: 100
-    t.string "UW_wAEDashboard",             limit: 100
-    t.string "UW_wAcctDashboard",           limit: 100
-    t.string "UW_wExecDashboard",           limit: 100
-    t.string "UW_wBillingHotSheet",         limit: 100
-    t.string "UW_wTimeCardGlance",          limit: 100
-    t.string "UW_wProductionCalendar",      limit: 100
-    t.string "UW_wProdCalendar",            limit: 100
-    t.string "UW_wMediaCalendar",           limit: 100
-    t.string "UW_wExpenseReport",           limit: 100
-    t.string "UW_wJobEstimate",             limit: 100
-    t.string "UW_wTimeCardHourly",          limit: 100
-    t.string "UW_wJobCreativeBrief",        limit: 100
+  create_table "user_windows", primary_key: "uw_seq", force: true do |t|
+    t.string "uw_work",                     limit: 4
+    t.string "uw_wpopar",                   limit: 100
+    t.string "uw_wpopcalendar",             limit: 100
+    t.string "uw_wpopcampaigns",            limit: 100
+    t.string "uw_wpopchargeitems",          limit: 100
+    t.string "uw_wpopclients",              limit: 100
+    t.string "uw_wpopcoa",                  limit: 100
+    t.string "uw_wpopcontacts",             limit: 100
+    t.string "uw_wpopdept",                 limit: 100
+    t.string "uw_wpopgroups",               limit: 100
+    t.string "uw_wpopjobs",                 limit: 100
+    t.string "uw_wpopjobtasks",             limit: 100
+    t.string "uw_wpoppc",                   limit: 100
+    t.string "uw_wpoppos",                  limit: 100
+    t.string "uw_wpopprojects",             limit: 100
+    t.string "uw_wpopstaff",                limit: 100
+    t.string "uw_wpopstatus",               limit: 100
+    t.string "uw_wpoptasktable",            limit: 100
+    t.string "uw_wpoptraffic",              limit: 100
+    t.string "uw_wpopvendors",              limit: 100
+    t.string "uw_wpopspecsheets",           limit: 100
+    t.string "uw_winoutboard",              limit: 100
+    t.string "uw_wsmarttimer",              limit: 20
+    t.string "uw_wtimecard",                limit: 100
+    t.string "uw_wtimecardweek",            limit: 100
+    t.string "uw_wupdatetraffic",           limit: 100
+    t.string "uw_wworktodo",                limit: 100
+    t.string "uw_wdailyjobstatus",          limit: 100
+    t.string "uw_wprodplanner",             limit: 100
+    t.string "uw_wweeklytraffic",           limit: 100
+    t.string "uw_wtaskmaster",              limit: 100
+    t.string "uw_wjobs",                    limit: 100
+    t.string "uw_wjobschedule",             limit: 100
+    t.string "uw_shortcut1",                limit: 100
+    t.string "uw_shortcut2",                limit: 100
+    t.string "uw_shortcut3",                limit: 100
+    t.string "uw_shortcut4",                limit: 100
+    t.string "uw_shortcut5",                limit: 100
+    t.string "uw_shortcut6",                limit: 100
+    t.string "uw_shortcut7",                limit: 100
+    t.string "uw_shortcut8",                limit: 100
+    t.string "uw_shortcut9",                limit: 100
+    t.string "uw_shortcut10",               limit: 100
+    t.string "uw_shortcut11",               limit: 100
+    t.string "uw_shortcut12",               limit: 100
+    t.string "uw_wclienttrafficcontroller", limit: 100
+    t.string "uw_wjobdiary",                limit: 100
+    t.string "uw_war",                      limit: 100
+    t.string "uw_wcheckbook",               limit: 100
+    t.string "uw_wgl",                      limit: 100
+    t.string "uw_wpo",                      limit: 100
+    t.string "uw_wmo",                      limit: 100
+    t.string "uw_wtimesheets",              limit: 100
+    t.string "uw_wpayments",                limit: 100
+    t.string "uw_wcalendar",                limit: 100
+    t.string "uw_wcollectionmgr",           limit: 100
+    t.string "uw_wprojectmanager",          limit: 100
+    t.string "uw_wtimecardclick",           limit: 100
+    t.string "uw_wcreativedashboard",       limit: 100
+    t.string "uw_waedashboard",             limit: 100
+    t.string "uw_wacctdashboard",           limit: 100
+    t.string "uw_wexecdashboard",           limit: 100
+    t.string "uw_wbillinghotsheet",         limit: 100
+    t.string "uw_wtimecardglance",          limit: 100
+    t.string "uw_wproductioncalendar",      limit: 100
+    t.string "uw_wprodcalendar",            limit: 100
+    t.string "uw_wmediacalendar",           limit: 100
+    t.string "uw_wexpensereport",           limit: 100
+    t.string "uw_wjobestimate",             limit: 100
+    t.string "uw_wtimecardhourly",          limit: 100
+    t.string "uw_wjobcreativebrief",        limit: 100
   end
 
-  add_index "user_windows", ["UW_SEQ"], name: "UW_SEQ", unique: true, using: :btree
-  add_index "user_windows", ["UW_WORK"], name: "UW_WORK", using: :btree
+  add_index "user_windows", ["uw_work"], name: "uw_work"
 
-  create_table "vendors", primary_key: "V_SEQ", force: true do |t|
-    t.string   "V_NUM",          limit: 10
-    t.string   "V_ORG",          limit: 50
-    t.string   "V_NOTE1",        limit: 50
-    t.string   "V_STREET",       limit: 50
-    t.string   "V_CITY",         limit: 50
-    t.string   "V_NOTE2",        limit: 50
-    t.string   "V_ZIP",          limit: 50
-    t.string   "V_CONTACT",      limit: 50
-    t.string   "V_PHONE",        limit: 20
-    t.decimal  "V_YTD",                      precision: 15, scale: 2
-    t.decimal  "V_MARKUP",                   precision: 15, scale: 2
-    t.string   "V_NOTE3",        limit: 55
-    t.string   "V_TASK",         limit: 4
-    t.string   "V_TYPE",         limit: 20
-    t.boolean  "V_OPEN"
-    t.boolean  "V_ALLOCATE"
-    t.string   "V_TAX_ID",       limit: 15
-    t.string   "V_ACCT_NUM",     limit: 10
-    t.decimal  "V_CURRN",                    precision: 15, scale: 2
-    t.decimal  "V_30DAY",                    precision: 15, scale: 2
-    t.decimal  "V_60DAY",                    precision: 15, scale: 2
-    t.decimal  "V_90DAY",                    precision: 15, scale: 2
-    t.decimal  "V_BALN",                     precision: 15, scale: 2
-    t.date     "V_LAST_AP"
-    t.string   "V_ADDED_BY",     limit: 3
-    t.date     "V_ADDED_WHEN"
-    t.time     "V_TIME"
-    t.decimal  "V_1",                        precision: 15, scale: 2
-    t.decimal  "V_2",                        precision: 15, scale: 2
-    t.decimal  "V_3",                        precision: 15, scale: 2
-    t.decimal  "V_4",                        precision: 15, scale: 2
-    t.decimal  "V_5",                        precision: 15, scale: 2
-    t.decimal  "V_6",                        precision: 15, scale: 2
-    t.decimal  "V_7",                        precision: 15, scale: 2
-    t.decimal  "V_8",                        precision: 15, scale: 2
-    t.decimal  "V_9",                        precision: 15, scale: 2
-    t.decimal  "V_10",                       precision: 15, scale: 2
-    t.decimal  "V_11",                       precision: 15, scale: 2
-    t.decimal  "V_12",                       precision: 15, scale: 2
-    t.decimal  "V_L1",                       precision: 15, scale: 2
-    t.decimal  "V_L2",                       precision: 15, scale: 2
-    t.decimal  "V_L3",                       precision: 15, scale: 2
-    t.decimal  "V_L4",                       precision: 15, scale: 2
-    t.decimal  "V_L5",                       precision: 15, scale: 2
-    t.decimal  "V_L6",                       precision: 15, scale: 2
-    t.decimal  "V_L7",                       precision: 15, scale: 2
-    t.decimal  "V_L8",                       precision: 15, scale: 2
-    t.decimal  "V_L9",                       precision: 15, scale: 2
-    t.decimal  "V_L10",                      precision: 15, scale: 2
-    t.decimal  "V_L11",                      precision: 15, scale: 2
-    t.decimal  "V_L12",                      precision: 15, scale: 2
-    t.decimal  "V_TERMS1",                   precision: 15, scale: 0
-    t.decimal  "V_TERMS2",                   precision: 15, scale: 0
-    t.decimal  "V_TERMS3",                   precision: 15, scale: 0
-    t.decimal  "V_CGL",                      precision: 15, scale: 2
-    t.decimal  "V_DGL",                      precision: 15, scale: 2
-    t.string   "V_CK_MEMO",      limit: 80
-    t.text     "V_NOTES"
-    t.string   "V_FAX",          limit: 20
-    t.decimal  "V_DISC_DGL",                 precision: 15, scale: 2
-    t.string   "V_NAME1",        limit: 40
-    t.string   "V_PHONE1",       limit: 20
-    t.string   "V_FAX1",         limit: 20
-    t.string   "V_PAGER1",       limit: 20
-    t.string   "V_CAR_PHONE1",   limit: 20
-    t.string   "V_NAME2",        limit: 40
-    t.string   "V_PHONE2",       limit: 20
-    t.string   "V_FAX2",         limit: 20
-    t.string   "V_CAR_PHONE2",   limit: 20
-    t.string   "V_PAGER2",       limit: 20
-    t.string   "V_NAME3",        limit: 40
-    t.string   "V_PHONE3",       limit: 20
-    t.string   "V_FAX3",         limit: 20
-    t.string   "V_PAGER3",       limit: 20
-    t.string   "V_CAR_PHONE3",   limit: 20
-    t.string   "V_HOME_PHONE1",  limit: 20
-    t.string   "V_HOME_PHONE2",  limit: 20
-    t.string   "V_HOME_PHONE3",  limit: 20
-    t.decimal  "V_ACTIVE",                   precision: 9,  scale: 0
-    t.decimal  "V_1099",                     precision: 9,  scale: 0
-    t.string   "V_MEDIA_VNUM",   limit: 10
-    t.string   "V_ADDRESS2_1",   limit: 50
-    t.string   "V_ADDRESS2_2",   limit: 50
-    t.string   "V_ADDRESS2_3",   limit: 50
-    t.string   "V_ADDRESS2_4",   limit: 50
-    t.string   "V_ADDRESS3_1",   limit: 50
-    t.string   "V_ADDRESS3_2",   limit: 50
-    t.string   "V_ADDRESS3_3",   limit: 50
-    t.string   "V_ADDRESS3_4",   limit: 50
-    t.decimal  "V_COMM",                     precision: 9,  scale: 2
-    t.integer  "V_HOLD",         limit: 1
-    t.text     "V_HOLD_WHY"
-    t.integer  "V_MEDIA_KIND",   limit: 1
-    t.string   "V_WEB_URL",      limit: 50
-    t.string   "V_EMAIL",        limit: 100
-    t.string   "V_CORP_ID",      limit: 100
-    t.string   "V_MARKET",       limit: 40
-    t.string   "V_CHANGED_BY",   limit: 4
-    t.datetime "V_CHANGED_WHEN"
-    t.integer  "V_NO_RFQ",       limit: 1
-    t.string   "V_DBA",          limit: 50
-    t.integer  "V_1099_RENT",    limit: 1
-    t.string   "V_EDITED_BY",    limit: 4
-    t.datetime "V_EDITED_WHEN"
-    t.integer  "V_PAID_ONLINE",  limit: 1
-    t.string   "V_NCF_PREFIX1",  limit: 18
-    t.string   "V_RFQ_TYPE",     limit: 20
+  create_table "vendors", primary_key: "v_seq", force: true do |t|
+    t.string    "v_num",          limit: 10
+    t.string    "v_org",          limit: 50
+    t.string    "v_note1",        limit: 50
+    t.string    "v_street",       limit: 50
+    t.string    "v_city",         limit: 50
+    t.string    "v_note2",        limit: 50
+    t.string    "v_zip",          limit: 50
+    t.string    "v_contact",      limit: 50
+    t.string    "v_phone",        limit: 20
+    t.decimal   "v_ytd",                      precision: 15, scale: 2
+    t.decimal   "v_markup",                   precision: 15, scale: 2
+    t.string    "v_note3",        limit: 55
+    t.string    "v_task",         limit: 4
+    t.string    "v_type",         limit: 20
+    t.boolean   "v_open"
+    t.boolean   "v_allocate"
+    t.string    "v_tax_id",       limit: 15
+    t.string    "v_acct_num",     limit: 10
+    t.decimal   "v_currn",                    precision: 15, scale: 2
+    t.decimal   "v_30day",                    precision: 15, scale: 2
+    t.decimal   "v_60day",                    precision: 15, scale: 2
+    t.decimal   "v_90day",                    precision: 15, scale: 2
+    t.decimal   "v_baln",                     precision: 15, scale: 2
+    t.date      "v_last_ap"
+    t.string    "v_added_by",     limit: 3
+    t.date      "v_added_when"
+    t.time      "v_time"
+    t.decimal   "v_1",                        precision: 15, scale: 2
+    t.decimal   "v_2",                        precision: 15, scale: 2
+    t.decimal   "v_3",                        precision: 15, scale: 2
+    t.decimal   "v_4",                        precision: 15, scale: 2
+    t.decimal   "v_5",                        precision: 15, scale: 2
+    t.decimal   "v_6",                        precision: 15, scale: 2
+    t.decimal   "v_7",                        precision: 15, scale: 2
+    t.decimal   "v_8",                        precision: 15, scale: 2
+    t.decimal   "v_9",                        precision: 15, scale: 2
+    t.decimal   "v_10",                       precision: 15, scale: 2
+    t.decimal   "v_11",                       precision: 15, scale: 2
+    t.decimal   "v_12",                       precision: 15, scale: 2
+    t.decimal   "v_l1",                       precision: 15, scale: 2
+    t.decimal   "v_l2",                       precision: 15, scale: 2
+    t.decimal   "v_l3",                       precision: 15, scale: 2
+    t.decimal   "v_l4",                       precision: 15, scale: 2
+    t.decimal   "v_l5",                       precision: 15, scale: 2
+    t.decimal   "v_l6",                       precision: 15, scale: 2
+    t.decimal   "v_l7",                       precision: 15, scale: 2
+    t.decimal   "v_l8",                       precision: 15, scale: 2
+    t.decimal   "v_l9",                       precision: 15, scale: 2
+    t.decimal   "v_l10",                      precision: 15, scale: 2
+    t.decimal   "v_l11",                      precision: 15, scale: 2
+    t.decimal   "v_l12",                      precision: 15, scale: 2
+    t.decimal   "v_terms1",                   precision: 15, scale: 0
+    t.decimal   "v_terms2",                   precision: 15, scale: 0
+    t.decimal   "v_terms3",                   precision: 15, scale: 0
+    t.decimal   "v_cgl",                      precision: 15, scale: 2
+    t.decimal   "v_dgl",                      precision: 15, scale: 2
+    t.string    "v_ck_memo",      limit: 80
+    t.text      "v_notes"
+    t.string    "v_fax",          limit: 20
+    t.decimal   "v_disc_dgl",                 precision: 15, scale: 2
+    t.string    "v_name1",        limit: 40
+    t.string    "v_phone1",       limit: 20
+    t.string    "v_fax1",         limit: 20
+    t.string    "v_pager1",       limit: 20
+    t.string    "v_car_phone1",   limit: 20
+    t.string    "v_name2",        limit: 40
+    t.string    "v_phone2",       limit: 20
+    t.string    "v_fax2",         limit: 20
+    t.string    "v_car_phone2",   limit: 20
+    t.string    "v_pager2",       limit: 20
+    t.string    "v_name3",        limit: 40
+    t.string    "v_phone3",       limit: 20
+    t.string    "v_fax3",         limit: 20
+    t.string    "v_pager3",       limit: 20
+    t.string    "v_car_phone3",   limit: 20
+    t.string    "v_home_phone1",  limit: 20
+    t.string    "v_home_phone2",  limit: 20
+    t.string    "v_home_phone3",  limit: 20
+    t.decimal   "v_active",                   precision: 9,  scale: 0
+    t.decimal   "v_1099",                     precision: 9,  scale: 0
+    t.string    "v_media_vnum",   limit: 10
+    t.string    "v_address2_1",   limit: 50
+    t.string    "v_address2_2",   limit: 50
+    t.string    "v_address2_3",   limit: 50
+    t.string    "v_address2_4",   limit: 50
+    t.string    "v_address3_1",   limit: 50
+    t.string    "v_address3_2",   limit: 50
+    t.string    "v_address3_3",   limit: 50
+    t.string    "v_address3_4",   limit: 50
+    t.decimal   "v_comm",                     precision: 9,  scale: 2
+    t.integer   "v_hold",         limit: 1
+    t.text      "v_hold_why"
+    t.integer   "v_media_kind",   limit: 1
+    t.string    "v_web_url",      limit: 50
+    t.string    "v_email",        limit: 100
+    t.string    "v_corp_id",      limit: 100
+    t.string    "v_market",       limit: 40
+    t.string    "v_changed_by",   limit: 4
+    t.timestamp "v_changed_when"
+    t.integer   "v_no_rfq",       limit: 1
+    t.string    "v_dba",          limit: 50
+    t.integer   "v_1099_rent",    limit: 1
+    t.string    "v_edited_by",    limit: 4
+    t.timestamp "v_edited_when"
+    t.integer   "v_paid_online",  limit: 1
+    t.string    "v_ncf_prefix1",  limit: 18
+    t.string    "v_rfq_type",     limit: 20
   end
 
-  add_index "vendors", ["V_ACTIVE"], name: "V_ACTIVE", using: :btree
-  add_index "vendors", ["V_MEDIA_VNUM"], name: "V_MEDIA_VNUM", using: :btree
-  add_index "vendors", ["V_NUM"], name: "V_NUM", using: :btree
-  add_index "vendors", ["V_ORG"], name: "V_ORG", using: :btree
-  add_index "vendors", ["V_SEQ"], name: "V_SEQ", unique: true, using: :btree
+  add_index "vendors", ["v_active"], name: "v_active"
+  add_index "vendors", ["v_media_vnum"], name: "v_media_vnum"
+  add_index "vendors", ["v_num"], name: "v_num"
+  add_index "vendors", ["v_org"], name: "v_org"
 
-  create_table "version", primary_key: "VER_SEQ", force: true do |t|
-    t.integer "VER_PROGRAM",  limit: 1
-    t.string  "VER_NAME",     limit: 100
-    t.decimal "VER_A",                    precision: 15, scale: 0
-    t.decimal "VER_B",                    precision: 15, scale: 0
-    t.decimal "VER_C",                    precision: 15, scale: 0
-    t.decimal "VER_BETA_NUM",             precision: 15, scale: 0
-    t.decimal "VER_DEMO",                 precision: 15, scale: 0
+  create_table "version", primary_key: "ver_seq", force: true do |t|
+    t.integer "ver_program",  limit: 1
+    t.string  "ver_name",     limit: 100
+    t.decimal "ver_a",                    precision: 15, scale: 0
+    t.decimal "ver_b",                    precision: 15, scale: 0
+    t.decimal "ver_c",                    precision: 15, scale: 0
+    t.decimal "ver_beta_num",             precision: 15, scale: 0
+    t.decimal "ver_demo",                 precision: 15, scale: 0
   end
 
-  add_index "version", ["VER_SEQ"], name: "VER_SEQ", unique: true, using: :btree
-
-  create_table "web_ip_log", primary_key: "WIP_SEQ", force: true do |t|
-    t.string   "WIP_IP",       limit: 20
-    t.string   "WIP_NAME",     limit: 60
-    t.date     "WIP_DATE"
-    t.datetime "WIP_DATETIME"
+  create_table "web_ip_log", primary_key: "wip_seq", force: true do |t|
+    t.string    "wip_ip",       limit: 20
+    t.string    "wip_name",     limit: 60
+    t.date      "wip_date"
+    t.timestamp "wip_datetime"
   end
 
-  add_index "web_ip_log", ["WIP_DATE"], name: "WIP_DATE", using: :btree
-  add_index "web_ip_log", ["WIP_IP"], name: "WIP_IP", using: :btree
-  add_index "web_ip_log", ["WIP_SEQ"], name: "WIP_SEQ", unique: true, using: :btree
+  add_index "web_ip_log", ["wip_date"], name: "wip_date"
+  add_index "web_ip_log", ["wip_ip"], name: "wip_ip"
 
-  create_table "web_log", primary_key: "WLOG_SEQ", force: true do |t|
-    t.datetime "WLOG_DATETIME"
-    t.string   "WLOG_USER",     limit: 4
-    t.integer  "WLOG_STATUS",   limit: 1
-    t.text     "WLOG_EVENT"
-    t.string   "WLOG_PAGE",     limit: 30
-    t.string   "WLOG_IP",       limit: 30
-    t.date     "WLOG_DATE"
-    t.time     "WLOG_TIME"
-    t.integer  "WLOG_DAY",      limit: 1
-    t.integer  "WLOG_HOUR",     limit: 1
+  create_table "web_log", primary_key: "wlog_seq", force: true do |t|
+    t.timestamp "wlog_datetime"
+    t.string    "wlog_user",     limit: 4
+    t.integer   "wlog_status",   limit: 1
+    t.text      "wlog_event"
+    t.string    "wlog_page",     limit: 30
+    t.string    "wlog_ip",       limit: 30
+    t.date      "wlog_date"
+    t.time      "wlog_time"
+    t.integer   "wlog_day",      limit: 1
+    t.integer   "wlog_hour",     limit: 1
   end
 
-  add_index "web_log", ["WLOG_DATE"], name: "WLOG_DATE", using: :btree
-  add_index "web_log", ["WLOG_SEQ"], name: "WLOG_SEQ", unique: true, using: :btree
-  add_index "web_log", ["WLOG_USER"], name: "WLOG_USER", using: :btree
+  add_index "web_log", ["wlog_date"], name: "wlog_date"
+  add_index "web_log", ["wlog_user"], name: "wlog_user"
 
-  create_table "web_prefs", primary_key: "WP_SEQ", force: true do |t|
-    t.integer  "WP_BELL_ON_HITS",      limit: 1
-    t.string   "WP_CURRENT_EVENT",     limit: 200
-    t.integer  "WP_DISABLE_LOG",       limit: 1
-    t.integer  "WP_ALERT_PW",          limit: 1
-    t.string   "WP_WEBMASTER",         limit: 100
-    t.string   "WP_WEBMSTR_EMAIL",     limit: 100
-    t.integer  "WP_ALERT_LOGON",       limit: 1
-    t.string   "WP_SMTP_SERVER",       limit: 40
-    t.integer  "WP_AUTO_START",        limit: 1
-    t.integer  "WP_ALERT_ID",          limit: 1
-    t.date     "WP_DATE"
-    t.string   "WP_USER",              limit: 4
-    t.text     "GREETING"
-    t.string   "DGL_NAME",             limit: 50
-    t.string   "CGL_NAME",             limit: 50
-    t.string   "KIND",                 limit: 25
-    t.string   "TASK_KIND",            limit: 20
-    t.string   "TYPE",                 limit: 20
-    t.string   "JOB_NAME",             limit: 60
-    t.string   "TASK_NAME",            limit: 60
-    t.integer  "WP_ALERT_ERROR",       limit: 1
-    t.string   "EST_REVISION",         limit: 10
-    t.string   "FINAL_ESTIMATE",       limit: 20
-    t.string   "STATUS_DESC1",         limit: 40
-    t.string   "STATUS_DESC2",         limit: 40
-    t.integer  "WP_REMOTE_ADMIN",      limit: 1
-    t.string   "WP_REMOTE_ADMIN_IP",   limit: 20
-    t.text     "LOOKUP6"
-    t.text     "LOOKUP5"
-    t.text     "LOOKUP4"
-    t.text     "LOOKUP3"
-    t.text     "LOOKUP2"
-    t.text     "LOOKUP_JOBS"
-    t.datetime "WP_DATETIME"
-    t.decimal  "HIT_DURATION",                          precision: 9, scale: 0
-    t.decimal  "QUERY_DURATION",                        precision: 9, scale: 0
-    t.text     "TRANSACTION_TYPE"
-    t.integer  "BYTES_RECEIVED"
-    t.integer  "BYTES_SENT"
-    t.binary   "HEADER_LIST",          limit: 16777215
-    t.decimal  "WP_DISCONNECT",                         precision: 9, scale: 0
-    t.date     "WP_SHOW_DATE"
-    t.string   "VER",                  limit: 20
-    t.integer  "ALT_SOCKET"
-    t.text     "MESSAGE_DATA"
-    t.string   "POSTED",               limit: 20
-    t.integer  "WP_PORT_NUMBER"
-    t.integer  "WP_BACKUP",            limit: 1
-    t.time     "WP_CLOSE_TIME"
-    t.time     "WP_OPEN_TIME"
-    t.string   "WP_FONT_OPEN",         limit: 100
-    t.string   "WP_FONT_CLOSE",        limit: 20
-    t.integer  "WP_AUTO_ARCHIVE_LOG",  limit: 1
-    t.integer  "WP_LOG_IP_ERRORS",     limit: 1
-    t.date     "WP_LAST_ARCHIVE"
-    t.integer  "WP_DISABLE_BAD_LOGIN", limit: 1
-    t.string   "WP_JS_SERVER",         limit: 100
-    t.integer  "CAL_DAY",              limit: 1
-    t.integer  "CAL_MONTH",            limit: 1
-    t.integer  "CAL_YEAR"
-    t.string   "CAL_MODE",             limit: 10
-    t.string   "WP_LOGO_URL",          limit: 200
-    t.string   "WP_LOGO_LINK",         limit: 200
-    t.integer  "WP_AUTO_START_MY",     limit: 1
-    t.string   "WP_EDITED_BY",         limit: 4
-    t.datetime "WP_EDITED_WHEN"
-    t.string   "WP_BOXR_EMAIL",        limit: 100
-    t.string   "WP_BOXR_USERNAME",     limit: 50
-    t.string   "WP_BOXR_PW",           limit: 50
-    t.string   "WP_BOXR_SERVER",       limit: 100
-    t.integer  "WP_SSL",               limit: 1
-    t.text     "WP_SMTP_AUTH_ID"
-    t.text     "WP_SMTP_AUTH_PW"
-    t.integer  "WP_SMTP_PORT"
-    t.integer  "WP_SMTP_SSL_TYPE",     limit: 1
+  create_table "web_prefs", primary_key: "wp_seq", force: true do |t|
+    t.integer   "wp_bell_on_hits",      limit: 1
+    t.string    "wp_current_event",     limit: 200
+    t.integer   "wp_disable_log",       limit: 1
+    t.integer   "wp_alert_pw",          limit: 1
+    t.string    "wp_webmaster",         limit: 100
+    t.string    "wp_webmstr_email",     limit: 100
+    t.integer   "wp_alert_logon",       limit: 1
+    t.string    "wp_smtp_server",       limit: 40
+    t.integer   "wp_auto_start",        limit: 1
+    t.integer   "wp_alert_id",          limit: 1
+    t.date      "wp_date"
+    t.string    "wp_user",              limit: 4
+    t.text      "greeting"
+    t.string    "dgl_name",             limit: 50
+    t.string    "cgl_name",             limit: 50
+    t.string    "kind",                 limit: 25
+    t.string    "task_kind",            limit: 20
+    t.string    "type",                 limit: 20
+    t.string    "job_name",             limit: 60
+    t.string    "task_name",            limit: 60
+    t.integer   "wp_alert_error",       limit: 1
+    t.string    "est_revision",         limit: 10
+    t.string    "final_estimate",       limit: 20
+    t.string    "status_desc1",         limit: 40
+    t.string    "status_desc2",         limit: 40
+    t.integer   "wp_remote_admin",      limit: 1
+    t.string    "wp_remote_admin_ip",   limit: 20
+    t.text      "lookup6"
+    t.text      "lookup5"
+    t.text      "lookup4"
+    t.text      "lookup3"
+    t.text      "lookup2"
+    t.text      "lookup_jobs"
+    t.timestamp "wp_datetime"
+    t.decimal   "hit_duration",                     precision: 9, scale: 0
+    t.decimal   "query_duration",                   precision: 9, scale: 0
+    t.text      "transaction_type"
+    t.integer   "bytes_received"
+    t.integer   "bytes_sent"
+    t.binary    "header_list"
+    t.decimal   "wp_disconnect",                    precision: 9, scale: 0
+    t.date      "wp_show_date"
+    t.string    "ver",                  limit: 20
+    t.integer   "alt_socket"
+    t.text      "message_data"
+    t.string    "posted",               limit: 20
+    t.integer   "wp_port_number"
+    t.integer   "wp_backup",            limit: 1
+    t.time      "wp_close_time"
+    t.time      "wp_open_time"
+    t.string    "wp_font_open",         limit: 100
+    t.string    "wp_font_close",        limit: 20
+    t.integer   "wp_auto_archive_log",  limit: 1
+    t.integer   "wp_log_ip_errors",     limit: 1
+    t.date      "wp_last_archive"
+    t.integer   "wp_disable_bad_login", limit: 1
+    t.string    "wp_js_server",         limit: 100
+    t.integer   "cal_day",              limit: 1
+    t.integer   "cal_month",            limit: 1
+    t.integer   "cal_year"
+    t.string    "cal_mode",             limit: 10
+    t.string    "wp_logo_url",          limit: 200
+    t.string    "wp_logo_link",         limit: 200
+    t.integer   "wp_auto_start_my",     limit: 1
+    t.string    "wp_edited_by",         limit: 4
+    t.timestamp "wp_edited_when"
+    t.string    "wp_boxr_email",        limit: 100
+    t.string    "wp_boxr_username",     limit: 50
+    t.string    "wp_boxr_pw",           limit: 50
+    t.string    "wp_boxr_server",       limit: 100
+    t.integer   "wp_ssl",               limit: 1
+    t.text      "wp_smtp_auth_id"
+    t.text      "wp_smtp_auth_pw"
+    t.integer   "wp_smtp_port"
+    t.integer   "wp_smtp_ssl_type",     limit: 1
   end
 
-  add_index "web_prefs", ["WP_SEQ"], name: "WP_SEQ", unique: true, using: :btree
-
-  create_table "web_users", primary_key: "WU_SEQ", force: true do |t|
-    t.string   "WU_WORK",            limit: 4
-    t.string   "WU_NAME",            limit: 60
-    t.string   "WU_ORG",             limit: 60
-    t.date     "WU_EXPIRES"
-    t.string   "WU_PHONE",           limit: 20
-    t.string   "WU_EMAIL",           limit: 40
-    t.string   "WU_PHONE_CELL",      limit: 20
-    t.string   "WU_PAGER",           limit: 20
-    t.integer  "WU_STAFF",           limit: 1
-    t.string   "WU_P",               limit: 20
-    t.date     "WU_P_EXPIRES"
-    t.string   "WU_DEPT",            limit: 20
-    t.integer  "WU_WEB_ADMIN",       limit: 1
-    t.datetime "WU_LAST_ACCESS"
-    t.integer  "WU_KIND",            limit: 1
-    t.integer  "WU_A_TIME",          limit: 1
-    t.date     "WU_ACCESS_EXP"
-    t.integer  "WU_ADMIN",           limit: 1
-    t.integer  "WU_A_JOB_TICKETS",   limit: 1
-    t.integer  "WU_A_EST",           limit: 1
-    t.integer  "WU_A_SCHED",         limit: 1
-    t.integer  "WU_A_TRAFFIC",       limit: 1
-    t.integer  "WU_A_JOB_STATUS",    limit: 1
-    t.integer  "WU_A_PO",            limit: 1
-    t.integer  "WU_A_PO_OK",         limit: 1
-    t.integer  "WU_A_TASK_PLAN",     limit: 1
-    t.integer  "WU_A_CHG_ORD",       limit: 1
-    t.integer  "WU_A_CLIENT_DIARY",  limit: 1
-    t.integer  "WU_A_EST_REVS",      limit: 1
-    t.integer  "WU_A_COSTS",         limit: 1
-    t.integer  "WU_A_CLIENT_STATUS", limit: 1
-    t.integer  "WU_A_UNBILLED",      limit: 1
-    t.integer  "WU_A_BILL_PRVW",     limit: 1
-    t.integer  "WU_A_WIP",           limit: 1
-    t.integer  "WU_A_BILLINGS",      limit: 1
-    t.integer  "WU_A_SNAPSHOT",      limit: 1
-    t.integer  "WU_A_CASH_FLASH",    limit: 1
-    t.integer  "WU_A_STMT",          limit: 1
-    t.integer  "WU_A_AP",            limit: 1
-    t.string   "WU_A_V_NUM",         limit: 10
-    t.string   "WU_A_C_NUM",         limit: 10
-    t.integer  "WU_A_WORK_TO_DO",    limit: 1
-    t.integer  "WU_A_JOB_DIARY",     limit: 1
-    t.integer  "WU_A_AR",            limit: 1
-    t.string   "WU_IP",              limit: 20
-    t.integer  "WU_SUSPEND",         limit: 1
-    t.string   "WU_LAST_JOB",        limit: 10
-    t.date     "WU_LAST_DATE"
-    t.integer  "WU_A_WEEKLY_TRAF",   limit: 1
-    t.integer  "WU_A_JOB_PO",        limit: 1
-    t.integer  "WU_A_JOB_PROG",      limit: 1
-    t.text     "WU_WELCOME_MSG"
-    t.string   "WU_LAST_PO",         limit: 12
-    t.integer  "WU_A_CLIENTS",       limit: 1
-    t.integer  "WU_A_VENDORS",       limit: 1
-    t.integer  "WU_A_EXP",           limit: 1
-    t.integer  "WU_A_ADD_JOBS",      limit: 1
-    t.integer  "WU_A_JOB_SPECS",     limit: 1
-    t.string   "WU_ADDED_BY",        limit: 10
-    t.date     "WU_ADDED_WHEN"
-    t.string   "WU_HOME_PAGE",       limit: 30
-    t.integer  "WU_BAD_LOGINS",      limit: 1
-    t.string   "WU_COOKIE",          limit: 200
-    t.integer  "WU_A_PROPOSALS",     limit: 1
-    t.integer  "WU_A_INT_CHARGES",   limit: 1
-    t.integer  "WU_A_TIME_SHEETS",   limit: 1
-    t.integer  "WU_A_PREBILL",       limit: 1
-    t.integer  "WU_A_SNAPS_PROD",    limit: 1
-    t.integer  "WU_A_SNAPS_WIP",     limit: 1
-    t.string   "WU_ID",              limit: 200
-    t.string   "WU_EDITED_BY",       limit: 4
-    t.datetime "WU_EDITED_WHEN"
+  create_table "web_users", primary_key: "wu_seq", force: true do |t|
+    t.string    "wu_work",            limit: 4
+    t.string    "wu_name",            limit: 60
+    t.string    "wu_org",             limit: 60
+    t.date      "wu_expires"
+    t.string    "wu_phone",           limit: 20
+    t.string    "wu_email",           limit: 40
+    t.string    "wu_phone_cell",      limit: 20
+    t.string    "wu_pager",           limit: 20
+    t.integer   "wu_staff",           limit: 1
+    t.string    "wu_p",               limit: 20
+    t.date      "wu_p_expires"
+    t.string    "wu_dept",            limit: 20
+    t.integer   "wu_web_admin",       limit: 1
+    t.timestamp "wu_last_access"
+    t.integer   "wu_kind",            limit: 1
+    t.integer   "wu_a_time",          limit: 1
+    t.date      "wu_access_exp"
+    t.integer   "wu_admin",           limit: 1
+    t.integer   "wu_a_job_tickets",   limit: 1
+    t.integer   "wu_a_est",           limit: 1
+    t.integer   "wu_a_sched",         limit: 1
+    t.integer   "wu_a_traffic",       limit: 1
+    t.integer   "wu_a_job_status",    limit: 1
+    t.integer   "wu_a_po",            limit: 1
+    t.integer   "wu_a_po_ok",         limit: 1
+    t.integer   "wu_a_task_plan",     limit: 1
+    t.integer   "wu_a_chg_ord",       limit: 1
+    t.integer   "wu_a_client_diary",  limit: 1
+    t.integer   "wu_a_est_revs",      limit: 1
+    t.integer   "wu_a_costs",         limit: 1
+    t.integer   "wu_a_client_status", limit: 1
+    t.integer   "wu_a_unbilled",      limit: 1
+    t.integer   "wu_a_bill_prvw",     limit: 1
+    t.integer   "wu_a_wip",           limit: 1
+    t.integer   "wu_a_billings",      limit: 1
+    t.integer   "wu_a_snapshot",      limit: 1
+    t.integer   "wu_a_cash_flash",    limit: 1
+    t.integer   "wu_a_stmt",          limit: 1
+    t.integer   "wu_a_ap",            limit: 1
+    t.string    "wu_a_v_num",         limit: 10
+    t.string    "wu_a_c_num",         limit: 10
+    t.integer   "wu_a_work_to_do",    limit: 1
+    t.integer   "wu_a_job_diary",     limit: 1
+    t.integer   "wu_a_ar",            limit: 1
+    t.string    "wu_ip",              limit: 20
+    t.integer   "wu_suspend",         limit: 1
+    t.string    "wu_last_job",        limit: 10
+    t.date      "wu_last_date"
+    t.integer   "wu_a_weekly_traf",   limit: 1
+    t.integer   "wu_a_job_po",        limit: 1
+    t.integer   "wu_a_job_prog",      limit: 1
+    t.text      "wu_welcome_msg"
+    t.string    "wu_last_po",         limit: 12
+    t.integer   "wu_a_clients",       limit: 1
+    t.integer   "wu_a_vendors",       limit: 1
+    t.integer   "wu_a_exp",           limit: 1
+    t.integer   "wu_a_add_jobs",      limit: 1
+    t.integer   "wu_a_job_specs",     limit: 1
+    t.string    "wu_added_by",        limit: 10
+    t.date      "wu_added_when"
+    t.string    "wu_home_page",       limit: 30
+    t.integer   "wu_bad_logins",      limit: 1
+    t.string    "wu_cookie",          limit: 200
+    t.integer   "wu_a_proposals",     limit: 1
+    t.integer   "wu_a_int_charges",   limit: 1
+    t.integer   "wu_a_time_sheets",   limit: 1
+    t.integer   "wu_a_prebill",       limit: 1
+    t.integer   "wu_a_snaps_prod",    limit: 1
+    t.integer   "wu_a_snaps_wip",     limit: 1
+    t.string    "wu_id",              limit: 200
+    t.string    "wu_edited_by",       limit: 4
+    t.timestamp "wu_edited_when"
   end
 
-  add_index "web_users", ["WU_SEQ"], name: "WU_SEQ", unique: true, using: :btree
-  add_index "web_users", ["WU_WORK"], name: "WU_WORK", using: :btree
+  add_index "web_users", ["wu_work"], name: "wu_work"
 
-  create_table "work_order", primary_key: "WO_SEQ", force: true do |t|
-    t.string  "WO_JOB_NUM",       limit: 10
-    t.string  "WO_CLIENT_NUM",    limit: 10
-    t.text    "WO_1_LABEL"
-    t.text    "WO_2_LABEL"
-    t.text    "WO_3_LABEL"
-    t.text    "WO_4_LABEL"
-    t.text    "WO_5_LABEL"
-    t.text    "WO_6_LABEL"
-    t.text    "WO_7_LABEL"
-    t.text    "WO_8_LABEL"
-    t.text    "WO_9_LABEL"
-    t.text    "WO_10_LABEL"
-    t.text    "WO_11_LABEL"
-    t.text    "WO_12_LABEL"
-    t.text    "WO_13_LABEL"
-    t.text    "WO_14_LABEL"
-    t.string  "WO_15_LABEL",      limit: 0
-    t.text    "WO_1"
-    t.text    "WO_2"
-    t.text    "WO_3"
-    t.text    "WO_4"
-    t.text    "WO_5"
-    t.text    "WO_6"
-    t.text    "WO_7"
-    t.text    "WO_8"
-    t.text    "WO_9"
-    t.text    "WO_10"
-    t.text    "WO_11"
-    t.text    "WO_12"
-    t.text    "WO_13"
-    t.text    "WO_14"
-    t.text    "WO_15"
-    t.string  "WO_ADDED_BY",      limit: 4
-    t.string  "WO_REV_BY",        limit: 4
-    t.integer "WO_OK",            limit: 1
-    t.string  "WO_OK_BY",         limit: 4
-    t.date    "WO_OK_DATE"
-    t.integer "WO_APPROVED",      limit: 1
-    t.date    "WO_APPROVED_DATE"
-    t.string  "WO_APPROVED_BY",   limit: 4
-    t.string  "WO_ADR_NAME",      limit: 20
+  create_table "work_order", primary_key: "wo_seq", force: true do |t|
+    t.string  "wo_job_num",       limit: 10
+    t.string  "wo_client_num",    limit: 10
+    t.text    "wo_1_label"
+    t.text    "wo_2_label"
+    t.text    "wo_3_label"
+    t.text    "wo_4_label"
+    t.text    "wo_5_label"
+    t.text    "wo_6_label"
+    t.text    "wo_7_label"
+    t.text    "wo_8_label"
+    t.text    "wo_9_label"
+    t.text    "wo_10_label"
+    t.text    "wo_11_label"
+    t.text    "wo_12_label"
+    t.text    "wo_13_label"
+    t.text    "wo_14_label"
+    t.string  "wo_15_label",      limit: nil
+    t.text    "wo_1"
+    t.text    "wo_2"
+    t.text    "wo_3"
+    t.text    "wo_4"
+    t.text    "wo_5"
+    t.text    "wo_6"
+    t.text    "wo_7"
+    t.text    "wo_8"
+    t.text    "wo_9"
+    t.text    "wo_10"
+    t.text    "wo_11"
+    t.text    "wo_12"
+    t.text    "wo_13"
+    t.text    "wo_14"
+    t.text    "wo_15"
+    t.string  "wo_added_by",      limit: 4
+    t.string  "wo_rev_by",        limit: 4
+    t.integer "wo_ok",            limit: 1
+    t.string  "wo_ok_by",         limit: 4
+    t.date    "wo_ok_date"
+    t.integer "wo_approved",      limit: 1
+    t.date    "wo_approved_date"
+    t.string  "wo_approved_by",   limit: 4
+    t.string  "wo_adr_name",      limit: 20
   end
 
-  add_index "work_order", ["WO_CLIENT_NUM"], name: "WO_CLIENT_NUM", using: :btree
-  add_index "work_order", ["WO_JOB_NUM"], name: "WO_JOB_NUM", using: :btree
-  add_index "work_order", ["WO_SEQ"], name: "WO_SEQ", unique: true, using: :btree
+  add_index "work_order", ["wo_client_num"], name: "wo_client_num"
+  add_index "work_order", ["wo_job_num"], name: "wo_job_num"
 
-  create_table "working", primary_key: "W_SEQ", force: true do |t|
-    t.string   "W_WORK",                 limit: 4
-    t.string   "W_ORG",                  limit: 60
-    t.string   "W_DATABASE",             limit: 60
-    t.string   "W_PHONE",                limit: 20
-    t.date     "W_EXPIRES"
-    t.string   "W_WHERE",                limit: 30
-    t.decimal  "W_IN_OUT",                                precision: 9,  scale: 2
-    t.decimal  "W_BILL_RATE",                             precision: 9,  scale: 2
-    t.decimal  "W_FINANCE_CHG",                           precision: 9,  scale: 2
-    t.string   "W_DEPT",                 limit: 15
-    t.decimal  "W_A_ADD_TASKS",                           precision: 9,  scale: 0
-    t.decimal  "W_PO_NUMBERING",                          precision: 9,  scale: 0
-    t.decimal  "W_YEAR",                                  precision: 9,  scale: 0
-    t.decimal  "W_CK_STOCK",                              precision: 9,  scale: 0
-    t.decimal  "W_DEMO",                                  precision: 9,  scale: 0
-    t.decimal  "W_A_EDIT_JOBS",                           precision: 9,  scale: 0
-    t.decimal  "W_GROUP_LIMIT",                           precision: 9,  scale: 0
-    t.decimal  "W_A_AR_EDIT",                             precision: 9,  scale: 0
-    t.decimal  "W_A_PRODUCTION",                          precision: 9,  scale: 0
-    t.decimal  "W_NOTE_STATUS_CHANGE",                    precision: 9,  scale: 0
-    t.decimal  "W_A_REOPEN_JOBS",                         precision: 9,  scale: 0
-    t.decimal  "W_A_TIME_CLOSED_JOBS",                    precision: 9,  scale: 0
-    t.decimal  "W_A_UTILITIES",                           precision: 9,  scale: 0
-    t.decimal  "W_A_JOB_WIP",                             precision: 9,  scale: 0
-    t.decimal  "W_A_UNPOST",                              precision: 9,  scale: 0
-    t.date     "W_PASSWORD_EXP"
-    t.string   "W_TERMS",                limit: 20
-    t.decimal  "W_STATUS_NEW",                            precision: 9,  scale: 0
-    t.decimal  "W_STATUS_REOPEN",                         precision: 9,  scale: 0
-    t.decimal  "W_STATUS_CLOSED",                         precision: 9,  scale: 0
-    t.string   "W_AE_TEAM",              limit: 10
-    t.string   "W_AKA_CLIENT",           limit: 20
-    t.string   "W_AKA_CLIENTS",          limit: 20
-    t.string   "W_AKA_JOB",              limit: 20
-    t.string   "W_AKA_JOBS",             limit: 20
-    t.string   "W_AKA_TASK",             limit: 20
-    t.string   "W_AKA_TASKS",            limit: 20
-    t.string   "W_AKA_VENDOR",           limit: 20
-    t.string   "W_AKA_VENDORS",          limit: 20
-    t.string   "W_AKA_AR",               limit: 20
-    t.string   "W_AKA_ARS",              limit: 20
-    t.integer  "W_A_OPEN_JOBS",          limit: 1
-    t.integer  "W_A_DELETE_JOBS",        limit: 1
-    t.integer  "W_A_REMOVE_TASKS",       limit: 1
-    t.integer  "W_A_EDIT_EST",           limit: 1
-    t.integer  "W_A_CHG_ORDERS",         limit: 1
-    t.integer  "W_A_UP_PROD_STATUS",     limit: 1
-    t.integer  "W_A_UP_BILL_STATUS",     limit: 1
-    t.text     "W_PO_DISCLAIMER"
-    t.string   "W_TAX_DESC1",            limit: 25
-    t.string   "W_TAX_DESC2",            limit: 25
-    t.decimal  "W_TAX_RATE1",                             precision: 15, scale: 4
-    t.decimal  "W_TAX_RATE2",                             precision: 15, scale: 4
-    t.decimal  "W_TAX_GL1",                               precision: 9,  scale: 2
-    t.decimal  "W_TAX_GL2",                               precision: 9,  scale: 2
-    t.decimal  "W_DATE_FORMAT",                           precision: 9,  scale: 0
-    t.decimal  "W_ALERT_PO",                              precision: 15, scale: 0
-    t.decimal  "W_ALERT_PO_PC",                           precision: 15, scale: 0
-    t.decimal  "W_ALERT_COST",                            precision: 15, scale: 0
-    t.decimal  "W_ALERT_COST_PC",                         precision: 15, scale: 0
-    t.decimal  "W_ALERT_TIME",                            precision: 15, scale: 0
-    t.decimal  "W_ALERT_TIME_PC",                         precision: 15, scale: 0
-    t.decimal  "W_A_STATUS_TABLE",                        precision: 9,  scale: 0
-    t.decimal  "W_A_UP_TRAFFIC",                          precision: 9,  scale: 0
-    t.decimal  "W_A_UP_SCHEDULES",                        precision: 9,  scale: 0
-    t.decimal  "W_A_CANT_CHG_PO",                         precision: 9,  scale: 0
-    t.integer  "W_A_HIDE_RATES",         limit: 1
-    t.string   "W_INFO_CTR",             limit: 30
-    t.integer  "W_A_COST_CHECKS",        limit: 1
-    t.decimal  "W_A_HIDE_TIME",                           precision: 9,  scale: 0
-    t.string   "W_PO_TO1",               limit: 10
-    t.string   "W_PO_TO2",               limit: 10
-    t.string   "W_PO_TO3",               limit: 10
-    t.string   "W_PO_TO4",               limit: 10
-    t.string   "W_PO_TO5",               limit: 10
-    t.decimal  "W_JOB_NUMBERING",                         precision: 9,  scale: 0
-    t.string   "W_A_STATUS_CAT",         limit: 20
-    t.decimal  "W_LOGO_ESTIMATE",                         precision: 9,  scale: 2
-    t.integer  "W_LOGO_AR",              limit: 1
-    t.integer  "W_LOGO_PO",              limit: 1
-    t.text     "W_EST_DISCLAIMR"
-    t.text     "W_STMT_NOTE"
-    t.text     "W_AR_NOTE"
-    t.text     "W_PO_NOTE"
-    t.decimal  "W_GL_CASH",                               precision: 15, scale: 2
-    t.decimal  "W_GL_AR",                                 precision: 15, scale: 2
-    t.decimal  "W_GL_AP",                                 precision: 15, scale: 2
-    t.decimal  "W_GL_RETAINER",                           precision: 15, scale: 2
-    t.decimal  "W_GL_SALES",                              precision: 15, scale: 2
-    t.decimal  "W_GL_OVERHEAD",                           precision: 15, scale: 2
-    t.decimal  "W_GL_COST",                               precision: 15, scale: 2
-    t.decimal  "W_GL_RE",                                 precision: 15, scale: 2
-    t.decimal  "W_PERIOD",                                precision: 9,  scale: 0
-    t.datetime "W_DATE1"
-    t.decimal  "W_GL_EMPL_ADV",                           precision: 9,  scale: 2
-    t.integer  "W_PRINT_TO",             limit: 1
-    t.integer  "W_A_EST_OK",             limit: 1
-    t.integer  "W_A_LOOK_CLIENTS",       limit: 1
-    t.integer  "W_A_LOOK_JOBS",          limit: 1
-    t.integer  "W_A_LOOK_STAFF",         limit: 1
-    t.integer  "W_A_LOOK_COA",           limit: 1
-    t.integer  "W_A_LOOK_PC",            limit: 1
-    t.integer  "W_A_LOOK_DEPT",          limit: 1
-    t.integer  "W_A_LOOK_PO",            limit: 1
-    t.integer  "W_A_LOOK_PROJ",          limit: 1
-    t.integer  "W_A_LOOK_TYPES",         limit: 1
-    t.integer  "W_A_LOOK_VENDORS",       limit: 1
-    t.string   "W_EST_HEADING",          limit: 30
-    t.string   "W_INV_HEADING",          limit: 30
-    t.string   "W_APPROVAL1",            limit: 40
-    t.string   "W_APPROVAL2",            limit: 40
-    t.string   "W_APPROVAL3",            limit: 40
-    t.decimal  "W_A_ADD_XFERS",                           precision: 9,  scale: 2
-    t.decimal  "W_A_IMPORT_PAYROLL",                      precision: 9,  scale: 2
-    t.decimal  "W_A_XFER_ACCT_BAL",                       precision: 9,  scale: 2
-    t.integer  "W_A_TIME",               limit: 1
-    t.decimal  "W_A_GL_AUDITOR",                          precision: 9,  scale: 2
-    t.decimal  "W_A_CLOSE_YEAR",                          precision: 9,  scale: 2
-    t.decimal  "W_A_RECUR_JE",                            precision: 9,  scale: 2
-    t.decimal  "W_PO_SHOW_CL",                            precision: 9,  scale: 0
-    t.decimal  "W_A_GL_RECONCILE",                        precision: 9,  scale: 2
-    t.decimal  "W_A_ADD_COA",                             precision: 9,  scale: 2
-    t.decimal  "W_A_GL_BUDGETS",                          precision: 9,  scale: 2
-    t.integer  "W_A_DELETE_OWN_PO",      limit: 1
-    t.decimal  "W_A_ADJ_JE",                              precision: 9,  scale: 2
-    t.decimal  "W_A_OVERHEAD_ALLOC",                      precision: 9,  scale: 2
-    t.decimal  "W_A_IMPORT_TIME",                         precision: 9,  scale: 2
-    t.decimal  "W_A_CLOSE_JOBS",                          precision: 9,  scale: 2
-    t.string   "W_AKA_PO",               limit: 20
-    t.string   "W_PO_APPROVAL1",         limit: 15
-    t.string   "W_PO_APPROVAL2",         limit: 15
-    t.string   "W_PO_APPROVAL3",         limit: 15
-    t.string   "W_PO_FIELD1",            limit: 10
-    t.string   "W_PO_FIELD2",            limit: 10
-    t.string   "W_PO_FIELD3",            limit: 10
-    t.string   "W_PO_FIELD4",            limit: 10
-    t.string   "W_PO_FIELD5",            limit: 10
-    t.decimal  "W_NEXT_JOB",                              precision: 9,  scale: 0
-    t.string   "W_EQUITY_NAME",          limit: 25
-    t.string   "W_INCOME_NAME",          limit: 25
-    t.string   "W_COSTS_NAME",           limit: 25
-    t.string   "W_OTHERINC_NAME",        limit: 25
-    t.string   "W_OTHEREXP_NAME",        limit: 25
-    t.string   "W_EXPENSES_NAME",        limit: 25
-    t.string   "W_USER_NAME",            limit: 40
-    t.string   "W_NEXT",                 limit: 64
-    t.decimal  "W_NEXT_PO_NUM",                           precision: 15, scale: 0
-    t.decimal  "W_A_CHANGE_GL",                           precision: 15, scale: 0
-    t.decimal  "W_GL_ADV_BILL",                           precision: 9,  scale: 2
-    t.datetime "W_LOGGED_IN"
-    t.datetime "W_LOGGED_OUT"
-    t.decimal  "W_A_PO_MAX",                              precision: 15, scale: 2
-    t.integer  "W_A_GL_POST",            limit: 1
-    t.string   "W_AKA_POS",              limit: 30
-    t.string   "W_JOBS_POS",             limit: 15
-    t.string   "W_ESTIMATE_POS",         limit: 15
-    t.string   "W_SCHEDULE_POS",         limit: 15
-    t.string   "W_AR_POS",               limit: 15
-    t.string   "W_PO_POS",               limit: 15
-    t.string   "W_STATUS_POS",           limit: 15
-    t.string   "W_UPTRAFFIC_POS",        limit: 15
-    t.string   "W_TRAFFIC_POS",          limit: 15
-    t.string   "W_MEDIA_POS",            limit: 15
-    t.string   "W_JOBSPECS_POS",         limit: 15
-    t.string   "W_TIME_POS",             limit: 15
-    t.integer  "W_A_POST_ONLY",          limit: 1
-    t.decimal  "W_GL_AR_DISC",                            precision: 9,  scale: 2
-    t.decimal  "W_GL_AP_DISC",                            precision: 9,  scale: 2
-    t.integer  "W_A_JOBS",               limit: 1
-    t.integer  "W_A_CLIENTS",            limit: 1
-    t.integer  "W_A_VENDORS",            limit: 1
-    t.integer  "W_A_STAFF",              limit: 1
-    t.integer  "W_A_AP",                 limit: 1
-    t.integer  "W_A_CHECKS",             limit: 1
-    t.integer  "W_A_EXPENSES",           limit: 1
-    t.integer  "W_A_AR",                 limit: 1
-    t.integer  "W_A_MANAGER",            limit: 1
-    t.integer  "W_A_PREFS",              limit: 1
-    t.integer  "W_A_COA",                limit: 1
-    t.integer  "W_A_TASK_TABLE",         limit: 1
-    t.integer  "W_A_FINANCIALS",         limit: 1
-    t.integer  "W_A_COSTS",              limit: 1
-    t.integer  "W_A_SEE_COSTS",          limit: 1
-    t.integer  "W_A_ADHOC",              limit: 1
-    t.integer  "W_A_GL",                 limit: 1
-    t.integer  "W_A_CLIENT_PMTS",        limit: 1
-    t.integer  "W_A_CLIENT_AGING",       limit: 1
-    t.integer  "W_A_VENDOR_AGING",       limit: 1
-    t.integer  "W_A_WIP",                limit: 1
-    t.integer  "W_A_PROFITABILITY",      limit: 1
-    t.integer  "W_A_PRODUCTIVITY",       limit: 1
-    t.integer  "W_A_CASH_FLOW",          limit: 1
-    t.integer  "W_A_MEDIA",              limit: 1
-    t.integer  "W_A_XFERS",              limit: 1
-    t.decimal  "W_STATUS_BILLED",                         precision: 9,  scale: 0
-    t.decimal  "W_STATUS_AR_PAID",                        precision: 9,  scale: 0
-    t.integer  "W_A_PO_AMT",             limit: 1
-    t.decimal  "W_GL_MEDIA_WIP",                          precision: 15, scale: 2
-    t.decimal  "W_GL_MEDIA_COSTS",                        precision: 15, scale: 2
-    t.integer  "W_A_EMPL_ADV",           limit: 1
-    t.integer  "W_A_TIME_VIEW_DAYS",     limit: 1
-    t.integer  "W_A_HIDE_JOB_AMTS",      limit: 1
-    t.integer  "W_A_APPROVE_PO",         limit: 1
-    t.integer  "W_A_STAFF_ONLY",         limit: 1
-    t.integer  "W_A_CONFID_GL",          limit: 1
-    t.integer  "W_NUM11",                limit: 1
-    t.integer  "W_NUM12",                limit: 1
-    t.text     "W_BUD_ALERT_C1"
-    t.text     "W_BUD_ALERT_C2"
-    t.text     "W_BUD_ALERT_L1"
-    t.text     "W_BUD_ALERT_L2"
-    t.text     "W_BUD_ALERT_PO1"
-    t.text     "W_BUD_ALERT_PO2"
-    t.string   "W_JOB_COLUMN1",          limit: 12
-    t.string   "W_JOB_COLUMN2",          limit: 12
-    t.string   "W_JOB_COLUMN3",          limit: 12
-    t.string   "W_AKA",                  limit: 30
-    t.string   "W_SEP",                  limit: 1
-    t.string   "W_AKA_PROJECT",          limit: 20
-    t.integer  "W_FORCE_QUIT",           limit: 1
-    t.time     "W_FORCE_TIME"
-    t.string   "W_INFO_CTR_MSG",         limit: 60
-    t.text     "W_CON_NOTE"
-    t.decimal  "W_CON_PC",                                precision: 9,  scale: 2
-    t.integer  "W_UNIQ_JNUM",            limit: 1
-    t.decimal  "W_JOBS_FROM",                             precision: 9,  scale: 0
-    t.decimal  "W_JOBS_TO",                               precision: 9,  scale: 0
-    t.string   "W_AKA_CLIENT_PO",        limit: 20
-    t.string   "W_J_TO1",                limit: 10
-    t.string   "W_J_TO2",                limit: 10
-    t.string   "W_J_TO3",                limit: 10
-    t.string   "W_J_TO4",                limit: 10
-    t.string   "W_J_TO5",                limit: 10
-    t.string   "W_CHAR20",               limit: 20
-    t.integer  "W_VERSION_A",            limit: 1
-    t.integer  "W_VERSION_B",            limit: 1
-    t.integer  "W_VERSION_C",            limit: 1
-    t.string   "W_VERSION_KIND",         limit: 2
-    t.string   "W_USER_FIELD3",          limit: 20
-    t.string   "W_USER_FIELD4",          limit: 20
-    t.string   "W_USER_FIELD5",          limit: 20
-    t.string   "W_USER_FIELD6",          limit: 20
-    t.string   "W_PO_TOTAL_LABEL",       limit: 30
-    t.string   "W_AKA_PC",               limit: 20
-    t.string   "W_AKA_PCS",              limit: 20
-    t.integer  "W_A_SALES_TAX",          limit: 1
-    t.integer  "W_A_SPELL",              limit: 1
-    t.decimal  "W_A_IO_MAX",                              precision: 15, scale: 2
-    t.integer  "W_A_APPROVE_AR",         limit: 1
-    t.integer  "W_A_DBA",                limit: 1
-    t.integer  "W_JOB_COL1",             limit: 1
-    t.integer  "W_JOB_COL2",             limit: 1
-    t.integer  "W_JOB_COL3",             limit: 1
-    t.integer  "W_JOB_COL4",             limit: 1
-    t.integer  "W_JOB_COL5",             limit: 1
-    t.integer  "W_JOB_COL6",             limit: 1
-    t.integer  "W_A_OK_REQUESTS",        limit: 1
-    t.integer  "W_A_APPROVE_TIME",       limit: 1
-    t.integer  "W_A_APPROVE_EXP",        limit: 1
-    t.integer  "W_A_CHANGE_PRIORITY",    limit: 1
-    t.integer  "W_A_MEDIA_SNAPS",        limit: 1
-    t.integer  "W_A_CLIENT_ADD",         limit: 1
-    t.integer  "W_A_WEB_ACCESS",         limit: 1
-    t.integer  "W_A_CUST_REPORTS",       limit: 1
-    t.integer  "W_A_COLLECT_MGR",        limit: 1
-    t.integer  "W_A_EMAIL",              limit: 1
-    t.integer  "W_A_APPROVE_AP",         limit: 1
-    t.integer  "W_A_APPROVE_JOBS",       limit: 1
-    t.integer  "W_A_APPROVE_SCH",        limit: 1
-    t.integer  "W_A_APPROVE_MO",         limit: 1
-    t.integer  "W_A_APPROVE_MESTS",      limit: 1
-    t.integer  "W_A_APPROVE_MPLANS",     limit: 1
-    t.integer  "W_A_APPROVE_MBRIEFS",    limit: 1
-    t.integer  "W_A_INT_CHARGES",        limit: 1
-    t.integer  "W_A_COMMISSIONS",        limit: 1
-    t.integer  "W_A_PRINT_SPECS",        limit: 1
-    t.integer  "W_A_APPROVE_PRINTSPECS", limit: 1
-    t.integer  "W_A_RENUMBER",           limit: 1
-    t.integer  "W_A_VERIFY_RECOVER",     limit: 1
-    t.integer  "W_A_SEE_LABOR_NET",      limit: 1
-    t.integer  "W_A_HIDE_TOOLTIPS",      limit: 1
-    t.string   "W_TCP_ADDRESS",          limit: 100
-    t.datetime "W_LAST_WORK_TIME"
-    t.text     "W_LAST_WORK",            limit: 16777215
-    t.integer  "W_LOG_OFF_NOW",          limit: 1
-    t.integer  "W_A_JOB_SNAPSHOT",       limit: 1
-    t.decimal  "W_GL_INT_BILL",                           precision: 9,  scale: 2
-    t.integer  "W_A_HIDE_RATES_BILL",    limit: 1
-    t.string   "W_POS_CLIP_NOTE",        limit: 15
-    t.decimal  "W_STATUS_NEW_B",                          precision: 15, scale: 0
-    t.decimal  "W_STATUS_CLOSED_B",                       precision: 15, scale: 0
-    t.decimal  "W_STATUS_REOPEN_B",                       precision: 15, scale: 0
-    t.decimal  "W_STATUS_BILLED_B",                       precision: 15, scale: 0
-    t.decimal  "W_STATUS_AR_PAID_B",                      precision: 15, scale: 0
-    t.decimal  "W_PRINT_STATUS_FROM",                     precision: 15, scale: 0
-    t.decimal  "W_PRINT_STATUS_TO",                       precision: 15, scale: 0
-    t.integer  "W_WEB_ACCESS",           limit: 1
-    t.integer  "W_A_INST_JOBS",          limit: 1
-    t.string   "W_PC",                   limit: 10
-    t.decimal  "W_TAX_RATE3",                             precision: 15, scale: 4
-    t.string   "W_TAX_DESC3",            limit: 25
-    t.decimal  "W_TAX_GL3",                               precision: 15, scale: 2
-    t.integer  "W_DASHBOARD",            limit: 1
-    t.integer  "W_A_JOB_BILL_WKST",      limit: 1
-    t.integer  "W_A_TIME_CARD",          limit: 1
+  create_table "working", primary_key: "w_seq", force: true do |t|
+    t.string    "w_work",                 limit: 4
+    t.string    "w_org",                  limit: 60
+    t.string    "w_database",             limit: 60
+    t.string    "w_phone",                limit: 20
+    t.date      "w_expires"
+    t.string    "w_where",                limit: 30
+    t.decimal   "w_in_out",                           precision: 9,  scale: 2
+    t.decimal   "w_bill_rate",                        precision: 9,  scale: 2
+    t.decimal   "w_finance_chg",                      precision: 9,  scale: 2
+    t.string    "w_dept",                 limit: 15
+    t.decimal   "w_a_add_tasks",                      precision: 9,  scale: 0
+    t.decimal   "w_po_numbering",                     precision: 9,  scale: 0
+    t.decimal   "w_year",                             precision: 9,  scale: 0
+    t.decimal   "w_ck_stock",                         precision: 9,  scale: 0
+    t.decimal   "w_demo",                             precision: 9,  scale: 0
+    t.decimal   "w_a_edit_jobs",                      precision: 9,  scale: 0
+    t.decimal   "w_group_limit",                      precision: 9,  scale: 0
+    t.decimal   "w_a_ar_edit",                        precision: 9,  scale: 0
+    t.decimal   "w_a_production",                     precision: 9,  scale: 0
+    t.decimal   "w_note_status_change",               precision: 9,  scale: 0
+    t.decimal   "w_a_reopen_jobs",                    precision: 9,  scale: 0
+    t.decimal   "w_a_time_closed_jobs",               precision: 9,  scale: 0
+    t.decimal   "w_a_utilities",                      precision: 9,  scale: 0
+    t.decimal   "w_a_job_wip",                        precision: 9,  scale: 0
+    t.decimal   "w_a_unpost",                         precision: 9,  scale: 0
+    t.date      "w_password_exp"
+    t.string    "w_terms",                limit: 20
+    t.decimal   "w_status_new",                       precision: 9,  scale: 0
+    t.decimal   "w_status_reopen",                    precision: 9,  scale: 0
+    t.decimal   "w_status_closed",                    precision: 9,  scale: 0
+    t.string    "w_ae_team",              limit: 10
+    t.string    "w_aka_client",           limit: 20
+    t.string    "w_aka_clients",          limit: 20
+    t.string    "w_aka_job",              limit: 20
+    t.string    "w_aka_jobs",             limit: 20
+    t.string    "w_aka_task",             limit: 20
+    t.string    "w_aka_tasks",            limit: 20
+    t.string    "w_aka_vendor",           limit: 20
+    t.string    "w_aka_vendors",          limit: 20
+    t.string    "w_aka_ar",               limit: 20
+    t.string    "w_aka_ars",              limit: 20
+    t.integer   "w_a_open_jobs",          limit: 1
+    t.integer   "w_a_delete_jobs",        limit: 1
+    t.integer   "w_a_remove_tasks",       limit: 1
+    t.integer   "w_a_edit_est",           limit: 1
+    t.integer   "w_a_chg_orders",         limit: 1
+    t.integer   "w_a_up_prod_status",     limit: 1
+    t.integer   "w_a_up_bill_status",     limit: 1
+    t.text      "w_po_disclaimer"
+    t.string    "w_tax_desc1",            limit: 25
+    t.string    "w_tax_desc2",            limit: 25
+    t.decimal   "w_tax_rate1",                        precision: 15, scale: 4
+    t.decimal   "w_tax_rate2",                        precision: 15, scale: 4
+    t.decimal   "w_tax_gl1",                          precision: 9,  scale: 2
+    t.decimal   "w_tax_gl2",                          precision: 9,  scale: 2
+    t.decimal   "w_date_format",                      precision: 9,  scale: 0
+    t.decimal   "w_alert_po",                         precision: 15, scale: 0
+    t.decimal   "w_alert_po_pc",                      precision: 15, scale: 0
+    t.decimal   "w_alert_cost",                       precision: 15, scale: 0
+    t.decimal   "w_alert_cost_pc",                    precision: 15, scale: 0
+    t.decimal   "w_alert_time",                       precision: 15, scale: 0
+    t.decimal   "w_alert_time_pc",                    precision: 15, scale: 0
+    t.decimal   "w_a_status_table",                   precision: 9,  scale: 0
+    t.decimal   "w_a_up_traffic",                     precision: 9,  scale: 0
+    t.decimal   "w_a_up_schedules",                   precision: 9,  scale: 0
+    t.decimal   "w_a_cant_chg_po",                    precision: 9,  scale: 0
+    t.integer   "w_a_hide_rates",         limit: 1
+    t.string    "w_info_ctr",             limit: 30
+    t.integer   "w_a_cost_checks",        limit: 1
+    t.decimal   "w_a_hide_time",                      precision: 9,  scale: 0
+    t.string    "w_po_to1",               limit: 10
+    t.string    "w_po_to2",               limit: 10
+    t.string    "w_po_to3",               limit: 10
+    t.string    "w_po_to4",               limit: 10
+    t.string    "w_po_to5",               limit: 10
+    t.decimal   "w_job_numbering",                    precision: 9,  scale: 0
+    t.string    "w_a_status_cat",         limit: 20
+    t.decimal   "w_logo_estimate",                    precision: 9,  scale: 2
+    t.integer   "w_logo_ar",              limit: 1
+    t.integer   "w_logo_po",              limit: 1
+    t.text      "w_est_disclaimr"
+    t.text      "w_stmt_note"
+    t.text      "w_ar_note"
+    t.text      "w_po_note"
+    t.decimal   "w_gl_cash",                          precision: 15, scale: 2
+    t.decimal   "w_gl_ar",                            precision: 15, scale: 2
+    t.decimal   "w_gl_ap",                            precision: 15, scale: 2
+    t.decimal   "w_gl_retainer",                      precision: 15, scale: 2
+    t.decimal   "w_gl_sales",                         precision: 15, scale: 2
+    t.decimal   "w_gl_overhead",                      precision: 15, scale: 2
+    t.decimal   "w_gl_cost",                          precision: 15, scale: 2
+    t.decimal   "w_gl_re",                            precision: 15, scale: 2
+    t.decimal   "w_period",                           precision: 9,  scale: 0
+    t.timestamp "w_date1"
+    t.decimal   "w_gl_empl_adv",                      precision: 9,  scale: 2
+    t.integer   "w_print_to",             limit: 1
+    t.integer   "w_a_est_ok",             limit: 1
+    t.integer   "w_a_look_clients",       limit: 1
+    t.integer   "w_a_look_jobs",          limit: 1
+    t.integer   "w_a_look_staff",         limit: 1
+    t.integer   "w_a_look_coa",           limit: 1
+    t.integer   "w_a_look_pc",            limit: 1
+    t.integer   "w_a_look_dept",          limit: 1
+    t.integer   "w_a_look_po",            limit: 1
+    t.integer   "w_a_look_proj",          limit: 1
+    t.integer   "w_a_look_types",         limit: 1
+    t.integer   "w_a_look_vendors",       limit: 1
+    t.string    "w_est_heading",          limit: 30
+    t.string    "w_inv_heading",          limit: 30
+    t.string    "w_approval1",            limit: 40
+    t.string    "w_approval2",            limit: 40
+    t.string    "w_approval3",            limit: 40
+    t.decimal   "w_a_add_xfers",                      precision: 9,  scale: 2
+    t.decimal   "w_a_import_payroll",                 precision: 9,  scale: 2
+    t.decimal   "w_a_xfer_acct_bal",                  precision: 9,  scale: 2
+    t.integer   "w_a_time",               limit: 1
+    t.decimal   "w_a_gl_auditor",                     precision: 9,  scale: 2
+    t.decimal   "w_a_close_year",                     precision: 9,  scale: 2
+    t.decimal   "w_a_recur_je",                       precision: 9,  scale: 2
+    t.decimal   "w_po_show_cl",                       precision: 9,  scale: 0
+    t.decimal   "w_a_gl_reconcile",                   precision: 9,  scale: 2
+    t.decimal   "w_a_add_coa",                        precision: 9,  scale: 2
+    t.decimal   "w_a_gl_budgets",                     precision: 9,  scale: 2
+    t.integer   "w_a_delete_own_po",      limit: 1
+    t.decimal   "w_a_adj_je",                         precision: 9,  scale: 2
+    t.decimal   "w_a_overhead_alloc",                 precision: 9,  scale: 2
+    t.decimal   "w_a_import_time",                    precision: 9,  scale: 2
+    t.decimal   "w_a_close_jobs",                     precision: 9,  scale: 2
+    t.string    "w_aka_po",               limit: 20
+    t.string    "w_po_approval1",         limit: 15
+    t.string    "w_po_approval2",         limit: 15
+    t.string    "w_po_approval3",         limit: 15
+    t.string    "w_po_field1",            limit: 10
+    t.string    "w_po_field2",            limit: 10
+    t.string    "w_po_field3",            limit: 10
+    t.string    "w_po_field4",            limit: 10
+    t.string    "w_po_field5",            limit: 10
+    t.decimal   "w_next_job",                         precision: 9,  scale: 0
+    t.string    "w_equity_name",          limit: 25
+    t.string    "w_income_name",          limit: 25
+    t.string    "w_costs_name",           limit: 25
+    t.string    "w_otherinc_name",        limit: 25
+    t.string    "w_otherexp_name",        limit: 25
+    t.string    "w_expenses_name",        limit: 25
+    t.string    "w_user_name",            limit: 40
+    t.string    "w_next",                 limit: 64
+    t.decimal   "w_next_po_num",                      precision: 15, scale: 0
+    t.decimal   "w_a_change_gl",                      precision: 15, scale: 0
+    t.decimal   "w_gl_adv_bill",                      precision: 9,  scale: 2
+    t.timestamp "w_logged_in"
+    t.timestamp "w_logged_out"
+    t.decimal   "w_a_po_max",                         precision: 15, scale: 2
+    t.integer   "w_a_gl_post",            limit: 1
+    t.string    "w_aka_pos",              limit: 30
+    t.string    "w_jobs_pos",             limit: 15
+    t.string    "w_estimate_pos",         limit: 15
+    t.string    "w_schedule_pos",         limit: 15
+    t.string    "w_ar_pos",               limit: 15
+    t.string    "w_po_pos",               limit: 15
+    t.string    "w_status_pos",           limit: 15
+    t.string    "w_uptraffic_pos",        limit: 15
+    t.string    "w_traffic_pos",          limit: 15
+    t.string    "w_media_pos",            limit: 15
+    t.string    "w_jobspecs_pos",         limit: 15
+    t.string    "w_time_pos",             limit: 15
+    t.integer   "w_a_post_only",          limit: 1
+    t.decimal   "w_gl_ar_disc",                       precision: 9,  scale: 2
+    t.decimal   "w_gl_ap_disc",                       precision: 9,  scale: 2
+    t.integer   "w_a_jobs",               limit: 1
+    t.integer   "w_a_clients",            limit: 1
+    t.integer   "w_a_vendors",            limit: 1
+    t.integer   "w_a_staff",              limit: 1
+    t.integer   "w_a_ap",                 limit: 1
+    t.integer   "w_a_checks",             limit: 1
+    t.integer   "w_a_expenses",           limit: 1
+    t.integer   "w_a_ar",                 limit: 1
+    t.integer   "w_a_manager",            limit: 1
+    t.integer   "w_a_prefs",              limit: 1
+    t.integer   "w_a_coa",                limit: 1
+    t.integer   "w_a_task_table",         limit: 1
+    t.integer   "w_a_financials",         limit: 1
+    t.integer   "w_a_costs",              limit: 1
+    t.integer   "w_a_see_costs",          limit: 1
+    t.integer   "w_a_adhoc",              limit: 1
+    t.integer   "w_a_gl",                 limit: 1
+    t.integer   "w_a_client_pmts",        limit: 1
+    t.integer   "w_a_client_aging",       limit: 1
+    t.integer   "w_a_vendor_aging",       limit: 1
+    t.integer   "w_a_wip",                limit: 1
+    t.integer   "w_a_profitability",      limit: 1
+    t.integer   "w_a_productivity",       limit: 1
+    t.integer   "w_a_cash_flow",          limit: 1
+    t.integer   "w_a_media",              limit: 1
+    t.integer   "w_a_xfers",              limit: 1
+    t.decimal   "w_status_billed",                    precision: 9,  scale: 0
+    t.decimal   "w_status_ar_paid",                   precision: 9,  scale: 0
+    t.integer   "w_a_po_amt",             limit: 1
+    t.decimal   "w_gl_media_wip",                     precision: 15, scale: 2
+    t.decimal   "w_gl_media_costs",                   precision: 15, scale: 2
+    t.integer   "w_a_empl_adv",           limit: 1
+    t.integer   "w_a_time_view_days",     limit: 1
+    t.integer   "w_a_hide_job_amts",      limit: 1
+    t.integer   "w_a_approve_po",         limit: 1
+    t.integer   "w_a_staff_only",         limit: 1
+    t.integer   "w_a_confid_gl",          limit: 1
+    t.integer   "w_num11",                limit: 1
+    t.integer   "w_num12",                limit: 1
+    t.text      "w_bud_alert_c1"
+    t.text      "w_bud_alert_c2"
+    t.text      "w_bud_alert_l1"
+    t.text      "w_bud_alert_l2"
+    t.text      "w_bud_alert_po1"
+    t.text      "w_bud_alert_po2"
+    t.string    "w_job_column1",          limit: 12
+    t.string    "w_job_column2",          limit: 12
+    t.string    "w_job_column3",          limit: 12
+    t.string    "w_aka",                  limit: 30
+    t.string    "w_sep",                  limit: 1
+    t.string    "w_aka_project",          limit: 20
+    t.integer   "w_force_quit",           limit: 1
+    t.time      "w_force_time"
+    t.string    "w_info_ctr_msg",         limit: 60
+    t.text      "w_con_note"
+    t.decimal   "w_con_pc",                           precision: 9,  scale: 2
+    t.integer   "w_uniq_jnum",            limit: 1
+    t.decimal   "w_jobs_from",                        precision: 9,  scale: 0
+    t.decimal   "w_jobs_to",                          precision: 9,  scale: 0
+    t.string    "w_aka_client_po",        limit: 20
+    t.string    "w_j_to1",                limit: 10
+    t.string    "w_j_to2",                limit: 10
+    t.string    "w_j_to3",                limit: 10
+    t.string    "w_j_to4",                limit: 10
+    t.string    "w_j_to5",                limit: 10
+    t.string    "w_char20",               limit: 20
+    t.integer   "w_version_a",            limit: 1
+    t.integer   "w_version_b",            limit: 1
+    t.integer   "w_version_c",            limit: 1
+    t.string    "w_version_kind",         limit: 2
+    t.string    "w_user_field3",          limit: 20
+    t.string    "w_user_field4",          limit: 20
+    t.string    "w_user_field5",          limit: 20
+    t.string    "w_user_field6",          limit: 20
+    t.string    "w_po_total_label",       limit: 30
+    t.string    "w_aka_pc",               limit: 20
+    t.string    "w_aka_pcs",              limit: 20
+    t.integer   "w_a_sales_tax",          limit: 1
+    t.integer   "w_a_spell",              limit: 1
+    t.decimal   "w_a_io_max",                         precision: 15, scale: 2
+    t.integer   "w_a_approve_ar",         limit: 1
+    t.integer   "w_a_dba",                limit: 1
+    t.integer   "w_job_col1",             limit: 1
+    t.integer   "w_job_col2",             limit: 1
+    t.integer   "w_job_col3",             limit: 1
+    t.integer   "w_job_col4",             limit: 1
+    t.integer   "w_job_col5",             limit: 1
+    t.integer   "w_job_col6",             limit: 1
+    t.integer   "w_a_ok_requests",        limit: 1
+    t.integer   "w_a_approve_time",       limit: 1
+    t.integer   "w_a_approve_exp",        limit: 1
+    t.integer   "w_a_change_priority",    limit: 1
+    t.integer   "w_a_media_snaps",        limit: 1
+    t.integer   "w_a_client_add",         limit: 1
+    t.integer   "w_a_web_access",         limit: 1
+    t.integer   "w_a_cust_reports",       limit: 1
+    t.integer   "w_a_collect_mgr",        limit: 1
+    t.integer   "w_a_email",              limit: 1
+    t.integer   "w_a_approve_ap",         limit: 1
+    t.integer   "w_a_approve_jobs",       limit: 1
+    t.integer   "w_a_approve_sch",        limit: 1
+    t.integer   "w_a_approve_mo",         limit: 1
+    t.integer   "w_a_approve_mests",      limit: 1
+    t.integer   "w_a_approve_mplans",     limit: 1
+    t.integer   "w_a_approve_mbriefs",    limit: 1
+    t.integer   "w_a_int_charges",        limit: 1
+    t.integer   "w_a_commissions",        limit: 1
+    t.integer   "w_a_print_specs",        limit: 1
+    t.integer   "w_a_approve_printspecs", limit: 1
+    t.integer   "w_a_renumber",           limit: 1
+    t.integer   "w_a_verify_recover",     limit: 1
+    t.integer   "w_a_see_labor_net",      limit: 1
+    t.integer   "w_a_hide_tooltips",      limit: 1
+    t.string    "w_tcp_address",          limit: 100
+    t.timestamp "w_last_work_time"
+    t.text      "w_last_work"
+    t.integer   "w_log_off_now",          limit: 1
+    t.integer   "w_a_job_snapshot",       limit: 1
+    t.decimal   "w_gl_int_bill",                      precision: 9,  scale: 2
+    t.integer   "w_a_hide_rates_bill",    limit: 1
+    t.string    "w_pos_clip_note",        limit: 15
+    t.decimal   "w_status_new_b",                     precision: 15, scale: 0
+    t.decimal   "w_status_closed_b",                  precision: 15, scale: 0
+    t.decimal   "w_status_reopen_b",                  precision: 15, scale: 0
+    t.decimal   "w_status_billed_b",                  precision: 15, scale: 0
+    t.decimal   "w_status_ar_paid_b",                 precision: 15, scale: 0
+    t.decimal   "w_print_status_from",                precision: 15, scale: 0
+    t.decimal   "w_print_status_to",                  precision: 15, scale: 0
+    t.integer   "w_web_access",           limit: 1
+    t.integer   "w_a_inst_jobs",          limit: 1
+    t.string    "w_pc",                   limit: 10
+    t.decimal   "w_tax_rate3",                        precision: 15, scale: 4
+    t.string    "w_tax_desc3",            limit: 25
+    t.decimal   "w_tax_gl3",                          precision: 15, scale: 2
+    t.integer   "w_dashboard",            limit: 1
+    t.integer   "w_a_job_bill_wkst",      limit: 1
+    t.integer   "w_a_time_card",          limit: 1
   end
 
-  add_index "working", ["W_LOGGED_IN"], name: "W_LOGGED_IN", using: :btree
-  add_index "working", ["W_SEQ"], name: "W_SEQ", unique: true, using: :btree
-  add_index "working", ["W_WORK"], name: "W_WORK", using: :btree
+  add_index "working", ["w_logged_in"], name: "w_logged_in"
+  add_index "working", ["w_work"], name: "w_work"
 
-  create_table "worksheet", primary_key: "EST_SEQ", force: true do |t|
-    t.string   "EST_KEY",         limit: 15
-    t.string   "EST_LINE1",       limit: 40
-    t.string   "EST_LINE2",       limit: 40
-    t.string   "EST_LINE3",       limit: 40
-    t.string   "EST_LINE4",       limit: 40
-    t.decimal  "EST_AMT1",                   precision: 15, scale: 2
-    t.decimal  "EST_AMT2",                   precision: 15, scale: 2
-    t.decimal  "EST_AMT3",                   precision: 15, scale: 2
-    t.decimal  "EST_AMT4",                   precision: 15, scale: 2
-    t.string   "EST_RESOURCE1",   limit: 10
-    t.string   "EST_RESOURCE2",   limit: 10
-    t.string   "EST_RESOURCE3",   limit: 10
-    t.string   "EST_RESOURCE4",   limit: 10
-    t.decimal  "EST_RATE1",                  precision: 9,  scale: 2
-    t.decimal  "EST_RATE2",                  precision: 9,  scale: 2
-    t.decimal  "EST_RATE3",                  precision: 9,  scale: 2
-    t.decimal  "EST_RATE4",                  precision: 9,  scale: 2
-    t.decimal  "EST_HRS1",                   precision: 9,  scale: 2
-    t.decimal  "EST_HRS2",                   precision: 9,  scale: 2
-    t.decimal  "EST_HRS3",                   precision: 9,  scale: 2
-    t.decimal  "EST_HRS4",                   precision: 9,  scale: 2
-    t.string   "EST_JOB_NUM",     limit: 10
-    t.integer  "EST_COLUMN",      limit: 1
-    t.string   "EST_TASK",        limit: 4
-    t.decimal  "EST_MARKUP",                 precision: 9,  scale: 2
-    t.integer  "EST_REV",         limit: 1
-    t.string   "EST_ADDED_BY",    limit: 4
-    t.datetime "EST_ADDED_WHEN"
-    t.string   "EST_EDITED_BY",   limit: 4
-    t.datetime "EST_EDITED_WHEN"
+  create_table "worksheet", primary_key: "est_seq", force: true do |t|
+    t.string    "est_key",         limit: 15
+    t.string    "est_line1",       limit: 40
+    t.string    "est_line2",       limit: 40
+    t.string    "est_line3",       limit: 40
+    t.string    "est_line4",       limit: 40
+    t.decimal   "est_amt1",                   precision: 15, scale: 2
+    t.decimal   "est_amt2",                   precision: 15, scale: 2
+    t.decimal   "est_amt3",                   precision: 15, scale: 2
+    t.decimal   "est_amt4",                   precision: 15, scale: 2
+    t.string    "est_resource1",   limit: 10
+    t.string    "est_resource2",   limit: 10
+    t.string    "est_resource3",   limit: 10
+    t.string    "est_resource4",   limit: 10
+    t.decimal   "est_rate1",                  precision: 9,  scale: 2
+    t.decimal   "est_rate2",                  precision: 9,  scale: 2
+    t.decimal   "est_rate3",                  precision: 9,  scale: 2
+    t.decimal   "est_rate4",                  precision: 9,  scale: 2
+    t.decimal   "est_hrs1",                   precision: 9,  scale: 2
+    t.decimal   "est_hrs2",                   precision: 9,  scale: 2
+    t.decimal   "est_hrs3",                   precision: 9,  scale: 2
+    t.decimal   "est_hrs4",                   precision: 9,  scale: 2
+    t.string    "est_job_num",     limit: 10
+    t.integer   "est_column",      limit: 1
+    t.string    "est_task",        limit: 4
+    t.decimal   "est_markup",                 precision: 9,  scale: 2
+    t.integer   "est_rev",         limit: 1
+    t.string    "est_added_by",    limit: 4
+    t.timestamp "est_added_when"
+    t.string    "est_edited_by",   limit: 4
+    t.timestamp "est_edited_when"
   end
 
-  add_index "worksheet", ["EST_JOB_NUM"], name: "EST_JOB_NUM", using: :btree
-  add_index "worksheet", ["EST_KEY"], name: "EST_KEY", using: :btree
-  add_index "worksheet", ["EST_SEQ"], name: "EST_SEQ", unique: true, using: :btree
+  add_index "worksheet", ["est_job_num"], name: "est_job_num"
+  add_index "worksheet", ["est_key"], name: "est_key"
 
-  create_table "y1099", primary_key: "Y_SEQ", force: true do |t|
-    t.string  "Y_NAME1",       limit: 40
-    t.string  "Y_ADDRESS1",    limit: 40
-    t.string  "Y_CITY_STATE1", limit: 40
-    t.string  "Y_ZIP1",        limit: 40
-    t.string  "Y_TAX1",        limit: 20
-    t.decimal "Y_AMT1",                   precision: 15, scale: 2
-    t.string  "Y_NAME2",       limit: 40
-    t.string  "Y_ADDRESS2",    limit: 40
-    t.string  "Y_CITY_STATE2", limit: 40
-    t.string  "Y_ZIP2",        limit: 40
-    t.string  "Y_TAX2",        limit: 20
-    t.decimal "Y_AMT2",                   precision: 15, scale: 2
-    t.string  "Y_NAME3",       limit: 40
-    t.string  "Y_ADDRESS3",    limit: 40
-    t.string  "Y_CITY_STATE3", limit: 40
-    t.string  "Y_ZIP3",        limit: 40
-    t.decimal "Y_AMT3",                   precision: 15, scale: 2
-    t.string  "Y_TAX3",        limit: 20
-    t.string  "Y_DBA",         limit: 50
-    t.string  "Y_DBA2",        limit: 50
-    t.decimal "Y_RENT",                   precision: 9,  scale: 2
-    t.decimal "Y_RENT2",                  precision: 9,  scale: 2
+  create_table "y1099", primary_key: "y_seq", force: true do |t|
+    t.string  "y_name1",       limit: 40
+    t.string  "y_address1",    limit: 40
+    t.string  "y_city_state1", limit: 40
+    t.string  "y_zip1",        limit: 40
+    t.string  "y_tax1",        limit: 20
+    t.decimal "y_amt1",                   precision: 15, scale: 2
+    t.string  "y_name2",       limit: 40
+    t.string  "y_address2",    limit: 40
+    t.string  "y_city_state2", limit: 40
+    t.string  "y_zip2",        limit: 40
+    t.string  "y_tax2",        limit: 20
+    t.decimal "y_amt2",                   precision: 15, scale: 2
+    t.string  "y_name3",       limit: 40
+    t.string  "y_address3",    limit: 40
+    t.string  "y_city_state3", limit: 40
+    t.string  "y_zip3",        limit: 40
+    t.decimal "y_amt3",                   precision: 15, scale: 2
+    t.string  "y_tax3",        limit: 20
+    t.string  "y_dba",         limit: 50
+    t.string  "y_dba2",        limit: 50
+    t.decimal "y_rent",                   precision: 9,  scale: 2
+    t.decimal "y_rent2",                  precision: 9,  scale: 2
   end
-
-  add_index "y1099", ["Y_SEQ"], name: "Y_SEQ", unique: true, using: :btree
 
 end
