@@ -84,6 +84,7 @@ gem 'axlsx_rails'
 # scaffold out views and controllers:
 gem 'rmre'
 gem 'schema_to_scaffold'
+gem 'seed_dump'
 
 gem 'factory_girl'
 
