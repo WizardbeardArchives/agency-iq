@@ -31,6 +31,9 @@ end
 # Use H2
 gem 'activerecord-jdbch2-adapter', :platform => :jruby
 
+# Use MySQL to help reverse engineer existing data
+gem 'activerecord-jdbcmysql-adapter', :platform => :jruby
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

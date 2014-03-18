@@ -31,3 +31,8 @@ test:
 production:
   adapter: jdbch2
   database: db/production_h2_database
+
+legacy:
+  adapter: mysql2
+  database: cnp104
+
